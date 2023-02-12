@@ -1,0 +1,71 @@
+@mixin button {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1.75rem;
+  font-family: var(--font-family);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: 2rem;
+}
+
+.button-primary {
+  @include button;
+
+  color: var(--color-neutral-light-50);
+  background-color: var(--color-accent-500);
+  box-shadow: 0 4px 18px rgb(245 26 81 / 35%), inset 0 1px 0 rgb(255 255 255 / 30%);
+
+  &:hover,
+  &:focus {
+    background-color: var(--color-accent-400);
+  }
+
+  &:active {
+    background-color: var(--color-accent-600);
+  }
+
+  .dark & {
+    color: var(--color-neutral-dark-900);
+    background-color: var(--color-accent-500);
+    box-shadow: 0 4px 18px rgb(227 26 101 / 35%), inset 0 1px 0 rgb(0 0 0 / 30%);
+  }
+}
+
+.button-secondary {
+  @include button;
+
+  color: var(--button-secondary-color);
+  background-color: var(--button-secondary-bg);
+  box-shadow: var(--button-secondary-shadow);
+
+  &:hover,
+  &:focus {
+    background-color: var(--button-secondary-bg-hover);
+  }
+
+  &:active {
+    background-color: var(--button-secondary-bg-active);
+  }
+}
+
+.button-outlined {
+  @include button;
+
+  color: var(--button-outlined-color);
+  background-color: var(--button-outlined-bg);
+  box-shadow: var(--button-outlined-shadow);
+
+  &:hover,
+  &:focus {
+    background-color: var(--button-outlined-bg-hover);
+  }
+
+  &:active {
+    background-color: var(--button-outlined-bg-active);
+  }
+}

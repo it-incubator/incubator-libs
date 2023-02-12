@@ -1,0 +1,7 @@
+{
+    "name": "prettier-config-incubator",
+    "version": "0.0.0",
+    "main": "index.js",
+    "author": "Andres",
+    "license": "MIT"
+}

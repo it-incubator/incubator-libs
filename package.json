@@ -1,0 +1,22 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev --no-cache --continue",
+    "lint": "turbo run lint",
+    "clean": "turbo run clean && rm -rf node_modules",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "turbo run build --filter=docs^... && changeset publish"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.26.0",
+    "eslint": "^8.34.0",
+    "eslint-config-incubator": "workspace:0.0.0",
+    "prettier": "^2.8.4",
+    "prettier-config-incubator": "workspace:0.0.0",
+    "turbo": "^1.7.4"
+  },
+  "packageManager": "pnpm@7.15.0"
+}

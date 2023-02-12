@@ -2,11 +2,14 @@ import { ButtonHTMLAttributes, FC } from "react";
 
 import { clsx } from "clsx";
 
+import s from "./button.module.scss";
+
 type DefaultButtonProps = ButtonHTMLAttributes<HTMLButtonElement>;
 
 export type ButtonVariant = "primary" | "secondary" | "outlined";
 
 export interface ButtonProps extends DefaultButtonProps {
+  /** "primary" | "secondary" | "outlined"; */
   variant?: ButtonVariant;
 }
 
@@ -16,9 +19,9 @@ export const Button: FC<ButtonProps> = ({
   ...rest
 }) => {
   const classes = clsx(
-    variant === "primary" && "button-primary",
-    variant === "secondary" && "button-secondary",
-    variant === "outlined" && "button-outlined",
+    variant === "primary" && s.primary,
+    variant === "secondary" && s.secondary,
+    variant === "outlined" && s.outlined,
     className
   );
 

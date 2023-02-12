@@ -6,6 +6,7 @@
  */
 export function toSlug(str: string): string {
   let s = str;
+
   if (!s) {
     return "";
   }
@@ -14,5 +15,6 @@ export function toSlug(str: string): string {
   s = s.replace(/[ ]+/g, "-");
   s = s.replace(/[-]+/g, "-");
   s = s.replace(/[^a-z0-9-]+/g, "");
+
   return s;
 }

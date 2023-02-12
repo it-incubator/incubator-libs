@@ -4,7 +4,52 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4c5385e4-69f2-415c-a558-12bb67dd31f0" name="Changes" comment="" />
+    <list default="true" id="4c5385e4-69f2-415c-a558-12bb67dd31f0" name="Changes" comment="general setup for component documenting">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/docs/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/docs/babel.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/docs/docs/components/_category_.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/docs/docs/components/button.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/docs/docs/intro.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/docs/docusaurus.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/docs/sidebars.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/docs/src/components/prop-table.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/docs/src/css/custom.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/docs/src/theme/Playground/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/docs/src/theme/Playground/styles.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/docs/src/theme/ReactLiveScope/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/docs/static/img/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/docs/static/img/logo-dark.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/docs/static/img/logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/docs/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/incubator-core/src/css.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/incubator-core/tsup.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/docs/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/apps/docs/.eslintrc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/docs/.storybook/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/docs/.storybook/preview-head.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/docs/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/docs/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/docs/stories/button.stories.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/docs/stories/button.stories.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/incubator-core/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/incubator-core/.eslintrc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/incubator-core/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/incubator-core/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/incubator-core/src/components/button/button.scss" beforeDir="false" afterPath="$PROJECT_DIR$/packages/incubator-core/src/components/button/button.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/incubator-core/src/components/button/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/packages/incubator-core/src/components/button/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/incubator-core/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/packages/incubator-core/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/incubator-utils/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/incubator-utils/.eslintrc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/incubator-utils/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/incubator-utils/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/incubator-utils/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/packages/incubator-utils/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/incubator-utils/src/toSlug.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/incubator-utils/src/toSlug.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/incubator-utils/src/useIsomorphicLayoutEffect.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/packages/incubator-utils/src/useIsomorphicLayoutEffect.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/incubator-utils/src/usePrevious.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/packages/incubator-utils/src/usePrevious.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/prettier-config-incubator/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/prettier-config-incubator/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/turbo.json" beforeDir="false" afterPath="$PROJECT_DIR$/turbo.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,16 +59,23 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2LdUzDj1ibRBlEeS0ehbRwnc8Aj" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/andres/dev/work/incubator/incubator-libs/apps/docs/stories",
+    "last_opened_file_path": "C:/Users/andre/dev/inc/libs/apps/docs/static/img",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
@@ -31,18 +83,23 @@
     "node.js.selected.package.standard": "",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "prettierjs.PrettierConfiguration.Package": "/Users/andres/dev/work/incubator/incubator-libs/node_modules/prettier",
-    "settings.editor.selected.configurable": "settings.javascript.prettier",
-    "ts.external.directory.path": "/Users/andres/dev/work/incubator/incubator-libs/node_modules/typescript/lib",
+    "prettierjs.PrettierConfiguration.Package": "C:\\Users\\andre\\dev\\inc\\libs\\node_modules\\prettier",
+    "settings.editor.selected.configurable": "settings.javascript.linters.eslint",
+    "ts.external.directory.path": "C:\\Users\\andre\\dev\\inc\\libs\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\andre\dev\inc\libs\apps\docs\static\img" />
+      <recent name="C:\Users\andre\dev\inc\libs\apps\docs\docs\components" />
+      <recent name="C:\Users\andre\dev\inc\libs\apps\docs" />
       <recent name="$PROJECT_DIR$/apps/docs/stories" />
       <recent name="$PROJECT_DIR$/packages/incubator-core/src" />
-      <recent name="$PROJECT_DIR$/packages/prettier-config-incubator" />
-      <recent name="$PROJECT_DIR$/apps/docs/.storybook" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\andre\dev\inc\libs\apps\docs\docs" />
+      <recent name="C:\Users\andre\dev\inc\libs\apps\docs\docs\components" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -54,10 +111,17 @@
       <option name="presentableId" value="Default" />
       <updated>1676200713897</updated>
       <workItem from="1676200714953" duration="7052000" />
+      <workItem from="1676219539460" duration="27000" />
+      <workItem from="1676219572926" duration="20261000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="general setup for component documenting" />
+    <option name="LAST_COMMIT_MESSAGE" value="general setup for component documenting" />
   </component>
 </project>

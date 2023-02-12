@@ -13,7 +13,7 @@
   border-radius: 2rem;
 }
 
-.button-primary {
+.primary {
   @include button;
 
   color: var(--color-neutral-light-50);
@@ -36,7 +36,7 @@
   }
 }
 
-.button-secondary {
+.secondary {
   @include button;
 
   color: var(--button-secondary-color);
@@ -53,7 +53,7 @@
   }
 }
 
-.button-outlined {
+.outlined {
   @include button;
 
   color: var(--button-outlined-color);

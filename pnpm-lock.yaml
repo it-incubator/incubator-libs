@@ -86,7 +86,6 @@ importers:
       '@types/react-dom': ^18.0.10
       clsx: ^1.2.1
       esbuild-sass-plugin: ^2.4.5
-      eslint: ^8.34.0
       eslint-config-incubator: workspace:*
       postcss: ^8.4.21
       postcss-modules: ^6.0.0
@@ -107,7 +106,6 @@ importers:
       '@types/react': 18.0.28
       '@types/react-dom': 18.0.10
       esbuild-sass-plugin: 2.4.5
-      eslint: 8.34.0
       eslint-config-incubator: link:../eslint-config-incubator
       postcss: 8.4.21
       postcss-modules: 6.0.0_postcss@8.4.21

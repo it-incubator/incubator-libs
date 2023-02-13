@@ -1,35 +1,42 @@
-import { FC, ReactNode } from 'react'
+import { ComponentProps, FC, ReactNode } from 'react'
 
-import * as AccordionRadix from '@radix-ui/react-accordion'
+import * as CollapsibleRadix from '@radix-ui/react-collapsible'
+import { clsx } from 'clsx'
 
-export type AccordionProps = {
+import s from './styles.module.scss'
+
+export type CollapsibleProps = {
+  defaultOpen: boolean
+  open: boolean
+  onOpenChange: (open: boolean) => void
+  disabled: boolean
   children: ReactNode
   collapsible?: boolean
   title: string
-  value?: string
-  onValueChange?: (value: string) => void
-}
+} & ComponentProps<'div'>
 
-export const Accordion: FC<AccordionProps> = ({
+export const Collapsible: FC<CollapsibleProps> = ({
   children,
-  value,
-  onValueChange,
   collapsible,
   title,
+  className,
+  ...rest
 }) => {
+  const rootClassName = clsx(s.root, className)
+
   return (
-    <AccordionRadix.Root
+    <CollapsibleRadix.Root
       {...{
-        type: 'single',
-        value,
-        onValueChange,
-        collapsible,
+        rest,
+        className: rootClassName,
       }}
     >
-      <AccordionRadix.Item value="item-1">
-        <AccordionRadix.Trigger>{title}</AccordionRadix.Trigger>
-        <AccordionRadix.Content>{children}</AccordionRadix.Content>
-      </AccordionRadix.Item>
-    </AccordionRadix.Root>
+      <div className={s.headerBox}>
+        <p>{title}</p>
+        <CollapsibleRadix.Trigger className={s.trigger}>{title}</CollapsibleRadix.Trigger>
+      </div>
+
+      <CollapsibleRadix.Content className={s.content}>{children}</CollapsibleRadix.Content>
+    </CollapsibleRadix.Root>
   )
 }

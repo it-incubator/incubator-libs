@@ -106,4 +106,13 @@
   --color-neutral-dark-700: #262223;
   --color-neutral-dark-800: #1a1718;
   --color-neutral-dark-900: #0d0b0c;
+
+  --color-border-primary: var(--color-neutral-light-300);
+  --color-border-secondary: var(--color-neutral-light-200);
+
+}
+
+:root[data-theme='dark'] {
+  --color-border-primary: var(--color-neutral-dark-300);
+  --color-border-secondary: var(--color-neutral-dark-200);
 }

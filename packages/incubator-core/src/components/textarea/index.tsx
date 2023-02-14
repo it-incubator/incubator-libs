@@ -5,30 +5,29 @@ import { clsx } from 'clsx'
 
 import s from './styles.module.scss'
 
-export type TextInputProps = {
+export type TextareaProps = {
   label?: string
   error?: boolean
   errorMessage?: string
   onChange?: (text: string) => void
-} & ComponentProps<'input'>
+} & ComponentProps<'textarea'>
 
-export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
+export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
   ({ label, error, className, errorMessage = 'Error!', onChange, ...rest }, ref) => {
-    const inputHandler = (e: ChangeEvent<HTMLInputElement>) => {
+    const inputHandler = (e: ChangeEvent<HTMLTextAreaElement>) => {
       onChange && onChange(e.currentTarget.value)
     }
 
     return (
       <div className={clsx(s.box, className)}>
-        <Label.Root>
+        <Label.Root className={s['label-box']}>
           {label && <div className={s.label}>{label}</div>}
-          <input
-            className={clsx(s.input, { [s['input--error']]: error })}
-            type="text"
+          <textarea
+            className={clsx(s.textarea, { [s['textarea--error']]: error })}
             onChange={inputHandler}
             ref={ref}
             {...rest}
-          />
+          ></textarea>
         </Label.Root>
         {error && <p className={s.error}>{errorMessage}</p>}
       </div>

@@ -5,33 +5,31 @@ import { clsx } from 'clsx'
 
 import s from './styles.module.scss'
 
-type TextInputProps = {
-  id: string
-  label: string
+export type TextInputProps = {
+  label?: string
   error?: boolean
   errorMessage?: string
   onChange?: (text: string) => void
 } & ComponentProps<'input'>
 
 export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
-  ({ id, label, error, className, errorMessage = 'Error!', onChange, ...rest }, ref) => {
+  ({ label, error, className, errorMessage = 'Error!', onChange, ...rest }, ref) => {
     const inputHandler = (e: ChangeEvent<HTMLInputElement>) => {
       onChange && onChange(e.currentTarget.value)
     }
 
     return (
       <div className={clsx(s.box, className)}>
-        <Label.Root className={s.label} htmlFor={id}>
-          {label}
+        <Label.Root>
+          {label && <div className={s.label}>{label}</div>}
+          <input
+            className={clsx(s.input, { [s['input--error']]: error })}
+            type="text"
+            onChange={inputHandler}
+            ref={ref}
+            {...rest}
+          />
         </Label.Root>
-        <input
-          className={clsx(s.input, { [s['input--error']]: error })}
-          type="text"
-          id={id}
-          onChange={inputHandler}
-          ref={ref}
-          {...rest}
-        />
         {error && <p className={s.error}>{errorMessage}</p>}
       </div>
     )

@@ -12,12 +12,14 @@ const Template: ComponentStory<typeof TextInput> = args => <TextInput {...args} 
 
 export const Primary = Template.bind({})
 Primary.args = {
+  id: '01',
   label: 'Some label',
   placeholder: 'Placeholder text',
 }
 
 export const Invalid = Template.bind({})
 Invalid.args = {
+  id: '02',
   label: 'Some label',
   value: 'Some value',
   error: true,

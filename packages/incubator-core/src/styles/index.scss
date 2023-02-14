@@ -1,8 +1,4 @@
-@forward "boilerplate";
+@forward "typography";
 @forward "colors";
-
-
-:root {
-  /* globals */
-  --font-family: 'Roboto', sans-serif;
-}
+@forward "tokens";
+@forward "boilerplate";

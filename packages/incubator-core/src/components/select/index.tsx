@@ -1,6 +1,8 @@
-import React, { ReactNode } from 'react'
+import React, { DetailedHTMLProps, FC, HTMLAttributes, ReactNode } from 'react'
 
+import * as ScrollArea from '@radix-ui/react-scroll-area'
 import * as SelectRadixUI from '@radix-ui/react-select'
+import { clsx } from 'clsx'
 
 import s from './styles.module.scss'
 
@@ -16,6 +18,8 @@ export type SelectProps = {
   /** Event handler called when the open state of the select changes */
   disabled?: boolean
   required?: boolean
+  /** className for select trigger button */
+  className?: string
   /** The controlled value of the select. Should be used in conjunction with onValueChange.*/
   onOpenChange?: Function
   /** Event handler called when the value changes. */
@@ -29,8 +33,10 @@ export const Select = ({
   placeholder,
   value,
   open,
+  name,
   disabled,
   required,
+  className,
   onOpenChange,
   onValueChange,
 }: SelectProps) => {
@@ -48,34 +54,40 @@ export const Select = ({
       value={value}
       disabled={disabled}
       required={required}
+      name={name}
       onOpenChange={openChangeHandler}
       onValueChange={valueChangeHandler}
     >
-      <SelectRadixUI.Trigger className={s['select-trigger']} aria-label="Food">
+      <SelectRadixUI.Trigger className={clsx(s['select-trigger'], className)} aria-label="Food">
         <SelectRadixUI.Value placeholder={placeholder} />
         <SelectRadixUI.Icon className={s['select-icon']}></SelectRadixUI.Icon>
       </SelectRadixUI.Trigger>
       <SelectRadixUI.Portal>
         <SelectRadixUI.Content className={s['select-content']} position="popper">
-          <SelectRadixUI.Viewport className={s['select-viewport']}>
-            {children}
-          </SelectRadixUI.Viewport>
+          <ScrollArea.Root className={s['scroll-root']} type="auto">
+            <SelectRadixUI.Viewport asChild>
+              <ScrollArea.Viewport className={s['scroll-viewport']}>{children}</ScrollArea.Viewport>
+            </SelectRadixUI.Viewport>
+            <ScrollArea.Scrollbar className={s['scroll-scrollbar']} orientation="vertical">
+              <ScrollArea.Thumb className={s['scroll-thumb']} />
+            </ScrollArea.Scrollbar>
+          </ScrollArea.Root>
         </SelectRadixUI.Content>
       </SelectRadixUI.Portal>
     </SelectRadixUI.Root>
   )
 }
 
-export const SelectItem = ({
-  value,
-  children,
-  ...props
-}: {
-  value: string
+export type SelectItemProps = {
+  value: any
   children: ReactNode
-}) => {
+} & Omit<DefaultInputPropsType, 'ref'>
+
+type DefaultInputPropsType = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>
+
+export const SelectItem: FC<SelectItemProps> = ({ value, children, className, ...rest }) => {
   return (
-    <SelectRadixUI.Item value={value} className={s['select-item']}>
+    <SelectRadixUI.Item value={value} className={clsx(s['select-item'], className)} {...rest}>
       <SelectRadixUI.ItemText>{children}</SelectRadixUI.ItemText>
     </SelectRadixUI.Item>
   )

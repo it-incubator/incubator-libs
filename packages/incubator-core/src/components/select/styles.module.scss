@@ -1,5 +1,5 @@
 .select-trigger {
-  width: 300px;
+  width: 284px;
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
@@ -18,8 +18,16 @@
   cursor: pointer;
   outline: none;
 
+  &[data-state="open"] {
+    border-radius: var(--border-radius-s) var(--border-radius-s) 0 0;
+  }
+
   &[data-state="open"] .select-icon {
     transform: rotate(180deg);
+  }
+
+  &:hover, &:focus, &[data-state="open"]  {
+    border-color: var(--color-border-primary-active);
   }
 }
 
@@ -33,12 +41,11 @@
   overflow: hidden;
   background-color: white;
   border-radius: 0 0 var(--border-radius-s) var(--border-radius-s);
-  border: 1px solid var(--color-border-primary);
+  border: 1px solid var(--color-border-primary-active);
   border-top: none;
 }
 
 .select-viewport {
-  max-height: 157px;
   padding: 12px 0;
 }
 
@@ -54,4 +61,31 @@
   &:focus {
     background-color: var(--color-bg-element-hover);
   }
+}
+
+.scroll-root {
+  width: 100%;
+  height: 100%;
+}
+
+.scroll-viewport {
+  width: 100%;
+  max-height: 157px;
+}
+
+.scroll-scrollbar {
+  margin-top: 13px;
+  margin-bottom: 13px;
+  width: 8px;
+  padding: 12px 1px;
+  margin-right: 4px;
+  user-select: none;
+  background-color: var(--color-bg-scrollbar);
+  border-radius: var(--border-radius-l);
+}
+
+.scroll-thumb {
+  height: 60px;
+  background-color: var(--color-border-primary);
+  border-radius: 3px;
 }

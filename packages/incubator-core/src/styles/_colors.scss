@@ -114,6 +114,10 @@
   /* borders */
   --color-border-primary: var(--color-neutral-dark-100);
   --color-border-primary-active: var(--color-neutral-dark-900);
+
+  /* backgrounds */
+  --color-bg-element: var(--color-neutral-light-50);
+  --color-bg-element-hover: var(--color-neutral-dark-100);
 }
 
 :root[data-theme='dark'] {
@@ -124,4 +128,8 @@
   /* borders */
   --color-border-primary: var(--color-dark-mode-400);
   --color-border-primary-active: var(--color-dark-mode-400);
+
+  /* backgrounds */
+  --color-bg-element: var(--color-dark-mode-400);
+  --color-bg-element-hover: var(--color-neutral-dark-400);
 }

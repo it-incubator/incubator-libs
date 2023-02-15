@@ -1,3 +1,8 @@
+.label {
+  position: relative;
+  margin-right: -8px;
+}
+
 .select-trigger {
   width: 284px;
   display: inline-flex;
@@ -26,9 +31,39 @@
     transform: rotate(180deg);
   }
 
-  &:hover, &:focus, &[data-state="open"]  {
+  &:hover:not(&:disabled), &:focus, &[data-state="open"]  {
     border-color: var(--color-border-primary-active);
   }
+
+  &:disabled {
+    cursor: auto;
+    opacity: 0.7;
+  }
+
+  &--error {
+    border-color: var(--color-accent-500);
+  }
+
+  &--secondary {
+    border: none;
+  }
+  &--secondary span:first-child {
+    padding-bottom: 1px;
+    color: var(--color-info-400);
+    background-image: linear-gradient(to right, var(--color-info-400) 40%, var(--color-bg-element) 0%);
+    background-position: left 12px bottom;
+    background-size: 4px 1px;
+    background-repeat: repeat-x;
+  }
+
+  &--secondary:focus span:first-child {
+    color: var(--color-info-600);
+    background-image: linear-gradient(to right, var(--color-info-600) 40%, var(--color-bg-element) 0%);
+  }
+}
+
+.select-value {
+
 }
 
 .select-icon {
@@ -43,6 +78,10 @@
   border-radius: 0 0 var(--border-radius-s) var(--border-radius-s);
   border: 1px solid var(--color-border-primary-active);
   border-top: none;
+
+  &--secondary {
+    border: 1px solid var(--color-border-primary);
+  }
 }
 
 .select-viewport {
@@ -55,11 +94,19 @@
 
   cursor: pointer;
 
-  transition: 200ms background-color;
+  transition: 200ms background-color, 200ms color;
 
   &:hover,
   &:focus {
     background-color: var(--color-bg-element-hover);
+  }
+}
+
+.select-content--secondary .select-item {
+  &:hover,
+  &:focus {
+    color: var(--color-neutral-light-50);
+    background-color: var(--color-info-400);
   }
 }
 
@@ -88,4 +135,11 @@
   height: 60px;
   background-color: var(--color-border-primary);
   border-radius: 3px;
+}
+
+.error {
+  color: var(--color-accent-500);
+  margin: 4px 0 0;
+  font-size: var(--font-size-sx);
+  line-height: var(--line-height-sx);
 }

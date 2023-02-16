@@ -5,7 +5,7 @@ import { clsx } from 'clsx'
 
 import { Index } from '../../../assets/icons/cross'
 
-import s from './styles.module.scss'
+import s from './modal.module.scss'
 
 export type ModalSize = 'sm' | 'md' | 'lg'
 

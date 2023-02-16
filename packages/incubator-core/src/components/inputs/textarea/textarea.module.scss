@@ -1,7 +1,4 @@
-.box {
-}
-
-.label-box {
+.labelBox {
   display: flex;
   height: 100%;
   flex-direction: column;
@@ -40,12 +37,12 @@
     color: var(--color-text-secondary);
   }
 
-  &--error {
+  &.error {
     border-color: var(--color-accent-500);
   }
 }
 
-.error {
+.errorText {
   color: var(--color-accent-500);
   margin: 4px 0 0;
   font-size: var(--font-size-sx);

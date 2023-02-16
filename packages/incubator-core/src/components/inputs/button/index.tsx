@@ -14,12 +14,14 @@ export interface ButtonProps extends DefaultButtonProps {
 }
 
 export const Button: FC<ButtonProps> = ({ variant = 'primary', className, ...rest }) => {
-  const classes = clsx(
-    variant === 'primary' && s.primary,
-    variant === 'secondary' && s.secondary,
-    variant === 'outlined' && s.outlined,
-    className
-  )
+  const classNames = {
+    root: clsx(
+      variant === 'primary' && s.primary,
+      variant === 'secondary' && s.secondary,
+      variant === 'outlined' && s.outlined,
+      className
+    ),
+  }
 
-  return <button className={classes} {...rest} />
+  return <button className={classNames.root} {...rest} />
 }

@@ -32,27 +32,35 @@ export const Modal = ({
   children,
   showCloseButton = true,
 }: ModalProps) => {
-  const contentClassName = getContentClassName(size, className)
-  const handleModalClosed = () => {
+  function handleModalClosed() {
     onClose()
+  }
+  const classNames = {
+    overlay: s.overlay,
+    content: getContentClassName(size, className),
+    header: s.header,
+    title: s.title,
+    closeButton: s.closeButton,
+    contentBox: s.contentBox,
   }
 
   return (
     <Dialog.Root open={open} onOpenChange={handleModalClosed}>
       <Dialog.Portal>
-        <Dialog.Overlay className={s.overlay} />
+        <Dialog.Overlay className={classNames.overlay} />
 
-        <Dialog.Content className={contentClassName}>
-          <header className={s.header}>
-            <h2 className={s.title}>{title}</h2>
+        <Dialog.Content className={classNames.content}>
+          <header className={classNames.header}>
+            <h2 className={classNames.title}>{title}</h2>
+
             {showCloseButton && (
-              <button className={s.closeButton} onClick={handleModalClosed}>
+              <button className={classNames.closeButton} onClick={handleModalClosed}>
                 <Cross />
               </button>
             )}
           </header>
 
-          <div className={s.contentBox}>{children}</div>
+          <div className={classNames.contentBox}>{children}</div>
         </Dialog.Content>
       </Dialog.Portal>
     </Dialog.Root>

@@ -30,13 +30,12 @@
     color: var(--color-text-secondary);
   }
 
-  &--error {
+  &.error {
     border-color: var(--color-accent-500);
-    color: var(--color-text-invalid);
   }
 }
 
-.error {
+.errorText {
   color: var(--color-accent-500);
   margin: 4px 0 0;
   font-size: var(--font-size-sx);

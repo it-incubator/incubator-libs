@@ -34,10 +34,14 @@ export const Dialog: FC<DialogProps> = ({
     onCancelButtonClick ? onCancelButtonClick() : onClose()
   }
 
+  const classNames = {
+    buttonsBox: s.buttonsBox,
+  }
+
   return (
     <Modal {...rest}>
       {children}
-      <div className={s.buttonsBox}>
+      <div className={classNames.buttonsBox}>
         <Button variant="secondary" onClick={handleConfirmButtonClicked}>
           {confirmButtonText}
         </Button>

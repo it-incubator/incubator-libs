@@ -23,7 +23,7 @@
     border-radius: var(--border-radius-s) var(--border-radius-s) 0 0;
   }
 
-  &[data-state="open"] .select-icon {
+  &[data-state="open"] .icon {
     transform: rotate(180deg);
   }
 
@@ -60,10 +60,6 @@
     color: var(--color-info-600);
     background-image: linear-gradient(to right, var(--color-info-600) 40%, var(--color-bg-element) 0%);
   }
-}
-
-.value {
-
 }
 
 .icon {

@@ -14,23 +14,30 @@ export type TextFieldProps = {
 
 export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
   ({ label, error, className, errorMessage = 'Error!', onChange, ...rest }, ref) => {
-    const inputHandler = (e: ChangeEvent<HTMLInputElement>) => {
+    function handleInputChanged(e: ChangeEvent<HTMLInputElement>) {
       onChange && onChange(e.currentTarget.value)
     }
 
+    const classNames = {
+      root: clsx(s.box, className),
+      label: s.label,
+      input: clsx(s.input, error && s.error),
+      error: s.errorText,
+    }
+
     return (
-      <div className={clsx(s.box, className)}>
+      <div className={classNames.root}>
         <Label.Root>
-          {label && <div className={s.label}>{label}</div>}
+          {label && <div className={classNames.label}>{label}</div>}
           <input
-            className={clsx(s.input, { [s['input--error']]: error })}
+            className={classNames.input}
             type="text"
-            onChange={inputHandler}
+            onChange={handleInputChanged}
             ref={ref}
             {...rest}
           />
         </Label.Root>
-        {error && <p className={s.error}>{errorMessage}</p>}
+        {error && <p className={classNames.error}>{errorMessage}</p>}
       </div>
     )
   }

@@ -9,27 +9,36 @@ export type TextareaProps = {
   label?: string
   error?: boolean
   errorMessage?: string
-  onChange?: (text: string) => void
+  onValueChange?: (text: string) => void
 } & ComponentProps<'textarea'>
 
 export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
-  ({ label, error, className, errorMessage = 'Error!', onChange, ...rest }, ref) => {
-    const inputHandler = (e: ChangeEvent<HTMLTextAreaElement>) => {
-      onChange?.(e.currentTarget.value)
+  ({ label, error, className, errorMessage = 'Error!', onChange, onValueChange, ...rest }, ref) => {
+    function handleInputValueChanged(e: ChangeEvent<HTMLTextAreaElement>) {
+      onChange?.(e)
+      onValueChange?.(e.currentTarget.value)
+    }
+
+    const classNames = {
+      root: clsx(s.box, className),
+      labelBox: s.labelBox,
+      label: s.label,
+      input: clsx(s.textarea, error && s.error),
+      error: s.errorText,
     }
 
     return (
-      <div className={clsx(s.box, className)}>
-        <Label.Root className={s['label-box']}>
-          {label && <div className={s.label}>{label}</div>}
+      <div className={classNames.root}>
+        <Label.Root className={classNames.labelBox}>
+          {label && <div className={classNames.label}>{label}</div>}
           <textarea
-            className={clsx(s.textarea, { [s['textarea--error']]: error })}
-            onChange={inputHandler}
+            className={classNames.input}
+            onChange={handleInputValueChanged}
             ref={ref}
             {...rest}
-          ></textarea>
+          />
         </Label.Root>
-        {error && <p className={s.error}>{errorMessage}</p>}
+        {error && <p className={classNames.error}>{errorMessage}</p>}
       </div>
     )
   }

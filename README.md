@@ -7,28 +7,28 @@
 ### With design:
 
 - [x] Button
-- [] Tabs
-- [] Toggle
+- [ ] Tabs
+- [ ] Toggle
 - [x] Input
 - [x] Text Area
 - [x] Select
 - [x] Search Input
-- [] Checkbox
-- [] Link
+- [ ] Checkbox
+- [ ] Link
 
 
 ### Without design:
 
-- [] Card
-- [] Toolbox
-- [] Tooltip
-- [] Pagination
-- [] Modal
-- [] Dialog
-- [] Breadcrumb
-- [] With Label
-- [] Table
-- [] Switch
-- [] Progress Bar
-- [] Page in development/404/other error pages
-- [] Round buttons 
+- [ ] Card
+- [ ] Toolbox
+- [ ] Tooltip
+- [ ] Pagination
+- [ ] Modal
+- [ ] Dialog
+- [ ] Breadcrumb
+- [ ] With Label
+- [ ] Table
+- [ ] Switch
+- [ ] Progress Bar
+- [ ] Page in development/404/other error pages
+- [ ] Round buttons 

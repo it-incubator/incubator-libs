@@ -1,18 +1,10 @@
-import React, {
-  ComponentProps,
-  DetailedHTMLProps,
-  FC,
-  HTMLAttributes,
-  ReactNode,
-  useId,
-} from 'react'
+import { ComponentProps, DetailedHTMLProps, FC, HTMLAttributes, ReactNode } from 'react'
 
-import { Label } from '@radix-ui/react-label'
 import * as ScrollArea from '@radix-ui/react-scroll-area'
 import * as SelectRadixUI from '@radix-ui/react-select'
 import { clsx } from 'clsx'
 
-import { MenuArrowIcons } from '../../icons/MenuArrow'
+import { ChevronDown } from '../../assets/icons/chevron-down'
 
 import s from './styles.module.scss'
 
@@ -71,8 +63,6 @@ export const Select = ({
     onValueChange && onValueChange()
   }
 
-  const id = useId()
-
   return (
     <SelectRadixUI.Root
       open={open}
@@ -94,7 +84,7 @@ export const Select = ({
       >
         <SelectRadixUI.Value placeholder={placeholder} />
         <SelectRadixUI.Icon className={s['select-icon']}>
-          <MenuArrowIcons
+          <ChevronDown
             className={clsx({ [s['select-icon--secondary']]: variant === 'secondary' })}
           />
         </SelectRadixUI.Icon>

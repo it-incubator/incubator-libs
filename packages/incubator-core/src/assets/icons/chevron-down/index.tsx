@@ -3,9 +3,9 @@ import { ComponentProps } from 'react'
 
 import { clsx } from 'clsx'
 
-import s from './Icons.module.scss'
+import s from '../icon.module.scss'
 
-export const MenuArrowIcons = (props: ComponentProps<'svg'>) => (
+export const ChevronDown = (props: ComponentProps<'svg'>) => (
   <svg
     className={clsx(s.stroke)}
     xmlns="http://www.w3.org/2000/svg"

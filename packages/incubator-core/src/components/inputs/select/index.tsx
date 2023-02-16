@@ -11,37 +11,28 @@ import s from './select.module.scss'
 export type SelectProps = {
   /** Use SelectItem components as children.*/
   children: ReactNode
-  /** The content that will be rendered inside the Select when no value or defaultValue is set.*/
-  placeholder: string
-  /** The controlled value of the select. Should be used in conjunction with onValueChange.*/
-  value?: string
-  /** The value of the select when initially rendered. Use when you do not need to control the state of the select.*/
+  /** applied to the trigger */
+  className?: string
   defaultValue?: string
+  disabled?: boolean
+  error?: boolean
+  errorMessage?: string
   /** The name of the select. Submitted with its owning form as part of a name/value pair. */
   name?: string
+  /** Event handler called when the open state of the select changes */
+  onOpenChange?: (open: boolean) => void
+  /** Event handler called when the value changes. */
+  onValueChange?: (value: string) => void
   /** The controlled open state of the select. Must be used in conjunction with onOpenChange */
   open?: boolean
-  /** Event handler called when the open state of the select changes */
-  variant?: 'primary' | 'secondary'
-
-  error?: boolean
-
-  errorMessage?: string
-
-  disabled?: boolean
-  /** When true, indicates that the user must select a value before the owning form can be submitted. */
+  placeholder: string
   required?: boolean
-  /** className for select trigger button */
-  className?: string
-  /** Event handler called when the open state of the select changes. */
-  onOpenChange?: Function
-  /** Event handler called when the value changes. */
-  onValueChange?: Function
+  /** The controlled value of the select. Should be used in conjunction with onValueChange.*/
+  value?: string
+  variant?: 'primary' | 'secondary'
 } & ComponentPropsWithoutRef<'button'>
 
-// TODO: импортировать svg-icon
-
-export const Select = ({
+export const Select: FC<SelectProps> = ({
   variant = 'primary',
   children,
   placeholder,
@@ -57,19 +48,27 @@ export const Select = ({
   onOpenChange,
   onValueChange,
   ...rest
-}: SelectProps) => {
-  const openChangeHandler = () => {
-    onOpenChange?.()
+}) => {
+  function handleOpenChanged(open: boolean) {
+    onOpenChange?.(open)
   }
 
-  const valueChangeHandler = () => {
-    onValueChange?.()
+  function handleValueChanged(value: string) {
+    onValueChange?.(value)
   }
 
-  const secondaryClassName = variant === 'secondary' ? s.secondary : ''
-  const errorClassName = error ? s.error : ''
+  const isSecondary = variant === 'secondary'
 
-  const triggerClassName = clsx(s.trigger, errorClassName, secondaryClassName, className)
+  const classNames = {
+    trigger: clsx(s.trigger, error && s.error, isSecondary && s.secondary, className),
+    icon: clsx(s.icon, isSecondary && s.secondary),
+    content: clsx(s.content, isSecondary && s.secondary),
+    error: s.errorLine,
+    scrollRoot: s.scrollRoot,
+    scrollViewport: s.scrollViewport,
+    scrollbar: s.scrollbar,
+    scrollThumb: s.scrollThumb,
+  }
 
   return (
     <SelectRadixUI.Root
@@ -79,24 +78,28 @@ export const Select = ({
       disabled={disabled}
       required={required}
       name={name}
-      onOpenChange={openChangeHandler}
-      onValueChange={valueChangeHandler}
+      onOpenChange={handleOpenChanged}
+      onValueChange={handleValueChanged}
     >
-      <SelectRadixUI.Trigger className={triggerClassName} disabled={disabled} {...rest}>
+      <SelectRadixUI.Trigger className={classNames.trigger} disabled={disabled} {...rest}>
         <SelectRadixUI.Value placeholder={placeholder} />
-        <SelectRadixUI.Icon className={clsx(s.icon, secondaryClassName)}>
+        <SelectRadixUI.Icon className={classNames.icon}>
           <ChevronDown />
         </SelectRadixUI.Icon>
       </SelectRadixUI.Trigger>
-      {error && <p className={s.errorLine}>{errorMessage}</p>}
+
+      {error && <p className={classNames.error}>{errorMessage}</p>}
+
       <SelectRadixUI.Portal>
-        <SelectRadixUI.Content className={clsx(s.content, secondaryClassName)} position="popper">
-          <ScrollArea.Root className={s.scrollRoot} type="auto">
+        <SelectRadixUI.Content className={classNames.content} position="popper">
+          <ScrollArea.Root className={classNames.scrollRoot} type="auto">
             <SelectRadixUI.Viewport asChild>
-              <ScrollArea.Viewport className={s.scrollViewport}>{children}</ScrollArea.Viewport>
+              <ScrollArea.Viewport className={classNames.scrollViewport}>
+                {children}
+              </ScrollArea.Viewport>
             </SelectRadixUI.Viewport>
-            <ScrollArea.Scrollbar className={s.scrollScrollbar} orientation="vertical">
-              <ScrollArea.Thumb className={s.scrollThumb} />
+            <ScrollArea.Scrollbar className={classNames.scrollbar} orientation="vertical">
+              <ScrollArea.Thumb className={classNames.scrollThumb} />
             </ScrollArea.Scrollbar>
           </ScrollArea.Root>
         </SelectRadixUI.Content>
@@ -111,8 +114,12 @@ export type SelectItemProps = {
 } & ComponentPropsWithoutRef<'input'>
 
 export const SelectItem: FC<SelectItemProps> = ({ value, children, className, ...rest }) => {
+  const classNames = {
+    item: clsx(s.item, className),
+  }
+
   return (
-    <SelectRadixUI.Item value={value} className={clsx(s.item, className)} {...rest}>
+    <SelectRadixUI.Item value={value} className={classNames.item} {...rest}>
       <SelectRadixUI.ItemText>{children}</SelectRadixUI.ItemText>
     </SelectRadixUI.Item>
   )

@@ -1,13 +1,13 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import { TextInput } from '../src'
+import { Textarea } from '../../../src'
 
 export default {
-  title: 'Example/TextInput',
-  component: TextInput,
-} as ComponentMeta<typeof TextInput>
+  title: 'Inputs/Textarea',
+  component: Textarea,
+} as ComponentMeta<typeof Textarea>
 
-const Template: ComponentStory<typeof TextInput> = args => <TextInput {...args} />
+const Template: ComponentStory<typeof Textarea> = args => <Textarea {...args} />
 
 export const Primary = Template.bind({})
 Primary.args = {

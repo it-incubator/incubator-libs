@@ -4,9 +4,9 @@ import * as ScrollArea from '@radix-ui/react-scroll-area'
 import * as SelectRadixUI from '@radix-ui/react-select'
 import { clsx } from 'clsx'
 
-import { ChevronDown } from '../../assets/icons/chevron-down'
+import { ChevronDown } from '../../../assets/icons/chevron-down'
 
-import s from './styles.module.scss'
+import s from './select.module.scss'
 
 export type SelectProps = {
   /** Use SelectItem components as children.*/

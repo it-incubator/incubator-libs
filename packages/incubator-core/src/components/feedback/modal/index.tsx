@@ -3,7 +3,7 @@ import { ComponentProps } from 'react'
 import * as Dialog from '@radix-ui/react-dialog'
 import { clsx } from 'clsx'
 
-import { Index } from '../../assets/icons/cross'
+import { Index } from '../../../assets/icons/cross'
 
 import s from './styles.module.scss'
 

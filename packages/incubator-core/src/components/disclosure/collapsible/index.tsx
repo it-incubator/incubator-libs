@@ -3,7 +3,7 @@ import { ComponentProps, FC, ReactNode } from 'react'
 import * as CollapsibleRadix from '@radix-ui/react-collapsible'
 import { clsx } from 'clsx'
 
-import s from './styles.module.scss'
+import s from './collapsible.module.scss'
 
 export type CollapsibleProps = {
   defaultOpen: boolean

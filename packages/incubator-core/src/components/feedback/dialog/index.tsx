@@ -1,7 +1,7 @@
-import { Button } from '../button'
+import { Button } from '../../inputs/button'
 import { Modal, ModalProps } from '../modal'
 
-import s from './styles.module.scss'
+import s from './dialog.module.scss'
 
 export type DialogProps = {
   confirmButtonText: string

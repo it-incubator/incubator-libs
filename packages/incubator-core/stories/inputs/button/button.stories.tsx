@@ -1,9 +1,9 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import { Button } from '../../src'
+import { Button } from '../../../src'
 
 export default {
-  title: 'Example/Button',
+  title: 'Inputs/Button',
   component: Button,
 } as ComponentMeta<typeof Button>
 

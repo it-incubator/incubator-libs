@@ -1,13 +1,13 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import { Textarea } from '../src'
+import { TextField } from '../../../src'
 
 export default {
-  title: 'Example/Textarea',
-  component: Textarea,
-} as ComponentMeta<typeof Textarea>
+  title: 'Inputs/Text Field',
+  component: TextField,
+} as ComponentMeta<typeof TextField>
 
-const Template: ComponentStory<typeof Textarea> = args => <Textarea {...args} />
+const Template: ComponentStory<typeof TextField> = args => <TextField {...args} />
 
 export const Primary = Template.bind({})
 Primary.args = {

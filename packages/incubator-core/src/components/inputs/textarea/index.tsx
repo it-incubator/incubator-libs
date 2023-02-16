@@ -3,7 +3,7 @@ import { ChangeEvent, ComponentProps, forwardRef } from 'react'
 import * as Label from '@radix-ui/react-label'
 import { clsx } from 'clsx'
 
-import s from './styles.module.scss'
+import s from './textarea.module.scss'
 
 export type TextareaProps = {
   label?: string
@@ -15,7 +15,7 @@ export type TextareaProps = {
 export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
   ({ label, error, className, errorMessage = 'Error!', onChange, ...rest }, ref) => {
     const inputHandler = (e: ChangeEvent<HTMLTextAreaElement>) => {
-      onChange && onChange(e.currentTarget.value)
+      onChange?.(e.currentTarget.value)
     }
 
     return (

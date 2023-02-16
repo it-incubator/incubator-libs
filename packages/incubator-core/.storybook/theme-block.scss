@@ -1,0 +1,30 @@
+.themeBlock {
+  position: absolute;
+  top: 0;
+  left: 50vw;
+  height: 100vh;
+  bottom: 0;
+  overflow: auto;
+  padding: 1rem;
+  background: #FFFEFE;
+
+  &.dark-mode {
+    background: #0E1720;
+  }
+
+  &.left {
+    left: 0;
+    border-right: 1px solid #202020;
+    right: 50vw;
+    width: 50vw;
+  }
+
+  &.fill {
+    left: 0;
+    right: 0;
+    width: 100vw;
+  }
+}
+
+
+

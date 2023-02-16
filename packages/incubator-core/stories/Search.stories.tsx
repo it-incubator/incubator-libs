@@ -1,7 +1,6 @@
-import React from 'react'
-
-import { Search } from '@incubator/core'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
+
+import { Search } from '../src'
 
 export default {
   title: 'Example/Search',

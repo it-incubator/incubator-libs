@@ -1,14 +1,13 @@
-import React from 'react'
-
-import { TextInput } from '@incubator/core'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-export default {
-  title: 'Example/TextInput',
-  component: TextInput,
-} as ComponentMeta<typeof TextInput>
+import { Textarea } from '../src'
 
-const Template: ComponentStory<typeof TextInput> = args => <TextInput {...args} />
+export default {
+  title: 'Example/Textarea',
+  component: Textarea,
+} as ComponentMeta<typeof Textarea>
+
+const Template: ComponentStory<typeof Textarea> = args => <Textarea {...args} />
 
 export const Primary = Template.bind({})
 Primary.args = {

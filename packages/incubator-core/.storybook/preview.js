@@ -1,5 +1,4 @@
-import '@incubator/core/dist/style.css'
-
+import '../src/styles/index.scss'
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {

@@ -1,7 +1,6 @@
-import React from 'react'
-
-import { Select, SelectItem } from '@incubator/core'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
+
+import { Select, SelectItem } from '../src'
 
 export default {
   title: 'Example/Select',

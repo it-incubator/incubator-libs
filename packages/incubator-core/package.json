@@ -1,7 +1,7 @@
 {
   "name": "@incubator/core",
   "version": "0.0.0",
-  "main": "./dist/index.js",
+  "main": "./dist/index.umd.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "license": "MIT",
@@ -9,17 +9,26 @@
     "dist/**"
   ],
   "scripts": {
-    "build": "tsc && vite build",
-    "dev": "concurrently --kill-others \"tsc --watch\" \"vite build --watch\"",
+    "build": "tsc && vite build && build-storybook",
     "lint": "TIMING=1 eslint \"src/**/*.ts*\"",
-    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
+    "dev": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "devDependencies": {
-    "@incubator/tsconfig": "workspace:*",
+    "@babel/core": "^7.20.12",
+    "@storybook/addon-actions": "^6.5.16",
+    "@storybook/addon-essentials": "^6.5.16",
+    "@storybook/addon-interactions": "^6.5.16",
+    "@storybook/addon-links": "^6.5.16",
+    "@storybook/builder-vite": "^0.4.2",
+    "@storybook/react": "^6.5.16",
+    "@storybook/testing-library": "^0.0.13",
     "@storybook/theming": "^6.5.16",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.10",
     "@vitejs/plugin-react": "3.0.0",
+    "babel-loader": "^8.3.0",
     "concurrently": "^7.6.0",
     "esbuild-sass-plugin": "^2.4.5",
     "eslint-config-incubator": "workspace:*",

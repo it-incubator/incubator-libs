@@ -1,29 +1,25 @@
-import { ButtonHTMLAttributes, FC } from "react";
+import { ButtonHTMLAttributes, FC } from 'react'
 
-import { clsx } from "clsx";
+import { clsx } from 'clsx'
 
-import s from "./button.module.scss";
+import s from './button.module.scss'
 
-type DefaultButtonProps = ButtonHTMLAttributes<HTMLButtonElement>;
+type DefaultButtonProps = ButtonHTMLAttributes<HTMLButtonElement>
 
-export type ButtonVariant = "primary" | "secondary" | "outlined";
+export type ButtonVariant = 'primary' | 'secondary' | 'outlined'
 
 export interface ButtonProps extends DefaultButtonProps {
   /** "primary" | "secondary" | "outlined"; */
-  variant?: ButtonVariant;
+  variant?: ButtonVariant
 }
 
-export const Button: FC<ButtonProps> = ({
-  variant = "primary",
-  className,
-  ...rest
-}) => {
+export const Button: FC<ButtonProps> = ({ variant = 'primary', className, ...rest }) => {
   const classes = clsx(
-    variant === "primary" && s.primary,
-    variant === "secondary" && s.secondary,
-    variant === "outlined" && s.outlined,
+    variant === 'primary' && s.primary,
+    variant === 'secondary' && s.secondary,
+    variant === 'outlined' && s.outlined,
     className
-  );
+  )
 
-  return <button className={classes} {...rest} />;
-};
+  return <button className={classes} {...rest} />
+}

@@ -1,9 +1,7 @@
-import React from 'react'
-
-import { Button } from '@incubator/core'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
+import { Button } from '../src'
+
 export default {
   title: 'Example/Button',
   component: Button,

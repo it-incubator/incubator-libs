@@ -1,4 +1,4 @@
-import { ComponentProps, DetailedHTMLProps, FC, HTMLAttributes, ReactNode } from 'react'
+import { ComponentPropsWithoutRef, FC, ReactNode } from 'react'
 
 import * as ScrollArea from '@radix-ui/react-scroll-area'
 import * as SelectRadixUI from '@radix-ui/react-select'
@@ -23,8 +23,11 @@ export type SelectProps = {
   open?: boolean
   /** Event handler called when the open state of the select changes */
   variant?: 'primary' | 'secondary'
+
   error?: boolean
+
   errorMessage?: string
+
   disabled?: boolean
   /** When true, indicates that the user must select a value before the owning form can be submitted. */
   required?: boolean
@@ -34,18 +37,18 @@ export type SelectProps = {
   onOpenChange?: Function
   /** Event handler called when the value changes. */
   onValueChange?: Function
-} & Omit<ComponentProps<'button'>, 'ref'>
+} & ComponentPropsWithoutRef<'button'>
 
 // TODO: импортировать svg-icon
 
 export const Select = ({
+  variant = 'primary',
   children,
   placeholder,
   defaultValue,
   value,
   open,
   name,
-  variant = 'primary',
   error,
   errorMessage,
   disabled,
@@ -56,12 +59,17 @@ export const Select = ({
   ...rest
 }: SelectProps) => {
   const openChangeHandler = () => {
-    onOpenChange && onOpenChange()
+    onOpenChange?.()
   }
 
   const valueChangeHandler = () => {
-    onValueChange && onValueChange()
+    onValueChange?.()
   }
+
+  const secondaryClassName = variant === 'secondary' ? s.secondary : ''
+  const errorClassName = error ? s.error : ''
+
+  const triggerClassName = clsx(s.trigger, errorClassName, secondaryClassName, className)
 
   return (
     <SelectRadixUI.Root
@@ -74,35 +82,21 @@ export const Select = ({
       onOpenChange={openChangeHandler}
       onValueChange={valueChangeHandler}
     >
-      <SelectRadixUI.Trigger
-        className={clsx(s['select-trigger'], className, {
-          [s['select-trigger--error']]: error,
-          [s['select-trigger--secondary']]: variant === 'secondary',
-        })}
-        disabled={disabled}
-        {...rest}
-      >
+      <SelectRadixUI.Trigger className={triggerClassName} disabled={disabled} {...rest}>
         <SelectRadixUI.Value placeholder={placeholder} />
-        <SelectRadixUI.Icon className={s['select-icon']}>
-          <ChevronDown
-            className={clsx({ [s['select-icon--secondary']]: variant === 'secondary' })}
-          />
+        <SelectRadixUI.Icon className={clsx(s.icon, secondaryClassName)}>
+          <ChevronDown />
         </SelectRadixUI.Icon>
       </SelectRadixUI.Trigger>
-      {error && <p className={s.error}>{errorMessage}</p>}
+      {error && <p className={s.errorLine}>{errorMessage}</p>}
       <SelectRadixUI.Portal>
-        <SelectRadixUI.Content
-          className={clsx(s['select-content'], {
-            [s['select-content--secondary']]: variant === 'secondary',
-          })}
-          position="popper"
-        >
-          <ScrollArea.Root className={clsx(s['scroll-root'])} type="auto">
+        <SelectRadixUI.Content className={clsx(s.content, secondaryClassName)} position="popper">
+          <ScrollArea.Root className={s.scrollRoot} type="auto">
             <SelectRadixUI.Viewport asChild>
-              <ScrollArea.Viewport className={s['scroll-viewport']}>{children}</ScrollArea.Viewport>
+              <ScrollArea.Viewport className={s.scrollViewport}>{children}</ScrollArea.Viewport>
             </SelectRadixUI.Viewport>
-            <ScrollArea.Scrollbar className={s['scroll-scrollbar']} orientation="vertical">
-              <ScrollArea.Thumb className={s['scroll-thumb']} />
+            <ScrollArea.Scrollbar className={s.scrollScrollbar} orientation="vertical">
+              <ScrollArea.Thumb className={s.scrollThumb} />
             </ScrollArea.Scrollbar>
           </ScrollArea.Root>
         </SelectRadixUI.Content>
@@ -114,13 +108,11 @@ export const Select = ({
 export type SelectItemProps = {
   value: string
   children: ReactNode
-} & Omit<DefaultInputPropsType, 'ref'>
-
-type DefaultInputPropsType = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>
+} & ComponentPropsWithoutRef<'input'>
 
 export const SelectItem: FC<SelectItemProps> = ({ value, children, className, ...rest }) => {
   return (
-    <SelectRadixUI.Item value={value} className={clsx(s['select-item'], className)} {...rest}>
+    <SelectRadixUI.Item value={value} className={clsx(s.item, className)} {...rest}>
       <SelectRadixUI.ItemText>{children}</SelectRadixUI.ItemText>
     </SelectRadixUI.Item>
   )

@@ -5,7 +5,7 @@ import { clsx } from 'clsx'
 
 import s from '../icon.module.scss'
 
-export const Index = (props: ComponentProps<'svg'>) => {
+export const Cross = (props: ComponentProps<'svg'>) => {
   const className = clsx(s.fill, props.className)
 
   return (

@@ -3,7 +3,7 @@ import { ComponentProps } from 'react'
 import * as Dialog from '@radix-ui/react-dialog'
 import { clsx } from 'clsx'
 
-import { Index } from '../../../assets/icons/cross'
+import { Cross } from '../../../assets/icons/cross'
 
 import s from './modal.module.scss'
 
@@ -47,7 +47,7 @@ export const Modal = ({
             <h2 className={s.title}>{title}</h2>
             {showCloseButton && (
               <button className={s.closeButton} onClick={handleModalClosed}>
-                <Index />
+                <Cross />
               </button>
             )}
           </header>

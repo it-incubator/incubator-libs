@@ -12,6 +12,8 @@ import * as ScrollArea from '@radix-ui/react-scroll-area'
 import * as SelectRadixUI from '@radix-ui/react-select'
 import { clsx } from 'clsx'
 
+import { MenuArrowIcons } from '../../icons/MenuArrow'
+
 import s from './styles.module.scss'
 
 export type SelectProps = {
@@ -34,7 +36,6 @@ export type SelectProps = {
   disabled?: boolean
   /** When true, indicates that the user must select a value before the owning form can be submitted. */
   required?: boolean
-  label?: string
   /** className for select trigger button */
   className?: string
   /** Event handler called when the open state of the select changes. */
@@ -57,7 +58,6 @@ export const Select = ({
   errorMessage,
   disabled,
   required,
-  label,
   className,
   onOpenChange,
   onValueChange,
@@ -84,22 +84,20 @@ export const Select = ({
       onOpenChange={openChangeHandler}
       onValueChange={valueChangeHandler}
     >
-      {label && (
-        <Label className={s.label} htmlFor={id}>
-          {label}
-        </Label>
-      )}
       <SelectRadixUI.Trigger
         className={clsx(s['select-trigger'], className, {
           [s['select-trigger--error']]: error,
           [s['select-trigger--secondary']]: variant === 'secondary',
         })}
         disabled={disabled}
-        id={id}
         {...rest}
       >
         <SelectRadixUI.Value placeholder={placeholder} />
-        <SelectRadixUI.Icon className={s['select-icon']}></SelectRadixUI.Icon>
+        <SelectRadixUI.Icon className={s['select-icon']}>
+          <MenuArrowIcons
+            className={clsx({ [s['select-icon--secondary']]: variant === 'secondary' })}
+          />
+        </SelectRadixUI.Icon>
       </SelectRadixUI.Trigger>
       {error && <p className={s.error}>{errorMessage}</p>}
       <SelectRadixUI.Portal>

@@ -110,6 +110,7 @@
   /* typography */
   --color-text-primary: var(--color-neutral-dark-900);
   --color-text-secondary: var(--color-neutral-dark-300);
+  --color-text-invalid: var(--color-accent-500);
 
   /* borders */
   --color-border-primary: var(--color-neutral-dark-100);
@@ -129,13 +130,14 @@
   /* typography */
   --color-text-primary: var(--color-neutral-light-50);
   --color-text-secondary: var(--color-dark-mode-200);
+  --color-text-invalid: var(--color-dark-mode-200);
 
   /* borders */
   --color-border-primary: var(--color-dark-mode-400);
   --color-border-primary-active: var(--color-dark-mode-400);
 
   /* backgrounds */
-  --color-bg-element: var(--color-dark-mode-400);
+  --color-bg-element: var(--color-dark-mode-600);
   --color-bg-element-hover: var(--color-neutral-dark-400);
   --color-bg-scrollbar: var(--color-dark-mode-500);
   --color-bg-overlay: #000000;

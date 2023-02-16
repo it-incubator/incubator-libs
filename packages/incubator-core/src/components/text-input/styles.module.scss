@@ -19,6 +19,8 @@
   border-radius: var(--border-radius-s);
   font-size: var(--font-size-m);
   line-height: var(--line-height-m);
+  background-color: var(--color-bg-element);
+  color: var(--color-text-primary);
 
   &:focus {
     border-color: var(--color-border-primary-active);
@@ -30,7 +32,7 @@
 
   &--error {
     border-color: var(--color-accent-500);
-    color: var(--color-accent-500);
+    color: var(--color-text-invalid);
   }
 }
 

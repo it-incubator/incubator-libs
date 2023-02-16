@@ -3,7 +3,7 @@ import { ComponentProps, ReactNode } from 'react'
 import * as Dialog from '@radix-ui/react-dialog'
 import clsx from 'clsx'
 
-import { CrossIcon } from '../../../icons/CrossIcon/CrossIcon'
+import { CrossIcon } from '../../../icons/CrossIcon'
 
 import s from './styles.module.scss'
 

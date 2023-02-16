@@ -1,11 +1,11 @@
 import * as React from 'react'
 import { ComponentProps } from 'react'
 
-import s from '../Icons.module.scss'
+import s from './Icons.module.scss'
 
 export const CrossIcon = (props: ComponentProps<'svg'>) => (
   <svg
-    className={s.icon}
+    className={s.fill}
     xmlns="http://www.w3.org/2000/svg"
     width={15}
     height={14}

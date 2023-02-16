@@ -119,9 +119,13 @@
   --color-bg-element: var(--color-neutral-light-50);
   --color-bg-element-hover: var(--color-neutral-dark-100);
   --color-bg-scrollbar: var(--color-neutral-dark-50);
+  --color-bg-overlay: var(--color-neutral-dark-300);
+
+  /* icons */
+  --color-fill-icon: var(--color-neutral-light-900);
 }
 
-:root[data-theme='dark'] {
+:root .dark-mode {
   /* typography */
   --color-text-primary: var(--color-neutral-light-50);
   --color-text-secondary: var(--color-dark-mode-200);
@@ -134,4 +138,8 @@
   --color-bg-element: var(--color-dark-mode-400);
   --color-bg-element-hover: var(--color-neutral-dark-400);
   --color-bg-scrollbar: var(--color-dark-mode-500);
+  --color-bg-overlay: #000000;
+
+  /* icons */
+  --color-fill-icon: var(--color-neutral-light-100);
 }

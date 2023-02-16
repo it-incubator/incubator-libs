@@ -1,17 +1,20 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react'
+import { ComponentMeta, ComponentStory } from '@storybook/react'
 
-import { BasicModal } from '../src/components/modal/basic-modal'
+import { BasicModal } from '../src'
+import { useDarkMode } from '../storybook-utils/hooks/use-dark-mode'
 
 export default {
   title: 'Example/Modals/BasicModal',
   component: BasicModal,
 } as ComponentMeta<typeof BasicModal>
 
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof BasicModal> = args => <BasicModal {...args} />
+const Template: ComponentStory<typeof BasicModal> = args => {
+  useDarkMode()
+
+  return <BasicModal {...args} />
+}
 
 export const Primary = Template.bind({})
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
 Primary.args = {
   variant: 'primary',
   children: (

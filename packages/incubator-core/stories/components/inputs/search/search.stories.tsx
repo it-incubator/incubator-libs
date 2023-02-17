@@ -1,9 +1,9 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import { Search } from '../../../src'
+import { Search } from '../../../../src'
 
 export default {
-  title: 'Inputs/Search',
+  title: 'Components/Inputs/Search',
   component: Search,
 } as ComponentMeta<typeof Search>
 

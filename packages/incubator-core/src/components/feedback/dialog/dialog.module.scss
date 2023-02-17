@@ -1,4 +1,8 @@
 .buttonsBox {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
+
+  &.hasCancelButton {
+    justify-content: space-between;
+  }
 }

@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import { FC, ReactNode } from 'react'
 
 import * as TabsRadixUI from '@radix-ui/react-tabs'
 import { clsx } from 'clsx'
@@ -24,14 +24,14 @@ export type TabsProps = {
   children: ReactNode
 }
 
-export const Tabs = ({
+export const Tabs: FC<TabsProps> = ({
   tabs,
   value,
   defaultValue,
   children,
   isTabStretched,
   onValueChange,
-}: TabsProps) => {
+}) => {
   const classNames = {
     root: s.root,
     list: s.list,
@@ -63,7 +63,7 @@ export type TabContentProps = {
   children: ReactNode
 }
 
-export const TabContent = ({ value, children }: TabContentProps) => {
+export const TabContent: FC<TabContentProps> = ({ value, children }) => {
   return (
     <TabsRadixUI.Content className={s.content} value={value}>
       {children}

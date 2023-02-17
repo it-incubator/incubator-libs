@@ -2,12 +2,12 @@
   position: absolute;
   top: 0;
   left: 50vw;
-  height: 100vh;
+  height: max-content;
   bottom: 0;
   overflow: auto;
   padding: 1rem;
   background: #FFFEFE;
-  width: 50vw;
+  width: 50%;
 
   &.dark-mode {
     background: #0E1720;
@@ -16,14 +16,14 @@
   &.left {
     left: 0;
     border-right: 1px solid #202020;
-    right: 50vw;
-    width: 50vw;
+    right: 50%;
+    width: 50%;
   }
 
   &.fill {
     left: 0;
     right: 0;
-    width: 100vw;
+    width: 100%;
   }
 }
 

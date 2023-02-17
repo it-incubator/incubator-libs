@@ -1,5 +1,5 @@
 module.exports = {
-  stories: ['../**/*.stories.mdx', '../**/*.stories.@(js|jsx|ts|tsx)'],
+  stories: ['../**/*.stories.mdx', '../**/*.stories.@(js|jsx|ts|tsx|mdx)'],
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
@@ -11,5 +11,10 @@ module.exports = {
   },
   features: {
     storyStoreV7: true,
+  },
+  options: {
+    storySort: {
+      order: ['Intro', 'Pages', ['Home', 'Login', 'Admin'], 'Components'],
+    },
   },
 }

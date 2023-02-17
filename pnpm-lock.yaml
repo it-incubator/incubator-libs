@@ -48,6 +48,7 @@ importers:
       '@radix-ui/react-scroll-area': ^1.0.2
       '@radix-ui/react-select': ^1.2.0
       '@storybook/addon-actions': ^6.5.16
+      '@storybook/addon-docs': ^6.5.16
       '@storybook/addon-essentials': ^6.5.16
       '@storybook/addon-interactions': ^6.5.16
       '@storybook/addon-links': ^6.5.16
@@ -80,6 +81,7 @@ importers:
     devDependencies:
       '@babel/core': 7.20.12
       '@storybook/addon-actions': 6.5.16_biqbaboplfbrettd7655fr4n2y
+      '@storybook/addon-docs': 6.5.16_ph4osieeu4cb2ekcn64bvaiypa
       '@storybook/addon-essentials': 6.5.16_ph4osieeu4cb2ekcn64bvaiypa
       '@storybook/addon-interactions': 6.5.16_qevfixmk4f2dqzrxfwckmwv67u
       '@storybook/addon-links': 6.5.16_biqbaboplfbrettd7655fr4n2y

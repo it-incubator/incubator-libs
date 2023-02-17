@@ -1,13 +1,13 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import { Search } from '../../../src'
+import { Tabs } from '../../../src'
 
 export default {
   title: 'Inputs/Search',
-  component: Search,
-} as ComponentMeta<typeof Search>
+  component: Tabs,
+} as ComponentMeta<typeof Tabs>
 
-const Template: ComponentStory<typeof Search> = args => <Search {...args} />
+const Template: ComponentStory<typeof Tabs> = args => <Tabs {...args} />
 
 export const Primary = Template.bind({})
 Primary.args = {

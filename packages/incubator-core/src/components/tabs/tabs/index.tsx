@@ -12,12 +12,15 @@ export type TabType = {
 }
 
 export type TabsProps = {
+  /** An array of objects with the value and title of the tab.
+   *  {value: string, title: string}
+   * */
   tabs: TabType[]
   /** The value of the tab that should be active when initially rendered. Use when you do not need to control the state of the tabs. */
   defaultValue?: string
   /** The controlled value of the tab to activate. Should be used in conjunction with onValueChange */
   value?: string
-  isTabStretched?: boolean
+  fullWidth?: boolean
   /** Event handler called when the value changes.  */
   onValueChange?: (value: string) => void
   /** Use TabsContent components as children. */
@@ -29,13 +32,13 @@ export const Tabs: FC<TabsProps> = ({
   value,
   defaultValue,
   children,
-  isTabStretched,
+  fullWidth,
   onValueChange,
 }) => {
   const classNames = {
     root: s.root,
     list: s.list,
-    trigger: clsx(s.trigger, { [s.stretched]: isTabStretched }),
+    trigger: clsx(s.trigger, fullWidth && s.fullWidth),
   }
 
   return (

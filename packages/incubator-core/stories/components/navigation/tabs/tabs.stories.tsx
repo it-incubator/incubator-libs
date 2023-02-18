@@ -26,7 +26,7 @@ const Template: ComponentStory<typeof Tabs> = args => <Tabs {...args} />
 
 export const Default = Template.bind({})
 
-export const WithStretchedTabs = Template.bind({})
-WithStretchedTabs.args = {
-  isTabStretched: true,
+export const FullWidth = Template.bind({})
+FullWidth.args = {
+  fullWidth: true,
 }

@@ -15,7 +15,6 @@ export const Default = () => {
   const [pageNumber, setPageNumber] = useState(1)
   const [itemPerPage, setItemPerPage] = useState(8)
   const TOTAL_PAGE_COUNT = 10
-  const MAX_ITEMS_PER_PAGE = 12
 
   return (
     <Pagination
@@ -23,7 +22,7 @@ export const Default = () => {
       totalPagesCount={TOTAL_PAGE_COUNT}
       currentPage={pageNumber}
       itemsPerPage={itemPerPage}
-      maxItemsPerPage={MAX_ITEMS_PER_PAGE}
+      itemsPerPageOptions={[5, 8, 12]}
       onItemPerPageChange={setItemPerPage}
     />
   )

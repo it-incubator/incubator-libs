@@ -14,7 +14,7 @@ type PaginationProps = {
   currentPage: number
   onPageChange: Function
   itemsPerPage?: number
-  maxItemsPerPage?: number
+  itemsPerPageOptions?: number[]
   onItemPerPageChange?: (itemPerPage: number) => void
 }
 
@@ -23,7 +23,7 @@ export const Pagination: FC<PaginationProps> = ({
   totalPagesCount,
   currentPage,
   itemsPerPage,
-  maxItemsPerPage,
+  itemsPerPageOptions,
   onItemPerPageChange,
 }) => {
   const paginationRange = usePagination({
@@ -89,7 +89,7 @@ export const Pagination: FC<PaginationProps> = ({
       {itemsPerPage && (
         <PaginationItemsPerPageSelect
           itemPerPage={itemsPerPage}
-          maxItemsPerPage={maxItemsPerPage!}
+          itemsPerPageOptions={itemsPerPageOptions!}
           onItemPerPageChange={onItemPerPageChange!}
         />
       )}
@@ -99,13 +99,13 @@ export const Pagination: FC<PaginationProps> = ({
 
 export type PaginationItemsPerPageSelectProps = {
   itemPerPage: number
-  maxItemsPerPage: number
+  itemsPerPageOptions: number[]
   onItemPerPageChange: (itemPerPage: number) => void
 }
 
 export const PaginationItemsPerPageSelect: FC<PaginationItemsPerPageSelectProps> = ({
   itemPerPage,
-  maxItemsPerPage,
+  itemsPerPageOptions,
   onItemPerPageChange,
 }) => {
   const classNames = {
@@ -116,7 +116,7 @@ export const PaginationItemsPerPageSelect: FC<PaginationItemsPerPageSelectProps>
     onItemPerPageChange(Number(itemPerPage))
   }
 
-  const values = Array.from({ length: maxItemsPerPage }, (value, index) => String(index + 1))
+  const values = itemsPerPageOptions.map(value => String(value))
 
   return (
     <div className={classNames.selectBox}>

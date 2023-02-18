@@ -13,6 +13,7 @@ export const ChevronDown = (props: ComponentProps<'svg'>) => (
     height={8}
     fill="none"
     {...props}
+    viewBox="0 0 12 7"
   >
     <path stroke="currentColor" strokeWidth={1.5} d="m1 1 5 5 5-5" />
   </svg>

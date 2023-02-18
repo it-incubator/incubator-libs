@@ -122,9 +122,13 @@
   --color-bg-element-hover: var(--color-neutral-dark-100);
   --color-bg-scrollbar: var(--color-neutral-dark-50);
   --color-bg-overlay: var(--color-neutral-dark-300);
+  --color-bg-interactive: var(--color-neutral-dark-100);
 
   /* icons */
   --color-fill-icon: var(--color-neutral-light-900);
+
+  /* interactive */
+  --color-action-disabled: var(--color-neutral-dark-200);
 }
 
 :root .dark-mode {
@@ -143,7 +147,11 @@
   --color-bg-element-hover: var(--color-neutral-dark-400);
   --color-bg-scrollbar: var(--color-dark-mode-500);
   --color-bg-overlay: #000000;
+  --color-bg-interactive: var(--color-neutral-light-100);
 
   /* icons */
   --color-fill-icon: var(--color-neutral-light-100);
+
+  /* interactive */
+  --color-action-disabled: var(--color-neutral-dark-400);
 }

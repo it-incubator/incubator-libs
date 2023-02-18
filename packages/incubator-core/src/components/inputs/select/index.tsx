@@ -1,4 +1,4 @@
-import { FC, Fragment } from 'react'
+import { FC, Fragment, useMemo } from 'react'
 
 import { Listbox } from '@headlessui/react'
 import { Float } from '@headlessui-float/react'
@@ -9,7 +9,12 @@ import { ChevronDown } from '../../../assets/icons/chevron-down'
 
 import s from './select.module.scss'
 
-type Option = { label: string; value: string | number }
+type Option =
+  | { label: string; value: string }
+  | { label: string; value: number }
+  | { label: number; value: string }
+  | { label: number; value: number }
+
 interface CommonProps {
   /** applied to the trigger */
   className?: string
@@ -18,34 +23,47 @@ interface CommonProps {
   name?: string
   placeholder?: string
   required?: boolean
-  variant?: 'primary' | 'secondary'
-  /** The options to display in the listbox.
+  variant?: 'primary' | 'secondary' | 'pagination'
+  /** The options to display.
    * {label: string, value: string | number} */
   options: Array<Option>
 }
 
 type ConditionalMultipleProps =
   | {
-      multiple: false
-      value: Option
+      multiple?: false
+      value: string
       /** Event handler called when the value changes.
        * The parameter is an Option object or an array of Options depending on the multiple prop.
        */
-      onChange: (value: Option) => void
+      onChange: (value: string) => void
     }
   | {
-      multiple: true
-      value: Array<Option>
-      onChange: (value: Array<Option>) => void
+      multiple?: false
+      value: number
+      onChange: (value: number) => void
+    }
+  | {
+      multiple?: true
+      value: Array<string>
+      onChange: (value: Array<string>) => void
+    }
+  | {
+      multiple?: true
+      value: Array<number>
+      /** Event handler called when the value changes.
+       * The parameter is an Option object or an array of Options depending on the multiple prop.
+       */
+      onChange: (value: Array<number>) => void
     }
 
 type ConditionalErrorProps =
   | {
-      error: true
+      error?: true
       errorMessage: string
     }
   | {
-      error: false
+      error?: false
       errorMessage?: never
     }
 
@@ -61,15 +79,23 @@ export const Select: FC<SelectProps> = ({
   className,
   onChange,
   options,
-  multiple,
+  multiple = false,
 }) => {
   const isSecondary = variant === 'secondary'
 
+  const optionsMap: Record<string | number, string | number> = useMemo(() => {
+    return options.reduce((acc, option) => {
+      acc[option.value] = option.label
+
+      return acc
+    }, {} as Record<string | number, string | number>)
+  }, [options])
+
   const classNames = {
     root: clsx(s.root),
-    trigger: clsx(s.trigger, error && s.error, isSecondary && s.secondary, className),
+    trigger: clsx(s.trigger, error && s.error, s[variant], className),
     value: clsx(s.value),
-    icon: clsx(s.icon, isSecondary && s.secondary),
+    icon: clsx(s.icon, s[variant]),
     item: clsx(s.item),
     popper: clsx(s.popper),
     content: clsx(s.content, isSecondary && s.secondary),
@@ -79,12 +105,19 @@ export const Select: FC<SelectProps> = ({
     scrollbar: s.scrollbar,
     scrollThumb: s.scrollThumb,
   }
-  const label = Array.isArray(value) ? value.map(({ label }) => label).join(', ') : value.label
+  const label = Array.isArray(value) ? value.map(v => optionsMap[v]).join(', ') : optionsMap[value]
+  const adaptiveWidth = variant !== 'pagination'
 
   return (
     <Listbox {...{ disabled, value, multiple, onChange }}>
       <div className={classNames.root}>
-        <Float portal as="div" adaptiveWidth placement="bottom" floatingAs={Fragment}>
+        <Float
+          portal
+          as="div"
+          adaptiveWidth={adaptiveWidth}
+          placement="bottom"
+          floatingAs={Fragment}
+        >
           <Listbox.Button className={classNames.trigger}>
             <span className={classNames.value}>{label || placeholder}</span>
             <span className={classNames.icon}>
@@ -101,7 +134,7 @@ export const Select: FC<SelectProps> = ({
                     <Listbox.Option
                       key={option.value}
                       className={classNames.item}
-                      value={option}
+                      value={option.value}
                       as={'div'}
                     >
                       <span>{option.label}</span>
@@ -109,9 +142,11 @@ export const Select: FC<SelectProps> = ({
                   )
                 })}
               </ScrollArea.Viewport>
-              <ScrollArea.Scrollbar className={classNames.scrollbar} orientation="vertical">
-                <ScrollArea.Thumb className={classNames.scrollThumb} />
-              </ScrollArea.Scrollbar>
+              {variant !== 'pagination' && (
+                <ScrollArea.Scrollbar className={classNames.scrollbar} orientation="vertical">
+                  <ScrollArea.Thumb className={classNames.scrollThumb} />
+                </ScrollArea.Scrollbar>
+              )}
             </ScrollArea.Root>
           </Listbox.Options>
         </Float>

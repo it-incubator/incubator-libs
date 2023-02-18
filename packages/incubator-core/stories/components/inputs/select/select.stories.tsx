@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { ComponentMeta } from '@storybook/react'
 
 import { Select } from '../../../../src'
+import { VerticalContainer } from '../../../../storybook-utils/components/containers/vertical'
 
 const options = [
   {
@@ -41,14 +42,24 @@ export default {
 } as ComponentMeta<typeof Select>
 
 const SimpleTemplate = args => {
-  const [value, setValue] = useState({ label: null, value: null })
+  const [value, setValue] = useState(null)
 
-  return <Select {...args} value={value} onChange={setValue} />
+  return (
+    <VerticalContainer>
+      <Select {...args} value={value} onChange={setValue} />
+      <div>Selected value: {value}</div>
+    </VerticalContainer>
+  )
 }
 const MultipleTemplate = args => {
-  const [value, setValue] = useState([])
+  const [values, setValues] = useState([])
 
-  return <Select {...args} value={value} onChange={setValue} />
+  return (
+    <VerticalContainer>
+      <Select {...args} value={values} onChange={setValues} multiple />
+      <div>Selected values: {values.join(', ')}</div>
+    </VerticalContainer>
+  )
 }
 
 export const Simple = SimpleTemplate.bind({})

@@ -2,9 +2,9 @@ import { FC } from 'react'
 
 import { clsx } from 'clsx'
 
-import { ChevronRight } from '../../assets/icons/chebron-right'
-import { ChevronLeft } from '../../assets/icons/chevron-left'
-import { Select } from '../inputs/select'
+import { ChevronRight } from '../../../assets/icons/chebron-right'
+import { ChevronLeft } from '../../../assets/icons/chevron-left'
+import { Select } from '../../inputs/select'
 
 import s from './pagination.module.scss'
 import { usePagination } from './usePagination'

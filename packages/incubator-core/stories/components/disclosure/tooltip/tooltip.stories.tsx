@@ -1,9 +1,9 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import { Tooltip, TooltipItem } from '../../../src'
-import { Delete } from '../../../src/assets/icons/delete'
-import { Edit } from '../../../src/assets/icons/edit'
-import { useDarkMode } from '../../../storybook-utils/hooks/use-dark-mode'
+import { Tooltip, TooltipItem } from '../../../../src'
+import { Delete } from '../../../../src/assets/icons/delete'
+import { Edit } from '../../../../src/assets/icons/edit'
+import { useDarkMode } from '../../../../storybook-utils/hooks/use-dark-mode'
 
 export default {
   title: 'disclosure/Tooltip',

@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import { TabContent, Tabs } from '../../../src'
+import { TabContent, Tabs } from '../../../../src'
 
 export default {
   title: 'disclosure/Tabs',

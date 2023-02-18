@@ -25,11 +25,11 @@ export type SelectProps = {
   onValueChange?: (value: string) => void
   /** The controlled open state of the select. Must be used in conjunction with onOpenChange */
   open?: boolean
-  placeholder: string
+  placeholder?: string
   required?: boolean
   /** The controlled value of the select. Should be used in conjunction with onValueChange.*/
   value?: string
-  variant?: 'primary' | 'secondary'
+  variant?: 'primary' | 'secondary' | 'pagination'
 } & ComponentPropsWithoutRef<'button'>
 
 export const Select: FC<SelectProps> = ({
@@ -60,8 +60,8 @@ export const Select: FC<SelectProps> = ({
   const isSecondary = variant === 'secondary'
 
   const classNames = {
-    trigger: clsx(s.trigger, error && s.error, isSecondary && s.secondary, className),
-    icon: clsx(s.icon, isSecondary && s.secondary),
+    trigger: clsx(s.trigger, error && s.error, s[variant], className),
+    icon: clsx(s.icon, s[variant]),
     content: clsx(s.content, isSecondary && s.secondary),
     error: s.errorLine,
     scrollRoot: s.scrollRoot,
@@ -98,9 +98,11 @@ export const Select: FC<SelectProps> = ({
                 {children}
               </ScrollArea.Viewport>
             </SelectRadixUI.Viewport>
-            <ScrollArea.Scrollbar className={classNames.scrollbar} orientation="vertical">
-              <ScrollArea.Thumb className={classNames.scrollThumb} />
-            </ScrollArea.Scrollbar>
+            {variant !== 'pagination' && (
+              <ScrollArea.Scrollbar className={classNames.scrollbar} orientation="vertical">
+                <ScrollArea.Thumb className={classNames.scrollThumb} />
+              </ScrollArea.Scrollbar>
+            )}
           </ScrollArea.Root>
         </SelectRadixUI.Content>
       </SelectRadixUI.Portal>

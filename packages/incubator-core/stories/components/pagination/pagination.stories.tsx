@@ -1,6 +1,6 @@
-import { ChangeEvent, useState } from 'react'
+import { useState } from 'react'
 
-import { ComponentStory, ComponentMeta } from '@storybook/react'
+import { ComponentMeta, ComponentStory } from '@storybook/react'
 
 import { Pagination } from '../../../src'
 
@@ -13,13 +13,18 @@ const Template: ComponentStory<typeof Pagination> = args => <Pagination {...args
 
 export const Default = () => {
   const [pageNumber, setPageNumber] = useState(1)
+  const [itemPerPage, setItemPerPage] = useState(8)
   const TOTAL_PAGE_COUNT = 10
+  const MAX_ITEMS_PER_PAGE = 12
 
   return (
     <Pagination
       onPageChange={setPageNumber}
-      totalPageCount={TOTAL_PAGE_COUNT}
+      totalPagesCount={TOTAL_PAGE_COUNT}
       currentPage={pageNumber}
+      itemsPerPage={itemPerPage}
+      maxItemsPerPage={MAX_ITEMS_PER_PAGE}
+      onItemPerPageChange={setItemPerPage}
     />
   )
 }
@@ -31,7 +36,7 @@ export const DefaultWithTwoPages = () => {
   return (
     <Pagination
       onPageChange={setPageNumber}
-      totalPageCount={TOTAL_PAGE_COUNT}
+      totalPagesCount={TOTAL_PAGE_COUNT}
       currentPage={pageNumber}
     />
   )

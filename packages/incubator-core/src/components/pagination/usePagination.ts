@@ -15,7 +15,7 @@ const range = (start: number, end: number) => {
 const DOTS = '...'
 
 type UsePaginationParamType = {
-  totalPageCount: number
+  totalPagesCount: number
   siblingCount?: number
   currentPage: number
 }
@@ -23,7 +23,7 @@ type UsePaginationParamType = {
 type PaginationRange = (number | '...')[]
 
 export const usePagination = ({
-  totalPageCount,
+  totalPagesCount,
   siblingCount = 1,
   currentPage,
 }: UsePaginationParamType) => {
@@ -36,24 +36,24 @@ export const usePagination = ({
       If the number of pages is less than the page numbers we want to show in our
       paginationComponent, we return the range [1..totalPageCount]
     */
-    if (totalPageNumbers >= totalPageCount) {
-      return range(1, totalPageCount)
+    if (totalPageNumbers >= totalPagesCount) {
+      return range(1, totalPagesCount)
     }
 
     /*
     	Calculate left and right sibling index and make sure they are within range 1 and totalPageCount
     */
     const leftSiblingIndex = Math.max(currentPage - siblingCount, 1)
-    const rightSiblingIndex = Math.min(currentPage + siblingCount, totalPageCount)
+    const rightSiblingIndex = Math.min(currentPage + siblingCount, totalPagesCount)
 
     /*
       We do not show dots just when there is just one page number to be inserted between the extremes of sibling and the page limits i.e 1 and totalPageCount. Hence we are using leftSiblingIndex > 2 and rightSiblingIndex < totalPageCount - 2
     */
     const shouldShowLeftDots = leftSiblingIndex > 2
-    const shouldShowRightDots = rightSiblingIndex < totalPageCount - 2
+    const shouldShowRightDots = rightSiblingIndex < totalPagesCount - 2
 
     const firstPageIndex = 1
-    const lastPageIndex = totalPageCount
+    const lastPageIndex = totalPagesCount
 
     /*
     	Case 2: No left dots to show, but rights dots to be shown
@@ -62,7 +62,7 @@ export const usePagination = ({
       let leftItemCount = 3 + 2 * siblingCount
       let leftRange = range(1, leftItemCount)
 
-      return [...leftRange, DOTS, totalPageCount]
+      return [...leftRange, DOTS, totalPagesCount]
     }
 
     /*
@@ -70,7 +70,7 @@ export const usePagination = ({
     */
     if (shouldShowLeftDots && !shouldShowRightDots) {
       let rightItemCount = 3 + 2 * siblingCount
-      let rightRange = range(totalPageCount - rightItemCount + 1, totalPageCount)
+      let rightRange = range(totalPagesCount - rightItemCount + 1, totalPagesCount)
 
       return [firstPageIndex, DOTS, ...rightRange]
     }

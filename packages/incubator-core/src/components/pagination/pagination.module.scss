@@ -1,3 +1,9 @@
+.box {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
 .container {
   display: flex;
   gap: 12px;
@@ -42,4 +48,16 @@
 
 .dots {
 
+}
+
+.selectBox {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--color-text-primary);
+}
+
+.select {
+  flex-shrink: 0;
+  width: 39px;
 }

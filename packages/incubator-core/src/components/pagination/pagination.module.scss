@@ -1,4 +1,4 @@
-.box {
+.root {
   display: flex;
   align-items: center;
   gap: 25px;
@@ -10,7 +10,7 @@
   list-style-type: none;
 }
 
-.item {
+@mixin item {
   all: unset;
 
   width: 24px;
@@ -20,6 +20,12 @@
   justify-content: center;
   border-radius: var(--border-radius-s);
   color: var(--color-text-primary);
+}
+
+.item {
+  @include item;
+
+  cursor: pointer;
 
   &:hover,
   &:focus {
@@ -31,23 +37,22 @@
     color: var(--color-neutral-dark-900);
   }
 
-  cursor: pointer;
-
   &:disabled {
     cursor: initial;
     opacity: 1;
   }
 }
 
+.dots {
+  @include item;
+}
+
 .icon {
   color: var(--color-text-primary);
-}
-.item:disabled .icon {
-  color: var(--color-action-disabled);
-}
 
-.dots {
-
+  .item:disabled & {
+    color: var(--color-action-disabled);
+  }
 }
 
 .selectBox {
@@ -59,5 +64,5 @@
 
 .select {
   flex-shrink: 0;
-  width: 39px;
+  width: unset;
 }

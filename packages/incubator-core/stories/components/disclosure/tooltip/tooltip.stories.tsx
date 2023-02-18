@@ -6,7 +6,7 @@ import { Edit } from '../../../../src/assets/icons/edit'
 import { useDarkMode } from '../../../../storybook-utils/hooks/use-dark-mode'
 
 export default {
-  title: 'disclosure/Tooltip',
+  title: 'Components/Disclosure/Tooltip',
   component: Tooltip,
   args: {
     children: (

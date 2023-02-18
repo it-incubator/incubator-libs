@@ -1,4 +1,4 @@
-import { ComponentProps } from 'react'
+import { ComponentProps, FC } from 'react'
 
 import * as Dialog from '@radix-ui/react-dialog'
 import { clsx } from 'clsx'
@@ -23,7 +23,7 @@ export type ModalProps = {
   size?: ModalSize
 } & ComponentProps<'div'>
 
-export const Modal = ({
+export const Modal: FC<ModalProps> = ({
   open = false,
   size = 'md',
   title,
@@ -31,7 +31,7 @@ export const Modal = ({
   onClose,
   children,
   showCloseButton = true,
-}: ModalProps) => {
+}) => {
   function handleModalClosed() {
     onClose()
   }

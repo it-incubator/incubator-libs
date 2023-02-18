@@ -1,10 +1,10 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import { Dialog } from '../../../src'
-import { useDarkMode } from '../../../storybook-utils/hooks/use-dark-mode'
+import { Dialog } from '../../../../src'
+import { useDarkMode } from '../../../../storybook-utils/hooks/use-dark-mode'
 
 export default {
-  title: 'Feedback/Dialog',
+  title: 'Components/Feedback/Dialog',
   component: Dialog,
 } as ComponentMeta<typeof Dialog>
 

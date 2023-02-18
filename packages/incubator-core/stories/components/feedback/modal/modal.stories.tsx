@@ -1,10 +1,10 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
-import { Modal } from '../../../src'
-import { useDarkMode } from '../../../storybook-utils/hooks/use-dark-mode'
+import { Modal } from '../../../../src'
+import { useDarkMode } from '../../../../storybook-utils/hooks/use-dark-mode'
 
 export default {
-  title: 'Feedback/Modal',
+  title: 'Components/Feedback/Modal',
   component: Modal,
 } as ComponentMeta<typeof Modal>
 

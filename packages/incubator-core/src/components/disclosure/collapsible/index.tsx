@@ -3,8 +3,6 @@ import { ComponentProps, FC, ReactNode } from 'react'
 import * as CollapsibleRadix from '@radix-ui/react-collapsible'
 import { clsx } from 'clsx'
 
-import s from './collapsible.module.scss'
-
 export type CollapsibleProps = {
   defaultOpen: boolean
   open: boolean
@@ -22,21 +20,22 @@ export const Collapsible: FC<CollapsibleProps> = ({
   className,
   ...rest
 }) => {
-  const rootClassName = clsx(s.root, className)
+  // const rootClassName = clsx(s.root, className)
 
-  return (
-    <CollapsibleRadix.Root
-      {...{
-        rest,
-        className: rootClassName,
-      }}
-    >
-      <div className={s.headerBox}>
-        <p>{title}</p>
-        <CollapsibleRadix.Trigger className={s.trigger}>{title}</CollapsibleRadix.Trigger>
-      </div>
-
-      <CollapsibleRadix.Content className={s.content}>{children}</CollapsibleRadix.Content>
-    </CollapsibleRadix.Root>
-  )
+  return null
+  // return (
+  //   <CollapsibleRadix.Root
+  //     {...{
+  //       rest,
+  //       className: rootClassName,
+  //     }}
+  //   >
+  //     <div className={s.headerBox}>
+  //       <p>{title}</p>
+  //       <CollapsibleRadix.Trigger className={s.trigger}>{title}</CollapsibleRadix.Trigger>
+  //     </div>
+  //
+  //     <CollapsibleRadix.Content className={s.content}>{children}</CollapsibleRadix.Content>
+  //   </CollapsibleRadix.Root>
+  // )
 }

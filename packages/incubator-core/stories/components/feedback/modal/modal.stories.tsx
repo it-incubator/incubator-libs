@@ -1,6 +1,9 @@
+import { useState } from 'react'
+
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
-import { Modal } from '../../../../src'
+import { Button, Modal } from '../../../../src'
+import { VerticalContainer } from '../../../../storybook-utils/components/containers/vertical'
 import { useDarkMode } from '../../../../storybook-utils/hooks/use-dark-mode'
 
 export default {
@@ -9,12 +12,45 @@ export default {
 } as ComponentMeta<typeof Modal>
 
 const TemplateDark: ComponentStory<typeof Modal> = args => {
-  useDarkMode()
+  const [open, setOpen] = useState(false)
 
-  return <Modal {...args} />
+  useDarkMode()
+  function handleModalClosed() {
+    setOpen(false)
+  }
+  function handleModalOpened() {
+    setOpen(true)
+  }
+
+  return (
+    <VerticalContainer>
+      <span>
+        <Button onClick={handleModalOpened}>Open dialog</Button>
+      </span>
+
+      <Modal {...args} open={open} onClose={handleModalClosed} />
+    </VerticalContainer>
+  )
 }
 const TemplateLight: ComponentStory<typeof Modal> = args => {
-  return <Modal {...args} />
+  const [open, setOpen] = useState(false)
+
+  function handleModalClosed() {
+    setOpen(false)
+  }
+  function handleModalOpened() {
+    setOpen(true)
+  }
+
+  return (
+    <VerticalContainer>
+      <span>
+        <Button onClick={handleModalOpened}>Open dialog</Button>
+      </span>
+
+      <Modal {...args} open={open} onClose={handleModalClosed} />
+    </VerticalContainer>
+  )
 }
 
 const commonArgs = {

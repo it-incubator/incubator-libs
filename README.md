@@ -7,24 +7,24 @@
 ### With design:
 
 - [x] Button
-- [ ] Tabs
-- [ ] Toggle
+- [x] Tabs
 - [x] Input
 - [x] Text Area
 - [x] Select
 - [x] Search Input
+- [ ] Toggle
 - [ ] Checkbox
 - [ ] Link
 
 
 ### Without design:
 
+- [x] Toolbar
+- [x] Modal
+- [x] Dialog
+- [x] Pagination
 - [ ] Card
-- [ ] Toolbox
 - [ ] Tooltip
-- [ ] Pagination
-- [ ] Modal
-- [ ] Dialog
 - [ ] Breadcrumb
 - [ ] With Label
 - [ ] Table

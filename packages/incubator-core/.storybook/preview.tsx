@@ -10,15 +10,15 @@ export const parameters = {
       date: /Date$/,
     },
   },
-  viewMode: 'docs',
-  previewTabs: { 'storybook/docs/panel': { index: -1 } },
 }
 
 const withTheme: DecoratorFn = (StoryFn, context) => {
   // Get the active theme value from the story parameter
   const theme = context.parameters.theme || context.globals.theme
   const className = theme === 'dark' ? 'dark-mode' : 'light-mode'
-  if (theme === 'side-by-side') {
+  console.log(context)
+  const isDocs = context.viewMode === 'docs'
+  if (theme === 'side-by-side' && !isDocs) {
     return (
       <>
         <div className={clsx('themeBlock', 'dark-mode', 'left')}>
@@ -31,7 +31,7 @@ const withTheme: DecoratorFn = (StoryFn, context) => {
     )
   }
   return (
-    <div className={clsx('themeBlock', className, 'fill')}>
+    <div className={clsx('themeBlock', className, 'fill', isDocs && 'docs')}>
       <StoryFn />
     </div>
   )

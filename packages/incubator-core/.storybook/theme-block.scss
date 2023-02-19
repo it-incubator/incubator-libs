@@ -1,31 +1,35 @@
 .themeBlock {
   position: absolute;
   top: 0;
-  left: 50vw;
-  height: max-content;
   bottom: 0;
+  left: 50vw;
+
   overflow: auto;
-  padding: 1rem;
-  background: #FFFEFE;
+
   width: 50%;
+  height: 100vh;
+  padding: 1rem;
+
+  background: #fffefe;
 
   &.dark-mode {
-    background: #0E1720;
+    background: #0e1720;
   }
 
   &.left {
-    left: 0;
-    border-right: 1px solid #202020;
     right: 50%;
+    left: 0;
     width: 50%;
+    border-right: 1px solid #202020;
   }
 
   &.fill {
-    left: 0;
     right: 0;
+    left: 0;
     width: 100%;
   }
+
+  &.docs {
+    all: unset;
+  }
 }
-
-
-

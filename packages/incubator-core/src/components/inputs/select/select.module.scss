@@ -1,35 +1,26 @@
 .trigger {
+  cursor: pointer;
+
   display: flex;
-  width: 100%;
   gap: 11px;
   align-items: center;
   justify-content: space-between;
 
+  width: 100%;
   height: 36px;
   padding: 9px 8px 8px 12px;
 
   font-size: var(--font-size-m);
   line-height: var(--line-height-m);
   color: var(--color-text-primary);
+
   background-color: var(--color-bg-element);
-
-  border-radius: var(--border-radius-s);
   border: 1px solid var(--color-border-primary);
-
-  cursor: pointer;
+  border-radius: var(--border-radius-s);
   outline: none;
 
-  &[data-headlessui-state="open"] {
+  &[data-headlessui-state='open'] {
     border-radius: var(--border-radius-s) var(--border-radius-s) 0 0;
-
-    & .icon {
-      transform: rotate(180deg);
-    }
-  }
-
-
-  &:hover:not(&:disabled), &:focus, &[data-headlessui-state="open"] {
-    border-color: var(--color-border-primary-active);
   }
 
   &:disabled {
@@ -37,35 +28,49 @@
     opacity: 0.7;
   }
 
+  &:focus,
+  &:hover:not(&:disabled),
+  &[data-headlessui-state='open'] {
+    border-color: var(--color-border-primary-active);
+  }
+
   &.error {
     border-color: var(--color-accent-500);
   }
 
   &.secondary {
-    background-color: transparent;
     width: fit-content;
+    background-color: transparent;
     border: none;
-  }
 
-  &.secondary {
     span:first-child {
       padding-bottom: 1px;
+
       color: var(--color-info-400);
-      background-image: linear-gradient(to right, var(--color-info-400) 40%, var(--color-bg-element) 0%);
+
+      background-image: linear-gradient(
+        to right,
+        var(--color-info-400) 40%,
+        var(--color-bg-element) 0%
+      );
+      background-repeat: repeat-x;
       background-position: left 12px bottom;
       background-size: 4px 1px;
-      background-repeat: repeat-x;
     }
   }
 
   &.secondary:focus span:first-child {
     color: var(--color-info-600);
-    background-image: linear-gradient(to right, var(--color-info-600) 40%, var(--color-bg-element) 0%);
+    background-image: linear-gradient(
+      to right,
+      var(--color-info-600) 40%,
+      var(--color-bg-element) 0%
+    );
   }
 
   &.pagination {
-    padding: 4px 6px;
     gap: 3px;
+    padding: 4px 6px;
   }
 }
 
@@ -84,22 +89,41 @@
   &.pagination path {
     stroke: var(--color-text-primary);
   }
+
+  [data-headlessui-state='open'] & {
+    transform: rotate(180deg);
+  }
+}
+
+.item {
+  cursor: pointer;
+  padding: 6px 12px;
+  outline: none;
+  transition: 200ms background-color, 200ms color;
+
+  // todo: different colors for selected and active?
+  &[data-headlessui-state='active'],
+  &[data-headlessui-state='selected'],
+  &[data-headlessui-state='active selected'] {
+    background-color: var(--color-bg-element-hover);
+  }
 }
 
 .content {
   overflow: hidden;
+
   background-color: var(--color-bg-element);
-  border-radius: 0 0 var(--border-radius-s) var(--border-radius-s);
   border: 1px solid var(--color-border-primary-active);
   border-top: none;
+  border-radius: 0 0 var(--border-radius-s) var(--border-radius-s);
 
   &.secondary {
     border: 1px solid var(--color-border-primary);
 
     & .item {
-      &[data-headlessui-state="active"],
-      &[data-headlessui-state="selected"],
-      &[data-headlessui-state="active selected"], {
+      &[data-headlessui-state='active'],
+      &[data-headlessui-state='selected'],
+      &[data-headlessui-state='active selected'] {
         color: var(--color-neutral-light-50);
         background-color: var(--color-info-400);
       }
@@ -110,23 +134,6 @@
 .viewport {
   padding: 12px 0;
 }
-
-.item {
-  padding: 6px 12px;
-  outline: none;
-
-  cursor: pointer;
-
-  transition: 200ms background-color, 200ms color;
-
-  // todo: different colors for selected and active?
-  &[data-headlessui-state="active"],
-  &[data-headlessui-state="selected"],
-  &[data-headlessui-state="active selected"], {
-    background-color: var(--color-bg-element-hover);
-  }
-}
-
 
 .scrollRoot {
   width: 100%;
@@ -139,12 +146,14 @@
 }
 
 .scrollbar {
-  margin-top: 13px;
-  margin-bottom: 13px;
-  width: 8px;
-  padding: 12px 1px;
-  margin-right: 4px;
   user-select: none;
+
+  width: 8px;
+  margin-top: 13px;
+  margin-right: 4px;
+  margin-bottom: 13px;
+  padding: 12px 1px;
+
   background-color: var(--color-bg-scrollbar);
   border-radius: var(--border-radius-l);
 }
@@ -156,8 +165,8 @@
 }
 
 .errorText {
-  color: var(--color-accent-500);
   margin: 4px 0 0;
   font-size: var(--font-size-sx);
   line-height: var(--line-height-sx);
+  color: var(--color-accent-500);
 }

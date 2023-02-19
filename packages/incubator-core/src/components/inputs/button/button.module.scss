@@ -1,22 +1,24 @@
 @mixin button {
   cursor: pointer;
+
   display: flex;
   align-items: center;
+
   padding: 0.5rem 1.75rem;
+
   font-family: var(--font-family);
   font-size: 1rem;
   font-weight: 600;
   line-height: 1.25rem;
   text-align: center;
   text-decoration: none;
+
   border: none;
   border-radius: 2rem;
 }
 
 .primary {
   @include button;
-
-
 
   color: var(--color-neutral-light-50);
   background-color: var(--color-accent-500);

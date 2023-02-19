@@ -18,8 +18,8 @@
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
-    "@headlessui/react": "1.7.11",
     "@headlessui-float/react": "^0.10.1",
+    "@headlessui/react": "1.7.11",
     "@storybook/addon-actions": "^6.5.16",
     "@storybook/addon-docs": "^6.5.16",
     "@storybook/addon-essentials": "^6.5.16",
@@ -37,10 +37,10 @@
     "esbuild-sass-plugin": "^2.4.5",
     "eslint-config-incubator": "workspace:*",
     "prettier-config-incubator": "workspace:*",
-    "stylelint-config-incubator": "workspace:*",
     "react": ">=18.0.2",
     "react-dom": ">=18.0.2",
     "sass": "^1.58.0",
+    "stylelint-config-incubator": "workspace:*",
     "typescript": "^4.9.5",
     "vite": "4.0.4"
   },
@@ -49,6 +49,7 @@
   },
   "dependencies": {
     "@fontsource/roboto": "^4.5.8",
+    "@radix-ui/react-checkbox": "^1.0.1",
     "@radix-ui/react-collapsible": "^1.0.1",
     "@radix-ui/react-dialog": "^1.0.2",
     "@radix-ui/react-dropdown-menu": "^2.0.2",

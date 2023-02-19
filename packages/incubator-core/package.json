@@ -37,6 +37,7 @@
     "esbuild-sass-plugin": "^2.4.5",
     "eslint-config-incubator": "workspace:*",
     "prettier-config-incubator": "workspace:*",
+    "stylelint-config-incubator": "workspace:*",
     "react": ">=18.0.2",
     "react-dom": ">=18.0.2",
     "sass": "^1.58.0",

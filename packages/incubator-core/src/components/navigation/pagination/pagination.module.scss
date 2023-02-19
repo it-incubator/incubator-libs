@@ -1,7 +1,7 @@
 .root {
   display: flex;
-  align-items: center;
   gap: 25px;
+  align-items: center;
 }
 
 .container {
@@ -13,13 +13,16 @@
 @mixin item {
   all: unset;
 
-  width: 24px;
-  height: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: var(--border-radius-s);
+
+  width: 24px;
+  height: 24px;
+
   color: var(--color-text-primary);
+
+  border-radius: var(--border-radius-s);
 }
 
 .item {
@@ -33,8 +36,8 @@
   }
 
   &.selected {
-    background-color: var(--color-bg-interactive);
     color: var(--color-neutral-dark-900);
+    background-color: var(--color-bg-interactive);
   }
 
   &:disabled {
@@ -57,8 +60,8 @@
 
 .selectBox {
   display: flex;
-  align-items: center;
   gap: 12px;
+  align-items: center;
   color: var(--color-text-primary);
 }
 

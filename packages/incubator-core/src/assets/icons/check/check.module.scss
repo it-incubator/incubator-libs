@@ -1,0 +1,7 @@
+.path {
+  stroke: var(--color-light-mode-50);
+
+  :global(.dark-mode) & {
+    stroke: var(--color-neutral-dark-900);
+  }
+}

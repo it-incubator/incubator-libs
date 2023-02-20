@@ -1,5 +1,6 @@
 .button {
   all: unset;
+  margin-left: 5px;
 
   font-size: inherit;
   line-height: inherit;
@@ -7,8 +8,8 @@
   color: var(--color-info-400);
   text-decoration: underline;
   cursor: pointer;
-}
 
-.button:hover {
-  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
 }

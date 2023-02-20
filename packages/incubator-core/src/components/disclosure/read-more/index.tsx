@@ -1,38 +1,40 @@
 import { FC, useState } from 'react'
 
-import s from './read-more.module.css'
+import s from './read-more.module.scss'
 
-type PropsType = {
+type ReadMoreProps = {
   text: string
-  maxCharacters: number
+  maxLength: number
   /** text for ReadMore button when text is hidden */
   moreText?: string
   /** text for ReadMore button when text is shown */
   lessText?: string
 }
 
-export const ReadMore: FC<PropsType> = ({
+export const ReadMore: FC<ReadMoreProps> = ({
   text,
-  maxCharacters,
+  maxLength,
   moreText = 'Ещё',
   lessText = 'Скрыть',
-}: PropsType) => {
-  const [isReadMore, setIsReadMore] = useState(true)
+}) => {
+  const [isTrimmed, setIsTrimmed] = useState(true)
   const toggleReadMore = () => {
-    setIsReadMore(!isReadMore)
+    setIsTrimmed(!isTrimmed)
   }
 
-  if (text.length < maxCharacters) {
+  if (text.length <= maxLength) {
     return <>{text}</>
   }
 
-  const initialText = `${text.slice(0, maxCharacters)}... `
+  const trimmedText = `${text.slice(0, maxLength)}...`
+  const textToShow = isTrimmed ? trimmedText : text
+  const buttonText = isTrimmed ? moreText : lessText
 
   return (
     <>
-      {isReadMore ? initialText : `${text} `}
+      {textToShow}
       <button onClick={toggleReadMore} className={s.button}>
-        {isReadMore ? moreText : lessText}
+        {buttonText}
       </button>
     </>
   )

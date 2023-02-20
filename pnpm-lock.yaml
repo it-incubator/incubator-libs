@@ -44,6 +44,7 @@ importers:
       '@fontsource/roboto': ^4.5.8
       '@headlessui-float/react': ^0.10.1
       '@headlessui/react': 1.7.11
+      '@radix-ui/react-checkbox': ^1.0.1
       '@radix-ui/react-collapsible': ^1.0.1
       '@radix-ui/react-dialog': ^1.0.2
       '@radix-ui/react-dropdown-menu': ^2.0.2
@@ -77,6 +78,7 @@ importers:
       vite: 4.0.4
     dependencies:
       '@fontsource/roboto': 4.5.8
+      '@radix-ui/react-checkbox': 1.0.1_biqbaboplfbrettd7655fr4n2y
       '@radix-ui/react-collapsible': 1.0.1_biqbaboplfbrettd7655fr4n2y
       '@radix-ui/react-dialog': 1.0.2_zula6vjvt3wdocc4mwcxqa6nzi
       '@radix-ui/react-dropdown-menu': 2.0.2_zula6vjvt3wdocc4mwcxqa6nzi
@@ -2572,6 +2574,25 @@ packages:
     dependencies:
       '@babel/runtime': 7.20.13
       '@radix-ui/react-primitive': 1.0.1_biqbaboplfbrettd7655fr4n2y
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: false
+
+  /@radix-ui/react-checkbox/1.0.1_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-TisH0B8hWmYP3ONRduYCyN04rR9yLPIw/Rwyn1RoC1suSoGCa8Wn+YPdSSSarSszeIbcg3p2lBkDp2XXit4sZw==}
+    peerDependencies:
+      react: ^16.8 || ^17.0 || ^18.0
+      react-dom: ^16.8 || ^17.0 || ^18.0
+    dependencies:
+      '@babel/runtime': 7.20.13
+      '@radix-ui/primitive': 1.0.0
+      '@radix-ui/react-compose-refs': 1.0.0_react@18.2.0
+      '@radix-ui/react-context': 1.0.0_react@18.2.0
+      '@radix-ui/react-presence': 1.0.0_biqbaboplfbrettd7655fr4n2y
+      '@radix-ui/react-primitive': 1.0.1_biqbaboplfbrettd7655fr4n2y
+      '@radix-ui/react-use-controllable-state': 1.0.0_react@18.2.0
+      '@radix-ui/react-use-previous': 1.0.0_react@18.2.0
+      '@radix-ui/react-use-size': 1.0.0_react@18.2.0
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
     dev: false

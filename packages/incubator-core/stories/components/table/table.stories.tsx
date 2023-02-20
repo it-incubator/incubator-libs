@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import { Table } from '../../../src'
+import { ReadMore, Table } from '../../../src'
 
 export default {
   title: 'Components/Table',
@@ -72,7 +72,7 @@ const data = [
     id: '02',
     title: 'Web Basic',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor',
-    link: 'Какая-то ссылка кудато на какой-то источник с информациейо ссылка кудато на какой-то',
+    link: 'Какая-то ссылка куда-то',
     category: 'Основной',
     type: 'Читать',
   },
@@ -80,14 +80,14 @@ const data = [
     id: '03',
     title: 'Web Basic',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor',
-    link: 'Какая-то ссылка кудато на какой-то источник с информациейо ссылка кудато на какой-то',
+    link: 'Какая-то ссылка кудато на какой-то источник с информациейо ссылка кудато на какой-то. Какая-то ссылка кудато на какой-то источник с информациейо ссылка куда-то на какой-то',
     category: 'Основной',
     type: 'Читать',
   },
 ]
 
-export const DefaultWithMap = Template.bind({})
-DefaultWithMap.args = {
+export const WithMapMethod = Template.bind({})
+WithMapMethod.args = {
   children: (
     <>
       <Table.Head>
@@ -105,6 +105,36 @@ DefaultWithMap.args = {
             <Table.Cell>{item.title}</Table.Cell>
             <Table.Cell>{item.description}</Table.Cell>
             <Table.Cell>{item.link}</Table.Cell>
+            <Table.Cell>{item.category}</Table.Cell>
+            <Table.Cell>{item.type}</Table.Cell>
+          </Table.Row>
+        ))}
+      </Table.Body>
+    </>
+  ),
+}
+
+export const WithReadMore = Template.bind({})
+WithReadMore.args = {
+  children: (
+    <>
+      <Table.Head>
+        <Table.Row>
+          <Table.HeadCell>Название</Table.HeadCell>
+          <Table.HeadCell align="center">Описание</Table.HeadCell>
+          <Table.HeadCell>Ссылка</Table.HeadCell>
+          <Table.HeadCell>Тип</Table.HeadCell>
+          <Table.HeadCell>Вид</Table.HeadCell>
+        </Table.Row>
+      </Table.Head>
+      <Table.Body>
+        {data.map(item => (
+          <Table.Row key={item.id}>
+            <Table.Cell>{item.title}</Table.Cell>
+            <Table.Cell>{item.description}</Table.Cell>
+            <Table.Cell width={300}>
+              <ReadMore text={item.link} maxLength={60} />
+            </Table.Cell>
             <Table.Cell>{item.category}</Table.Cell>
             <Table.Cell>{item.type}</Table.Cell>
           </Table.Row>

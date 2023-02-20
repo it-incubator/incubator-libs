@@ -18,6 +18,7 @@ export type CheckboxProps = {
 
 const classNames = {
   container: s.container,
+  buttonWrapper: s.buttonWrapper,
   root: s.root,
   indicator: s.indicator,
   label: s.label,
@@ -33,18 +34,20 @@ export const Checkbox: FC<CheckboxProps> = ({
 }) => {
   return (
     <div className={classNames.container}>
-      <CheckboxRadix.Root
-        className={classNames.root}
-        checked={checked}
-        onCheckedChange={onChange}
-        disabled={disabled}
-        required={required}
-        id={id}
-      >
-        <CheckboxRadix.Indicator className={classNames.indicator}>
-          <Check />
-        </CheckboxRadix.Indicator>
-      </CheckboxRadix.Root>
+      <div className={classNames.buttonWrapper}>
+        <CheckboxRadix.Root
+          className={classNames.root}
+          checked={checked}
+          onCheckedChange={onChange}
+          disabled={disabled}
+          required={required}
+          id={id}
+        >
+          <CheckboxRadix.Indicator className={classNames.indicator}>
+            <Check />
+          </CheckboxRadix.Indicator>
+        </CheckboxRadix.Root>
+      </div>
       <LabelRadix.Root className={classNames.label} htmlFor={id}>
         {label}
       </LabelRadix.Root>

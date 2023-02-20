@@ -116,14 +116,20 @@
   /* borders */
   --color-border-primary: var(--color-neutral-dark-100);
   --color-border-primary-active: var(--color-neutral-dark-900);
+  --color-border-secondary: var(--color-neutral-dark-900);
+  --color-border-secondary-hover: var(--color-neutral-dark-100);
 
   /* backgrounds */
+  --color-bg-primary: var(--color-neutral-light-50);
+  --color-bg-primary-hover: var(--color-bg-primary);
+  --color-bg-primary-active: var(--color-neutral-dark-100);
   --color-bg-element: var(--color-neutral-light-50);
   --color-bg-element-hover: var(--color-neutral-dark-100);
   --color-bg-dividers: var(--color-neutral-dark-100);
   --color-bg-scrollbar: var(--color-neutral-dark-50);
   --color-bg-overlay: var(--color-neutral-dark-300);
   --color-bg-interactive: var(--color-neutral-dark-100);
+  --color-bg-contrast: var(--color-neutral-dark-900);
 
   /* icons */
   --color-fill-icon: var(--color-neutral-light-900);
@@ -142,14 +148,20 @@
   /* borders */
   --color-border-primary: var(--color-dark-mode-400);
   --color-border-primary-active: var(--color-dark-mode-400);
+  --color-border-secondary: var(--color-neutral-light-100);
+  --color-border-secondary-hover: var(--color-dark-mode-300);
 
   /* backgrounds */
+  --color-bg-primary: var(--color-dark-mode-700);
+  --color-bg-primary-hover: var(--color-dark-mode-400);
+  --color-bg-primary-active: var(--color-dark-mode-400);
   --color-bg-element: var(--color-dark-mode-600);
   --color-bg-element-hover: var(--color-neutral-dark-400);
   --color-bg-dividers: var(--color-dark-mode-500);
   --color-bg-scrollbar: var(--color-dark-mode-500);
   --color-bg-overlay: #000;
   --color-bg-interactive: var(--color-neutral-light-100);
+  --color-bg-contrast: var(--color-neutral-light-50);
 
   /* icons */
   --color-fill-icon: var(--color-neutral-light-100);

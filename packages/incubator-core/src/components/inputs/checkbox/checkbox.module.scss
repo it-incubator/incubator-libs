@@ -2,32 +2,58 @@
   display: flex;
   align-items: center;
 }
-
-.root {
-  cursor: pointer;
-
+.buttonWrapper {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0);
+  transition: background-color 0.3s ease;
+  /// Добавил transition для более плавного появления кружка
+  :global(.dark-mode) & {
+    &:active {
+      background-color: var(--color-dark-mode-400);
+    }
+  }
+  &:active {
+    background-color: var(--color-neutral-dark-100);
+  }
 
+}
+.root {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 16px;
   height: 16px;
-
-  background-color: #fffefe;
+  background-color: var(--color-neutral-light-50);
   border: 1px solid var(--color-text-primary);
   border-radius: 2px;
-
+  :global(.dark-mode) & {
+    background-color: var(--color-dark-mode-700);
+    border: 1px solid var(--color-neutral-light-100);
+    &:hover {
+      border-color: var(--color-dark-mode-300);
+      background-color: var(--color-dark-mode-400);
+    }
+    &[data-state='checked'] {
+      background-color: var(--color-text-primary);
+    }
+  }
   &[data-state='checked'] {
     background-color: var(--color-text-primary);
+  }
+  &:hover {
+    border-color: var(--color-neutral-dark-100);
   }
 }
 
 .label {
   display: flex;
   align-items: center;
-
-  padding-left: 12px;
-
   font-size: 14px;
   line-height: 16px;
   color: var(--color-text-primary);

@@ -4,67 +4,59 @@ import { clsx } from 'clsx'
 
 import s from './table.module.scss'
 
-export type TableProps = {
-  children: ReactNode
-} & ComponentProps<'table'>
+export type RootProps = ComponentProps<'table'>
 
-export const Table: FC<TableProps> = ({ className, children, ...rest }) => {
-  return (
-    <table className={clsx(className, s.table)} {...rest}>
-      {children}
-    </table>
-  )
+export const Root: FC<RootProps> = ({ className, ...rest }) => {
+  const classNames = {
+    table: clsx(className, s.table),
+  }
+
+  return <table className={classNames.table} {...rest} />
 }
 
-export type TableHeadProps = {
-  children: ReactNode
-} & ComponentProps<'thead'>
+export type HeadProps = ComponentProps<'thead'>
 
-export const TableHead: FC<TableHeadProps> = ({ children, ...rest }) => {
-  return <thead {...rest}>{children}</thead>
+export const Head: FC<HeadProps> = props => {
+  return <thead {...props} />
 }
 
-export type TableBodyProps = {
-  children: ReactNode
-} & ComponentProps<'tbody'>
+export type BodyProps = ComponentProps<'tbody'>
 
-export const TableBody: FC<TableBodyProps> = ({ children, ...rest }) => {
-  return <tbody {...rest}>{children}</tbody>
+export const Body: FC<BodyProps> = props => {
+  return <tbody {...props} />
 }
 
-export type TableRowProps = {
-  children: ReactNode
-} & ComponentProps<'tr'>
+export type RowProps = ComponentProps<'tr'>
 
-export const TableRow: FC<TableRowProps> = ({ children, ...rest }) => {
-  return <tr {...rest}>{children}</tr>
+export const Row: FC<RowProps> = props => {
+  return <tr {...props} />
 }
 
-export type TableHeadCellProps = {
-  children?: ReactNode
-} & ComponentProps<'th'>
+export type HeadCellProps = ComponentProps<'th'>
 
-export const TableHeadCell: FC<TableHeadCellProps> = ({
-  align = 'left',
-  className,
-  children,
-  ...rest
-}) => {
-  return (
-    <th align={align} className={clsx(className, s.tableHeadCell)} {...rest}>
-      {children}
-    </th>
-  )
+export const HeadCell: FC<HeadCellProps> = ({ className, ...rest }) => {
+  const classNames = {
+    headCell: clsx(className, s.headCell),
+  }
+
+  return <th className={classNames.headCell} {...rest} />
 }
 
-export type TableCellProps = {
-  children?: ReactNode
-} & ComponentProps<'td'>
+export type CellProps = ComponentProps<'td'>
 
-export const TableCell: FC<TableCellProps> = ({ className, children, ...rest }) => {
-  return (
-    <td className={clsx(className, s.tableCell)} {...rest}>
-      {children}
-    </td>
-  )
+export const Cell: FC<CellProps> = ({ className, ...rest }) => {
+  const classNames = {
+    cell: clsx(className, s.cell),
+  }
+
+  return <td className={classNames.cell} {...rest} />
+}
+
+export const Table = {
+  Root,
+  Head,
+  Body,
+  Row,
+  HeadCell,
+  Cell,
 }

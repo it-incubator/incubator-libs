@@ -1,126 +1,157 @@
-import { ComponentPropsWithoutRef, FC, ReactNode } from 'react'
+import { FC, Fragment, useMemo } from 'react'
 
+import { Listbox } from '@headlessui/react'
+import { Float } from '@headlessui-float/react'
 import * as ScrollArea from '@radix-ui/react-scroll-area'
-import * as SelectRadixUI from '@radix-ui/react-select'
 import { clsx } from 'clsx'
 
 import { ChevronDown } from '../../../assets/icons/chevron-down'
 
 import s from './select.module.scss'
 
-export type SelectProps = {
-  /** Use SelectItem components as children.*/
-  children: ReactNode
+type Option =
+  | { label: string; value: string }
+  | { label: string; value: number }
+  | { label: number; value: string }
+  | { label: number; value: number }
+
+interface CommonProps {
   /** applied to the trigger */
   className?: string
-  defaultValue?: string
   disabled?: boolean
-  error?: boolean
-  errorMessage?: string
   /** The name of the select. Submitted with its owning form as part of a name/value pair. */
   name?: string
-  /** Event handler called when the open state of the select changes */
-  onOpenChange?: (open: boolean) => void
-  /** Event handler called when the value changes. */
-  onValueChange?: (value: string) => void
-  /** The controlled open state of the select. Must be used in conjunction with onOpenChange */
-  open?: boolean
-  placeholder: string
+  placeholder?: string
   required?: boolean
-  /** The controlled value of the select. Should be used in conjunction with onValueChange.*/
-  value?: string
-  variant?: 'primary' | 'secondary'
-} & ComponentPropsWithoutRef<'button'>
+  variant?: 'primary' | 'secondary' | 'pagination'
+  /** The options to display.
+   * {label: string, value: string | number} */
+  options: Array<Option>
+}
+
+type ConditionalMultipleProps =
+  | {
+      multiple?: false
+      value: string
+      /** Event handler called when the value changes.
+       * The parameter is an Option object or an array of Options depending on the multiple prop.
+       */
+      onChange: (value: string) => void
+    }
+  | {
+      multiple?: false
+      value: number
+      onChange: (value: number) => void
+    }
+  | {
+      multiple?: true
+      value: Array<string>
+      onChange: (value: Array<string>) => void
+    }
+  | {
+      multiple?: true
+      value: Array<number>
+      /** Event handler called when the value changes.
+       * The parameter is an Option object or an array of Options depending on the multiple prop.
+       */
+      onChange: (value: Array<number>) => void
+    }
+
+type ConditionalErrorProps =
+  | {
+      error?: true
+      errorMessage: string
+    }
+  | {
+      error?: false
+      errorMessage?: never
+    }
+
+export type SelectProps = CommonProps & ConditionalMultipleProps & ConditionalErrorProps
 
 export const Select: FC<SelectProps> = ({
   variant = 'primary',
-  children,
   placeholder,
-  defaultValue,
   value,
-  open,
-  name,
   error,
   errorMessage,
   disabled,
-  required,
   className,
-  onOpenChange,
-  onValueChange,
-  ...rest
+  onChange,
+  options,
+  multiple = false,
 }) => {
-  function handleOpenChanged(open: boolean) {
-    onOpenChange?.(open)
-  }
-
-  function handleValueChanged(value: string) {
-    onValueChange?.(value)
-  }
-
   const isSecondary = variant === 'secondary'
 
+  const optionsMap: Record<string | number, string | number> = useMemo(() => {
+    return options.reduce((acc, option) => {
+      acc[option.value] = option.label
+
+      return acc
+    }, {} as Record<string | number, string | number>)
+  }, [options])
+
   const classNames = {
-    trigger: clsx(s.trigger, error && s.error, isSecondary && s.secondary, className),
-    icon: clsx(s.icon, isSecondary && s.secondary),
+    root: clsx(s.root),
+    trigger: clsx(s.trigger, error && s.error, s[variant], className),
+    value: clsx(s.value),
+    icon: clsx(s.icon, s[variant]),
+    item: clsx(s.item),
+    popper: clsx(s.popper),
     content: clsx(s.content, isSecondary && s.secondary),
-    error: s.errorLine,
+    error: s.errorText,
     scrollRoot: s.scrollRoot,
     scrollViewport: s.scrollViewport,
     scrollbar: s.scrollbar,
     scrollThumb: s.scrollThumb,
   }
+  const label = Array.isArray(value) ? value.map(v => optionsMap[v]).join(', ') : optionsMap[value]
+  const adaptiveWidth = variant !== 'pagination'
 
   return (
-    <SelectRadixUI.Root
-      open={open}
-      value={value}
-      defaultValue={defaultValue}
-      disabled={disabled}
-      required={required}
-      name={name}
-      onOpenChange={handleOpenChanged}
-      onValueChange={handleValueChanged}
-    >
-      <SelectRadixUI.Trigger className={classNames.trigger} disabled={disabled} {...rest}>
-        <SelectRadixUI.Value placeholder={placeholder} />
-        <SelectRadixUI.Icon className={classNames.icon}>
-          <ChevronDown />
-        </SelectRadixUI.Icon>
-      </SelectRadixUI.Trigger>
+    <Listbox {...{ disabled, value, multiple, onChange }}>
+      <div className={classNames.root}>
+        <Float
+          portal
+          as="div"
+          adaptiveWidth={adaptiveWidth}
+          placement="bottom"
+          floatingAs={Fragment}
+        >
+          <Listbox.Button className={classNames.trigger}>
+            <span className={classNames.value}>{label || placeholder}</span>
+            <span className={classNames.icon}>
+              <ChevronDown />
+            </span>
+          </Listbox.Button>
 
-      {error && <p className={classNames.error}>{errorMessage}</p>}
-
-      <SelectRadixUI.Portal>
-        <SelectRadixUI.Content className={classNames.content} position="popper">
-          <ScrollArea.Root className={classNames.scrollRoot} type="auto">
-            <SelectRadixUI.Viewport asChild>
+          <Listbox.Options className={classNames.content} as={'div'}>
+            <ScrollArea.Root className={classNames.scrollRoot} type="auto">
               <ScrollArea.Viewport className={classNames.scrollViewport}>
-                {children}
+                {options.map(option => {
+                  // todo: add checkboxes for multi-select
+                  return (
+                    <Listbox.Option
+                      key={option.value}
+                      className={classNames.item}
+                      value={option.value}
+                      as={'div'}
+                    >
+                      <span>{option.label}</span>
+                    </Listbox.Option>
+                  )
+                })}
               </ScrollArea.Viewport>
-            </SelectRadixUI.Viewport>
-            <ScrollArea.Scrollbar className={classNames.scrollbar} orientation="vertical">
-              <ScrollArea.Thumb className={classNames.scrollThumb} />
-            </ScrollArea.Scrollbar>
-          </ScrollArea.Root>
-        </SelectRadixUI.Content>
-      </SelectRadixUI.Portal>
-    </SelectRadixUI.Root>
-  )
-}
-
-export type SelectItemProps = {
-  value: string
-  children: ReactNode
-} & ComponentPropsWithoutRef<'input'>
-
-export const SelectItem: FC<SelectItemProps> = ({ value, children, className, ...rest }) => {
-  const classNames = {
-    item: clsx(s.item, className),
-  }
-
-  return (
-    <SelectRadixUI.Item value={value} className={classNames.item} {...rest}>
-      <SelectRadixUI.ItemText>{children}</SelectRadixUI.ItemText>
-    </SelectRadixUI.Item>
+              {variant !== 'pagination' && (
+                <ScrollArea.Scrollbar className={classNames.scrollbar} orientation="vertical">
+                  <ScrollArea.Thumb className={classNames.scrollThumb} />
+                </ScrollArea.Scrollbar>
+              )}
+            </ScrollArea.Root>
+          </Listbox.Options>
+        </Float>
+        <>{error && <p className={classNames.error}>{errorMessage}</p>}</>
+      </div>
+    </Listbox>
   )
 }

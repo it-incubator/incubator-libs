@@ -1,0 +1,71 @@
+.root {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  gap: 12px;
+  list-style-type: none;
+}
+
+@mixin item {
+  all: unset;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 24px;
+  height: 24px;
+
+  color: var(--color-text-primary);
+
+  border-radius: var(--border-radius-s);
+}
+
+.item {
+  @include item;
+
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    opacity: 0.6;
+  }
+
+  &.selected {
+    color: var(--color-neutral-dark-900);
+    background-color: var(--color-bg-interactive);
+  }
+
+  &:disabled {
+    cursor: initial;
+    opacity: 1;
+  }
+}
+
+.dots {
+  @include item;
+}
+
+.icon {
+  color: var(--color-text-primary);
+
+  .item:disabled & {
+    color: var(--color-action-disabled);
+  }
+}
+
+.selectBox {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  color: var(--color-text-primary);
+}
+
+.select {
+  flex-shrink: 0;
+  width: unset;
+}

@@ -1,26 +1,29 @@
 .button {
+  cursor: pointer;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   width: 24px;
   height: 24px;
-  border-radius: 50%;
+  padding: 0;
 
   background-color: transparent;
   border: none;
+  border-radius: 50%;
   outline: none;
-  padding: 0;
-
-  cursor: pointer;
 }
 
 .content {
   position: relative;
-  padding: 10px 0;
+
   min-width: 134px;
+  padding: 10px 0;
+
+  background-color: var(--color-bg-element);
   border: 1px solid var(--color-border-primary);
   border-radius: var(--border-radius-s);
-  background-color: var(--color-bg-element);
 }
 
 .itemsBox {
@@ -39,23 +42,29 @@
     position: absolute;
     top: -3px;
     left: calc(50% - 3px);
+    transform: rotate(45deg);
+
     width: 6px;
     height: 6px;
+
+    background-color: var(--color-bg-element);
     border: 1px solid var(--color-border-primary);
     border-top: none;
     border-left: none;
-    background-color: var(--color-bg-element);
-    transform: rotate(45deg);
 }
 
 .item {
+  cursor: pointer;
+
   display: flex;
+  gap: 12px;
   align-items: center;
+
   height: 36px;
   padding: 0 16px;
-  gap: 12px;
+
   outline: none;
-  cursor: pointer;
+
   transition: 200ms opacity;
 
   &:hover,
@@ -65,9 +74,10 @@
 }
 
 .itemIcon {
-  width: 24px;
-  height: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  width: 24px;
+  height: 24px;
 }

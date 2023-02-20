@@ -1,17 +1,17 @@
 .overlay {
   position: fixed;
   inset: 0;
+  background-color: rgb(0 0 0 / 50%);
   backdrop-filter: blur(4px);
-  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .content {
-  background-color: var(--color-bg-element);
   position: fixed;
   top: 234px;
   left: 50%;
-  width: 532px;
   transform: translate(-50%, -50%);
+
+  background-color: var(--color-bg-element);
 
   &.sm {
     width: 367px;
@@ -28,33 +28,37 @@
 
 .header {
   display: flex;
+  justify-content: space-between;
   padding: 19px 24px;
   border-bottom: 1px solid gray;
-  justify-content: space-between;
 }
 
 .title {
   margin: 0;
-  font-weight: 500;
   font-size: var(--font-size-l);
+  font-weight: 500;
   line-height: var(--line-height-l);
 }
 
 .contentBox {
-  padding: 23px 24px 36px 24px;
+  padding: 23px 24px 36px;
 }
 
 .closeButton {
+  cursor: pointer;
+
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+
   width: 25px;
   height: 25px;
-  background: transparent;
   padding: 0;
+
+  background: transparent;
   border: none;
   border-radius: 50%;
-  cursor: pointer;
+
   transition: 200ms background-color;
 
   &:hover,

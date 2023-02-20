@@ -1,64 +1,95 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react'
+import { useState } from 'react'
 
-import { Select, SelectItem } from '../../../../src'
+import { ComponentMeta } from '@storybook/react'
+
+import { Select } from '../../../../src'
+import { VerticalContainer } from '../../../../storybook-utils/components/containers/vertical'
+
+const options = [
+  {
+    value: 'apple',
+    label: 'Apple',
+  },
+  {
+    value: 'banana',
+    label: 'Banana',
+  },
+  {
+    value: 'blueberry',
+    label: 'Blueberry',
+  },
+  {
+    value: 'grapes',
+    label: 'Grapes',
+  },
+  {
+    value: 'pineapple',
+    label: 'Pineapple',
+  },
+  {
+    value: 'apple1',
+    label: 'Apple',
+  },
+  {
+    value: 'banana1',
+    label: 'Banana',
+  },
+]
 
 export default {
   title: 'Components/Inputs/Select',
   component: Select,
 } as ComponentMeta<typeof Select>
 
-const Template: ComponentStory<typeof Select> = args => <Select {...args} />
+const SimpleTemplate = args => {
+  const [value, setValue] = useState(null)
 
-export const Primary = Template.bind({})
-Primary.args = {
+  return (
+    <VerticalContainer>
+      <Select {...args} value={value} onChange={setValue} />
+      <div>Selected value: {value}</div>
+    </VerticalContainer>
+  )
+}
+const MultipleTemplate = args => {
+  const [values, setValues] = useState([])
+
+  return (
+    <VerticalContainer>
+      <Select {...args} value={values} onChange={setValues} multiple />
+      <div>Selected values: {values.join(', ')}</div>
+    </VerticalContainer>
+  )
+}
+
+export const Simple = SimpleTemplate.bind({})
+Simple.args = {
   placeholder: 'Все курсы',
   disabled: false,
-  children: (
-    <>
-      <SelectItem value="apple">Apple</SelectItem>
-      <SelectItem value="banana">Banana</SelectItem>
-      <SelectItem value="blueberry">Blueberry</SelectItem>
-      <SelectItem value="grapes">Grapes</SelectItem>
-      <SelectItem value="pineapple">Pineapple</SelectItem>
-      <SelectItem value="apple1">Apple</SelectItem>
-      <SelectItem value="banana1">Banana</SelectItem>
-      <SelectItem value="blueberry1">Blueberry</SelectItem>
-      <SelectItem value="grapes1">Grapes</SelectItem>
-      <SelectItem value="pineapple1">Pineapple</SelectItem>
-      <SelectItem value="apple2">Apple</SelectItem>
-      <SelectItem value="banana2">Banana</SelectItem>
-      <SelectItem value="blueberry2">Blueberry</SelectItem>
-      <SelectItem value="grapes2">Grapes</SelectItem>
-      <SelectItem value="pineapple2">Pineapple</SelectItem>
-    </>
-  ),
+  options,
 }
 
-export const Invalid = Template.bind({})
-Invalid.args = {
-  placeholder: 'Выберите недели',
+export const Multiple = MultipleTemplate.bind({})
+Multiple.args = {
+  placeholder: 'Все курсы',
+  disabled: false,
+  multiple: true,
+  options,
+}
+
+export const Error = SimpleTemplate.bind({})
+Error.args = {
+  placeholder: 'Все курсы',
   disabled: false,
   error: true,
-  errorMessage: 'Не забудьте выбрать недели',
-  children: (
-    <>
-      <SelectItem value="apple">Apple</SelectItem>
-      <SelectItem value="banana">Banana</SelectItem>
-      <SelectItem value="blueberry">Blueberry</SelectItem>
-    </>
-  ),
+  errorMessage: 'Ошибка',
+  options,
 }
 
-export const Secondary = Template.bind({})
+export const Secondary = SimpleTemplate.bind({})
 Secondary.args = {
+  placeholder: 'Все курсы',
   disabled: false,
   variant: 'secondary',
-  label: 'Сортировать:',
-  defaultValue: 'up',
-  children: (
-    <>
-      <SelectItem value="up">По возрастанию</SelectItem>
-      <SelectItem value="down">По убыванию</SelectItem>
-    </>
-  ),
+  options,
 }

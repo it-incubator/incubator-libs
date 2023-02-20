@@ -1,5 +1,7 @@
 import { FC } from 'react'
 
+import { clsx } from 'clsx'
+
 import { Button } from '../../inputs/button'
 import { Modal, ModalProps } from '../modal'
 
@@ -10,7 +12,7 @@ export type DialogProps = {
 
   onConfirmButtonClick: () => void
 
-  cancelButtonText: string
+  cancelButtonText?: string
   /** If not provided, onClose will be executed on Cancel click*/
   onCancelButtonClick?: () => void
 } & ModalProps
@@ -25,6 +27,7 @@ export const Dialog: FC<DialogProps> = ({
   ...rest
 }) => {
   const { onClose } = rest
+  const showCancelButton = !!cancelButtonText
 
   function handleConfirmButtonClicked() {
     onConfirmButtonClick()
@@ -35,17 +38,21 @@ export const Dialog: FC<DialogProps> = ({
   }
 
   const classNames = {
-    buttonsBox: s.buttonsBox,
+    buttonsBox: clsx(s.buttonsBox, showCancelButton && s.hasCancelButton),
   }
+
+  const confirmButtonVariant = showCancelButton ? 'secondary' : 'primary'
 
   return (
     <Modal {...rest}>
       {children}
       <div className={classNames.buttonsBox}>
-        <Button variant="secondary" onClick={handleConfirmButtonClicked}>
+        <Button variant={confirmButtonVariant} onClick={handleConfirmButtonClicked}>
           {confirmButtonText}
         </Button>
-        <Button onClick={handleCancelButtonClicked}>{cancelButtonText}</Button>
+        {showCancelButton && (
+          <Button onClick={handleCancelButtonClicked}>{cancelButtonText}</Button>
+        )}
       </div>
     </Modal>
   )

@@ -1,6 +1,6 @@
 {
-  "name": "@incubator/utils",
-  "version": "0.0.0",
+  "name": "@it-incubator/utils",
+  "version": "1.2.0",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",

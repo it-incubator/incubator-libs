@@ -1,6 +1,6 @@
 {
-  "name": "@incubator/tsconfig",
-  "version": "0.0.0",
+  "name": "@it-incubator/tsconfig",
+  "version": "1.1.0",
   "private": true,
   "license": "MIT",
   "publishConfig": {

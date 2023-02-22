@@ -1,6 +1,6 @@
 {
-  "name": "stylelint-config-incubator",
-  "version": "0.0.0",
+  "name": "@it-incubator/stylelint-config-incubator",
+  "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "dependencies": {

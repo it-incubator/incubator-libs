@@ -5,6 +5,7 @@
   "fixed": [],
   "linked": [],
   "access": "public",
+  "baseBranch": "dev",
   "updateInternalDependencies": "patch",
-  "ignore": ["@incubator/docs"]
+  "ignore": []
 }

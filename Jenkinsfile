@@ -18,5 +18,12 @@ pipeline {
                }
             }
         }
+        stage('Publish') {
+            steps {
+               withNPM(npmrcConfig: 'npm-it-incubator') {
+                  sh 'npm release'
+               }
+            }
+        }
     }
 }

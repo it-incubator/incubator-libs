@@ -11,15 +11,16 @@ pipeline {
         stage('Install') {
             steps {
                withNPM(npmrcConfig: 'npm-it-incubator') {
-                  sh 'ls'
                   sh 'cp .npmrc ./packages/incubator-utils'
-                  sh 'ls'
+                  sh 'curl -fsSL https://get.pnpm.io/install.sh | sh -'
                }
             }
         }
         stage('Publish') {
             steps {
                withNPM(npmrcConfig: 'npm-it-incubator') {
+                  sh 'pnpm install'
+                  sh 'pnpm build'
                   sh 'npm run release'
                }
             }

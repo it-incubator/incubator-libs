@@ -22,7 +22,9 @@ pipeline {
         }
         stage('Publish') {
             steps {
-               withNPM(npmrcConfig: 'npm-it-incubator') {
+                script {
+                  sh 'corepack enable'
+                  sh 'corepack prepare pnpm@latest-7 --activate'
                   sh 'pnpm install'
                   sh 'pnpm build'
                   sh 'pnpm release'

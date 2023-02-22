@@ -1,12 +1,7 @@
 def app
 
 pipeline {
-    agent {
-      docker {
-                  image 'node:lts-bullseye-slim'
-                  args '-p 3000:3000'
-              }
-    }
+    agent any
     stages {
         stage('Clone repository') {
             steps {
@@ -23,8 +18,6 @@ pipeline {
         stage('Publish') {
             steps {
                 script {
-                  sh 'corepack enable'
-                  sh 'corepack prepare pnpm@latest-7 --activate'
                   sh 'pnpm install'
                   sh 'pnpm build'
                   sh 'pnpm release'

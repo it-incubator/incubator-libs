@@ -18,6 +18,7 @@ pipeline {
         stage('Publish') {
             steps {
                withNPM(npmrcConfig: 'npm-it-incubator') {
+                  sh 'npx pnpm install --global pnpm'
                   sh 'pnpm install'
                   sh 'pnpm build'
                   sh 'pnpm release'

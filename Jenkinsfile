@@ -20,7 +20,7 @@ pipeline {
                withNPM(npmrcConfig: 'npm-it-incubator') {
                   sh 'pnpm install'
                   sh 'pnpm build'
-                  sh 'npm run release'
+                  sh 'pnpm release'
                }
             }
         }

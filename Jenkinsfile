@@ -12,7 +12,7 @@ pipeline {
         }
         stage('Install') {
             steps {
-               withNPM(npmrcConfig: npm-it-incubator') {
+               withNPM(npmrcConfig: 'npm-it-incubator') {
                   sh 'ls -ltr'
                }
             }

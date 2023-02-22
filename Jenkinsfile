@@ -12,9 +12,6 @@ pipeline {
             steps {
                withNPM(npmrcConfig: 'npm-it-incubator') {
                   sh 'cp .npmrc ./packages/incubator-utils'
-                  sh 'curl -fsSL https://get.pnpm.io/install.sh | sh -'
-                  sh 'export PNPM_HOME="/var/lib/jenkins/.local/share/pnpm"'
-                  sh 'export PATH="$PNPM_HOME:$PATH"'
                }
             }
         }

@@ -8,18 +8,30 @@ pipeline {
                 checkout scm
             }
         }
-        stage('Install') {
+        stage('Copy NPM config') {
             steps {
                withNPM(npmrcConfig: 'npm-it-incubator') {
                   sh 'cp .npmrc ./packages/incubator-utils'
                }
             }
         }
-        stage('Publish') {
+        stage('Install dependencies') {
             steps {
                 script {
                   sh 'pnpm install'
+               }
+            }
+        }
+        stage('Build') {
+            steps {
+                script {
                   sh 'pnpm build'
+               }
+            }
+        }
+        stage('Npm publish') {
+            steps {
+                script {
                   sh 'pnpm release'
                }
             }

@@ -29,7 +29,7 @@ pipeline {
         stage('Npm publish') {
             steps {
                 script {
-                  sh 'chown -R 113:119 "/.npm"'
+                  sh 'chown -R 113:119 "/.npmrc"'
                   sh 'pnpm release'
                }
             }

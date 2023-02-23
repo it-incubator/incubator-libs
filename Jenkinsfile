@@ -12,15 +12,6 @@ pipeline {
                 checkout scm
             }
         }
-        stage('Copy NPM config') {
-            steps {
-               withNPM(npmrcConfig: 'npm-it-incubator') {
-                  sh 'cp .npmrc ./packages/incubator-utils'
-                  sh 'pwd'
-                  sh "chmod +x ./packages/incubator-utils/.npmrc"
-               }
-            }
-        }
         stage('Install dependencies') {
             steps {
                 script {

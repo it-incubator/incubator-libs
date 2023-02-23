@@ -2,7 +2,10 @@ def app
 
 pipeline {
     agent {
-           docker { image 'abazuntts/node-pnpm:16.13.2' }
+           docker {
+           image 'abazuntts/node-pnpm:16.13.2'
+            args '-p 3000:3000'
+            }
        }
     stages {
         stage('Clone repository') {

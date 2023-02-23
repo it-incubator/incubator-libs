@@ -1,7 +1,9 @@
 def app
 
 pipeline {
-    agent any
+    agent {
+           docker { image 'abazuntts/node-pnpm' }
+       }
     stages {
         stage('Clone repository') {
             steps {

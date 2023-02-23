@@ -3,7 +3,7 @@ def app
 pipeline {
     agent {
            docker {
-           image 'abazuntts/node-pnpm:16.13.2'
+           image 'abazuntts/node-pnpm-16.13.2:latest'
             }
        }
     stages {

@@ -29,6 +29,7 @@ pipeline {
         stage('Npm publish') {
             steps {
                 script {
+                  sh 'sudo chown -R 113:119 "/.npm"'
                   sh 'pnpm release'
                }
             }

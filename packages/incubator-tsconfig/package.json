@@ -1,7 +1,7 @@
 {
-  "name": "@incubator/tsconfig",
-  "version": "0.0.0",
-  "private": true,
+  "name": "@it-incubator/tsconfig",
+  "version": "0.0.4",
+  "private": false,
   "license": "MIT",
   "publishConfig": {
     "access": "public"

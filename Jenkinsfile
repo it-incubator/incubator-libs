@@ -22,6 +22,17 @@ pipeline {
                }
             }
         }
+        stage('Preparing') {
+             steps {
+              withCredentials([string(credentialsId: 'NPM_ACCESS_TOKEN', variable: 'NPM_ACCESS_TOKEN')]) {
+                 echo "Preparing started..."
+                     sh 'ls -ltr'
+                     sh 'pwd'
+                     sh "chmod +x preparing.sh"
+                     sh "./preparing.sh $NPM_ACCESS_TOKEN"
+               }
+             }
+        }
         stage('Npm publish') {
             steps {
                 script {

@@ -1,5 +1,5 @@
 {
-  "extends": "@incubator/tsconfig/react-library.json",
+  "extends": "@it-incubator/tsconfig/react-library.json",
   "include": ["."],
   "exclude": ["dist", "build", "node_modules"]
 }

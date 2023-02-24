@@ -1,6 +1,6 @@
 {
   "name": "@it-incubator/utils",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -20,7 +20,7 @@
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.4",
     "eslint": "^8.15.0",
-    "@it-incubator/eslint-config-incubator": "workspace:*",
+    "@it-incubator/eslint-config": "workspace:*",
     "@it-incubator/prettier-config-incubator": "workspace:*",
     "react": "^18.1.0",
     "tsup": "^5.10.1",

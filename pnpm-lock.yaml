@@ -5,14 +5,14 @@ importers:
   .:
     specifiers:
       '@changesets/cli': 2.26.0
-      '@it-incubator/eslint-config-incubator': workspace:*
+      '@it-incubator/eslint-config': workspace:*
       '@it-incubator/prettier-config-incubator': workspace:*
       eslint: 8.34.0
       prettier: 2.8.4
       turbo: 1.7.4
     devDependencies:
       '@changesets/cli': 2.26.0
-      '@it-incubator/eslint-config-incubator': link:packages/eslint-config-incubator
+      '@it-incubator/eslint-config': link:packages/eslint-config-incubator
       '@it-incubator/prettier-config-incubator': link:packages/prettier-config-incubator
       eslint: 8.34.0
       prettier: 2.8.4
@@ -44,7 +44,7 @@ importers:
       '@fontsource/roboto': 4.5.8
       '@headlessui-float/react': 0.10.1
       '@headlessui/react': 1.7.11
-      '@it-incubator/eslint-config-incubator': workspace:*
+      '@it-incubator/eslint-config': workspace:*
       '@it-incubator/prettier-config-incubator': workspace:*
       '@it-incubator/stylelint-config-incubator': workspace:*
       '@radix-ui/react-checkbox': 1.0.1
@@ -91,7 +91,7 @@ importers:
       '@babel/core': 7.21.0
       '@headlessui-float/react': 0.10.1_cupqefizedh27f73ldqbiftzey
       '@headlessui/react': 1.7.11_biqbaboplfbrettd7655fr4n2y
-      '@it-incubator/eslint-config-incubator': link:../eslint-config-incubator
+      '@it-incubator/eslint-config': link:../eslint-config-incubator
       '@it-incubator/prettier-config-incubator': link:../prettier-config-incubator
       '@it-incubator/stylelint-config-incubator': link:../stylelint-config-incubator
       '@storybook/addon-actions': 6.5.16_biqbaboplfbrettd7655fr4n2y
@@ -120,7 +120,7 @@ importers:
 
   packages/incubator-utils:
     specifiers:
-      '@it-incubator/eslint-config-incubator': workspace:*
+      '@it-incubator/eslint-config': workspace:*
       '@it-incubator/prettier-config-incubator': workspace:*
       '@it-incubator/tsconfig': workspace:*
       '@types/react': ^18.0.9
@@ -130,7 +130,7 @@ importers:
       tsup: ^5.10.1
       typescript: ^4.5.3
     devDependencies:
-      '@it-incubator/eslint-config-incubator': link:../eslint-config-incubator
+      '@it-incubator/eslint-config': link:../eslint-config-incubator
       '@it-incubator/prettier-config-incubator': link:../prettier-config-incubator
       '@it-incubator/tsconfig': link:../incubator-tsconfig
       '@types/react': 18.0.28

@@ -1,5 +1,5 @@
 import '@fontsource/roboto'
-import './styles/index.css'
+import './styles/index.scss'
 
 export * from './components/disclosure'
 export * from './components/inputs'

@@ -1,4 +1,4 @@
 module.exports = {
   root: true,
-  extends: ['eslint-config'],
+  extends: ['@it-incubator/eslint-config'],
 }

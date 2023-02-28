@@ -106,6 +106,7 @@ export const onModal = () => {
       <button onClick={() => setOpen(!open)}>Open modal</button>
       <Modal open={open} onClose={handleClose} title={'Select'}>
         <Select
+          portal={false}
           placeholder="Все курсы"
           disabled={false}
           value={value}

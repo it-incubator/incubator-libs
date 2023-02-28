@@ -27,6 +27,7 @@ interface CommonProps {
   /** The options to display.
    * {label: string, value: string | number} */
   options: Array<Option>
+  portal?: boolean
 }
 
 type ConditionalMultipleProps =
@@ -80,6 +81,7 @@ export const Select: FC<SelectProps> = ({
   onChange,
   options,
   multiple = false,
+  portal = true,
 }) => {
   const isSecondary = variant === 'secondary'
 
@@ -112,7 +114,7 @@ export const Select: FC<SelectProps> = ({
     <Listbox {...{ disabled, value, multiple, onChange }}>
       <div className={classNames.root}>
         <Float
-          portal={'html'}
+          portal={portal}
           as="div"
           adaptiveWidth={adaptiveWidth}
           placement="bottom"

@@ -1,6 +1,6 @@
 import { ComponentProps, FC } from 'react'
 
-import * as Dialog from '@radix-ui/react-dialog'
+import { Dialog } from '@headlessui/react'
 import { clsx } from 'clsx'
 
 import { Cross } from '../../../assets/icons/cross'
@@ -45,11 +45,10 @@ export const Modal: FC<ModalProps> = ({
   }
 
   return (
-    <Dialog.Root open={open} onOpenChange={handleModalClosed}>
-      <Dialog.Portal>
-        <Dialog.Overlay className={classNames.overlay} />
-
-        <Dialog.Content className={classNames.content}>
+    <Dialog open={open} onClose={handleModalClosed}>
+      <div className={classNames.overlay} />
+      <Dialog.Panel>
+        <div className={classNames.content}>
           <header className={classNames.header}>
             <h2 className={classNames.title}>{title}</h2>
 
@@ -61,9 +60,9 @@ export const Modal: FC<ModalProps> = ({
           </header>
 
           <div className={classNames.contentBox}>{children}</div>
-        </Dialog.Content>
-      </Dialog.Portal>
-    </Dialog.Root>
+        </div>
+      </Dialog.Panel>
+    </Dialog>
   )
 }
 

@@ -90,7 +90,7 @@
     stroke: var(--color-text-primary);
   }
 
-  [data-headlessui-state='open'] & {
+  [data-headlessui-state='open'] > & {
     transform: rotate(180deg);
   }
 }

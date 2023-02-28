@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 import { ComponentMeta } from '@storybook/react'
 
-import { Select } from '../../../../src'
+import { Modal, Select } from '../../../../src'
 import { VerticalContainer } from '../../../../storybook-utils/components/containers/vertical'
 
 const options = [
@@ -92,4 +92,27 @@ Secondary.args = {
   disabled: false,
   variant: 'secondary',
   options,
+}
+
+export const onModal = () => {
+  const [value, setValue] = useState(null)
+  const [open, setOpen] = useState(false)
+  const handleClose = () => {
+    setOpen(false)
+  }
+
+  return (
+    <div>
+      <button onClick={() => setOpen(!open)}>Open modal</button>
+      <Modal open={open} onClose={handleClose} title={'Select'}>
+        <Select
+          placeholder="Все курсы"
+          disabled={false}
+          value={value}
+          onChange={setValue}
+          options={options}
+        />
+      </Modal>
+    </div>
+  )
 }

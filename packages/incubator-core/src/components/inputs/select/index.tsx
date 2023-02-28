@@ -112,7 +112,7 @@ export const Select: FC<SelectProps> = ({
     <Listbox {...{ disabled, value, multiple, onChange }}>
       <div className={classNames.root}>
         <Float
-          portal
+          portal={'html'}
           as="div"
           adaptiveWidth={adaptiveWidth}
           placement="bottom"

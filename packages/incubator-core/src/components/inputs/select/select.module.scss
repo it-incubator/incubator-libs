@@ -121,9 +121,8 @@
     border: 1px solid var(--color-border-primary);
 
     & .item {
-      &[data-headlessui-state='active'],
-      &[data-headlessui-state='selected'],
-      &[data-headlessui-state='active selected'] {
+      &[data-headlessui-state~='active'],
+      &[data-headlessui-state~='selected'] {
         color: var(--color-neutral-light-50);
         background-color: var(--color-info-400);
       }

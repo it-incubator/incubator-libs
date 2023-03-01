@@ -67,6 +67,9 @@
 
   transition: 200ms opacity;
 
+  font-size: var(--font-size-subtitle2);
+  line-height: var(--line-height-subtitle2);
+
   &:hover,
   &:focus {
     opacity: 0.7;

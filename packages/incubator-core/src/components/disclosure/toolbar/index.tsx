@@ -67,7 +67,12 @@ export const ToolbarItemWithIcon: FC<ToolbarItemWithIconProps> = ({
   text,
 }) => {
   return (
-    <DropdownMenu.Item className={classNames.item} disabled={disabled} onSelect={onSelect}>
+    <DropdownMenu.Item
+      className={classNames.item}
+      disabled={disabled}
+      onSelect={onSelect}
+      onClick={event => event.stopPropagation()}
+    >
       <div className={classNames.itemIcon}>{icon}</div>
       {text}
     </DropdownMenu.Item>

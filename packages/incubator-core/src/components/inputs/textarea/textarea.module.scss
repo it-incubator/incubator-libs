@@ -32,12 +32,20 @@
     color: var(--color-text-secondary);
   }
 
+  &:hover {
+    background-color: var(--color-bg-input-hover);
+  }
+
   &:focus {
-    border-color: var(--color-border-primary-active);
+    outline: var(--outline-focus);
   }
 
   &.error {
     border-color: var(--color-accent-500);
+  }
+
+  &:disabled {
+    color: var(--color-text-disabled);
   }
 }
 

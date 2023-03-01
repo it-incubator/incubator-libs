@@ -112,12 +112,14 @@
   --color-text-secondary: var(--color-neutral-dark-300);
   --color-text-invalid: var(--color-accent-500);
   --color-text-inactive: var(--color-neutral-dark-200);
+  --color-text-disabled: var(--color-neutral-dark-200);
 
   /* borders */
   --color-border-primary: var(--color-neutral-dark-100);
   --color-border-primary-active: var(--color-neutral-dark-900);
   --color-border-secondary: var(--color-neutral-dark-900);
   --color-border-secondary-hover: var(--color-neutral-dark-100);
+  --color-outline-focus: var(--color-info-300);
 
   /* backgrounds */
   --color-bg-primary: var(--color-neutral-light-50);
@@ -130,6 +132,7 @@
   --color-bg-overlay: var(--color-neutral-dark-300);
   --color-bg-interactive: var(--color-neutral-dark-100);
   --color-bg-contrast: var(--color-neutral-dark-900);
+  --color-bg-input-hover: var(--color-neutral-light-500);
 
   /* icons */
   --color-fill-icon: var(--color-neutral-light-900);
@@ -140,16 +143,18 @@
 
 :root .dark-mode {
   /* typography */
-    --color-text-primary: var(--color-neutral-light-50);
-    --color-text-secondary: var(--color-dark-mode-200);
-    --color-text-invalid: var(--color-dark-mode-200);
-    --color-text-inactive: var(--color-neutral-dark-400);
+  --color-text-primary: var(--color-neutral-light-50);
+  --color-text-secondary: var(--color-dark-mode-200);
+  --color-text-invalid: var(--color-dark-mode-200);
+  --color-text-inactive: var(--color-neutral-dark-400);
+  --color-text-disabled: var(--color-dark-mode-400);
 
   /* borders */
   --color-border-primary: var(--color-dark-mode-400);
   --color-border-primary-active: var(--color-dark-mode-400);
   --color-border-secondary: var(--color-neutral-light-100);
   --color-border-secondary-hover: var(--color-dark-mode-300);
+  --color-outline-focus: var(--color-info-600);
 
   /* backgrounds */
   --color-bg-primary: var(--color-dark-mode-700);
@@ -162,6 +167,7 @@
   --color-bg-overlay: #000;
   --color-bg-interactive: var(--color-neutral-light-100);
   --color-bg-contrast: var(--color-neutral-light-50);
+  --color-bg-input-hover: var(--color-dark-mode-500);
 
   /* icons */
   --color-fill-icon: var(--color-neutral-light-100);

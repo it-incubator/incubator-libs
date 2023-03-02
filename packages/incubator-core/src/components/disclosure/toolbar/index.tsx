@@ -9,6 +9,8 @@ import s from './toolbar.module.scss'
 type ToolbarProps = {
   /** Use TooltipItem components as children.*/
   children: ReactNode
+  /** The preferred content alignment against the trigger. */
+  align?: 'start' | 'center' | 'end'
 }
 const classNames = {
   button: s.button,
@@ -20,7 +22,7 @@ const classNames = {
   itemIcon: s.itemIcon,
 }
 
-export const Toolbar = ({ children }: ToolbarProps) => {
+export const Toolbar = ({ children, align = 'end' }: ToolbarProps) => {
   return (
     <DropdownMenu.Root>
       <DropdownMenu.Trigger asChild>
@@ -30,7 +32,7 @@ export const Toolbar = ({ children }: ToolbarProps) => {
       </DropdownMenu.Trigger>
 
       <DropdownMenu.Portal>
-        <DropdownMenu.Content className={classNames.content} align="end" sideOffset={8}>
+        <DropdownMenu.Content className={classNames.content} align={align} sideOffset={8}>
           <DropdownMenu.Arrow className={classNames.arrowBox} asChild>
             <div className={classNames.arrow} />
           </DropdownMenu.Arrow>

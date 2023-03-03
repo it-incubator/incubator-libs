@@ -120,6 +120,7 @@
   --color-border-secondary: var(--color-neutral-dark-900);
   --color-border-secondary-hover: var(--color-neutral-dark-100);
   --color-outline-focus: var(--color-info-300);
+  --color-border-input-active: var(--color-neutral-dark-900);
 
   /* backgrounds */
   --color-bg-primary: var(--color-neutral-light-50);
@@ -139,14 +140,15 @@
 
   /* interactive */
   --color-action-disabled: var(--color-neutral-dark-200);
+  --color-action-hover: var(--color-accent-50);
   --color-button-disabled: var(--color-accent-300);
   --color-button-bg-secondary: var(--color-neutral-light-50);
   --color-button-bg-secondary-active: var(--color-light-mode-600);
   --color-button-bg-secondary-hover: var(--color-light-mode-400);
   --color-button-text-disabled: var(--color-neutral-light-50);
   --color-button-text-secondary-disabled: var(--color-neutral-dark-300);
-  --color-button-bg-outline-hover: var(--color-accent-50);
   --color-button-bg-outline-active: var(--color-accent-100);
+  --color-border-select-active: var(--color-neutral-dark-300);
 }
 
 :root .dark-mode {
@@ -163,6 +165,7 @@
   --color-border-secondary: var(--color-neutral-light-100);
   --color-border-secondary-hover: var(--color-dark-mode-300);
   --color-outline-focus: var(--color-info-600);
+  --color-border-input-active: var(--color-neutral-light-50);
 
   /* backgrounds */
   --color-bg-primary: var(--color-dark-mode-700);
@@ -188,6 +191,7 @@
   --color-button-bg-secondary-hover: var(--color-dark-mode-300);
   --color-button-text-disabled: var(--color-neutral-light-600);
   --color-button-text-secondary-disabled: var(--color-neutral-light-700);
-  --color-button-bg-outline-hover: var(--color-accent-900);
+  --color-action-hover: var(--color-accent-900);
   --color-button-bg-outline-active: var(--color-accent-800);
+  --color-border-select-active: var(--color-dark-mode-300);
 }

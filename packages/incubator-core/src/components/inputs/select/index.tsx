@@ -2,6 +2,7 @@ import { FC, Fragment, useMemo } from 'react'
 
 import { Listbox } from '@headlessui/react'
 import { Float } from '@headlessui-float/react'
+import * as Label from '@radix-ui/react-label'
 import * as ScrollArea from '@radix-ui/react-scroll-area'
 import { clsx } from 'clsx'
 
@@ -28,6 +29,7 @@ interface CommonProps {
    * {label: string, value: string | number} */
   options: Array<Option>
   portal?: boolean
+  label?: string
 }
 
 type ConditionalMultipleProps =
@@ -82,6 +84,7 @@ export const Select: FC<SelectProps> = ({
   options,
   multiple = false,
   portal = true,
+  label,
 }) => {
   const isSecondary = variant === 'secondary'
 
@@ -106,52 +109,58 @@ export const Select: FC<SelectProps> = ({
     scrollViewport: s.scrollViewport,
     scrollbar: s.scrollbar,
     scrollThumb: s.scrollThumb,
+    label: s.label,
   }
-  const label = Array.isArray(value) ? value.map(v => optionsMap[v]).join(', ') : optionsMap[value]
+  const selectedOptionsLabels = Array.isArray(value)
+    ? value.map(v => optionsMap[v]).join(', ')
+    : optionsMap[value]
   const adaptiveWidth = variant !== 'pagination'
 
   return (
     <Listbox {...{ disabled, value, multiple, onChange }}>
       <div className={classNames.root}>
-        <Float
-          portal={portal}
-          as="div"
-          adaptiveWidth={adaptiveWidth}
-          placement="bottom"
-          floatingAs={Fragment}
-        >
-          <Listbox.Button className={classNames.trigger}>
-            <span className={classNames.value}>{label || placeholder}</span>
-            <span className={classNames.icon}>
-              <ChevronDown />
-            </span>
-          </Listbox.Button>
+        <Label.Root>
+          {label && <span className={classNames.label}>{label}</span>}
+          <Float
+            portal={portal}
+            as="div"
+            adaptiveWidth={adaptiveWidth}
+            placement="bottom"
+            floatingAs={Fragment}
+          >
+            <Listbox.Button className={classNames.trigger}>
+              <span className={classNames.value}>{selectedOptionsLabels || placeholder}</span>
+              <span className={classNames.icon}>
+                <ChevronDown />
+              </span>
+            </Listbox.Button>
 
-          <Listbox.Options className={classNames.content} as={'div'}>
-            <ScrollArea.Root className={classNames.scrollRoot} type="auto">
-              <ScrollArea.Viewport className={classNames.scrollViewport}>
-                {options.map(option => {
-                  // todo: add checkboxes for multi-select
-                  return (
-                    <Listbox.Option
-                      key={option.value}
-                      className={classNames.item}
-                      value={option.value}
-                      as={'div'}
-                    >
-                      <span>{option.label}</span>
-                    </Listbox.Option>
-                  )
-                })}
-              </ScrollArea.Viewport>
-              {variant !== 'pagination' && (
-                <ScrollArea.Scrollbar className={classNames.scrollbar} orientation="vertical">
-                  <ScrollArea.Thumb className={classNames.scrollThumb} />
-                </ScrollArea.Scrollbar>
-              )}
-            </ScrollArea.Root>
-          </Listbox.Options>
-        </Float>
+            <Listbox.Options className={classNames.content} as={'div'}>
+              <ScrollArea.Root className={classNames.scrollRoot} type="auto">
+                <ScrollArea.Viewport className={classNames.scrollViewport}>
+                  {options.map(option => {
+                    // todo: add checkboxes for multi-select
+                    return (
+                      <Listbox.Option
+                        key={option.value}
+                        className={classNames.item}
+                        value={option.value}
+                        as={'div'}
+                      >
+                        <span>{option.label}</span>
+                      </Listbox.Option>
+                    )
+                  })}
+                </ScrollArea.Viewport>
+                {variant !== 'pagination' && (
+                  <ScrollArea.Scrollbar className={classNames.scrollbar} orientation="vertical">
+                    <ScrollArea.Thumb className={classNames.scrollThumb} />
+                  </ScrollArea.Scrollbar>
+                )}
+              </ScrollArea.Root>
+            </Listbox.Options>
+          </Float>
+        </Label.Root>
         <>{error && <p className={classNames.error}>{errorMessage}</p>}</>
       </div>
     </Listbox>

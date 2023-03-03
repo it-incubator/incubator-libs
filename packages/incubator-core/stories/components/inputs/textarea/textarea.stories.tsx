@@ -14,6 +14,7 @@ Primary.args = {
   label: 'Some label',
   placeholder: 'Placeholder text',
   error: false,
+  disabled: false,
 }
 
 export const Invalid = Template.bind({})
@@ -22,4 +23,5 @@ Invalid.args = {
   value: 'Some value',
   error: true,
   errorMessage: 'Текст ошибки / подсказка',
+  disabled: false,
 }

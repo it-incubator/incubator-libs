@@ -19,19 +19,31 @@
   border-radius: var(--border-radius-s);
   outline: none;
 
+  transition: 200ms background-color, 200ms color;
+
   &[data-headlessui-state='open'] {
     border-radius: var(--border-radius-s) var(--border-radius-s) 0 0;
   }
 
-  &:disabled {
-    cursor: auto;
-    opacity: 0.7;
+  &::placeholder {
+    color: var(--color-text-secondary);
   }
 
-  &:focus,
-  &:hover:not(&:disabled),
-  &[data-headlessui-state='open'] {
-    border-color: var(--color-border-primary-active);
+  &:disabled {
+    cursor: auto;
+    color: var(--color-text-disabled);
+  }
+
+  &:hover:not(&:disabled) {
+    background-color: var(--color-bg-input-hover);
+  }
+
+  &:focus, &[data-headlessui-state='open'] {
+    border-color: var(--color-border-select-active);
+  }
+
+  &:focus-visible {
+    outline: var(--outline-focus);
   }
 
   &.error {
@@ -93,6 +105,10 @@
   [data-headlessui-state='open'] > & {
     transform: rotate(180deg);
   }
+
+  .trigger:disabled > & path {
+    stroke:  var(--color-text-disabled);
+  }
 }
 
 .item {
@@ -101,11 +117,14 @@
   outline: none;
   transition: 200ms background-color, 200ms color;
 
-  // todo: different colors for selected and active?
   &[data-headlessui-state='active'],
+  &[data-headlessui-state='active selected'] {
+    background-color: var(--color-action-hover);
+  }
+
   &[data-headlessui-state='selected'],
   &[data-headlessui-state='active selected'] {
-    background-color: var(--color-bg-element-hover);
+    color: var(--color-accent-500);
   }
 }
 
@@ -113,9 +132,11 @@
   overflow: hidden;
 
   background-color: var(--color-bg-element);
-  border: 1px solid var(--color-border-primary-active);
+  border: 1px solid var(--color-border-select-active);
   border-top: none;
   border-radius: 0 0 var(--border-radius-s) var(--border-radius-s);
+
+  outline: none;
 
   &.secondary {
     border: 1px solid var(--color-border-primary);

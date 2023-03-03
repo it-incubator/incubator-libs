@@ -77,7 +77,7 @@
 
   &:hover:not(&:disabled) {
     color: var(--color-accent-600);
-    background-color: var(--color-button-bg-outline-hover);
+    background-color: var(--color-action-hover);
   }
 
   &:active:not(&:disabled) {

@@ -13,4 +13,5 @@ export const Primary = Template.bind({})
 Primary.args = {
   variant: 'primary',
   children: 'Button',
+  disabled: false,
 }

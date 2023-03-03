@@ -118,10 +118,11 @@
   --color-border-primary-active: var(--color-neutral-dark-900);
   --color-border-secondary: var(--color-neutral-dark-900);
   --color-border-secondary-hover: var(--color-neutral-dark-100);
+  --color-outline-focus: var(--color-info-300);
 
   /* backgrounds */
   --color-bg-primary: var(--color-neutral-light-50);
-  --color-bg-primary-hover: var(--color-bg-primary);
+  --color-bg-primary-hover: var(--color-neutral-light-50);
   --color-bg-primary-active: var(--color-neutral-dark-100);
   --color-bg-element: var(--color-neutral-light-50);
   --color-bg-element-hover: var(--color-neutral-dark-100);
@@ -136,6 +137,14 @@
 
   /* interactive */
   --color-action-disabled: var(--color-neutral-dark-200);
+  --color-button-disabled: var(--color-accent-300);
+  --color-button-bg-secondary: var(--color-neutral-light-50);
+  --color-button-bg-secondary-active: var(--color-light-mode-600);
+  --color-button-bg-secondary-hover: var(--color-light-mode-400);
+  --color-button-text-disabled: var(--color-neutral-light-50);
+  --color-button-text-secondary-disabled: var(--color-neutral-dark-300);
+  --color-button-bg-outline-hover: var(--color-accent-50);
+  --color-button-bg-outline-active: var(--color-accent-100);
 }
 
 :root .dark-mode {
@@ -150,6 +159,7 @@
   --color-border-primary-active: var(--color-dark-mode-400);
   --color-border-secondary: var(--color-neutral-light-100);
   --color-border-secondary-hover: var(--color-dark-mode-300);
+  --color-outline-focus: var(--color-info-600);
 
   /* backgrounds */
   --color-bg-primary: var(--color-dark-mode-700);
@@ -168,4 +178,12 @@
 
   /* interactive */
   --color-action-disabled: var(--color-neutral-dark-400);
+  --color-button-disabled: var(--color-accent-700);
+  --color-button-bg-secondary: var(--color-dark-mode-400);
+  --color-button-bg-secondary-active: var(--color-dark-mode-500);
+  --color-button-bg-secondary-hover: var(--color-dark-mode-300);
+  --color-button-text-disabled: var(--color-neutral-light-600);
+  --color-button-text-secondary-disabled: var(--color-neutral-light-700);
+  --color-button-bg-outline-hover: var(--color-accent-900);
+  --color-button-bg-outline-active: var(--color-accent-800);
 }

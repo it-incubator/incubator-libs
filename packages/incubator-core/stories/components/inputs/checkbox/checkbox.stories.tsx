@@ -27,4 +27,5 @@ export const Default = Template.bind({})
 Default.args = {
   label: 'Click here',
   id: '1',
+  disabled: false,
 }

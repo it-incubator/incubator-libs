@@ -141,14 +141,15 @@
   /* interactive */
   --color-action-disabled: var(--color-neutral-dark-200);
   --color-action-hover: var(--color-accent-50);
+  --color-action-active: var(--color-accent-100);
   --color-button-disabled: var(--color-accent-300);
   --color-button-bg-secondary: var(--color-neutral-light-50);
   --color-button-bg-secondary-active: var(--color-light-mode-600);
   --color-button-bg-secondary-hover: var(--color-light-mode-400);
   --color-button-text-disabled: var(--color-neutral-light-50);
   --color-button-text-secondary-disabled: var(--color-neutral-dark-300);
-  --color-action-active: var(--color-accent-100);
   --color-border-select-active: var(--color-neutral-dark-300);
+  --color-checkbox-disabled: var(--color-neutral-dark-300);
 }
 
 :root .dark-mode {
@@ -194,4 +195,5 @@
   --color-action-hover: var(--color-accent-900);
   --color-action-active: var(--color-accent-800);
   --color-border-select-active: var(--color-dark-mode-300);
+  --color-checkbox-disabled: var(--color-dark-mode-400);
 }

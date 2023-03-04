@@ -129,7 +129,7 @@
   --color-bg-element: var(--color-neutral-light-50);
   --color-bg-element-hover: var(--color-neutral-dark-100);
   --color-bg-dividers: var(--color-neutral-dark-100);
-  --color-bg-scrollbar: var(--color-neutral-dark-50);
+  --color-bg-focus: var(--color-neutral-dark-50);
   --color-bg-overlay: var(--color-neutral-dark-300);
   --color-bg-interactive: var(--color-neutral-dark-100);
   --color-bg-contrast: var(--color-neutral-dark-900);
@@ -147,7 +147,7 @@
   --color-button-bg-secondary-hover: var(--color-light-mode-400);
   --color-button-text-disabled: var(--color-neutral-light-50);
   --color-button-text-secondary-disabled: var(--color-neutral-dark-300);
-  --color-button-bg-outline-active: var(--color-accent-100);
+  --color-action-active: var(--color-accent-100);
   --color-border-select-active: var(--color-neutral-dark-300);
 }
 
@@ -174,7 +174,7 @@
   --color-bg-element: var(--color-dark-mode-600);
   --color-bg-element-hover: var(--color-neutral-dark-400);
   --color-bg-dividers: var(--color-dark-mode-500);
-  --color-bg-scrollbar: var(--color-dark-mode-500);
+  --color-bg-focus: var(--color-dark-mode-500);
   --color-bg-overlay: #000;
   --color-bg-interactive: var(--color-neutral-light-100);
   --color-bg-contrast: var(--color-neutral-light-50);
@@ -192,6 +192,6 @@
   --color-button-text-disabled: var(--color-neutral-light-600);
   --color-button-text-secondary-disabled: var(--color-neutral-light-700);
   --color-action-hover: var(--color-accent-900);
-  --color-button-bg-outline-active: var(--color-accent-800);
+  --color-action-active: var(--color-accent-800);
   --color-border-select-active: var(--color-dark-mode-300);
 }

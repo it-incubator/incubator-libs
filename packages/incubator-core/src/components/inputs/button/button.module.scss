@@ -81,7 +81,7 @@
   }
 
   &:active:not(&:disabled) {
-    background-color: var(--color-button-bg-outline-active);
+    background-color: var(--color-action-active);
   }
 
   &:disabled {

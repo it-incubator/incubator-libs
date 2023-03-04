@@ -2,6 +2,7 @@ import { FC } from 'react'
 
 import * as CheckboxRadix from '@radix-ui/react-checkbox'
 import * as LabelRadix from '@radix-ui/react-label'
+import { clsx } from 'clsx'
 
 import { Check } from '../../../assets/icons/check'
 
@@ -16,14 +17,6 @@ export type CheckboxProps = {
   label?: string
 }
 
-const classNames = {
-  container: s.container,
-  buttonWrapper: s.buttonWrapper,
-  root: s.root,
-  indicator: s.indicator,
-  label: s.label,
-}
-
 export const Checkbox: FC<CheckboxProps> = ({
   checked,
   onChange,
@@ -32,23 +25,31 @@ export const Checkbox: FC<CheckboxProps> = ({
   id,
   label,
 }) => {
+  const classNames = {
+    container: s.container,
+    buttonWrapper: clsx(s.buttonWrapper, disabled && s.disabled),
+    root: s.root,
+    indicator: s.indicator,
+    label: clsx(s.label, disabled && s.disabled),
+  }
+
   return (
     <div className={classNames.container}>
-      <div className={classNames.buttonWrapper}>
-        <CheckboxRadix.Root
-          className={classNames.root}
-          checked={checked}
-          onCheckedChange={onChange}
-          disabled={disabled}
-          required={required}
-          id={id}
-        >
-          <CheckboxRadix.Indicator className={classNames.indicator}>
-            <Check />
-          </CheckboxRadix.Indicator>
-        </CheckboxRadix.Root>
-      </div>
       <LabelRadix.Root className={classNames.label} htmlFor={id}>
+        <div className={classNames.buttonWrapper}>
+          <CheckboxRadix.Root
+            className={classNames.root}
+            checked={checked}
+            onCheckedChange={onChange}
+            disabled={disabled}
+            required={required}
+            id={id}
+          >
+            <CheckboxRadix.Indicator className={classNames.indicator}>
+              <Check />
+            </CheckboxRadix.Indicator>
+          </CheckboxRadix.Root>
+        </div>
         {label}
       </LabelRadix.Root>
     </div>

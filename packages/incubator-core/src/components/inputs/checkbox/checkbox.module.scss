@@ -3,7 +3,23 @@
   align-items: center;
 }
 
+.label {
+  display: flex;
+  align-items: center;
+
+  font-size: var(--font-size-s);
+  line-height: var(--line-height-s);
+  color: var(--color-text-primary);
+
+  &.disabled {
+    color: var(--color-checkbox-disabled);
+  }
+}
+
+
 .buttonWrapper {
+  cursor: pointer;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,7 +32,17 @@
 
   transition: background-color 0.3s ease;
 
-  &:active {
+  &.disabled {
+    cursor: initial;
+  }
+
+  &:hover:not(.disabled),
+  &:focus-within,
+  &:hover .root:not([data-state='checked'])  {
+    background-color: var(--color-bg-focus);
+  }
+
+  &:active:not(.disabled) {
     background-color: var(--color-bg-primary-active);
   }
 }
@@ -32,24 +58,23 @@
   height: 16px;
 
   background-color: var(--color-bg-primary);
-  border: 1px solid var(--color-border-secondary);
+  border: 2px solid var(--color-border-secondary);
   border-radius: 2px;
+
+  &:focus {
+    background-color: var(--color-bg-focus);
+  }
 
   &[data-state='checked'] {
     background-color: var(--color-bg-contrast);
   }
 
-  &:hover:not([data-state='checked']) {
-    background-color: var(--color-bg-primary-hover);
-    border-color: var(--color-border-secondary-hover);
+  &:disabled {
+    cursor: initial;
+    border-color: var(--color-checkbox-disabled);
   }
-}
 
-.label {
-  display: flex;
-  align-items: center;
-
-  font-size: 14px;
-  line-height: 16px;
-  color: var(--color-text-primary);
+  &[data-state='checked']:disabled {
+    background-color: var(--color-checkbox-disabled);
+  }
 }

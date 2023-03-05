@@ -9,28 +9,28 @@
     "dist/**"
   ],
   "scripts": {
-    "build": "vite build && tsc && build-storybook",
+    "build": "vite build && tsc && storybook build",
     "lint": "TIMING=1 eslint \"src/**/*.ts*\"",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
-    "dev": "start-storybook -p 6006",
+    "dev": "storybook dev -p 6006",
     "start": "vite",
-    "build-storybook": "build-storybook"
+    "build-storybook": "storybook build"
   },
   "devDependencies": {
-    "@fontsource/roboto": "4.5.8",
     "@babel/core": "7.21.0",
+    "@fontsource/roboto": "4.5.8",
     "@headlessui-float/react": "0.10.1",
     "@headlessui/react": "1.7.11",
-
-    "@storybook/addon-actions": "6.5.16",
-    "@storybook/addon-docs": "6.5.16",
-    "@storybook/addon-essentials": "6.5.16",
-    "@storybook/addon-interactions": "6.5.16",
-    "@storybook/addon-links": "6.5.16",
-    "@storybook/builder-vite": "0.4.2",
-    "@storybook/react": "6.5.16",
-    "@storybook/testing-library": "0.0.13",
-    "@storybook/theming": "6.5.16",
+    "@storybook/addon-actions": "7.0.0-beta.61",
+    "@storybook/addon-docs": "7.0.0-beta.61",
+    "@storybook/addon-essentials": "7.0.0-beta.61",
+    "@storybook/addon-interactions": "7.0.0-beta.61",
+    "@storybook/addon-links": "7.0.0-beta.61",
+    "@storybook/addon-mdx-gfm": "7.0.0-beta.61",
+    "@storybook/react": "7.0.0-beta.61",
+    "@storybook/react-vite": "7.0.0-beta.61",
+    "@storybook/testing-library": "0.0.14-next.1",
+    "@storybook/theming": "7.0.0-beta.61",
     "@types/react": ">=18.0.28",
     "@types/react-dom": ">=18.0.11",
     "@vitejs/plugin-react": "^3.1.0",
@@ -40,6 +40,7 @@
     "react": ">=18.0.2",
     "react-dom": ">=18.0.2",
     "sass": "1.58.3",
+    "storybook": "7.0.0-beta.61",
     "typescript": "^4.9.5",
     "vite": "4.1.4"
   },
@@ -47,6 +48,9 @@
     "access": "public"
   },
   "dependencies": {
+    "@it-incubator/eslint-config": "workspace:*",
+    "@it-incubator/prettier-config-incubator": "workspace:*",
+    "@it-incubator/stylelint-config-incubator": "workspace:*",
     "@radix-ui/react-checkbox": "1.0.1",
     "@radix-ui/react-collapsible": "1.0.1",
     "@radix-ui/react-dialog": "1.0.2",
@@ -55,10 +59,7 @@
     "@radix-ui/react-scroll-area": "1.0.2",
     "@radix-ui/react-select": "1.2.0",
     "@radix-ui/react-tabs": "1.0.2",
-    "clsx": "1.2.1",
-    "@it-incubator/eslint-config": "workspace:*",
-    "@it-incubator/prettier-config-incubator": "workspace:*",
-    "@it-incubator/stylelint-config-incubator": "workspace:*"
+    "clsx": "1.2.1"
   },
   "peerDependencies": {
     "react": ">=18.0.2",

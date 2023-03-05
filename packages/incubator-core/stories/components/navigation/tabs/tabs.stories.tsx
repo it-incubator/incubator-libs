@@ -1,4 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react'
+import { Meta } from '@storybook/react'
 
 import { TabContent, Tabs } from '../../../../src'
 
@@ -20,13 +20,12 @@ export default {
       </>
     ),
   },
-} as ComponentMeta<typeof Tabs>
+} as Meta<typeof Tabs>
 
-const Template: ComponentStory<typeof Tabs> = args => <Tabs {...args} />
+export const Default = {}
 
-export const Default = Template.bind({})
-
-export const FullWidth = Template.bind({})
-FullWidth.args = {
-  fullWidth: true,
+export const FullWidth = {
+  args: {
+    fullWidth: true,
+  },
 }

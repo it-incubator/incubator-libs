@@ -6,7 +6,7 @@ import { More } from '../../../assets/icons/more'
 
 import s from './toolbar.module.scss'
 
-type ToolbarProps = {
+export type ToolbarProps = {
   /** Use TooltipItem components as children.*/
   children: ReactNode
   /** The preferred content alignment against the trigger. */

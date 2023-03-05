@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import { ComponentMeta } from '@storybook/react'
+import { Meta } from '@storybook/react'
 
 import { Pagination } from '../../../src'
 import { VerticalContainer } from '../../../storybook-utils/components/containers/vertical'
@@ -9,7 +9,7 @@ import { ValuePreview } from '../../../storybook-utils/components/previews/value
 export default {
   title: 'Components/Navigation/Pagination',
   component: Pagination,
-} as ComponentMeta<typeof Pagination>
+} as Meta<typeof Pagination>
 
 export const Default = () => {
   const [page, setPage] = useState(1)

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import { ComponentMeta } from '@storybook/react'
+import { Meta } from '@storybook/react'
 
 import { Modal, Select } from '../../../../src'
 import { VerticalContainer } from '../../../../storybook-utils/components/containers/vertical'
@@ -39,67 +39,106 @@ const options = [
 export default {
   title: 'Components/Inputs/Select',
   component: Select,
-} as ComponentMeta<typeof Select>
+} as Meta<typeof Select>
 
-const SimpleTemplate = args => {
-  const [value, setValue] = useState(null)
+export const Simple = {
+  render: args => {
+    const [value, setValue] = useState(null)
 
-  return (
-    <VerticalContainer>
-      <Select {...args} value={value} onChange={setValue} />
-      <div>Selected value: {value}</div>
-    </VerticalContainer>
-  )
-}
-const MultipleTemplate = args => {
-  const [values, setValues] = useState([])
+    return (
+      <VerticalContainer>
+        <Select {...args} value={value} onChange={setValue} />
+        <div>Selected value: {value}</div>
+      </VerticalContainer>
+    )
+  },
 
-  return (
-    <VerticalContainer>
-      <Select {...args} value={values} onChange={setValues} multiple />
-      <div>Selected values: {values.join(', ')}</div>
-    </VerticalContainer>
-  )
+  args: {
+    placeholder: 'Все курсы',
+    disabled: false,
+    options,
+  },
 }
 
-export const Simple = SimpleTemplate.bind({})
-Simple.args = {
-  placeholder: 'Все курсы',
-  disabled: false,
-  options,
+export const SimpleWithLabel = {
+  render: args => {
+    const [value, setValue] = useState(null)
+
+    return (
+      <VerticalContainer>
+        <Select {...args} value={value} onChange={setValue} />
+        <div>Selected value: {value}</div>
+      </VerticalContainer>
+    )
+  },
+
+  args: {
+    placeholder: 'Все курсы',
+    disabled: false,
+    options,
+    label: 'Курс*',
+  },
 }
 
-export const SimpleWithLabel = SimpleTemplate.bind({})
-SimpleWithLabel.args = {
-  placeholder: 'Все курсы',
-  disabled: false,
-  options,
-  label: 'Курс*',
+export const Multiple = {
+  render: args => {
+    const [values, setValues] = useState([])
+
+    return (
+      <VerticalContainer>
+        <Select {...args} value={values} onChange={setValues} multiple />
+        <div>Selected values: {values.join(', ')}</div>
+      </VerticalContainer>
+    )
+  },
+
+  args: {
+    placeholder: 'Все курсы',
+    disabled: false,
+    multiple: true,
+    options,
+  },
 }
 
-export const Multiple = MultipleTemplate.bind({})
-Multiple.args = {
-  placeholder: 'Все курсы',
-  disabled: false,
-  multiple: true,
-  options,
+export const Error = {
+  render: args => {
+    const [value, setValue] = useState(null)
+
+    return (
+      <VerticalContainer>
+        <Select {...args} value={value} onChange={setValue} />
+        <div>Selected value: {value}</div>
+      </VerticalContainer>
+    )
+  },
+
+  args: {
+    placeholder: 'Все курсы',
+    disabled: false,
+    error: true,
+    errorMessage: 'Ошибка',
+    options,
+  },
 }
 
-export const Error = SimpleTemplate.bind({})
-Error.args = {
-  placeholder: 'Все курсы',
-  disabled: false,
-  error: true,
-  errorMessage: 'Ошибка',
-  options,
-}
+export const Secondary = {
+  render: args => {
+    const [value, setValue] = useState(null)
 
-export const Secondary = SimpleTemplate.bind({})
-Secondary.args = {
-  placeholder: 'Все курсы',
-  disabled: false,
-  variant: 'secondary',
-  options,
+    return (
+      <VerticalContainer>
+        <Select {...args} value={value} onChange={setValue} />
+        <div>Selected value: {value}</div>
+      </VerticalContainer>
+    )
+  },
+
+  args: {
+    placeholder: 'Все курсы',
+    disabled: false,
+    variant: 'secondary',
+    options,
+  },
 }
 
 export const onModal = () => {

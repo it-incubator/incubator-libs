@@ -1,13 +1,14 @@
 module.exports = {
-  stories: ['../stories/**/*.stories.mdx', '../stories/**/*.stories.@(js|jsx|ts|tsx|mdx)'],
+  stories: ['../stories/**/*.mdx', '../stories/**/*.@(mdx|stories.@(js|jsx|ts|tsx))'],
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
+    '@storybook/addon-mdx-gfm',
   ],
-  framework: '@storybook/react',
-  core: {
-    builder: '@storybook/builder-vite',
+  framework: {
+    name: '@storybook/react-vite',
+    options: {},
   },
   features: {
     storyStoreV7: true,
@@ -16,5 +17,8 @@ module.exports = {
     storySort: {
       order: ['Intro', 'Pages', ['Home', 'Login', 'Admin'], 'Components'],
     },
+  },
+  docs: {
+    autodocs: true,
   },
 }

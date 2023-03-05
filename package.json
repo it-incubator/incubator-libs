@@ -13,8 +13,9 @@
   "devDependencies": {
     "@changesets/cli": "2.26.0",
     "@it-incubator/eslint-config": "workspace:*",
+    "@it-incubator/prettier-config": "workspace:*",
+    "@it-incubator/stylelint-config": "workspace:*",
     "prettier": "2.8.4",
-    "@it-incubator/prettier-config-incubator": "workspace:*",
     "turbo": "1.7.4"
   },
   "packageManager": "pnpm@7.15.0"

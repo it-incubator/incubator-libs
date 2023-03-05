@@ -6,17 +6,19 @@ importers:
     specifiers:
       '@changesets/cli': 2.26.0
       '@it-incubator/eslint-config': workspace:*
-      '@it-incubator/prettier-config-incubator': workspace:*
+      '@it-incubator/prettier-config': workspace:*
+      '@it-incubator/stylelint-config': workspace:*
       prettier: 2.8.4
       turbo: 1.7.4
     devDependencies:
       '@changesets/cli': 2.26.0
-      '@it-incubator/eslint-config': link:packages/eslint-config-incubator
-      '@it-incubator/prettier-config-incubator': link:packages/prettier-config-incubator
+      '@it-incubator/eslint-config': link:packages/eslint-config
+      '@it-incubator/prettier-config': link:packages/prettier-config
+      '@it-incubator/stylelint-config': link:packages/stylelint-config
       prettier: 2.8.4
       turbo: 1.7.4
 
-  packages/eslint-config-incubator:
+  packages/eslint-config:
     specifiers:
       '@typescript-eslint/eslint-plugin': ^5.51.0
       '@typescript-eslint/parser': ^5.51.0
@@ -38,15 +40,37 @@ importers:
       eslint-plugin-prettier: 4.2.1_xly7dezh77gpisljdueheukomu
       eslint-plugin-react: 7.32.2_eslint@8.35.0
 
-  packages/incubator-core:
+  packages/prettier-config:
+    specifiers: {}
+
+  packages/stylelint-config:
+    specifiers:
+      prettier-stylelint: 0.4.2
+      stylelint: 15.1.0
+      stylelint-config-clean-order: 5.0.0
+      stylelint-config-prettier-scss: 0.0.1
+      stylelint-config-standard-scss: 7.0.1
+      stylelint-prettier: 2.0.0
+    dependencies:
+      prettier-stylelint: 0.4.2
+      stylelint: 15.1.0
+      stylelint-config-clean-order: 5.0.0_stylelint@15.1.0
+      stylelint-config-prettier-scss: 0.0.1_stylelint@15.1.0
+      stylelint-config-standard-scss: 7.0.1_stylelint@15.1.0
+      stylelint-prettier: 2.0.0_stylelint@15.1.0
+
+  packages/tsconfig:
+    specifiers: {}
+
+  packages/ui-kit:
     specifiers:
       '@babel/core': 7.21.0
       '@fontsource/roboto': 4.5.8
       '@headlessui-float/react': 0.10.1
       '@headlessui/react': 1.7.11
       '@it-incubator/eslint-config': workspace:*
-      '@it-incubator/prettier-config-incubator': workspace:*
-      '@it-incubator/stylelint-config-incubator': workspace:*
+      '@it-incubator/prettier-config': workspace:*
+      '@it-incubator/stylelint-config': workspace:*
       '@radix-ui/react-checkbox': 1.0.1
       '@radix-ui/react-collapsible': 1.0.1
       '@radix-ui/react-dialog': 1.0.2
@@ -79,9 +103,9 @@ importers:
       typescript: ^4.9.5
       vite: 4.1.4
     dependencies:
-      '@it-incubator/eslint-config': link:../eslint-config-incubator
-      '@it-incubator/prettier-config-incubator': link:../prettier-config-incubator
-      '@it-incubator/stylelint-config-incubator': link:../stylelint-config-incubator
+      '@it-incubator/eslint-config': link:../eslint-config
+      '@it-incubator/prettier-config': link:../prettier-config
+      '@it-incubator/stylelint-config': link:../stylelint-config
       '@radix-ui/react-checkbox': 1.0.1_biqbaboplfbrettd7655fr4n2y
       '@radix-ui/react-collapsible': 1.0.1_biqbaboplfbrettd7655fr4n2y
       '@radix-ui/react-dialog': 1.0.2_zula6vjvt3wdocc4mwcxqa6nzi
@@ -119,13 +143,10 @@ importers:
       typescript: 4.9.5
       vite: 4.1.4_sass@1.58.3
 
-  packages/incubator-tsconfig:
-    specifiers: {}
-
-  packages/incubator-utils:
+  packages/utils:
     specifiers:
       '@it-incubator/eslint-config': workspace:*
-      '@it-incubator/prettier-config-incubator': workspace:*
+      '@it-incubator/prettier-config': workspace:*
       '@it-incubator/tsconfig': workspace:*
       '@types/react': ^18.0.9
       '@types/react-dom': ^18.0.4
@@ -134,34 +155,15 @@ importers:
       tsup: ^5.10.1
       typescript: ^4.5.3
     devDependencies:
-      '@it-incubator/eslint-config': link:../eslint-config-incubator
-      '@it-incubator/prettier-config-incubator': link:../prettier-config-incubator
-      '@it-incubator/tsconfig': link:../incubator-tsconfig
+      '@it-incubator/eslint-config': link:../eslint-config
+      '@it-incubator/prettier-config': link:../prettier-config
+      '@it-incubator/tsconfig': link:../tsconfig
       '@types/react': 18.0.28
       '@types/react-dom': 18.0.11
       eslint: 8.35.0
       react: 18.2.0
       tsup: 5.12.9_typescript@4.9.5
       typescript: 4.9.5
-
-  packages/prettier-config-incubator:
-    specifiers: {}
-
-  packages/stylelint-config-incubator:
-    specifiers:
-      prettier-stylelint: 0.4.2
-      stylelint: 15.1.0
-      stylelint-config-clean-order: 5.0.0
-      stylelint-config-prettier-scss: 0.0.1
-      stylelint-config-standard-scss: 7.0.1
-      stylelint-prettier: 2.0.0
-    dependencies:
-      prettier-stylelint: 0.4.2
-      stylelint: 15.1.0
-      stylelint-config-clean-order: 5.0.0_stylelint@15.1.0
-      stylelint-config-prettier-scss: 0.0.1_stylelint@15.1.0
-      stylelint-config-standard-scss: 7.0.1_stylelint@15.1.0
-      stylelint-prettier: 2.0.0_stylelint@15.1.0
 
 packages:
 

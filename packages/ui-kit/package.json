@@ -49,8 +49,8 @@
   },
   "dependencies": {
     "@it-incubator/eslint-config": "workspace:*",
-    "@it-incubator/prettier-config-incubator": "workspace:*",
-    "@it-incubator/stylelint-config-incubator": "workspace:*",
+    "@it-incubator/prettier-config": "workspace:*",
+    "@it-incubator/stylelint-config": "workspace:*",
     "@radix-ui/react-checkbox": "1.0.1",
     "@radix-ui/react-collapsible": "1.0.1",
     "@radix-ui/react-dialog": "1.0.2",

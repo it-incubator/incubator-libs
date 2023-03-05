@@ -2,7 +2,7 @@ import { FC } from 'react'
 
 import { clsx } from 'clsx'
 
-import { Button } from '../../inputs/button'
+import { Button } from '../../inputs'
 import { Modal, ModalProps } from '../modal'
 
 import s from './dialog.module.scss'

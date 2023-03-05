@@ -1,8 +1,5 @@
 import { ComponentProps, FC, ReactNode } from 'react'
 
-import * as CollapsibleRadix from '@radix-ui/react-collapsible'
-import { clsx } from 'clsx'
-
 export type CollapsibleProps = {
   defaultOpen: boolean
   open: boolean

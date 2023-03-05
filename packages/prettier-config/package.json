@@ -1,5 +1,5 @@
 {
-    "name": "@it-incubator/prettier-config-incubator",
+    "name": "@it-incubator/prettier-config",
     "version": "0.0.5",
     "main": "index.js",
     "author": "Andres",

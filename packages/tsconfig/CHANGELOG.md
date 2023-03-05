@@ -1,5 +1,10 @@
 # @it-incubator/tsconfig
 
+## 0.1.0
+### Minor Changes
+
+- update package names
+
 ## 0.0.5
 ### Patch Changes
 

@@ -1,5 +1,17 @@
 # @it-incubator/ui-kit
 
+## 0.1.0
+### Minor Changes
+
+- update package names
+
+### Patch Changes
+
+- Updated dependencies
+  - @it-incubator/eslint-config@0.1.0
+  - @it-incubator/prettier-config@0.1.0
+  - @it-incubator/stylelint-config@0.1.0
+
 ## 0.0.6
 ### Patch Changes
 

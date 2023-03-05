@@ -1,3 +1,3 @@
 module.exports = {
-  ...require('packages/prettier-config'),
+  ...require('@it-incubator/prettier-config'),
 }

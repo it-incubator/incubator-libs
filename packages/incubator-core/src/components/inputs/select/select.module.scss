@@ -190,3 +190,10 @@
   line-height: var(--line-height-sx);
   color: var(--color-accent-500);
 }
+
+.label {
+  display: inline-block;
+  margin-bottom: 9px;
+  font-size: var(--font-size-s);
+  color: var(--color-text-secondary);
+}

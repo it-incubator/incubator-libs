@@ -69,6 +69,14 @@ Simple.args = {
   options,
 }
 
+export const SimpleWithLabel = SimpleTemplate.bind({})
+SimpleWithLabel.args = {
+  placeholder: 'Все курсы',
+  disabled: false,
+  options,
+  label: 'Курс*',
+}
+
 export const Multiple = MultipleTemplate.bind({})
 Multiple.args = {
   placeholder: 'Все курсы',

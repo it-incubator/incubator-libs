@@ -29,6 +29,8 @@ interface CommonProps {
    * {label: string, value: string | number} */
   options: Array<Option>
   portal?: boolean
+  error?: boolean
+  errorMessage?: string
   label?: string
 }
 
@@ -60,17 +62,7 @@ type ConditionalMultipleProps =
       onChange: (value: Array<number>) => void
     }
 
-type ConditionalErrorProps =
-  | {
-      error?: true
-      errorMessage: string
-    }
-  | {
-      error?: false
-      errorMessage?: never
-    }
-
-export type SelectProps = CommonProps & ConditionalMultipleProps & ConditionalErrorProps
+export type SelectProps = CommonProps & ConditionalMultipleProps
 
 export const Select: FC<SelectProps> = ({
   variant = 'primary',

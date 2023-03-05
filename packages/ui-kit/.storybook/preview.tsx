@@ -2,6 +2,9 @@ import '../src/styles/index.scss'
 import { DecoratorFn } from '@storybook/react'
 import { clsx } from 'clsx'
 import './theme-block.scss'
+import '@fontsource/roboto'
+import '@fontsource/roboto/500.css'
+import '@fontsource/roboto/700.css'
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {

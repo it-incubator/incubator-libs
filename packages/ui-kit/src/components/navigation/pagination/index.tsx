@@ -2,8 +2,7 @@ import { FC } from 'react'
 
 import { clsx } from 'clsx'
 
-import { ChevronLeft } from '../../../assets/_icons/chevron-left'
-import { ChevronRight } from '../../../assets/_icons/chevron-right'
+import { KeyboardArrowLeft, KeyboardArrowRight } from '../../../assets/icons'
 import { Select } from '../../inputs'
 
 import s from './pagination.module.scss'
@@ -127,7 +126,7 @@ const PageButton: FC<PageButtonProps> = ({ onClick, disabled, selected, page }) 
 const PrevButton: FC<NavigationButtonProps> = ({ onClick, disabled }) => {
   return (
     <button className={classNames.item} onClick={onClick} disabled={disabled}>
-      <ChevronLeft className={classNames.icon} />
+      <KeyboardArrowLeft className={classNames.icon} size={16} />
     </button>
   )
 }
@@ -135,7 +134,7 @@ const PrevButton: FC<NavigationButtonProps> = ({ onClick, disabled }) => {
 const NextButton: FC<NavigationButtonProps> = ({ onClick, disabled }) => {
   return (
     <button className={classNames.item} onClick={onClick} disabled={disabled}>
-      <ChevronRight className={classNames.icon} />
+      <KeyboardArrowRight className={classNames.icon} size={16} />
     </button>
   )
 }

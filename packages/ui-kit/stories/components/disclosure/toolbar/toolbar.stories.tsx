@@ -1,8 +1,7 @@
 import { Meta } from '@storybook/react'
 
 import { Toolbar, ToolbarItemWithIcon } from '../../../../src'
-import { Delete } from '../../../../src/assets/_icons/delete'
-import { Edit } from '../../../../src/assets/_icons/edit'
+import { DeleteForever, Edit } from '../../../../src/assets/icons'
 import { useDarkMode } from '../../../../storybook-utils/hooks/use-dark-mode'
 
 export default {
@@ -21,7 +20,7 @@ export const Dark = {
     children: (
       <>
         <ToolbarItemWithIcon icon={<Edit />} text="Изменить" onSelect={() => {}} />
-        <ToolbarItemWithIcon icon={<Delete />} text="Удалить" onSelect={() => {}} />
+        <ToolbarItemWithIcon icon={<DeleteForever />} text="Удалить" onSelect={() => {}} />
       </>
     ),
   },
@@ -36,7 +35,7 @@ export const Light = {
     children: (
       <>
         <ToolbarItemWithIcon icon={<Edit />} text="Изменить" onSelect={() => {}} />
-        <ToolbarItemWithIcon icon={<Delete />} text="Удалить" onSelect={() => {}} />
+        <ToolbarItemWithIcon icon={<DeleteForever />} text="Удалить" onSelect={() => {}} />
       </>
     ),
   },

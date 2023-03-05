@@ -4,7 +4,7 @@ import * as CheckboxRadix from '@radix-ui/react-checkbox'
 import * as LabelRadix from '@radix-ui/react-label'
 import { clsx } from 'clsx'
 
-import { Check } from '../../../assets/_icons/check'
+import { Check } from '../../../assets/icons'
 
 import s from './checkbox.module.scss'
 
@@ -46,7 +46,7 @@ export const Checkbox: FC<CheckboxProps> = ({
             id={id}
           >
             <CheckboxRadix.Indicator className={classNames.indicator}>
-              <Check />
+              <Check size={18} color={'var(--color-text-primary)'} />
             </CheckboxRadix.Indicator>
           </CheckboxRadix.Root>
         </div>

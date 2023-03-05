@@ -51,10 +51,9 @@
 }
 
 .icon {
-  color: var(--color-text-primary);
-
   .item:disabled & {
-    color: var(--color-action-disabled);
+    // important because icons have style prop
+    color: var(--color-action-disabled) !important;
   }
 }
 
@@ -67,5 +66,5 @@
 
 .select {
   flex-shrink: 0;
-  width: unset;
+  width: 50px;
 }

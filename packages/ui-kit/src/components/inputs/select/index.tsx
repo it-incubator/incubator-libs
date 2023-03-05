@@ -6,7 +6,7 @@ import * as Label from '@radix-ui/react-label'
 import * as ScrollArea from '@radix-ui/react-scroll-area'
 import { clsx } from 'clsx'
 
-import { ChevronDown } from '../../../assets/_icons/chevron-down'
+import { KeyboardArrowDown } from '../../../assets/icons'
 
 import s from './select.module.scss'
 
@@ -106,24 +106,17 @@ export const Select: FC<SelectProps> = ({
   const selectedOptionsLabels = Array.isArray(value)
     ? value.map(v => optionsMap[v]).join(', ')
     : optionsMap[value]
-  const adaptiveWidth = variant !== 'pagination'
 
   return (
     <Listbox {...{ disabled, value, multiple, onChange }}>
       <div className={classNames.root}>
         <Label.Root>
           {label && <span className={classNames.label}>{label}</span>}
-          <Float
-            portal={portal}
-            as="div"
-            adaptiveWidth={adaptiveWidth}
-            placement="bottom"
-            floatingAs={Fragment}
-          >
+          <Float portal={portal} as="div" adaptiveWidth placement="bottom" floatingAs={Fragment}>
             <Listbox.Button className={classNames.trigger}>
               <span className={classNames.value}>{selectedOptionsLabels || placeholder}</span>
               <span className={classNames.icon}>
-                <ChevronDown />
+                <KeyboardArrowDown size={variant === 'pagination' ? 16 : 24} />
               </span>
             </Listbox.Button>
 

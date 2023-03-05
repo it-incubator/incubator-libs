@@ -3,7 +3,7 @@ import { ComponentProps, FC } from 'react'
 import { Dialog } from '@headlessui/react'
 import { clsx } from 'clsx'
 
-import { Cross } from '../../../assets/_icons/cross'
+import { Close } from '../../../assets/icons'
 
 import s from './modal.module.scss'
 
@@ -54,7 +54,7 @@ export const Modal: FC<ModalProps> = ({
 
             {showCloseButton && (
               <button className={classNames.closeButton} onClick={handleModalClosed}>
-                <Cross />
+                <Close />
               </button>
             )}
           </header>

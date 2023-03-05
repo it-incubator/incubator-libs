@@ -2,8 +2,8 @@ import { FC } from 'react'
 
 import { clsx } from 'clsx'
 
-import { ChevronLeft } from '../../../assets/icons/chevron-left'
-import { ChevronRight } from '../../../assets/icons/chevron-right'
+import { ChevronLeft } from '../../../assets/_icons/chevron-left'
+import { ChevronRight } from '../../../assets/_icons/chevron-right'
 import { Select } from '../../inputs'
 
 import s from './pagination.module.scss'

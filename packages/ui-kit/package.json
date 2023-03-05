@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "build": "vite build && tsc && storybook build",
-    "lint": "TIMING=1 eslint \"src/**/*.ts*\"",
+    "lint": "TIMING=1 eslint --fix \"src/**/*.ts*\"",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
     "dev": "storybook dev -p 6006",
     "start": "vite",

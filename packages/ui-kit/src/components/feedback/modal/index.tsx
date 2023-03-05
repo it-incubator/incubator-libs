@@ -3,7 +3,7 @@ import { ComponentProps, FC } from 'react'
 import { Dialog } from '@headlessui/react'
 import { clsx } from 'clsx'
 
-import { Cross } from '../../../assets/icons/cross'
+import { Cross } from '../../../assets/_icons/cross'
 
 import s from './modal.module.scss'
 

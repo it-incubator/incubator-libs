@@ -1,17 +1,16 @@
 import { FC, RefAttributes } from 'react'
 
-import { clsx } from 'clsx'
-
+import { Search as SearchIcon } from '../../../assets/icons'
 import { TextField, TextFieldProps } from '../text-field'
-
-import s from './search.module.scss'
 
 export type SearchProps = {} & TextFieldProps & RefAttributes<HTMLInputElement>
 
 export const Search: FC<SearchProps> = ({ placeholder = 'Поиск...', className, ...rest }) => {
-  const classNames = {
-    search: clsx(s.search, className),
-  }
-
-  return <TextField placeholder={placeholder} className={classNames.search} {...rest} />
+  return (
+    <TextField
+      placeholder={placeholder}
+      iconStart={<SearchIcon size={20} color={'var(--color-text-secondary)'} />}
+      {...rest}
+    />
+  )
 }

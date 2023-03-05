@@ -1,12 +1,44 @@
 .box {
   display: flex;
   flex-direction: column;
+
 }
 
 .label {
   margin-bottom: 9px;
   font-size: var(--font-size-s);
   color: var(--color-text-secondary);
+}
+
+.inputContainer {
+  position: relative;
+}
+
+
+.iconStart {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+
+  display: grid;
+  place-items: center;
+
+  width: 20px;
+  height: 20px;
+}
+
+.iconEnd {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+
+  display: grid;
+  place-items: center;
+
+  width: 20px;
+  height: 20px;
 }
 
 .input {
@@ -28,10 +60,6 @@
     color: var(--color-text-secondary);
   }
 
-  &:hover:not(&:disabled) {
-    background-color: var(--color-bg-input-hover);
-  }
-
   &:active,
   &:focus {
     border-color: var(--color-border-input-active);
@@ -44,6 +72,15 @@
   &:disabled {
     color: var(--color-text-disabled);
   }
+
+  &:hover:not(&:disabled) {
+    background-color: var(--color-bg-input-hover);
+  }
+
+  &[data-icon~="start"] {
+    padding-left: 36px;
+  }
+
 }
 
 .errorText {
@@ -52,3 +89,4 @@
   line-height: var(--line-height-sx);
   color: var(--color-accent-500);
 }
+

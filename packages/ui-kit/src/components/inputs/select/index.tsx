@@ -6,7 +6,7 @@ import * as Label from '@radix-ui/react-label'
 import * as ScrollArea from '@radix-ui/react-scroll-area'
 import { clsx } from 'clsx'
 
-import { ChevronDown } from '../../../assets/icons/chevron-down'
+import { ChevronDown } from '../../../assets/_icons/chevron-down'
 
 import s from './select.module.scss'
 

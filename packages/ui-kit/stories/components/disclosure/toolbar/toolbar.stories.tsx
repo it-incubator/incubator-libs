@@ -1,8 +1,8 @@
 import { Meta } from '@storybook/react'
 
 import { Toolbar, ToolbarItemWithIcon } from '../../../../src'
-import { Delete } from '../../../../src/assets/icons/delete'
-import { Edit } from '../../../../src/assets/icons/edit'
+import { Delete } from '../../../../src/assets/_icons/delete'
+import { Edit } from '../../../../src/assets/_icons/edit'
 import { useDarkMode } from '../../../../storybook-utils/hooks/use-dark-mode'
 
 export default {

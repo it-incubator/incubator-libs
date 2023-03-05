@@ -2,7 +2,7 @@ import { FC, ReactNode } from 'react'
 
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
 
-import { More } from '../../../assets/icons/more'
+import { More } from '../../../assets/_icons/more'
 
 import s from './toolbar.module.scss'
 

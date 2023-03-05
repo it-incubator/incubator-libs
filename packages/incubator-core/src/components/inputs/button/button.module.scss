@@ -12,9 +12,20 @@
   line-height: 1.25rem;
   text-align: center;
   text-decoration: none;
+  background-color: transparent;
 
   border: none;
   border-radius: 2rem;
+
+  transition: 200ms background-color, 200ms color;
+
+  &:focus-visible {
+    outline: 2px solid var(--color-outline-focus);
+  }
+
+  &:disabled {
+    cursor: initial;
+  }
 }
 
 .primary {
@@ -24,8 +35,7 @@
   background-color: var(--color-accent-500);
   box-shadow: 0 4px 18px rgb(245 26 81 / 35%), inset 0 1px 0 rgb(255 255 255 / 30%);
 
-  &:hover,
-  &:focus {
+  &:hover {
     background-color: var(--color-accent-400);
   }
 
@@ -33,43 +43,48 @@
     background-color: var(--color-accent-600);
   }
 
-  .dark & {
-    color: var(--color-neutral-dark-900);
-    background-color: var(--color-accent-500);
-    box-shadow: 0 4px 18px rgb(227 26 101 / 35%), inset 0 1px 0 rgb(0 0 0 / 30%);
+  &:disabled {
+    color: var(--color-button-text-disabled);
+    background-color: var(--color-button-disabled);
   }
 }
 
 .secondary {
   @include button;
+  color: var(--color-text-primary);
+  background: var(--color-button-bg-secondary);
+  box-shadow: 0 2px 10px rgba(109 109 109 / 25%);
 
-  color: var(--button-secondary-color);
-  background-color: var(--button-secondary-bg);
-  box-shadow: var(--button-secondary-shadow);
-
-  &:hover,
-  &:focus {
-    background-color: var(--button-secondary-bg-hover);
+  &:hover:not(&:disabled) {
+    background-color: var(--color-button-bg-secondary-hover);
   }
 
-  &:active {
-    background-color: var(--button-secondary-bg-active);
+  &:active:not(&:disabled) {
+    background-color: var(--color-button-bg-secondary-active);
+  }
+
+  &:disabled {
+    color: var(--color-button-text-secondary-disabled);
   }
 }
 
 .outlined {
   @include button;
 
-  color: var(--button-outlined-color);
-  background-color: var(--button-outlined-bg);
-  box-shadow: var(--button-outlined-shadow);
+  border: 1px solid currentColor;
 
-  &:hover,
-  &:focus {
-    background-color: var(--button-outlined-bg-hover);
+  color: var(--color-accent-500);
+
+  &:hover:not(&:disabled) {
+    color: var(--color-accent-600);
+    background-color: var(--color-action-hover);
   }
 
-  &:active {
-    background-color: var(--button-outlined-bg-active);
+  &:active:not(&:disabled) {
+    background-color: var(--color-action-active);
+  }
+
+  &:disabled {
+    color: var(--color-button-disabled);
   }
 }

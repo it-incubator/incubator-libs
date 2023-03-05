@@ -28,16 +28,27 @@
   border-radius: var(--border-radius-s);
   outline: none;
 
+  transition: 200ms background-color, 200ms color, 200ms border-color;
+
   &::placeholder {
     color: var(--color-text-secondary);
   }
 
+  &:hover:not(&:disabled) {
+    background-color: var(--color-bg-input-hover);
+  }
+
+  &:active,
   &:focus {
-    border-color: var(--color-border-primary-active);
+    border-color: var(--color-border-input-active);
   }
 
   &.error {
     border-color: var(--color-accent-500);
+  }
+
+  &:disabled {
+    color: var(--color-text-disabled);
   }
 }
 

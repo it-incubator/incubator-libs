@@ -2,11 +2,11 @@ import { FC, Fragment, useMemo } from 'react'
 
 import { Listbox } from '@headlessui/react'
 import { Float } from '@headlessui-float/react'
-import * as Label from '@radix-ui/react-label'
 import * as ScrollArea from '@radix-ui/react-scroll-area'
 import { clsx } from 'clsx'
 
 import { KeyboardArrowDown } from '../../../assets/icons'
+import { Label } from '../label'
 
 import s from './select.module.scss'
 
@@ -110,8 +110,7 @@ export const Select: FC<SelectProps> = ({
   return (
     <Listbox {...{ disabled, value, multiple, onChange }}>
       <div className={classNames.root}>
-        <Label.Root>
-          {label && <span className={classNames.label}>{label}</span>}
+        <Label label={label}>
           <Float portal={portal} as="div" adaptiveWidth placement="bottom" floatingAs={Fragment}>
             <Listbox.Button className={classNames.trigger}>
               <span className={classNames.value}>{selectedOptionsLabels || placeholder}</span>
@@ -145,7 +144,7 @@ export const Select: FC<SelectProps> = ({
               </ScrollArea.Root>
             </Listbox.Options>
           </Float>
-        </Label.Root>
+        </Label>
         <>{error && <p className={classNames.error}>{errorMessage}</p>}</>
       </div>
     </Listbox>

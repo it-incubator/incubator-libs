@@ -1,0 +1,47 @@
+.box {
+  border: 1px solid var(--color-border-primary);
+  border-radius: var(--border-radius-s);
+  background-color: var(--color-bg-element);
+
+  color: var(--color-text-primary);
+
+  &.info {
+    border-color: var(--color-info-400);
+    background-color: var(--color-bg-info);
+  }
+}
+
+.title {
+  display: flex;
+  gap: 13px;
+  align-items: center;
+  margin: 0;
+  padding: 7px 24px 5px 24px;
+
+  font-size: var(--font-size-m);
+  line-height: var(--line-height-m);
+  font-weight: 500;
+
+  background-color: var(--color-bg-dividers);
+}
+
+.content {
+  padding: 6px 24px;
+  font-size: var(--font-size-m);
+  line-height: var(--line-height-m);
+}
+
+.icon {
+  position: relative;
+  width: 14px;
+  height: 14px;
+
+  span {
+    position: absolute;
+  }
+
+  svg {
+    width: 14px;
+    height: 14px;
+  }
+}

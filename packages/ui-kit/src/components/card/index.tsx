@@ -43,7 +43,7 @@ export const Card: FC<CardProps> = ({
     <div className={classNames.box} {...rest}>
       {title && (
         <h3 className={classNames.title}>
-          {iconComponent && <div className={classNames.icon}>{iconComponent}</div>}
+          {iconComponent}
           {title}
         </h3>
       )}

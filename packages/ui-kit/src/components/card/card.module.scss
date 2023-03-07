@@ -30,18 +30,3 @@
   font-size: var(--font-size-m);
   line-height: var(--line-height-m);
 }
-
-.icon {
-  position: relative;
-  width: 14px;
-  height: 14px;
-
-  span {
-    position: absolute;
-  }
-
-  svg {
-    width: 14px;
-    height: 14px;
-  }
-}

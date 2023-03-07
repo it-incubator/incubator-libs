@@ -24,13 +24,13 @@ export default {
 
 export const Default = {
   render: args => {
-    const [value, setValue] = useState(null)
+    const [value, setValue] = useState('frontend')
 
     return (
       <VerticalContainer>
         <Header>
           <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: '24px' }}>
-            <Select options={options} value={value} onChange={setValue} />
+            <Select options={options} value={value} onChange={setValue} width="210" />
             <Toolbar>
               <ToolbarItemWithIcon icon={<Edit />} text="Изменить" onSelect={() => {}} />
               <ToolbarItemWithIcon icon={<DeleteForever />} text="Удалить" onSelect={() => {}} />

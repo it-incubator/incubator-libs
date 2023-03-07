@@ -7,8 +7,30 @@ export default {
   component: Tag,
 } as Meta<typeof Tag>
 
-export const Primary = {
+export const PrimaryClickable = {
   args: {
     label: 'Супер контент, спасибо 👍',
+    onClick: () => {},
+  },
+}
+
+export const PrimaryUnclickable = {
+  args: {
+    label: 'Супер контент, спасибо 👍',
+  },
+}
+
+export const SecondaryClickable = {
+  args: {
+    label: 'Супер контент, спасибо 👍',
+    variant: 'secondary',
+    onClick: () => {},
+  },
+}
+
+export const SecondaryUnclickable = {
+  args: {
+    label: 'Супер контент, спасибо 👍',
+    variant: 'secondary',
   },
 }

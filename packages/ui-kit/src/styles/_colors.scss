@@ -134,6 +134,8 @@
   --color-bg-interactive: var(--color-neutral-dark-100);
   --color-bg-contrast: var(--color-neutral-dark-900);
   --color-bg-input-hover: var(--color-neutral-light-500);
+  --color-bg-disabled: var(--color-neutral-dark-50);
+  --color-bg-secondary-hover: var(--color-neutral-dark-200);
 
   /* icons */
   --color-fill-icon: var(--color-neutral-light-900);
@@ -180,6 +182,9 @@
   --color-bg-interactive: var(--color-neutral-light-100);
   --color-bg-contrast: var(--color-neutral-light-50);
   --color-bg-input-hover: var(--color-dark-mode-500);
+  --color-bg-disabled: var(--color-dark-mode-600);
+  --color-bg-secondary-hover: var(--color-dark-mode-400);
+
 
   /* icons */
   --color-fill-icon: var(--color-neutral-light-100);

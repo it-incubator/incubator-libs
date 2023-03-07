@@ -5,16 +5,14 @@
 .trigger {
   cursor: pointer;
 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
   padding: 6px 24px;
   width: 100%;
   background: var(--color-bg-dividers);
   color: var(--color-text-primary);
   border-radius: var(--border-radius-m);
   border: none;
+
+  transition: 200ms background-color;
 
   &[data-state="open"] {
     border-radius: var(--border-radius-m) var(--border-radius-m) 0 0;
@@ -25,6 +23,21 @@
       transform: rotate(180deg);
     }
   }
+
+  &:disabled {
+    cursor: initial;
+    background-color: var(--color-bg-disabled);
+  }
+
+  &:hover {
+    background-color: var(--color-bg-secondary-hover);
+  }
+}
+
+.triggerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .titleBox {
@@ -33,6 +46,14 @@
   gap: 12px;
 }
 
+.description {
+  margin: 0;
+
+  text-align: left;
+  font-size: var(--font-size-sx);
+  line-height: var(--line-height-m);
+  color: var(--color-text-secondary);
+}
 
 .content {
   width: 100%;

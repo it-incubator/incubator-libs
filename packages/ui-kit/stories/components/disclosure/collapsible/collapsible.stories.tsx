@@ -13,5 +13,7 @@ export const DefaultUncontrolled = {
     title: 'Accordion',
     children: 'some content',
     iconComponent: <InfoIcon size={16} />,
+    disabled: false,
+    description: 'Some description',
   },
 }

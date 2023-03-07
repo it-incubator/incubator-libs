@@ -11,6 +11,7 @@ export type CollapsibleProps = {
   title: string
   children: ReactNode
   iconComponent?: JSX.Element
+  description?: string
   disabled?: boolean
   collapsible?: boolean
   /** The open state of the collapsible when it is initially rendered. Use when you do not need to control its open state.*/
@@ -27,13 +28,16 @@ export const Collapsible: FC<CollapsibleProps> = ({
   title,
   className,
   iconComponent,
+  description,
   ...rest
 }) => {
   const classNames = {
     root: clsx(s.root, className),
     trigger: s.trigger,
+    triggerRow: s.triggerRow,
     titleBox: s.titleBox,
     titleIcons: s.titleIcon,
+    description: s.description,
     content: s.content,
     arrowIcon: s.arrowIcon,
   }
@@ -41,11 +45,14 @@ export const Collapsible: FC<CollapsibleProps> = ({
   return (
     <CollapsibleRadix.Root className={classNames.root} {...rest}>
       <CollapsibleRadix.Trigger className={classNames.trigger}>
-        <div className={classNames.titleBox}>
-          {iconComponent}
-          <span>{title}</span>
+        <div className={classNames.triggerRow}>
+          <div className={classNames.titleBox}>
+            {iconComponent}
+            <span>{title}</span>
+          </div>
+          <KeyboardArrowDown className={classNames.arrowIcon} />
         </div>
-        <KeyboardArrowDown className={classNames.arrowIcon} />
+        {description && <p className={classNames.description}>{description}</p>}
       </CollapsibleRadix.Trigger>
 
       <CollapsibleRadix.Content className={classNames.content}>{children}</CollapsibleRadix.Content>

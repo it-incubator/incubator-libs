@@ -27,10 +27,15 @@
   &:disabled {
     cursor: initial;
     background-color: var(--color-bg-disabled);
+    color: var(--color-text-disabled);
   }
 
-  &:hover {
+  &:hover:not(&:disabled) {
     background-color: var(--color-bg-secondary-hover);
+  }
+
+  &:focus-visible {
+    outline: var(--outline-focus);
   }
 }
 

@@ -10,7 +10,7 @@ import s from './collapsible.module.scss'
 export type CollapsibleProps = {
   title: string
   children: ReactNode
-  iconComponent?: JSX.Element
+  iconComponent?: ReactNode
   description?: string
   disabled?: boolean
   collapsible?: boolean

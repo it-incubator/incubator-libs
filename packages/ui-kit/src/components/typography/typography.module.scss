@@ -7,67 +7,38 @@
 
 .headline1 {
   @include typography(var(--font-size-xll), var(--line-height-xl), 700);
-
-  all: unset;
-  font-size: var(--font-size-xll);
-  font-weight: 700;
-  line-height: var(--line-height-xl);
 }
 
 .headline2 {
-  all: unset;
-  font-size: var(--font-size-xl);
-  font-weight: 600;
-  line-height: var(--line-height-m);
+  @include typography(var(--font-size-xl), var(--line-height-m), 600);
 }
 
 .headline3 {
-  all: unset;
-  font-size: var(--font-size-l);
-  font-weight: 500;
-  line-height: var(--line-height-m);
+  @include typography(var(--font-size-l), var(--line-height-m), 500);
 }
 
 .subtitle1 {
-  all: unset;
-  font-size: var(--font-size-m);
-  font-weight: 500;
-  line-height: var(--line-height-m);
+  @include typography(var(--font-size-m), var(--line-height-m), 500);
 }
 
 .subtitle2 {
-  all: unset;
-  font-size: var(--font-size-s);
-  font-weight: 500;
-  line-height: var(--line-height-m);
+  @include typography(var(--font-size-s), var(--line-height-m), 500);
 }
 
 .body1 {
-  all: unset;
-  font-size: var(--font-size-m);
-  font-weight: 400;
-  line-height: var(--line-height-m);
+  @include typography(var(--font-size-m), var(--line-height-m), 400);
 }
 
 .body2 {
-  all: unset;
-  font-size: var(--font-size-s);
-  font-weight: 400;
-  line-height: var(--line-height-m);
+  @include typography(var(--font-size-s), var(--line-height-m), 400);
 }
 
 .overline {
-  all: unset;
+  @include typography(var(--font-size-s), var(--line-height-m), 700);
 
-  font-size: var(--font-size-s);
-  font-weight: 700;
-  line-height: var(--line-height-m);
   text-transform: uppercase;
 }
 
 .caption {
-  all: unset;
-  font-size: var(--font-size-s);
-  font-weight: 400;
-  line-height: var(--line-height-m);
+  @include typography(var(--font-size-s), var(--line-height-m), 400);
 }

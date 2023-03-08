@@ -1,7 +1,8 @@
 import { ComponentProps, forwardRef, ReactNode } from 'react'
 
-import * as Label from '@radix-ui/react-label'
 import { clsx } from 'clsx'
+
+import { Label } from '../label'
 
 import s from './text-field.module.scss'
 
@@ -34,8 +35,7 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
 
     return (
       <div className={classNames.root}>
-        <Label.Root>
-          {label && <div className={classNames.label}>{label}</div>}
+        <Label label={label}>
           <div className={classNames.inputContainer}>
             {!!iconStart && <span className={classNames.iconStart}>{iconStart}</span>}
             <input
@@ -47,7 +47,8 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
             />
             {!!iconEnd && <span className={classNames.iconEnd}>{iconEnd}</span>}
           </div>
-        </Label.Root>
+        </Label>
+
         {error && <p className={classNames.error}>{errorMessage}</p>}
       </div>
     )

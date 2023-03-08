@@ -56,7 +56,7 @@
     background-color: transparent;
     border: none;
 
-    span:first-child {
+    & > span:first-child {
       padding-bottom: 1px;
 
       color: var(--color-info-400);

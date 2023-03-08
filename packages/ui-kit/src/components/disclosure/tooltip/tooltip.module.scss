@@ -1,0 +1,47 @@
+.content {
+  position: relative;
+
+  padding: 8px;
+  max-width: 270px;
+
+  font-size: var(--font-size-s);
+  line-height: 24px;
+  color: var(--color-text-primary);
+
+
+  background-color: var(--color-bg-tooltip);
+  border: 1px solid var(--color-border-primary);
+  border-radius: var(--border-radius-m );
+}
+
+
+.iconButton {
+  all: unset;
+
+  &:hover .infoIcon,
+  &:focus .infoIcon {
+        color: var(--color-text-primary);
+  }
+}
+
+.infoIcon {
+  color: var(--color-text-secondary);
+  transition: 200ms color;
+}
+
+
+.arrow {
+  position: absolute;
+  z-index: 100;
+  top: -3px;
+  left: calc(50% - 3px);
+  transform: rotate(45deg);
+
+  width: 8px;
+  height: 8px;
+
+  background-color: var(--color-bg-element);
+  border: 1px solid var(--color-border-primary);
+  border-top: none;
+  border-left: none;
+}

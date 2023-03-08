@@ -28,7 +28,8 @@
   border-radius: var(--border-radius-s);
   outline: none;
 
-  transition: 200ms background-color, 200ms color, 200ms border-color;
+  transition: var(--transtition-duration-default) background-color,
+    var(--transtition-duration-default) color, var(--transtition-duration-default) border-color;
 
   &::placeholder {
     color: var(--color-text-secondary);

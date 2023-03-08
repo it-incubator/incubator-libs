@@ -4,5 +4,9 @@
   --border-radius-m: 4px;
   --border-radius-l: 10px;
 
+  /* outlines */
   --outline-focus: 2px solid var(--color-outline-focus);
+
+  /* transitions */
+  --transtition-duration-default: 200ms;
 }

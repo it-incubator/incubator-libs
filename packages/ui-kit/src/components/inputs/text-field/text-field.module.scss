@@ -1,7 +1,6 @@
 .box {
   display: flex;
   flex-direction: column;
-
 }
 
 .label {
@@ -13,7 +12,6 @@
 .inputContainer {
   position: relative;
 }
-
 
 .iconStart {
   position: absolute;
@@ -54,7 +52,8 @@
   border-radius: var(--border-radius-s);
   outline: none;
 
-  transition: 200ms background-color, 200ms color, 200ms border-color;
+  transition: var(--transtition-duration-default) background-color,
+    var(--transtition-duration-default) color, var(--transtition-duration-default) border-color;
 
   &::placeholder {
     color: var(--color-text-secondary);
@@ -77,10 +76,9 @@
     background-color: var(--color-bg-input-hover);
   }
 
-  &[data-icon~="start"] {
+  &[data-icon~='start'] {
     padding-left: 36px;
   }
-
 }
 
 .errorText {
@@ -89,4 +87,3 @@
   line-height: var(--line-height-sx);
   color: var(--color-accent-500);
 }
-

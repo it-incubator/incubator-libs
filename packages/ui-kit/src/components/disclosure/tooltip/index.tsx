@@ -8,7 +8,7 @@ import s from './tooltip.module.scss'
 
 export type TooltipProps = {
   children: ReactNode
-  icon?: JSX.Element
+  icon?: ReactNode
 }
 
 export const Tooltip: FC<TooltipProps> = ({ children, icon }) => {

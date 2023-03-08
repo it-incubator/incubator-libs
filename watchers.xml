@@ -32,7 +32,7 @@
       <array />
     </option>
     <option name="outputFromStdout" value="false" />
-    <option name="program" value="$ProjectFileDir$/node_modules/.bin/stylelint" />
+    <option name="program" value="$ProjectFileDir$/packages/stylelint-config/node_modules/.bin/stylelint" />
     <option name="runOnExternalChanges" value="false" />
     <option name="scopeName" value="Current File" />
     <option name="trackOnlyRoot" value="false" />

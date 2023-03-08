@@ -1,6 +1,5 @@
 import { IconWrapper } from '../IconWrapper'
 import { IconProps } from '../types'
-
 const Info = (allProps: IconProps) => {
   const { svgProps: props, ...restProps } = allProps
 

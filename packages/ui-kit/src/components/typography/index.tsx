@@ -6,7 +6,7 @@ import s from './typography.module.scss'
 
 export type TypographyProps = {
   children: ReactNode
-  variant?: keyof HTMLElementTagNameMap
+  component?: keyof HTMLElementTagNameMap
   className?: string
 }
 
@@ -14,8 +14,8 @@ const createTypographyComponent = (
   defaultComponent: keyof HTMLElementTagNameMap,
   basicClassName: string
 ): FC<TypographyProps> => {
-  return ({ children, variant, className, ...rest }: TypographyProps) => {
-    const Component = variant || defaultComponent
+  return ({ children, component, className, ...rest }) => {
+    const Component = component || defaultComponent
 
     const classNames = clsx(s[basicClassName], className)
 

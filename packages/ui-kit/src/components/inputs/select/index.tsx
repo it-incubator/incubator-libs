@@ -32,6 +32,8 @@ interface CommonProps {
   error?: boolean
   errorMessage?: string
   label?: string
+  /** width in pixels */
+  width?: string
 }
 
 type ConditionalMultipleProps =
@@ -77,6 +79,7 @@ export const Select: FC<SelectProps> = ({
   multiple = false,
   portal = true,
   label,
+  width,
 }) => {
   const isSecondary = variant === 'secondary'
 
@@ -107,12 +110,14 @@ export const Select: FC<SelectProps> = ({
     ? value.map(v => optionsMap[v]).join(', ')
     : optionsMap[value]
 
+  const triggerStyles = { width: `${width}px` }
+
   return (
     <Listbox {...{ disabled, value, multiple, onChange }}>
       <div className={classNames.root}>
         <Label label={label}>
           <Float portal={portal} as="div" adaptiveWidth placement="bottom" floatingAs={Fragment}>
-            <Listbox.Button className={classNames.trigger}>
+            <Listbox.Button className={classNames.trigger} style={triggerStyles}>
               <span className={classNames.value}>{selectedOptionsLabels || placeholder}</span>
               <span className={classNames.icon}>
                 <KeyboardArrowDown size={variant === 'pagination' ? 16 : 24} />

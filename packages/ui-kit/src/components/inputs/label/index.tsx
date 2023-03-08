@@ -11,7 +11,7 @@ export type LabelProps = {
 
 export const Label: FC<LabelProps> = ({ label, children, className, ...rest }) => {
   const classNames = {
-    label: clsx(s.label),
+    label: clsx(s.label, className),
   }
 
   return (

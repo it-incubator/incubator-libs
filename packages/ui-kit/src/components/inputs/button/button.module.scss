@@ -17,8 +17,8 @@
   border: none;
   border-radius: 2rem;
 
-  transition: var(--transtition-duration-default) background-color,
-    var(--transtition-duration-default) color;
+  transition: var(--transtition-duration-basic) background-color,
+    var(--transtition-duration-basic) color;
 
   &:focus-visible {
     outline: 2px solid var(--color-outline-focus);

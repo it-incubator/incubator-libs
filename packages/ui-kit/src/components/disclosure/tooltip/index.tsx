@@ -28,8 +28,10 @@ export const Tooltip: FC<TooltipProps> = ({ children, icon }) => {
     </span>
   )
 
+  const DELAY_DURATION = 200
+
   return (
-    <TooltipRadix.Provider delayDuration={200}>
+    <TooltipRadix.Provider delayDuration={DELAY_DURATION}>
       <TooltipRadix.Root>
         <TooltipRadix.Trigger asChild>
           <button className={classNames.iconButton}>{tooltipIcon}</button>

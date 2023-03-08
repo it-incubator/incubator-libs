@@ -25,7 +25,7 @@
   color: var(--color-text-disabled);
   text-align: center;
 
-  transition: var(--transtition-duration-default) background-color;
+  transition: var(--transtition-duration-basic) background-color;
 
   &.fullWidth {
     flex-grow: 1;

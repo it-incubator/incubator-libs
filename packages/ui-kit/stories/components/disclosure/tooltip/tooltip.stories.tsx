@@ -10,10 +10,6 @@ export default {
 } as Meta<typeof Tooltip>
 
 export const Light = {
-  render: args => {
-    return <Tooltip {...args} />
-  },
-
   args: {
     children: (
       <p>
@@ -31,28 +27,12 @@ export const Dark = {
     return <Tooltip {...args} />
   },
 
-  args: {
-    children: (
-      <p>
-        Вставь сюда полную ссылку на свой LinkedIn аккаунт по примеру:
-        https://www.linkedin.com/in/example/
-      </p>
-    ),
-  },
+  ...Light,
 }
 
-export const DefaultWithCustomeIcon = {
-  render: args => {
-    return <Tooltip {...args} />
-  },
-
+export const DefaultWithCustomIcon = {
   args: {
+    ...Light.args,
     icon: <ThumbUp size={16} />,
-    children: (
-      <p>
-        Вставь сюда полную ссылку на свой LinkedIn аккаунт по примеру:
-        https://www.linkedin.com/in/example/
-      </p>
-    ),
   },
 }

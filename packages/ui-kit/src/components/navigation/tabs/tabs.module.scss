@@ -26,7 +26,7 @@
   padding: 0 25px;
 
   font-weight: 700;
-  color: var(--color-text-disabled);
+  color: var(--color-text-inactive);
   text-align: center;
 
   transition: 200ms background-color;
@@ -35,7 +35,11 @@
     flex-grow: 1;
   }
 
-  &:hover {
+  &:focus-visible {
+    background-color: var(--color-bg-focus);
+  }
+
+  &:hover:not([data-disabled]) {
     background-color: var(--color-action-hover);
   }
 
@@ -56,12 +60,13 @@
     }
   }
 
-  &:active {
+  &:active:not([data-disabled]) {
     background-color: var(--color-action-active);
   }
 
-  &:focus-visible {
-    background-color: var(--color-bg-focus);
+  &[data-disabled] {
+    cursor: initial;
+    color: var(--color-text-disabled);
   }
 }
 

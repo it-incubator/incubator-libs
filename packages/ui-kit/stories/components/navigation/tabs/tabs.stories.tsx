@@ -24,6 +24,16 @@ export default {
 
 export const Primary = {}
 
+export const PrimaryWithDisabled = {
+  args: {
+    tabs: [
+      { value: 'sprints', title: 'Спринты' },
+      { value: 'weeks', title: 'Недели' },
+      { value: 'subjects', title: 'Темы', disabled: true },
+    ],
+  },
+}
+
 export const FullWidth = {
   args: {
     fullWidth: true,

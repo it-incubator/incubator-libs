@@ -22,10 +22,27 @@ export default {
   },
 } as Meta<typeof Tabs>
 
-export const Default = {}
+export const Primary = {}
 
 export const FullWidth = {
   args: {
     fullWidth: true,
+  },
+}
+
+export const Secondary = {
+  args: {
+    variant: 'secondary',
+  },
+}
+
+export const SecondaryWithDisabled = {
+  args: {
+    ...Secondary.args,
+    tabs: [
+      { value: 'sprints', title: 'Спринты' },
+      { value: 'weeks', title: 'Недели' },
+      { value: 'subjects', title: 'Темы', disabled: true },
+    ],
   },
 }

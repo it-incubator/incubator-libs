@@ -10,15 +10,15 @@ export default {
 export const AllTypography = {
   render: () => (
     <>
-      <Typography.Headline1>Headline 1</Typography.Headline1>
-      <Typography.Headline2>Headline 2</Typography.Headline2>
-      <Typography.Headline3>Headline 3</Typography.Headline3>
-      <Typography.Subtitle1>Subtitle 1</Typography.Subtitle1>
-      <Typography.Subtitle2>Subtitle 2</Typography.Subtitle2>
-      <Typography.Body1>Body 1</Typography.Body1>
-      <Typography.Body2>Body 2</Typography.Body2>
-      <Typography.Overline>Overline</Typography.Overline>
-      <Typography.Caption>Caption</Typography.Caption>
+      <Typography.Headline1 component="div">Headline 1</Typography.Headline1>
+      <Typography.Headline2 component="div">Headline 2</Typography.Headline2>
+      <Typography.Headline3 component="div">Headline 3</Typography.Headline3>
+      <Typography.Subtitle1 component="div">Subtitle 1</Typography.Subtitle1>
+      <Typography.Subtitle2 component="div">Subtitle 2</Typography.Subtitle2>
+      <Typography.Body1 component="div">Body 1</Typography.Body1>
+      <Typography.Body2 component="div">Body 2</Typography.Body2>
+      <Typography.Overline component="div">Overline</Typography.Overline>
+      <Typography.Caption component="div">Caption</Typography.Caption>
     </>
   ),
 }

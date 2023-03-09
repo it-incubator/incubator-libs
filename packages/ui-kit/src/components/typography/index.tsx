@@ -10,12 +10,9 @@ export type TypographyProps = {
   className?: string
 }
 
-const createTypographyComponent = (
-  defaultComponent: keyof HTMLElementTagNameMap,
-  basicClassName: string
-): FC<TypographyProps> => {
+const createTypographyComponent = (basicClassName: string): FC<TypographyProps> => {
   return ({ children, component, className, ...rest }) => {
-    const Component = component || defaultComponent
+    const Component = component || 'span'
 
     const classNames = clsx(s[basicClassName], className)
 
@@ -28,13 +25,13 @@ const createTypographyComponent = (
 }
 
 export const Typography = {
-  Headline1: createTypographyComponent('h1', 'headline1'),
-  Headline2: createTypographyComponent('h2', 'headline2'),
-  Headline3: createTypographyComponent('h3', 'headline3'),
-  Subtitle1: createTypographyComponent('p', 'subtitle1'),
-  Subtitle2: createTypographyComponent('p', 'subtitle2'),
-  Body1: createTypographyComponent('p', 'body1'),
-  Body2: createTypographyComponent('p', 'body1'),
-  Overline: createTypographyComponent('p', 'overline'),
-  Caption: createTypographyComponent('p', 'caption'),
+  Headline1: createTypographyComponent('headline1'),
+  Headline2: createTypographyComponent('headline2'),
+  Headline3: createTypographyComponent('headline3'),
+  Subtitle1: createTypographyComponent('subtitle1'),
+  Subtitle2: createTypographyComponent('subtitle2'),
+  Body1: createTypographyComponent('body1'),
+  Body2: createTypographyComponent('body1'),
+  Overline: createTypographyComponent('overline'),
+  Caption: createTypographyComponent('caption'),
 }

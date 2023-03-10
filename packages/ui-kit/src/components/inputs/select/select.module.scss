@@ -26,17 +26,13 @@
   }
 
   &[data-headlessui-state='open'] {
+    border-color: var(--color-border-select-active);
     border-radius: var(--border-radius-s) var(--border-radius-s) 0 0;
   }
 
   &:disabled {
     cursor: auto;
     color: var(--color-text-disabled);
-  }
-
-  &:focus,
-  &[data-headlessui-state='open'] {
-    border-color: var(--color-border-select-active);
   }
 
   &:focus-visible {

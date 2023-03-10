@@ -1,0 +1,84 @@
+.option {
+  cursor: pointer;
+
+  display: flex;
+  gap: 2px;
+  align-items: center;
+
+  width: fit-content;
+
+  outline: none;
+
+  &.option.disabled {
+    cursor: initial;
+  }
+}
+
+.label {
+  font-size: var(--font-size-s);
+  line-height: var(--line-height-s);
+  color: var(--color-text-primary);
+
+  .option.disabled & {
+    color: var(--color-checkbox-disabled);
+  }
+}
+
+.icon {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+  width: 36px;
+  height: 36px;
+  padding: 9px;
+
+  border-radius: 50%;
+
+  transition: 200ms background-color;
+
+  &::before {
+    content: '';
+
+    display: block;
+
+    width: 18px;
+    height: 18px;
+
+    border: 2px solid var(--color-accent-500);
+    border-radius: 50%;
+
+    .option.disabled & {
+      border-color: var(--color-button-disabled);
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    transition: 100ms background-color;
+
+    [data-headlessui-state='checked active'] &,
+    [data-headlessui-state='checked'] & {
+      width: 8px;
+      height: 8px;
+      background-color: var(--color-accent-500);
+    }
+  }
+
+  .option:focus-visible & {
+    background-color: var(--color-bg-focus);
+  }
+
+  .option:hover:not(.option.disabled) & {
+    background-color: var(--color-action-hover);
+  }
+
+  .option:active:not(.option.disabled) & {
+    background-color: var(--color-action-active);
+  }
+}

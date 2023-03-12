@@ -1,0 +1,50 @@
+.tag {
+  padding-left: 12px;
+  padding-right: 16px;
+  width: fit-content;
+  height: 24px;
+  border-radius: 30px;
+
+  font-size: var(--font-size-s);
+  line-height: var(--line-height-m);
+  color: var(--color-text-primary);
+
+  box-shadow: var(--tag-box-shadow);
+
+  background-color: var(--color-button-bg-secondary);
+
+  transition: 200ms background-color;
+
+  &.clickable {
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--color-tag-hover);
+    }
+
+    &:active {
+      background-color: var(--color-tag-active);
+    }
+  }
+
+  &:focus-visible {
+    outline: var(--outline-focus);
+  }
+
+  &.secondary {
+    color: var(--color-neutral-light-50);
+    background-color: var(--color-info-500);
+
+    &.clickable {
+      cursor: pointer;
+
+      &:hover {
+        background-color: var(--color-info-400);
+      }
+
+      &:active {
+        background-color: var(--color-info-700);
+      }
+    }
+  }
+}

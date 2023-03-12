@@ -1,7 +1,8 @@
 import { ChangeEvent, ComponentProps, forwardRef } from 'react'
 
-import * as Label from '@radix-ui/react-label'
 import { clsx } from 'clsx'
+
+import { Label } from '../label'
 
 import s from './textarea.module.scss'
 
@@ -29,15 +30,14 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
 
     return (
       <div className={classNames.root}>
-        <Label.Root className={classNames.labelBox}>
-          {label && <div className={classNames.label}>{label}</div>}
+        <Label label={label}>
           <textarea
             className={classNames.input}
             onChange={handleInputValueChanged}
             ref={ref}
             {...rest}
           />
-        </Label.Root>
+        </Label>
         {error && <p className={classNames.error}>{errorMessage}</p>}
       </div>
     )

@@ -1,4 +1,6 @@
-:root {
+:root,
+::after,
+::before {
   /* accent */
   --color-accent-50: #fee8ee;
   --color-accent-100: #fdd1dc;
@@ -109,6 +111,7 @@
 
   /* typography */
   --color-text-primary: var(--color-neutral-dark-900);
+  --color-text-primary-contrast: var(--color-neutral-light-50);
   --color-text-secondary: var(--color-neutral-dark-300);
   --color-text-invalid: var(--color-accent-500);
   --color-text-inactive: var(--color-neutral-dark-200);
@@ -136,6 +139,7 @@
   --color-bg-contrast: var(--color-neutral-dark-900);
   --color-bg-input-hover: var(--color-neutral-light-500);
   --color-bg-info: var(--color-info-100);
+  --color-bg-body: var(--color-light-mode-500);
   --color-bg-disabled: var(--color-neutral-dark-50);
   --color-bg-secondary-hover: var(--color-neutral-dark-200);
 
@@ -154,11 +158,16 @@
   --color-button-text-secondary-disabled: var(--color-neutral-dark-300);
   --color-border-select-active: var(--color-neutral-dark-300);
   --color-checkbox-disabled: var(--color-neutral-dark-300);
+
+  /* tags */
+  --color-tag-hover: var(--color-info-50);
+  --color-tag-active: var(--color-info-100);
 }
 
 :root .dark-mode {
   /* typography */
   --color-text-primary: var(--color-neutral-light-50);
+  --color-text-primary-contrast: var(--color-dark-mode-900);
   --color-text-secondary: var(--color-dark-mode-200);
   --color-text-invalid: var(--color-dark-mode-200);
   --color-text-inactive: var(--color-neutral-dark-400);
@@ -187,6 +196,7 @@
   --color-bg-disabled: var(--color-dark-mode-600);
   --color-bg-secondary-hover: var(--color-dark-mode-400);
   --color-bg-info: var(--color-info-800);
+  --color-bg-body: var(--color-dark-mode-600);
 
   /* icons */
   --color-fill-icon: var(--color-neutral-light-100);
@@ -203,4 +213,8 @@
   --color-action-active: var(--color-accent-800);
   --color-border-select-active: var(--color-dark-mode-300);
   --color-checkbox-disabled: var(--color-dark-mode-400);
+
+  /* tags */
+  --color-tag-hover: var(--color-dark-mode-300);
+  --color-tag-active: var(--color-dark-mode-200);
 }

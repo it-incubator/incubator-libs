@@ -5,40 +5,40 @@
   line-height: $lineHeight;
 }
 
-.headline1 {
-  @include typography(var(--font-size-xll), var(--line-height-xl), 700);
+.h1 {
+  @include typography(var(--font-size-xxl), var(--line-height-xl), var(--font-weight-bold));
 }
 
-.headline2 {
-  @include typography(var(--font-size-xl), var(--line-height-m), 600);
+.h2 {
+  @include typography(var(--font-size-xl), var(--line-height-m), var(--font-weight-semi-bold));
 }
 
-.headline3 {
-  @include typography(var(--font-size-l), var(--line-height-m), 500);
+.h3 {
+  @include typography(var(--font-size-l), var(--line-height-m), var(--font-weight-medium));
 }
 
 .subtitle1 {
-  @include typography(var(--font-size-m), var(--line-height-m), 500);
+  @include typography(var(--font-size-m), var(--line-height-m), var(--font-weight-medium));
 }
 
 .subtitle2 {
-  @include typography(var(--font-size-s), var(--line-height-m), 500);
+  @include typography(var(--font-size-s), var(--line-height-m), var(--font-weight-medium));
 }
 
 .body1 {
-  @include typography(var(--font-size-m), var(--line-height-m), 400);
+  @include typography(var(--font-size-m), var(--line-height-m), var(--font-weight-regular));
 }
 
 .body2 {
-  @include typography(var(--font-size-s), var(--line-height-m), 400);
+  @include typography(var(--font-size-s), var(--line-height-m), var(--font-weight-regular));
 }
 
 .overline {
-  @include typography(var(--font-size-s), var(--line-height-m), 700);
+  @include typography(var(--font-size-s), var(--line-height-m), var(--font-weight-regular));
 
   text-transform: uppercase;
 }
 
 .caption {
-  @include typography(var(--font-size-s), var(--line-height-m), 400);
+  @include typography(var(--font-size-s), var(--line-height-m), var(--font-weight-regular));
 }

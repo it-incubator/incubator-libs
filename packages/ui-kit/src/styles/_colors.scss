@@ -154,6 +154,10 @@
   --color-button-text-secondary-disabled: var(--color-neutral-dark-300);
   --color-border-select-active: var(--color-neutral-dark-300);
   --color-checkbox-disabled: var(--color-neutral-dark-300);
+
+  /* tags */
+  --color-tag-hover: var(--color-info-50);
+  --color-tag-active: var(--color-info-100);
 }
 
 :root .dark-mode {
@@ -204,4 +208,8 @@
   --color-action-active: var(--color-accent-800);
   --color-border-select-active: var(--color-dark-mode-300);
   --color-checkbox-disabled: var(--color-dark-mode-400);
+
+  /* tags */
+  --color-tag-hover: var(--color-dark-mode-300);
+  --color-tag-active: var(--color-dark-mode-200);
 }

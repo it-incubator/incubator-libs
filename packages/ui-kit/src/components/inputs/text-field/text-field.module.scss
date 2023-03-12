@@ -1,7 +1,6 @@
 .box {
   display: flex;
   flex-direction: column;
-
 }
 
 .label {
@@ -13,7 +12,6 @@
 .inputContainer {
   position: relative;
 }
-
 
 .iconStart {
   position: absolute;
@@ -45,7 +43,7 @@
   width: 100%;
   padding: 9px 12px 8px;
 
-  font-size: var(--font-size-m);
+  font-size: var(--font-size-l);
   line-height: var(--line-height-m);
   color: var(--color-text-primary);
 
@@ -77,10 +75,9 @@
     background-color: var(--color-bg-input-hover);
   }
 
-  &[data-icon~="start"] {
+  &[data-icon~='start'] {
     padding-left: 36px;
   }
-
 }
 
 .errorText {
@@ -89,4 +86,3 @@
   line-height: var(--line-height-sx);
   color: var(--color-accent-500);
 }
-

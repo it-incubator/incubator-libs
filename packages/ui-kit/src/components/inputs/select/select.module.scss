@@ -10,7 +10,7 @@
   height: 36px;
   padding: 9px 8px 8px 12px;
 
-  font-size: var(--font-size-m);
+  font-size: var(--font-size-l);
   line-height: var(--line-height-m);
   color: var(--color-text-primary);
 
@@ -27,17 +27,13 @@
   }
 
   &[data-headlessui-state='open'] {
+    border-color: var(--color-border-select-active);
     border-radius: var(--border-radius-s) var(--border-radius-s) 0 0;
   }
 
   &:disabled {
     cursor: auto;
     color: var(--color-text-disabled);
-  }
-
-  &:focus,
-  &[data-headlessui-state='open'] {
-    border-color: var(--color-border-select-active);
   }
 
   &:focus-visible {
@@ -57,7 +53,7 @@
     background-color: transparent;
     border: none;
 
-    span:first-child {
+    & > span:first-child {
       padding-bottom: 1px;
 
       color: var(--color-info-400);

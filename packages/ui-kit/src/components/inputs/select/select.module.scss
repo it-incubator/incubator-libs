@@ -10,7 +10,7 @@
   height: 36px;
   padding: 9px 8px 8px 12px;
 
-  font-size: var(--font-size-m);
+  font-size: var(--font-size-l);
   line-height: var(--line-height-m);
   color: var(--color-text-primary);
 
@@ -19,24 +19,21 @@
   border-radius: var(--border-radius-s);
   outline: none;
 
-  transition: 200ms background-color, 200ms color;
+  transition: var(--transtition-duration-basic) background-color,
+    var(--transtition-duration-basic) color;
 
   &::placeholder {
     color: var(--color-text-secondary);
   }
 
   &[data-headlessui-state='open'] {
+    border-color: var(--color-border-select-active);
     border-radius: var(--border-radius-s) var(--border-radius-s) 0 0;
   }
 
   &:disabled {
     cursor: auto;
     color: var(--color-text-disabled);
-  }
-
-  &:focus,
-  &[data-headlessui-state='open'] {
-    border-color: var(--color-border-select-active);
   }
 
   &:focus-visible {
@@ -92,7 +89,7 @@
 .icon {
   width: 24px;
   height: 24px;
-  transition: 200ms transform;
+  transition: var(--transtition-duration-basic) transform;
 
   &.secondary path {
     stroke: var(--color-info-400);
@@ -117,7 +114,8 @@
   cursor: pointer;
   padding: 6px 12px;
   outline: none;
-  transition: 200ms background-color, 200ms color;
+  transition: var(--transtition-duration-basic) background-color,
+    var(--transtition-duration-basic) color;
 
   &[data-headlessui-state='active'],
   &[data-headlessui-state='active selected'] {

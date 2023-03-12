@@ -68,7 +68,7 @@
 
   outline: none;
 
-  transition: 200ms opacity;
+  transition: var(--transtition-duration-basic) opacity;
 
   &:hover,
   &:focus {

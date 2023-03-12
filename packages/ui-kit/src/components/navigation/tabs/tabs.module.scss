@@ -7,7 +7,6 @@
   display: flex;
   flex-shrink: 0;
   border-bottom: 2px solid var(--color-border-input-primary);
-
 }
 
 .trigger {
@@ -26,7 +25,7 @@
   color: var(--color-text-disabled);
   text-align: center;
 
-  transition: 200ms background-color;
+  transition: var(--transtition-duration-basic) background-color;
 
   &.fullWidth {
     flex-grow: 1;
@@ -36,10 +35,10 @@
     background-color: var(--color-action-hover);
   }
 
-  &[data-state="active"] {
+  &[data-state='active'] {
     color: var(--color-accent-500);
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       bottom: -2px;
       left: 0;

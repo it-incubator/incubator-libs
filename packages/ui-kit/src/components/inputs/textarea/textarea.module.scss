@@ -19,7 +19,7 @@
   padding: 9px 12px 8px;
 
   font-family: var(--font-family);
-  font-size: var(--font-size-m);
+  font-size: var(--font-size-l);
   line-height: var(--line-height-m);
   color: var(--color-text-primary);
 
@@ -28,7 +28,8 @@
   border-radius: var(--border-radius-s);
   outline: none;
 
-  transition: 200ms background-color, 200ms color, 200ms border-color;
+  transition: var(--transtition-duration-basic) background-color,
+    var(--transtition-duration-basic) color, var(--transtition-duration-basic) border-color;
 
   &::placeholder {
     color: var(--color-text-secondary);

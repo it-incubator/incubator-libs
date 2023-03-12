@@ -59,11 +59,10 @@
   border: none;
   border-radius: 50%;
 
-  transition: 200ms background-color;
+  transition: var(--transtition-duration-basic) background-color;
 
   &:hover,
   &:focus {
     background-color: var(--color-bg-element-hover);
   }
 }
-

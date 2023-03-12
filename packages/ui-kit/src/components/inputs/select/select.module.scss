@@ -19,7 +19,8 @@
   border-radius: var(--border-radius-s);
   outline: none;
 
-  transition: 200ms background-color, 200ms color;
+  transition: var(--transtition-duration-basic) background-color,
+    var(--transtition-duration-basic) color;
 
   &::placeholder {
     color: var(--color-text-secondary);
@@ -88,7 +89,7 @@
 .icon {
   width: 24px;
   height: 24px;
-  transition: 200ms transform;
+  transition: var(--transtition-duration-basic) transform;
 
   &.secondary path {
     stroke: var(--color-info-400);
@@ -113,7 +114,8 @@
   cursor: pointer;
   padding: 6px 12px;
   outline: none;
-  transition: 200ms background-color, 200ms color;
+  transition: var(--transtition-duration-basic) background-color,
+    var(--transtition-duration-basic) color;
 
   &[data-headlessui-state='active'],
   &[data-headlessui-state='active selected'] {

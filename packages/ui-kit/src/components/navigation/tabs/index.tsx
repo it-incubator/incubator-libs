@@ -51,8 +51,8 @@ export const Tabs: FC<TabsProps> = ({
 }) => {
   const classNames = {
     root: s.root,
-    list: clsx(s.list, variant === 'secondary' && s.secondary),
-    trigger: clsx(s.trigger, fullWidth && s.fullWidth, variant === 'secondary' && s.secondary),
+    list: clsx(s.list, s[variant]),
+    trigger: clsx(s.trigger, fullWidth && s.fullWidth, s[variant]),
   }
 
   return (

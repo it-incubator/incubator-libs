@@ -30,14 +30,17 @@
 
   cursor: pointer;
 
-  &:hover,
-  &:focus {
-    opacity: 0.6;
+  &:hover {
+    background-color: var(--color-bg-focus);
+  }
+
+  &:focus-visible {
+    outline: var(--outline-focus);
   }
 
   &.selected {
-    color: var(--color-neutral-dark-900);
-    background-color: var(--color-bg-interactive);
+    color: var(--color-text-primary-contrast);
+    background-color: var(--color-bg-contrast);
   }
 
   &:disabled {

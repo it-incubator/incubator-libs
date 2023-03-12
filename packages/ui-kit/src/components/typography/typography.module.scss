@@ -1,0 +1,44 @@
+@mixin typography($fontSize, $lineHeight, $fontWeight) {
+  margin: 0;
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+  line-height: $lineHeight;
+}
+
+.h1 {
+  @include typography(var(--font-size-xxl), var(--line-height-xl), var(--font-weight-bold));
+}
+
+.h2 {
+  @include typography(var(--font-size-xl), var(--line-height-m), var(--font-weight-semi-bold));
+}
+
+.h3 {
+  @include typography(var(--font-size-l), var(--line-height-m), var(--font-weight-medium));
+}
+
+.subtitle1 {
+  @include typography(var(--font-size-m), var(--line-height-m), var(--font-weight-medium));
+}
+
+.subtitle2 {
+  @include typography(var(--font-size-s), var(--line-height-m), var(--font-weight-medium));
+}
+
+.body1 {
+  @include typography(var(--font-size-m), var(--line-height-m), var(--font-weight-regular));
+}
+
+.body2 {
+  @include typography(var(--font-size-s), var(--line-height-m), var(--font-weight-regular));
+}
+
+.overline {
+  @include typography(var(--font-size-s), var(--line-height-m), var(--font-weight-regular));
+
+  text-transform: uppercase;
+}
+
+.caption {
+  @include typography(var(--font-size-s), var(--line-height-m), var(--font-weight-regular));
+}

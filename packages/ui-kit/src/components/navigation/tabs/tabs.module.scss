@@ -29,7 +29,7 @@
   color: var(--color-text-inactive);
   text-align: center;
 
-  transition: 200ms background-color;
+  transition: var(--transtition-duration-basic) background-color;
 
   &.fullWidth {
     flex-grow: 1;

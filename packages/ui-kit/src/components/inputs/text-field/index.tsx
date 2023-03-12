@@ -15,10 +15,7 @@ export type TextFieldProps = {
 } & ComponentProps<'input'>
 
 export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
-  (
-    { label, error, className, errorMessage = 'Error!', onChange, iconEnd, iconStart, ...rest },
-    ref
-  ) => {
+  ({ label, error, className, errorMessage = 'Error!', iconEnd, iconStart, ...rest }, ref) => {
     const classNames = {
       root: clsx(s.box, className),
       label: s.label,

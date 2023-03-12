@@ -1,9 +1,8 @@
 import { ComponentProps, FC } from 'react'
 
 import { RadioGroup as RadioGroupHeadless } from '@headlessui/react'
-import { clsx } from 'clsx'
 
-import s from './radioGroup.module.scss'
+import s from './radio-group.module.scss'
 
 type Option = {
   label: string
@@ -21,7 +20,7 @@ export type RadioGroupProps = {
 
 export const RadioGroup: FC<RadioGroupProps> = ({ options, disabled, ...rest }) => {
   const classNames = {
-    option: clsx(s.option, disabled && s.disabled),
+    option: s.option,
     icon: s.icon,
     label: s.label,
   }

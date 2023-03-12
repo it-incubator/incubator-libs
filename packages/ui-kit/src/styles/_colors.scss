@@ -1,4 +1,6 @@
-:root {
+:root,
+::after,
+::before {
   /* accent */
   --color-accent-50: #fee8ee;
   --color-accent-100: #fdd1dc;

@@ -63,12 +63,12 @@
   height: 36px;
   padding: 0 16px;
 
+  font-size: var(--font-size-s);
+  line-height: var(--line-height-m);
+
   outline: none;
 
   transition: var(--transtition-duration-basic) opacity;
-
-  font-size: var(--font-size-subtitle2);
-  line-height: var(--line-height-subtitle2);
 
   &:hover,
   &:focus {

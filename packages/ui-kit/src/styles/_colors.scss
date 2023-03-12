@@ -115,7 +115,8 @@
   --color-text-secondary: var(--color-neutral-dark-300);
   --color-text-invalid: var(--color-accent-500);
   --color-text-inactive: var(--color-neutral-dark-200);
-  --color-text-disabled: var(--color-neutral-dark-200);
+  --color-text-disabled: var(--color-neutral-dark-100);
+  --color-text-switcher: var(--color-neutral-dark-300);
 
   /* borders */
   --color-border-primary: var(--color-neutral-dark-100);
@@ -173,6 +174,7 @@
   --color-text-invalid: var(--color-dark-mode-200);
   --color-text-inactive: var(--color-neutral-dark-400);
   --color-text-disabled: var(--color-dark-mode-400);
+  --color-text-switcher: var(--color-neutral-light-50);
 
   /* borders */
   --color-border-primary: var(--color-dark-mode-400);

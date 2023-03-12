@@ -9,9 +9,10 @@ export type TabType = {
   /** A unique value that associates the trigger with a content. */
   value: string
   title: string
+  disabled?: boolean
 }
 
-export type TabsProps = {
+type CommonProps = {
   /** An array of objects with the value and title of the tab.
    *  {value: string, title: string}
    * */
@@ -20,12 +21,24 @@ export type TabsProps = {
   defaultValue?: string
   /** The controlled value of the tab to activate. Should be used in conjunction with onValueChange */
   value?: string
-  fullWidth?: boolean
   /** Event handler called when the value changes.  */
   onValueChange?: (value: string) => void
   /** Use TabsContent components as children. */
   children: ReactNode
+  variant?: 'primary' | 'secondary'
 }
+
+type ConditionalProps =
+  | {
+      variant?: 'primary'
+      fullWidth?: boolean
+    }
+  | {
+      variant?: 'secondary'
+      fullWidth?: never
+    }
+
+export type TabsProps = CommonProps & ConditionalProps
 
 export const Tabs: FC<TabsProps> = ({
   tabs,
@@ -34,11 +47,12 @@ export const Tabs: FC<TabsProps> = ({
   children,
   fullWidth,
   onValueChange,
+  variant = 'primary',
 }) => {
   const classNames = {
     root: s.root,
-    list: s.list,
-    trigger: clsx(s.trigger, fullWidth && s.fullWidth),
+    list: clsx(s.list, s[variant]),
+    trigger: clsx(s.trigger, fullWidth && s.fullWidth, s[variant]),
   }
 
   return (
@@ -50,7 +64,12 @@ export const Tabs: FC<TabsProps> = ({
     >
       <TabsRadixUI.List className={classNames.list}>
         {tabs.map(tab => (
-          <TabsRadixUI.Trigger className={classNames.trigger} key={tab.value} value={tab.value}>
+          <TabsRadixUI.Trigger
+            className={classNames.trigger}
+            key={tab.value}
+            value={tab.value}
+            disabled={tab.disabled}
+          >
             {tab.title}
           </TabsRadixUI.Trigger>
         ))}

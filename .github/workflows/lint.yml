@@ -14,14 +14,19 @@ jobs:
       - name: Check out Git repository
         uses: actions/checkout@v2
 
-      - uses: pnpm/action-setup@v2
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
         with:
-          version: 6.0.2
+          version: 7.27.0
 
-      - name: Run linters
-        uses: wearerequired/lint-action@v2
-        with:
-          eslint: true
-          prettier: true
-          stylelint: true
-          auto_fix: true
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Run eslint
+        run: pnpm run lint:eslint
+
+      - name: Run stylelint
+        run: pnpm run lint:stylelint
+
+      - name: Run type check
+        run: pnpm run lint:types

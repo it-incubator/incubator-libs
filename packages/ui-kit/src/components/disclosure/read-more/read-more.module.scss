@@ -1,13 +1,15 @@
 .button {
   all: unset;
+
+  cursor: pointer;
+
   margin-left: 5px;
 
   font-size: inherit;
-  line-height: inherit;
   font-weight: 500;
+  line-height: inherit;
   color: var(--color-info-400);
   text-decoration: underline;
-  cursor: pointer;
 
   &:hover {
     text-decoration: none;

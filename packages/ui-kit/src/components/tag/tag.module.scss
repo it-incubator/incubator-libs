@@ -1,17 +1,16 @@
 .tag {
-  padding-left: 12px;
-  padding-right: 16px;
   width: fit-content;
   height: 24px;
-  border-radius: 30px;
+  padding-right: 16px;
+  padding-left: 12px;
 
   font-size: var(--font-size-s);
   line-height: var(--line-height-m);
   color: var(--color-text-primary);
 
-  box-shadow: var(--tag-box-shadow);
-
   background-color: var(--color-button-bg-secondary);
+  border-radius: 30px;
+  box-shadow: var(--tag-box-shadow);
 
   transition: 200ms background-color;
 

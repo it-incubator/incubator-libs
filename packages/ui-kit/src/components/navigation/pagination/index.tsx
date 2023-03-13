@@ -66,10 +66,6 @@ export const Pagination: FC<PaginationProps> = ({
     siblings,
   })
 
-  if (count < 2) {
-    return null
-  }
-
   const showPerPageSelect = !!perPage && !!perPageOptions && !!onPerPageChange
 
   return (

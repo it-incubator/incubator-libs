@@ -28,8 +28,11 @@
 
 .header {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  padding: 19px 24px;
+
+  padding: 14px 24px;
+
   border-bottom: 1px solid gray;
 }
 
@@ -51,8 +54,8 @@
   align-items: center;
   justify-content: center;
 
-  width: 25px;
-  height: 25px;
+  width: 36px;
+  height: 36px;
   padding: 0;
 
   background: transparent;
@@ -62,7 +65,8 @@
   transition: var(--transtition-duration-basic) background-color;
 
   &:hover,
-  &:focus {
+  &:focus-visible {
     background-color: var(--color-bg-element-hover);
+    outline: none;
   }
 }

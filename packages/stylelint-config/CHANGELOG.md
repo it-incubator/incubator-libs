@@ -1,5 +1,10 @@
 # @it-incubator/stylelint-config-incubator
 
+## 0.1.1
+### Patch Changes
+
+- add more components
+
 ## 0.1.0
 ### Minor Changes
 

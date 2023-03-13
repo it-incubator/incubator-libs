@@ -1,5 +1,12 @@
 # @it-incubator/ui-kit
 
+## 0.1.1
+### Patch Changes
+
+- add more components
+- Updated dependencies
+  - @it-incubator/stylelint-config@0.1.1
+
 ## 0.1.0
 ### Minor Changes
 

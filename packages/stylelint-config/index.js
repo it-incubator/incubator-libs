@@ -1,11 +1,6 @@
 module.exports = {
-  extends: [
-    'stylelint-config-standard-scss',
-    'stylelint-config-clean-order',
-    'stylelint-config-prettier-scss',
-  ],
+  extends: ['stylelint-config-standard-scss', 'stylelint-config-clean-order'],
   rules: {
-    'color-hex-case': 'lower',
     'selector-pseudo-class-no-unknown': [
       true,
       {

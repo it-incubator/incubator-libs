@@ -5,7 +5,7 @@ import { TextField, TextFieldProps } from '../text-field'
 
 export type SearchProps = {} & TextFieldProps & RefAttributes<HTMLInputElement>
 
-export const Search: FC<SearchProps> = ({ placeholder = 'Поиск...', className, ...rest }) => {
+export const Search: FC<SearchProps> = ({ placeholder = 'Поиск...', ...rest }) => {
   return (
     <TextField
       placeholder={placeholder}

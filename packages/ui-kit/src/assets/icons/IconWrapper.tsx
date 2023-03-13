@@ -10,6 +10,7 @@ export const IconWrapper: React.FC<{ icon: React.ReactNode } & IconProps> = ({
   ...restProps
 }) => {
   const color = colorProp ? colorProp : 'currentColor'
+  // eslint-disable-next-line no-nested-ternary
   const size = sizeProp ? `${sizeProp}px` : autoSize ? '1.5em' : '24px'
 
   return (

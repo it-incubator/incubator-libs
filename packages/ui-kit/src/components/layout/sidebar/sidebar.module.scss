@@ -6,7 +6,7 @@
 }
 
 .content {
-  &.closed * {
+  &.closed > * {
     display: none;
   }
 }

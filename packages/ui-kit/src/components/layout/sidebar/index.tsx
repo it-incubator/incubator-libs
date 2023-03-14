@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import { ComponentProps, FC, ReactNode } from 'react'
 
 import { clsx } from 'clsx'
 
@@ -10,13 +10,13 @@ type PropsType = {
   open: boolean
   children: ReactNode
   onOpenChange: (open: boolean) => void
-}
+} & ComponentProps<'div'>
 
-export const Sidebar = ({ open, children, onOpenChange }: PropsType) => {
+export const Sidebar: FC<PropsType> = ({ open, children, onOpenChange, ...rest }) => {
   const classNames = {
     box: s.box,
     content: clsx(s.content, !open && s.closed),
-    button: clsx(s.button, !open && s.closed),
+    button: clsx(s.button),
     icon: clsx(s.icon, !open && s.closed),
   }
 
@@ -25,7 +25,7 @@ export const Sidebar = ({ open, children, onOpenChange }: PropsType) => {
   }
 
   return (
-    <div className={classNames.box}>
+    <div className={classNames.box} {...rest}>
       <div className={classNames.content}>{children}</div>
       <button className={classNames.button} onClick={buttonClickHandler}>
         <KeyboardArrowLeft className={classNames.icon} />

@@ -15,7 +15,19 @@ export const Default = {
 
     return (
       <Sidebar open={open} onOpenChange={setOpen}>
-        <p>Lorem </p>
+        <ul
+          style={{
+            padding: '10px',
+            width: '240px',
+            listStyle: 'none',
+          }}
+        >
+          <li>Инфопанель</li>
+          <li>Видеоконтент</li>
+          <li>Библиотека решений</li>
+          <li>Календарь</li>
+          <li>Домашнее задание</li>
+        </ul>
       </Sidebar>
     )
   },

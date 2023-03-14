@@ -1,0 +1,35 @@
+.box {
+  position: relative;
+}
+
+.input[data-headlessui-state='open'] {
+  border-radius: var(--border-radius-s) var(--border-radius-s) 0 0;
+}
+
+.button {
+  cursor: pointer;
+
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  transform: translateY(-50%);
+
+  width: 24px;
+  height: 24px;
+
+  &.disabled {
+    color: var(--color-text-disabled);
+  }
+}
+
+.empty {
+  border: none;
+}
+
+.icon {
+  transition: var(--transtition-duration-basic) transform;
+}
+
+.root[data-headlessui-state='open'] .icon {
+  transform: rotate(180deg);
+}

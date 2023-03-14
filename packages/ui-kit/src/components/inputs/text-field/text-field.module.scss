@@ -60,17 +60,17 @@
     color: var(--color-text-secondary);
   }
 
-  &:active,
-  &:focus {
+  &:disabled {
+    color: var(--color-text-disabled);
+  }
+
+  &:focus,
+  &:active:not(&:disabled) {
     border-color: var(--color-border-input-active);
   }
 
   &.error {
     border-color: var(--color-accent-500);
-  }
-
-  &:disabled {
-    color: var(--color-text-disabled);
   }
 
   &:hover:not(&:disabled) {

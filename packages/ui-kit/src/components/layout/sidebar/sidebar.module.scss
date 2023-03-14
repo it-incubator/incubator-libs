@@ -1,0 +1,38 @@
+.box {
+  display: inline-flex;
+  height: 100vh;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-element);
+}
+
+.content {
+  &.closed * {
+    display: none;
+  }
+}
+
+.button {
+  all: unset;
+
+  cursor: pointer;
+
+  width: 24px;
+
+  background-color: var(--color-bg-dividers);
+
+  transition: var(--transtition-duration-basic) background-color;
+
+  &:hover {
+    background-color: var(--color-bg-secondary-hover);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-outline-focus);
+  }
+}
+
+.icon {
+  &.closed {
+    transform: rotate(180deg);
+  }
+}

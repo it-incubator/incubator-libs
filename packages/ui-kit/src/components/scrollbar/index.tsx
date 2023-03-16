@@ -5,11 +5,9 @@ import { clsx } from 'clsx'
 
 import s from './scrollbar.module.scss'
 
-export type ScrollbarType = 'auto' | 'always' | 'scroll' | 'hover'
-
 export type ScrollbarProps = {
   children: ReactNode
-  type?: ScrollbarType
+  type: ScrollArea.ScrollAreaProps['type']
   className?: string
 } & ComponentPropsWithoutRef<'div'>
 

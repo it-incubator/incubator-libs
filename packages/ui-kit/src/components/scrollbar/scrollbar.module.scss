@@ -14,12 +14,12 @@
 }
 
 .scrollbar[data-orientation='vertical'] {
-  width: 4px;
+  width: 14px;
 }
 
 .scrollbar[data-orientation='horizontal'] {
   flex-direction: column;
-  height: 4px;
+  height: 14px;
 }
 
 .thumb {
@@ -29,12 +29,34 @@
 
   flex-grow: 1;
 
-  background-color: var(--color-bg-action);
-  border-radius: 3px;
+  padding: 0 5px;
 
-  transition: var(--transtition-duration-basic) background-color;
+  border-radius: 5px;
 
-  &:hover {
+  &::before {
+    content: '';
+
+    position: absolute;
+
+    width: 4px;
+    height: 100%;
+
+    background-color: var(--color-bg-action);
+    border-radius: 3px;
+
+    transition: var(--transtition-duration-basic) background-color;
+
+    [data-orientation='horizontal'] & {
+      width: 100%;
+      height: 4px;
+    }
+  }
+
+  [data-orientation='horizontal'] & {
+    padding: 5px 0;
+  }
+
+  &:hover::before {
     background-color: var(--color-bg-secondary-hover);
   }
 }

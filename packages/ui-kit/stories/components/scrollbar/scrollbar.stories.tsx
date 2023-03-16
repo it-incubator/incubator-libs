@@ -15,7 +15,12 @@ export default {
 
 export const VerticalScrollbar = {
   args: {
-    style: { height: '200px', width: 'fit-content' },
+    style: {
+      height: '200px',
+      width: 'fit-content',
+      paddingRight: '8px',
+      color: 'var(--color-text-primary)',
+    },
     children: (
       <p style={{ width: '100px' }}>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, autem, beatae debitis,
@@ -33,7 +38,7 @@ export const VerticalScrollbar = {
 
 export const HorizontalScrollbar = {
   args: {
-    style: { width: '100px' },
+    style: { width: '100px', color: 'var(--color-text-primary)' },
     children: (
       <p style={{ width: '400px' }}>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, autem, beatae debitis,

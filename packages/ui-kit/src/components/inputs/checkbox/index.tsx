@@ -13,18 +13,10 @@ export type CheckboxProps = {
   onChange: (checked: boolean) => void
   disabled?: boolean
   required?: boolean
-  id: string
   label?: string
 }
 
-export const Checkbox: FC<CheckboxProps> = ({
-  checked,
-  onChange,
-  disabled,
-  required,
-  id,
-  label,
-}) => {
+export const Checkbox: FC<CheckboxProps> = ({ checked, onChange, disabled, required, label }) => {
   const classNames = {
     container: s.container,
     buttonWrapper: clsx(s.buttonWrapper, disabled && s.disabled),
@@ -35,7 +27,7 @@ export const Checkbox: FC<CheckboxProps> = ({
 
   return (
     <div className={classNames.container}>
-      <LabelRadix.Root className={classNames.label} htmlFor={id}>
+      <LabelRadix.Root className={classNames.label}>
         <div className={classNames.buttonWrapper}>
           <CheckboxRadix.Root
             className={classNames.root}
@@ -43,7 +35,6 @@ export const Checkbox: FC<CheckboxProps> = ({
             onCheckedChange={onChange}
             disabled={disabled}
             required={required}
-            id={id}
           >
             <CheckboxRadix.Indicator className={classNames.indicator}>
               <Check size={18} color={'var(--color-text-primary)'} />

@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { ComponentProps, FC } from 'react'
 
 import * as CheckboxRadix from '@radix-ui/react-checkbox'
 import * as LabelRadix from '@radix-ui/react-label'
@@ -14,9 +14,17 @@ export type CheckboxProps = {
   disabled?: boolean
   required?: boolean
   label?: string
+  id?: string
 }
 
-export const Checkbox: FC<CheckboxProps> = ({ checked, onChange, disabled, required, label }) => {
+export const Checkbox: FC<CheckboxProps> = ({
+  checked,
+  onChange,
+  disabled,
+  required,
+  label,
+  id,
+}) => {
   const classNames = {
     container: s.container,
     buttonWrapper: clsx(s.buttonWrapper, disabled && s.disabled),
@@ -35,6 +43,7 @@ export const Checkbox: FC<CheckboxProps> = ({ checked, onChange, disabled, requi
             onCheckedChange={onChange}
             disabled={disabled}
             required={required}
+            id={id}
           >
             <CheckboxRadix.Indicator className={classNames.indicator}>
               <Check size={18} color={'var(--color-text-primary)'} />

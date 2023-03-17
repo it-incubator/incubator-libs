@@ -17,7 +17,8 @@
   width: 24px;
   height: 24px;
 
-  &.disabled {
+  &[data-headlessui-state='disabled'] {
+    cursor: initial;
     color: var(--color-text-disabled);
   }
 }

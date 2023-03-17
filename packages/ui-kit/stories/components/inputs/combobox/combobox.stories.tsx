@@ -75,6 +75,14 @@ export const SimpleWithLabel = {
   },
 }
 
+export const SimpleDisabled = {
+  ...SimpleWithLabel,
+  args: {
+    ...SimpleWithLabel.args,
+    disabled: true,
+  },
+}
+
 export const onModal = () => {
   const [value, setValue] = useState(null)
   const [open, setOpen] = useState(false)

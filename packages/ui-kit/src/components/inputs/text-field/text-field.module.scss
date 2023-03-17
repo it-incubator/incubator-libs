@@ -65,7 +65,7 @@
   }
 
   &:focus,
-  &:active:not(&:disabled) {
+  &:active:enabled {
     border-color: var(--color-border-input-active);
   }
 

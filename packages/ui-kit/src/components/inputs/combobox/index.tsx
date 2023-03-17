@@ -26,7 +26,7 @@ export type ComboboxProps = {
   /** The name of the select. Submitted with its owning form as part of a name/value pair. */
   name?: string
   label?: string
-  /** width in pixels */
+  /** The function to call when a new option is selected. */
   onChange: (value: string) => void
 }
 
@@ -53,8 +53,8 @@ export const Combobox: FC<ComboboxProps> = ({
     root: s.root,
     box: s.box,
     input: clsx(textFieldStyle.input, s.input),
-    button: clsx(s.button, disabled && s.disabled),
-    icon: clsx(s.icon, disabled),
+    button: clsx(s.button),
+    icon: clsx(s.icon),
     content: clsx(selectStyle.content, filteredOptions.length === 0 && s.empty),
     item: selectStyle.item,
     scrollRoot: selectStyle.scrollRoot,

@@ -3,6 +3,7 @@ import { ComponentProps, FC, ReactNode } from 'react'
 import { clsx } from 'clsx'
 
 import { KeyboardArrowRight } from '../../../assets/icons'
+import { Scrollbar } from '../../scrollbar'
 
 import s from './sidebar.module.scss'
 
@@ -15,8 +16,9 @@ type PropsType = {
 export const Sidebar: FC<PropsType> = ({ open, children, onOpenChange, ...rest }) => {
   const classNames = {
     box: clsx(s.box, open && s.open),
-    contentBox: s.content,
-    content: clsx(s.contentBox, open && s.open),
+    contentBox: s.contentBox,
+    content: clsx(s.content, open && s.open),
+    scrollbar: s.scrollbar,
     button: clsx(s.button),
     icon: clsx(s.icon, open && s.open),
   }
@@ -28,7 +30,11 @@ export const Sidebar: FC<PropsType> = ({ open, children, onOpenChange, ...rest }
   return (
     <div className={classNames.box} {...rest}>
       <div className={classNames.contentBox}>
-        <div className={classNames.content}>{children}</div>
+        <div className={classNames.content}>
+          <Scrollbar className={classNames.scrollbar} type="always">
+            {children}
+          </Scrollbar>
+        </div>
       </div>
       <button className={classNames.button} onClick={buttonClickHandler}>
         <KeyboardArrowRight className={classNames.icon} />

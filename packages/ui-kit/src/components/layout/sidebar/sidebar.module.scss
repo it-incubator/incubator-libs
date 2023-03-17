@@ -13,12 +13,17 @@
   background-color: var(--color-bg-element);
 
   &.open {
-    width: var(--sidebar-width);
+    width: var(--sidebar-open-width);
   }
 }
 
 .contentBox {
+  flex-grow: 1;
+}
+
+.content {
   display: none;
+  flex-grow: 1;
 
   &.open {
     display: block;
@@ -30,7 +35,7 @@
 
   cursor: pointer;
 
-  width: 24px;
+  width: var(--sidebar-closed-width);
 
   background-color: var(--color-bg-dividers);
 
@@ -49,4 +54,9 @@
   &.open {
     transform: rotate(180deg);
   }
+}
+
+.scrollbar {
+  width: 100%;
+  height: 100vh;
 }

@@ -7,7 +7,7 @@ import s from './scrollbar.module.scss'
 
 export type ScrollbarProps = {
   children: ReactNode
-  type: ScrollArea.ScrollAreaProps['type']
+  type?: ScrollArea.ScrollAreaProps['type']
   className?: string
 } & ComponentPropsWithoutRef<'div'>
 

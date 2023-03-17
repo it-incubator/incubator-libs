@@ -15,11 +15,13 @@
 
 .scrollbar[data-orientation='vertical'] {
   width: 14px;
+  padding: 3px 0;
 }
 
 .scrollbar[data-orientation='horizontal'] {
   flex-direction: column;
   height: 14px;
+  padding: 0 3px;
 }
 
 .thumb {

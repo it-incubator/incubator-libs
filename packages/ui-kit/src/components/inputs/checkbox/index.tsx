@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { ComponentProps, FC } from 'react'
 
 import * as CheckboxRadix from '@radix-ui/react-checkbox'
 import * as LabelRadix from '@radix-ui/react-label'
@@ -13,8 +13,8 @@ export type CheckboxProps = {
   onChange: (checked: boolean) => void
   disabled?: boolean
   required?: boolean
-  id: string
   label?: string
+  id?: string
 }
 
 export const Checkbox: FC<CheckboxProps> = ({
@@ -22,8 +22,8 @@ export const Checkbox: FC<CheckboxProps> = ({
   onChange,
   disabled,
   required,
-  id,
   label,
+  id,
 }) => {
   const classNames = {
     container: s.container,
@@ -35,7 +35,7 @@ export const Checkbox: FC<CheckboxProps> = ({
 
   return (
     <div className={classNames.container}>
-      <LabelRadix.Root className={classNames.label} htmlFor={id}>
+      <LabelRadix.Root className={classNames.label}>
         <div className={classNames.buttonWrapper}>
           <CheckboxRadix.Root
             className={classNames.root}

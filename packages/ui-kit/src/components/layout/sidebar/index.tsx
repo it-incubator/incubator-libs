@@ -2,7 +2,7 @@ import { ComponentProps, FC, ReactNode } from 'react'
 
 import { clsx } from 'clsx'
 
-import { KeyboardArrowLeft } from '../../../assets/icons'
+import { KeyboardArrowRight } from '../../../assets/icons'
 
 import s from './sidebar.module.scss'
 
@@ -15,9 +15,10 @@ type PropsType = {
 export const Sidebar: FC<PropsType> = ({ open, children, onOpenChange, ...rest }) => {
   const classNames = {
     box: s.box,
-    content: clsx(s.content, !open && s.closed),
+    contentBox: s.content,
+    content: clsx(s.contentBox, open && s.open),
     button: clsx(s.button),
-    icon: clsx(s.icon, !open && s.closed),
+    icon: clsx(s.icon, open && s.open),
   }
 
   const buttonClickHandler = () => {
@@ -26,9 +27,11 @@ export const Sidebar: FC<PropsType> = ({ open, children, onOpenChange, ...rest }
 
   return (
     <div className={classNames.box} {...rest}>
-      <div className={classNames.content}>{children}</div>
+      <div className={classNames.contentBox}>
+        <div className={classNames.content}>{children}</div>
+      </div>
       <button className={classNames.button} onClick={buttonClickHandler}>
-        <KeyboardArrowLeft className={classNames.icon} />
+        <KeyboardArrowRight className={classNames.icon} />
       </button>
     </div>
   )

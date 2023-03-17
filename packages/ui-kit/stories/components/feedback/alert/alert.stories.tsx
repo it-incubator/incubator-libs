@@ -26,5 +26,6 @@ export const WithCustomIcon = {
   args: {
     children: 'Для того чтобы продолжить, пройдите все шаги указанные в инструкции',
     icon: <HelpOutline />,
+    variant: 'warning',
   },
 }

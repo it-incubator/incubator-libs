@@ -1,4 +1,4 @@
-import { FC, ReactNode } from 'react'
+import { ComponentProps, FC, ReactNode } from 'react'
 
 import { clsx } from 'clsx'
 
@@ -7,25 +7,13 @@ import { Card } from '../../card'
 
 import s from './alert.module.scss'
 
-type CommonProps = {
+export type AlertProps = {
   children: ReactNode
   variant?: 'error' | 'warning'
   icon?: ReactNode
-}
+} & ComponentProps<'div'>
 
-type ConditionalProps =
-  | {
-      variant?: 'error' | 'warning'
-      icon: never
-    }
-  | {
-      variant: never
-      icon?: ReactNode
-    }
-
-export type AlertProps = CommonProps & ConditionalProps
-
-export const Alert: FC<AlertProps> = ({ children, variant, icon }) => {
+export const Alert: FC<AlertProps> = ({ children, variant, icon, ...rest }) => {
   const classNames = {
     box: s.box,
     content: s.content,
@@ -35,7 +23,7 @@ export const Alert: FC<AlertProps> = ({ children, variant, icon }) => {
   const iconComponent = icon ? icon : <InfoIcon size={24} className={classNames.icon} />
 
   return (
-    <Card className={classNames.box}>
+    <Card className={classNames.box} {...rest}>
       <div className={classNames.content}>
         <span className={classNames.icon}>{iconComponent}</span>
         {children}

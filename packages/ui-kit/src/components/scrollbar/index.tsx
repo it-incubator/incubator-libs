@@ -11,7 +11,12 @@ export type ScrollbarProps = {
   className?: string
 } & ComponentPropsWithoutRef<'div'>
 
-export const Scrollbar: FC<ScrollbarProps> = ({ children, className, type, ...rest }) => {
+export const Scrollbar: FC<ScrollbarProps> = ({
+  children,
+  className,
+  type = 'always',
+  ...rest
+}) => {
   const classNames = {
     root: clsx(s.root, className),
     viewport: s.viewport,

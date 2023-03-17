@@ -33,6 +33,7 @@ export type ComboboxProps = {
   onInputChange: (value: string) => void
   error?: boolean
   errorMessage?: string
+  portal?: boolean
 }
 
 export const Combobox: FC<ComboboxProps> = ({
@@ -46,6 +47,7 @@ export const Combobox: FC<ComboboxProps> = ({
   onInputChange,
   error,
   errorMessage,
+  portal = true,
 }) => {
   const inputChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
     onInputChange(e.currentTarget.value)
@@ -86,7 +88,7 @@ export const Combobox: FC<ComboboxProps> = ({
       className={classNames.root}
     >
       <Label label={label}>
-        <Float as="div" adaptiveWidth placement="bottom" floatingAs={Fragment}>
+        <Float portal={portal} as="div" adaptiveWidth placement="bottom" floatingAs={Fragment}>
           <div className={classNames.box}>
             <ComboboxHeadlessUI.Input
               onChange={inputChangeHandler}

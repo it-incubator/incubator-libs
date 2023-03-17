@@ -28,6 +28,9 @@ export type ComboboxProps = {
   label?: string
   /** The function to call when a new option is selected. */
   onChange: (value: string) => void
+  /** The value displayed in the textbox */
+  inputValue: string
+  onInputChange: (value: string) => void
 }
 
 export const Combobox: FC<ComboboxProps> = ({
@@ -37,17 +40,17 @@ export const Combobox: FC<ComboboxProps> = ({
   disabled,
   options,
   onChange,
+  inputValue,
+  onInputChange,
 }) => {
-  const [query, setQuery] = useState('')
-
   const inputChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-    setQuery(e.currentTarget.value)
+    onInputChange(e.currentTarget.value)
   }
 
   const filteredOptions =
-    query === ''
+    inputValue === ''
       ? options
-      : options.filter(option => option.label.toLowerCase().includes(query.toLowerCase()))
+      : options.filter(option => option.label.toLowerCase().includes(inputValue.toLowerCase()))
 
   const classNames = {
     root: s.root,

@@ -52,10 +52,17 @@ export default {
 export const Simple = {
   render: args => {
     const [value, setValue] = useState(null)
+    const [inputValue, setInputValue] = useState('')
 
     return (
       <VerticalContainer>
-        <Combobox {...args} value={value} onChange={setValue} />
+        <Combobox
+          {...args}
+          value={value}
+          onChange={setValue}
+          inputValue={inputValue}
+          onInputChange={setInputValue}
+        />
         <div>Selected value: {value}</div>
       </VerticalContainer>
     )
@@ -86,6 +93,7 @@ export const SimpleDisabled = {
 export const onModal = () => {
   const [value, setValue] = useState(null)
   const [open, setOpen] = useState(false)
+  const [inputValue, setInputValue] = useState('')
   const handleClose = () => {
     setOpen(false)
   }
@@ -94,7 +102,13 @@ export const onModal = () => {
     <div>
       <button onClick={() => setOpen(!open)}>Open modal</button>
       <Modal open={open} onClose={handleClose} title={'Select'}>
-        <Combobox {...Simple.args} value={value} onChange={setValue} />
+        <Combobox
+          {...Simple.args}
+          value={value}
+          onChange={setValue}
+          inputValue={inputValue}
+          onInputChange={setInputValue}
+        />
       </Modal>
     </div>
   )

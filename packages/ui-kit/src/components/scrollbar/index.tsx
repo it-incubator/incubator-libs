@@ -7,14 +7,20 @@ import s from './scrollbar.module.scss'
 
 export type ScrollbarProps = {
   children: ReactNode
-  type: ScrollArea.ScrollAreaProps['type']
+  type?: ScrollArea.ScrollAreaProps['type']
   className?: string
+  /** maxHeight viewport in pixels */
+  maxHeight?: number
+  /** maxWidth viewport in pixels */
+  maxWidth?: number
 } & ComponentPropsWithoutRef<'div'>
 
 export const Scrollbar: FC<ScrollbarProps> = ({
   children,
   className,
   type = 'always',
+  maxHeight,
+  maxWidth,
   ...rest
 }) => {
   const classNames = {
@@ -24,10 +30,14 @@ export const Scrollbar: FC<ScrollbarProps> = ({
     thumb: s.thumb,
   }
 
+  const viewportStyles = { maxHeight: `${maxHeight}px`, maxWidth: `${maxWidth}` }
+
   return (
     <ScrollArea.Root type={type} asChild={true}>
       <div className={classNames.root} {...rest}>
-        <ScrollArea.Viewport className={classNames.viewport}>{children}</ScrollArea.Viewport>
+        <ScrollArea.Viewport className={classNames.viewport} style={viewportStyles}>
+          {children}
+        </ScrollArea.Viewport>
         <ScrollArea.Scrollbar className={classNames.scrollbar} orientation="vertical">
           <ScrollArea.Thumb className={classNames.thumb} />
         </ScrollArea.Scrollbar>

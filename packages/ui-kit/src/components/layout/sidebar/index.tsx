@@ -14,7 +14,7 @@ type PropsType = {
 
 export const Sidebar: FC<PropsType> = ({ open, children, onOpenChange, ...rest }) => {
   const classNames = {
-    box: s.box,
+    box: clsx(s.box, open && s.open),
     contentBox: s.content,
     content: clsx(s.contentBox, open && s.open),
     button: clsx(s.button),

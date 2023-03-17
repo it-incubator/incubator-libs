@@ -1,0 +1,23 @@
+.box {
+  padding: 8px 0;
+  font-size: var(--font-size-m);
+  line-height: var(--line-height-m);
+  border-color: var(--color-bg-dividers);
+}
+
+.content {
+  display: flex;
+  gap: 14px;
+}
+
+.icon {
+  display: block;
+
+  &.error {
+    color: var(--color-accent-500);
+  }
+
+  &.warning {
+    color: var(--color-danger-500);
+  }
+}

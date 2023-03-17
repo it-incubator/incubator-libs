@@ -31,6 +31,8 @@ export type ComboboxProps = {
   /** The value displayed in the textbox */
   inputValue: string
   onInputChange: (value: string) => void
+  error?: boolean
+  errorMessage?: string
 }
 
 export const Combobox: FC<ComboboxProps> = ({
@@ -42,6 +44,8 @@ export const Combobox: FC<ComboboxProps> = ({
   onChange,
   inputValue,
   onInputChange,
+  error,
+  errorMessage,
 }) => {
   const inputChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
     onInputChange(e.currentTarget.value)
@@ -55,7 +59,7 @@ export const Combobox: FC<ComboboxProps> = ({
   const classNames = {
     root: s.root,
     box: s.box,
-    input: clsx(textFieldStyle.input, s.input),
+    input: clsx(textFieldStyle.input, s.input, error && textFieldStyle.error),
     button: clsx(s.button),
     icon: clsx(s.icon),
     content: clsx(selectStyle.content, filteredOptions.length === 0 && s.empty),
@@ -64,6 +68,7 @@ export const Combobox: FC<ComboboxProps> = ({
     scrollViewport: selectStyle.scrollViewport,
     scrollbar: selectStyle.scrollbar,
     scrollThumb: selectStyle.scrollThumb,
+    error: selectStyle.errorText,
   }
 
   const getDisplayingValue = (value: string | number) =>
@@ -114,6 +119,7 @@ export const Combobox: FC<ComboboxProps> = ({
           </ComboboxHeadlessUI.Options>
         </Float>
       </Label>
+      <>{error && <p className={classNames.error}>{errorMessage}</p>}</>
     </ComboboxHeadlessUI>
   )
 }

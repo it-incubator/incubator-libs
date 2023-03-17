@@ -82,6 +82,15 @@ export const SimpleWithLabel = {
   },
 }
 
+export const WithError = {
+  ...SimpleWithLabel,
+  args: {
+    ...SimpleWithLabel.args,
+    error: true,
+    errorMessage: 'Сообщение об ошибке',
+  },
+}
+
 export const SimpleDisabled = {
   ...SimpleWithLabel,
   args: {

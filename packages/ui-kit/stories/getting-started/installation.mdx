@@ -1,14 +1,57 @@
-import { Meta } from '@storybook/blocks';
+import { Meta } from '@storybook/blocks'
+import { Alert } from '../../src'
 
+<Meta title="Getting started/Installation" />
 
-<Meta title='Getting started/Installation' />
-
-# How to install
+# Installation
 
 ```bash
 npm i @it-incubator/ui-kit react-toastify -save--exact
 ```
+
 or
+
 ```bash
 yarn add @it-incubator/ui-kit react-toastify -E
+```
+
+<Alert style={{ marginBottom: '24px' }}>
+  {`react-toastify is a peer dependency and is required for the Snackbar component to work`}
+</Alert>
+
+## Import css
+
+In the entry point of your application (index.tsx/main.tsx) import the css file:
+
+```tsx
+import '@it-incubator/ui-kit/dist/style.css'
+```
+
+## Dark mode
+
+Dark mode is supported by default. To enable it, add the `dark-mode` class to your `body` tag.
+
+```tsx
+function handleThemeChanged(isDark: boolean) {
+  document.querySelector('body')?.classList.toggle('dark-mode', isDark)
+}
+```
+
+The imported css file also includes a list of semantic css tokens that change depending on the theme that can be used in your application.
+
+## Usage with micro-frontend architecture
+
+```js
+// .rescriptsrc.js
+
+config.plugins.unshift(
+  new ModuleFederationPlugin({
+    shared: {
+      /* your dependencies */
+      '@it-incubator/ui-kit': { singleton: true },
+      'react-toastify': { singleton: true },
+    },
+    /* the rest of your config */
+  })
+)
 ```

@@ -1,3 +1,4 @@
+import 'react-toastify/dist/ReactToastify.css'
 import '../src/styles/index.scss'
 import { DecoratorFn } from '@storybook/react'
 import { clsx } from 'clsx'

@@ -38,7 +38,7 @@
 
   border-radius: 50%;
 
-  transition: 200ms background-color;
+  transition: var(--transtition-duration-basic) background-color;
 
   &::before {
     content: '';

@@ -12,7 +12,7 @@
   border-radius: 30px;
   box-shadow: var(--tag-box-shadow);
 
-  transition: 200ms background-color;
+  transition: var(--transtition-duration-basic) background-color;
 
   &.clickable {
     cursor: pointer;

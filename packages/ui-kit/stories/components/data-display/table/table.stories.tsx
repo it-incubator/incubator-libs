@@ -1,9 +1,9 @@
 import { Meta } from '@storybook/react'
 
-import { ReadMore, Table } from '../../../src'
+import { ReadMore, Table } from '../../../../src'
 
 export default {
-  title: 'Components/Table',
+  title: 'Components/Data Display/Table',
   component: Table.Root,
 } as Meta<typeof Table.Root>
 

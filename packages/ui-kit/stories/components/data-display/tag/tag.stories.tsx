@@ -1,9 +1,9 @@
 import { Meta } from '@storybook/react'
 
-import { Tag } from '../../../src'
+import { Tag } from '../../../../src'
 
 export default {
-  title: 'Components/Tag',
+  title: 'Components/Data Display/Tag',
   component: Tag,
 } as Meta<typeof Tag>
 

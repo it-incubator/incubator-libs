@@ -24,11 +24,6 @@ const config = {
   features: {
     storyStoreV7: true,
   },
-  options: {
-    storySort: {
-      order: ['Getting Started', 'Components'],
-    },
-  },
   docs: {
     autodocs: true,
   },

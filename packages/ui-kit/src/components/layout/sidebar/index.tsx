@@ -2,8 +2,8 @@ import { ComponentProps, FC, ReactNode } from 'react'
 
 import { clsx } from 'clsx'
 
+import { Scrollbar } from '../..'
 import { KeyboardArrowRight } from '../../../assets/icons'
-import { Scrollbar } from '../../scrollbar'
 
 import s from './sidebar.module.scss'
 

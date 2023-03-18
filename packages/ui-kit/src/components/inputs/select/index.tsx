@@ -4,9 +4,8 @@ import { Listbox } from '@headlessui/react'
 import { Float } from '@headlessui-float/react'
 import { clsx } from 'clsx'
 
+import { Label, Scrollbar } from '../../'
 import { KeyboardArrowDown } from '../../../assets/icons'
-import { Scrollbar } from '../../scrollbar'
-import { Label } from '../label'
 
 import s from './select.module.scss'
 

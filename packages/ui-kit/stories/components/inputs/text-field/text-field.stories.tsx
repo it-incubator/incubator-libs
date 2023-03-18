@@ -24,3 +24,11 @@ export const Invalid = {
     errorMessage: 'Текст ошибки / подсказка',
   },
 }
+
+export const Search = {
+  args: {
+    label: 'Some label',
+    placeholder: 'Search...',
+    search: true,
+  },
+}

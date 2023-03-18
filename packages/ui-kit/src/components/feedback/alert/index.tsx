@@ -2,8 +2,8 @@ import { ComponentProps, FC, ReactNode } from 'react'
 
 import { clsx } from 'clsx'
 
+import { Card } from '../../'
 import { Info } from '../../../assets/icons'
-import { Card } from '../../card'
 
 import s from './alert.module.scss'
 

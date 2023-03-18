@@ -1,8 +1,12 @@
 .box {
-  padding: 8px 0;
+  box-sizing: border-box;
   font-size: var(--font-size-m);
   line-height: var(--line-height-m);
   border-color: var(--color-bg-dividers);
+
+  > div {
+    padding: 12px 24px;
+  }
 }
 
 .content {
@@ -11,13 +15,6 @@
 }
 
 .icon {
-  display: block;
-
-  &.error {
-    color: var(--color-accent-500);
-  }
-
-  &.warning {
-    color: var(--color-danger-500);
-  }
+  display: flex;
+  align-items: center;
 }

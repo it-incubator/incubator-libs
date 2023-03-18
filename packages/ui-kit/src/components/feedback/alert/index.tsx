@@ -2,7 +2,7 @@ import { ComponentProps, FC, ReactNode } from 'react'
 
 import { clsx } from 'clsx'
 
-import InfoIcon from '../../../assets/icons/components/Info'
+import { Info } from '../../../assets/icons'
 import { Card } from '../../card'
 
 import s from './alert.module.scss'
@@ -13,14 +13,14 @@ export type AlertProps = {
   icon?: ReactNode
 } & ComponentProps<'div'>
 
-export const Alert: FC<AlertProps> = ({ children, variant, icon, ...rest }) => {
+export const Alert: FC<AlertProps> = ({ children, variant = 'warning', icon, ...rest }) => {
   const classNames = {
     box: s.box,
     content: s.content,
-    icon: clsx(s.icon, variant === 'error' && s.error, variant === 'warning' && s.warning),
+    icon: clsx(s.icon),
   }
-
-  const iconComponent = icon ? icon : <InfoIcon size={24} className={classNames.icon} />
+  const iconColor = variant === 'error' ? 'var(--color-accent-500)' : 'var(--color-danger-500)'
+  const iconComponent = icon ?? <Info color={iconColor} />
 
   return (
     <Card className={classNames.box} {...rest}>

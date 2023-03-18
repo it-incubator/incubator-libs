@@ -14,6 +14,11 @@ export const parameters = {
       date: /Date$/,
     },
   },
+  options: {
+    storySort: {
+      order: ['Getting started', ['Installation', 'Usage', 'Styling'], 'Components'],
+    },
+  },
 }
 
 const withTheme: DecoratorFn = (StoryFn, context) => {

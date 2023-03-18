@@ -1,0 +1,20 @@
+.box {
+  box-sizing: border-box;
+  font-size: var(--font-size-m);
+  line-height: var(--line-height-m);
+  border-color: var(--color-bg-dividers);
+
+  > div {
+    padding: 12px 24px;
+  }
+}
+
+.content {
+  display: flex;
+  gap: 14px;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+}

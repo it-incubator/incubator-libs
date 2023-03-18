@@ -1,9 +1,9 @@
 import { Meta } from '@storybook/react'
 
-import { Scrollbar } from '../../../src'
+import { Scrollbar } from '../../../../src'
 
 export default {
-  title: 'Components/Scrollbar',
+  title: 'Components/Data Display/Scrollbar',
   component: Scrollbar,
   argTypes: {
     type: {

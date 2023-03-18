@@ -2,6 +2,7 @@ import { ComponentProps, forwardRef, ReactNode } from 'react'
 
 import { clsx } from 'clsx'
 
+import { Search as SearchIcon } from '../../../assets'
 import { Label } from '../label'
 
 import s from './text-field.module.scss'
@@ -12,10 +13,18 @@ export type TextFieldProps = {
   errorMessage?: string
   iconStart?: ReactNode
   iconEnd?: ReactNode
+  search?: boolean
 } & ComponentProps<'input'>
 
 export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
-  ({ label, error, className, errorMessage = 'Error!', iconEnd, iconStart, ...rest }, ref) => {
+  (
+    { label, error, className, errorMessage = 'Error!', iconEnd, iconStart, search, ...rest },
+    ref
+  ) => {
+    if (search) {
+      iconStart = <SearchIcon size={20} color={'var(--color-text-secondary)'} />
+    }
+
     const classNames = {
       root: clsx(s.box, className),
       label: s.label,

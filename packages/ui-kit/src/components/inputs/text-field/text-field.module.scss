@@ -41,9 +41,10 @@
 
 .input {
   width: 100%;
-  padding: 9px 12px 8px;
+  height: 36px;
+  padding: 6px 12px;
 
-  font-size: var(--font-size-l);
+  font-size: var(--font-size-m);
   line-height: var(--line-height-m);
   color: var(--color-text-primary);
 
@@ -59,17 +60,17 @@
     color: var(--color-text-secondary);
   }
 
-  &:active,
-  &:focus {
+  &:disabled {
+    color: var(--color-text-disabled);
+  }
+
+  &:focus,
+  &:active:enabled {
     border-color: var(--color-border-input-active);
   }
 
   &.error {
     border-color: var(--color-accent-500);
-  }
-
-  &:disabled {
-    color: var(--color-text-disabled);
   }
 
   &:hover:not(&:disabled) {

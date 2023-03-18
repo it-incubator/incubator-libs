@@ -30,22 +30,22 @@
 
   cursor: pointer;
 
-  &:hover {
-    background-color: var(--color-bg-focus);
-  }
-
   &:focus-visible {
     outline: var(--outline-focus);
-  }
-
-  &.selected {
-    color: var(--color-text-primary-contrast);
-    background-color: var(--color-bg-contrast);
   }
 
   &:disabled {
     cursor: initial;
     opacity: 1;
+  }
+
+  &:hover:not(&:disabled) {
+    background-color: var(--color-bg-focus);
+  }
+
+  &.selected {
+    color: var(--color-text-primary-contrast);
+    background-color: var(--color-bg-contrast);
   }
 }
 

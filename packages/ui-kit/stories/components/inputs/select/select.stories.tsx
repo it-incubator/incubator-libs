@@ -27,6 +27,30 @@ const options = [
     label: 'Pineapple',
   },
   {
+    value: 'cherry',
+    label: 'Cherry',
+  },
+  {
+    value: 'grapefruit',
+    label: 'Grapefruit',
+  },
+  {
+    value: 'lemon',
+    label: 'Lemon',
+  },
+  {
+    value: 'mango',
+    label: 'Mango',
+  },
+  {
+    value: 'grapes',
+    label: 'Grapes',
+  },
+  {
+    value: 'pineapple',
+    label: 'Pineapple',
+  },
+  {
     value: 'apple1',
     label: 'Apple',
   },

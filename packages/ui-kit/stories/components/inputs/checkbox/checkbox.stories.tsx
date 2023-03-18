@@ -25,7 +25,6 @@ export const Default = {
 
   args: {
     label: 'Click here',
-    id: '1',
     disabled: false,
   },
 }

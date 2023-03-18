@@ -82,7 +82,7 @@ export const usePagination = ({ count, siblings = 1, page, onChange }: UsePagina
 
       return [firstPageIndex, DOTS, ...middleRange, DOTS, lastPageIndex]
     }
-  }, [siblings, page]) as PaginationRange
+  }, [siblings, page, count]) as PaginationRange
 
   const lastPage = paginationRange.at(-1)
 

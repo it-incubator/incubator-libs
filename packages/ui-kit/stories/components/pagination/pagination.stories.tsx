@@ -43,3 +43,15 @@ export const DefaultWithTwoPages = () => {
     </VerticalContainer>
   )
 }
+
+export const DefaultWithOnePages = () => {
+  const [page, setPage] = useState(1)
+  const TOTAL_PAGE_COUNT = 1
+
+  return (
+    <VerticalContainer>
+      <Pagination onChange={setPage} count={TOTAL_PAGE_COUNT} page={page} />
+      <ValuePreview>Current page: {page}</ValuePreview>
+    </VerticalContainer>
+  )
+}

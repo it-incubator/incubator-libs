@@ -1,5 +1,5 @@
 .arrowIcon {
-  transition: 200ms transform;
+  transition: var(--transtition-duration-basic) transform;
 }
 
 .trigger {
@@ -14,7 +14,7 @@
   border: none;
   border-radius: var(--border-radius-m);
 
-  transition: 200ms background-color;
+  transition: var(--transtition-duration-basic) background-color;
 
   &[data-state='open'] {
     border-radius: var(--border-radius-m) var(--border-radius-m) 0 0;

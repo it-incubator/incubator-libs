@@ -1,0 +1,25 @@
+import { Meta } from '@storybook/blocks'
+
+<Meta title="Getting started/Styling" />
+
+# Styling
+
+## CSS variables
+
+The library exposes a list of css variables that are divided in two groups:
+
+- Main colors defined [in the palette section in the design file](https://www.figma.com/file/4lkNIPZD8PyW9uQm7jQHoZ/Components-Personal-area?node-id=3621-15252&t=DtdEKGcwMEmm4vH9-4).\
+  They are structured as follows: `--color-{colorName}-{colorShade}`.\
+  For example, `--color-accent-500` or `--color-danger-100`.\
+  A complete list of the available colors can be found [here](https://github.com/it-incubator/incubator-libs/blob/main/packages/ui-kit/src/styles/_colors.scss).
+
+- Semantic color tokens that are used to define the color of the components.\
+  For example, `--color-bg-primary` or `--color-button-bg-secondary-active`. \
+  A complete list of the available tokens can be found [here](https://github.com/it-incubator/incubator-libs/blob/main/packages/ui-kit/src/styles/_semantic-color-tokens.scss).
+
+## Components
+
+All components are based on the design file. Most of them accept className and style props to allow for custom styling, but
+it is recommended to avoid using them as much as possible. If you need to introduce new variantions of a component, please
+consider adding them to the library.\
+For more details on specific components, please refer to their documentation.

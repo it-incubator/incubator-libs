@@ -34,6 +34,22 @@ const options = [
     value: 'banana1',
     label: 'Banana',
   },
+  {
+    value: 'grapes',
+    label: 'Grapes',
+  },
+  {
+    value: 'pineapple',
+    label: 'Pineapple',
+  },
+  {
+    value: 'apple1',
+    label: 'Apple',
+  },
+  {
+    value: 'banana1',
+    label: 'Banana',
+  },
 ]
 
 export default {

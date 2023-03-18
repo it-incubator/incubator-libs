@@ -3,7 +3,7 @@ import { toast } from 'react-toastify'
 import { Button, Snackbar } from '../../../../src'
 
 export default {
-  title: 'Components/Feedback/Alert',
+  title: 'Components/Feedback/Snackbar',
 }
 
 export const Default = {

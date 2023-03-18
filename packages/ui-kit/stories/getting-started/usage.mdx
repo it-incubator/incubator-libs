@@ -1,0 +1,29 @@
+import { Meta } from '@storybook/blocks'
+import { Card } from '../../src'
+
+<Meta title="Getting started/Usage" />
+
+# Usage
+
+## The gist
+
+```tsx
+import { Card } from '@it-incubator/ui-kit'
+
+export const App = () => <Card>Hello world!</Card>
+```
+
+<Card>Hello world!</Card>
+
+## TypeScript
+
+All the components are written in TypeScript and have type definitions included.
+
+```tsx
+export type ButtonVariant = 'primary' | 'secondary' | 'outlined'
+
+export interface ButtonProps extends DefaultButtonProps {
+  /** "primary" | "secondary" | "outlined"; */
+  variant?: ButtonVariant
+}
+```

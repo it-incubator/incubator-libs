@@ -2,10 +2,10 @@ import { FC, Fragment, useMemo } from 'react'
 
 import { Listbox } from '@headlessui/react'
 import { Float } from '@headlessui-float/react'
-import * as ScrollArea from '@radix-ui/react-scroll-area'
 import { clsx } from 'clsx'
 
 import { KeyboardArrowDown } from '../../../assets/icons'
+import { Scrollbar } from '../../scrollbar'
 import { Label } from '../label'
 
 import s from './select.module.scss'
@@ -125,28 +125,21 @@ export const Select: FC<SelectProps> = ({
             </Listbox.Button>
 
             <Listbox.Options className={classNames.content} as={'div'}>
-              <ScrollArea.Root className={classNames.scrollRoot} type="auto">
-                <ScrollArea.Viewport className={classNames.scrollViewport}>
-                  {options.map(option => {
-                    // todo: add checkboxes for multi-select
-                    return (
-                      <Listbox.Option
-                        key={option.value}
-                        className={classNames.item}
-                        value={option.value}
-                        as={'div'}
-                      >
-                        <span>{option.label}</span>
-                      </Listbox.Option>
-                    )
-                  })}
-                </ScrollArea.Viewport>
-                {variant !== 'pagination' && (
-                  <ScrollArea.Scrollbar className={classNames.scrollbar} orientation="vertical">
-                    <ScrollArea.Thumb className={classNames.scrollThumb} />
-                  </ScrollArea.Scrollbar>
-                )}
-              </ScrollArea.Root>
+              <Scrollbar maxHeight={158}>
+                {options.map(option => {
+                  // todo: add checkboxes for multi-select
+                  return (
+                    <Listbox.Option
+                      key={option.value}
+                      className={classNames.item}
+                      value={option.value}
+                      as={'div'}
+                    >
+                      <span>{option.label}</span>
+                    </Listbox.Option>
+                  )
+                })}
+              </Scrollbar>
             </Listbox.Options>
           </Float>
         </Label>

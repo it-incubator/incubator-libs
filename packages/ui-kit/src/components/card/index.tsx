@@ -4,7 +4,7 @@ import { clsx } from 'clsx'
 
 import s from './card.module.scss'
 
-export type CommonProps = {
+type CommonProps = {
   children: ReactNode
 } & ComponentProps<'div'>
 
@@ -20,7 +20,7 @@ type ConditionalProps =
       iconComponent?: never
     }
 
-type CardProps = CommonProps & ConditionalProps
+export type CardProps = CommonProps & ConditionalProps
 
 export const Card: FC<CardProps> = ({
   children,

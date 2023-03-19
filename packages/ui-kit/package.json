@@ -2,7 +2,7 @@
   "name": "@it-incubator/ui-kit",
   "version": "0.1.5",
   "main": "./dist/index.umd.js",
-  "module": "./dist/index.mjs",
+  "module": "./dist/index.js",
   "type": "module",
   "types": "./dist/index.d.ts",
   "license": "MIT",

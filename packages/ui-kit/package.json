@@ -3,6 +3,7 @@
   "version": "0.1.4",
   "main": "./dist/index.umd.js",
   "module": "./dist/index.mjs",
+  "type": "module",
   "types": "./dist/index.d.ts",
   "license": "MIT",
   "files": [

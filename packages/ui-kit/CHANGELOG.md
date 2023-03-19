@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 0.1.9
+### Patch Changes
+
+- add sideEffects:false to package.json to allow for tree shaking
+
 ## 0.1.8
 ### Patch Changes
 

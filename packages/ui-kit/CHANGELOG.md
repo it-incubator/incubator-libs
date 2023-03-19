@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 0.1.12
+### Patch Changes
+
+- make input full width
+
 ## 0.1.11
 ### Patch Changes
 

@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 0.1.11
+### Patch Changes
+
+- fix padding in Card
+
 ## 0.1.10
 ### Patch Changes
 

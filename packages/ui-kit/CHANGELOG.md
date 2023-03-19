@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 0.1.13
+### Patch Changes
+
+- fix bg and input border colors
+
 ## 0.1.12
 ### Patch Changes
 

@@ -1,4 +1,4 @@
-import { ComponentProps, forwardRef, ReactNode } from 'react'
+import { ComponentProps, forwardRef, ReactNode, KeyboardEvent } from 'react'
 
 import { clsx } from 'clsx'
 
@@ -14,18 +14,35 @@ export type TextFieldProps = {
   iconStart?: ReactNode
   iconEnd?: ReactNode
   search?: boolean
+  onEnter?: (e: KeyboardEvent<HTMLInputElement>) => void
 } & ComponentProps<'input'>
 
 // НЕ УДАЛЯТЬ КОММЕНТ ПЕРЕД forwardRef - без него ломается tree shaking
 export const TextField = /* @__PURE__ */ forwardRef<HTMLInputElement, TextFieldProps>(
   (
-    { label, error, className, errorMessage = 'Error!', iconEnd, iconStart, search, ...rest },
+    {
+      label,
+      error,
+      onEnter,
+      onKeyDown,
+      className,
+      errorMessage = 'Error!',
+      iconEnd,
+      iconStart,
+      search,
+      ...rest
+    },
     ref
   ) => {
     if (search) {
       iconStart = <SearchIcon size={20} color={'var(--color-text-secondary)'} />
     }
-
+    const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
+      if (onEnter && e.key === 'Enter') {
+        onEnter(e)
+      }
+      onKeyDown?.(e)
+    }
     const classNames = {
       root: clsx(s.box, className),
       label: s.label,
@@ -50,6 +67,7 @@ export const TextField = /* @__PURE__ */ forwardRef<HTMLInputElement, TextFieldP
               type="text"
               ref={ref}
               data-icon={dataIcon}
+              onKeyDown={handleKeyDown}
               {...rest}
             />
             {!!iconEnd && <span className={classNames.iconEnd}>{iconEnd}</span>}

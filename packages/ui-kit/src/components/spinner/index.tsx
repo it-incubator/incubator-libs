@@ -13,5 +13,9 @@ export const Spinner: FC<SpinnerProps> = ({ size = 48 }) => {
     borderWidth: size / 10,
   }
 
-  return <span className={s.loader} style={style} />
+  return (
+    <div className={s.container}>
+      <span className={s.loader} style={style} />
+    </div>
+  )
 }

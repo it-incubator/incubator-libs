@@ -99,6 +99,7 @@ importers:
       esbuild-sass-plugin: 2.5.0
       react: '>=18.0.2'
       react-dom: '>=18.0.2'
+      react-toastify: ^9.1.1
       remark-gfm: ^3.0.1
       sass: 1.58.3
       storybook: 7.0.0-beta.61
@@ -141,6 +142,7 @@ importers:
       esbuild-sass-plugin: 2.5.0_sass@1.58.3
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
+      react-toastify: 9.1.1_biqbaboplfbrettd7655fr4n2y
       remark-gfm: 3.0.1
       sass: 1.58.3
       storybook: 7.0.0-beta.61
@@ -5300,7 +5302,6 @@ packages:
   /clsx/1.2.1:
     resolution: {integrity: sha512-EcR6r5a8bj6pu3ycsa/E/cKVGuTgZJZdsyUYHOksG/UHIiKfjxzRxYJpyVBwYaQeOvghal9fcc4PidlgzugAQg==}
     engines: {node: '>=6'}
-    dev: false
 
   /collapse-white-space/1.0.6:
     resolution: {integrity: sha512-jEovNnrhMuqyCcjfEJA56v0Xq8SkIoPKDyaHahwo3POf4qcSXqMYuwNcOTzp74vTsR9Tn08z4MxWqAhcekogkQ==}
@@ -10302,6 +10303,17 @@ packages:
       react: 18.2.0
       tslib: 2.5.0
     dev: false
+
+  /react-toastify/9.1.1_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-pkFCla1z3ve045qvjEmn2xOJOy4ZciwRXm1oMPULVkELi5aJdHCN/FHnuqXq8IwGDLB7PPk2/J6uP9D8ejuiRw==}
+    peerDependencies:
+      react: '>=16'
+      react-dom: '>=16'
+    dependencies:
+      clsx: 1.2.1
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: true
 
   /react/18.2.0:
     resolution: {integrity: sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==}

@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 0.1.8
+### Patch Changes
+
+- fix deps
+
 ## 0.1.7
 ### Patch Changes
 

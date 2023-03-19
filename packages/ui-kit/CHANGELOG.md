@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 0.1.4
+### Patch Changes
+
+- add snackbar component
+
 ## 0.1.3
 ### Patch Changes
 

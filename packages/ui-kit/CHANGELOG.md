@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 0.1.16
+### Patch Changes
+
+- add container to spinner
+
 ## 0.1.15
 ### Patch Changes
 

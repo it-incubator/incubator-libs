@@ -1,7 +1,6 @@
 import { Meta } from '@storybook/react'
 
-import { Tooltip } from '../../../../src'
-import { ThumbUp } from '../../../../src/assets/icons'
+import { Tooltip, ThumbUp } from '../../../../src'
 import { useDarkMode } from '../../../../storybook-utils/hooks/use-dark-mode'
 
 export default {

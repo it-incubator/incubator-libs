@@ -1,13 +1,14 @@
 {
   "name": "@it-incubator/ui-kit",
   "version": "0.1.6",
-  "main": "./dist/index.umd.js",
+  "main": "./dist/index.js",
   "module": "./dist/index.js",
   "type": "module",
   "types": "./dist/index.d.ts",
   "license": "MIT",
   "files": [
-    "dist/**"
+    "/dist",
+    "/dist/style.css"
   ],
   "scripts": {
     "build": "vite build && tsc && storybook build",
@@ -27,6 +28,9 @@
     "@fontsource/roboto": "4.5.8",
     "@headlessui-float/react": "0.10.1",
     "@headlessui/react": "1.7.11",
+    "@it-incubator/eslint-config": "workspace:*",
+    "@it-incubator/prettier-config": "workspace:*",
+    "@it-incubator/stylelint-config": "workspace:*",
     "@storybook/addon-actions": "7.0.0-beta.61",
     "@storybook/addon-docs": "7.0.0-beta.61",
     "@storybook/addon-essentials": "7.0.0-beta.61",
@@ -56,9 +60,6 @@
     "access": "public"
   },
   "dependencies": {
-    "@it-incubator/eslint-config": "workspace:*",
-    "@it-incubator/prettier-config": "workspace:*",
-    "@it-incubator/stylelint-config": "workspace:*",
     "@radix-ui/react-checkbox": "1.0.1",
     "@radix-ui/react-collapsible": "1.0.1",
     "@radix-ui/react-dialog": "1.0.2",

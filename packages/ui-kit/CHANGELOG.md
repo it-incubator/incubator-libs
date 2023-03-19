@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 0.1.10
+### Patch Changes
+
+- maybe fix treeshaking?
+
 ## 0.1.9
 ### Patch Changes
 

@@ -6,7 +6,11 @@ import { defineConfig } from 'vite'
 import { peerDependencies, dependencies } from './package.json'
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react({
+      jsxRuntime: 'classic',
+    }),
+  ],
   build: {
     minify: false,
     lib: {

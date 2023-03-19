@@ -16,7 +16,8 @@ export type TextFieldProps = {
   search?: boolean
 } & ComponentProps<'input'>
 
-export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
+// НЕ УДАЛЯТЬ КОММЕНТ ПЕРЕД forwardRef - без него ломается tree shaking
+export const TextField = /* @__PURE__ */ forwardRef<HTMLInputElement, TextFieldProps>(
   (
     { label, error, className, errorMessage = 'Error!', iconEnd, iconStart, search, ...rest },
     ref

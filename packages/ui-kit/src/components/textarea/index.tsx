@@ -13,7 +13,8 @@ export type TextareaProps = {
   onValueChange?: (text: string) => void
 } & ComponentProps<'textarea'>
 
-export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
+// НЕ УДАЛЯТЬ КОММЕНТ ПЕРЕД forwardRef - без него ломается tree shaking
+export const Textarea = /* @__PURE__ */ forwardRef<HTMLTextAreaElement, TextareaProps>(
   ({ label, error, className, errorMessage = 'Error!', onChange, onValueChange, ...rest }, ref) => {
     function handleInputValueChanged(e: ChangeEvent<HTMLTextAreaElement>) {
       onChange?.(e)

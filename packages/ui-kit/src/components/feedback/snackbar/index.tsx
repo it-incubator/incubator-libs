@@ -2,7 +2,7 @@ import { FC } from 'react'
 
 import { Flip, IconProps, ToastContainer, ToastContainerProps } from 'react-toastify'
 
-import { Cancel, CheckCircle, Close, Error as ErrorIcon } from '../../assets/icons'
+import { Cancel, CheckCircle, Close, Error as ErrorIcon } from '../../../assets/icons'
 
 export const Snackbar: FC<ToastContainerProps> = props => {
   return (

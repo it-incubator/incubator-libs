@@ -1,5 +1,6 @@
 import { ComponentProps, FC, ReactNode } from 'react'
 
+import * as ScrollArea from '@radix-ui/react-scroll-area'
 import { clsx } from 'clsx'
 
 import { KeyboardArrowRight, Scrollbar } from '../../'
@@ -10,9 +11,16 @@ type PropsType = {
   open: boolean
   children: ReactNode
   onOpenChange: (open: boolean) => void
+  showScrollbarOn?: ScrollArea.ScrollAreaProps['type']
 } & ComponentProps<'div'>
 
-export const Sidebar: FC<PropsType> = ({ open, children, onOpenChange, ...rest }) => {
+export const Sidebar: FC<PropsType> = ({
+  open,
+  children,
+  onOpenChange,
+  showScrollbarOn = 'hover',
+  ...rest
+}) => {
   const classNames = {
     box: clsx(s.box, open && s.open),
     contentBox: s.contentBox,
@@ -30,7 +38,7 @@ export const Sidebar: FC<PropsType> = ({ open, children, onOpenChange, ...rest }
     <div className={classNames.box} {...rest}>
       <div className={classNames.contentBox}>
         <div className={classNames.content}>
-          <Scrollbar className={classNames.scrollbar} type="always">
+          <Scrollbar className={classNames.scrollbar} type={showScrollbarOn}>
             {children}
           </Scrollbar>
         </div>

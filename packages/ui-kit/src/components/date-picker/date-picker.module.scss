@@ -15,8 +15,26 @@
 .input {
   position: relative;
   z-index: 2;
-  width: min-content; // TODO: исправить
+}
+
+:global(.react-datepicker__input-container) {
+  position: relative;
+  width: min-content;
   min-width: 158px;
+
+  &::after {
+    content: '';
+
+    position: absolute;
+    z-index: 2;
+    top: 6px;
+    right: 12px;
+
+    width: 24px;
+    height: 24px;
+
+    background-image: url('../../assets/icons/svgs/calendar_today.svg');
+  }
 }
 
 .header {
@@ -103,6 +121,14 @@
   }
 }
 
+:global(.react-datepicker__day--outside-month) {
+  color: var(--color-text-inactive);
+}
+
+:global(.react-datepicker__day--weekend) {
+  color: var(--color-text-secondary);
+}
+
 :global(.react-datepicker__day--today) {
   color: var(--color-accent-500);
 }
@@ -116,12 +142,4 @@
 
 :global(.react-datepicker__day--keyboard-selected) {
   background-color: transparent;
-}
-
-:global(.react-datepicker__day--weekend) {
-  color: var(--color-text-secondary);
-}
-
-:global(.react-datepicker__day--outside-month) {
-  color: var(--color-text-inactive);
 }

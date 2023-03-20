@@ -1,8 +1,8 @@
-import { FC, useState } from 'react'
+import { FC } from 'react'
 
 import { clsx } from 'clsx'
 import { ru } from 'date-fns/locale'
-import ReactDatePicker, { registerLocale } from 'react-datepicker'
+import ReactDatePicker, { ReactDatePickerCustomHeaderProps, registerLocale } from 'react-datepicker'
 
 import 'react-datepicker/dist/react-datepicker.css'
 
@@ -17,29 +17,24 @@ import { format } from 'date-fns'
 registerLocale('ru', ru)
 
 export type DatePickerProps = {
-  placeholder: string
+  placeholder?: string
+  startDate: Date
+  setStartDate: (date: Date) => void
 }
 
-export const DatePicker: FC<DatePickerProps> = ({ placeholder }) => {
-  const [startDate, setStartDate] = useState(new Date())
-
+export const DatePicker: FC<DatePickerProps> = ({ startDate, setStartDate, placeholder }) => {
   const classNames = {
     input: clsx(s.input, textFieldStyles.input),
     calendar: s.calendar,
-    header: s.header,
-    buttonBox: s.buttonBox,
-    button: s.button,
     popper: s.popper,
   }
 
-  const onChange = (date: number) => {
-    setStartDate(startDate)
-  }
+  const formatWeekDay = (day: Date) => capitalizeFirstLetter(format(day, 'iiiiii', { locale: ru }))
 
   return (
     <ReactDatePicker
       selected={startDate}
-      onChange={(date: Date) => setStartDate(date)}
+      onChange={setStartDate}
       placeholderText={placeholder}
       calendarClassName={classNames.calendar}
       className={classNames.input}
@@ -55,40 +50,37 @@ export const DatePicker: FC<DatePickerProps> = ({ placeholder }) => {
       showPopperArrow={false}
       calendarStartDay={1}
       locale="ru"
-      formatWeekDay={day => getShortDayOfWeekName(day)}
-      renderCustomHeader={({ date, decreaseMonth, increaseMonth }) => (
-        <div className={classNames.header}>
-          <div>{format(date, 'LLLL Y', { locale: ru })}</div>
-          <div className={s.buttonBox}>
-            <button className={classNames.button} onClick={decreaseMonth}>
-              <KeyboardArrowLeft />
-            </button>
-
-            <button className={classNames.button} onClick={increaseMonth}>
-              <KeyboardArrowRight />
-            </button>
-          </div>
-        </div>
-      )}
+      formatWeekDay={formatWeekDay}
+      renderCustomHeader={CustomHeader}
     />
   )
 }
 
-function getShortDayOfWeekName(dayOfWeek: string) {
-  const dayNames = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс']
-  const fullDayNames = [
-    'понедельник',
-    'вторник',
-    'среда',
-    'четверг',
-    'пятница',
-    'суббота',
-    'воскресенье',
-  ]
+const CustomHeader = ({ date, decreaseMonth, increaseMonth }: ReactDatePickerCustomHeaderProps) => {
+  const classNames = {
+    header: s.header,
+    buttonBox: s.buttonBox,
+    button: s.button,
+  }
 
-  const index = fullDayNames.indexOf(dayOfWeek)
+  const headerText = capitalizeFirstLetter(format(date, 'LLLL Y', { locale: ru }))
 
-  return index !== -1 ? dayNames[index] : ''
+  return (
+    <div className={classNames.header}>
+      <div>{headerText}</div>
+      <div className={s.buttonBox}>
+        <button className={classNames.button} onClick={decreaseMonth}>
+          <KeyboardArrowLeft />
+        </button>
+
+        <button className={classNames.button} onClick={increaseMonth}>
+          <KeyboardArrowRight />
+        </button>
+      </div>
+    </div>
+  )
 }
 
-// TODO: попробовать иначе задавать formatWeekDay (использовать последнюю версию)
+const capitalizeFirstLetter = (text: string) => {
+  return text[0].toUpperCase() + text.slice(1)
+}

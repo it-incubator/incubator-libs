@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 0.1.17
+### Patch Changes
+
+- minor improvements
+
 ## 0.1.16
 ### Patch Changes
 

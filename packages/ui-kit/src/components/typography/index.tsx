@@ -37,9 +37,11 @@ export const Typography = {
   Subtitle1: createTypographyComponent('subtitle1'),
   Subtitle2: createTypographyComponent('subtitle2'),
   Body1: createTypographyComponent('body1'),
-  Body2: createTypographyComponent('body1'),
+  Body2: createTypographyComponent('body2'),
   Overline: createTypographyComponent('overline'),
   Caption: createTypographyComponent('caption'),
+  CaptionBold: createTypographyComponent('captionBold'),
+  CaptionLink: createTypographyComponent('captionLink'),
 }
 
 const COMPONENTS = {
@@ -52,6 +54,8 @@ const COMPONENTS = {
   body2: 'p',
   overline: 'p',
   caption: 'caption',
+  captionBold: 'caption',
+  captionLink: 'a',
 } as const
 
 type Component = keyof typeof COMPONENTS

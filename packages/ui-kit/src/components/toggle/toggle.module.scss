@@ -1,0 +1,82 @@
+.root {
+  all: unset;
+
+  cursor: pointer;
+
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+
+  box-sizing: border-box;
+  width: 40px;
+  height: 24px;
+  padding: 3px;
+
+  border-color: transparent;
+  border-width: 2px;
+  border-radius: 9999px;
+  outline: none;
+
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  transition-property: background-color, border-color, color, fill, stroke;
+
+  &:focus {
+    box-shadow: 0 0 0 1px #fff, 0 0 0 3px var(--color-info-500);
+  }
+
+  &:active {
+    background-color: var(--color-toggle-active);
+  }
+
+  &[disabled] {
+    cursor: auto;
+    opacity: 0.5;
+  }
+
+  &[data-state='unchecked'] {
+    background-color: var(--color-bg-action);
+  }
+
+  &[data-state='checked'] {
+    background-color: var(--color-info-400);
+  }
+
+  &[data-state='unchecked']:hover:enabled {
+    background-color: var(--color-toggle-hover);
+  }
+
+  &[data-state='checked']:hover:enabled {
+    background-color: var(--color-info-500);
+  }
+
+  &[data-state='unchecked']:active:enabled,
+  &[data-state='checked']:active:enabled {
+    background-color: var(--color-toggle-active);
+  }
+}
+
+.thumb {
+  pointer-events: none;
+
+  display: block;
+
+  width: 18px;
+  height: 18px;
+
+  background-color: var(--color-neutral-light-50);
+  border-radius: 9999px;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 1px 2px 0 rgb(0 0 0 / 6%);
+
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+  transition-property: transform;
+
+  &[data-state='unchecked'] {
+    transform: translateX(0);
+  }
+
+  &[data-state='checked'] {
+    transform: translateX(16px);
+  }
+}

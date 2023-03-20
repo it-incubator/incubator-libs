@@ -1,0 +1,117 @@
+.calendar {
+  width: 300px;
+  padding: 16px 24px;
+
+  font-family: inherit;
+  font-size: var(--font-size-m);
+  line-height: var(--line-height-m);
+  color: var(--color-text-primary);
+
+  background-color: var(--color-bg-element);
+  border-color: var(--color-border-primary);
+  border-radius: var(--border-radius-s);
+}
+
+.input {
+  position: relative;
+  z-index: 2;
+  width: min-content; // TODO: исправить
+  min-width: 158px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.buttonBox {
+  display: flex;
+}
+
+.button {
+  all: unset;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  height: 36px;
+}
+
+:global(.react-datepicker__day-name) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  height: 36px;
+  margin: 0;
+
+  color: var(--color-text-primary);
+}
+
+:global(.react-datepicker__header) {
+  padding: 0;
+  background-color: transparent;
+  border-bottom: none;
+}
+
+:global(.react-datepicker__month) {
+  margin: 0;
+}
+
+:global(.react-datepicker__month-container) {
+  width: 252px;
+}
+
+:global(.react-datepicker__day-names) {
+  margin-bottom: 12px;
+}
+
+/* day styles */
+:global(.react-datepicker__day) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  height: 36px;
+  margin: 0;
+
+  color: var(--color-text-primary);
+
+  border-radius: 50%;
+
+  &:hover {
+    background-color: var(--color-action-hover);
+    border-radius: 50%;
+  }
+}
+
+:global(.react-datepicker__day--selected) {
+  background-color: var(--color-action-hover);
+  border-radius: 50%;
+
+  &::before {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    background-color: green;
+  }
+}
+
+:global(.react-datepicker__day--today) {
+  color: var(--color-accent-500);
+}
+
+:global(.react-datepicker__day--weekend) {
+  color: var(--color-text-secondary);
+}
+
+:global(.react-datepicker__day--outside-month) {
+  color: var(--color-text-inactive);
+}

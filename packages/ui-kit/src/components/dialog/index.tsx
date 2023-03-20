@@ -47,12 +47,12 @@ export const Dialog: FC<DialogProps> = ({
     <Modal {...rest}>
       {children}
       <div className={classNames.buttonsBox}>
-        <Button variant={confirmButtonVariant} onClick={handleConfirmButtonClicked}>
-          {confirmButtonText}
-        </Button>
         {showCancelButton && (
           <Button onClick={handleCancelButtonClicked}>{cancelButtonText}</Button>
         )}
+        <Button variant={confirmButtonVariant} onClick={handleConfirmButtonClicked}>
+          {confirmButtonText}
+        </Button>
       </div>
     </Modal>
   )

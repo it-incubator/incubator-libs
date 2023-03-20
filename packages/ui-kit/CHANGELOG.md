@@ -1,5 +1,35 @@
 # @it-incubator/ui-kit
 
+## 0.1.17
+### Patch Changes
+
+- minor improvements
+
+## 0.1.16
+### Patch Changes
+
+- add container to spinner
+
+## 0.1.15
+### Patch Changes
+
+- add spinner component
+
+## 0.1.14
+### Patch Changes
+
+- add onEnter handler for textfield
+
+## 0.1.13
+### Patch Changes
+
+- fix bg and input border colors
+
+## 0.1.12
+### Patch Changes
+
+- make input full width
+
 ## 0.1.11
 ### Patch Changes
 

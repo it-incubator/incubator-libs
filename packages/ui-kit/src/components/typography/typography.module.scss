@@ -44,3 +44,13 @@
 .caption {
   @include typography(var(--font-size-s), var(--line-height-m), var(--font-weight-regular));
 }
+
+.captionBold {
+  @include typography(var(--font-size-s), var(--line-height-m), var(--font-weight-bold));
+}
+
+.captionLink {
+  @include typography(var(--font-size-s), var(--line-height-m), var(--font-weight-regular));
+
+  text-decoration: underline;
+}

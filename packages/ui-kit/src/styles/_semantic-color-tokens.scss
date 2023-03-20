@@ -64,6 +64,7 @@
 
   /* borders */
   --color-border-primary: var(--color-dark-mode-400);
+  --color-border-input-primary: var(--color-dark-mode-400);
   --color-border-primary-active: var(--color-dark-mode-400);
   --color-border-secondary: var(--color-neutral-light-100);
   --color-border-secondary-hover: var(--color-dark-mode-300);
@@ -86,7 +87,7 @@
   --color-bg-disabled: var(--color-dark-mode-600);
   --color-bg-secondary-hover: var(--color-dark-mode-400);
   --color-bg-info: var(--color-info-800);
-  --color-bg-body: var(--color-dark-mode-600);
+  --color-bg-body: var(--color-dark-mode-700);
   --color-bg-action: var(--color-dark-mode-300);
 
   /* interactive */

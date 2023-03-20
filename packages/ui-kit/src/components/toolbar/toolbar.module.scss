@@ -70,9 +70,14 @@
 
   transition: var(--transtition-duration-basic) opacity;
 
-  &:hover,
-  &:focus {
+  &:hover:enabled,
+  &:focus:enabled {
     opacity: 0.7;
+  }
+
+  &[data-disabled] {
+    pointer-events: none;
+    cursor: unset;
   }
 }
 

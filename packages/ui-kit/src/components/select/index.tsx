@@ -33,7 +33,7 @@ interface CommonProps {
   errorMessage?: string
   label?: string
   /** width in pixels */
-  width?: string
+  width?: number
 }
 
 type ConditionalMultipleProps =

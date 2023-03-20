@@ -1,7 +1,6 @@
 import { Meta } from '@storybook/react'
 
-import { Card } from '../../../../src'
-import { Info as InfoIcon } from '../../../../src/assets/icons'
+import { Card, Info as InfoIcon } from '../../../../src'
 
 export default {
   title: 'Components/Data Display/Card',

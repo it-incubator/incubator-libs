@@ -2,8 +2,7 @@ import { useState } from 'react'
 
 import { Meta } from '@storybook/react'
 
-import { Header, Select, Toolbar, ToolbarItemWithIcon } from '../../../../src'
-import { DeleteForever, Edit } from '../../../../src/assets/icons'
+import { Header, Select, Toolbar, ToolbarItemWithIcon, DeleteForever, Edit } from '../../../../src'
 import { VerticalContainer } from '../../../../storybook-utils/components/containers/vertical'
 
 const options = [
@@ -23,7 +22,7 @@ export default {
 } as Meta<typeof Header>
 
 export const Default = {
-  render: args => {
+  render: () => {
     const [value, setValue] = useState('frontend')
 
     return (

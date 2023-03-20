@@ -1,5 +1,45 @@
 # @it-incubator/ui-kit
 
+## 0.1.11
+### Patch Changes
+
+- fix padding in Card
+
+## 0.1.10
+### Patch Changes
+
+- maybe fix treeshaking?
+
+## 0.1.9
+### Patch Changes
+
+- add sideEffects:false to package.json to allow for tree shaking
+
+## 0.1.8
+### Patch Changes
+
+- fix deps
+
+## 0.1.7
+### Patch Changes
+
+- optimization
+
+## 0.1.6
+### Patch Changes
+
+- changeset
+
+## 0.1.5
+### Patch Changes
+
+- optimizations
+
+## 0.1.4
+### Patch Changes
+
+- add snackbar component
+
 ## 0.1.3
 ### Patch Changes
 

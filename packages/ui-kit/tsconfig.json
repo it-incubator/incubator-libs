@@ -16,7 +16,7 @@
     "outDir": "dist",
     "emitDeclarationOnly": true,
     "declaration": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]

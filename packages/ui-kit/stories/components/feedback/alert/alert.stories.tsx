@@ -1,7 +1,6 @@
 import { Meta } from '@storybook/react'
 
-import { Alert, Card } from '../../../../src'
-import { HelpOutline } from '../../../../src/assets/icons'
+import { Alert, HelpOutline } from '../../../../src'
 
 export default {
   title: 'Components/Feedback/Alert',

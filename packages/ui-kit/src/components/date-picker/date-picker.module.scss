@@ -23,6 +23,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-left: 8px;
 }
 
 .buttonBox {
@@ -74,6 +75,8 @@
 
 /* day styles */
 :global(.react-datepicker__day) {
+  position: relative;
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -85,27 +88,34 @@
   color: var(--color-text-primary);
 
   border-radius: 50%;
+  outline: none;
+
+  transition: var(--transtition-duration-basic) background-color;
 
   &:hover {
     background-color: var(--color-action-hover);
     border-radius: 50%;
   }
-}
 
-:global(.react-datepicker__day--selected) {
-  background-color: var(--color-action-hover);
-  border-radius: 50%;
-
-  &::before {
-    position: absolute;
-    width: 28px;
-    height: 28px;
-    background-color: green;
+  &:focus-visible {
+    background-color: transparent;
+    border: 2px solid var(--color-outline-focus);
   }
 }
 
 :global(.react-datepicker__day--today) {
   color: var(--color-accent-500);
+}
+
+:global(.react-datepicker__day--selected) {
+  color: var(--color-neutral-light-50);
+  background-color: var(--color-action-hover);
+  background-image: radial-gradient(28px circle, var(--color-accent-500) 48%, transparent 51%);
+  border-radius: 50%;
+}
+
+:global(.react-datepicker__day--keyboard-selected) {
+  background-color: transparent;
 }
 
 :global(.react-datepicker__day--weekend) {

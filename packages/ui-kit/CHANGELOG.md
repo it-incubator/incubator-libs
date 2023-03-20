@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 0.1.18
+### Patch Changes
+
+- add toggle component
+
 ## 0.1.17
 ### Patch Changes
 

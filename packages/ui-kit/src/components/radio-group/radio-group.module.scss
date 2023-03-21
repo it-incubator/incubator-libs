@@ -16,7 +16,7 @@
 
 .label {
   font-size: var(--font-size-s);
-  line-height: var(--line-height-s);
+  line-height: var(--line-height-m);
   color: var(--color-text-primary);
 
   .option[data-headlessui-state='disabled'] & {

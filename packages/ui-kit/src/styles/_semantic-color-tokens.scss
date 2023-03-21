@@ -51,6 +51,11 @@
   /* tags */
   --color-tag-hover: var(--color-info-50);
   --color-tag-active: var(--color-info-100);
+
+  /* toggle */
+  --color-toggle-hover: var(--color-neutral-dark-300);
+  --color-toggle-active: var(--color-info-700);
+  --color-toggle-disabled: var(--color-info-200);
 }
 
 :root .dark-mode {
@@ -106,4 +111,9 @@
   /* tags */
   --color-tag-hover: var(--color-dark-mode-300);
   --color-tag-active: var(--color-dark-mode-200);
+
+  /* toggle */
+  --color-toggle-hover: var(--color-dark-mode-200);
+  --color-toggle-active: var(--color-neutral-info-600);
+  --color-toggle-disabled: var(--color-info-700);
 }

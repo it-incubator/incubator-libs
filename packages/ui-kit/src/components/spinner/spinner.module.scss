@@ -12,8 +12,8 @@
 
   box-sizing: border-box;
 
-  border: 5px solid var(--color-accent-500);
-  border-bottom-color: transparent;
+  border-top: 3px solid var(--color-accent-500);
+  border-right: 3px solid transparent;
   border-radius: 50%;
 
   animation: rotation 1s linear infinite;
@@ -28,3 +28,5 @@
     transform: rotate(360deg);
   }
 }
+
+

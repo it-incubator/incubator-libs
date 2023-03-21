@@ -19,6 +19,7 @@ export const AllTypography = {
       <Typography.Body2>Body 2</Typography.Body2>
       <Typography.Overline>Overline</Typography.Overline>
       <Typography.Caption>Caption</Typography.Caption>
+      <Typography.Error component="div">Error</Typography.Error>
     </>
   ),
 }

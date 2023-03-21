@@ -91,16 +91,16 @@ importers:
       '@storybook/testing-library': 0.0.14-next.1
       '@storybook/theming': 7.0.0-beta.61
       '@types/react': '>=18.0.28'
-      '@types/react-datepicker': ^4.10.0
+      '@types/react-datepicker': 4.10.0
       '@types/react-dom': '>=18.0.11'
       '@vitejs/plugin-react': ^3.1.0
       babel-loader: 8.3.0
       clsx: 1.2.1
       concurrently: 7.6.0
-      date-fns: ^2.29.3
+      date-fns: 2.29.3
       esbuild-sass-plugin: 2.5.0
       react: '>=18.0.2'
-      react-datepicker: ^4.10.0
+      react-datepicker: 4.10.0
       react-dom: '>=18.0.2'
       react-toastify: ^9.1.1
       remark-gfm: ^3.0.1
@@ -120,7 +120,6 @@ importers:
       '@radix-ui/react-select': 1.2.0_zula6vjvt3wdocc4mwcxqa6nzi
       '@radix-ui/react-tabs': 1.0.2_biqbaboplfbrettd7655fr4n2y
       '@radix-ui/react-tooltip': 1.0.4_zula6vjvt3wdocc4mwcxqa6nzi
-      '@types/react-datepicker': 4.10.0_biqbaboplfbrettd7655fr4n2y
       clsx: 1.2.1
       date-fns: 2.29.3
       react-datepicker: 4.10.0_biqbaboplfbrettd7655fr4n2y
@@ -141,6 +140,7 @@ importers:
       '@storybook/testing-library': 0.0.14-next.1
       '@storybook/theming': 7.0.0-beta.61_biqbaboplfbrettd7655fr4n2y
       '@types/react': 18.0.28
+      '@types/react-datepicker': 4.10.0_biqbaboplfbrettd7655fr4n2y
       '@types/react-dom': 18.0.11
       '@vitejs/plugin-react': 3.1.0_vite@4.1.4
       babel-loader: 8.3.0_@babel+core@7.21.0
@@ -2256,7 +2256,6 @@ packages:
 
   /@popperjs/core/2.11.6:
     resolution: {integrity: sha512-50/17A98tWUfQ176raKiOGXuYpLyyVMkxxG6oylzL3BPOlA6ADGdK7EYunSa4I064xerltq9TGXs8HmOk5E+vw==}
-    dev: false
 
   /@radix-ui/number/1.0.0:
     resolution: {integrity: sha512-Ofwh/1HX69ZfJRiRBMTy7rgjAzHmwe4kW9C9Y99HTRUcYLUuVT0KESFj15rPjRgKJs20GPq8Bm5aEDJ8DuA3vA==}
@@ -4231,7 +4230,7 @@ packages:
     transitivePeerDependencies:
       - react
       - react-dom
-    dev: false
+    dev: true
 
   /@types/react-dom/18.0.11:
     resolution: {integrity: sha512-O38bPbI2CWtgw/OoQoY+BRelw7uysmXbWvw3nLWO21H1HSh+GOlqPuXshJfjmpNlKiiSDG9cc1JZAaMmVdcTlw==}
@@ -10284,7 +10283,6 @@ packages:
 
   /react-fast-compare/3.2.1:
     resolution: {integrity: sha512-xTYf9zFim2pEif/Fw16dBiXpe0hoy5PxcD8+OwBnTtNLfIm3g6WxhKNurY+6OmdH1u6Ta/W/Vl6vjbYP1MFnDg==}
-    dev: false
 
   /react-inspector/6.0.1_react@18.2.0:
     resolution: {integrity: sha512-cxKSeFTf7jpSSVddm66sKdolG90qURAX3g1roTeaN6x0YEbtWc8JpmFN9+yIqLNH2uEkYerWLtJZIXRIFuBKrg==}
@@ -10327,7 +10325,6 @@ packages:
       react-dom: 18.2.0_react@18.2.0
       react-fast-compare: 3.2.1
       warning: 4.0.3
-    dev: false
 
   /react-refresh/0.14.0:
     resolution: {integrity: sha512-wViHqhAd8OHeLS/IRMJjTSDHF3U9eWi62F/MledQGPdJGDhodXJ9PBLNGr6WWL7qlH12Mt3TyTpbS+hGXMjCzQ==}
@@ -12505,7 +12502,6 @@ packages:
     resolution: {integrity: sha512-rpJyN222KWIvHJ/F53XSZv0Zl/accqHR8et1kpaMTD/fLCRxtV8iX8czMzY7sVZupTI3zcUTg8eycS2kNF9l6w==}
     dependencies:
       loose-envify: 1.4.0
-    dev: false
 
   /watchpack/2.4.0:
     resolution: {integrity: sha512-Lcvm7MGST/4fup+ifyKi2hjyIAwcdI4HRgtvTpIUxBRhB+RFtUh8XtDOxUfctVCnhVi+QQj49i91OyvzkJl6cg==}

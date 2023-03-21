@@ -24,6 +24,10 @@
   right: 12px;
 
   color: var(--color-text-primary);
+
+  &.disabled {
+    color: var(--color-text-disabled);
+  }
 }
 
 .input {
@@ -63,6 +67,8 @@
 
   width: 36px;
   height: 36px;
+
+  border-radius: var(--border-radius-s);
 
   transition: var(--transtition-duration-basic) background-color;
 

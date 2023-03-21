@@ -19,20 +19,24 @@ export const Default = {
   args: {
     label: 'Дата',
     placeholder: 'Выбрать дату',
+    disabled: false,
   },
 }
 
 export const DefaultWithErrors = {
-  render(args) {
-    const [startDate, setStartDate] = useState(new Date())
-
-    return <DatePicker startDate={startDate} setStartDate={setStartDate} {...args} />
-  },
-
+  ...Default,
   args: {
-    label: 'Дата',
+    ...Default.args,
     error: true,
     errorMessage: 'Some error',
+  },
+}
+
+export const DefaultDisabled = {
+  ...Default,
+  args: {
+    ...Default.args,
+    disabled: true,
   },
 }
 

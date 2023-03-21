@@ -1,10 +1,10 @@
-import { ComponentProps, createElement, FC, forwardRef } from 'react'
+import { ComponentProps, FC, forwardRef } from 'react'
 
 import { clsx } from 'clsx'
 import { ru } from 'date-fns/locale'
 import ReactDatePicker, { ReactDatePickerCustomHeaderProps, registerLocale } from 'react-datepicker'
 
-import 'react-datepicker/dist/react-datepicker.css'
+import 'react-datepicker/dist/react-datepicker.min.css'
 
 import { CalendarToday, KeyboardArrowLeft, KeyboardArrowRight, Label } from '../../index'
 
@@ -23,6 +23,7 @@ type CommonProps = {
   label?: string
   error?: boolean
   errorMessage?: string
+  disabled?: boolean
 } & ComponentProps<'div'>
 
 type ConditionalProps =
@@ -46,6 +47,7 @@ export const DatePicker: FC<DatePickerProps> = ({
   errorMessage,
   endDate,
   setEndDate,
+  disabled,
   ...rest
 }) => {
   const isRange = endDate !== undefined
@@ -53,7 +55,7 @@ export const DatePicker: FC<DatePickerProps> = ({
   const classNames = {
     inputContainer: s.inputContainer,
     input: clsx(s.input, textFieldStyles.input, error && s.error, isRange && s.range),
-    icon: s.icon,
+    icon: clsx(s.icon, disabled && s.disabled),
     calendar: s.calendar,
     popper: s.popper,
     errorText: s.errorText,
@@ -93,7 +95,7 @@ export const DatePicker: FC<DatePickerProps> = ({
         formatWeekDay={formatWeekDay}
         placeholderText={placeholder}
         renderCustomHeader={CustomHeader}
-        customInput={createElement(CustomInput)}
+        customInput={<CustomInput />}
         calendarClassName={classNames.calendar}
         className={classNames.input}
         popperClassName={classNames.popper}
@@ -101,6 +103,7 @@ export const DatePicker: FC<DatePickerProps> = ({
         locale="ru"
         showPopperArrow={false}
         calendarStartDay={1}
+        disabled={disabled}
         popperModifiers={[
           {
             name: 'offset',

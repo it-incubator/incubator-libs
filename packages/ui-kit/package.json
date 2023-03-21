@@ -42,6 +42,7 @@
     "@storybook/theming": "7.0.0-beta.61",
     "@types/react": ">=18.0.28",
     "@types/react-dom": ">=18.0.11",
+    "@types/react-datepicker": "4.10.0",
     "@vitejs/plugin-react": "^3.1.0",
     "babel-loader": "8.3.0",
     "concurrently": "7.6.0",
@@ -70,10 +71,9 @@
     "@radix-ui/react-select": "1.2.0",
     "@radix-ui/react-tabs": "1.0.2",
     "@radix-ui/react-tooltip": "^1.0.4",
-    "@types/react-datepicker": "^4.10.0",
     "clsx": "1.2.1",
-    "date-fns": "^2.29.3",
-    "react-datepicker": "^4.10.0"
+    "date-fns": "2.29.3",
+    "react-datepicker": "4.10.0"
   },
   "peerDependencies": {
     "react": ">=18.0.2",

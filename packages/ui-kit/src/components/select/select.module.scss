@@ -82,7 +82,7 @@
     gap: 2px;
     height: 24px;
     padding: 0 2px 0 6px;
-    font-size: 14px;
+    font-size: var(--font-size-s);
   }
 }
 
@@ -125,6 +125,12 @@
   &[data-headlessui-state='selected'],
   &[data-headlessui-state='active selected'] {
     color: var(--color-accent-500);
+  }
+
+  &.pagination {
+    padding: 0 0 0 6px;
+    font-size: var(--font-size-s);
+    line-height: var(--line-height-m);
   }
 }
 

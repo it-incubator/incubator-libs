@@ -96,7 +96,7 @@ export const Select: FC<SelectProps> = ({
     trigger: clsx(s.trigger, error && s.error, s[variant], className),
     value: clsx(s.value),
     icon: clsx(s.icon, s[variant]),
-    item: clsx(s.item),
+    item: clsx(s.item, s[variant]),
     popper: clsx(s.popper),
     content: clsx(s.content, isSecondary && s.secondary),
     error: s.errorText,

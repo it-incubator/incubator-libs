@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { ComponentProps, createElement, FC, forwardRef } from 'react'
 
 import { clsx } from 'clsx'
 import { ru } from 'date-fns/locale'
@@ -6,7 +6,7 @@ import ReactDatePicker, { ReactDatePickerCustomHeaderProps, registerLocale } fro
 
 import 'react-datepicker/dist/react-datepicker.css'
 
-import { KeyboardArrowLeft, KeyboardArrowRight } from '../../index'
+import { CalendarToday, KeyboardArrowLeft, KeyboardArrowRight, Label } from '../../index'
 
 import textFieldStyles from './../text-field/text-field.module.scss'
 import s from './date-picker.module.scss'
@@ -16,47 +16,110 @@ import { format } from 'date-fns'
 
 registerLocale('ru', ru)
 
-export type DatePickerProps = {
+type CommonProps = {
   placeholder?: string
-  startDate: Date
-  setStartDate: (date: Date) => void
-}
+  startDate: Date | null
+  setStartDate: (date: Date | null) => void
+  label?: string
+  error?: boolean
+  errorMessage?: string
+} & ComponentProps<'div'>
 
-export const DatePicker: FC<DatePickerProps> = ({ startDate, setStartDate, placeholder }) => {
+type ConditionalProps =
+  | {
+      endDate: Date | null
+      setEndDate: (date: Date | null) => void
+    }
+  | {
+      endDate: never
+      setEndDate: never
+    }
+
+export type DatePickerProps = CommonProps & ConditionalProps
+
+export const DatePicker: FC<DatePickerProps> = ({
+  startDate,
+  setStartDate,
+  placeholder,
+  label,
+  error,
+  errorMessage,
+  endDate,
+  setEndDate,
+  ...rest
+}) => {
+  const isRange = endDate !== undefined
+
   const classNames = {
-    input: clsx(s.input, textFieldStyles.input),
+    inputContainer: s.inputContainer,
+    input: clsx(s.input, textFieldStyles.input, error && s.error, isRange && s.range),
+    icon: s.icon,
     calendar: s.calendar,
     popper: s.popper,
+    errorText: s.errorText,
+    day: () => s.day,
   }
 
-  const formatWeekDay = (day: Date) => capitalizeFirstLetter(format(day, 'iiiiii', { locale: ru }))
+  const DateRangeHandler = (dates: [Date | null, Date | null] | Date) => {
+    if (Array.isArray(dates)) {
+      const [start, end] = dates
+
+      setStartDate(start)
+      setEndDate(end)
+    } else {
+      setStartDate(dates)
+    }
+  }
+
+  const CustomInput = forwardRef<HTMLInputElement>((props, ref) => (
+    <Label label={label}>
+      <div className={classNames.inputContainer}>
+        <input ref={ref} className={classNames.input} {...props} />
+        <div className={classNames.icon}>
+          <CalendarToday />
+        </div>
+      </div>
+    </Label>
+  ))
 
   return (
-    <ReactDatePicker
-      selected={startDate}
-      onChange={setStartDate}
-      placeholderText={placeholder}
-      calendarClassName={classNames.calendar}
-      className={classNames.input}
-      popperClassName={classNames.popper}
-      popperModifiers={[
-        {
-          name: 'offset',
-          options: {
-            offset: [0, -11],
+    <div {...rest}>
+      <ReactDatePicker
+        startDate={startDate}
+        endDate={endDate}
+        onChange={DateRangeHandler}
+        selected={startDate}
+        selectsRange={isRange}
+        formatWeekDay={formatWeekDay}
+        placeholderText={placeholder}
+        renderCustomHeader={CustomHeader}
+        customInput={createElement(CustomInput)}
+        calendarClassName={classNames.calendar}
+        className={classNames.input}
+        popperClassName={classNames.popper}
+        dayClassName={classNames.day}
+        locale="ru"
+        showPopperArrow={false}
+        calendarStartDay={1}
+        popperModifiers={[
+          {
+            name: 'offset',
+            options: {
+              offset: [0, -11],
+            },
           },
-        },
-      ]}
-      showPopperArrow={false}
-      calendarStartDay={1}
-      locale="ru"
-      formatWeekDay={formatWeekDay}
-      renderCustomHeader={CustomHeader}
-    />
+        ]}
+      />
+      {error && <p className={classNames.errorText}>{errorMessage}</p>}
+    </div>
   )
 }
 
-const CustomHeader = ({ date, decreaseMonth, increaseMonth }: ReactDatePickerCustomHeaderProps) => {
+export const CustomHeader = ({
+  date,
+  decreaseMonth,
+  increaseMonth,
+}: ReactDatePickerCustomHeaderProps) => {
   const classNames = {
     header: s.header,
     buttonBox: s.buttonBox,
@@ -80,6 +143,8 @@ const CustomHeader = ({ date, decreaseMonth, increaseMonth }: ReactDatePickerCus
     </div>
   )
 }
+
+const formatWeekDay = (day: Date) => capitalizeFirstLetter(format(day, 'iiiiii', { locale: ru }))
 
 const capitalizeFirstLetter = (text: string) => {
   return text[0].toUpperCase() + text.slice(1)

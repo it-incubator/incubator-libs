@@ -29,7 +29,6 @@ export * from './components/toolbar'
 export * from './components/tooltip'
 export * from './components/typography'
 export * from './components/date-picker'
-export * from './components/date-range-picker'
 
 export { default as Add } from './assets/icons/components/Add'
 export { default as AddCircleOutline } from './assets/icons/components/AddCircleOutline'

@@ -55,14 +55,13 @@ export const DatePicker: FC<DatePickerProps> = ({
   const classNames = {
     inputContainer: s.inputContainer,
     input: clsx(s.input, textFieldStyles.input, error && s.error, isRange && s.range),
-    icon: clsx(s.icon, disabled && s.disabled),
     calendar: s.calendar,
     popper: s.popper,
     errorText: s.errorText,
     day: () => s.day,
   }
 
-  const DateRangeHandler = (dates: [Date | null, Date | null] | Date) => {
+  const DatePickerHandler = (dates: [Date | null, Date | null] | Date) => {
     if (Array.isArray(dates)) {
       const [start, end] = dates
 
@@ -73,29 +72,18 @@ export const DatePicker: FC<DatePickerProps> = ({
     }
   }
 
-  const CustomInput = forwardRef<HTMLInputElement>((props, ref) => (
-    <Label label={label}>
-      <div className={classNames.inputContainer}>
-        <input ref={ref} className={classNames.input} {...props} />
-        <div className={classNames.icon}>
-          <CalendarToday />
-        </div>
-      </div>
-    </Label>
-  ))
-
   return (
     <div {...rest}>
       <ReactDatePicker
         startDate={startDate}
         endDate={endDate}
-        onChange={DateRangeHandler}
+        onChange={DatePickerHandler}
         selected={startDate}
         selectsRange={isRange}
         formatWeekDay={formatWeekDay}
         placeholderText={placeholder}
         renderCustomHeader={CustomHeader}
-        customInput={<CustomInput />}
+        customInput={<CustomInput disabled={disabled} label={label} />}
         calendarClassName={classNames.calendar}
         className={classNames.input}
         popperClassName={classNames.popper}
@@ -118,11 +106,32 @@ export const DatePicker: FC<DatePickerProps> = ({
   )
 }
 
-export const CustomHeader = ({
-  date,
-  decreaseMonth,
-  increaseMonth,
-}: ReactDatePickerCustomHeaderProps) => {
+type CustomInputProps = {
+  disabled?: boolean
+  label?: string
+}
+
+const CustomInput = forwardRef<HTMLInputElement, CustomInputProps>(
+  ({ label, disabled, ...rest }, ref) => {
+    const classNames = {
+      inputContainer: s.inputContainer,
+      icon: clsx(s.icon, disabled && s.disabled),
+    }
+
+    return (
+      <Label label={label}>
+        <div className={classNames.inputContainer}>
+          <input ref={ref} disabled={disabled} {...rest} />
+          <div className={classNames.icon}>
+            <CalendarToday />
+          </div>
+        </div>
+      </Label>
+    )
+  }
+)
+
+const CustomHeader = ({ date, decreaseMonth, increaseMonth }: ReactDatePickerCustomHeaderProps) => {
   const classNames = {
     header: s.header,
     buttonBox: s.buttonBox,

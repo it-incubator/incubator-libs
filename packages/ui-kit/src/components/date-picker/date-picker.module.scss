@@ -15,12 +15,12 @@
 .input {
   position: relative;
   z-index: 2;
+  width: 158px;
 }
 
 :global(.react-datepicker__input-container) {
   position: relative;
   width: min-content;
-  min-width: 158px;
 
   &::after {
     content: '';

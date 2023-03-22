@@ -42,6 +42,7 @@ export const Typography = {
   Caption: createTypographyComponent('caption'),
   CaptionBold: createTypographyComponent('captionBold'),
   CaptionLink: createTypographyComponent('captionLink'),
+  Link: createTypographyComponent('link'),
 }
 
 const COMPONENTS = {
@@ -56,6 +57,7 @@ const COMPONENTS = {
   caption: 'caption',
   captionBold: 'caption',
   captionLink: 'a',
+  link: 'a',
 } as const
 
 type Component = keyof typeof COMPONENTS

@@ -4,7 +4,7 @@ import { Listbox } from '@headlessui/react'
 import { Float } from '@headlessui-float/react'
 import { clsx } from 'clsx'
 
-import { KeyboardArrowDown } from '../../'
+import { KeyboardArrowDown, Typography } from '../../'
 import { Label } from '../label'
 import { Scrollbar } from '../scrollbar'
 
@@ -99,7 +99,6 @@ export const Select: FC<SelectProps> = ({
     item: clsx(s.item),
     popper: clsx(s.popper),
     content: clsx(s.content, isSecondary && s.secondary),
-    error: s.errorText,
     scrollRoot: s.scrollRoot,
     scrollViewport: s.scrollViewport,
     scrollbar: s.scrollbar,
@@ -143,7 +142,7 @@ export const Select: FC<SelectProps> = ({
             </Listbox.Options>
           </Float>
         </Label>
-        <>{error && <p className={classNames.error}>{errorMessage}</p>}</>
+        <>{error && <Typography.Error>{errorMessage}</Typography.Error>}</>
       </div>
     </Listbox>
   )

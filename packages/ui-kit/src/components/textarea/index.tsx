@@ -3,6 +3,7 @@ import { ChangeEvent, ComponentProps, forwardRef } from 'react'
 import { clsx } from 'clsx'
 
 import { Label } from '../label'
+import { Typography } from '../typography'
 
 import s from './textarea.module.scss'
 
@@ -26,7 +27,6 @@ export const Textarea = /* @__PURE__ */ forwardRef<HTMLTextAreaElement, Textarea
       labelBox: s.labelBox,
       label: s.label,
       input: clsx(s.textarea, error && s.error),
-      error: s.errorText,
     }
 
     return (
@@ -39,7 +39,7 @@ export const Textarea = /* @__PURE__ */ forwardRef<HTMLTextAreaElement, Textarea
             {...rest}
           />
         </Label>
-        {error && <p className={classNames.error}>{errorMessage}</p>}
+        {error && <Typography.Error>{errorMessage}</Typography.Error>}
       </div>
     )
   }

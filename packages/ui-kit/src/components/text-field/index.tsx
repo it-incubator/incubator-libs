@@ -2,7 +2,7 @@ import { ComponentProps, forwardRef, ReactNode, KeyboardEvent } from 'react'
 
 import { clsx } from 'clsx'
 
-import { Search as SearchIcon } from '../../'
+import { Search as SearchIcon, Typography } from '../../'
 import { Label } from '../label'
 
 import s from './text-field.module.scss'
@@ -47,7 +47,6 @@ export const TextField = /* @__PURE__ */ forwardRef<HTMLInputElement, TextFieldP
       root: clsx(s.box, className),
       label: s.label,
       input: clsx(s.input, error && s.error),
-      error: s.errorText,
       iconStart: s.iconStart,
       iconEnd: s.iconEnd,
       inputContainer: s.inputContainer,
@@ -74,7 +73,7 @@ export const TextField = /* @__PURE__ */ forwardRef<HTMLInputElement, TextFieldP
           </div>
         </Label>
 
-        {error && <p className={classNames.error}>{errorMessage}</p>}
+        {error && <Typography.Error>{errorMessage}</Typography.Error>}
       </div>
     )
   }

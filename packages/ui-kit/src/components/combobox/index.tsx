@@ -5,7 +5,7 @@ import { Float } from '@headlessui-float/react'
 import * as ScrollArea from '@radix-ui/react-scroll-area'
 import { clsx } from 'clsx'
 
-import { KeyboardArrowDown } from '../../'
+import { KeyboardArrowDown, Typography } from '../../'
 import { Label } from '../label'
 import selectStyle from '../select/select.module.scss'
 import textFieldStyle from '../text-field/text-field.module.scss'
@@ -70,7 +70,6 @@ export const Combobox: FC<ComboboxProps> = ({
     scrollViewport: selectStyle.scrollViewport,
     scrollbar: selectStyle.scrollbar,
     scrollThumb: selectStyle.scrollThumb,
-    error: selectStyle.errorText,
   }
 
   const getDisplayingValue = (value: string | number) =>
@@ -121,7 +120,7 @@ export const Combobox: FC<ComboboxProps> = ({
           </ComboboxHeadlessUI.Options>
         </Float>
       </Label>
-      <>{error && <p className={classNames.error}>{errorMessage}</p>}</>
+      <>{error && <Typography.Error>{errorMessage}</Typography.Error>}</>
     </ComboboxHeadlessUI>
   )
 }

@@ -57,6 +57,14 @@
   --color-toggle-hover: var(--color-neutral-dark-300);
   --color-toggle-active: var(--color-info-700);
   --color-toggle-disabled: var(--color-info-200);
+
+  /* chips */
+  --color-bg-chip-brown: var(--color-danger-100);
+  --color-text-chip-brown: var(--color-danger-700);
+  --color-bg-chip-green: var(--color-success-100);
+  --color-text-chip-green: var(--color-success-700);
+  --color-bg-chip-blue: var(--color-info-100);
+  --color-text-chip-blue: var(--color-info-700);
 }
 
 :root .dark-mode {
@@ -118,4 +126,12 @@
   --color-toggle-hover: var(--color-dark-mode-200);
   --color-toggle-active: var(--color-neutral-info-600);
   --color-toggle-disabled: var(--color-info-700);
+
+  /* chips */
+  --color-bg-chip-brown: var(--color-danger-800);
+  --color-text-chip-brown: var(--color-danger-400);
+  --color-bg-chip-green: var(--color-success-800);
+  --color-text-chip-green: var(--color-success-400);
+  --color-bg-chip-blue: var(--color-info-800);
+  --color-text-chip-blue: var(--color-info-400);
 }

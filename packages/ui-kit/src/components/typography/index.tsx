@@ -43,6 +43,7 @@ export const Typography = {
   CaptionBold: createTypographyComponent('captionBold'),
   CaptionLink: createTypographyComponent('captionLink'),
   Link: createTypographyComponent('link'),
+  Error: createTypographyComponent('error'),
 }
 
 const COMPONENTS = {
@@ -57,6 +58,7 @@ const COMPONENTS = {
   caption: 'caption',
   captionBold: 'caption',
   captionLink: 'a',
+  error: 'span',
   link: 'a',
 } as const
 

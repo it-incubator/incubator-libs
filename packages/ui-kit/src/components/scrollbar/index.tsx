@@ -18,7 +18,7 @@ export type ScrollbarProps = {
 export const Scrollbar: FC<ScrollbarProps> = ({
   children,
   className,
-  type = 'always',
+  type = 'auto',
   maxHeight,
   maxWidth,
   ...rest

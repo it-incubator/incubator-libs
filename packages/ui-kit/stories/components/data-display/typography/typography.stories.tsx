@@ -21,6 +21,7 @@ export const AllTypography = {
       <Typography.Caption>Caption</Typography.Caption>
       <Typography.CaptionLink>Caption Link</Typography.CaptionLink>
       <Typography.Link>Link</Typography.Link>
+      <Typography.Error component="div">Error</Typography.Error>
     </div>
   ),
 }

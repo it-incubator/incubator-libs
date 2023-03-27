@@ -9,7 +9,7 @@ export default {
 
 export const AllTypography = {
   render: () => (
-    <>
+    <div style={{ display: 'flex', flexDirection: 'column' }}>
       <Typography.H1>Heading 1</Typography.H1>
       <Typography.H2>Heading 2</Typography.H2>
       <Typography.H3>Heading 3</Typography.H3>
@@ -19,8 +19,10 @@ export const AllTypography = {
       <Typography.Body2>Body 2</Typography.Body2>
       <Typography.Overline>Overline</Typography.Overline>
       <Typography.Caption>Caption</Typography.Caption>
+      <Typography.CaptionLink>Caption Link</Typography.CaptionLink>
+      <Typography.Link>Link</Typography.Link>
       <Typography.Error component="div">Error</Typography.Error>
-    </>
+    </div>
   ),
 }
 

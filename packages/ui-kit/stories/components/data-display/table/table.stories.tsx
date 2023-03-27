@@ -1,6 +1,6 @@
 import { Meta } from '@storybook/react'
 
-import { ReadMore, Table } from '../../../../src'
+import { ReadMore, Table, Typography } from '../../../../src'
 
 export default {
   title: 'Components/Data Display/Table',
@@ -32,8 +32,10 @@ export const Default = {
               do...
             </Table.Cell>
             <Table.Cell>
-              Какая-то ссылка кудато на какой-то источник с информациейо ссылка кудато на какой-то
-              источник
+              <Typography.Link href="https://it-incubator.io/" target="_blank">
+                Какая-то ссылка кудато на какой-то источник с информациейо ссылка кудато на какой-то
+                источник
+              </Typography.Link>
             </Table.Cell>
             <Table.Cell>Основной</Table.Cell>
             <Table.Cell>Читать</Table.Cell>
@@ -47,8 +49,10 @@ export const Default = {
               do...
             </Table.Cell>
             <Table.Cell>
-              Какая-то ссылка кудато на какой-то источник с информациейо ссылка кудато на какой-то
-              источник
+              <Typography.Link href="https://it-incubator.io/" target="_blank">
+                Какая-то ссылка кудато на какой-то источник с информациейо ссылка кудато на какой-то
+                источник
+              </Typography.Link>
             </Table.Cell>
             <Table.Cell>Основной</Table.Cell>
             <Table.Cell>Читать</Table.Cell>

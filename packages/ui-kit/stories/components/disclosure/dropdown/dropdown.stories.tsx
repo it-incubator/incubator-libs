@@ -1,18 +1,18 @@
 import { Meta } from '@storybook/react'
 
-import { Toolbar, ToolbarItemWithIcon, DeleteForever, Edit } from '../../../../src'
+import { Dropdown, ToolbarItemWithIcon, DeleteForever, Edit } from '../../../../src'
 import { useDarkMode } from '../../../../storybook-utils/hooks/use-dark-mode'
 
 export default {
   title: 'Components/Disclosure/Toolbar',
-  component: Toolbar,
-} as Meta<typeof Toolbar>
+  component: Dropdown,
+} as Meta<typeof Dropdown>
 
 export const Dark = {
   render: args => {
     useDarkMode()
 
-    return <Toolbar {...args} />
+    return <Dropdown {...args} />
   },
 
   args: {
@@ -27,7 +27,7 @@ export const Dark = {
 
 export const Light = {
   render: args => {
-    return <Toolbar {...args} />
+    return <Dropdown {...args} />
   },
 
   args: {

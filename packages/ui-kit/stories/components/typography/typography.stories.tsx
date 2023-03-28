@@ -1,9 +1,9 @@
 import { Meta } from '@storybook/react'
 
-import { Typography } from '../../../../src'
+import { Typography } from '../../../src'
 
 export default {
-  title: 'Components/Data Display/Typography',
+  title: 'Components/Typography',
   component: Typography.H1,
 } as Meta<typeof Typography.H1>
 

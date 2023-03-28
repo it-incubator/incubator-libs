@@ -1,6 +1,6 @@
 import { CSSProperties, FC, ReactNode } from 'react'
 
-import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
+import * as DropdownMenuRadix from '@radix-ui/react-dropdown-menu'
 import { clsx } from 'clsx'
 
 import { More } from '../../'
@@ -17,7 +17,7 @@ export type ToolbarProps = {
   style?: CSSProperties
 }
 
-export const Toolbar = ({ children, trigger, align = 'end', className, style }: ToolbarProps) => {
+export const Dropdown = ({ children, trigger, align = 'end', className, style }: ToolbarProps) => {
   const classNames = {
     button: s.button,
     content: clsx(s.content, className),
@@ -27,29 +27,29 @@ export const Toolbar = ({ children, trigger, align = 'end', className, style }: 
   }
 
   return (
-    <DropdownMenu.Root>
-      <DropdownMenu.Trigger asChild>
+    <DropdownMenuRadix.Root>
+      <DropdownMenuRadix.Trigger asChild>
         {trigger ?? (
           <button className={classNames.button}>
             <More />
           </button>
         )}
-      </DropdownMenu.Trigger>
+      </DropdownMenuRadix.Trigger>
 
-      <DropdownMenu.Portal>
-        <DropdownMenu.Content
+      <DropdownMenuRadix.Portal>
+        <DropdownMenuRadix.Content
           className={classNames.content}
           align={align}
           sideOffset={8}
           style={style}
         >
-          <DropdownMenu.Arrow className={classNames.arrowBox} asChild>
+          <DropdownMenuRadix.Arrow className={classNames.arrowBox} asChild>
             <div className={classNames.arrow} />
-          </DropdownMenu.Arrow>
+          </DropdownMenuRadix.Arrow>
           <div className={classNames.itemsBox}>{children}</div>
-        </DropdownMenu.Content>
-      </DropdownMenu.Portal>
-    </DropdownMenu.Root>
+        </DropdownMenuRadix.Content>
+      </DropdownMenuRadix.Portal>
+    </DropdownMenuRadix.Root>
   )
 }
 
@@ -74,14 +74,14 @@ export const ToolbarItem: FC<ToolbarItemProps> = ({
   }
 
   return (
-    <DropdownMenu.Item
+    <DropdownMenuRadix.Item
       className={classNames.item}
       disabled={disabled}
       onSelect={onSelect}
       style={style}
     >
       {children}
-    </DropdownMenu.Item>
+    </DropdownMenuRadix.Item>
   )
 }
 
@@ -103,7 +103,7 @@ export const ToolbarItemWithIcon: FC<ToolbarItemWithIconProps> = ({
   }
 
   return (
-    <DropdownMenu.Item
+    <DropdownMenuRadix.Item
       className={classNames.item}
       disabled={disabled}
       onSelect={onSelect}
@@ -112,6 +112,6 @@ export const ToolbarItemWithIcon: FC<ToolbarItemWithIconProps> = ({
     >
       <div className={classNames.itemIcon}>{icon}</div>
       {text}
-    </DropdownMenu.Item>
+    </DropdownMenuRadix.Item>
   )
 }

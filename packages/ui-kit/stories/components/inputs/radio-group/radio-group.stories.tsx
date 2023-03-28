@@ -36,7 +36,7 @@ const options = [
 ]
 
 export default {
-  title: 'Components/Inputs/RadioGroup',
+  title: 'Components/Data Entry/RadioGroup',
   component: RadioGroup,
 } as Meta<typeof RadioGroup>
 

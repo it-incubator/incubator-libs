@@ -61,7 +61,7 @@ const options = [
 ]
 
 export default {
-  title: 'Components/Inputs/Select',
+  title: 'Components/Data Entry/Select',
   component: Select,
 } as Meta<typeof Select>
 

@@ -3,7 +3,7 @@ import { Meta } from '@storybook/react'
 import { TextField } from '../../../../src'
 
 export default {
-  title: 'Components/Inputs/Text Field',
+  title: 'Components/Data Entry/Text Field',
   component: TextField,
 } as Meta<typeof TextField>
 

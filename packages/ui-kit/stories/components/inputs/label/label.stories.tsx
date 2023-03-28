@@ -3,7 +3,7 @@ import { Meta } from '@storybook/react'
 import { Label, TextField } from '../../../../src'
 
 export default {
-  title: 'Components/Inputs/Label',
+  title: 'Components/Data Entry/Label',
   component: Label,
 } as Meta<typeof Label>
 

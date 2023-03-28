@@ -45,7 +45,7 @@ const options = [
 ]
 
 export default {
-  title: 'Components/Inputs/Combobox',
+  title: 'Components/Data Entry/Combobox',
   component: Combobox,
 } as Meta<typeof Combobox>
 

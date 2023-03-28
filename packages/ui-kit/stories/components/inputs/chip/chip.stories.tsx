@@ -1,9 +1,9 @@
 import { Meta } from '@storybook/react'
 
-import { Chip, Tag } from '../../../../src'
+import { Chip } from '../../../../src'
 
 export default {
-  title: 'Components/Data Display/Chip',
+  title: 'Components/Data Entry/Chip',
   component: Chip,
   argTypes: {
     color: {

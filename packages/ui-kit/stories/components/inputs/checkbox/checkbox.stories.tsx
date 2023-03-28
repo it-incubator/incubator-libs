@@ -7,7 +7,7 @@ import { VerticalContainer } from '../../../../storybook-utils/components/contai
 import { ValuePreview } from '../../../../storybook-utils/components/previews/value-preview'
 
 export default {
-  title: 'Components/Inputs/Checkbox',
+  title: 'Components/Data Entry/Checkbox',
   component: Checkbox,
 } as Meta<typeof Checkbox>
 

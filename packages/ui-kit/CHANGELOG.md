@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 0.1.20
+### Patch Changes
+
+- add more components
+
 ## 0.1.19
 ### Patch Changes
 

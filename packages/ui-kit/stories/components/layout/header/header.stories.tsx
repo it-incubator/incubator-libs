@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 import { Meta } from '@storybook/react'
 
-import { Header, Select, Toolbar, ToolbarItemWithIcon, DeleteForever, Edit } from '../../../../src'
+import { DeleteForever, Dropdown, Edit, Header, Select, ToolbarItemWithIcon } from '../../../../src'
 import { VerticalContainer } from '../../../../storybook-utils/components/containers/vertical'
 
 const options = [
@@ -30,10 +30,10 @@ export const Default = {
         <Header>
           <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: '24px' }}>
             <Select options={options} value={value} onChange={setValue} width="210" />
-            <Toolbar>
+            <Dropdown>
               <ToolbarItemWithIcon icon={<Edit />} text="Изменить" onSelect={() => {}} />
               <ToolbarItemWithIcon icon={<DeleteForever />} text="Удалить" onSelect={() => {}} />
-            </Toolbar>
+            </Dropdown>
           </div>
         </Header>
       </VerticalContainer>

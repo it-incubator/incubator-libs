@@ -78,6 +78,7 @@
   &[data-disabled] {
     pointer-events: none;
     cursor: unset;
+    color: var(--color-action-disabled);
   }
 }
 

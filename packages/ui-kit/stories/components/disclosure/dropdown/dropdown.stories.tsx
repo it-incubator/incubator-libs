@@ -4,7 +4,7 @@ import { Dropdown, ToolbarItemWithIcon, DeleteForever, Edit } from '../../../../
 import { useDarkMode } from '../../../../storybook-utils/hooks/use-dark-mode'
 
 export default {
-  title: 'Components/Disclosure/Toolbar',
+  title: 'Components/Disclosure/Dropdown',
   component: Dropdown,
 } as Meta<typeof Dropdown>
 
@@ -35,6 +35,26 @@ export const Light = {
       <>
         <ToolbarItemWithIcon icon={<Edit />} text="Изменить" onSelect={() => {}} />
         <ToolbarItemWithIcon icon={<DeleteForever />} text="Удалить" onSelect={() => {}} />
+      </>
+    ),
+  },
+}
+
+export const WithDisabledItem = {
+  render: args => {
+    return <Dropdown {...args} />
+  },
+
+  args: {
+    children: (
+      <>
+        <ToolbarItemWithIcon icon={<Edit />} text="Изменить" onSelect={() => {}} />
+        <ToolbarItemWithIcon
+          icon={<DeleteForever />}
+          text="Удалить"
+          onSelect={() => {}}
+          disabled={true}
+        />
       </>
     ),
   },

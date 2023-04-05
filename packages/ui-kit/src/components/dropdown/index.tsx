@@ -1,4 +1,4 @@
-import { CSSProperties, FC, ReactNode } from 'react'
+import { ComponentProps, ComponentPropsWithoutRef, CSSProperties, FC, ReactNode } from 'react'
 
 import * as DropdownMenuRadix from '@radix-ui/react-dropdown-menu'
 import { clsx } from 'clsx'
@@ -42,6 +42,7 @@ export const Dropdown = ({ children, trigger, align = 'end', className, style }:
           align={align}
           sideOffset={8}
           style={style}
+          onClick={event => event.stopPropagation()}
         >
           <DropdownMenuRadix.Arrow className={classNames.arrowBox} asChild>
             <div className={classNames.arrow} />
@@ -88,7 +89,8 @@ export const ToolbarItem: FC<ToolbarItemProps> = ({
 export type ToolbarItemWithIconProps = Omit<ToolbarItemProps, 'children'> & {
   icon: ReactNode
   text: string
-}
+} & ComponentPropsWithoutRef<'div'>
+
 export const ToolbarItemWithIcon: FC<ToolbarItemWithIconProps> = ({
   icon,
   disabled,
@@ -96,6 +98,7 @@ export const ToolbarItemWithIcon: FC<ToolbarItemWithIconProps> = ({
   text,
   className,
   style,
+  ...rest
 }) => {
   const classNames = {
     item: clsx(s.item, className),
@@ -109,6 +112,7 @@ export const ToolbarItemWithIcon: FC<ToolbarItemWithIconProps> = ({
       onSelect={onSelect}
       onClick={event => event.stopPropagation()}
       style={style}
+      {...rest}
     >
       <div className={classNames.itemIcon}>{icon}</div>
       {text}

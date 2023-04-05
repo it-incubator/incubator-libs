@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 0.1.23
+### Patch Changes
+
+- make children props in tabs not required
+
 ## 0.1.22
 ### Patch Changes
 

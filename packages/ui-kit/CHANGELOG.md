@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 0.1.22
+### Patch Changes
+
+- update label types
+
 ## 0.1.21
 ### Patch Changes
 

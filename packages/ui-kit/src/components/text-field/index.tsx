@@ -8,7 +8,7 @@ import { Label } from '../label'
 import s from './text-field.module.scss'
 
 export type TextFieldProps = {
-  label?: string
+  label?: ReactNode
   error?: boolean
   errorMessage?: string
   iconStart?: ReactNode

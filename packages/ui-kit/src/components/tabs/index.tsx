@@ -24,7 +24,7 @@ type CommonProps = {
   /** Event handler called when the value changes.  */
   onValueChange?: (value: string) => void
   /** Use TabsContent components as children. */
-  children: ReactNode
+  children?: ReactNode
   variant?: 'primary' | 'secondary'
 }
 

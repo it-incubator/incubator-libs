@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 0.1.21
+### Patch Changes
+
+- add stop propagation to dropdown menu
+
 ## 0.1.20
 ### Patch Changes
 

@@ -22,8 +22,7 @@ export default defineConfig({
       formats: ['es'],
     },
     rollupOptions: {
-      // make sure to externalize deps that shouldn't be bundled
-      // into your library
+      cache: false,
       external: [...Object.keys(peerDependencies), ...Object.keys(dependencies)],
       output: {
         dir: 'dist',

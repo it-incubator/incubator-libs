@@ -27,5 +27,12 @@ const config = {
   docs: {
     autodocs: true,
   },
+  viteFinal: config => {
+    config.build = config.build || {}
+    config.build.sourcemap = false
+    config.build.rollupOptions = config.build.rollupOptions || {}
+    config.build.rollupOptions.cache = false
+    return config
+  },
 }
 export default config

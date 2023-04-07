@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 0.1.24
+### Patch Changes
+
+- update table styles
+
 ## 0.1.23
 ### Patch Changes
 

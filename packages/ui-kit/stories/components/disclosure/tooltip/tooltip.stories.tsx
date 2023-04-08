@@ -35,3 +35,10 @@ export const DefaultWithCustomIcon = {
     icon: <ThumbUp size={16} />,
   },
 }
+
+export const DefaultWithComponent = {
+  args: {
+    component: <span>text</span>,
+    ...Light.args,
+  },
+}

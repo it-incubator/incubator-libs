@@ -1,6 +1,6 @@
 import { Meta } from '@storybook/react'
 
-import { Dropdown, ToolbarItemWithIcon, DeleteForever, Edit } from '../../../../src'
+import { Dropdown, ToolbarItemWithIcon, DeleteForever, Edit, Tooltip } from '../../../../src'
 import { useDarkMode } from '../../../../storybook-utils/hooks/use-dark-mode'
 
 export default {
@@ -49,12 +49,19 @@ export const WithDisabledItem = {
     children: (
       <>
         <ToolbarItemWithIcon icon={<Edit />} text="Изменить" onSelect={() => {}} />
-        <ToolbarItemWithIcon
-          icon={<DeleteForever />}
-          text="Удалить"
-          onSelect={() => {}}
-          disabled={true}
-        />
+        <Tooltip
+          component={
+            <ToolbarItemWithIcon
+              icon={<DeleteForever />}
+              text="Удалить"
+              onSelect={() => {}}
+              disabled={true}
+            />
+          }
+          side="bottom"
+        >
+          Для удаления необходимо удалить все дочерние узлы
+        </Tooltip>
       </>
     ),
   },

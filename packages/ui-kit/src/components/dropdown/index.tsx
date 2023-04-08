@@ -1,4 +1,4 @@
-import { ComponentProps, ComponentPropsWithoutRef, CSSProperties, FC, ReactNode } from 'react'
+import { ComponentPropsWithoutRef, CSSProperties, FC, ReactNode } from 'react'
 
 import * as DropdownMenuRadix from '@radix-ui/react-dropdown-menu'
 import { clsx } from 'clsx'

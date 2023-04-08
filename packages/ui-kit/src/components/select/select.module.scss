@@ -69,7 +69,7 @@
     }
   }
 
-  &.secondary:focus span:first-child {
+  &.secondary:focus > span:first-child {
     color: var(--color-info-600);
     background-image: linear-gradient(
       to right,

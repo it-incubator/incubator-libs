@@ -27,5 +27,10 @@ const config = {
   docs: {
     autodocs: true,
   },
+  viteFinal: config => {
+    config.build = config.build || {}
+    config.build.sourcemap = false
+    return config
+  },
 }
 export default config

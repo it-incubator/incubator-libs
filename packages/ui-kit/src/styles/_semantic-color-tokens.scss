@@ -35,6 +35,7 @@
   --color-bg-disabled: var(--color-neutral-dark-50);
   --color-bg-secondary-hover: var(--color-neutral-dark-200);
   --color-bg-action: var(--color-neutral-dark-100);
+  --color-bg-table: var(--color-light-mode-100);
 
   /* interactive */
   --color-action-disabled: var(--color-neutral-dark-200);
@@ -78,7 +79,7 @@
   --color-text-link: var(--color-info-400);
 
   /* borders */
-  --color-border-primary: var(--color-dark-mode-400);
+  --color-border-primary: var(--color-dark-mode-500);
   --color-border-input-primary: var(--color-dark-mode-400);
   --color-border-primary-active: var(--color-dark-mode-400);
   --color-border-secondary: var(--color-neutral-light-100);
@@ -104,6 +105,7 @@
   --color-bg-info: var(--color-info-800);
   --color-bg-body: var(--color-dark-mode-700);
   --color-bg-action: var(--color-dark-mode-300);
+  --color-bg-table: var(--color-dark-mode-600);
 
   /* interactive */
   --color-action-disabled: var(--color-neutral-dark-400);

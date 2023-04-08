@@ -12,7 +12,6 @@ export default defineConfig({
     }),
   ],
   build: {
-    minify: false,
     lib: {
       // Could also be a dictionary or array of multiple entry points
       entry: resolve(__dirname, 'src/index.ts'),
@@ -22,8 +21,6 @@ export default defineConfig({
       formats: ['es'],
     },
     rollupOptions: {
-      // make sure to externalize deps that shouldn't be bundled
-      // into your library
       external: [...Object.keys(peerDependencies), ...Object.keys(dependencies)],
       output: {
         dir: 'dist',

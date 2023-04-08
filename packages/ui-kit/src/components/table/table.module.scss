@@ -9,7 +9,7 @@
   padding: 6px 24px;
 
   font-size: var(--font-size-s);
-  font-weight: 600;
+  font-weight: var(--font-weight-medium);
   line-height: var(--line-height-m);
 
   background-color: var(--color-bg-dividers);
@@ -17,5 +17,10 @@
 
 .tableCell {
   padding: 6px 24px;
+
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-m);
+
+  background-color: var(--color-bg-table);
   border-bottom: 1px solid var(--color-bg-dividers);
 }

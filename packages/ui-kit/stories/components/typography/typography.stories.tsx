@@ -1,6 +1,6 @@
 import { Meta } from '@storybook/react'
 
-import { Typography } from '../../../src'
+import { TheGift, Typography } from '../../../src'
 
 export default {
   title: 'Components/Typography',
@@ -20,6 +20,7 @@ export const AllTypography = {
       <Typography.Overline>Overline</Typography.Overline>
       <Typography.Caption>Caption</Typography.Caption>
       <Typography.CaptionLink>Caption Link</Typography.CaptionLink>
+      <Typography.SubtitleLink>Subtitle Link</Typography.SubtitleLink>
       <Typography.Link>Link</Typography.Link>
       <Typography.Error component="div">Error</Typography.Error>
     </div>
@@ -28,4 +29,8 @@ export const AllTypography = {
 
 export const H1WithSpanComponent = {
   render: () => <Typography.H1 component={'a'}>Span tag</Typography.H1>,
+}
+
+export const Icon = {
+  render: () => <TheGift />,
 }

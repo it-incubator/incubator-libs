@@ -29,7 +29,7 @@ export const Default = {
       <VerticalContainer>
         <Header>
           <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: '24px' }}>
-            <Select options={options} value={value} onChange={setValue} width="210" />
+            <Select options={options} value={value} onChange={setValue} width={210} />
             <Dropdown>
               <ToolbarItemWithIcon icon={<Edit />} text="Изменить" onSelect={() => {}} />
               <ToolbarItemWithIcon icon={<DeleteForever />} text="Удалить" onSelect={() => {}} />

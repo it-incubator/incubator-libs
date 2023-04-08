@@ -4,14 +4,14 @@ import { SVGProps } from 'react'
 export const ComingSoon = (props: SVGProps<SVGSVGElement>) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={480} height={264} fill="none" {...props}>
     <path
-      fill="#EBF3FA"
+      fill="var(--color-illustration-primary)"
       d="M60.9 255.3s-63.7-67.7-19-130.9c16.6-23.6 59.2-36.8 98.3-26 23.1 6.3 58.2 5.3 92.5-50.6 46.7-76.2 240.6-41.6 202.7 92-15.9 56.3 43.5 58.9 14.1 115.6H60.9Z"
     />
     <path
-      fill="#D5E5FB"
+      fill="var(--color-illustration-secondary)"
       d="M406 119.6 267 235.8l-73-62.2a51907.6 51907.6 0 0 1-91.9 80.6H36c18.4-15.7 92.5-80.8 142.4-124.8l15.2-13.5 73.9 63L375.8 88l30.1 31.5Z"
     />
-    <path fill="#D5E5FB" d="m358.2 73.9 66.1 66.3L443 64.4 358.2 74Z" />
+    <path fill="var(--color-illustration-secondary)" d="m358.2 73.9 66.1 66.3L443 64.4 358.2 74Z" />
     <path
       fill="#B7D3F3"
       d="M141.4 213.6a122.7 122.7 0 0 0-3.3-24.3c-.2-.5-2-2.6-6.4-2.6-4.3.1-3.9 2.8-3.9 2.8v.3c0 .1 4 14.4 3.9 32.9v1s10 .3 10 0c.3-1.6 0-6-.3-10Z"

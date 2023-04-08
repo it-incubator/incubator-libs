@@ -66,6 +66,10 @@
   --color-text-chip-green: var(--color-success-700);
   --color-bg-chip-blue: var(--color-info-100);
   --color-text-chip-blue: var(--color-info-700);
+
+  /* illustrations */
+  --color-illustration-primary: #ebf3fa;
+  --color-illustration-secondary: #d5e5fb;
 }
 
 :root .dark-mode {
@@ -136,4 +140,8 @@
   --color-text-chip-green: var(--color-success-400);
   --color-bg-chip-blue: var(--color-info-800);
   --color-text-chip-blue: var(--color-info-400);
+
+  /* illustrations */
+  --color-illustration-primary: var(--color-dark-mode-400);
+  --color-illustration-secondary: var(--color-dark-mode-200);
 }

@@ -1,6 +1,6 @@
 import { Meta } from '@storybook/react'
 
-import { ComingSoon } from '../../../../src/components/illustrations'
+import { ComingSoon } from '../../../../src'
 
 export default {
   title: 'Components/Illustrations/Coming Soon',

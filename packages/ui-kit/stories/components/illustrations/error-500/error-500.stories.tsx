@@ -1,6 +1,6 @@
 import { Meta } from '@storybook/react'
 
-import { Error500 } from '../../../../src/components/illustrations'
+import { Error500 } from '../../../../src'
 
 export default {
   title: 'Components/Illustrations/Error 500',

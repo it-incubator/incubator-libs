@@ -68,8 +68,10 @@
   --color-text-chip-blue: var(--color-info-700);
 
   /* illustrations */
-  --color-illustration-primary: #ebf3fa;
-  --color-illustration-secondary: #d5e5fb;
+  --color-illustration-bg-primary: #ebf3fa;
+  --color-illustration-content-primary: #d5e5fb;
+  --color-illustration-bg-secondary: #ebebff;
+  --color-illustration-content-secondary: #d6d7f4;
 }
 
 :root .dark-mode {
@@ -142,6 +144,8 @@
   --color-text-chip-blue: var(--color-info-400);
 
   /* illustrations */
-  --color-illustration-primary: var(--color-dark-mode-400);
-  --color-illustration-secondary: var(--color-dark-mode-200);
+  --color-illustration-bg-primary: var(--color-dark-mode-400);
+  --color-illustration-content-primary: var(--color-dark-mode-200);
+  --color-illustration-bg-secondary: var(--color-dark-mode-400);
+  --color-illustration-content-secondary: var(--color-dark-mode-300);
 }

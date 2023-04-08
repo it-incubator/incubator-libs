@@ -1,5 +1,11 @@
 # @it-incubator/ui-kit
 
+## 0.1.26
+### Patch Changes
+
+- a58fa3f: add in development, clock, error 404 and error 500 illustrations
+- 538dfbf: fix coming soon illustration colors
+
 ## 0.1.25
 ### Patch Changes
 

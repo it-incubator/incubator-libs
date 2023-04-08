@@ -1,4 +1,4 @@
-import { FC, ReactNode } from 'react'
+import { ComponentProps, FC, ReactNode } from 'react'
 
 import * as TooltipRadix from '@radix-ui/react-tooltip'
 
@@ -6,12 +6,24 @@ import { InfoOutline } from '../../'
 
 import s from './tooltip.module.scss'
 
-export type TooltipProps = {
+type CommonProps = {
   children: ReactNode
-  icon?: ReactNode
-}
+  side?: 'top' | 'right' | 'bottom' | 'left'
+} & ComponentProps<'div'>
 
-export const Tooltip: FC<TooltipProps> = ({ children, icon }) => {
+type ConditionalProps =
+  | {
+      icon?: ReactNode
+      component?: never
+    }
+  | {
+      icon?: never
+      component?: ReactNode
+    }
+
+export type TooltipProps = CommonProps & ConditionalProps
+
+export const Tooltip: FC<TooltipProps> = ({ children, icon, side = 'top', component, ...rest }) => {
   const classNames = {
     content: s.content,
     iconButton: s.iconButton,
@@ -20,24 +32,32 @@ export const Tooltip: FC<TooltipProps> = ({ children, icon }) => {
     infoIcon: s.infoIcon,
   }
 
-  const tooltipIcon = icon ? (
-    icon
-  ) : (
-    <span className={s.infoIcon}>
-      <InfoOutline size={16} />
-    </span>
-  )
+  let tooltipTrigger: ReactNode
+
+  if (component) {
+    tooltipTrigger = <span>{component}</span>
+  } else {
+    tooltipTrigger = (
+      <button className={classNames.iconButton}>
+        {icon ? (
+          icon
+        ) : (
+          <span className={s.infoIcon}>
+            <InfoOutline size={16} />
+          </span>
+        )}
+      </button>
+    )
+  }
 
   const DELAY_DURATION = 200
 
   return (
-    <TooltipRadix.Provider delayDuration={DELAY_DURATION}>
+    <TooltipRadix.Provider delayDuration={DELAY_DURATION} {...rest}>
       <TooltipRadix.Root>
-        <TooltipRadix.Trigger asChild>
-          <button className={classNames.iconButton}>{tooltipIcon}</button>
-        </TooltipRadix.Trigger>
+        <TooltipRadix.Trigger asChild>{tooltipTrigger}</TooltipRadix.Trigger>
         <TooltipRadix.Portal>
-          <TooltipRadix.Content className={classNames.content} sideOffset={4}>
+          <TooltipRadix.Content className={classNames.content} sideOffset={4} side={side}>
             {children}
             <TooltipRadix.Arrow className={classNames.arrowBox} asChild>
               <div className={classNames.arrow} />

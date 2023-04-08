@@ -12,7 +12,6 @@ export default defineConfig({
     }),
   ],
   build: {
-    minify: false,
     lib: {
       // Could also be a dictionary or array of multiple entry points
       entry: resolve(__dirname, 'src/index.ts'),
@@ -22,7 +21,6 @@ export default defineConfig({
       formats: ['es'],
     },
     rollupOptions: {
-      cache: false,
       external: [...Object.keys(peerDependencies), ...Object.keys(dependencies)],
       output: {
         dir: 'dist',

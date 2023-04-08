@@ -1,4 +1,4 @@
-import { ComponentProps, FC } from 'react'
+import { ComponentPropsWithoutRef, FC } from 'react'
 
 import { RadioGroup as RadioGroupHeadless } from '@headlessui/react'
 
@@ -16,7 +16,7 @@ export type RadioGroupProps = {
   disabled?: boolean
   /**The name used when using this component inside a form*/
   name?: string
-} & ComponentProps<'div'>
+} & ComponentPropsWithoutRef<'div'>
 
 export const RadioGroup: FC<RadioGroupProps> = ({ options, disabled, ...rest }) => {
   const classNames = {

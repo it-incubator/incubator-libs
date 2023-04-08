@@ -14,12 +14,12 @@
     "release": "turbo run build --filter=docs^... && changeset publish"
   },
   "devDependencies": {
-    "@changesets/cli": "2.26.0",
+    "@changesets/cli": "2.26.1",
     "@it-incubator/eslint-config": "workspace:*",
     "@it-incubator/prettier-config": "workspace:*",
     "@it-incubator/stylelint-config": "workspace:*",
     "prettier": "2.8.4",
-    "turbo": "1.7.4"
+    "turbo": "1.8.8"
   },
   "packageManager": "pnpm@7.15.0"
 }

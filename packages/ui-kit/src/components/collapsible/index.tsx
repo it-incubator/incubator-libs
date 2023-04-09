@@ -3,7 +3,7 @@ import { ComponentPropsWithoutRef, FC, ReactNode } from 'react'
 import * as CollapsibleRadix from '@radix-ui/react-collapsible'
 import { clsx } from 'clsx'
 
-import { KeyboardArrowDown } from '../../'
+import { KeyboardArrowDown, Typography } from '../../'
 
 import s from './collapsible.module.scss'
 
@@ -48,7 +48,7 @@ export const Collapsible: FC<CollapsibleProps> = ({
         <div className={classNames.triggerRow}>
           <div className={classNames.titleBox}>
             {iconComponent}
-            <span>{title}</span>
+            <Typography.Subtitle1 className={s.title}>{title}</Typography.Subtitle1>
           </div>
           <KeyboardArrowDown className={classNames.arrowIcon} />
         </div>

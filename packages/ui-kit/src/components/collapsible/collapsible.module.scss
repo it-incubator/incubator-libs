@@ -51,6 +51,11 @@
   align-items: center;
 }
 
+.title {
+  text-align: start;
+  word-break: break-word;
+}
+
 .description {
   margin: 0;
 
@@ -58,6 +63,7 @@
   line-height: var(--line-height-m);
   color: var(--color-text-secondary);
   text-align: left;
+  word-break: break-word;
 }
 
 .content {

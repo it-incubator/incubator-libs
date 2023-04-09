@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 0.1.27
+### Patch Changes
+
+- fix typography for collapsible title
+
 ## 0.1.26
 ### Patch Changes
 

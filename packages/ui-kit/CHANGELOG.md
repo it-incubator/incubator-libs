@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 0.1.29
+### Patch Changes
+
+- fix default icon size
+
 ## 0.1.28
 ### Patch Changes
 

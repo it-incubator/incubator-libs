@@ -7,14 +7,7 @@ const GitHub = (allProps: IconProps) => {
   return (
     <IconWrapper
       icon={
-        <svg
-          width="inherit"
-          height="inherit"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          {...props}
-        >
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
           <rect width={24} height={24} rx={12} fill="currentColor" />
           <path
             fillRule="evenodd"

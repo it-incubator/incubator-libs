@@ -7,14 +7,7 @@ const KubernetesIcon1 = (allProps: IconProps) => {
   return (
     <IconWrapper
       icon={
-        <svg
-          width="inherit"
-          height="inherit"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          {...props}
-        >
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
           <path
             d="M12.012 1.231a1.46 1.46 0 00-.561.15L3.848 5.006a1.44 1.44 0 00-.785.977l-1.861 8.139c-.089.382-.017.783.205 1.11.026.04.053.078.082.114l5.253 6.532c.277.341.694.537 1.133.535h8.426c.44 0 .858-.205 1.135-.541l5.25-6.533c.276-.341.379-.791.273-1.218l-1.873-8.147A1.444 1.444 0 0020.3 5l-7.59-3.618a1.46 1.46 0 00-.706-.15h.007z"
             fill="#326CE5"

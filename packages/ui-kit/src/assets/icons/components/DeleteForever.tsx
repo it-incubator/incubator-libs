@@ -7,14 +7,7 @@ const DeleteForever = (allProps: IconProps) => {
   return (
     <IconWrapper
       icon={
-        <svg
-          width="inherit"
-          height="inherit"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          {...props}
-        >
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
           <g clipPath="url(#prefix__clip0_124_21524)">
             <path fill="#FFFEFE" d="M8 8h8v12H8z" />
             <path

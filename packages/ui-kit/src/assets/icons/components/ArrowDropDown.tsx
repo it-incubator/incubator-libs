@@ -7,14 +7,7 @@ const ArrowDropDown = (allProps: IconProps) => {
   return (
     <IconWrapper
       icon={
-        <svg
-          width="inherit"
-          height="inherit"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          {...props}
-        >
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
           <g clipPath="url(#prefix__clip0_167_28632)">
             <path d="M7 10l5 5 5-5H7z" fill="currentColor" />
           </g>

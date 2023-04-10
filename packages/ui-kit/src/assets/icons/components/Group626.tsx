@@ -7,14 +7,7 @@ const Group626 = (allProps: IconProps) => {
   return (
     <IconWrapper
       icon={
-        <svg
-          width="inherit"
-          height="inherit"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          {...props}
-        >
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
           <path
             d="M15.76 1.604L15.641 0 0 1.059l1.476 20.209 2.143-.146V24H19.3v-1.654l2.448.254L24 2.458l-8.24-.854zM3.62 19.712l-.788.053L1.56 2.364l12.725-.862.164 2.24H3.62v15.97zm14.218 2.88H5.081V5.15h12.757v17.444zm2.612-1.542l-1.15-.119V3.741h-3.385l-.052-.711 6.527.676-1.94 17.344z"
             fill="currentColor"

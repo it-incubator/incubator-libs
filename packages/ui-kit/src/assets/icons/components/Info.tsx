@@ -6,14 +6,7 @@ const Info = (allProps: IconProps) => {
   return (
     <IconWrapper
       icon={
-        <svg
-          width="inherit"
-          height="inherit"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          {...props}
-        >
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
           <g clipPath="url(#prefix__clip0_124_23318)">
             <path fill="#FFFEFE" d="M10 6h4v12h-4z" />
             <path

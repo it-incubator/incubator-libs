@@ -7,14 +7,7 @@ const Group = (allProps: IconProps) => {
   return (
     <IconWrapper
       icon={
-        <svg
-          width="inherit"
-          height="inherit"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          {...props}
-        >
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
           <path
             d="M11.912 24C5.517 23.956-.043 18.648 0 11.906.042 5.418 5.433-.044 12.104 0 18.587.043 24.058 5.425 24 12.018c.053 6.534-5.444 12.028-12.088 11.982zm0 0C5.517 23.956-.043 18.648 0 11.906.042 5.418 5.433-.044 12.104 0 18.587.043 24.058 5.425 24 12.018c.053 6.534-5.444 12.028-12.088 11.982z"
             fill="#49A32B"

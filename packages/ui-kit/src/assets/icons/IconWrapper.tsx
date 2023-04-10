@@ -1,6 +1,15 @@
 import * as React from 'react'
 
-import { IconProps } from './types'
+export type IconProps = {
+  /** Set icon fill color from design system */
+  color?: string
+  /** Set width and height of icon in pixels */
+  size?: number
+  /** Whether to scale icon according to font-size. Sets width and height to 1em. */
+  autoSize?: boolean
+  /** Props to pass directly to svg element */
+  svgProps?: React.SVGProps<SVGSVGElement>
+} & Omit<React.HTMLProps<HTMLSpanElement>, 'color' | 'size'>
 
 export const IconWrapper: React.FC<{ icon: React.ReactNode } & IconProps> = ({
   icon,
@@ -11,7 +20,7 @@ export const IconWrapper: React.FC<{ icon: React.ReactNode } & IconProps> = ({
 }) => {
   const color = colorProp ? colorProp : 'currentColor'
   // eslint-disable-next-line no-nested-ternary
-  const size = sizeProp ? `${sizeProp}px` : autoSize ? '1.5em' : '24px'
+  const size = sizeProp ? `${sizeProp}px` : autoSize ? '1em' : '16px'
 
   return (
     <span

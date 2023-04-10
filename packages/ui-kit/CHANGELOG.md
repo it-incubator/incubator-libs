@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 0.1.28
+### Patch Changes
+
+- replace 'inherit' with '100%' for icons
+
 ## 0.1.27
 ### Patch Changes
 

@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 0.1.30
+### Patch Changes
+
+- fix combobox scrollbar
+
 ## 0.1.29
 ### Patch Changes
 

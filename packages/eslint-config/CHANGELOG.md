@@ -1,5 +1,10 @@
 # @it-incubator/eslint-config-incubator
 
+## 0.1.1
+### Patch Changes
+
+- fix combobox scrollbar
+
 ## 0.1.0
 ### Minor Changes
 

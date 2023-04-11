@@ -2,10 +2,9 @@ import { ChangeEvent, FC, Fragment } from 'react'
 
 import { Combobox as ComboboxHeadlessUI } from '@headlessui/react'
 import { Float } from '@headlessui-float/react'
-import * as ScrollArea from '@radix-ui/react-scroll-area'
 import { clsx } from 'clsx'
 
-import { KeyboardArrowDown, Typography } from '../../'
+import { KeyboardArrowDown, Scrollbar, Typography } from '../../'
 import { Label } from '../label'
 import selectStyle from '../select/select.module.scss'
 import textFieldStyle from '../text-field/text-field.module.scss'
@@ -100,23 +99,18 @@ export const Combobox: FC<ComboboxProps> = ({
           </div>
 
           <ComboboxHeadlessUI.Options as="div" className={classNames.content}>
-            <ScrollArea.Root className={classNames.scrollRoot} type="auto">
-              <ScrollArea.Viewport className={classNames.scrollViewport}>
-                {filteredOptions.map(option => (
-                  <ComboboxHeadlessUI.Option
-                    key={option.value}
-                    value={option.value}
-                    as="div"
-                    className={classNames.item}
-                  >
-                    <span>{option.label}</span>
-                  </ComboboxHeadlessUI.Option>
-                ))}
-              </ScrollArea.Viewport>
-              <ScrollArea.Scrollbar className={classNames.scrollbar} orientation="vertical">
-                <ScrollArea.Thumb className={classNames.scrollThumb} />
-              </ScrollArea.Scrollbar>
-            </ScrollArea.Root>
+            <Scrollbar maxHeight={200}>
+              {filteredOptions.map(option => (
+                <ComboboxHeadlessUI.Option
+                  key={option.value}
+                  value={option.value}
+                  as="div"
+                  className={classNames.item}
+                >
+                  <span>{option.label}</span>
+                </ComboboxHeadlessUI.Option>
+              ))}
+            </Scrollbar>
           </ComboboxHeadlessUI.Options>
         </Float>
       </Label>

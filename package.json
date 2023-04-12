@@ -18,8 +18,8 @@
     "@it-incubator/eslint-config": "workspace:*",
     "@it-incubator/prettier-config": "workspace:*",
     "@it-incubator/stylelint-config": "workspace:*",
-    "prettier": "2.8.4",
-    "turbo": "1.8.8"
+    "prettier": "2.8.7",
+    "turbo": "1.9.0"
   },
   "packageManager": "pnpm@7.15.0"
 }

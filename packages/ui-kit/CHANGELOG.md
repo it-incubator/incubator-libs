@@ -1,5 +1,13 @@
 # @it-incubator/ui-kit
 
+## 0.1.31
+### Patch Changes
+
+- a2a34fc: add fullwidth prop to button
+- update packages to latest
+- 1950973: add contentClassName to Card component
+- 495625c: fix icon background for alerts
+
 ## 0.1.30
 ### Patch Changes
 

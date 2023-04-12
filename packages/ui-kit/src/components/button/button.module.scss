@@ -27,6 +27,11 @@
   &:disabled {
     cursor: initial;
   }
+
+  &.fullWidth {
+    justify-content: center;
+    width: 100%;
+  }
 }
 
 .primary {

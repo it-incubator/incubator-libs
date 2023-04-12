@@ -21,11 +21,14 @@ export const Alert: FC<AlertProps> = ({ children, variant = 'warning', icon, ...
   }
   const isError = variant === 'error'
   const iconComponent =
-    icon ?? isError ? (
-      <Cancel color={'var(--color-accent-500)'} />
+    icon ||
+    (isError ? (
+      <Cancel color={'var(--color-accent-500)'} className={s.defaultIcon} />
     ) : (
-      <Info color={'var(--color-danger-500)'} />
-    )
+      <Info color={'var(--color-danger-500)'} className={s.defaultIcon} />
+    ))
+
+  console.log('iconComponent', iconComponent)
 
   return (
     <Card className={classNames.box} {...rest}>

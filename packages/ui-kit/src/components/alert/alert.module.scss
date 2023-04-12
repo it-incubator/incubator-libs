@@ -18,3 +18,9 @@
   display: flex;
   align-items: center;
 }
+
+.defaultIcon {
+  path:first-of-type {
+    fill: var(--color-bg-primary);
+  }
+}

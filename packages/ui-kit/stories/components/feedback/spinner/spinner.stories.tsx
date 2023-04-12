@@ -18,3 +18,9 @@ export const Small = {
     size: 24,
   },
 }
+
+export const FullScreen = {
+  args: {
+    fullScreen: true,
+  },
+}

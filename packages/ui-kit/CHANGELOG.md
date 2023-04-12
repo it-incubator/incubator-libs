@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 0.1.32
+### Patch Changes
+
+- fix spinner styles, add fullScreen prop
+
 ## 0.1.31
 ### Patch Changes
 

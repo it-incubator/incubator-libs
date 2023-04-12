@@ -5,6 +5,7 @@ import { clsx } from 'clsx'
 import s from './card.module.scss'
 
 type CommonProps = {
+  contentClassName?: string
   children: ReactNode
 } & ComponentProps<'div'>
 
@@ -28,6 +29,7 @@ export const Card: FC<CardProps> = ({
   iconComponent,
   variant = 'primary',
   className,
+  contentClassName,
   ...rest
 }) => {
   const isInfo = variant === 'info'
@@ -35,7 +37,7 @@ export const Card: FC<CardProps> = ({
   const classNames = {
     box: clsx(s.box, isInfo && s.info, className),
     title: s.title,
-    content: s.content,
+    content: clsx(s.content, contentClassName),
     icon: s.icon,
   }
 

@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 0.1.33
+### Patch Changes
+
+- change typography display property to inline-block
+
 ## 0.1.32
 ### Patch Changes
 

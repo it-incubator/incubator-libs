@@ -20,6 +20,7 @@ export type CollapsibleProps = {
   open?: boolean
   /** Event handler called when the open state of the collapsible changes.*/
   onOpenChange?: (open: boolean) => void
+  contentClassName?: string
 } & ComponentPropsWithoutRef<'div'>
 
 export const Collapsible: FC<CollapsibleProps> = ({
@@ -29,6 +30,7 @@ export const Collapsible: FC<CollapsibleProps> = ({
   className,
   iconComponent,
   description,
+  contentClassName,
   ...rest
 }) => {
   const classNames = {
@@ -38,7 +40,7 @@ export const Collapsible: FC<CollapsibleProps> = ({
     titleBox: s.titleBox,
     titleIcons: s.titleIcon,
     description: s.description,
-    content: s.content,
+    content: clsx(s.content, contentClassName),
     arrowIcon: s.arrowIcon,
   }
 

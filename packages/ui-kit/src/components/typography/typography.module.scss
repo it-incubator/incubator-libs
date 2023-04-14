@@ -1,4 +1,7 @@
 @mixin typography($fontSize, $lineHeight, $fontWeight) {
+  display: inline-block;
+
+  width: 100%;
   margin: 0;
 
   font-size: $fontSize;

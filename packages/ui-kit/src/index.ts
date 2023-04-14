@@ -35,3 +35,5 @@ export * from './components/tooltip'
 export * from './components/typography'
 export * from './components/date-picker'
 export * from './components/chip'
+
+export * from './hooks'

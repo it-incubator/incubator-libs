@@ -1,6 +1,4 @@
 @mixin typography($fontSize, $lineHeight, $fontWeight) {
-  display: inline-block;
-
   width: 100%;
   margin: 0;
 
@@ -47,6 +45,7 @@
 .caption {
   @include typography(var(--font-size-s), var(--line-height-m), var(--font-weight-regular));
 
+  display: inline-block;
   text-align: start;
 }
 

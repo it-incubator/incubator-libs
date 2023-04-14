@@ -9,6 +9,16 @@ import s from './modal.module.scss'
 
 export type ModalSize = 'sm' | 'md' | 'lg'
 
+type ConditionalProps =
+  | {
+      size?: ModalSize
+      mobile?: never
+    }
+  | {
+      size?: never
+      mobile?: boolean
+    }
+
 export type ModalProps = {
   /** The controlled open state of the dialog */
   open: boolean
@@ -21,11 +31,14 @@ export type ModalProps = {
    * lg - 764px.
    * For other values use className */
   size?: ModalSize
-} & ComponentProps<'div'>
+  mobile?: boolean
+} & ConditionalProps &
+  ComponentProps<'div'>
 
 export const Modal: FC<ModalProps> = ({
   open = false,
   size = 'md',
+  mobile = false,
   title,
   className,
   onClose,
@@ -37,7 +50,7 @@ export const Modal: FC<ModalProps> = ({
   }
   const classNames = {
     overlay: s.overlay,
-    content: getContentClassName(size, className),
+    content: getContentClassName(size, className, mobile),
     header: s.header,
     title: s.title,
     closeButton: s.closeButton,
@@ -66,13 +79,17 @@ export const Modal: FC<ModalProps> = ({
   )
 }
 
-function getContentClassName(size: ModalSize, className?: string) {
-  const sizeClassName = getSizeClassName(size)
+function getContentClassName(size: ModalSize, className?: string, mobile?: boolean) {
+  const sizeClassName = getSizeClassName(size, mobile)
 
   return clsx(className, s.content, sizeClassName)
 }
 
-function getSizeClassName(size: ModalSize) {
+function getSizeClassName(size: ModalSize, mobile?: boolean) {
+  console.log('size', size)
+  console.log('mobile', mobile)
+
+  if (mobile) return s.mobile
   if (size === 'sm') return s.sm
   if (size === 'md') return s.md
   if (size === 'lg') return s.lg

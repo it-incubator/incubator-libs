@@ -5,4 +5,9 @@
   &.hasCancelButton {
     justify-content: space-between;
   }
+
+  &.mobile {
+    flex-direction: column-reverse;
+    gap: 12px;
+  }
 }

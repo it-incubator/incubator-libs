@@ -1,9 +1,14 @@
 # @it-incubator/ui-kit
 
+## 0.1.37
+### Patch Changes
+
+- add mobile modal
+
 ## 0.1.36
 ### Patch Changes
 
-- typeography
+- typography
 
 ## 0.1.35
 ### Patch Changes

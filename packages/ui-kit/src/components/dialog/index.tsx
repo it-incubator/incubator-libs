@@ -23,10 +23,9 @@ export const Dialog: FC<DialogProps> = ({
   onConfirmButtonClick,
   onCancelButtonClick,
   children,
-
   ...rest
 }) => {
-  const { onClose } = rest
+  const { onClose, mobile } = rest
   const showCancelButton = !!cancelButtonText
 
   function handleConfirmButtonClicked() {
@@ -38,7 +37,7 @@ export const Dialog: FC<DialogProps> = ({
   }
 
   const classNames = {
-    buttonsBox: clsx(s.buttonsBox, showCancelButton && s.hasCancelButton),
+    buttonsBox: clsx(s.buttonsBox, showCancelButton && s.hasCancelButton, mobile && s.mobile),
   }
 
   const confirmButtonVariant = showCancelButton ? 'secondary' : 'primary'
@@ -48,9 +47,15 @@ export const Dialog: FC<DialogProps> = ({
       {children}
       <div className={classNames.buttonsBox}>
         {showCancelButton && (
-          <Button onClick={handleCancelButtonClicked}>{cancelButtonText}</Button>
+          <Button onClick={handleCancelButtonClicked} fullWidth={mobile}>
+            {cancelButtonText}
+          </Button>
         )}
-        <Button variant={confirmButtonVariant} onClick={handleConfirmButtonClicked}>
+        <Button
+          variant={confirmButtonVariant}
+          onClick={handleConfirmButtonClicked}
+          fullWidth={mobile}
+        >
           {confirmButtonText}
         </Button>
       </div>

@@ -79,3 +79,58 @@ export const Light = {
     ...commonArgs,
   },
 }
+
+export const Mobile = {
+  render: args => {
+    const [open, setOpen] = useState(false)
+
+    function handleModalClosed() {
+      setOpen(false)
+    }
+    function handleModalOpened() {
+      setOpen(true)
+    }
+
+    return (
+      <VerticalContainer>
+        <span>
+          <Button onClick={handleModalOpened}>Open dialog</Button>
+        </span>
+        <Dialog {...args} open={open} onClose={handleModalClosed} />
+      </VerticalContainer>
+    )
+  },
+
+  args: {
+    ...commonArgs,
+    mobile: true,
+  },
+}
+
+export const MobileOnlyAccept = {
+  render: args => {
+    const [open, setOpen] = useState(false)
+
+    function handleModalClosed() {
+      setOpen(false)
+    }
+    function handleModalOpened() {
+      setOpen(true)
+    }
+
+    return (
+      <VerticalContainer>
+        <span>
+          <Button onClick={handleModalOpened}>Open dialog</Button>
+        </span>
+        <Dialog {...args} open={open} onClose={handleModalClosed} />
+      </VerticalContainer>
+    )
+  },
+
+  args: {
+    ...commonArgs,
+    mobile: true,
+    cancelButtonText: undefined,
+  },
+}

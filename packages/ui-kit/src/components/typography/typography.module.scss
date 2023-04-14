@@ -46,10 +46,14 @@
 
 .caption {
   @include typography(var(--font-size-s), var(--line-height-m), var(--font-weight-regular));
+
+  text-align: start;
 }
 
 .captionBold {
   @include typography(var(--font-size-s), var(--line-height-m), var(--font-weight-bold));
+
+  text-align: start;
 }
 
 .captionLink {

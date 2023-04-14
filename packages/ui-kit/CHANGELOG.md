@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 0.1.34
+### Patch Changes
+
+- fix caption styles
+
 ## 0.1.33
 ### Patch Changes
 

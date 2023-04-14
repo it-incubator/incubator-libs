@@ -52,6 +52,7 @@
 .captionBold {
   @include typography(var(--font-size-s), var(--line-height-m), var(--font-weight-bold));
 
+  display: inline-block;
   text-align: start;
 }
 

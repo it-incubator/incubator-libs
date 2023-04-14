@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 0.1.36
+### Patch Changes
+
+- typeography
+
 ## 0.1.35
 ### Patch Changes
 

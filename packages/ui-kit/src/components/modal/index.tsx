@@ -9,16 +9,6 @@ import s from './modal.module.scss'
 
 export type ModalSize = 'sm' | 'md' | 'lg'
 
-type ConditionalProps =
-  | {
-      size?: ModalSize
-      mobile?: never
-    }
-  | {
-      size?: never
-      mobile?: boolean
-    }
-
 export type ModalProps = {
   /** The controlled open state of the dialog */
   open: boolean
@@ -31,9 +21,9 @@ export type ModalProps = {
    * lg - 764px.
    * For other values use className */
   size?: ModalSize
+  /** If true, the modal will be full screen on mobile */
   mobile?: boolean
-} & ConditionalProps &
-  ComponentProps<'div'>
+} & ComponentProps<'div'>
 
 export const Modal: FC<ModalProps> = ({
   open = false,

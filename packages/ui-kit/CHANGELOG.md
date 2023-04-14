@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 0.1.38
+### Patch Changes
+
+- make mobile modal take entire screen width
+
 ## 0.1.37
 ### Patch Changes
 

@@ -27,7 +27,7 @@
   }
 
   &.mobile {
-    width: 328px;
+    width: calc(100% - 32px);
   }
 }
 

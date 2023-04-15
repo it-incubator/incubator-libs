@@ -1,8 +1,12 @@
 import { ComponentProps, FC, forwardRef } from 'react'
 
 import { clsx } from 'clsx'
-import { ru } from 'date-fns/locale'
-import ReactDatePicker, { ReactDatePickerCustomHeaderProps, registerLocale } from 'react-datepicker'
+import { ReactDatePickerCustomHeaderProps, registerLocale } from 'react-datepicker'
+import * as RDP from 'react-datepicker'
+
+const RDPC = (((RDP.default as any).default as any) ||
+  (RDP.default as any) ||
+  (RDP as any)) as typeof RDP.default
 
 import 'react-datepicker/dist/react-datepicker.min.css'
 
@@ -13,10 +17,10 @@ import s from './date-picker.module.scss'
 
 // eslint-disable-next-line import/order
 import { format } from 'date-fns'
+// eslint-disable-next-line import/order
+import { ru } from 'date-fns/locale'
 
-registerLocale('ru', ru)
-
-type CommonProps = {
+export type DatePickerProps = {
   placeholder?: string
   startDate: Date | null
   setStartDate: (date: Date | null) => void
@@ -24,19 +28,10 @@ type CommonProps = {
   error?: boolean
   errorMessage?: string
   disabled?: boolean
+  endDate?: Date | null
+  setEndDate?: (date: Date | null) => void
 } & ComponentProps<'div'>
-
-type ConditionalProps =
-  | {
-      endDate: Date | null
-      setEndDate: (date: Date | null) => void
-    }
-  | {
-      endDate: never
-      setEndDate: never
-    }
-
-export type DatePickerProps = CommonProps & ConditionalProps
+registerLocale('ru', ru)
 
 export const DatePicker: FC<DatePickerProps> = ({
   startDate,
@@ -48,11 +43,13 @@ export const DatePicker: FC<DatePickerProps> = ({
   endDate,
   setEndDate,
   disabled,
+  className,
   ...rest
 }) => {
   const isRange = endDate !== undefined
 
   const classNames = {
+    root: clsx(s.root, className),
     inputContainer: s.inputContainer,
     input: clsx(s.input, textFieldStyles.input, error && s.error, isRange && s.range),
     calendar: s.calendar,
@@ -66,20 +63,21 @@ export const DatePicker: FC<DatePickerProps> = ({
       const [start, end] = dates
 
       setStartDate(start)
-      setEndDate(end)
+      setEndDate?.(end)
     } else {
       setStartDate(dates)
     }
   }
 
   return (
-    <div {...rest}>
-      <ReactDatePicker
+    <div className={classNames.root} {...rest}>
+      <RDPC
         startDate={startDate}
         endDate={endDate}
         onChange={DatePickerHandler}
         selected={startDate}
         selectsRange={isRange}
+        // @ts-expect-error The type of the function is wrong, it will always return a string, not a Date
         formatWeekDay={formatWeekDay}
         placeholderText={placeholder}
         renderCustomHeader={CustomHeader}
@@ -89,6 +87,7 @@ export const DatePicker: FC<DatePickerProps> = ({
         popperClassName={classNames.popper}
         dayClassName={classNames.day}
         locale="ru"
+        dateFormat={'dd/MM/yyyy'}
         showPopperArrow={false}
         calendarStartDay={1}
         disabled={disabled}
@@ -156,7 +155,8 @@ const CustomHeader = ({ date, decreaseMonth, increaseMonth }: ReactDatePickerCus
   )
 }
 
-const formatWeekDay = (day: Date) => capitalizeFirstLetter(format(day, 'iiiiii', { locale: ru }))
+// const formatWeekDay = (day: Date) => capitalizeFirstLetter(format(day, 'iiiiii', { locale: ru }))
+const formatWeekDay = (day: string) => capitalizeFirstLetter(day.substring(0, 1))
 
 const capitalizeFirstLetter = (text: string) => {
   return text[0].toUpperCase() + text.slice(1)

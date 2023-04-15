@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 0.1.39
+### Patch Changes
+
+- fix datepicker
+
 ## 0.1.38
 ### Patch Changes
 

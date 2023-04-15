@@ -1,6 +1,6 @@
 {
   "name": "@it-incubator/ui-kit",
-  "version": "0.1.38",
+  "version": "0.1.39",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "type": "module",
@@ -78,7 +78,6 @@
     "react-datepicker": "4.11.0"
   },
   "peerDependencies": {
-    "date-fns": ">=2.29.3",
     "react": ">=18.0.2",
     "react-dom": ">=18.0.2",
     "react-toastify": ">=9.1.1"

@@ -1,3 +1,7 @@
+.root {
+  width: 100%;
+}
+
 .calendar {
   width: 300px;
   padding: 16px 24px;
@@ -14,7 +18,6 @@
 
 .inputContainer {
   position: relative;
-  width: min-content;
 }
 
 .icon {
@@ -33,11 +36,7 @@
 .input {
   position: relative;
   z-index: 2;
-  width: 158px;
-
-  &.range {
-    width: 255px;
-  }
+  width: 100%;
 
   &.error {
     color: var(--color-accent-500);

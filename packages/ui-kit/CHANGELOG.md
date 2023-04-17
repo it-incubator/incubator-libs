@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 0.1.40
+### Patch Changes
+
+- add responsive design for card
+
 ## 0.1.39
 ### Patch Changes
 

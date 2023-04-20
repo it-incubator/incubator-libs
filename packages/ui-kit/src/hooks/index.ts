@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react'
 
 const getDeviceType = (): 'mobile' | 'desktop' => {
-  const userAgent = typeof window.navigator === 'undefined' ? '' : navigator.userAgent
-  const mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent)
+  if (typeof window === 'undefined') {
+    return 'mobile'
+  }
 
-  return mobile ? 'mobile' : 'desktop'
+  return window.innerWidth > 768 ? 'desktop' : 'mobile'
 }
 
 export const useDeviceType = () => {

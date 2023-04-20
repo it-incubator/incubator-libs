@@ -42,21 +42,21 @@
 }
 
 .caption {
-  @include typography(var(--font-size-s), var(--line-height-m), var(--font-weight-regular));
+  @include typography(var(--font-size-xs), var(--line-height-m), var(--font-weight-regular));
 
   display: inline-block;
   text-align: start;
 }
 
 .captionBold {
-  @include typography(var(--font-size-s), var(--line-height-m), var(--font-weight-bold));
+  @include typography(var(--font-size-xs), var(--line-height-m), var(--font-weight-bold));
 
   display: inline-block;
   text-align: start;
 }
 
 .captionLink {
-  @include typography(var(--font-size-s), var(--line-height-m), var(--font-weight-regular));
+  @include typography(var(--font-size-xs), var(--line-height-m), var(--font-weight-regular));
 
   text-decoration: underline;
 }

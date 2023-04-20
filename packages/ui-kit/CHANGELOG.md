@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 0.1.41
+### Patch Changes
+
+- update useDeviceType hook to use screenWidth instead of device type for better compatibility with media queries
+
 ## 0.1.40
 ### Patch Changes
 

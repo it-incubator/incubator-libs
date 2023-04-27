@@ -3,6 +3,7 @@ import { ComponentProps, forwardRef, ReactNode, KeyboardEvent } from 'react'
 import { clsx } from 'clsx'
 
 import { Search as SearchIcon, Typography } from '../../'
+import { Close } from '../../assets/icons'
 import { Label } from '../label'
 
 import s from './text-field.module.scss'
@@ -15,6 +16,7 @@ export type TextFieldProps = {
   iconEnd?: ReactNode
   search?: boolean
   onEnter?: (e: KeyboardEvent<HTMLInputElement>) => void
+  onClearClick?: () => void
 } & ComponentProps<'input'>
 
 // НЕ УДАЛЯТЬ КОММЕНТ ПЕРЕД forwardRef - без него ломается tree shaking
@@ -30,6 +32,7 @@ export const TextField = /* @__PURE__ */ forwardRef<HTMLInputElement, TextFieldP
       iconEnd,
       iconStart,
       search,
+      onClearClick,
       ...rest
     },
     ref
@@ -50,10 +53,13 @@ export const TextField = /* @__PURE__ */ forwardRef<HTMLInputElement, TextFieldP
       iconStart: s.iconStart,
       iconEnd: s.iconEnd,
       inputContainer: s.inputContainer,
+      clearButton: s.clearButton,
     }
 
+    const isShowClearButton = onClearClick && (rest.value as string)?.length > 0
+
     const dataIconStart = iconStart ? 'start' : ''
-    const dataIconEnd = iconEnd ? 'end' : ''
+    const dataIconEnd = iconEnd || isShowClearButton ? 'end' : ''
     const dataIcon = dataIconStart + dataIconEnd
 
     return (
@@ -69,6 +75,11 @@ export const TextField = /* @__PURE__ */ forwardRef<HTMLInputElement, TextFieldP
               onKeyDown={handleKeyDown}
               {...rest}
             />
+            {isShowClearButton && (
+              <button className={classNames.clearButton} onClick={onClearClick} type="button">
+                {<Close size={20} color={'var(--color-border-input-active)'} />}
+              </button>
+            )}
             {!!iconEnd && <span className={classNames.iconEnd}>{iconEnd}</span>}
           </div>
         </Label>

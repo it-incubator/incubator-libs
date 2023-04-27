@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 import { Meta } from '@storybook/react'
 
 import { TextField } from '../../../../src'
@@ -26,6 +28,20 @@ export const Invalid = {
 }
 
 export const Search = {
+  render: args => {
+    const [text, setText] = useState('')
+
+    return (
+      <>
+        <TextField
+          search={true}
+          value={text}
+          onChange={e => setText(e.currentTarget.value)}
+          onClearClick={() => setText('')}
+        />
+      </>
+    )
+  },
   args: {
     label: 'Some label',
     placeholder: 'Search...',

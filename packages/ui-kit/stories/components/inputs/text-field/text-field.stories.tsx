@@ -19,11 +19,15 @@ export const Primary = {
 }
 
 export const Invalid = {
-  args: {
-    label: 'Some label',
-    value: 'Some value',
-    error: true,
-    errorMessage: 'Текст ошибки / подсказка',
+  render: args => {
+    return (
+      <TextField
+        value="some value"
+        label="some label"
+        error={true}
+        errorMessage="Текст ошибки / подсказка"
+      />
+    )
   },
 }
 

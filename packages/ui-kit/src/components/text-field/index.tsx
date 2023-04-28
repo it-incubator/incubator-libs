@@ -9,6 +9,7 @@ import { Label } from '../label'
 import s from './text-field.module.scss'
 
 export type TextFieldProps = {
+  value?: string
   label?: ReactNode
   error?: boolean
   errorMessage?: string
@@ -23,6 +24,7 @@ export type TextFieldProps = {
 export const TextField = /* @__PURE__ */ forwardRef<HTMLInputElement, TextFieldProps>(
   (
     {
+      value,
       label,
       error,
       onEnter,
@@ -56,7 +58,7 @@ export const TextField = /* @__PURE__ */ forwardRef<HTMLInputElement, TextFieldP
       clearButton: s.clearButton,
     }
 
-    const isShowClearButton = onClearClick && (rest.value as string)?.length > 0
+    const isShowClearButton = onClearClick && value?.length! > 0
 
     const dataIconStart = iconStart ? 'start' : ''
     const dataIconEnd = iconEnd || isShowClearButton ? 'end' : ''
@@ -68,6 +70,7 @@ export const TextField = /* @__PURE__ */ forwardRef<HTMLInputElement, TextFieldP
           <div className={classNames.inputContainer}>
             {!!iconStart && <span className={classNames.iconStart}>{iconStart}</span>}
             <input
+              value={value}
               className={classNames.input}
               type="text"
               ref={ref}
@@ -76,7 +79,7 @@ export const TextField = /* @__PURE__ */ forwardRef<HTMLInputElement, TextFieldP
               {...rest}
             />
             {isShowClearButton && (
-              <button className={classNames.clearButton} onClick={onClearClick} type="button">
+              <button className={classNames.clearButton} onClick={onClearClick}>
                 {<Close size={20} color={'var(--color-border-input-active)'} />}
               </button>
             )}

@@ -72,6 +72,8 @@
   --color-illustration-content-primary: #d5e5fb;
   --color-illustration-bg-secondary: #ebebff;
   --color-illustration-content-secondary: #d6d7f4;
+  --color-illustration-web-bg: var(--color-neutral-dark-50);
+  --color-illustration-web-bg-secondary: var(--color-neutral-dark-200);
 }
 
 :root .dark-mode {
@@ -148,4 +150,6 @@
   --color-illustration-content-primary: var(--color-dark-mode-200);
   --color-illustration-bg-secondary: var(--color-dark-mode-400);
   --color-illustration-content-secondary: var(--color-dark-mode-300);
+  --color-illustration-web-bg: var(--color-dark-mode-500);
+  --color-illustration-web-bg-secondary: var(--color-dark-mode-600);
 }

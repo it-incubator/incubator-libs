@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 0.1.42
+### Patch Changes
+
+- d43b4d5: add optional clear button for TextField, add Web illustration component
+
 ## 0.1.41
 ### Patch Changes
 

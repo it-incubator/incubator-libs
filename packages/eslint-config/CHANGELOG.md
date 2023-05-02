@@ -1,5 +1,10 @@
 # @it-incubator/eslint-config-incubator
 
+## 0.1.2
+### Patch Changes
+
+- update packages
+
 ## 0.1.1
 ### Patch Changes
 

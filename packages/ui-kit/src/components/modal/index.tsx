@@ -76,9 +76,6 @@ function getContentClassName(size: ModalSize, className?: string, mobile?: boole
 }
 
 function getSizeClassName(size: ModalSize, mobile?: boolean) {
-  console.log('size', size)
-  console.log('mobile', mobile)
-
   if (mobile) return s.mobile
   if (size === 'sm') return s.sm
   if (size === 'md') return s.md

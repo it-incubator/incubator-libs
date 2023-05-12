@@ -28,8 +28,6 @@ export const Alert: FC<AlertProps> = ({ children, variant = 'warning', icon, ...
       <Info color={'var(--color-danger-500)'} className={s.defaultIcon} />
     ))
 
-  console.log('iconComponent', iconComponent)
-
   return (
     <Card className={classNames.box} {...rest}>
       <div className={classNames.content}>

@@ -25,7 +25,6 @@ const withTheme: DecoratorFn = (StoryFn, context) => {
   // Get the active theme value from the story parameter
   const theme = context.parameters.theme || context.globals.theme
   const className = theme === 'dark' ? 'dark-mode' : 'light-mode'
-  console.log(context)
   const isDocs = context.viewMode === 'docs'
   if (theme === 'side-by-side' && !isDocs) {
     return (

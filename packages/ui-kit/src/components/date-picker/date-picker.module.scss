@@ -22,10 +22,8 @@
 
 .icon {
   position: absolute;
-  z-index: 2;
   top: 6px;
   right: 12px;
-
   color: var(--color-text-primary);
 
   &.disabled {
@@ -35,7 +33,6 @@
 
 .input {
   position: relative;
-  z-index: 2;
   width: 100%;
 
   &.error {

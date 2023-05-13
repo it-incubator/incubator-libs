@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 0.1.45
+### Patch Changes
+
+- fix sidebar, header, datepicker styles
+
 ## 0.1.44
 ### Patch Changes
 

@@ -154,3 +154,7 @@ export const WithReadMore = {
     ),
   },
 }
+
+export const Empty = {
+  render: args => <Table.Empty />,
+}

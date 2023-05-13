@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 0.1.44
+### Patch Changes
+
+- add empty table component, add mobile illustrations
+
 ## 0.1.43
 ### Patch Changes
 

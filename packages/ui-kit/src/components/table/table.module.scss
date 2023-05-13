@@ -24,3 +24,10 @@
   background-color: var(--color-bg-table);
   border-bottom: 1px solid var(--color-bg-dividers);
 }
+
+.empty {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 6px 24px;
+}

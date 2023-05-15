@@ -3,7 +3,7 @@ import { ComponentPropsWithoutRef, CSSProperties, FC, ReactNode } from 'react'
 import * as DropdownMenuRadix from '@radix-ui/react-dropdown-menu'
 import { clsx } from 'clsx'
 
-import { More } from '../../'
+import { More, Typography } from '../../'
 
 import s from './toolbar.module.scss'
 
@@ -115,7 +115,7 @@ export const ToolbarItemWithIcon: FC<ToolbarItemWithIconProps> = ({
       {...rest}
     >
       <div className={classNames.itemIcon}>{icon}</div>
-      {text}
+      <Typography.Caption>{text}</Typography.Caption>
     </DropdownMenuRadix.Item>
   )
 }

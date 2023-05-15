@@ -10,17 +10,17 @@ export type ScrollbarProps = {
   type?: ScrollArea.ScrollAreaProps['type']
   className?: string
   /** maxHeight viewport in pixels */
-  maxHeight?: number
+  maxHeight?: number | string
   /** maxWidth viewport in pixels */
-  maxWidth?: number
+  maxWidth?: number | string
 } & ComponentPropsWithoutRef<'div'>
 
 export const Scrollbar: FC<ScrollbarProps> = ({
   children,
   className,
   type = 'auto',
-  maxHeight,
-  maxWidth,
+  maxHeight = '100%',
+  maxWidth = '100%',
   ...rest
 }) => {
   const classNames = {
@@ -30,7 +30,10 @@ export const Scrollbar: FC<ScrollbarProps> = ({
     thumb: s.thumb,
   }
 
-  const viewportStyles = { maxHeight: `${maxHeight}px`, maxWidth: `${maxWidth}` }
+  const maxHeightConverted = typeof maxHeight === 'number' ? `${maxHeight}px` : maxHeight
+  const maxWidthConverted = typeof maxWidth === 'number' ? `${maxWidth}px` : maxWidth
+
+  const viewportStyles = { maxHeight: maxHeightConverted, maxWidth: maxWidthConverted }
 
   return (
     <ScrollArea.Root type={type} asChild={true}>

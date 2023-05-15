@@ -14,21 +14,18 @@ export type ModalProps = {
   open: boolean
   onClose: () => void
   showCloseButton?: boolean
-  title: string
+  title?: string
   /** 'sm' | 'md' | 'lg':
    * sm - 367px,
    * md - 532px,
    * lg - 764px.
    * For other values use className */
   size?: ModalSize
-  /** If true, the modal will be full screen on mobile */
-  mobile?: boolean
 } & ComponentProps<'div'>
 
 export const Modal: FC<ModalProps> = ({
   open = false,
   size = 'md',
-  mobile = false,
   title,
   className,
   onClose,
@@ -40,7 +37,7 @@ export const Modal: FC<ModalProps> = ({
   }
   const classNames = {
     overlay: s.overlay,
-    content: getContentClassName(size, className, mobile),
+    content: getContentClassName(size, className),
     header: s.header,
     title: s.title,
     closeButton: s.closeButton,
@@ -69,14 +66,13 @@ export const Modal: FC<ModalProps> = ({
   )
 }
 
-function getContentClassName(size: ModalSize, className?: string, mobile?: boolean) {
-  const sizeClassName = getSizeClassName(size, mobile)
+function getContentClassName(size: ModalSize, className?: string) {
+  const sizeClassName = getSizeClassName(size)
 
   return clsx(className, s.content, sizeClassName)
 }
 
-function getSizeClassName(size: ModalSize, mobile?: boolean) {
-  if (mobile) return s.mobile
+function getSizeClassName(size: ModalSize) {
   if (size === 'sm') return s.sm
   if (size === 'md') return s.md
   if (size === 'lg') return s.lg

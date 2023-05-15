@@ -26,8 +26,13 @@
     width: 764px;
   }
 
-  &.mobile {
-    width: calc(100% - 32px);
+  @media screen and (width <= 768px) {
+    &,
+    &.sm,
+    &.md,
+    &.lg {
+      width: calc(100% - 32px);
+    }
   }
 }
 

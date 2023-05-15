@@ -2,6 +2,7 @@ import { FC } from 'react'
 
 import { clsx } from 'clsx'
 
+import { useDeviceType } from '../../hooks'
 import { Button } from '../button'
 import { Modal, ModalProps } from '../modal'
 
@@ -25,7 +26,8 @@ export const Dialog: FC<DialogProps> = ({
   children,
   ...rest
 }) => {
-  const { onClose, mobile } = rest
+  const { isMobile } = useDeviceType()
+  const { onClose } = rest
   const showCancelButton = !!cancelButtonText
 
   function handleConfirmButtonClicked() {
@@ -37,7 +39,7 @@ export const Dialog: FC<DialogProps> = ({
   }
 
   const classNames = {
-    buttonsBox: clsx(s.buttonsBox, showCancelButton && s.hasCancelButton, mobile && s.mobile),
+    buttonsBox: clsx(s.buttonsBox, showCancelButton && s.hasCancelButton, isMobile && s.mobile),
   }
 
   const confirmButtonVariant = showCancelButton ? 'secondary' : 'primary'
@@ -47,14 +49,14 @@ export const Dialog: FC<DialogProps> = ({
       {children}
       <div className={classNames.buttonsBox}>
         {showCancelButton && (
-          <Button onClick={handleCancelButtonClicked} fullWidth={mobile}>
+          <Button onClick={handleCancelButtonClicked} fullWidth={isMobile}>
             {cancelButtonText}
           </Button>
         )}
         <Button
           variant={confirmButtonVariant}
           onClick={handleConfirmButtonClicked}
-          fullWidth={mobile}
+          fullWidth={isMobile}
         >
           {confirmButtonText}
         </Button>

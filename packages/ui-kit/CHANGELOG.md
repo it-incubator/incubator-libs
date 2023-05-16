@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 0.1.48
+### Patch Changes
+
+- fix header z-index
+
 ## 0.1.47
 ### Patch Changes
 

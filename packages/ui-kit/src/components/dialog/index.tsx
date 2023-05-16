@@ -40,7 +40,7 @@ export const Dialog: FC<DialogProps> = ({
   }
 
   function handleCancelButtonClicked() {
-    onCancelButtonClick ? onCancelButtonClick() : onClose()
+    onCancelButtonClick ? onCancelButtonClick() : onClose?.()
   }
 
   const classNames = {

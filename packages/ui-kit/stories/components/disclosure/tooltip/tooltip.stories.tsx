@@ -1,6 +1,6 @@
 import { Meta } from '@storybook/react'
 
-import { Tooltip, ThumbUp } from '../../../../src'
+import { ThumbUp, Tooltip } from '../../../../src'
 import { useDarkMode } from '../../../../storybook-utils/hooks/use-dark-mode'
 
 export default {
@@ -9,6 +9,13 @@ export default {
 } as Meta<typeof Tooltip>
 
 export const Light = {
+  render: args => {
+    return (
+      <div style={{ margin: '200px 200px' }}>
+        <Tooltip {...args} />
+      </div>
+    )
+  },
   args: {
     children: (
       <p>

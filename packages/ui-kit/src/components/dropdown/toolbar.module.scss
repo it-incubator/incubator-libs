@@ -68,8 +68,6 @@
 
   outline: none;
 
-  transition: var(--transtition-duration-basic) opacity;
-
   &:hover:enabled,
   &:focus:enabled {
     opacity: 0.7;

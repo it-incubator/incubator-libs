@@ -20,6 +20,9 @@ export const Dark = {
       <>
         <ToolbarItemWithIcon icon={<Edit />} text="Изменить" onSelect={() => {}} />
         <ToolbarItemWithIcon icon={<DeleteForever />} text="Удалить" onSelect={() => {}} />
+        <ToolbarItemWithIcon icon={<DeleteForever />} text="Удалить" onSelect={() => {}} />
+        <ToolbarItemWithIcon icon={<DeleteForever />} text="Удалить" onSelect={() => {}} />
+        <ToolbarItemWithIcon icon={<DeleteForever />} text="Удалить" onSelect={() => {}} />
       </>
     ),
   },
@@ -34,6 +37,9 @@ export const Light = {
     children: (
       <>
         <ToolbarItemWithIcon icon={<Edit />} text="Изменить" onSelect={() => {}} />
+        <ToolbarItemWithIcon icon={<DeleteForever />} text="Удалить" onSelect={() => {}} />
+        <ToolbarItemWithIcon icon={<DeleteForever />} text="Удалить" onSelect={() => {}} />
+        <ToolbarItemWithIcon icon={<DeleteForever />} text="Удалить" onSelect={() => {}} />
         <ToolbarItemWithIcon icon={<DeleteForever />} text="Удалить" onSelect={() => {}} />
       </>
     ),

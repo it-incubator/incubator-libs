@@ -2,8 +2,9 @@ import { useState } from 'react'
 
 import { Meta } from '@storybook/react'
 
-import { Collapsible } from '../../../../src'
+import { Button, Collapsible } from '../../../../src'
 import InfoIcon from '../../../../src/assets/icons/components/Info'
+import { VerticalContainer } from '../../../../storybook-utils/components/containers/vertical'
 
 export default {
   title: 'Components/Disclosure/Collapsible',
@@ -26,11 +27,16 @@ export const DefaultControlled = {
     const [open, setOpen] = useState(false)
 
     return (
-      <Collapsible open={open} onOpenChange={setOpen} title="Collapsible">
-        Эффективно обучаем frontend и backend-разработке до трудоустройства, а также проводим
-        учебную стажировку для QA, PM (project manager), front-end (React) и back-end (NestJS)
-        специалистов.
-      </Collapsible>
+      <VerticalContainer>
+        <span>
+          <Button onClick={() => setOpen(!open)}>Toggle</Button>
+        </span>
+        <Collapsible open={open} onOpenChange={setOpen} title="Collapsible">
+          Эффективно обучаем frontend и backend-разработке до трудоустройства, а также проводим
+          учебную стажировку для QA, PM (project manager), front-end (React) и back-end (NestJS)
+          специалистов.
+        </Collapsible>
+      </VerticalContainer>
     )
   },
 }

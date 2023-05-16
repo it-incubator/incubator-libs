@@ -3,11 +3,11 @@ import { FC } from 'react'
 import * as CheckboxRadix from '@radix-ui/react-checkbox'
 import * as LabelRadix from '@radix-ui/react-label'
 import { clsx } from 'clsx'
+import { AnimatePresence, motion } from 'framer-motion'
 
 import { Check } from '../../'
 
 import s from './checkbox.module.scss'
-
 export type CheckboxProps = {
   checked: boolean
   onChange: (checked: boolean) => void
@@ -45,9 +45,37 @@ export const Checkbox: FC<CheckboxProps> = ({
             required={required}
             id={id}
           >
-            <CheckboxRadix.Indicator className={classNames.indicator}>
-              <Check size={18} color={'var(--color-text-primary)'} />
-            </CheckboxRadix.Indicator>
+            <AnimatePresence initial={false}>
+              {checked && (
+                <CheckboxRadix.Indicator className={classNames.indicator} asChild forceMount>
+                  <motion.div
+                    variants={{
+                      unchecked: { scale: 0.5 },
+                      checked: { scale: 1 },
+                    }}
+                    initial="unchecked"
+                    animate="checked"
+                    exit="unchecked"
+                  >
+                    <motion.div
+                      variants={{
+                        unchecked: {
+                          opacity: 0,
+                          transition: { duration: 0.1 },
+                        },
+                        checked: {
+                          opacity: 1,
+                          strokeDashoffset: 0,
+                          transition: { duration: 0.1 },
+                        },
+                      }}
+                    >
+                      <Check size={18} color={'var(--color-text-primary)'} />
+                    </motion.div>
+                  </motion.div>
+                </CheckboxRadix.Indicator>
+              )}
+            </AnimatePresence>
           </CheckboxRadix.Root>
         </div>
         {label}

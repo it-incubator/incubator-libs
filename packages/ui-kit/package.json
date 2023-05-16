@@ -75,7 +75,9 @@
     "@radix-ui/react-tabs": "1.0.3",
     "@radix-ui/react-tooltip": "1.0.5",
     "clsx": "1.2.1",
-    "react-datepicker": "4.11.0"
+    "framer-motion": "^10.12.11",
+    "react-datepicker": "4.11.0",
+    "react-use-measure": "^2.1.1"
   },
   "peerDependencies": {
     "react": ">=18.0.2",

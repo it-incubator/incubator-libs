@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 0.1.47
+### Patch Changes
+
+- add animations
+
 ## 0.1.46
 ### Patch Changes
 

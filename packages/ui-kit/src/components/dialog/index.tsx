@@ -12,6 +12,10 @@ export type DialogProps = {
   confirmButtonText: string
 
   onConfirmButtonClick: () => void
+  /** If true, confirm button will be secondary and cancel button will be primary
+   * defaults to true
+   * */
+  invertButtons?: boolean
 
   cancelButtonText?: string
   /** If not provided, onClose will be executed on Cancel click*/
@@ -23,6 +27,7 @@ export const Dialog: FC<DialogProps> = ({
   cancelButtonText,
   onConfirmButtonClick,
   onCancelButtonClick,
+  invertButtons = true,
   children,
   ...rest
 }) => {
@@ -42,14 +47,19 @@ export const Dialog: FC<DialogProps> = ({
     buttonsBox: clsx(s.buttonsBox, showCancelButton && s.hasCancelButton, isMobile && s.mobile),
   }
 
-  const confirmButtonVariant = showCancelButton ? 'secondary' : 'primary'
+  const confirmButtonVariant = getConfirmButtonVariant(invertButtons, showCancelButton)
+  const cancelButtonVariant = invertButtons ? 'primary' : 'secondary'
 
   return (
     <Modal {...rest}>
       {children}
       <div className={classNames.buttonsBox}>
         {showCancelButton && (
-          <Button onClick={handleCancelButtonClicked} fullWidth={isMobile}>
+          <Button
+            onClick={handleCancelButtonClicked}
+            fullWidth={isMobile}
+            variant={cancelButtonVariant}
+          >
             {cancelButtonText}
           </Button>
         )}
@@ -63,4 +73,15 @@ export const Dialog: FC<DialogProps> = ({
       </div>
     </Modal>
   )
+}
+
+const getConfirmButtonVariant = (
+  invertButtons: boolean,
+  showCancelButton: boolean
+): 'primary' | 'secondary' => {
+  if (showCancelButton) {
+    return invertButtons ? 'secondary' : 'primary'
+  }
+
+  return 'primary'
 }

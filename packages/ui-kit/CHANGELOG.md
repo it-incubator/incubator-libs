@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 0.1.49
+### Patch Changes
+
+- add invert button prop to dialog, make onClose not required
+
 ## 0.1.48
 ### Patch Changes
 

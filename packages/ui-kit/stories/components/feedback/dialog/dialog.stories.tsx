@@ -44,7 +44,7 @@ export const Dark = {
           <Button onClick={handleModalOpened}>Open dialog</Button>
         </span>
 
-        <Dialog {...args} open={open} onClose={handleModalClosed} />
+        <Dialog {...args} open={open} onClose={handleModalClosed} invertButtons={false} />
       </VerticalContainer>
     )
   },

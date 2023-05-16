@@ -20,7 +20,7 @@ export type ModalSize = 'sm' | 'md' | 'lg'
 export type ModalProps = {
   /** The controlled open state of the dialog */
   open: boolean
-  onClose: () => void
+  onClose?: () => void
   showCloseButton?: boolean
   title?: string
   /** 'sm' | 'md' | 'lg':
@@ -64,7 +64,7 @@ export const Modal: FC<ModalProps> = ({
   showCloseButton = true,
 }) => {
   function handleModalClosed() {
-    onClose()
+    onClose?.()
   }
   const classNames = {
     overlay: s.overlay,

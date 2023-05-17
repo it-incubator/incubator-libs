@@ -23,6 +23,7 @@ export type CollapsibleProps = {
   /** Event handler called when the open state of the collapsible changes.*/
   onOpenChange?: (open: boolean) => void
   contentClassName?: string
+  noPadding?: boolean
 } & ComponentPropsWithoutRef<'div'>
 
 export const Collapsible: FC<CollapsibleProps> = ({
@@ -36,8 +37,13 @@ export const Collapsible: FC<CollapsibleProps> = ({
   defaultOpen,
   open,
   onOpenChange,
+  noPadding,
   ...rest
 }) => {
+  const styles = {
+    padding: noPadding ? '0' : '6px 24px',
+  }
+
   const [isOpen, setIsOpen] = useState(false)
   const [measureRef, { height }] = useMeasure()
 
@@ -94,7 +100,7 @@ export const Collapsible: FC<CollapsibleProps> = ({
             duration: 0.2,
           }}
         >
-          <div className={s.text} ref={measureRef}>
+          <div className={s.text} style={styles} ref={measureRef}>
             {children}
           </div>
         </motion.div>

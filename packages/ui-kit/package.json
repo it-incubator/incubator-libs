@@ -1,6 +1,6 @@
 {
   "name": "@it-incubator/ui-kit",
-  "version": "0.1.49",
+  "version": "0.1.50",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "type": "module",

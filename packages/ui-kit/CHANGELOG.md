@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 0.1.50
+### Patch Changes
+
+- add remove padding prop
+
 ## 0.1.49
 ### Patch Changes
 

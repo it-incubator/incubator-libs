@@ -86,6 +86,12 @@
   }
 }
 
+.value {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .icon {
   width: 24px;
   height: 24px;

@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 0.1.51
+### Patch Changes
+
+- add overflow: ellpsis to selects value, update snackbar styles
+
 ## 0.1.50
 ### Patch Changes
 

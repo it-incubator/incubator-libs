@@ -31,7 +31,7 @@
 
 :root {
   /* toastify */
-  --toastify-color-light: var(--color-light-mode-100);
+  --toastify-color-light: var(--color-neutral-dark-100);
   --toastify-color-transparent: rgb(255 255 255 / 70%);
   --toastify-icon-color-info: var(--toastify-color-info);
   --toastify-icon-color-success: var(--toastify-color-success);
@@ -46,7 +46,7 @@
 
 :root .dark-mode {
   /* toastify */
-  --toastify-color-light: var(--color-dark-mode-500);
+  --toastify-color-light: var(--color-dark-mode-400);
   --toastify-color-transparent: rgb(255 255 255 / 70%);
   --toastify-icon-color-info: var(--toastify-color-info);
   --toastify-icon-color-success: var(--toastify-color-success);

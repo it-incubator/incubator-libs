@@ -167,6 +167,9 @@ export const Secondary = {
 
 export const onModal = () => {
   const [value, setValue] = useState(null)
+  const [value1, setValue1] = useState(null)
+  const [value2, setValue2] = useState(null)
+  const [value3, setValue3] = useState(null)
   const [open, setOpen] = useState(false)
   const handleClose = () => {
     setOpen(false)
@@ -176,14 +179,40 @@ export const onModal = () => {
     <div>
       <button onClick={() => setOpen(!open)}>Open modal</button>
       <Modal open={open} onClose={handleClose} title={'Select'}>
-        <Select
-          portal={false}
-          placeholder="Все курсы"
-          disabled={false}
-          value={value}
-          onChange={setValue}
-          options={options}
-        />
+        <VerticalContainer>
+          <Select
+            portal={false}
+            placeholder="Все курсы"
+            disabled={false}
+            value={value}
+            onChange={setValue}
+            options={options}
+          />
+          <Select
+            portal={false}
+            placeholder="Все курсы"
+            disabled={false}
+            value={value1}
+            onChange={setValue1}
+            options={options}
+          />
+          <Select
+            portal={false}
+            placeholder="Все курсы"
+            disabled={false}
+            value={value2}
+            onChange={setValue2}
+            options={options}
+          />
+          <Select
+            portal={false}
+            placeholder="Все курсы"
+            disabled={false}
+            value={value3}
+            onChange={setValue3}
+            options={options}
+          />
+        </VerticalContainer>
       </Modal>
     </div>
   )

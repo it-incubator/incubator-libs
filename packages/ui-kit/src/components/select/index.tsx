@@ -132,7 +132,7 @@ export const Select: FC<SelectProps> = ({
                       key={option.value}
                       className={classNames.item}
                       value={option.value}
-                      as={'div'}
+                      as={'button'}
                     >
                       <span>{option.label}</span>
                     </Listbox.Option>

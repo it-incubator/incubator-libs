@@ -5,6 +5,8 @@ const styles: CSSProperties = {
   flexDirection: 'column',
   gap: '1rem',
   height: 'min-content',
+  padding: '50px',
+  border: '1px solid #ccc',
 }
 
 export const VerticalContainer = ({ children }) => {

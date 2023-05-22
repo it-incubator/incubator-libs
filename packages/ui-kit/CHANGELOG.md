@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 0.1.52
+### Patch Changes
+
+- fix select with modal, add progress component
+
 ## 0.1.51
 ### Patch Changes
 

@@ -1,6 +1,6 @@
 {
   "name": "@it-incubator/ui-kit",
-  "version": "0.1.51",
+  "version": "0.1.52",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "type": "module",
@@ -69,6 +69,7 @@
     "@radix-ui/react-dialog": "1.0.3",
     "@radix-ui/react-dropdown-menu": "2.0.4",
     "@radix-ui/react-label": "2.0.1",
+    "@radix-ui/react-progress": "^1.0.2",
     "@radix-ui/react-scroll-area": "1.0.3",
     "@radix-ui/react-select": "1.2.1",
     "@radix-ui/react-switch": "1.0.2",

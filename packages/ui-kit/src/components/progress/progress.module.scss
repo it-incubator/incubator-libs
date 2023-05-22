@@ -1,0 +1,45 @@
+.container {
+  position: relative;
+}
+
+.root {
+  position: relative;
+  transform: translateZ(0);
+
+  overflow: hidden;
+
+  width: 100%;
+  height: 8px;
+
+  background: var(--color-bg-dividers);
+  border-radius: 99999px;
+}
+
+.indicator {
+  width: 100%;
+  height: 100%;
+
+  background-color: var(--color-info-500);
+  border-radius: 99999px;
+
+  transition: transform 660ms cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.label {
+  display: none;
+
+  @media screen and (width <= 768px) {
+    position: absolute;
+    right: 0;
+    bottom: 9px;
+
+    display: block;
+
+    font-size: var(--font-size-s);
+    line-height: var(--line-height-m);
+
+    /* identical to box height, or 171% */
+
+    text-align: right;
+  }
+}

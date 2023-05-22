@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 0.1.53
+### Patch Changes
+
+- fix progress types
+
 ## 0.1.52
 ### Patch Changes
 

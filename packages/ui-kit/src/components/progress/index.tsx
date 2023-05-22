@@ -7,8 +7,8 @@ import s from './progress.module.scss'
 const Progress = React.forwardRef<
   React.ElementRef<typeof ProgressPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof ProgressPrimitive.Root> & {
-    color: string
-    width: string | number
+    color?: string
+    width?: string | number
     label?: string | false
   }
 >(

@@ -1,10 +1,10 @@
-import { ButtonHTMLAttributes, FC } from 'react'
+import { ComponentPropsWithoutRef, FC } from 'react'
 
 import { clsx } from 'clsx'
 
 import s from './button.module.scss'
 
-type DefaultButtonProps = ButtonHTMLAttributes<HTMLButtonElement>
+type DefaultButtonProps = ComponentPropsWithoutRef<'button'>
 
 export type ButtonVariant = 'primary' | 'secondary' | 'outlined'
 

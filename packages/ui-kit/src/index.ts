@@ -1,7 +1,7 @@
 import '@fontsource/roboto'
 import 'react-toastify/dist/ReactToastify.min.css'
 import './styles/index.scss'
-
+import { clsx } from 'clsx'
 export * from './assets/icons'
 export type { IconProps } from './assets/icons/IconWrapper'
 
@@ -38,3 +38,4 @@ export * from './components/date-picker'
 export * from './components/chip'
 
 export * from './hooks'
+export { clsx }

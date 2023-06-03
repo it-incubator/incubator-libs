@@ -1,5 +1,11 @@
 # @it-incubator/ui-kit
 
+## 0.1.55
+### Patch Changes
+
+- add shorthand margin properties to typography
+- change table font size to 14px
+
 ## 0.1.54
 ### Patch Changes
 

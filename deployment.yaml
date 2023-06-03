@@ -15,6 +15,8 @@ spec:
       labels:
         project: PROJECT
     spec:
+      imagePullSecrets:
+        - name: dockerhub-reg
       containers:
          - name: PROJECT
            image: REGISTRY_HOSTNAME/PROJECT:TAG_VERSION

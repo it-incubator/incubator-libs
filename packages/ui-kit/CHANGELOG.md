@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 0.2.0
+### Minor Changes
+
+- Removed 'error' prop for select/text field/textarea/datepicker/combobox. The error is shown if errorMessage is not nil and is at least 1 char of length
+
 ## 0.1.55
 ### Patch Changes
 

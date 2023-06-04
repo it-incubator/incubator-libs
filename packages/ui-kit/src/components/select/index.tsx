@@ -1,4 +1,4 @@
-import { FC, Fragment, useMemo } from 'react'
+import { FC, Fragment, useMemo, CSSProperties } from 'react'
 
 import { Listbox } from '@headlessui/react'
 import { Float } from '@headlessui-float/react'
@@ -29,11 +29,10 @@ interface CommonProps {
    * {label: string, value: string | number} */
   options: Array<Option>
   portal?: boolean
-  error?: boolean
   errorMessage?: string
   label?: string
-  /** width in pixels */
-  width?: number
+  width?: CSSProperties['width']
+  rootClassName?: string
 }
 
 type ConditionalMultipleProps =
@@ -70,7 +69,6 @@ export const Select: FC<SelectProps> = ({
   variant = 'primary',
   placeholder,
   value,
-  error,
   errorMessage,
   disabled,
   className,
@@ -79,9 +77,11 @@ export const Select: FC<SelectProps> = ({
   multiple = false,
   portal = true,
   label,
-  width,
+  rootClassName,
+  width = '100%',
 }) => {
   const isSecondary = variant === 'secondary'
+  const showError = !!errorMessage && errorMessage.length > 0
 
   const optionsMap: Record<string | number, string | number> = useMemo(() => {
     return options.reduce((acc, option) => {
@@ -92,8 +92,8 @@ export const Select: FC<SelectProps> = ({
   }, [options])
 
   const classNames = {
-    root: clsx(s.root),
-    trigger: clsx(s.trigger, error && s.error, s[variant], className),
+    root: rootClassName,
+    trigger: clsx(s.trigger, showError && s.error, s[variant], className),
     value: clsx(s.value),
     icon: clsx(s.icon, s[variant]),
     item: clsx(s.item, s[variant]),
@@ -109,14 +109,14 @@ export const Select: FC<SelectProps> = ({
     ? value.map(v => optionsMap[v]).join(', ')
     : optionsMap[value]
 
-  const triggerStyles = { width: `${width}px` }
+  const rootStyles = { width }
 
   return (
     <Listbox {...{ disabled, value, multiple, onChange }}>
-      <div className={classNames.root}>
+      <div className={classNames.root} style={rootStyles}>
         <Label label={label}>
           <Float portal={portal} as="div" adaptiveWidth placement="bottom" floatingAs={Fragment}>
-            <Listbox.Button className={classNames.trigger} style={triggerStyles}>
+            <Listbox.Button className={classNames.trigger} type={'button'}>
               <span className={classNames.value}>{selectedOptionsLabels || placeholder}</span>
               <span className={classNames.icon}>
                 <KeyboardArrowDown size={variant === 'pagination' ? 16 : 24} />
@@ -133,6 +133,7 @@ export const Select: FC<SelectProps> = ({
                       className={classNames.item}
                       value={option.value}
                       as={'button'}
+                      type={'button'}
                     >
                       <span>{option.label}</span>
                     </Listbox.Option>
@@ -142,7 +143,7 @@ export const Select: FC<SelectProps> = ({
             </Listbox.Options>
           </Float>
         </Label>
-        <>{error && <Typography.Error>{errorMessage}</Typography.Error>}</>
+        <>{showError && <Typography.Error>{errorMessage}</Typography.Error>}</>
       </div>
     </Listbox>
   )

@@ -9,14 +9,15 @@ import s from './textarea.module.scss'
 
 export type TextareaProps = {
   label?: string
-  error?: boolean
   errorMessage?: string
   onValueChange?: (text: string) => void
 } & ComponentProps<'textarea'>
 
 // НЕ УДАЛЯТЬ КОММЕНТ ПЕРЕД forwardRef - без него ломается tree shaking
 export const Textarea = /* @__PURE__ */ forwardRef<HTMLTextAreaElement, TextareaProps>(
-  ({ label, error, className, errorMessage = 'Error!', onChange, onValueChange, ...rest }, ref) => {
+  ({ label, className, errorMessage = 'Error!', onChange, onValueChange, ...rest }, ref) => {
+    const showError = !!errorMessage && errorMessage.length > 0
+
     function handleInputValueChanged(e: ChangeEvent<HTMLTextAreaElement>) {
       onChange?.(e)
       onValueChange?.(e.currentTarget.value)
@@ -26,7 +27,7 @@ export const Textarea = /* @__PURE__ */ forwardRef<HTMLTextAreaElement, Textarea
       root: clsx(s.box, className),
       labelBox: s.labelBox,
       label: s.label,
-      input: clsx(s.textarea, error && s.error),
+      input: clsx(s.textarea, showError && s.error),
     }
 
     return (
@@ -39,7 +40,7 @@ export const Textarea = /* @__PURE__ */ forwardRef<HTMLTextAreaElement, Textarea
             {...rest}
           />
         </Label>
-        {error && <Typography.Error>{errorMessage}</Typography.Error>}
+        {showError && <Typography.Error>{errorMessage}</Typography.Error>}
       </div>
     )
   }

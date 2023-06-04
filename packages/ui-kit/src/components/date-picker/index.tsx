@@ -25,7 +25,6 @@ export type DatePickerProps = {
   startDate: Date | null
   setStartDate: (date: Date | null) => void
   label?: string
-  error?: boolean
   errorMessage?: string
   disabled?: boolean
   endDate?: Date | null
@@ -38,7 +37,6 @@ export const DatePicker: FC<DatePickerProps> = ({
   setStartDate,
   placeholder,
   label,
-  error,
   errorMessage,
   endDate,
   setEndDate,
@@ -47,11 +45,12 @@ export const DatePicker: FC<DatePickerProps> = ({
   ...rest
 }) => {
   const isRange = endDate !== undefined
+  const showError = !!errorMessage && errorMessage.length > 0
 
   const classNames = {
     root: clsx(s.root, className),
     inputContainer: s.inputContainer,
-    input: clsx(s.input, textFieldStyles.input, error && s.error, isRange && s.range),
+    input: clsx(s.input, textFieldStyles.input, showError && s.error, isRange && s.range),
     calendar: s.calendar,
     popper: s.popper,
     errorText: s.errorText,
@@ -100,7 +99,7 @@ export const DatePicker: FC<DatePickerProps> = ({
           },
         ]}
       />
-      {error && <p className={classNames.errorText}>{errorMessage}</p>}
+      {showError && <p className={classNames.errorText}>{errorMessage}</p>}
     </div>
   )
 }
@@ -143,7 +142,7 @@ const CustomHeader = ({ date, decreaseMonth, increaseMonth }: ReactDatePickerCus
     <div className={classNames.header}>
       <div>{headerText}</div>
       <div className={classNames.buttonBox}>
-        <button className={classNames.button} onClick={decreaseMonth}>
+        <button className={classNames.button} type={'button'} onClick={decreaseMonth}>
           <KeyboardArrowLeft />
         </button>
 

@@ -11,7 +11,6 @@ import s from './text-field.module.scss'
 export type TextFieldProps = {
   value?: string
   label?: ReactNode
-  error?: boolean
   errorMessage?: string
   iconStart?: ReactNode
   iconEnd?: ReactNode
@@ -25,7 +24,6 @@ export const TextField = /* @__PURE__ */ forwardRef<HTMLInputElement, TextFieldP
   (
     {
       label,
-      error,
       onEnter,
       onKeyDown,
       className,
@@ -38,6 +36,8 @@ export const TextField = /* @__PURE__ */ forwardRef<HTMLInputElement, TextFieldP
     },
     ref
   ) => {
+    const showError = !!errorMessage && errorMessage.length > 0
+
     if (search) {
       iconStart = <SearchIcon size={20} color={'var(--color-text-secondary)'} />
     }
@@ -50,7 +50,7 @@ export const TextField = /* @__PURE__ */ forwardRef<HTMLInputElement, TextFieldP
     const classNames = {
       root: clsx(s.box, className),
       label: s.label,
-      input: clsx(s.input, error && s.error),
+      input: clsx(s.input, showError && s.error),
       iconStart: s.iconStart,
       iconEnd: s.iconEnd,
       inputContainer: s.inputContainer,
@@ -85,7 +85,7 @@ export const TextField = /* @__PURE__ */ forwardRef<HTMLInputElement, TextFieldP
           </div>
         </Label>
 
-        {error && <Typography.Error>{errorMessage}</Typography.Error>}
+        {showError && <Typography.Error>{errorMessage}</Typography.Error>}
       </div>
     )
   }

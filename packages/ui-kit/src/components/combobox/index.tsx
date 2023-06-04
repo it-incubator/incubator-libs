@@ -30,7 +30,6 @@ export type ComboboxProps = {
   /** The value displayed in the textbox */
   inputValue: string
   onInputChange: (value: string) => void
-  error?: boolean
   errorMessage?: string
   portal?: boolean
 }
@@ -44,10 +43,10 @@ export const Combobox: FC<ComboboxProps> = ({
   onChange,
   inputValue,
   onInputChange,
-  error,
   errorMessage,
   portal = true,
 }) => {
+  const showError = !!errorMessage && errorMessage.length > 0
   const inputChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
     onInputChange(e.currentTarget.value)
   }
@@ -60,7 +59,7 @@ export const Combobox: FC<ComboboxProps> = ({
   const classNames = {
     root: s.root,
     box: s.box,
-    input: clsx(textFieldStyle.input, s.input, error && textFieldStyle.error),
+    input: clsx(textFieldStyle.input, s.input, showError && textFieldStyle.error),
     button: clsx(s.button),
     icon: clsx(s.icon),
     content: clsx(selectStyle.content, filteredOptions.length === 0 && s.empty),
@@ -87,16 +86,16 @@ export const Combobox: FC<ComboboxProps> = ({
     >
       <Label label={label}>
         <Float portal={portal} as="div" adaptiveWidth placement="bottom" floatingAs={Fragment}>
-          <div className={classNames.box}>
+          <ComboboxHeadlessUI.Button className={classNames.box} as="div">
             <ComboboxHeadlessUI.Input
               onChange={inputChangeHandler}
               className={classNames.input}
               displayValue={getDisplayingValue}
             />
-            <ComboboxHeadlessUI.Button className={classNames.button} as="div">
+            <div className={classNames.button}>
               <KeyboardArrowDown className={classNames.icon} />
-            </ComboboxHeadlessUI.Button>
-          </div>
+            </div>
+          </ComboboxHeadlessUI.Button>
 
           <ComboboxHeadlessUI.Options as="div" className={classNames.content}>
             <Scrollbar maxHeight={200}>
@@ -104,7 +103,8 @@ export const Combobox: FC<ComboboxProps> = ({
                 <ComboboxHeadlessUI.Option
                   key={option.value}
                   value={option.value}
-                  as="div"
+                  as="button"
+                  type={'button'}
                   className={classNames.item}
                 >
                   <span>{option.label}</span>
@@ -114,7 +114,7 @@ export const Combobox: FC<ComboboxProps> = ({
           </ComboboxHeadlessUI.Options>
         </Float>
       </Label>
-      <>{error && <Typography.Error>{errorMessage}</Typography.Error>}</>
+      <>{showError && <Typography.Error>{errorMessage}</Typography.Error>}</>
     </ComboboxHeadlessUI>
   )
 }

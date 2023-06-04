@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 0.2.2
+### Patch Changes
+
+- remove default error message from text field
+
 ## 0.2.1
 ### Patch Changes
 

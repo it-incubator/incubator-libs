@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 0.2.3
+### Patch Changes
+
+- add whitespace: nowrap to pagination
+
 ## 0.2.2
 ### Patch Changes
 

@@ -64,7 +64,9 @@
   display: flex;
   gap: 12px;
   align-items: center;
+
   color: var(--color-text-primary);
+  white-space: nowrap;
 }
 
 .select {

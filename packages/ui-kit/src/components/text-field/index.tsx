@@ -27,7 +27,7 @@ export const TextField = /* @__PURE__ */ forwardRef<HTMLInputElement, TextFieldP
       onEnter,
       onKeyDown,
       className,
-      errorMessage = 'Error!',
+      errorMessage,
       iconEnd,
       iconStart,
       search,

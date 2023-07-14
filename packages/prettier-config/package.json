@@ -1,10 +1,10 @@
 {
-    "name": "@it-incubator/prettier-config",
-    "version": "0.1.1",
-    "main": "index.js",
-    "author": "Andres",
-    "dependencies": {
-        "prettier": "^2.8.8"
-    },
-    "license": "MIT"
+  "name": "@it-incubator/prettier-config",
+  "version": "0.1.1",
+  "main": "index.js",
+  "author": "Andres",
+  "dependencies": {
+    "prettier": "3.0.0"
+  },
+  "license": "MIT"
 }

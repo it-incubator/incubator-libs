@@ -1,5 +1,10 @@
 # @it-incubator/prettier-config-incubator
 
+## 0.1.2
+### Patch Changes
+
+- bump prettier version
+
 ## 0.1.1
 ### Patch Changes
 

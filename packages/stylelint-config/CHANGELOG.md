@@ -1,5 +1,10 @@
 # @it-incubator/stylelint-config-incubator
 
+## 0.1.5
+### Patch Changes
+
+- bump prettier version
+
 ## 0.1.4
 ### Patch Changes
 

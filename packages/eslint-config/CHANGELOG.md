@@ -1,5 +1,10 @@
 # @it-incubator/eslint-config-incubator
 
+## 0.1.3
+### Patch Changes
+
+- bump prettier version
+
 ## 0.1.2
 ### Patch Changes
 

@@ -1,13 +1,13 @@
 .overlay {
   position: fixed;
-  z-index: 100;
+  z-index: var(--z-index-modal-overlay);
   inset: 0;
   background-color: rgb(0 0 0 / 50%);
 }
 
 .content {
   position: fixed;
-  z-index: 101;
+  z-index: var(--z-index-modal-content);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);

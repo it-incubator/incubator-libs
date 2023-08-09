@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 import { Meta } from '@storybook/react'
 
-import { Button, Modal } from '../../../../src'
+import { Button, Modal, Tooltip } from '../../../../src'
 import { VerticalContainer } from '../../../../storybook-utils/components/containers/vertical'
 import { useDarkMode } from '../../../../storybook-utils/hooks/use-dark-mode'
 
@@ -103,5 +103,13 @@ export const WithoutCloseButton = {
   args: {
     ...commonArgs,
     showCloseButton: false,
+  },
+}
+
+export const WithTooltip = {
+  ...Light,
+  args: {
+    ...Light.args,
+    children: <Tooltip>Проверка работы z-index</Tooltip>,
   },
 }

@@ -57,6 +57,13 @@ export const Default = {
     disabled: false,
   },
 }
+export const WithError = {
+  ...Default,
+  args: {
+    ...Default.args,
+    errorMessage: 'This is an error message',
+  },
+}
 
 export const DefaultDisabled = {
   ...Default,

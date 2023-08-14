@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 0.2.5
+### Patch Changes
+
+- add rating component, add forwardRef to Button, add errorMessage to radio group
+
 ## 0.2.4
 ### Patch Changes
 

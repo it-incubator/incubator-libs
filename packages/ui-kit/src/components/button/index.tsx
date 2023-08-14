@@ -1,4 +1,4 @@
-import { ComponentPropsWithoutRef, FC } from 'react'
+import { ComponentPropsWithoutRef, ElementRef, forwardRef } from 'react'
 
 import { clsx } from 'clsx'
 
@@ -14,16 +14,12 @@ export interface ButtonProps extends DefaultButtonProps {
   fullWidth?: boolean
 }
 
-export const Button: FC<ButtonProps> = ({ variant = 'primary', className, fullWidth, ...rest }) => {
-  const classNames = {
-    root: clsx(
-      variant === 'primary' && s.primary,
-      variant === 'secondary' && s.secondary,
-      variant === 'outlined' && s.outlined,
-      fullWidth && s.fullWidth,
-      className
-    ),
-  }
+export const Button = forwardRef<ElementRef<'button'>, ButtonProps>(
+  ({ variant = 'primary', className, fullWidth, ...rest }, ref) => {
+    const classNames = {
+      root: clsx(s[variant], fullWidth && s.fullWidth, className),
+    }
 
-  return <button className={classNames.root} {...rest} />
-}
+    return <button className={classNames.root} {...rest} ref={ref} />
+  }
+)

@@ -15,7 +15,7 @@
     "build": "vite build && tsc && storybook build",
     "lint:eslint": "eslint \"src/**/*.ts*\"",
     "lint:eslint:fix": "pnpm run lint:eslint --fix",
-    "lint:stylelint": "../stylelint-config/node_modules/stylelint/bin/stylelint.js \"src/**/*.scss\"",
+    "lint:stylelint": "../stylelint-config/node_modules/stylelint/bin/stylelint.mjs \"src/**/*.scss\"",
     "lint:stylelint:fix": "pnpm run lint:stylelint --fix",
     "lint:types": "tsc",
     "lint": "TIMING=1 pnpm run lint:eslint && pnpm run lint:stylelint && pnpm run lint:types",

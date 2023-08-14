@@ -84,11 +84,14 @@ export const Select: FC<SelectProps> = ({
   const showError = !!errorMessage && errorMessage.length > 0
 
   const optionsMap: Record<string | number, string | number> = useMemo(() => {
-    return options.reduce((acc, option) => {
-      acc[option.value] = option.label
+    return options.reduce(
+      (acc, option) => {
+        acc[option.value] = option.label
 
-      return acc
-    }, {} as Record<string | number, string | number>)
+        return acc
+      },
+      {} as Record<string | number, string | number>
+    )
   }, [options])
 
   const classNames = {

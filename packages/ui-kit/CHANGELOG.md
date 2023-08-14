@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 0.2.4
+### Patch Changes
+
+- d141b5a: fix tooltip z-index, add z-index tokens
+
 ## 0.2.3
 ### Patch Changes
 

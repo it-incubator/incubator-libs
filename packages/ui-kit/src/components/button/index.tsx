@@ -1,4 +1,4 @@
-import { ComponentPropsWithoutRef, ElementRef, FC, forwardRef } from 'react'
+import { ComponentPropsWithoutRef, ElementRef, forwardRef } from 'react'
 
 import { clsx } from 'clsx'
 

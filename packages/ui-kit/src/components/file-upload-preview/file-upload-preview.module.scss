@@ -1,0 +1,52 @@
+.thumb {
+  display: inline-flex;
+
+  box-sizing: border-box;
+  width: 48px;
+  height: 48px;
+
+  border: 1px solid var(--color-border-primary);
+  border-radius: 2px;
+}
+
+.thumbInner {
+  overflow: hidden;
+  display: flex;
+  min-width: 0;
+}
+
+.img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.filePreviewContainer {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.cancelButton {
+  all: unset;
+  cursor: pointer;
+  display: flex;
+}
+
+.fileProgress {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.fileSize {
+  color: var(--color-neutral-dark-400);
+
+  :global(.dark-mode) & {
+    color: var(--color-dark-mode-300);
+  }
+}

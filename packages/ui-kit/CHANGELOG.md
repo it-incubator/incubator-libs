@@ -5,6 +5,16 @@
 
 - add rating component, add forwardRef to Button, add errorMessage to radio group
 
+## 0.2.6
+### Patch Changes
+
+- 2a5dd51: add image preview, loader overlay and file uploader components
+
+## 0.2.5
+### Patch Changes
+
+- add rating component, add forwardRef to Button, add errorMessage to radio group
+
 ## 0.2.4
 ### Patch Changes
 

@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { CSSProperties } from 'react'
 
 import * as ProgressPrimitive from '@radix-ui/react-progress'
 import { clsx } from 'clsx'
@@ -7,8 +8,10 @@ import s from './progress.module.scss'
 const Progress = React.forwardRef<
   React.ElementRef<typeof ProgressPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof ProgressPrimitive.Root> & {
-    color?: string
-    width?: string | number
+    color?: CSSProperties['color']
+    baseColor?: CSSProperties['color']
+    width?: CSSProperties['width']
+    height?: CSSProperties['height']
     label?: string | false
   }
 >(
@@ -17,8 +20,10 @@ const Progress = React.forwardRef<
       className,
       value = 0,
       width = '100%',
+      height = '8px',
       max = 100,
       color = 'var(--color-accent-500)',
+      baseColor = 'var(--color-bg-dividers)',
       style,
       label = `${value}/${max}`,
       ...props
@@ -34,7 +39,13 @@ const Progress = React.forwardRef<
 
     return (
       <div className={classNames.container} style={{ width, ...style }}>
-        <ProgressPrimitive.Root ref={ref} className={classNames.root} value={value} {...props}>
+        <ProgressPrimitive.Root
+          ref={ref}
+          className={classNames.root}
+          style={{ height, backgroundColor: baseColor }}
+          value={value}
+          {...props}
+        >
           <ProgressPrimitive.Indicator
             className={classNames.indicator}
             style={{

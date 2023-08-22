@@ -1,0 +1,24 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  box-sizing: border-box;
+  padding: 18px 18px 12px;
+
+  background-color: var(--color-neutral-dark-100);
+  border: 1px dashed rgb(0 0 0 / 50%);
+
+  :global(.dark-mode) & {
+    background-color: var(--color-dark-mode-500);
+    border: 1px dashed var(--color-dark-mode-400);
+  }
+}
+
+.caption {
+  color: var(--color-neutral-dark-400);
+
+  :global(.dark-mode) & {
+    color: var(--color-dark-mode-200);
+  }
+}

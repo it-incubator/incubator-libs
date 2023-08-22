@@ -1,4 +1,11 @@
-import { ComponentProps, ElementType, FC, JSXElementConstructor, ReactNode } from 'react'
+import {
+  ComponentProps,
+  CSSProperties,
+  ElementType,
+  FC,
+  JSXElementConstructor,
+  ReactNode,
+} from 'react'
 
 import { clsx } from 'clsx'
 
@@ -12,18 +19,19 @@ export type TypographyProps<Ttag extends ReactTag> = {
   children: ReactNode
   component?: Ttag
   className?: string
-  mb?: number | string
-  mt?: number | string
-  mr?: number | string
-  ml?: number | string
-  mx?: number | string
-  my?: number | string
+  color?: CSSProperties['color']
+  mb?: CSSProperties['marginBottom']
+  mt?: CSSProperties['marginTop']
+  mr?: CSSProperties['marginRight']
+  ml?: CSSProperties['marginLeft']
+  mx?: CSSProperties['marginRight']
+  my?: CSSProperties['marginLeft']
 } & PropsOf<Ttag>
 
 const createTypographyComponent = <T extends ReactTag>(
   basicClassName: Component
 ): FC<TypographyProps<T>> => {
-  return ({ children, component, className, style, mr, ml, mt, mb, mx, my, ...rest }) => {
+  return ({ children, color, component, className, style, mr, ml, mt, mb, mx, my, ...rest }) => {
     const Component = component || COMPONENTS[basicClassName] || 'span'
 
     const classNames = clsx(s[basicClassName], className)
@@ -35,6 +43,7 @@ const createTypographyComponent = <T extends ReactTag>(
       ...(mb && { marginBottom: mb }),
       ...(mx && { marginRight: mx, marginLeft: mx }),
       ...(my && { marginTop: my, marginBottom: my }),
+      ...(color && { color }),
       ...style,
     }
 
@@ -73,7 +82,7 @@ const COMPONENTS = {
   body1: 'p',
   body2: 'p',
   overline: 'p',
-  caption: 'caption',
+  caption: 'span',
   captionBold: 'caption',
   captionLink: 'a',
   error: 'span',

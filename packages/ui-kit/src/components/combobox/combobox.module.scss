@@ -34,3 +34,10 @@
 .root[data-headlessui-state='open'] .icon {
   transform: rotate(180deg);
 }
+
+.spinner {
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  transform: translateY(-50%);
+}

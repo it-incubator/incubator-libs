@@ -4,7 +4,7 @@ import { Combobox as ComboboxHeadlessUI } from '@headlessui/react'
 import { Float } from '@headlessui-float/react'
 import { clsx } from 'clsx'
 
-import { KeyboardArrowDown, Scrollbar, Typography } from '../../'
+import { KeyboardArrowDown, Scrollbar, Spinner, Typography } from '../../'
 import { Label } from '../label'
 import selectStyle from '../select/select.module.scss'
 import textFieldStyle from '../text-field/text-field.module.scss'
@@ -26,12 +26,14 @@ export type ComboboxProps = {
   name?: string
   label?: string
   /** The function to call when a new option is selected. */
-  onChange: (value: string) => void
+  onChange: (value: string | null) => void
   /** The value displayed in the textbox */
   inputValue: string
   onInputChange: (value: string) => void
   errorMessage?: string
   portal?: boolean
+  isAsync?: boolean
+  isLoading?: boolean
 }
 
 export const Combobox: FC<ComboboxProps> = ({
@@ -45,14 +47,19 @@ export const Combobox: FC<ComboboxProps> = ({
   onInputChange,
   errorMessage,
   portal = true,
+  isAsync,
+  isLoading,
 }) => {
   const showError = !!errorMessage && errorMessage.length > 0
   const inputChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
+    if (e.currentTarget.value === '') {
+      onChange(null)
+    }
     onInputChange(e.currentTarget.value)
   }
 
   const filteredOptions =
-    inputValue === ''
+    inputValue === '' && !isAsync
       ? options
       : options.filter(option => option.label.toLowerCase().includes(inputValue.toLowerCase()))
 
@@ -68,6 +75,7 @@ export const Combobox: FC<ComboboxProps> = ({
     scrollViewport: selectStyle.scrollViewport,
     scrollbar: selectStyle.scrollbar,
     scrollThumb: selectStyle.scrollThumb,
+    spinner: s.spinner,
   }
 
   const getDisplayingValue = (value: string | number) =>
@@ -95,6 +103,11 @@ export const Combobox: FC<ComboboxProps> = ({
             <div className={classNames.button}>
               <KeyboardArrowDown className={classNames.icon} />
             </div>
+            {isLoading && (
+              <div className={classNames.spinner}>
+                <Spinner size={22} />
+              </div>
+            )}
           </ComboboxHeadlessUI.Button>
 
           <ComboboxHeadlessUI.Options as="div" className={classNames.content}>

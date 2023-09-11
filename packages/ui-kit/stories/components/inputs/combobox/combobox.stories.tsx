@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import { Meta } from '@storybook/react'
 
@@ -121,4 +121,46 @@ export const onModal = () => {
       </Modal>
     </div>
   )
+}
+
+export const Async = {
+  render: args => {
+    const [value, setValue] = useState(null)
+    const [inputValue, setInputValue] = useState('')
+    const [options, setOptions] = useState([])
+    const [isLoading, setIsLoading] = useState(false)
+
+    useEffect(() => {
+      setIsLoading(true)
+      fetch(`https://api.flashcards.andrii.es/v1/decks?name=${inputValue}`, {
+        headers: {
+          'x-auth-skip': 'true',
+        },
+      })
+        .then(res => {
+          return res.json()
+        })
+        .then(json => {
+          setOptions(json.items.map(item => ({ value: item.id, label: item.name })))
+        })
+        .finally(() => {
+          setIsLoading(false)
+        })
+    }, [inputValue])
+
+    return (
+      <VerticalContainer>
+        <Combobox
+          value={value}
+          onChange={setValue}
+          inputValue={inputValue}
+          onInputChange={setInputValue}
+          options={options}
+          isAsync={true}
+          isLoading={isLoading}
+        />
+        <div>Selected value: {value}</div>
+      </VerticalContainer>
+    )
+  },
 }

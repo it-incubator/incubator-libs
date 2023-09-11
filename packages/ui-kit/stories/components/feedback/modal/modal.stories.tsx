@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 import { Meta } from '@storybook/react'
 
-import { Button, Modal, Tooltip } from '../../../../src'
+import { Button, Modal, Scrollbar, Tooltip } from '../../../../src'
 import { VerticalContainer } from '../../../../storybook-utils/components/containers/vertical'
 import { useDarkMode } from '../../../../storybook-utils/hooks/use-dark-mode'
 
@@ -111,5 +111,48 @@ export const WithTooltip = {
   args: {
     ...Light.args,
     children: <Tooltip>Проверка работы z-index</Tooltip>,
+  },
+}
+
+export const WithContentOverflow = {
+  ...Light,
+  args: {
+    ...Light.args,
+    children: (
+      <Scrollbar maxHeight="40vh">
+        <div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet blanditiis corporis
+            dolore ducimus, eveniet exercitationem facere impedit magnam, praesentium, quae quo sit.
+            Alias dolores porro quibusdam, sapiente veritatis voluptatibus. Aliquid.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet blanditiis corporis
+            dolore ducimus, eveniet exercitationem facere impedit magnam, praesentium, quae quo sit.
+            Alias dolores porro quibusdam, sapiente veritatis voluptatibus. Aliquid.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet blanditiis corporis
+            dolore ducimus, eveniet exercitationem facere impedit magnam, praesentium, quae quo sit.
+            Alias dolores porro quibusdam, sapiente veritatis voluptatibus. Aliquid.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet blanditiis corporis
+            dolore ducimus, eveniet exercitationem facere impedit magnam, praesentium, quae quo sit.
+            Alias dolores porro quibusdam, sapiente veritatis voluptatibus. Aliquid.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet blanditiis corporis
+            dolore ducimus, eveniet exercitationem facere impedit magnam, praesentium, quae quo sit.
+            Alias dolores porro quibusdam, sapiente veritatis voluptatibus. Aliquid.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet blanditiis corporis
+            dolore ducimus, eveniet exercitationem facere impedit magnam, praesentium, quae quo sit.
+            Alias dolores porro quibusdam, sapiente veritatis voluptatibus. Aliquid.
+          </p>
+        </div>
+      </Scrollbar>
+    ),
   },
 }

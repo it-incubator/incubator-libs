@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 0.2.7
+### Patch Changes
+
+- 2ec975c: add async combobox
+
 ## 0.2.5
 ### Patch Changes
 

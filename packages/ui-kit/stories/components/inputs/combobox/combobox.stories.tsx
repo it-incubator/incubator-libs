@@ -82,6 +82,14 @@ export const SimpleWithLabel = {
   },
 }
 
+export const SimpleWithPlaceholder = {
+  ...Simple,
+  args: {
+    ...Simple.args,
+    placeholder: 'Не выбран',
+  },
+}
+
 export const WithError = {
   ...SimpleWithLabel,
   args: {

@@ -1,3 +1,5 @@
+@forward 'react-loading-skeleton/dist/skeleton.css';
+
 @forward 'typography';
 @forward 'colors';
 @forward 'tokens';
@@ -5,3 +7,4 @@
 @forward 'semantic-color-tokens';
 @forward 'dimensions';
 @forward 'snackbar';
+@forward 'skeleton';

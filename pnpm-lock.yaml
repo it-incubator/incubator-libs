@@ -130,31 +130,6 @@ importers:
         specifier: 4.2.1
         version: 4.2.1(sass@1.62.0)
 
-  packages/md-bundler-client:
-    dependencies:
-      mdx-bundler:
-        specifier: ^9.2.1
-        version: 9.2.1(esbuild@0.19.3)
-    devDependencies:
-      '@it-incubator/eslint-config':
-        specifier: workspace:*
-        version: link:../eslint-config
-      '@it-incubator/prettier-config':
-        specifier: workspace:*
-        version: link:../prettier-config
-      '@it-incubator/stylelint-config':
-        specifier: workspace:*
-        version: link:../stylelint-config
-      prettier:
-        specifier: ^3.0.3
-        version: 3.0.3
-      typescript:
-        specifier: 5.2.2
-        version: 5.2.2
-      vite:
-        specifier: 4.2.1
-        version: 4.2.1(sass@1.62.0)
-
   packages/prettier-config:
     dependencies:
       prettier:
@@ -228,6 +203,9 @@ importers:
       react-dropzone:
         specifier: 14.2.3
         version: 14.2.3(react@18.2.0)
+      react-loading-skeleton:
+        specifier: ^3.3.1
+        version: 3.3.1(react@18.2.0)
       react-use-measure:
         specifier: 2.1.1
         version: 2.1.1(react-dom@18.2.0)(react@18.2.0)
@@ -11138,6 +11116,14 @@ packages:
   /react-is@18.1.0:
     resolution: {integrity: sha512-Fl7FuabXsJnV5Q1qIOQwx/sagGF18kogb4gpfcG4gjLBWO0WDiiz1ko/ExayuxE7InyQkBLkxRFG5oxY6Uu3Kg==}
     dev: true
+
+  /react-loading-skeleton@3.3.1(react@18.2.0):
+    resolution: {integrity: sha512-NilqqwMh2v9omN7LteiDloEVpFyMIa0VGqF+ukqp0ncVlYu1sKYbYGX9JEl+GtOT9TKsh04zCHAbavnQ2USldA==}
+    peerDependencies:
+      react: '>=16.8.0'
+    dependencies:
+      react: 18.2.0
+    dev: false
 
   /react-onclickoutside@6.13.0(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-ty8So6tcUpIb+ZE+1HAhbLROvAIJYyJe/1vRrrcmW+jLsaM+/powDRqxzo6hSh9CuRZGSL1Q8mvcF5WRD93a0A==}

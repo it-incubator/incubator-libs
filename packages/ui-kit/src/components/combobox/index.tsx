@@ -34,6 +34,7 @@ export type ComboboxProps = {
   portal?: boolean
   isAsync?: boolean
   isLoading?: boolean
+  placeholder?: string
 }
 
 export const Combobox: FC<ComboboxProps> = ({
@@ -49,6 +50,7 @@ export const Combobox: FC<ComboboxProps> = ({
   portal = true,
   isAsync,
   isLoading,
+  placeholder,
 }) => {
   const showError = !!errorMessage && errorMessage.length > 0
   const inputChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
@@ -99,6 +101,7 @@ export const Combobox: FC<ComboboxProps> = ({
               onChange={inputChangeHandler}
               className={classNames.input}
               displayValue={getDisplayingValue}
+              placeholder={placeholder}
             />
             <div className={classNames.button}>
               <KeyboardArrowDown className={classNames.icon} />

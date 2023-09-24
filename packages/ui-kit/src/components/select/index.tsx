@@ -118,7 +118,14 @@ export const Select: FC<SelectProps> = ({
     <Listbox {...{ disabled, value, multiple, onChange }}>
       <div className={classNames.root} style={rootStyles}>
         <Label label={label}>
-          <Float portal={portal} as="div" adaptiveWidth placement="bottom" floatingAs={Fragment}>
+          <Float
+            portal={portal}
+            as="div"
+            adaptiveWidth
+            placement="bottom"
+            floatingAs={Fragment}
+            flip={20}
+          >
             <Listbox.Button className={classNames.trigger} type={'button'}>
               <span className={classNames.value}>{selectedOptionsLabels || placeholder}</span>
               <span className={classNames.icon}>

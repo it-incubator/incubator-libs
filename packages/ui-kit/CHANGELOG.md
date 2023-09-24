@@ -1,5 +1,12 @@
 # @it-incubator/ui-kit
 
+## 0.2.8
+### Patch Changes
+
+- 88c5aae: add flip prop to selects portal to avoid collisions
+- 9119ece: add placeholder for Combobox
+- 99260a2: add skeleton component
+
 ## 0.2.7
 ### Patch Changes
 

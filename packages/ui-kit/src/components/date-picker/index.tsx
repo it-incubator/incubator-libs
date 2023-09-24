@@ -76,7 +76,6 @@ export const DatePicker: FC<DatePickerProps> = ({
         onChange={DatePickerHandler}
         selected={startDate}
         selectsRange={isRange}
-        // @ts-expect-error The type of the function is wrong, it will always return a string, not a Date
         formatWeekDay={formatWeekDay}
         placeholderText={placeholder}
         renderCustomHeader={CustomHeader}

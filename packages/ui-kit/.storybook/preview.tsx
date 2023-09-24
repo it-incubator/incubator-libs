@@ -7,6 +7,11 @@ import '@fontsource/roboto'
 import '@fontsource/roboto/500.css'
 import '@fontsource/roboto/700.css'
 export const parameters = {
+  docs: {
+    toc: {
+      headingSelector: 'h1, h2, h3',
+    },
+  },
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
     matchers: {

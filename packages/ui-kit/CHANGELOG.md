@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 0.2.9
+### Patch Changes
+
+- 1aec25d: update dependencies
+
 ## 0.2.8
 ### Patch Changes
 

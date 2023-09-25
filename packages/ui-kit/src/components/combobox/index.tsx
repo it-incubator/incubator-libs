@@ -1,10 +1,10 @@
-import { ChangeEvent, FC, Fragment } from 'react'
+import { ChangeEvent, FC, Fragment, MouseEventHandler } from 'react'
 
 import { Combobox as ComboboxHeadlessUI } from '@headlessui/react'
 import { Float } from '@headlessui-float/react'
 import { clsx } from 'clsx'
 
-import { KeyboardArrowDown, Scrollbar, Spinner, Typography } from '../../'
+import { Close, KeyboardArrowDown, Scrollbar, Spinner, Typography } from '../../'
 import { Label } from '../label'
 import selectStyle from '../select/select.module.scss'
 import textFieldStyle from '../text-field/text-field.module.scss'
@@ -35,9 +35,12 @@ export type ComboboxProps = {
   isAsync?: boolean
   isLoading?: boolean
   placeholder?: string
+  showClearButton?: boolean
+  onClear?: () => void
 }
 
 export const Combobox: FC<ComboboxProps> = ({
+  showClearButton = true,
   value,
   label,
   name,
@@ -51,6 +54,7 @@ export const Combobox: FC<ComboboxProps> = ({
   isAsync,
   isLoading,
   placeholder,
+  onClear,
 }) => {
   const showError = !!errorMessage && errorMessage.length > 0
   const inputChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
@@ -58,6 +62,10 @@ export const Combobox: FC<ComboboxProps> = ({
       onChange(null)
     }
     onInputChange(e.currentTarget.value)
+  }
+  const handleClearButtonClicked: MouseEventHandler<HTMLDivElement> = () => {
+    onInputChange('')
+    onChange(null)
   }
 
   const filteredOptions =
@@ -70,6 +78,7 @@ export const Combobox: FC<ComboboxProps> = ({
     box: s.box,
     input: clsx(textFieldStyle.input, s.input, showError && textFieldStyle.error),
     button: clsx(s.button),
+    clearButton: s.clearButton,
     icon: clsx(s.icon),
     content: clsx(selectStyle.content, filteredOptions.length === 0 && s.empty),
     item: selectStyle.item,
@@ -94,42 +103,49 @@ export const Combobox: FC<ComboboxProps> = ({
       as="div"
       className={classNames.root}
     >
-      <Label label={label}>
-        <Float portal={portal} as="div" adaptiveWidth placement="bottom" floatingAs={Fragment}>
-          <ComboboxHeadlessUI.Button className={classNames.box} as="div">
-            <ComboboxHeadlessUI.Input
-              onChange={inputChangeHandler}
-              className={classNames.input}
-              displayValue={getDisplayingValue}
-              placeholder={placeholder}
-            />
-            <div className={classNames.button}>
-              <KeyboardArrowDown className={classNames.icon} />
-            </div>
-            {isLoading && (
-              <div className={classNames.spinner}>
-                <Spinner size={22} />
-              </div>
-            )}
-          </ComboboxHeadlessUI.Button>
+      <Float portal={portal} as="div" adaptiveWidth placement="bottom" floatingAs={Fragment}>
+        <div className={classNames.box}>
+          <Label label={label}>
+            <ComboboxHeadlessUI.Button as="div">
+              <ComboboxHeadlessUI.Input
+                onChange={inputChangeHandler}
+                className={classNames.input}
+                displayValue={getDisplayingValue}
+                placeholder={placeholder}
+              />
 
-          <ComboboxHeadlessUI.Options as="div" className={classNames.content}>
-            <Scrollbar maxHeight={200}>
-              {filteredOptions.map(option => (
-                <ComboboxHeadlessUI.Option
-                  key={option.value}
-                  value={option.value}
-                  as="button"
-                  type={'button'}
-                  className={classNames.item}
-                >
-                  <span>{option.label}</span>
-                </ComboboxHeadlessUI.Option>
-              ))}
-            </Scrollbar>
-          </ComboboxHeadlessUI.Options>
-        </Float>
-      </Label>
+              <div className={classNames.button}>
+                <KeyboardArrowDown className={classNames.icon} />
+              </div>
+              {isLoading && (
+                <div className={classNames.spinner}>
+                  <Spinner size={22} />
+                </div>
+              )}
+            </ComboboxHeadlessUI.Button>
+          </Label>
+          {showClearButton && !!value && (
+            <div className={classNames.clearButton} onClick={onClear ?? handleClearButtonClicked}>
+              <Close size={18} />
+            </div>
+          )}
+        </div>
+        <ComboboxHeadlessUI.Options as="div" className={classNames.content}>
+          <Scrollbar maxHeight={200}>
+            {filteredOptions.map(option => (
+              <ComboboxHeadlessUI.Option
+                key={option.value}
+                value={option.value}
+                as="button"
+                type={'button'}
+                className={classNames.item}
+              >
+                <span>{option.label}</span>
+              </ComboboxHeadlessUI.Option>
+            ))}
+          </Scrollbar>
+        </ComboboxHeadlessUI.Options>
+      </Float>
       <>{showError && <Typography.Error>{errorMessage}</Typography.Error>}</>
     </ComboboxHeadlessUI>
   )

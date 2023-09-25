@@ -10,12 +10,29 @@
   cursor: pointer;
 
   position: absolute;
-  top: 50%;
   right: 5px;
-  transform: translateY(-50%);
+  bottom: 18px;
+  transform: translateY(50%);
 
   width: 24px;
   height: 24px;
+
+  &[data-headlessui-state='disabled'] {
+    cursor: initial;
+    color: var(--color-text-disabled);
+  }
+}
+
+.clearButton {
+  cursor: pointer;
+
+  position: absolute;
+  right: 29px;
+  bottom: 18px;
+  transform: translateY(50%);
+
+  width: 18px;
+  height: 18px;
 
   &[data-headlessui-state='disabled'] {
     cursor: initial;

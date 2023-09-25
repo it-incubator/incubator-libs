@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 0.2.10
+### Patch Changes
+
+- 8b2db20: add clear button to combobox
+
 ## 0.2.9
 ### Patch Changes
 

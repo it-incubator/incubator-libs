@@ -30,12 +30,14 @@
     "@it-incubator/prettier-config": "workspace:*",
     "@it-incubator/stylelint-config": "workspace:*",
     "prettier": "^3.0.3",
-    "vite": "4.2.1",
-    "typescript": "5.2.2"
+    "typescript": "5.2.2",
+    "vite": "4.2.1"
   },
   "dependencies": {
     "@mdx-js/mdx": "^2.3.0",
     "esbuild": "^0.19.2",
+    "hast-util-from-html": "^2.0.1",
+    "hast-util-to-mdast": "^10.0.1",
     "mdast-util-from-markdown": "^2.0.0",
     "mdast-util-mdx": "^3.0.0",
     "mdast-util-toc": "^7.0.0",

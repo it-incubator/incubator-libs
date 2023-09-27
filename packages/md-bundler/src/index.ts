@@ -1,2 +1,2 @@
-export * from './bundle-mdx'
-export * from './generate-toc'
+export { bundleMdx } from './bundle-mdx'
+export { generateTocFromHtml, generateToc } from './generate-toc'

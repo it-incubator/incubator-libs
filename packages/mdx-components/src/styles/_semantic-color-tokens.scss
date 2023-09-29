@@ -1,0 +1,50 @@
+:root {
+  /* typography */
+  --mdx-color-text-primary: #0d0b0c;
+  --mdx-color-text-neutral: #a3a3a3;
+
+  /* backgrounds */
+  --mdx-color-bg-dividers: #f3f4f6;
+
+  /* borders */
+  --mdx-color-border-primary: #e5e7eb;
+
+  /* callout */
+  --mdx-color-bg-callout-default: #fff7ed;
+  --mdx-color-border-callout-default: #784923;
+  --mdx-color-callout: #9a3412;
+  --mdx-color-bg-callout-error: #fee2e2;
+  --mdx-color-border-callout-error: #fecaca;
+  --mdx-color-callout-error: #7f1d1d;
+  --mdx-color-bg-callout-info: #dbeafe;
+  --mdx-color-border-callout-info: #bfdbfe;
+  --mdx-color-callout-info: #1e3a8a;
+  --mdx-color-bg-callout-warning: #fefce8;
+  --mdx-color-border-callout-warning: #fef9c3;
+  --mdx-color-callout-warning: #713f12;
+}
+
+:root .dark-mode {
+  /* typography */
+  --mdx-color-text-primary: #fffefe;
+
+  /* backgrounds */
+  --mdx-color-bg-dividers: #262626;
+
+  /* borders */
+  --mdx-color-border-primary: #262626;
+
+  /* callout */
+  --mdx-color-bg-callout-default: #3f2a19;
+  --mdx-color-border-callout-default: #784923;
+  --mdx-color-callout-default: #efaf6c;
+  --mdx-color-bg-callout-error: #311313;
+  --mdx-color-border-callout-error: #704a4a;
+  --mdx-color-callout-error: #fecaca;
+  --mdx-color-bg-callout-info: #141c35;
+  --mdx-color-border-callout-info: #485672;
+  --mdx-color-callout-info: #bfdbfe;
+  --mdx-color-bg-callout-warning: #3c280d;
+  --mdx-color-border-callout-warning: #776533;
+  --mdx-color-callout-warning: #fef08a;
+}

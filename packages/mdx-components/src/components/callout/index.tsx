@@ -34,7 +34,7 @@ export const Callout: FC<CalloutProps> = ({
   return (
     <div className={classNames.box}>
       <div className={classNames.emojiContainer}>{emoji}</div>
-      <div className={''}>{children}</div>
+      <div>{children}</div>
     </div>
   )
 }

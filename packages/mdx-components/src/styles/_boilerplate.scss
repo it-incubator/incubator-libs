@@ -23,12 +23,10 @@ option {
 }
 
 body {
-  margin: 0;
-  padding: 0;
-
-  font-family: var(--font-family);
-  line-height: var(--line-height-m);
-  color: var(--color-text-primary);
+  font-family: var(--mdx-font-family);
+  font-size: var(--mdx-font-size-m);
+  line-height: var(--mdx-line-height-m);
+  color: var(--mdx-color-text-primary);
 
   background-color: var(--color-bg-body);
 }

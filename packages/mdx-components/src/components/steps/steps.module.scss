@@ -1,0 +1,43 @@
+.box {
+  counter-reset: step;
+
+  margin-bottom: 3rem;
+  margin-left: 1rem;
+  padding-left: 1.7rem;
+
+  font-size: var(--mdx-font-size-m);
+  line-height: var(--mdx-line-height-m);
+  color: var(--mdx-color-text-primary);
+
+  border-left: 1px solid var(--mdx-color-border-primary);
+}
+
+.box h3 {
+  counter-increment: step;
+
+  margin: 1.5rem 0 0;
+
+  font-size: var(--mdx-font-size-xl);
+  font-weight: 600;
+  line-height: var(--mdx-line-height-l);
+
+  &::before {
+    content: counter(step);
+
+    position: absolute;
+
+    width: 33px;
+    height: 33px;
+    margin-top: 3px;
+    margin-left: -41px;
+
+    font-size: var(--mdx-font-size-m);
+    line-height: var(--mdx-line-height-s);
+    color: var(--mdx-color-text-neutral);
+    text-align: center;
+
+    background-color: var(--mdx-color-bg-dividers);
+    border: 4px solid transparent;
+    border-radius: 50%;
+  }
+}

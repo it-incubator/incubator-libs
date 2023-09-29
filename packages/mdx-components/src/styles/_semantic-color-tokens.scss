@@ -1,6 +1,13 @@
 :root {
   /* typography */
   --mdx-color-text-primary: #0d0b0c;
+  --mdx-color-text-neutral: #a3a3a3;
+
+  /* backgrounds */
+  --mdx-color-bg-dividers: #f3f4f6;
+
+  /* borders */
+  --mdx-color-border-primary: #e5e7eb;
 
   /* callout */
   --mdx-color-bg-callout-default: #fff7ed;
@@ -20,6 +27,12 @@
 :root .dark-mode {
   /* typography */
   --mdx-color-text-primary: #fffefe;
+
+  /* backgrounds */
+  --mdx-color-bg-dividers: #262626;
+
+  /* borders */
+  --mdx-color-border-primary: #262626;
 
   /* callout */
   --mdx-color-bg-callout-default: #3f2a19;

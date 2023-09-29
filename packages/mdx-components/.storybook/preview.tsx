@@ -1,4 +1,5 @@
 import '../src/styles/index.scss'
+import './boilerplate.scss'
 import { DecoratorFn } from '@storybook/react'
 import { clsx } from 'clsx'
 import './theme-block.scss'

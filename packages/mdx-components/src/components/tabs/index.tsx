@@ -1,8 +1,8 @@
 import {
   Children,
-  cloneElement,
   FC,
-  isValidElement,
+  Fragment,
+  JSXElementConstructor,
   ReactElement,
   ReactNode,
   useState,
@@ -15,24 +15,32 @@ import s from './tabs.module.scss'
 
 type TabsProps = {
   tabs: string[]
-  children: ReactNode
+  children:
+    | ReactElement<any, string | JSXElementConstructor<any>>
+    | readonly ReactElement<any, string | JSXElementConstructor<any>>[]
   defaultValue?: string
 }
 
 export const Tabs: FC<TabsProps> = ({ children, tabs, defaultValue }) => {
   const [value, setValue] = useState<string>()
-  const content = Children.map(children, (child, index) => {
-    const element = cloneElement(child as ReactElement<{ value: string }>, {
-      ...child?.props,
-      value: tabs[index],
-    })
 
-    console.log(element)
+  if (!children) {
+    return null
+  }
+  // @ts-expect-error, todo: fix typings
+  const resolvedChildren = children.type === Fragment ? children.props.children : children
 
-    return element
-  })
+  const content = Children.map(
+    resolvedChildren,
+    (child: ReactElement<{ children: ReactNode }>, index) => {
+      return (
+        <TabsRadixUI.Content className={s.content} value={tabs[index]}>
+          {child?.props?.children}
+        </TabsRadixUI.Content>
+      )
+    }
+  )
 
-  console.log('here')
   const classNames = {
     root: s.root,
     list: clsx(s.list),
@@ -64,5 +72,5 @@ export type TabProps = {
 }
 
 export const Tab: FC<TabProps> = ({ children }) => {
-  return <TabsRadixUI.Content className={s.content}>{children}</TabsRadixUI.Content>
+  return <>{children}</>
 }

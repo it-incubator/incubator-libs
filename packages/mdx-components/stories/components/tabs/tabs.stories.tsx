@@ -12,14 +12,13 @@ type Story = StoryObj<typeof meta>
 export default meta
 
 export const Primary: Story = {
-  // @ts-ignore
-  args: {},
-  render: () => {
-    return (
-      <Tabs tabs={['pnpm', 'yarn']}>
+  args: {
+    children: (
+      <>
         <Tab>Content 1</Tab>
         <Tab>Content 2</Tab>
-      </Tabs>
-    )
+      </>
+    ),
+    tabs: ['pnpm', 'yarn'],
   },
 }

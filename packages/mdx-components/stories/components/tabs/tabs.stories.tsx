@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
 
-import { Tab, Tabs } from '../../../src/components/tabs'
+import { Tabs } from '../../../src/components/tabs'
 
 const meta = {
   title: 'Components/Tabs',
@@ -15,10 +15,24 @@ export const Primary: Story = {
   args: {
     children: (
       <>
-        <Tab>Content 1</Tab>
-        <Tab>Content 2</Tab>
+        <Tabs.Tab>
+          <b>pnpm</b>: fast, disk space efficient package manager.
+        </Tabs.Tab>
+        <Tabs.Tab>
+          <b>yarn</b>: is a software packaging system.
+        </Tabs.Tab>
+        <Tabs.Tab>
+          <b>npm</b>: is a package manager for the JavaScript programming language.
+        </Tabs.Tab>
       </>
     ),
-    tabs: ['pnpm', 'yarn'],
+    tabs: ['pnpm', 'yarn', 'npm'],
+  },
+}
+
+export const WithDefaultValue: Story = {
+  args: {
+    ...Primary.args,
+    defaultTab: 'yarn',
   },
 }

@@ -1,59 +1,69 @@
-import {
-  Children,
-  FC,
-  Fragment,
-  JSXElementConstructor,
-  ReactElement,
-  ReactNode,
-  useState,
-} from 'react'
+import { Children, FC, Fragment, ReactElement, ReactNode } from 'react'
 
 import * as TabsRadixUI from '@radix-ui/react-tabs'
 import { clsx } from 'clsx'
 
 import s from './tabs.module.scss'
 
-type TabsProps = {
+export type TabsProps = {
   tabs: string[]
-  children:
-    | ReactElement<any, string | JSXElementConstructor<any>>
-    | readonly ReactElement<any, string | JSXElementConstructor<any>>[]
-  defaultValue?: string
+  /** Use Tab (or Tabs.Tab) components as children. */
+  children: TabsChildren
+  defaultTab?: string
 }
 
-export const Tabs: FC<TabsProps> = ({ children, tabs, defaultValue }) => {
-  const [value, setValue] = useState<string>()
+type TabsChildren = ReactElement | ReactElement[]
 
-  if (!children) {
-    return null
-  }
-  // @ts-expect-error, todo: fix typings
-  const resolvedChildren = children.type === Fragment ? children.props.children : children
-
-  const content = Children.map(
-    resolvedChildren,
-    (child: ReactElement<{ children: ReactNode }>, index) => {
-      return (
-        <TabsRadixUI.Content className={s.content} value={tabs[index]}>
-          {child?.props?.children}
-        </TabsRadixUI.Content>
-      )
-    }
-  )
-
+/**
+ * `Tabs` component
+ *
+ * @example
+ * ```mdx
+ * <Tabs items={['pnpm', 'npm', 'yarn']}>
+ *    <Tabs.Tab>**pnpm**: Fast, disk space efficient package manager.</Tabs.Tab>
+ *    <Tabs.Tab>**npm** is a package manager for the JavaScript programming language.</Tabs.Tab>
+ *    <Tabs.Tab>**Yarn** is a software packaging system.</Tabs.Tab>
+ * </Tabs>
+ * ```
+ */
+export const Tabs = ({ children, tabs, defaultTab }: TabsProps) => {
   const classNames = {
     root: s.root,
     list: clsx(s.list),
     trigger: clsx(s.trigger),
   }
 
+  /**
+   * `resolvedChildren` contains the actual children to be mapped for rendering.
+   * It accounts for both arrays of children and Fragment wrappers.
+   */
+  let resolvedChildren: TabsChildren
+
+  if (Array.isArray(children)) {
+    resolvedChildren = children
+  } else {
+    resolvedChildren = children.type === Fragment ? children.props.children : children
+  }
+
+  /**
+   * Wraps each child with a Radix UI Tab Content component and associates it
+   * with the corresponding tab value from the `tabs` array.
+   */
+  const content = Children.map(
+    resolvedChildren,
+    (child: ReactElement<{ children: ReactNode }>, index) => {
+      return (
+        <TabsRadixUI.Content className={s.content} value={tabs[index]} key={index}>
+          {child?.props?.children}
+        </TabsRadixUI.Content>
+      )
+    }
+  )
+
+  const defaultValue = defaultTab || tabs[0]
+
   return (
-    <TabsRadixUI.Root
-      className={classNames.root}
-      value={value}
-      defaultValue={defaultValue}
-      onValueChange={setValue}
-    >
+    <TabsRadixUI.Root className={classNames.root} defaultValue={defaultValue}>
       <TabsRadixUI.List className={classNames.list}>
         {tabs.map((tab, index) => (
           <TabsRadixUI.Trigger className={classNames.trigger} key={index} value={tab}>
@@ -67,10 +77,11 @@ export const Tabs: FC<TabsProps> = ({ children, tabs, defaultValue }) => {
 }
 
 export type TabProps = {
-  /** A unique value that associates the trigger with a content. */
   children: ReactNode
 }
 
 export const Tab: FC<TabProps> = ({ children }) => {
   return <>{children}</>
 }
+
+Tabs.Tab = Tab

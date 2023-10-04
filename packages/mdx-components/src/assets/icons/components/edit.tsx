@@ -1,6 +1,6 @@
 import { IconWrapper, IconProps } from '../IconWrapper'
 
-const Edit = (allProps: IconProps) => {
+export const Edit = (allProps: IconProps) => {
   const { svgProps: props, ...restProps } = allProps
 
   return (

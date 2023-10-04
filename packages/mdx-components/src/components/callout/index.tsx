@@ -2,7 +2,7 @@ import { FC, ReactNode } from 'react'
 
 import { clsx } from 'clsx'
 
-import InfoOutline from '../../assets/icons/components/InfoOutline'
+import { InfoOutline } from '../../assets/icons'
 
 import s from './callout.module.scss'
 

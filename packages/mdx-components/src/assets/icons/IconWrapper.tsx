@@ -27,8 +27,8 @@ export const IconWrapper: React.FC<{ icon: React.ReactNode } & IconProps> = ({
       aria-hidden="true"
       style={{
         color: color,
-        width: size,
-        height: size,
+        width: restProps.width || size,
+        height: restProps.height || size,
         display: 'inline-flex',
         fontSize: 'inherit',
       }}

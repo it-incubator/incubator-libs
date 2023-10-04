@@ -1,6 +1,6 @@
 import { IconWrapper, IconProps } from '../IconWrapper'
 
-const InfoOutline = (allProps: IconProps) => {
+export const InfoOutline = (allProps: IconProps) => {
   const { svgProps: props, ...restProps } = allProps
 
   return (
@@ -31,5 +31,3 @@ const InfoOutline = (allProps: IconProps) => {
     />
   )
 }
-
-export default InfoOutline

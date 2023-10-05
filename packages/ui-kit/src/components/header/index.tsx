@@ -2,7 +2,7 @@ import { ComponentProps, FC } from 'react'
 
 import { clsx } from 'clsx'
 
-import { Loader } from '../loader/loader'
+import { Loader } from '../loader'
 
 import s from './header.module.scss'
 

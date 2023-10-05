@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 0.2.11
+### Patch Changes
+
+- 013e232: add Loader component and isLoading prop to header
+
 ## 0.2.10
 ### Patch Changes
 

@@ -18,7 +18,7 @@ export const FileTree = ({ children }: FileTreeProps) => {
   }
 
   return (
-    <div className={clsx(classNames.tree)}>
+    <div className={classNames.tree}>
       <div className={classNames.container}>{children}</div>
     </div>
   )
@@ -44,11 +44,17 @@ const Folder = memo<FolderProps>(({ label, name, children, defaultOpen = false }
     setIsOpen(!isOpen)
   }, [isOpen])
 
+  const folderIcon = isOpen ? (
+    <FolderOpen size={14} height={17} />
+  ) : (
+    <FolderIcon size={14} height={17} />
+  )
+
   return (
     <li className={classNames.folderItem}>
       <button onClick={toggle} title={name} className={classNames.folderButton}>
-        <Ident />
-        {isOpen ? <FolderOpen size={14} height={17} /> : <FolderIcon size={14} height={17} />}
+        <Indent />
+        {folderIcon}
         <span>{label ?? name}</span>
       </button>
       {isOpen && (
@@ -76,7 +82,7 @@ const File = memo<FileProps>(({ label, name, active }) => {
   return (
     <li className={classNames.fileItem}>
       <span className={classNames.fileContent}>
-        <Ident />
+        <Indent />
         <FileIcon size={14} height={17} />
         <span className={classNames.fileLabel}>{label ?? name}</span>
       </span>
@@ -96,7 +102,7 @@ const useIndent = () => {
 /**
  * Generates indents based on the current folder/file level.
  */
-const Ident = (): ReactElement => {
+const Indent = (): ReactElement => {
   const length = useIndent()
   const classNames = {
     ident: clsx(s.ident),

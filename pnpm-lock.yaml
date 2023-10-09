@@ -136,6 +136,112 @@ importers:
         specifier: 4.2.1
         version: 4.2.1
 
+  packages/mdx-components:
+    dependencies:
+      '@radix-ui/react-tabs':
+        specifier: 1.0.4
+        version: 1.0.4(@types/react-dom@18.2.7)(@types/react@18.2.22)(react-dom@18.2.0)(react@18.2.0)
+      '@types/node':
+        specifier: 20.6.4
+        version: 20.6.4
+      clsx:
+        specifier: 2.0.0
+        version: 2.0.0
+    devDependencies:
+      '@babel/core':
+        specifier: 7.22.20
+        version: 7.22.20
+      '@fontsource/roboto':
+        specifier: 5.0.8
+        version: 5.0.8
+      '@it-incubator/eslint-config':
+        specifier: workspace:*
+        version: link:../eslint-config
+      '@it-incubator/prettier-config':
+        specifier: workspace:*
+        version: link:../prettier-config
+      '@it-incubator/stylelint-config':
+        specifier: workspace:*
+        version: link:../stylelint-config
+      '@mdx-js/react':
+        specifier: 2.3.0
+        version: 2.3.0(react@18.2.0)
+      '@storybook/addon-actions':
+        specifier: 7.4.4
+        version: 7.4.4(@types/react-dom@18.2.7)(@types/react@18.2.22)(react-dom@18.2.0)(react@18.2.0)
+      '@storybook/addon-docs':
+        specifier: 7.4.4
+        version: 7.4.4(@types/react-dom@18.2.7)(@types/react@18.2.22)(react-dom@18.2.0)(react@18.2.0)
+      '@storybook/addon-essentials':
+        specifier: 7.4.4
+        version: 7.4.4(@types/react-dom@18.2.7)(@types/react@18.2.22)(react-dom@18.2.0)(react@18.2.0)
+      '@storybook/addon-interactions':
+        specifier: 7.4.4
+        version: 7.4.4(@types/react-dom@18.2.7)(@types/react@18.2.22)(react-dom@18.2.0)(react@18.2.0)
+      '@storybook/addon-links':
+        specifier: 7.4.4
+        version: 7.4.4(react-dom@18.2.0)(react@18.2.0)
+      '@storybook/addons':
+        specifier: ^7.4.4
+        version: 7.4.4(react-dom@18.2.0)(react@18.2.0)
+      '@storybook/blocks':
+        specifier: 7.4.4
+        version: 7.4.4(@types/react-dom@18.2.7)(@types/react@18.2.22)(react-dom@18.2.0)(react@18.2.0)
+      '@storybook/react':
+        specifier: 7.4.4
+        version: 7.4.4(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)
+      '@storybook/react-vite':
+        specifier: 7.4.4
+        version: 7.4.4(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)(vite@4.4.9)
+      '@storybook/testing-library':
+        specifier: 0.2.1
+        version: 0.2.1
+      '@storybook/theming':
+        specifier: 7.4.4
+        version: 7.4.4(react-dom@18.2.0)(react@18.2.0)
+      '@types/react':
+        specifier: 18.2.22
+        version: 18.2.22
+      '@types/react-datepicker':
+        specifier: 4.15.0
+        version: 4.15.0(react-dom@18.2.0)(react@18.2.0)
+      '@types/react-dom':
+        specifier: 18.2.7
+        version: 18.2.7
+      '@vitejs/plugin-react':
+        specifier: 4.0.4
+        version: 4.0.4(vite@4.4.9)
+      babel-loader:
+        specifier: 9.1.3
+        version: 9.1.3(@babel/core@7.22.20)(webpack@5.88.1)
+      concurrently:
+        specifier: 8.2.1
+        version: 8.2.1
+      esbuild-sass-plugin:
+        specifier: 2.15.0
+        version: 2.15.0(esbuild@0.19.3)
+      react:
+        specifier: 18.2.0
+        version: 18.2.0
+      react-dom:
+        specifier: 18.2.0
+        version: 18.2.0(react@18.2.0)
+      remark-gfm:
+        specifier: 3.0.1
+        version: 3.0.1
+      sass:
+        specifier: 1.68.0
+        version: 1.68.0
+      storybook:
+        specifier: 7.4.4
+        version: 7.4.4
+      typescript:
+        specifier: 5.2.2
+        version: 5.2.2
+      vite:
+        specifier: 4.4.9
+        version: 4.4.9(@types/node@20.6.4)(sass@1.68.0)
+
   packages/prettier-config:
     dependencies:
       prettier:
@@ -207,8 +313,8 @@ importers:
         specifier: ^10.16.4
         version: 10.16.4(react-dom@18.2.0)(react@18.2.0)
       react-datepicker:
-        specifier: 4.18.0
-        version: 4.18.0(react-dom@18.2.0)(react@18.2.0)
+        specifier: 4.19.0
+        version: 4.19.0(react-dom@18.2.0)(react@18.2.0)
       react-dropzone:
         specifier: 14.2.3
         version: 14.2.3(react@18.2.0)
@@ -1694,15 +1800,6 @@ packages:
 
   /@babel/types@7.22.19:
     resolution: {integrity: sha512-P7LAw/LbojPzkgp5oznjE6tQEIWbp4PkkfrZDINTro9zgBRtI324/EYsiSI7lhPbpIQ+DCeR2NNmMWANGGfZsg==}
-    engines: {node: '>=6.9.0'}
-    dependencies:
-      '@babel/helper-string-parser': 7.22.5
-      '@babel/helper-validator-identifier': 7.22.20
-      to-fast-properties: 2.0.0
-    dev: true
-
-  /@babel/types@7.22.5:
-    resolution: {integrity: sha512-zo3MIHGOkPOfoRXitsgHLjEXmlDaD/5KU1Uzuc9GNiZPhSqVxVRtxuPaSBZDsYZ9qV88AjtMtWW7ww98loJ9KA==}
     engines: {node: '>=6.9.0'}
     dependencies:
       '@babel/helper-string-parser': 7.22.5
@@ -4266,7 +4363,7 @@ packages:
       magic-string: 0.30.3
       remark-external-links: 8.0.0
       remark-slug: 6.1.0
-      rollup: 3.26.2
+      rollup: 3.29.3
       typescript: 5.2.2
       vite: 4.4.9(@types/node@20.6.4)(sass@1.68.0)
     transitivePeerDependencies:
@@ -4291,7 +4388,7 @@ packages:
     dependencies:
       '@babel/core': 7.22.20
       '@babel/preset-env': 7.22.9(@babel/core@7.22.20)
-      '@babel/types': 7.22.5
+      '@babel/types': 7.22.19
       '@ndelangen/get-tarball': 3.0.9
       '@storybook/codemod': 7.4.4
       '@storybook/core-common': 7.4.4
@@ -11234,8 +11331,8 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
     dev: true
 
-  /react-datepicker@4.18.0(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-0MYt3HmLbHVk1sw4v+RCbLAVg5TA3jWP7RyjZbo53PC+SEi+pjdgc92lB53ai/ENZaTOhbXmgni9GzvMrorMAw==}
+  /react-datepicker@4.19.0(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-p2IVcOdtMDGvaq27yBGQm43rWnPVJ3w6EMGOmNoG3Gh/Li9maDIfrAWJUeLXDXAxYbXkIsQRs5SwrHvKP65juA==}
     peerDependencies:
       react: ^16.9.0 || ^17 || ^18
       react-dom: ^16.9.0 || ^17 || ^18

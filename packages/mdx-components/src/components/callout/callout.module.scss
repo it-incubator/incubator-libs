@@ -1,0 +1,40 @@
+.box {
+  display: flex;
+
+  margin-top: 1.5rem;
+  padding: 0.5rem 1rem 0.5rem 0;
+
+  font-size: var(--mdx-font-size-m);
+  line-height: var(--mdx-line-height-m);
+  color: var(--mdx-color-callout-default);
+  overflow-wrap: break-word;
+
+  background-color: var(--mdx-color-bg-callout-default);
+  border: 1px solid var(--mdx-color-border-callout-default);
+  border-radius: 0.5rem;
+
+  &.error {
+    color: var(--mdx-color-callout-error);
+    background-color: var(--mdx-color-bg-callout-error);
+    border-color: var(--mdx-color-border-callout-error);
+  }
+
+  &.info {
+    color: var(--mdx-color-callout-info);
+    background-color: var(--mdx-color-bg-callout-info);
+    border-color: var(--mdx-color-border-callout-info);
+  }
+
+  &.warning {
+    color: var(--mdx-color-callout-warning);
+    background-color: var(--mdx-color-bg-callout-warning);
+    border-color: var(--mdx-color-border-callout-warning);
+  }
+}
+
+.emojiContainer {
+  user-select: none;
+  padding-right: 0.5rem;
+  padding-left: 0.75rem;
+  font-size: 24px;
+}

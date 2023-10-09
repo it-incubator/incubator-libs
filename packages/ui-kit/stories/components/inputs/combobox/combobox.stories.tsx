@@ -56,13 +56,15 @@ export const Simple = {
 
     return (
       <VerticalContainer>
-        <Combobox
-          {...args}
-          value={value}
-          onChange={setValue}
-          inputValue={inputValue}
-          onInputChange={setInputValue}
-        />
+        <div style={{ width: 200 }}>
+          <Combobox
+            {...args}
+            value={value}
+            onChange={setValue}
+            inputValue={inputValue}
+            onInputChange={setInputValue}
+          />
+        </div>
         <div>Selected value: {value}</div>
       </VerticalContainer>
     )

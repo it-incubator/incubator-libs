@@ -11,6 +11,10 @@ const options = [
     label: 'Apple',
   },
   {
+    value: 'qa-internship',
+    label: 'Стажировка для QA manual',
+  },
+  {
     value: 'banana',
     label: 'Banana',
   },
@@ -161,6 +165,27 @@ export const Secondary = {
     placeholder: 'Все курсы',
     disabled: false,
     variant: 'secondary',
+    options,
+  },
+}
+
+export const SmallWithLongItemNames = {
+  render: args => {
+    const [value, setValue] = useState(null)
+
+    return (
+      <VerticalContainer>
+        <div style={{ width: 200 }}>
+          <Select {...args} value={value} onChange={setValue} />
+        </div>
+        <div>Selected value: {value}</div>
+      </VerticalContainer>
+    )
+  },
+
+  args: {
+    placeholder: 'Все курсы',
+    disabled: false,
     options,
   },
 }

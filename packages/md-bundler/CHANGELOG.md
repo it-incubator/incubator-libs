@@ -3,7 +3,7 @@
 ## 0.0.4
 ### Patch Changes
 
-- 78e5cc5: fix: export by name instead of wildcard
+- fix: calendar icon overlapfix: combobox icon overlapfix: select align text to the left
 
 ## 0.0.3
 ### Patch Changes

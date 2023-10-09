@@ -3,7 +3,7 @@
 ## 0.2.11
 ### Patch Changes
 
-- 013e232: add Loader component and isLoading prop to header
+- fix: calendar icon overlapfix: combobox icon overlapfix: select align text to the left
 
 ## 0.2.10
 ### Patch Changes

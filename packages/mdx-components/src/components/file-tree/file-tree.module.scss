@@ -1,0 +1,82 @@
+.tree {
+  user-select: none;
+
+  margin-top: 1.5rem;
+
+  font-size: var(--mdx-font-size-s);
+  line-height: var(--mdx-line-height-xs);
+  color: var(--mdx-color-text-secondary);
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+}
+
+.container {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--mdx-color-border-primary);
+  border-radius: 0.5rem;
+}
+
+/* folder component */
+
+.folderItem {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+}
+
+.folderButton {
+  all: unset;
+
+  cursor: pointer;
+
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
+
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+
+  transition: 200ms opacity;
+
+  &:hover,
+  &:focus {
+    opacity: 0.6;
+  }
+
+  &:focus-visible {
+    outline: 1px solid var(--mdx-color-outline-focus);
+  }
+}
+
+/* file component */
+
+.fileItem {
+  display: flex;
+  list-style: none;
+
+  &.active {
+    color: var(--mdx-color-active);
+  }
+}
+
+.fileContent {
+  display: inline-flex;
+  align-items: center;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+.fileLabel {
+  margin-left: 0.25rem;
+}
+
+/* ident component */
+
+.ident {
+  width: 1.25rem;
+}

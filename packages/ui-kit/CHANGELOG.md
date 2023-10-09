@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 0.2.11
+### Patch Changes
+
+- fix: calendar icon overlapfix: combobox icon overlapfix: select align text to the left
+
 ## 0.2.10
 ### Patch Changes
 

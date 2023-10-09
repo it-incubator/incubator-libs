@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 0.2.14
+### Patch Changes
+
+- add ability to remove flex: 1 from skeleton container
+
 ## 0.2.13
 ### Patch Changes
 

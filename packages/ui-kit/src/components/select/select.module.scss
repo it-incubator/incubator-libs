@@ -19,8 +19,7 @@
   border-radius: var(--border-radius-s);
   outline: none;
 
-  transition:
-    var(--transtition-duration-basic) background-color,
+  transition: var(--transtition-duration-basic) background-color,
     var(--transtition-duration-basic) color;
 
   &::placeholder {
@@ -131,8 +130,7 @@
   border: none; /* Remove button default border */
   outline: none;
 
-  transition:
-    var(--transtition-duration-basic) background-color,
+  transition: var(--transtition-duration-basic) background-color,
     var(--transtition-duration-basic) color;
 
   &[data-headlessui-state='active'],
@@ -143,6 +141,11 @@
   &[data-headlessui-state='selected'],
   &[data-headlessui-state='active selected'] {
     color: var(--color-accent-500);
+  }
+
+  &[data-headlessui-state='disabled'] {
+    cursor: auto;
+    color: var(--color-text-inactive);
   }
 
   &.pagination {

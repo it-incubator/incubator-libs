@@ -17,6 +17,7 @@ const options = [
   {
     value: 'banana',
     label: 'Banana',
+    disabled: true,
   },
   {
     value: 'blueberry',

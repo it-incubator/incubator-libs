@@ -11,10 +11,10 @@ import { Scrollbar } from '../scrollbar'
 import s from './select.module.scss'
 
 type Option =
-  | { label: string; value: string }
-  | { label: string; value: number }
-  | { label: number; value: string }
-  | { label: number; value: number }
+  | { label: string; value: string; disabled?: boolean }
+  | { label: string; value: number; disabled?: boolean }
+  | { label: number; value: string; disabled?: boolean }
+  | { label: number; value: number; disabled?: boolean }
 
 interface CommonProps {
   /** applied to the trigger */
@@ -144,6 +144,7 @@ export const Select: FC<SelectProps> = ({
                       value={option.value}
                       as={'button'}
                       type={'button'}
+                      disabled={option.disabled}
                     >
                       <span>{option.label}</span>
                     </Listbox.Option>

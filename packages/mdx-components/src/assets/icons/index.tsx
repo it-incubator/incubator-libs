@@ -1,1 +1,1 @@
-export { default as Edit } from './components/Edit'
+export * from './components'

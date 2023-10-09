@@ -15,7 +15,8 @@ export const Default = {
     </VerticalContainer>
   ),
   args: {
-    value: 60,
+    value: 195,
     width: '300px',
+    max: 3286,
   },
 }

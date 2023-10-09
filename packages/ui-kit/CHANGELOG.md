@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 0.2.15
+### Patch Changes
+
+- fix progress max value
+
 ## 0.2.14
 ### Patch Changes
 

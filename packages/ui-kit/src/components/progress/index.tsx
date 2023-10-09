@@ -44,6 +44,7 @@ const Progress = React.forwardRef<
           className={classNames.root}
           style={{ height, backgroundColor: baseColor }}
           value={value}
+          max={max}
           {...props}
         >
           <ProgressPrimitive.Indicator

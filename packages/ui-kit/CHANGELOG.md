@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 0.2.13
+### Patch Changes
+
+- 7b7cc60: add disabling for Select options
+
 ## 0.2.11
 ### Patch Changes
 

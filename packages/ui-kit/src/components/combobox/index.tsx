@@ -76,7 +76,12 @@ export const Combobox: FC<ComboboxProps> = ({
   const classNames = {
     root: s.root,
     box: s.box,
-    input: clsx(textFieldStyle.input, s.input, showError && textFieldStyle.error),
+    input: clsx(
+      textFieldStyle.input,
+      s.input,
+      showError && textFieldStyle.error,
+      showClearButton && s.hasClearButton
+    ),
     button: clsx(s.button),
     clearButton: s.clearButton,
     icon: clsx(s.icon),

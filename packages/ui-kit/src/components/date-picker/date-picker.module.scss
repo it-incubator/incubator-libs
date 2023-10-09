@@ -21,9 +21,12 @@
 }
 
 .icon {
+  cursor: pointer;
+
   position: absolute;
   top: 6px;
   right: 12px;
+
   color: var(--color-text-primary);
 
   &.disabled {
@@ -34,6 +37,7 @@
 .input {
   position: relative;
   width: 100%;
+  padding-right: 60px;
 
   &.error {
     color: var(--color-accent-500);
@@ -83,6 +87,10 @@
   margin: 0;
 
   color: var(--color-text-primary);
+}
+
+:global(.react-datepicker-wrapper) {
+  width: 100%;
 }
 
 :global(.react-datepicker__header) {

@@ -3,7 +3,12 @@
 }
 
 .input[data-headlessui-state='open'] {
+  padding-right: 32px;
   border-radius: var(--border-radius-s) var(--border-radius-s) 0 0;
+
+  &.hasClearButton {
+    padding-right: 52px;
+  }
 }
 
 .button {

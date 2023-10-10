@@ -9,6 +9,7 @@ module.exports = {
     'eslint:recommended',
     'plugin:react/recommended',
     'plugin:react/jsx-runtime',
+    'plugin:react-hooks/recommended',
     'prettier/prettier',
     'plugin:import/recommended',
     'plugin:import/typescript',
@@ -36,6 +37,7 @@ module.exports = {
     'import/order': 'off',
     'import/prefer-default-export': 'off',
     'max-lines': ['error', 300],
+    'no-console': ['warn', { allow: ['warn', 'error'] }],
     'no-debugger': 'off',
     'no-duplicate-imports': 'error',
     'no-empty-pattern': 'off',
@@ -81,7 +83,14 @@ module.exports = {
     ],
     'prefer-const': 'error',
     'react/display-name': 'off',
+    'react/jsx-boolean-value': ['error'],
+    'react/jsx-curly-brace-presence': [
+      'error',
+      { children: 'ignore', propElementValues: 'always', props: 'always' },
+    ],
+    'react/jsx-fragments': ['error'],
     'react/prop-types': 'off',
+    'react/void-dom-elements-no-children': ['error'],
   },
   settings: {
     'import/parsers': {

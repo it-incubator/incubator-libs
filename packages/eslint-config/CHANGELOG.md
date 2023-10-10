@@ -1,9 +1,14 @@
 # @it-incubator/eslint-config-incubator
 
+## 1.0.1
+### Patch Changes
+
+- feat: add rules of hooks and minor rules
+
 ## 1.0.0
 ### Major Changes
 
-- * Replace import/order with perfectionist/sort-imports, add rules according to styleguide
+- * feat: Replace import/order with perfectionist/sort-imports, add rules according to styleguide
   * BREAKING: Stricter rules have been introduced, run `eslint --fix` in your project to try and fix all the issues automatically
 
 ## 0.1.3

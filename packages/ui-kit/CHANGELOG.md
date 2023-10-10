@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 0.2.16
+### Patch Changes
+
+- chore: apply new eslint config
+
 ## 0.2.15
 ### Patch Changes
 

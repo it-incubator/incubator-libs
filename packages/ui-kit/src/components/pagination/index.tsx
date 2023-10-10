@@ -184,7 +184,7 @@ export const PerPageSelect: FC<PerPageSelectProps> = ({
         onChange={onPerPageChange}
         options={selectOptions}
         value={perPage}
-        variant="pagination"
+        variant={'pagination'}
       />
       на странице
     </div>

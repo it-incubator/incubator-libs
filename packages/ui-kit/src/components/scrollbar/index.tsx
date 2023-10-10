@@ -36,15 +36,15 @@ export const Scrollbar: FC<ScrollbarProps> = ({
   const viewportStyles = { maxHeight: maxHeightConverted, maxWidth: maxWidthConverted }
 
   return (
-    <ScrollArea.Root asChild={true} type={type}>
+    <ScrollArea.Root asChild type={type}>
       <div className={classNames.root} {...rest}>
         <ScrollArea.Viewport className={classNames.viewport} style={viewportStyles}>
           {children}
         </ScrollArea.Viewport>
-        <ScrollArea.Scrollbar className={classNames.scrollbar} orientation="vertical">
+        <ScrollArea.Scrollbar className={classNames.scrollbar} orientation={'vertical'}>
           <ScrollArea.Thumb className={classNames.thumb} />
         </ScrollArea.Scrollbar>
-        <ScrollArea.Scrollbar className={classNames.scrollbar} orientation="horizontal">
+        <ScrollArea.Scrollbar className={classNames.scrollbar} orientation={'horizontal'}>
           <ScrollArea.Thumb className={classNames.thumb} />
         </ScrollArea.Scrollbar>
       </div>

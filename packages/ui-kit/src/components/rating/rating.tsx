@@ -55,6 +55,15 @@ export const Rating: FC<RatingProps> = ({
   tabIndex,
   value,
 }) => {
+  const translateDisplayValueToValue = useCallback(
+    (displayValue: number): number => {
+      const translatedValue = displayValue * step + start
+
+      return translatedValue === start ? translatedValue + 1 / fractions : translatedValue
+    },
+    [fractions, step, start]
+  )
+
   const handleClick = useCallback(
     (displayValue: number) => {
       const newValue = translateDisplayValueToValue(displayValue)
@@ -65,7 +74,7 @@ export const Rating: FC<RatingProps> = ({
         onChange?.(newValue)
       }
     },
-    [value, onClick, onChange]
+    [value, onClick, onChange, translateDisplayValueToValue]
   )
 
   const handleHover = useCallback(
@@ -75,14 +84,8 @@ export const Rating: FC<RatingProps> = ({
 
       onHover?.(val)
     },
-    [onHover]
+    [onHover, translateDisplayValueToValue]
   )
-
-  const translateDisplayValueToValue = (displayValue: number): number => {
-    const translatedValue = displayValue * step + start
-
-    return translatedValue === start ? translatedValue + 1 / fractions : translatedValue
-  }
 
   const translateValueToDisplayValue = (value?: number): number => {
     if (value === undefined) {

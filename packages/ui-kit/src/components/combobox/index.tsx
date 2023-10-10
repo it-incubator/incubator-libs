@@ -104,13 +104,13 @@ export const Combobox: FC<ComboboxProps> = ({
         onChange,
         value,
       }}
-      as="div"
+      as={'div'}
       className={classNames.root}
     >
-      <Float adaptiveWidth as="div" floatingAs={Fragment} placement="bottom" portal={portal}>
+      <Float adaptiveWidth as={'div'} floatingAs={Fragment} placement={'bottom'} portal={portal}>
         <div className={classNames.box}>
           <Label label={label}>
-            <ComboboxHeadlessUI.Button as="div">
+            <ComboboxHeadlessUI.Button as={'div'}>
               <ComboboxHeadlessUI.Input
                 className={classNames.input}
                 displayValue={getDisplayingValue}
@@ -134,11 +134,11 @@ export const Combobox: FC<ComboboxProps> = ({
             </div>
           )}
         </div>
-        <ComboboxHeadlessUI.Options as="div" className={classNames.content}>
+        <ComboboxHeadlessUI.Options as={'div'} className={classNames.content}>
           <Scrollbar maxHeight={200}>
             {filteredOptions.map(option => (
               <ComboboxHeadlessUI.Option
-                as="button"
+                as={'button'}
                 className={classNames.item}
                 key={option.value}
                 type={'button'}

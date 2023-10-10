@@ -49,9 +49,9 @@ export const Checkbox: FC<CheckboxProps> = ({
               {checked && (
                 <CheckboxRadix.Indicator asChild className={classNames.indicator} forceMount>
                   <motion.div
-                    animate="checked"
-                    exit="unchecked"
-                    initial="unchecked"
+                    animate={'checked'}
+                    exit={'unchecked'}
+                    initial={'unchecked'}
                     variants={{
                       checked: { scale: 1 },
                       unchecked: { scale: 0.5 },

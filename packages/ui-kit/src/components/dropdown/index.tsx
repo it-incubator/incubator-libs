@@ -75,8 +75,8 @@ export const Dropdown = ({ align = 'end', children, className, style, trigger }:
             >
               <motion.div
                 animate={open ? 'open' : 'closed'}
-                exit="closed"
-                initial="closed"
+                exit={'closed'}
+                initial={'closed'}
                 variants={menu}
               >
                 <DropdownMenuRadix.Arrow asChild className={classNames.arrowBox}>

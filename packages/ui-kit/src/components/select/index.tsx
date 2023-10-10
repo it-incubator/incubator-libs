@@ -119,10 +119,10 @@ export const Select: FC<SelectProps> = ({
         <Label label={label}>
           <Float
             adaptiveWidth
-            as="div"
+            as={'div'}
             flip={20}
             floatingAs={Fragment}
-            placement="bottom"
+            placement={'bottom'}
             portal={portal}
           >
             <Listbox.Button className={classNames.trigger} type={'button'}>

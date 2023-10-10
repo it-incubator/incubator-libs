@@ -72,11 +72,11 @@ export const TextField = /* @__PURE__ */ forwardRef<HTMLInputElement, TextFieldP
               data-icon={dataIcon}
               onKeyDown={handleKeyDown}
               ref={ref}
-              type="text"
+              type={'text'}
               {...rest}
             />
             {isShowClearButton && (
-              <button className={classNames.clearButton} onClick={onClearClick} type="button">
+              <button className={classNames.clearButton} onClick={onClearClick} type={'button'}>
                 {<Close color={'var(--color-border-input-active)'} size={20} />}
               </button>
             )}

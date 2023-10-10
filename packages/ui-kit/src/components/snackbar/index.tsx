@@ -9,7 +9,7 @@ export const Snackbar: FC<ToastContainerProps> = props => {
       closeButton={<Close size={16} />}
       hideProgressBar
       icon={Icon}
-      position="top-center"
+      position={'top-center'}
       transition={Flip}
       {...props}
     />

@@ -88,7 +88,7 @@ export const Modal: FC<ModalProps> = ({
               />
             </DialogOverlay>
             <DialogContent asChild className={classNames.content} forceMount>
-              <motion.div animate="visible" exit="exit" initial="hidden" variants={dropIn}>
+              <motion.div animate={'visible'} exit={'exit'} initial={'hidden'} variants={dropIn}>
                 <header className={classNames.header}>
                   <DialogTitle asChild>
                     <h2 className={classNames.title}>{title}</h2>

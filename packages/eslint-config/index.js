@@ -1,17 +1,19 @@
 module.exports = {
   env: {
-    browser: true,
-    node: true,
     amd: true,
+    browser: true,
     es2021: true,
+    node: true,
   },
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
+    'plugin:react/jsx-runtime',
     'prettier/prettier',
     'plugin:import/recommended',
     'plugin:import/typescript',
     'plugin:prettier/recommended',
+    'plugin:perfectionist/recommended-natural',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -21,66 +23,82 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint', 'import'],
+  plugins: ['react', '@typescript-eslint', 'import', 'perfectionist'],
   rules: {
-    'import/order': [
-      'error',
-      {
-        'newlines-between': 'always',
-        pathGroupsExcludedImportTypes: ['react'],
-        alphabetize: {
-          order: 'asc',
-          caseInsensitive: true,
-        },
-        groups: ['builtin', 'external', 'parent', 'sibling', 'index'],
-        pathGroups: [
-          {
-            pattern: 'react',
-            group: 'external',
-            position: 'before',
-          },
-        ],
-      },
-    ],
-    'import/extensions': 'off',
-    'import/prefer-default-export': 'off',
+    'arrow-parens': 'off',
     'consistent-return': 'off',
+    curly: ['error', 'all'],
+    'import/extensions': [
+      'error',
+      { css: 'always', json: 'always', scss: 'always', svg: 'always' },
+    ],
+    'import/no-duplicates': 'off',
+    'import/order': 'off',
+    'import/prefer-default-export': 'off',
+    'max-lines': ['error', 300],
+    'no-debugger': 'off',
+    'no-duplicate-imports': 'error',
+    'no-empty-pattern': 'off',
+    'no-nested-ternary': 'error',
+    'no-undef': 'warn',
+    'no-unused-vars': 'off',
+    'no-var': 'error',
     'padding-line-between-statements': [
       'error',
-      { blankLine: 'always', prev: '*', next: 'return' },
-      { blankLine: 'always', prev: ['const', 'let', 'var'], next: '*' },
+      { blankLine: 'always', next: 'return', prev: '*' },
+      { blankLine: 'always', next: '*', prev: ['const', 'let', 'var'] },
       {
         blankLine: 'any',
-        prev: ['const', 'let', 'var'],
         next: ['const', 'let', 'var'],
+        prev: ['const', 'let', 'var'],
       },
     ],
-    'arrow-parens': 'off',
-    'no-nested-ternary': 'error',
-    'react/prop-types': 'off',
+    'perfectionist/sort-imports': [
+      'error',
+      {
+        'custom-groups': {
+          type: {
+            react: 'react',
+          },
+          value: {
+            react: ['react', 'react-*'],
+          },
+        },
+        groups: [
+          'type',
+          'react',
+          'builtin',
+          'external',
+          'internal-type',
+          'internal',
+          'side-effect',
+          'style',
+        ],
+        'newlines-between': 'always',
+        order: 'asc',
+        type: 'natural',
+      },
+    ],
+    'prefer-const': 'error',
     'react/display-name': 'off',
-    'react/react-in-jsx-scope': 'off',
-    'no-empty-pattern': 'off',
-    'no-debugger': 'off',
-    'no-undef': 'off',
-    'no-unused-vars': 'off',
+    'react/prop-types': 'off',
   },
   settings: {
-    react: {
-      version: 'detect',
-    },
     'import/parsers': {
       '@typescript-eslint/parser': ['.ts', '.tsx'],
     },
-
     'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        paths: ['src'],
+      },
       typescript: {
         alwaysTryTypes: true,
       },
-      node: {
-        paths: ['src'],
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
-      },
+    },
+
+    react: {
+      version: 'detect',
     },
   },
 }

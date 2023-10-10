@@ -1,34 +1,33 @@
 import { FC } from 'react'
 
-import { clsx } from 'clsx'
-
 import { useDeviceType } from '../../hooks'
 import { Button } from '../button'
 import { Modal, ModalProps } from '../modal'
+import { clsx } from 'clsx'
 
 import s from './dialog.module.scss'
 
 export type DialogProps = {
-  confirmButtonText: string
+  cancelButtonText?: string
 
-  onConfirmButtonClick: () => void
+  confirmButtonText: string
   /** If true, confirm button will be secondary and cancel button will be primary
    * defaults to true
    * */
   invertButtons?: boolean
 
-  cancelButtonText?: string
   /** If not provided, onClose will be executed on Cancel click*/
   onCancelButtonClick?: () => void
+  onConfirmButtonClick: () => void
 } & ModalProps
 
 export const Dialog: FC<DialogProps> = ({
-  confirmButtonText,
   cancelButtonText,
-  onConfirmButtonClick,
-  onCancelButtonClick,
-  invertButtons = true,
   children,
+  confirmButtonText,
+  invertButtons = true,
+  onCancelButtonClick,
+  onConfirmButtonClick,
   ...rest
 }) => {
   const { isMobile } = useDeviceType()
@@ -56,17 +55,17 @@ export const Dialog: FC<DialogProps> = ({
       <div className={classNames.buttonsBox}>
         {showCancelButton && (
           <Button
-            onClick={handleCancelButtonClicked}
             fullWidth={isMobile}
+            onClick={handleCancelButtonClicked}
             variant={cancelButtonVariant}
           >
             {cancelButtonText}
           </Button>
         )}
         <Button
-          variant={confirmButtonVariant}
-          onClick={handleConfirmButtonClicked}
           fullWidth={isMobile}
+          onClick={handleConfirmButtonClicked}
+          variant={confirmButtonVariant}
         >
           {confirmButtonText}
         </Button>

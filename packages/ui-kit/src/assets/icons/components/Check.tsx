@@ -1,4 +1,4 @@
-import { IconWrapper, IconProps } from '../IconWrapper'
+import { IconProps, IconWrapper } from '../IconWrapper'
 
 const Check = (allProps: IconProps) => {
   const { svgProps: props, ...restProps } = allProps
@@ -7,10 +7,10 @@ const Check = (allProps: IconProps) => {
     <IconWrapper
       icon={
         <svg
-          width="100%"
+          fill="none"
           height="100%"
           viewBox="0 0 18 18"
-          fill="none"
+          width="100%"
           xmlns="http://www.w3.org/2000/svg"
           {...props}
         >

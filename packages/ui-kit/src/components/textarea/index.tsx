@@ -1,21 +1,20 @@
 import { ChangeEvent, ComponentProps, forwardRef } from 'react'
 
-import { clsx } from 'clsx'
-
 import { Label } from '../label'
 import { Typography } from '../typography'
+import { clsx } from 'clsx'
 
 import s from './textarea.module.scss'
 
 export type TextareaProps = {
-  label?: string
   errorMessage?: string
+  label?: string
   onValueChange?: (text: string) => void
 } & ComponentProps<'textarea'>
 
 // НЕ УДАЛЯТЬ КОММЕНТ ПЕРЕД forwardRef - без него ломается tree shaking
 export const Textarea = /* @__PURE__ */ forwardRef<HTMLTextAreaElement, TextareaProps>(
-  ({ label, className, errorMessage, onChange, onValueChange, ...rest }, ref) => {
+  ({ className, errorMessage, label, onChange, onValueChange, ...rest }, ref) => {
     const showError = !!errorMessage && errorMessage.length > 0
 
     function handleInputValueChanged(e: ChangeEvent<HTMLTextAreaElement>) {
@@ -24,10 +23,10 @@ export const Textarea = /* @__PURE__ */ forwardRef<HTMLTextAreaElement, Textarea
     }
 
     const classNames = {
-      root: clsx(s.box, className),
-      labelBox: s.labelBox,
-      label: s.label,
       input: clsx(s.textarea, showError && s.error),
+      label: s.label,
+      labelBox: s.labelBox,
+      root: clsx(s.box, className),
     }
 
     return (

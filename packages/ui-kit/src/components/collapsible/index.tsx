@@ -1,43 +1,42 @@
 import { ComponentPropsWithoutRef, FC, ReactNode, useEffect, useState } from 'react'
-
-import * as CollapsibleRadix from '@radix-ui/react-collapsible'
-import { clsx } from 'clsx'
-import { motion } from 'framer-motion'
 import useMeasure from 'react-use-measure'
 
 import { KeyboardArrowDown, Typography } from '../../'
+import * as CollapsibleRadix from '@radix-ui/react-collapsible'
+import { clsx } from 'clsx'
+import { motion } from 'framer-motion'
 
 import s from './collapsible.module.scss'
 
 export type CollapsibleProps = {
-  title: string
   children: ReactNode
-  iconComponent?: ReactNode
-  description?: string
-  disabled?: boolean
   collapsible?: boolean
+  contentClassName?: string
   /** The open state of the collapsible when it is initially rendered. Use when you do not need to control its open state.*/
   defaultOpen?: boolean
-  /** The controlled open state of the collapsible. Must be used in conjunction with onOpenChange.*/
-  open?: boolean
+  description?: string
+  disabled?: boolean
+  iconComponent?: ReactNode
+  noPadding?: boolean
   /** Event handler called when the open state of the collapsible changes.*/
   onOpenChange?: (open: boolean) => void
-  contentClassName?: string
-  noPadding?: boolean
+  /** The controlled open state of the collapsible. Must be used in conjunction with onOpenChange.*/
+  open?: boolean
+  title: string
 } & ComponentPropsWithoutRef<'div'>
 
 export const Collapsible: FC<CollapsibleProps> = ({
   children,
-  collapsible,
-  title,
   className,
-  iconComponent,
-  description,
+  collapsible,
   contentClassName,
   defaultOpen,
-  open,
-  onOpenChange,
+  description,
+  iconComponent,
   noPadding,
+  onOpenChange,
+  open,
+  title,
   ...rest
 }) => {
   const styles = {
@@ -60,21 +59,21 @@ export const Collapsible: FC<CollapsibleProps> = ({
   }
 
   const classNames = {
+    arrowIcon: s.arrowIcon,
+    content: clsx(s.content, contentClassName),
+    description: s.description,
     root: clsx(s.root, className),
-    trigger: s.trigger,
-    triggerRow: s.triggerRow,
     titleBox: s.titleBox,
     titleIcons: s.titleIcon,
-    description: s.description,
-    content: clsx(s.content, contentClassName),
-    arrowIcon: s.arrowIcon,
+    trigger: s.trigger,
+    triggerRow: s.triggerRow,
   }
 
   return (
     <CollapsibleRadix.Root
       className={classNames.root}
-      open={isOpen}
       onOpenChange={handleOpenChanged}
+      open={isOpen}
       {...rest}
     >
       <CollapsibleRadix.Trigger className={classNames.trigger}>
@@ -87,20 +86,20 @@ export const Collapsible: FC<CollapsibleProps> = ({
         </div>
         {description && <p className={classNames.description}>{description}</p>}
       </CollapsibleRadix.Trigger>
-      <CollapsibleRadix.Content forceMount asChild>
+      <CollapsibleRadix.Content asChild forceMount>
         <motion.div
-          className={classNames.content}
-          initial={{
+          animate={{
             height: isOpen ? height : 0,
           }}
-          animate={{
+          className={classNames.content}
+          initial={{
             height: isOpen ? height : 0,
           }}
           transition={{
             duration: 0.2,
           }}
         >
-          <div className={s.text} style={styles} ref={measureRef}>
+          <div className={s.text} ref={measureRef} style={styles}>
             {children}
           </div>
         </motion.div>

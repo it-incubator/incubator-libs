@@ -1,6 +1,6 @@
 import {
-  ComponentProps,
   CSSProperties,
+  ComponentProps,
   ElementType,
   FC,
   JSXElementConstructor,
@@ -8,22 +8,26 @@ import {
 } from 'react'
 
 import { clsx } from 'clsx'
+import { JSX } from 'react/jsx-runtime'
 
 import s from './typography.module.scss'
+
+import IntrinsicElements = JSX.IntrinsicElements
+
 export type PropsOf<TTag extends ReactTag> = TTag extends ElementType
   ? Omit<ComponentProps<TTag>, 'ref'>
   : never
-export type ReactTag = keyof JSX.IntrinsicElements | JSXElementConstructor<any>
+export type ReactTag = JSXElementConstructor<any> | keyof IntrinsicElements
 
 export type TypographyProps<Ttag extends ReactTag> = {
   children: ReactNode
-  component?: Ttag
   className?: string
   color?: CSSProperties['color']
+  component?: Ttag
   mb?: CSSProperties['marginBottom']
-  mt?: CSSProperties['marginTop']
-  mr?: CSSProperties['marginRight']
   ml?: CSSProperties['marginLeft']
+  mr?: CSSProperties['marginRight']
+  mt?: CSSProperties['marginTop']
   mx?: CSSProperties['marginRight']
   my?: CSSProperties['marginLeft']
 } & PropsOf<Ttag>
@@ -31,7 +35,7 @@ export type TypographyProps<Ttag extends ReactTag> = {
 const createTypographyComponent = <T extends ReactTag>(
   basicClassName: Component
 ): FC<TypographyProps<T>> => {
-  return ({ children, color, component, className, style, mr, ml, mt, mb, mx, my, ...rest }) => {
+  return ({ children, className, color, component, mb, ml, mr, mt, mx, my, style, ...rest }) => {
     const Component = component || COMPONENTS[basicClassName] || 'span'
 
     const classNames = clsx(s[basicClassName], className)
@@ -41,8 +45,8 @@ const createTypographyComponent = <T extends ReactTag>(
       ...(ml && { marginLeft: ml }),
       ...(mt && { marginTop: mt }),
       ...(mb && { marginBottom: mb }),
-      ...(mx && { marginRight: mx, marginLeft: mx }),
-      ...(my && { marginTop: my, marginBottom: my }),
+      ...(mx && { marginLeft: mx, marginRight: mx }),
+      ...(my && { marginBottom: my, marginTop: my }),
       ...(color && { color }),
       ...style,
     }
@@ -56,37 +60,37 @@ const createTypographyComponent = <T extends ReactTag>(
 }
 
 export const Typography = {
-  H1: createTypographyComponent('h1'),
-  H2: createTypographyComponent('h2'),
-  H3: createTypographyComponent('h3'),
-  Subtitle1: createTypographyComponent('subtitle1'),
-  Subtitle2: createTypographyComponent('subtitle2'),
-  SubtitleLink: createTypographyComponent('subtitleLink'),
   Body1: createTypographyComponent('body1'),
   Body2: createTypographyComponent('body2'),
-  Overline: createTypographyComponent('overline'),
   Caption: createTypographyComponent('caption'),
   CaptionBold: createTypographyComponent('captionBold'),
   CaptionLink: createTypographyComponent('captionLink'),
-  Link: createTypographyComponent('link'),
   Error: createTypographyComponent('error'),
+  H1: createTypographyComponent('h1'),
+  H2: createTypographyComponent('h2'),
+  H3: createTypographyComponent('h3'),
+  Link: createTypographyComponent('link'),
+  Overline: createTypographyComponent('overline'),
+  Subtitle1: createTypographyComponent('subtitle1'),
+  Subtitle2: createTypographyComponent('subtitle2'),
+  SubtitleLink: createTypographyComponent('subtitleLink'),
 }
 
 const COMPONENTS = {
-  h1: 'h1',
-  h2: 'h2',
-  h3: 'h3',
-  subtitle1: 'p',
-  subtitle2: 'p',
-  subtitleLink: 'span',
   body1: 'p',
   body2: 'p',
-  overline: 'p',
   caption: 'span',
   captionBold: 'caption',
   captionLink: 'a',
   error: 'span',
+  h1: 'h1',
+  h2: 'h2',
+  h3: 'h3',
   link: 'a',
+  overline: 'p',
+  subtitle1: 'p',
+  subtitle2: 'p',
+  subtitleLink: 'span',
 } as const
 
 type Component = keyof typeof COMPONENTS

@@ -9,13 +9,13 @@ export type TagProps = {
   variant?: 'primary' | 'secondary'
 } & ComponentProps<'div'>
 
-export const Tag: FC<TagProps> = ({ label, variant = 'primary', className, onClick, ...rest }) => {
+export const Tag: FC<TagProps> = ({ className, label, onClick, variant = 'primary', ...rest }) => {
   const classNames = {
     tag: clsx(s.tag, className, onClick && s.clickable, variant === 'secondary' && s.secondary),
   }
 
   return (
-    <div className={classNames.tag} tabIndex={onClick && 0} onClick={onClick} {...rest}>
+    <div className={classNames.tag} onClick={onClick} tabIndex={onClick && 0} {...rest}>
       {label}
     </div>
   )

@@ -1,60 +1,59 @@
 import { ChangeEvent, FC, Fragment, MouseEventHandler } from 'react'
 
+import { Close, KeyboardArrowDown, Scrollbar, Spinner, Typography } from '../../'
+import { Label } from '../label'
 import { Combobox as ComboboxHeadlessUI } from '@headlessui/react'
 import { Float } from '@headlessui-float/react'
 import { clsx } from 'clsx'
 
-import { Close, KeyboardArrowDown, Scrollbar, Spinner, Typography } from '../../'
-import { Label } from '../label'
 import selectStyle from '../select/select.module.scss'
 import textFieldStyle from '../text-field/text-field.module.scss'
-
 import s from './combobox.module.scss'
 
 type Option = {
   label: string
-  value: string | number
+  value: number | string
 }
 
 export type ComboboxProps = {
-  value: string
+  disabled?: boolean
+  errorMessage?: string
+  /** The value displayed in the textbox */
+  inputValue: string
+  isAsync?: boolean
+  isLoading?: boolean
+  label?: string
+  /** The name of the select. Submitted with its owning form as part of a name/value pair. */
+  name?: string
+  /** The function to call when a new option is selected. */
+  onChange: (value: null | string) => void
+  onClear?: () => void
+  onInputChange: (value: string) => void
   /** The options to display.
    * {label: string, value: string | number} */
   options: Option[]
-  disabled?: boolean
-  /** The name of the select. Submitted with its owning form as part of a name/value pair. */
-  name?: string
-  label?: string
-  /** The function to call when a new option is selected. */
-  onChange: (value: string | null) => void
-  /** The value displayed in the textbox */
-  inputValue: string
-  onInputChange: (value: string) => void
-  errorMessage?: string
-  portal?: boolean
-  isAsync?: boolean
-  isLoading?: boolean
   placeholder?: string
+  portal?: boolean
   showClearButton?: boolean
-  onClear?: () => void
+  value: string
 }
 
 export const Combobox: FC<ComboboxProps> = ({
-  showClearButton = true,
-  value,
-  label,
-  name,
   disabled,
-  options,
-  onChange,
-  inputValue,
-  onInputChange,
   errorMessage,
-  portal = true,
+  inputValue,
   isAsync,
   isLoading,
-  placeholder,
+  label,
+  name,
+  onChange,
   onClear,
+  onInputChange,
+  options,
+  placeholder,
+  portal = true,
+  showClearButton = true,
+  value,
 }) => {
   const showError = !!errorMessage && errorMessage.length > 0
   const inputChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
@@ -74,48 +73,48 @@ export const Combobox: FC<ComboboxProps> = ({
       : options.filter(option => option.label.toLowerCase().includes(inputValue.toLowerCase()))
 
   const classNames = {
-    root: s.root,
     box: s.box,
+    button: clsx(s.button),
+    clearButton: s.clearButton,
+    content: clsx(selectStyle.content, filteredOptions.length === 0 && s.empty),
+    icon: clsx(s.icon),
     input: clsx(
       textFieldStyle.input,
       s.input,
       showError && textFieldStyle.error,
       showClearButton && s.hasClearButton
     ),
-    button: clsx(s.button),
-    clearButton: s.clearButton,
-    icon: clsx(s.icon),
-    content: clsx(selectStyle.content, filteredOptions.length === 0 && s.empty),
     item: selectStyle.item,
+    root: s.root,
     scrollRoot: selectStyle.scrollRoot,
+    scrollThumb: selectStyle.scrollThumb,
     scrollViewport: selectStyle.scrollViewport,
     scrollbar: selectStyle.scrollbar,
-    scrollThumb: selectStyle.scrollThumb,
     spinner: s.spinner,
   }
 
-  const getDisplayingValue = (value: string | number) =>
+  const getDisplayingValue = (value: number | string) =>
     options?.find(option => option.value === value)?.label || ''
 
   return (
     <ComboboxHeadlessUI
       {...{
-        onChange,
-        value,
         disabled,
         name,
+        onChange,
+        value,
       }}
       as="div"
       className={classNames.root}
     >
-      <Float portal={portal} as="div" adaptiveWidth placement="bottom" floatingAs={Fragment}>
+      <Float adaptiveWidth as="div" floatingAs={Fragment} placement="bottom" portal={portal}>
         <div className={classNames.box}>
           <Label label={label}>
             <ComboboxHeadlessUI.Button as="div">
               <ComboboxHeadlessUI.Input
-                onChange={inputChangeHandler}
                 className={classNames.input}
                 displayValue={getDisplayingValue}
+                onChange={inputChangeHandler}
                 placeholder={placeholder}
               />
 
@@ -139,11 +138,11 @@ export const Combobox: FC<ComboboxProps> = ({
           <Scrollbar maxHeight={200}>
             {filteredOptions.map(option => (
               <ComboboxHeadlessUI.Option
-                key={option.value}
-                value={option.value}
                 as="button"
-                type={'button'}
                 className={classNames.item}
+                key={option.value}
+                type={'button'}
+                value={option.value}
               >
                 <span>{option.label}</span>
               </ComboboxHeadlessUI.Option>

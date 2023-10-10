@@ -8,53 +8,52 @@
 import { CSSProperties, FC, ReactElement, useCallback } from 'react'
 
 import { Star, StarBorder } from '../../assets/icons'
-
 import { RatingPrimitive } from './rating-primitive'
 
 export type RatingProps = {
-  start?: number
-  stop?: number
-  step?: number
-  placeholderRating?: number
-  readonly?: boolean
-  quiet?: boolean
-  fractions?: number
-  direction?: 'ltr' | 'rtl'
-  emptySymbol?: string | CSSProperties | ReactElement
-  fullSymbol?: string | CSSProperties | ReactElement
-  placeholderSymbol?: string | CSSProperties | ReactElement
-  value?: number
-  onHover?: (value?: number) => void
-  onClick?: (value: number) => void
-  onChange?: (value: number) => void
-  id?: string
+  'aria-label'?: string
   className?: string
+  direction?: 'ltr' | 'rtl'
+  emptySymbol?: CSSProperties | ReactElement | string
+  fractions?: number
+  fullSymbol?: CSSProperties | ReactElement | string
+  id?: string
+  onChange?: (value: number) => void
+  onClick?: (value: number) => void
+  onHover?: (value?: number) => void
+  placeholderRating?: number
+  placeholderSymbol?: CSSProperties | ReactElement | string
+  quiet?: boolean
+  readonly?: boolean
+  start?: number
+  step?: number
+  stop?: number
   style?: CSSProperties
   tabIndex?: number
-  'aria-label'?: string
+  value?: number
 }
 
 export const Rating: FC<RatingProps> = ({
-  start = 0,
-  stop = 5,
-  step = 1,
-  readonly = false,
-  quiet = false,
-  fractions = 1,
+  ['aria-label']: ariaLabel,
+  className,
   direction = 'ltr',
   emptySymbol = <StarBorder color={'var(--color-border-star-rating)'} />,
-  placeholderSymbol = <Star color={'var(--color-danger-400)'} />,
+  fractions = 1,
   fullSymbol = <Star color={'var(--color-danger-400)'} />,
-  value,
-  placeholderRating,
+  id,
+  onChange,
   onClick,
   onHover,
-  id,
-  className,
-  onChange,
+  placeholderRating,
+  placeholderSymbol = <Star color={'var(--color-danger-400)'} />,
+  quiet = false,
+  readonly = false,
+  start = 0,
+  step = 1,
+  stop = 5,
   style,
   tabIndex,
-  ['aria-label']: ariaLabel,
+  value,
 }) => {
   const handleClick = useCallback(
     (displayValue: number) => {
@@ -99,23 +98,23 @@ export const Rating: FC<RatingProps> = ({
 
   return (
     <RatingPrimitive
-      id={id}
-      style={style}
-      className={className}
-      tabIndex={tabIndex}
       aria-label={ariaLabel}
-      totalSymbols={calculateTotalSymbols(start, stop, step)}
-      value={translateValueToDisplayValue(value)}
-      placeholderValue={translateValueToDisplayValue(placeholderRating)}
-      readonly={readonly}
-      quiet={quiet}
-      fractions={fractions}
+      className={className}
       direction={direction}
       emptySymbol={emptySymbol}
+      fractions={fractions}
       fullSymbol={fullSymbol}
-      placeholderSymbol={placeholderSymbol}
+      id={id}
       onClick={handleClick}
       onHover={handleHover}
+      placeholderSymbol={placeholderSymbol}
+      placeholderValue={translateValueToDisplayValue(placeholderRating)}
+      quiet={quiet}
+      readonly={readonly}
+      style={style}
+      tabIndex={tabIndex}
+      totalSymbols={calculateTotalSymbols(start, stop, step)}
+      value={translateValueToDisplayValue(value)}
     />
   )
 }

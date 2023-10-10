@@ -1,19 +1,18 @@
 import { ComponentProps, FC, ReactNode } from 'react'
 
-import { clsx } from 'clsx'
-
 import { Cancel, Info } from '../..'
 import { Card } from '../card'
+import { clsx } from 'clsx'
 
 import s from './alert.module.scss'
 
 export type AlertProps = {
   children: ReactNode
-  variant?: 'error' | 'warning'
   icon?: ReactNode
+  variant?: 'error' | 'warning'
 } & ComponentProps<'div'>
 
-export const Alert: FC<AlertProps> = ({ children, variant = 'warning', icon, ...rest }) => {
+export const Alert: FC<AlertProps> = ({ children, icon, variant = 'warning', ...rest }) => {
   const classNames = {
     box: s.box,
     content: s.content,
@@ -23,9 +22,9 @@ export const Alert: FC<AlertProps> = ({ children, variant = 'warning', icon, ...
   const iconComponent =
     icon ||
     (isError ? (
-      <Cancel color={'var(--color-accent-500)'} className={s.defaultIcon} />
+      <Cancel className={s.defaultIcon} color={'var(--color-accent-500)'} />
     ) : (
-      <Info color={'var(--color-danger-500)'} className={s.defaultIcon} />
+      <Info className={s.defaultIcon} color={'var(--color-danger-500)'} />
     ))
 
   return (

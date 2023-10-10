@@ -1,60 +1,55 @@
 import { ComponentProps, FC, forwardRef } from 'react'
-
-import { clsx } from 'clsx'
 import { ReactDatePickerCustomHeaderProps, registerLocale } from 'react-datepicker'
 import * as RDP from 'react-datepicker'
+
+import { clsx } from 'clsx'
 
 const RDPC = (((RDP.default as any).default as any) ||
   (RDP.default as any) ||
   (RDP as any)) as typeof RDP.default
 
-import 'react-datepicker/dist/react-datepicker.min.css'
-
 import { CalendarToday, KeyboardArrowLeft, KeyboardArrowRight, Label } from '../../index'
+import { format } from 'date-fns'
+import { ru } from 'date-fns/locale'
 
 import textFieldStyles from './../text-field/text-field.module.scss'
 import s from './date-picker.module.scss'
 
-// eslint-disable-next-line import/order
-import { format } from 'date-fns'
-// eslint-disable-next-line import/order
-import { ru } from 'date-fns/locale'
-
 export type DatePickerProps = {
-  placeholder?: string
-  startDate: Date | null
-  setStartDate: (date: Date | null) => void
-  label?: string
-  errorMessage?: string
   disabled?: boolean
   endDate?: Date | null
+  errorMessage?: string
+  label?: string
+  placeholder?: string
   setEndDate?: (date: Date | null) => void
+  setStartDate: (date: Date | null) => void
+  startDate: Date | null
 } & ComponentProps<'div'>
 registerLocale('ru', ru)
 
 export const DatePicker: FC<DatePickerProps> = ({
-  startDate,
-  setStartDate,
-  placeholder,
-  label,
-  errorMessage,
-  endDate,
-  setEndDate,
-  disabled,
   className,
+  disabled,
+  endDate,
+  errorMessage,
+  label,
+  placeholder,
+  setEndDate,
+  setStartDate,
+  startDate,
   ...rest
 }) => {
   const isRange = endDate !== undefined
   const showError = !!errorMessage && errorMessage.length > 0
 
   const classNames = {
-    root: clsx(s.root, className),
-    inputContainer: s.inputContainer,
-    input: clsx(s.input, textFieldStyles.input, showError && s.error, isRange && s.range),
     calendar: s.calendar,
-    popper: s.popper,
-    errorText: s.errorText,
     day: () => s.day,
+    errorText: s.errorText,
+    input: clsx(s.input, textFieldStyles.input, showError && s.error, isRange && s.range),
+    inputContainer: s.inputContainer,
+    popper: s.popper,
+    root: clsx(s.root, className),
   }
 
   const DatePickerHandler = (dates: [Date | null, Date | null] | Date) => {
@@ -71,24 +66,19 @@ export const DatePicker: FC<DatePickerProps> = ({
   return (
     <div className={classNames.root} {...rest}>
       <RDPC
-        startDate={startDate}
-        endDate={endDate}
-        onChange={DatePickerHandler}
-        selected={startDate}
-        selectsRange={isRange}
-        formatWeekDay={formatWeekDay}
-        placeholderText={placeholder}
-        renderCustomHeader={CustomHeader}
-        customInput={<CustomInput disabled={disabled} label={label} />}
         calendarClassName={classNames.calendar}
-        className={classNames.input}
-        popperClassName={classNames.popper}
-        dayClassName={classNames.day}
-        locale="ru"
-        dateFormat={'dd/MM/yyyy'}
-        showPopperArrow={false}
         calendarStartDay={1}
+        className={classNames.input}
+        customInput={<CustomInput disabled={disabled} label={label} />}
+        dateFormat={'dd/MM/yyyy'}
+        dayClassName={classNames.day}
         disabled={disabled}
+        endDate={endDate}
+        formatWeekDay={formatWeekDay}
+        locale="ru"
+        onChange={DatePickerHandler}
+        placeholderText={placeholder}
+        popperClassName={classNames.popper}
         popperModifiers={[
           {
             name: 'offset',
@@ -97,6 +87,11 @@ export const DatePicker: FC<DatePickerProps> = ({
             },
           },
         ]}
+        renderCustomHeader={CustomHeader}
+        selected={startDate}
+        selectsRange={isRange}
+        showPopperArrow={false}
+        startDate={startDate}
       />
       {showError && <p className={classNames.errorText}>{errorMessage}</p>}
     </div>
@@ -109,16 +104,16 @@ type CustomInputProps = {
 }
 
 const CustomInput = forwardRef<HTMLInputElement, CustomInputProps>(
-  ({ label, disabled, ...rest }, ref) => {
+  ({ disabled, label, ...rest }, ref) => {
     const classNames = {
-      inputContainer: s.inputContainer,
       icon: clsx(s.icon, disabled && s.disabled),
+      inputContainer: s.inputContainer,
     }
 
     return (
       <Label label={label}>
         <div className={classNames.inputContainer}>
-          <input ref={ref} disabled={disabled} {...rest} />
+          <input disabled={disabled} ref={ref} {...rest} />
           <div className={classNames.icon}>
             <CalendarToday />
           </div>
@@ -130,9 +125,9 @@ const CustomInput = forwardRef<HTMLInputElement, CustomInputProps>(
 
 const CustomHeader = ({ date, decreaseMonth, increaseMonth }: ReactDatePickerCustomHeaderProps) => {
   const classNames = {
-    header: s.header,
-    buttonBox: s.buttonBox,
     button: s.button,
+    buttonBox: s.buttonBox,
+    header: s.header,
   }
 
   const headerText = capitalizeFirstLetter(format(date, 'LLLL Y', { locale: ru }))
@@ -141,7 +136,7 @@ const CustomHeader = ({ date, decreaseMonth, increaseMonth }: ReactDatePickerCus
     <div className={classNames.header}>
       <div>{headerText}</div>
       <div className={classNames.buttonBox}>
-        <button className={classNames.button} type={'button'} onClick={decreaseMonth}>
+        <button className={classNames.button} onClick={decreaseMonth} type={'button'}>
           <KeyboardArrowLeft />
         </button>
 

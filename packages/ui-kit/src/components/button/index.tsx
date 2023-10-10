@@ -6,16 +6,16 @@ import s from './button.module.scss'
 
 type DefaultButtonProps = ComponentPropsWithoutRef<'button'>
 
-export type ButtonVariant = 'primary' | 'secondary' | 'outlined'
+export type ButtonVariant = 'outlined' | 'primary' | 'secondary'
 
 export interface ButtonProps extends DefaultButtonProps {
+  fullWidth?: boolean
   /** "primary" | "secondary" | "outlined"; */
   variant?: ButtonVariant
-  fullWidth?: boolean
 }
 
 export const Button = forwardRef<ElementRef<'button'>, ButtonProps>(
-  ({ variant = 'primary', className, fullWidth, ...rest }, ref) => {
+  ({ className, fullWidth, variant = 'primary', ...rest }, ref) => {
     const classNames = {
       root: clsx(s[variant], fullWidth && s.fullWidth, className),
     }

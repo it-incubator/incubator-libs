@@ -1,46 +1,45 @@
 import { ComponentProps, FC, ReactNode, useState } from 'react'
 
+import { InfoOutline } from '../../'
 import * as TooltipRadix from '@radix-ui/react-tooltip'
 import { AnimatePresence, motion } from 'framer-motion'
-
-import { InfoOutline } from '../../'
 
 import s from './tooltip.module.scss'
 
 type CommonProps = {
   children: ReactNode
-  side?: 'top' | 'right' | 'bottom' | 'left'
+  side?: 'bottom' | 'left' | 'right' | 'top'
 } & ComponentProps<'div'>
 
 type ConditionalProps =
   | {
-      icon?: ReactNode
-      component?: never
+      component?: ReactNode
+      icon?: never
     }
   | {
-      icon?: never
-      component?: ReactNode
+      component?: never
+      icon?: ReactNode
     }
 
 export type TooltipProps = CommonProps & ConditionalProps
 const variants = {
   active: {
     opacity: 1,
-    y: 'var(--radix-tooltip-content-transform-origin)',
     transition: { duration: 0.2 },
+    y: 'var(--radix-tooltip-content-transform-origin)',
   },
-  inactive: { opacity: 0, y: -40, transition: { duration: 0.2 } },
+  inactive: { opacity: 0, transition: { duration: 0.2 }, y: -40 },
 }
 
-export const motionProps = { variants, initial: 'inactive', animate: 'active', exit: 'inactive' }
-export const Tooltip: FC<TooltipProps> = ({ children, icon, side = 'top', component, ...rest }) => {
+export const motionProps = { animate: 'active', exit: 'inactive', initial: 'inactive', variants }
+export const Tooltip: FC<TooltipProps> = ({ children, component, icon, side = 'top', ...rest }) => {
   const [open, setOpen] = useState(false)
 
   const classNames = {
+    arrow: s.arrow,
+    arrowBox: s.arrowBox,
     content: s.content,
     iconButton: s.iconButton,
-    arrowBox: s.arrowBox,
-    arrow: s.arrow,
     infoIcon: s.infoIcon,
   }
 
@@ -64,20 +63,20 @@ export const Tooltip: FC<TooltipProps> = ({ children, icon, side = 'top', compon
 
   return (
     <TooltipRadix.Provider delayDuration={DELAY_DURATION} {...rest}>
-      <TooltipRadix.Root open={open} onOpenChange={setOpen}>
+      <TooltipRadix.Root onOpenChange={setOpen} open={open}>
         <TooltipRadix.Trigger asChild>{tooltipTrigger}</TooltipRadix.Trigger>
         <AnimatePresence>
           {open && (
             <TooltipRadix.Portal forceMount>
               <TooltipRadix.Content
-                className={classNames.content}
-                sideOffset={4}
-                side={side}
                 asChild
+                className={classNames.content}
+                side={side}
+                sideOffset={4}
               >
                 <motion.div {...motionProps}>
                   {children}
-                  <TooltipRadix.Arrow className={classNames.arrowBox} asChild>
+                  <TooltipRadix.Arrow asChild className={classNames.arrowBox}>
                     <div className={classNames.arrow} />
                   </TooltipRadix.Arrow>
                 </motion.div>

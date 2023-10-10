@@ -1,8 +1,7 @@
 import { ComponentProps, FC } from 'react'
 
-import { clsx } from 'clsx'
-
 import { Typography } from '../typography'
+import { clsx } from 'clsx'
 
 import s from './table.module.scss'
 
@@ -54,28 +53,28 @@ export const Cell: FC<CellProps> = ({ className, ...rest }) => {
   return <td className={classNames.cell} {...rest} />
 }
 
-export const Empty: FC<ComponentProps<'div'> & { mt?: string; mb?: string }> = ({
+export const Empty: FC<ComponentProps<'div'> & { mb?: string; mt?: string }> = ({
   className,
-  mt = '89px',
   mb,
+  mt = '89px',
 }) => {
   const classNames = {
     empty: clsx(className, s.empty),
   }
 
   return (
-    <Typography.H2 className={classNames.empty} style={{ marginTop: mt, marginBottom: mb }}>
+    <Typography.H2 className={classNames.empty} style={{ marginBottom: mb, marginTop: mt }}>
       Пока тут еще нет данных! :(
     </Typography.H2>
   )
 }
 
 export const Table = {
-  Root,
-  Head,
   Body,
-  Row,
-  HeadCell,
   Cell,
   Empty,
+  Head,
+  HeadCell,
+  Root,
+  Row,
 }

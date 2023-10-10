@@ -1,4 +1,4 @@
-import { IconWrapper, IconProps } from '../IconWrapper'
+import { IconProps, IconWrapper } from '../IconWrapper'
 
 const CanvaIcon1 = (allProps: IconProps) => {
   const { svgProps: props, ...restProps } = allProps
@@ -7,10 +7,10 @@ const CanvaIcon1 = (allProps: IconProps) => {
     <IconWrapper
       icon={
         <svg
-          width="100%"
+          fill="none"
           height="100%"
           viewBox="0 0 24 24"
-          fill="none"
+          width="100%"
           xmlns="http://www.w3.org/2000/svg"
           {...props}
         >
@@ -26,7 +26,7 @@ const CanvaIcon1 = (allProps: IconProps) => {
           </g>
           <defs>
             <clipPath id="prefix__clip0_124_71475">
-              <path fill="#fff" d="M0 0h24v24H0z" />
+              <path d="M0 0h24v24H0z" fill="#fff" />
             </clipPath>
           </defs>
         </svg>

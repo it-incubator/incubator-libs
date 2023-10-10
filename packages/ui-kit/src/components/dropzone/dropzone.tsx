@@ -1,5 +1,4 @@
 import { ReactNode } from 'react'
-
 import ReactDropzone, {
   FileRejection,
   type DropzoneProps as ReactDropzoneProps,
@@ -15,23 +14,25 @@ export interface FileWithPreview extends File {
 }
 
 export type DropzoneProps = {
-  onDrop: (files: Array<FileWithPreview | File>, fileRejections: FileRejection[]) => void
+  additionalInfo?: ReactNode
   dragActiveInfo?: ReactNode
   dragNotActiveInfo?: ReactNode
-  additionalInfo?: ReactNode
+  onDrop: (files: Array<File | FileWithPreview>, fileRejections: FileRejection[]) => void
 } & Omit<ReactDropzoneProps, 'onDrop'>
 
 export const Dropzone = ({
-  onDrop,
+  additionalInfo,
   dragActiveInfo,
   dragNotActiveInfo,
-  additionalInfo,
+  onDrop,
   ...rest
 }: DropzoneProps) => {
   const handleDrop = (acceptedFiles: File[], fileRejections: FileRejection[]) => {
     onDrop(
       acceptedFiles.map(file => {
-        if (!file.type.startsWith('image/')) return file
+        if (!file.type.startsWith('image/')) {
+          return file
+        }
 
         return Object.assign(file, {
           preview: URL.createObjectURL(file),
@@ -43,7 +44,7 @@ export const Dropzone = ({
 
   return (
     <ReactDropzone onDrop={handleDrop} {...rest}>
-      {({ getRootProps, getInputProps, isDragActive }) => (
+      {({ getInputProps, getRootProps, isDragActive }) => (
         <div {...getRootProps()} className={s.root}>
           <input {...getInputProps()} />
           <CloudUpload size={72} />
@@ -56,7 +57,7 @@ export const Dropzone = ({
                     <Typography.Link component={'span'}>выберите</Typography.Link> на компьютере.
                   </Typography.Body2>
                   {additionalInfo ?? (
-                    <Typography.Caption mt={'2px'} className={s.caption}>
+                    <Typography.Caption className={s.caption} mt={'2px'}>
                       Максимальный размер файла 3 MB
                     </Typography.Caption>
                   )}

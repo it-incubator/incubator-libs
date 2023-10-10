@@ -1,37 +1,36 @@
-import { ComponentProps, forwardRef, ReactNode, KeyboardEvent } from 'react'
-
-import { clsx } from 'clsx'
+import { ComponentProps, KeyboardEvent, ReactNode, forwardRef } from 'react'
 
 import { Search as SearchIcon, Typography } from '../../'
 import { Close } from '../../assets/icons'
 import { Label } from '../label'
+import { clsx } from 'clsx'
 
 import s from './text-field.module.scss'
 
 export type TextFieldProps = {
-  value?: string
-  label?: ReactNode
   errorMessage?: string
-  iconStart?: ReactNode
   iconEnd?: ReactNode
-  search?: boolean
-  onEnter?: (e: KeyboardEvent<HTMLInputElement>) => void
+  iconStart?: ReactNode
+  label?: ReactNode
   onClearClick?: () => void
+  onEnter?: (e: KeyboardEvent<HTMLInputElement>) => void
+  search?: boolean
+  value?: string
 } & ComponentProps<'input'>
 
 // НЕ УДАЛЯТЬ КОММЕНТ ПЕРЕД forwardRef - без него ломается tree shaking
 export const TextField = /* @__PURE__ */ forwardRef<HTMLInputElement, TextFieldProps>(
   (
     {
-      label,
-      onEnter,
-      onKeyDown,
       className,
       errorMessage,
       iconEnd,
       iconStart,
-      search,
+      label,
       onClearClick,
+      onEnter,
+      onKeyDown,
+      search,
       ...rest
     },
     ref
@@ -39,7 +38,7 @@ export const TextField = /* @__PURE__ */ forwardRef<HTMLInputElement, TextFieldP
     const showError = !!errorMessage && errorMessage.length > 0
 
     if (search) {
-      iconStart = <SearchIcon size={20} color={'var(--color-text-secondary)'} />
+      iconStart = <SearchIcon color={'var(--color-text-secondary)'} size={20} />
     }
     const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
       if (onEnter && e.key === 'Enter') {
@@ -48,13 +47,13 @@ export const TextField = /* @__PURE__ */ forwardRef<HTMLInputElement, TextFieldP
       onKeyDown?.(e)
     }
     const classNames = {
-      root: clsx(s.box, className),
-      label: s.label,
-      input: clsx(s.input, showError && s.error),
-      iconStart: s.iconStart,
-      iconEnd: s.iconEnd,
-      inputContainer: s.inputContainer,
       clearButton: s.clearButton,
+      iconEnd: s.iconEnd,
+      iconStart: s.iconStart,
+      input: clsx(s.input, showError && s.error),
+      inputContainer: s.inputContainer,
+      label: s.label,
+      root: clsx(s.box, className),
     }
 
     const isShowClearButton = onClearClick && rest?.value?.length! > 0
@@ -70,15 +69,15 @@ export const TextField = /* @__PURE__ */ forwardRef<HTMLInputElement, TextFieldP
             {!!iconStart && <span className={classNames.iconStart}>{iconStart}</span>}
             <input
               className={classNames.input}
-              type="text"
-              ref={ref}
               data-icon={dataIcon}
               onKeyDown={handleKeyDown}
+              ref={ref}
+              type="text"
               {...rest}
             />
             {isShowClearButton && (
               <button className={classNames.clearButton} onClick={onClearClick} type="button">
-                {<Close size={20} color={'var(--color-border-input-active)'} />}
+                {<Close color={'var(--color-border-input-active)'} size={20} />}
               </button>
             )}
             {!!iconEnd && <span className={classNames.iconEnd}>{iconEnd}</span>}

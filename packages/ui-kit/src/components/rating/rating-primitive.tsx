@@ -1,59 +1,59 @@
 import {
-  useState,
-  useEffect,
-  ReactElement,
-  TouchEvent,
-  MouseEvent,
   CSSProperties,
   FC,
+  MouseEvent,
+  ReactElement,
   ReactNode,
+  TouchEvent,
+  useEffect,
+  useState,
 } from 'react'
 
 import { RatingSymbol } from './rating-symbol'
 
 type Symbol =
+  | { [key: string]: any }
+  | Array<{ [key: string]: any } | ReactElement | string>
   | ReactElement
   | string
-  | { [key: string]: any }
-  | Array<ReactElement | string | { [key: string]: any }>
 
 interface Props {
-  totalSymbols: number
-  value: number
-  placeholderValue: number
-  readonly: boolean
-  quiet: boolean
-  fractions: number
-  direction: 'rtl' | 'ltr'
+  ['aria-label']?: string
+  className?: string
+  direction: 'ltr' | 'rtl'
   emptySymbol: Symbol
+  fractions: number
   fullSymbol: Symbol
-  placeholderSymbol?: Symbol
+  id?: string
   onClick: (value: number, event: MouseEvent<HTMLElement> | TouchEvent<HTMLElement>) => void
   onHover: (value?: number) => void
-  className?: string
-  id?: string
+  placeholderSymbol?: Symbol
+  placeholderValue: number
+  quiet: boolean
+  readonly: boolean
   style?: CSSProperties
   tabIndex?: number
-  ['aria-label']?: string
+  totalSymbols: number
+  value: number
 }
 
 export const RatingPrimitive: FC<Props> = ({
-  totalSymbols,
-  value,
-  placeholderValue,
-  readonly,
-  quiet,
-  fractions,
+  className,
   direction,
   emptySymbol,
+  fractions,
   fullSymbol,
-  placeholderSymbol,
+  id,
   onClick,
   onHover,
-  className,
-  id,
+  placeholderSymbol,
+  placeholderValue,
+  quiet,
+  readonly,
   style,
   tabIndex,
+  totalSymbols,
+  value,
   ...props
 }) => {
   const [displayValue, setDisplayValue] = useState<number>(value)
@@ -162,20 +162,20 @@ export const RatingPrimitive: FC<Props> = ({
 
     symbolNodes.push(
       <RatingSymbol
-        key={i}
-        index={i}
-        readonly={readonly}
-        inactiveIcon={empty[i % empty.length]}
         activeIcon={
           shouldDisplayPlaceholder ? placeholder[i % full.length] ?? [] : full[i % full.length]
         }
-        percent={percent}
         direction={direction}
+        inactiveIcon={empty[i % empty.length]}
+        index={i}
+        key={i}
+        percent={percent}
+        readonly={readonly}
         {...(!readonly && {
           onClick: symbolClick,
           onMouseMove: symbolMouseMove,
-          onTouchMove: symbolMouseMove,
           onTouchEnd: symbolEnd,
+          onTouchMove: symbolMouseMove,
         })}
       />
     )
@@ -183,11 +183,11 @@ export const RatingPrimitive: FC<Props> = ({
 
   return (
     <span
-      id={id}
-      style={{ ...style, display: 'inline-block', direction }}
-      className={className}
-      tabIndex={tabIndex}
       aria-label={props['aria-label']}
+      className={className}
+      id={id}
+      style={{ ...style, direction, display: 'inline-block' }}
+      tabIndex={tabIndex}
       {...(!readonly && { onMouseLeave })}
     >
       {symbolNodes as ReactNode}

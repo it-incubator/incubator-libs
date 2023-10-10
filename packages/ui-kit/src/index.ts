@@ -1,7 +1,12 @@
-import '@fontsource/roboto'
-import 'react-toastify/dist/ReactToastify.min.css'
-import './styles/index.scss'
 import { clsx } from 'clsx'
+
+import 'react-toastify/dist/ReactToastify.min.css'
+import 'react-datepicker/dist/react-datepicker.min.css'
+
+import '@fontsource/roboto'
+
+import './styles/index.scss'
+
 export * from './assets/icons'
 export * from './utils'
 export type { IconProps } from './assets/icons/IconWrapper'

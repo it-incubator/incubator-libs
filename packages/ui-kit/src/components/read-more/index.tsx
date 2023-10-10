@@ -3,19 +3,19 @@ import { FC, useState } from 'react'
 import s from './read-more.module.scss'
 
 type ReadMoreProps = {
-  text: string
+  /** text for ReadMore button when text is shown */
+  lessText?: string
   maxLength: number
   /** text for ReadMore button when text is hidden */
   moreText?: string
-  /** text for ReadMore button when text is shown */
-  lessText?: string
+  text: string
 }
 
 export const ReadMore: FC<ReadMoreProps> = ({
-  text,
+  lessText = 'Скрыть',
   maxLength,
   moreText = 'Ещё',
-  lessText = 'Скрыть',
+  text,
 }) => {
   const [isTrimmed, setIsTrimmed] = useState(true)
   const toggleReadMore = () => {
@@ -33,7 +33,7 @@ export const ReadMore: FC<ReadMoreProps> = ({
   return (
     <>
       {textToShow}
-      <button onClick={toggleReadMore} className={s.button}>
+      <button className={s.button} onClick={toggleReadMore}>
         {buttonText}
       </button>
     </>

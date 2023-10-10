@@ -6,50 +6,50 @@ import { LoadingOverlay } from '../loading-overlay'
 import s from './file-uploader.module.scss'
 
 export type FileUploaderProps = {
-  onFileDelete: FileUploadPreviewProps['onFileDelete']
-  uploadedFiles?: FileUploadPreviewProps['files']
+  additionalInfo?: DropzoneProps['additionalInfo']
+  confirmButtonText: DialogProps['confirmButtonText']
 
-  onDrop: DropzoneProps['onDrop']
   dragActiveInfo?: DropzoneProps['dragActiveInfo']
   dragNotActiveInfo?: DropzoneProps['dragNotActiveInfo']
-  additionalInfo?: DropzoneProps['additionalInfo']
-
-  onConfirmButtonClick: DialogProps['onConfirmButtonClick']
-  confirmButtonText: DialogProps['confirmButtonText']
+  isUploading?: boolean
   modalTitle?: DialogProps['title']
+
   onClose: DialogProps['onClose']
+  onConfirmButtonClick: DialogProps['onConfirmButtonClick']
+  onDrop: DropzoneProps['onDrop']
+  onFileDelete: FileUploadPreviewProps['onFileDelete']
   open: DialogProps['open']
 
-  isUploading?: boolean
+  uploadedFiles?: FileUploadPreviewProps['files']
 }
 
 export const FileUploader = ({
-  open,
-  onClose,
-  modalTitle = 'Загрузка файла',
-  onDrop,
-  onFileDelete,
+  confirmButtonText,
   dragActiveInfo,
   dragNotActiveInfo,
-  uploadedFiles,
-  onConfirmButtonClick,
-  confirmButtonText,
   isUploading,
+  modalTitle = 'Загрузка файла',
+  onClose,
+  onConfirmButtonClick,
+  onDrop,
+  onFileDelete,
+  open,
+  uploadedFiles,
 }: FileUploaderProps) => {
   return (
     <>
       <Dialog
+        confirmButtonText={confirmButtonText}
+        onClose={onClose}
+        onConfirmButtonClick={onConfirmButtonClick}
         open={open}
         title={modalTitle}
-        onClose={onClose}
-        confirmButtonText={confirmButtonText}
-        onConfirmButtonClick={onConfirmButtonClick}
       >
         {isUploading && <LoadingOverlay />}
         <Dropzone
-          onDrop={onDrop}
           dragActiveInfo={dragActiveInfo}
           dragNotActiveInfo={dragNotActiveInfo}
+          onDrop={onDrop}
         />
         <div className={s.container}>
           <FileUploadPreview files={uploadedFiles} onFileDelete={onFileDelete} />

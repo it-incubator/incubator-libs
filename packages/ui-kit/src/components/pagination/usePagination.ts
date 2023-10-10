@@ -3,7 +3,7 @@ import { useCallback, useMemo } from 'react'
 // original code: https://www.freecodecamp.org/news/build-a-custom-pagination-component-in-react/
 
 const range = (start: number, end: number) => {
-  let length = end - start + 1
+  const length = end - start + 1
 
   /*
   	Create an array of certain length and set the elements within it from
@@ -16,14 +16,14 @@ const DOTS = '...'
 
 type UsePaginationParamType = {
   count: number
-  siblings?: number
-  page: number
   onChange: (pageNumber: number) => void
+  page: number
+  siblings?: number
 }
 
-type PaginationRange = (number | '...')[]
+type PaginationRange = ('...' | number)[]
 
-export const usePagination = ({ count, siblings = 1, page, onChange }: UsePaginationParamType) => {
+export const usePagination = ({ count, onChange, page, siblings = 1 }: UsePaginationParamType) => {
   const paginationRange = useMemo(() => {
     // Pages count is determined as siblingCount + firstPage + lastPage + page + 2*DOTS
     const totalPageNumbers = siblings + 5
@@ -58,8 +58,8 @@ export const usePagination = ({ count, siblings = 1, page, onChange }: UsePagina
     	Case 2: No left dots to show, but rights dots to be shown
     */
     if (!shouldShowLeftDots && shouldShowRightDots) {
-      let leftItemCount = 3 + 2 * siblings
-      let leftRange = range(1, leftItemCount)
+      const leftItemCount = 3 + 2 * siblings
+      const leftRange = range(1, leftItemCount)
 
       return [...leftRange, DOTS, count]
     }
@@ -68,8 +68,8 @@ export const usePagination = ({ count, siblings = 1, page, onChange }: UsePagina
     	Case 3: No right dots to show, but left dots to be shown
     */
     if (shouldShowLeftDots && !shouldShowRightDots) {
-      let rightItemCount = 3 + 2 * siblings
-      let rightRange = range(count - rightItemCount + 1, count)
+      const rightItemCount = 3 + 2 * siblings
+      const rightRange = range(count - rightItemCount + 1, count)
 
       return [firstPageIndex, DOTS, ...rightRange]
     }
@@ -78,7 +78,7 @@ export const usePagination = ({ count, siblings = 1, page, onChange }: UsePagina
     	Case 4: Both left and right dots to be shown
     */
     if (shouldShowLeftDots && shouldShowRightDots) {
-      let middleRange = range(leftSiblingIndex, rightSiblingIndex)
+      const middleRange = range(leftSiblingIndex, rightSiblingIndex)
 
       return [firstPageIndex, DOTS, ...middleRange, DOTS, lastPageIndex]
     }
@@ -102,11 +102,11 @@ export const usePagination = ({ count, siblings = 1, page, onChange }: UsePagina
   }
 
   return {
-    paginationRange,
-    isFirstPage,
-    isLastPage,
     handleMainPageClicked,
     handleNextPageClicked,
     handlePreviousPageClicked,
+    isFirstPage,
+    isLastPage,
+    paginationRange,
   }
 }

@@ -5,40 +5,40 @@ import { clsx } from 'clsx'
 import s from './card.module.scss'
 
 type CommonProps = {
-  contentClassName?: string
   children: ReactNode
+  contentClassName?: string
 } & ComponentProps<'div'>
 
 type ConditionalProps =
   | {
-      variant?: 'primary'
+      iconComponent?: ReactNode
       title?: string
-      iconComponent?: JSX.Element
+      variant?: 'primary'
     }
   | {
-      variant?: 'info'
-      title?: never
       iconComponent?: never
+      title?: never
+      variant?: 'info'
     }
 
 export type CardProps = CommonProps & ConditionalProps
 
 export const Card: FC<CardProps> = ({
   children,
-  title,
-  iconComponent,
-  variant = 'primary',
   className,
   contentClassName,
+  iconComponent,
+  title,
+  variant = 'primary',
   ...rest
 }) => {
   const isInfo = variant === 'info'
 
   const classNames = {
     box: clsx(s.box, isInfo && s.info, className),
-    title: s.title,
     content: clsx(s.content, contentClassName),
     icon: s.icon,
+    title: s.title,
   }
 
   return (

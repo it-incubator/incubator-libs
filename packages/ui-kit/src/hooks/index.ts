@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
-const getDeviceType = (): 'mobile' | 'desktop' => {
+const getDeviceType = (): 'desktop' | 'mobile' => {
   if (typeof window === 'undefined') {
     return 'mobile'
   }
@@ -9,7 +9,7 @@ const getDeviceType = (): 'mobile' | 'desktop' => {
 }
 
 export const useDeviceType = () => {
-  const [deviceType, setDeviceType] = useState<'mobile' | 'desktop'>(() => getDeviceType())
+  const [deviceType, setDeviceType] = useState<'desktop' | 'mobile'>(() => getDeviceType())
 
   useEffect(() => {
     const handleResize = () => {

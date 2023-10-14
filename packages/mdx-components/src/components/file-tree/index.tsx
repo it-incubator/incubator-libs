@@ -45,9 +45,9 @@ const Folder = memo<FolderProps>(({ label, name, children, defaultOpen = false }
   }, [isOpen])
 
   const folderIcon = isOpen ? (
-    <FolderOpen size={14} height={17} />
+    <FolderOpen size={14} height={14} />
   ) : (
-    <FolderIcon size={14} height={17} />
+    <FolderIcon size={14} height={14} />
   )
 
   return (
@@ -83,7 +83,7 @@ const File = memo<FileProps>(({ label, name, active }) => {
     <li className={classNames.fileItem}>
       <span className={classNames.fileContent}>
         <Indent />
-        <FileIcon size={14} height={17} />
+        <FileIcon size={14} height={14} />
         <span className={classNames.fileLabel}>{label ?? name}</span>
       </span>
     </li>
@@ -105,13 +105,13 @@ const useIndent = () => {
 const Indent = (): ReactElement => {
   const length = useIndent()
   const classNames = {
-    ident: clsx(s.ident),
+    indent: clsx(s.indent),
   }
 
   return (
     <>
       {Array.from({ length }, (_, i) => (
-        <span className={classNames.ident} key={i} />
+        <span className={classNames.indent} key={i} />
       ))}
     </>
   )

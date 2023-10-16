@@ -1,4 +1,4 @@
-import { ComponentProps, FC } from 'react'
+import { ComponentProps } from 'react'
 
 import { Typography } from '../typography'
 import { clsx } from 'clsx'
@@ -69,7 +69,7 @@ const MessageHeader = ({ isCurrentUser, isFirst, role, username }: MessageHeader
     username: s.username,
   }
 
-  const isShowHeader = !isCurrentUser && (role || username) && isFirst
+  const isShowHeader = getShowHeader(isCurrentUser, role, username, isFirst)
 
   if (!isShowHeader) {
     return null
@@ -83,4 +83,25 @@ const MessageHeader = ({ isCurrentUser, isFirst, role, username }: MessageHeader
       {role && <Typography.Caption className={classNames.role}>{role}</Typography.Caption>}
     </div>
   )
+}
+
+function getShowHeader(
+  isCurrentUser?: boolean,
+  role?: string,
+  username?: string,
+  isFirst?: boolean
+) {
+  if (isCurrentUser) {
+    return false
+  }
+
+  if (!isFirst) {
+    return false
+  }
+
+  if (!role && !username) {
+    return false
+  }
+
+  return true
 }

@@ -10,9 +10,12 @@
   height: 100vh;
   padding: 1rem;
 
+  color: #0d0b0c;
+
   background: #fffefe;
 
   &.dark-mode {
+    color: #fffefe;
     background: #0e1720;
   }
 

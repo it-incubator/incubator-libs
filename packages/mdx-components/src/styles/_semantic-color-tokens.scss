@@ -29,6 +29,10 @@
   --mdx-color-bg-callout-warning: #fefce8;
   --mdx-color-border-callout-warning: #fef9c3;
   --mdx-color-callout-warning: #713f12;
+
+  /* scrollbar */
+  --mdx-color-scrollbar-thumb: #d9d7d8;
+  --mdx-color-scrollbar-thumb-hover: #b3b0b1;
 }
 
 :root .dark-mode {
@@ -61,4 +65,8 @@
   --mdx-color-bg-callout-warning: #3c280d;
   --mdx-color-border-callout-warning: #776533;
   --mdx-color-callout-warning: #fef08a;
+
+  /* scrollbar */
+  --mdx-color-scrollbar-thumb: #747d86;
+  --mdx-color-scrollbar-thumb-hover: #46515e;
 }

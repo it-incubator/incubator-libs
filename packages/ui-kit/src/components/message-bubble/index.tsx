@@ -46,16 +46,18 @@ export const MessageBubble: FC<MessageBubbleProps> = ({
 
   const isShowHeader = !isCurrentUser && (role || username) && isFirst
 
+  const messageHeader = isShowHeader ? (
+    <div className={classNames.header}>
+      {!isCurrentUser && (
+        <Typography.Subtitle1 className={classNames.username}>{username}</Typography.Subtitle1>
+      )}
+      {role && <Typography.Caption className={classNames.role}>{role}</Typography.Caption>}
+    </div>
+  ) : null
+
   return (
     <div {...restProps} className={classNames.box}>
-      {isShowHeader && (
-        <div className={classNames.header}>
-          {!isCurrentUser && (
-            <Typography.Subtitle1 className={classNames.username}>{username}</Typography.Subtitle1>
-          )}
-          {role && <Typography.Caption className={classNames.role}>{role}</Typography.Caption>}
-        </div>
-      )}
+      {messageHeader}
       <Typography.Body2 className={classNames.message}>{message}</Typography.Body2>
       <time className={classNames.time}>{time}</time>
     </div>

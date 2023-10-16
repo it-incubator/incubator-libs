@@ -6,7 +6,7 @@
   width: fit-content;
   padding: 6px 12px;
 
-  background-color: var(--color-neutral-dark-50);
+  background-color: var(--color-bg-focus);
   border-radius: 6px;
 
 
@@ -20,7 +20,7 @@
     width: 15px;
     height: 12px;
 
-    background: var(--color-neutral-dark-50);
+    background: var(--color-bg-focus);
 
     /* stylelint-disable property-no-vendor-prefix */
     // webkit prefix is necessary for correct work
@@ -48,17 +48,12 @@
   margin-bottom: 6px;
 }
 
-.username {
-  color: var(--neutral-dark-900);
-}
-
 .role {
-  color: var(--color-neutral-dark-300);
+  color: var(--color-text-secondary);
 }
 
 .message {
   margin-bottom: 6px;
-  color: var(--color-neutral-dark-900);
 
   &.currentUser {
     color: var(--color-neutral-light-50);
@@ -68,7 +63,7 @@
 .time {
   font-size: var(--font-size-xs);
   line-height: 16px;
-  color: var(--color-neutral-dark-300);
+  color: var(--color-text-secondary);
 
   &.currentUser {
     color: var(--color-info-200);

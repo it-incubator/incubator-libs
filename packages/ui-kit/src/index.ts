@@ -50,6 +50,8 @@ export * from './components/tooltip'
 export * from './components/typography'
 export * from './components/date-picker'
 export * from './components/chip'
+export * from './components/message-bubble'
+export * from './components/message-input'
 
 export * from './hooks'
 export { clsx }

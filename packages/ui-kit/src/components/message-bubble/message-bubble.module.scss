@@ -1,0 +1,71 @@
+.box {
+  /* stylelint-disable custom-property-pattern */
+  // todo: fix stylelint config to allow this
+  --_bg-color: var(--bg-color, var(--color-bg-focus));
+  --_text-color-message: var(--text-color-message, var(--color-text-primary));
+  --_text-color-time: var(--text-color-time, var(--color-text-secondary));
+
+  position: relative;
+
+  align-self: start;
+
+  width: fit-content;
+  padding: 6px 12px;
+
+  background-color: var(--_bg-color);
+  border-radius: 6px;
+
+  &.isFirst::before {
+    content: '';
+
+    position: absolute;
+    top: 0;
+    left: -6px;
+
+    width: 15px;
+    height: 12px;
+
+    background-color: inherit;
+
+    /* stylelint-disable property-no-vendor-prefix */
+    // webkit prefix is necessary for correct work
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='12' %3E%3Cpath d='M9 0H1.8C.338 0 0 1.5 1.35 3S8.5 9.5 9 11 9 0 9 0Z'/%3E%3Cpath d='M15 0H9v12h6z'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='12' %3E%3Cpath d='M9 0H1.8C.338 0 0 1.5 1.35 3S8.5 9.5 9 11 9 0 9 0Z'/%3E%3Cpath d='M15 0H9v12h6z'/%3E%3C/svg%3E");
+  }
+
+  &.currentUser {
+    --bg-color: var(--color-info-500);
+    --text-color-message: var(--color-neutral-light-50);
+    --text-color-time: var(--color-info-200);
+
+    align-self: end;
+
+    &.isFirst::before {
+      right: -6px;
+      left: auto;
+      transform: scaleX(-1);
+    }
+  }
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.role {
+  color: var(--color-text-secondary);
+}
+
+.message {
+  margin-bottom: 6px;
+  color: var(--_text-color-message);
+}
+
+.time {
+  font-size: var(--font-size-xs);
+  line-height: 16px;
+  color: var(--_text-color-time);
+}

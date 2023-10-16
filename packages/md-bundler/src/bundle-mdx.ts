@@ -8,7 +8,7 @@ import rehypeSlug from 'rehype-slug'
 
 export const bundleMdx = async (source: string): Promise<BundledMdx> => {
   return await bundleMDX({
-    globals: { components: '@it-incubator/mdx-components' },
+    globals: { '@it-incubator/mdx-components': 'components' },
     mdxOptions(options) {
       options.rehypePlugins = [
         ...(options.rehypePlugins ?? []),

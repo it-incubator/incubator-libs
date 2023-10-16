@@ -1,9 +1,15 @@
-import { createContext, memo, useCallback, useContext, useState } from 'react'
-import type { ReactElement, ReactNode } from 'react'
-
-import { clsx } from 'clsx'
+import {
+  ReactElement,
+  ReactNode,
+  createContext,
+  memo,
+  useCallback,
+  useContext,
+  useState,
+} from 'react'
 
 import { FileIcon, FolderIcon, FolderOpen } from '../../assets/icons'
+import { clsx } from 'clsx'
 
 import s from './file-tree.module.scss'
 
@@ -13,8 +19,8 @@ export type FileTreeProps = {
 
 export const FileTree = ({ children }: FileTreeProps) => {
   const classNames = {
-    tree: s.tree,
     container: s.container,
+    tree: s.tree,
   }
 
   return (
@@ -25,19 +31,19 @@ export const FileTree = ({ children }: FileTreeProps) => {
 }
 
 export type FolderProps = {
-  name: string
-  label?: ReactElement
-  defaultOpen?: boolean
   children: ReactNode
+  defaultOpen?: boolean
+  label?: ReactElement
+  name: string
 }
 
-const Folder = memo<FolderProps>(({ label, name, children, defaultOpen = false }) => {
+const Folder = memo<FolderProps>(({ children, defaultOpen = false, label, name }) => {
   const indent = useIndent()
   const [isOpen, setIsOpen] = useState(defaultOpen)
 
   const classNames = {
-    folderItem: s.folderItem,
     folderButton: s.folderButton,
+    folderItem: s.folderItem,
   }
 
   const toggle = useCallback(() => {
@@ -45,14 +51,14 @@ const Folder = memo<FolderProps>(({ label, name, children, defaultOpen = false }
   }, [isOpen])
 
   const folderIcon = isOpen ? (
-    <FolderOpen size={14} height={14} />
+    <FolderOpen height={14} size={14} />
   ) : (
-    <FolderIcon size={14} height={14} />
+    <FolderIcon height={14} size={14} />
   )
 
   return (
     <li className={classNames.folderItem}>
-      <button onClick={toggle} title={name} className={classNames.folderButton}>
+      <button className={classNames.folderButton} onClick={toggle} title={name}>
         <Indent />
         {folderIcon}
         <span>{label ?? name}</span>
@@ -67,15 +73,15 @@ const Folder = memo<FolderProps>(({ label, name, children, defaultOpen = false }
 })
 
 export type FileProps = {
-  name: string
-  label?: ReactElement
   active?: boolean
+  label?: ReactElement
+  name: string
 }
 
-const File = memo<FileProps>(({ label, name, active }) => {
+const File = memo<FileProps>(({ active, label, name }) => {
   const classNames = {
-    fileItem: clsx(s.fileItem, active && s.active),
     fileContent: clsx(s.fileContent),
+    fileItem: clsx(s.fileItem, active && s.active),
     fileLabel: clsx(s.fileLabel),
   }
 
@@ -83,7 +89,7 @@ const File = memo<FileProps>(({ label, name, active }) => {
     <li className={classNames.fileItem}>
       <span className={classNames.fileContent}>
         <Indent />
-        <FileIcon size={14} height={14} />
+        <FileIcon height={14} size={14} />
         <span className={classNames.fileLabel}>{label ?? name}</span>
       </span>
     </li>

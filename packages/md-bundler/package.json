@@ -14,6 +14,7 @@
   "scripts": {
     "build": "vite build && tsc",
     "lint:eslint": "eslint \"src/**/*.ts*\"",
+    "lint:fix": "eslint \"src/**/*.ts*\" --fix",
     "lint:eslint:fix": "pnpm run lint:eslint --fix",
     "lint:types": "tsc",
     "lint": "TIMING=1 pnpm run lint:eslint && pnpm run lint:types",

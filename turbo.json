@@ -10,6 +10,7 @@
       "dependsOn": []
     },
     "lint": {},
+    "lint:fix": {},
     "lint:stylelint": {},
     "lint:eslint": {},
     "lint:types": {},

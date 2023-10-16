@@ -6,9 +6,9 @@ import s from './cards.module.scss'
 
 export type CardProps<T extends ElementType> = {
   as?: T
-  title: string
-  icon: ReactNode
   href: string
+  icon: ReactNode
+  title: string
 } & ComponentPropsWithoutRef<T>
 
 export const Card = <T extends ElementType = 'a'>(props: CardProps<T>) => {
@@ -16,12 +16,12 @@ export const Card = <T extends ElementType = 'a'>(props: CardProps<T>) => {
 
   const classNames = {
     card: s.card,
-    title: s.title,
     icon: s.icon,
+    title: s.title,
   }
 
   return (
-    <Component href={href} className={classNames.card} {...rest}>
+    <Component className={classNames.card} href={href} {...rest}>
       <span className={clsx(classNames.title)}>
         <span className={classNames.icon}>{icon}</span>
         {title}

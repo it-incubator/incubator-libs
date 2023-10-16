@@ -1,21 +1,21 @@
 import * as React from 'react'
 
 export type IconProps = {
+  /** Whether to scale icon according to font-size. Sets width and height to 1em. */
+  autoSize?: boolean
   /** Set icon fill color from design system */
   color?: string
   /** Set width and height of icon in pixels */
   size?: number
-  /** Whether to scale icon according to font-size. Sets width and height to 1em. */
-  autoSize?: boolean
   /** Props to pass directly to svg element */
   svgProps?: React.SVGProps<SVGSVGElement>
 } & Omit<React.HTMLProps<HTMLSpanElement>, 'color' | 'size'>
 
 export const IconWrapper: React.FC<{ icon: React.ReactNode } & IconProps> = ({
-  icon,
-  color: colorProp,
-  size: sizeProp,
   autoSize,
+  color: colorProp,
+  icon,
+  size: sizeProp,
   ...restProps
 }) => {
   const color = colorProp ? colorProp : 'currentColor'
@@ -23,14 +23,14 @@ export const IconWrapper: React.FC<{ icon: React.ReactNode } & IconProps> = ({
 
   return (
     <span
-      role="img"
-      aria-hidden="true"
+      aria-hidden={'true'}
+      role={'img'}
       style={{
         color: color,
-        width: restProps.width ?? size,
-        height: restProps.height ?? size,
         display: 'inline-flex',
         fontSize: 'inherit',
+        height: restProps.height ?? size,
+        width: restProps.width ?? size,
       }}
       {...restProps}
     >

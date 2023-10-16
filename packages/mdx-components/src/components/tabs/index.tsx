@@ -6,10 +6,10 @@ import { clsx } from 'clsx'
 import s from './tabs.module.scss'
 
 export type TabsProps = {
-  tabs: string[]
   /** Use Tab (or Tabs.Tab) components as children. */
   children: TabsChildren
   defaultTab?: string
+  tabs: string[]
 }
 
 type TabsChildren = ReactElement | ReactElement[]
@@ -26,10 +26,10 @@ type TabsChildren = ReactElement | ReactElement[]
  * </Tabs>
  * ```
  */
-export const Tabs = ({ children, tabs, defaultTab }: TabsProps) => {
+export const Tabs = ({ children, defaultTab, tabs }: TabsProps) => {
   const classNames = {
-    root: s.root,
     list: clsx(s.list),
+    root: s.root,
     trigger: clsx(s.trigger),
   }
 
@@ -53,7 +53,7 @@ export const Tabs = ({ children, tabs, defaultTab }: TabsProps) => {
     resolvedChildren,
     (child: ReactElement<{ children: ReactNode }>, index) => {
       return (
-        <TabsRadixUI.Content className={s.content} value={tabs[index]} key={index}>
+        <TabsRadixUI.Content className={s.content} key={index} value={tabs[index]}>
           {child?.props?.children}
         </TabsRadixUI.Content>
       )

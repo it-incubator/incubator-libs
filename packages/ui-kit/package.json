@@ -19,6 +19,7 @@
     "lint:stylelint:fix": "pnpm run lint:stylelint --fix",
     "lint:types": "tsc",
     "lint": "pnpm run lint:eslint && pnpm run lint:stylelint && pnpm run lint:types",
+    "lint:fix": "pnpm run lint:eslint:fix && pnpm run lint:types",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
     "dev": "storybook dev -p 6006",
     "start": "vite",

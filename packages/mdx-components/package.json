@@ -65,10 +65,26 @@
     "@radix-ui/react-tabs": "1.0.4",
     "@types/node": "20.6.4",
     "clsx": "2.0.0",
+    "loki": "^0.32.0",
     "mdx-bundler": "^9.2.1"
   },
   "peerDependencies": {
     "react": ">=18.0.2",
     "react-dom": ">=18.0.2"
+  },
+  "loki": {
+    "configurations": {
+      "chrome.laptop": {
+        "target": "chrome.app",
+        "width": 1366,
+        "height": 768,
+        "deviceScaleFactor": 1,
+        "mobile": false
+      },
+      "chrome.iphone7": {
+        "target": "chrome.app",
+        "preset": "iPhone 7"
+      }
+    }
   }
 }

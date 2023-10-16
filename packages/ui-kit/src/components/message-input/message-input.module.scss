@@ -35,6 +35,10 @@
   color: var(--color-accent-500);
 
   transition: var(--transtition-duration-basic) color;
+
+  &:focus-visible {
+    outline: 1px solid var(--color-outline-focus);
+  }
   
   &:disabled {
     cursor: default;

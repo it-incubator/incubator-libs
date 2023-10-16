@@ -79,6 +79,7 @@
     "@types/node": "20.6.4",
     "clsx": "2.0.0",
     "framer-motion": "^10.16.4",
+    "loki": "^0.32.0",
     "react-datepicker": "4.19.0",
     "react-dropzone": "14.2.3",
     "react-loading-skeleton": "^3.3.1",
@@ -88,5 +89,20 @@
     "react": ">=18.0.2",
     "react-dom": ">=18.0.2",
     "react-toastify": ">=9.1.1"
+  },
+  "loki": {
+    "configurations": {
+      "chrome.laptop": {
+        "target": "chrome.app",
+        "width": 1366,
+        "height": 768,
+        "deviceScaleFactor": 1,
+        "mobile": false
+      },
+      "chrome.iphone7": {
+        "target": "chrome.app",
+        "preset": "iPhone 7"
+      }
+    }
   }
 }

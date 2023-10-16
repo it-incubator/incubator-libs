@@ -37,11 +37,11 @@ export const MessageBubble: FC<MessageBubbleProps> = ({
 }) => {
   const classNames = {
     box: clsx(s.box, isCurrentUser && s.currentUser, isFirst && s.isFirst, className),
-    header: clsx(s.header),
-    message: clsx(s.message, isCurrentUser && s.currentUser),
-    role: clsx(s.role),
-    time: clsx(s.time, isCurrentUser && s.currentUser),
-    username: clsx(s.username),
+    header: s.header,
+    message: s.message,
+    role: s.role,
+    time: s.time,
+    username: s.username,
   }
 
   const isShowHeader = !isCurrentUser && (role || username) && isFirst

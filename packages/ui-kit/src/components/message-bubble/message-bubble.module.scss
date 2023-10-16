@@ -1,4 +1,10 @@
 .box {
+  /* stylelint-disable custom-property-pattern */
+  // todo: fix stylelint config to allow this
+  --_bg-color: var(--bg-color, var(--color-bg-focus));
+  --_text-color-message: var(--text-color-message, var(--color-text-primary));
+  --_text-color-time: var(--text-color-time, var(--color-text-secondary));
+
   position: relative;
 
   align-self: start;
@@ -6,9 +12,8 @@
   width: fit-content;
   padding: 6px 12px;
 
-  background-color: var(--color-bg-focus);
+  background-color: var(--_bg-color);
   border-radius: 6px;
-
 
   &.isFirst::before {
     content: '';
@@ -20,7 +25,7 @@
     width: 15px;
     height: 12px;
 
-    background: var(--color-bg-focus);
+    background-color: inherit;
 
     /* stylelint-disable property-no-vendor-prefix */
     // webkit prefix is necessary for correct work
@@ -29,14 +34,16 @@
   }
 
   &.currentUser {
+    --bg-color: var(--color-info-500);
+    --text-color-message: var(--color-neutral-light-50);
+    --text-color-time: var(--color-info-200);
+
     align-self: end;
-    background-color: var(--color-info-500);
 
     &.isFirst::before {
       right: -6px;
       left: auto;
       transform: scaleX(-1);
-      background-color: var(--color-info-500);
     }
   }
 }
@@ -54,18 +61,11 @@
 
 .message {
   margin-bottom: 6px;
-
-  &.currentUser {
-    color: var(--color-neutral-light-50);
-  }
+  color: var(--_text-color-message);
 }
 
 .time {
   font-size: var(--font-size-xs);
   line-height: 16px;
-  color: var(--color-text-secondary);
-
-  &.currentUser {
-    color: var(--color-info-200);
-  }
+  color: var(--_text-color-time);
 }

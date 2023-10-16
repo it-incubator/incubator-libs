@@ -64,9 +64,9 @@ type MessageHeaderProps = {
 
 const MessageHeader = ({ isCurrentUser, isFirst, role, username }: MessageHeaderProps) => {
   const classNames = {
-    header: clsx(s.header),
-    role: clsx(s.role),
-    username: clsx(s.username),
+    header: s.header,
+    role: s.role,
+    username: s.username,
   }
 
   const isShowHeader = !isCurrentUser && (role || username) && isFirst

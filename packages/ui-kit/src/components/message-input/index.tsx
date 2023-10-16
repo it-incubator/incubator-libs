@@ -14,7 +14,7 @@ export const MessageInput = forwardRef<HTMLInputElement, MessageInputProps>(
   ({ boxClassName, buttonProps, className, ...restProps }, ref) => {
     const classNames = {
       box: clsx(s.box, boxClassName),
-      button: clsx(s.button),
+      button: s.button,
       input: clsx(s.input, className),
     }
 

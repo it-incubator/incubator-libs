@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 0.2.17
+### Patch Changes
+
+- d3d36be: add BubbleMessage and MessageInput components
+
 ## 0.2.16
 ### Patch Changes
 

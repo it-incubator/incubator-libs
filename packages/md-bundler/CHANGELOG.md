@@ -1,5 +1,15 @@
 # @it-incubator/md-bundler
 
+## 0.0.6
+### Patch Changes
+
+- remove getMDXComponent export from the package
+
+## 0.0.5
+### Patch Changes
+
+- add getMDXComponent export from the package
+
 ## 0.0.4
 ### Patch Changes
 

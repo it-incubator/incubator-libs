@@ -5,7 +5,7 @@ import { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
   component: Prose,
-  title: 'Components/Prose',
+  title: 'Rendering/Prose',
 } satisfies Meta<typeof Prose>
 
 type Story = StoryObj<typeof meta>
@@ -25,7 +25,7 @@ export const Primary: Story = {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     useEffect(() => {
       fetch(
-        'https://mdx-processor.staging.it-incubator.ru/api/v1/static/md-lesson-frontend/lesson1/block1.json'
+        'https://mdx-processor.staging.it-incubator.ru/api/v1/static/files/md-lesson-backend/lesson-1/block-1.json'
       )
         .then(response => response.json())
         .then(json => setRes(json))

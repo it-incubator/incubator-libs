@@ -1,4 +1,5 @@
 import { MessageBubble } from '../../../../../src'
+import { VerticalContainer } from '../../../../../storybook-utils/components/containers/vertical'
 import { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
@@ -31,7 +32,7 @@ export const CurrentUserMassage: Story = {
 
 export const Messages = () => {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '13px' }}>
+    <VerticalContainer>
       <MessageBubble
         isCurrentUser
         isFirst
@@ -56,6 +57,6 @@ export const Messages = () => {
         }
         time={'11:33 27.08.2023'}
       />
-    </div>
+    </VerticalContainer>
   )
 }

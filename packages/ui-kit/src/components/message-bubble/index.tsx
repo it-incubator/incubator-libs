@@ -25,7 +25,7 @@ type ConditionalProps =
     }
 
 type MessageBubbleProps = CommonProps & ConditionalProps
-export const MessageBubble: FC<MessageBubbleProps> = ({
+export const MessageBubble = ({
   className,
   isCurrentUser,
   isFirst,
@@ -34,32 +34,53 @@ export const MessageBubble: FC<MessageBubbleProps> = ({
   time,
   username,
   ...restProps
-}) => {
+}: MessageBubbleProps) => {
   const classNames = {
     box: clsx(s.box, isCurrentUser && s.currentUser, isFirst && s.isFirst, className),
-    header: clsx(s.header),
     message: clsx(s.message, isCurrentUser && s.currentUser),
-    role: clsx(s.role),
     time: clsx(s.time, isCurrentUser && s.currentUser),
+  }
+
+  return (
+    <div {...restProps} className={classNames.box}>
+      <MessageHeader
+        isCurrentUser={isCurrentUser}
+        isFirst={isFirst}
+        role={role}
+        username={username}
+      />
+      <Typography.Body2 className={classNames.message}>{message}</Typography.Body2>
+      <time className={classNames.time}>{time}</time>
+    </div>
+  )
+}
+
+type MessageHeaderProps = {
+  isCurrentUser?: boolean
+  isFirst?: boolean
+  role?: string
+  username?: string
+}
+
+const MessageHeader = ({ isCurrentUser, isFirst, role, username }: MessageHeaderProps) => {
+  const classNames = {
+    header: clsx(s.header),
+    role: clsx(s.role),
     username: clsx(s.username),
   }
 
   const isShowHeader = !isCurrentUser && (role || username) && isFirst
 
-  const messageHeader = isShowHeader ? (
+  if (!isShowHeader) {
+    return null
+  }
+
+  return (
     <div className={classNames.header}>
       {!isCurrentUser && (
         <Typography.Subtitle1 className={classNames.username}>{username}</Typography.Subtitle1>
       )}
       {role && <Typography.Caption className={classNames.role}>{role}</Typography.Caption>}
-    </div>
-  ) : null
-
-  return (
-    <div {...restProps} className={classNames.box}>
-      {messageHeader}
-      <Typography.Body2 className={classNames.message}>{message}</Typography.Body2>
-      <time className={classNames.time}>{time}</time>
     </div>
   )
 }

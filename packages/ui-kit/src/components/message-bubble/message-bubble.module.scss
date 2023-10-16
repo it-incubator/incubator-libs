@@ -20,7 +20,7 @@
     width: 15px;
     height: 12px;
 
-    background: var(--color-bg-focus);
+    background: inherit;
 
     /* stylelint-disable property-no-vendor-prefix */
     // webkit prefix is necessary for correct work
@@ -36,7 +36,7 @@
       right: -6px;
       left: auto;
       transform: scaleX(-1);
-      background-color: var(--color-info-500);
+      background-color: inherit;
     }
   }
 }

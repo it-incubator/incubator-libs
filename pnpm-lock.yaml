@@ -144,6 +144,9 @@ importers:
 
   packages/mdx-components:
     dependencies:
+      '@radix-ui/react-scroll-area':
+        specifier: 1.0.4
+        version: 1.0.4(@types/react-dom@18.2.7)(@types/react@18.2.22)(react-dom@18.2.0)(react@18.2.0)
       '@radix-ui/react-tabs':
         specifier: 1.0.4
         version: 1.0.4(@types/react-dom@18.2.7)(@types/react@18.2.22)(react-dom@18.2.0)(react@18.2.0)
@@ -153,6 +156,9 @@ importers:
       clsx:
         specifier: 2.0.0
         version: 2.0.0
+      mdx-bundler:
+        specifier: ^9.2.1
+        version: 9.2.1(esbuild@0.19.3)
     devDependencies:
       '@babel/core':
         specifier: 7.22.20

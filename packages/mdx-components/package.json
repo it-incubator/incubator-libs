@@ -61,9 +61,11 @@
     "access": "public"
   },
   "dependencies": {
+    "@radix-ui/react-scroll-area": "1.0.4",
     "@radix-ui/react-tabs": "1.0.4",
     "@types/node": "20.6.4",
-    "clsx": "2.0.0"
+    "clsx": "2.0.0",
+    "mdx-bundler": "^9.2.1"
   },
   "peerDependencies": {
     "react": ">=18.0.2",

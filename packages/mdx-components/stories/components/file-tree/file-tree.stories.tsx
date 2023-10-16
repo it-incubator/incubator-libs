@@ -15,13 +15,13 @@ export const Primary: Story = {
   args: {
     children: (
       <FileTree.Folder name="pages" defaultOpen>
-        <FileTree.File name="_meta.json" />
-        <FileTree.File name="contact.md" />
-        <FileTree.File name="index.mdx" />
+        <FileTree.File name="_meta.json"/>
+        <FileTree.File name="contact.md"/>
+        <FileTree.File name="index.mdx"/>
         <FileTree.Folder name="about">
-          <FileTree.File name="_meta.json" />
-          <FileTree.File name="legal.md" />
-          <FileTree.File name="index.mdx" />
+          <FileTree.File name="_meta.json"/>
+          <FileTree.File name="a-file-with-a-very-very-very-long-name.json"/>
+          <FileTree.File name="index.mdx"/>
         </FileTree.Folder>
       </FileTree.Folder>
     ),

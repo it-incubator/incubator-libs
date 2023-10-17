@@ -1,0 +1,105 @@
+.tree {
+  user-select: none;
+
+  margin-top: 1.5rem;
+
+  font-size: var(--font-size-s);
+  line-height: var(--line-height-xs);
+  color: var(--color-text-primary);
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+}
+
+.container {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--color-border-input-primary);
+  border-radius: 0.5rem;
+}
+
+/* folder component */
+
+.folderItem {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+}
+
+.fileLabel {
+  margin-left: 0.25rem;
+  word-break: break-word;
+}
+
+.folderButton {
+  all: unset;
+
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+
+  transition: 200ms opacity;
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:focus-visible {
+    > .fileLabel {
+      outline: 2px solid var(--color-outline-focus);
+    }
+  }
+}
+
+/* file component */
+
+.fileItem {
+  display: flex;
+  list-style: none;
+
+  &.active {
+    color: var(--color-info-400);
+  }
+}
+
+.fileContent {
+  all: unset;
+
+  display: inline-flex;
+  align-items: center;
+
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+
+  &.clickable {
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.6;
+    }
+
+    &:focus-visible {
+      > .fileLabel {
+        outline: 2px solid var(--color-outline-focus);
+      }
+    }
+  }
+}
+
+.fileIcon {
+  flex-shrink: 0;
+}
+
+/* ident component */
+
+.indent {
+  flex-shrink: 0;
+  width: 1.25rem;
+}

@@ -1,6 +1,7 @@
 import { ChangeEvent, ComponentProps, forwardRef } from 'react'
 
 import { Label } from '../label'
+import { useGetId } from '../text-field/useGetId'
 import { Typography } from '../typography'
 import { clsx } from 'clsx'
 
@@ -14,7 +15,8 @@ export type TextareaProps = {
 
 // НЕ УДАЛЯТЬ КОММЕНТ ПЕРЕД forwardRef - без него ломается tree shaking
 export const Textarea = /* @__PURE__ */ forwardRef<HTMLTextAreaElement, TextareaProps>(
-  ({ className, errorMessage, label, onChange, onValueChange, ...rest }, ref) => {
+  ({ className, errorMessage, id, label, onChange, onValueChange, ...rest }, ref) => {
+    const textareaId = useGetId(id)
     const showError = !!errorMessage && errorMessage.length > 0
 
     function handleInputValueChanged(e: ChangeEvent<HTMLTextAreaElement>) {
@@ -31,14 +33,14 @@ export const Textarea = /* @__PURE__ */ forwardRef<HTMLTextAreaElement, Textarea
 
     return (
       <div className={classNames.root}>
-        <Label label={label}>
-          <textarea
-            className={classNames.input}
-            onChange={handleInputValueChanged}
-            ref={ref}
-            {...rest}
-          />
-        </Label>
+        {label && <Label htmlFor={textareaId} label={label} />}
+        <textarea
+          className={classNames.input}
+          id={textareaId}
+          onChange={handleInputValueChanged}
+          ref={ref}
+          {...rest}
+        />
         {showError && <Typography.Error>{errorMessage}</Typography.Error>}
       </div>
     )

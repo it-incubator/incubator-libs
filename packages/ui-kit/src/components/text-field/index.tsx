@@ -3,6 +3,7 @@ import { ComponentProps, KeyboardEvent, ReactNode, forwardRef } from 'react'
 import { Search as SearchIcon, Typography } from '../../'
 import { Close } from '../../assets/icons'
 import { Label } from '../label'
+import { useGetId } from './useGetId'
 import { clsx } from 'clsx'
 
 import s from './text-field.module.scss'
@@ -26,6 +27,7 @@ export const TextField = /* @__PURE__ */ forwardRef<HTMLInputElement, TextFieldP
       errorMessage,
       iconEnd,
       iconStart,
+      id,
       label,
       onClearClick,
       onEnter,
@@ -36,6 +38,7 @@ export const TextField = /* @__PURE__ */ forwardRef<HTMLInputElement, TextFieldP
     ref
   ) => {
     const showError = !!errorMessage && errorMessage.length > 0
+    const inputId = useGetId(id)
 
     if (search) {
       iconStart = <SearchIcon color={'var(--color-text-secondary)'} size={20} />
@@ -52,7 +55,6 @@ export const TextField = /* @__PURE__ */ forwardRef<HTMLInputElement, TextFieldP
       iconStart: s.iconStart,
       input: clsx(s.input, showError && s.error),
       inputContainer: s.inputContainer,
-      label: s.label,
       root: clsx(s.box, className),
     }
 
@@ -64,25 +66,25 @@ export const TextField = /* @__PURE__ */ forwardRef<HTMLInputElement, TextFieldP
 
     return (
       <div className={classNames.root}>
-        <Label label={label}>
-          <div className={classNames.inputContainer}>
-            {!!iconStart && <span className={classNames.iconStart}>{iconStart}</span>}
-            <input
-              className={classNames.input}
-              data-icon={dataIcon}
-              onKeyDown={handleKeyDown}
-              ref={ref}
-              type={'text'}
-              {...rest}
-            />
-            {isShowClearButton && (
-              <button className={classNames.clearButton} onClick={onClearClick} type={'button'}>
-                {<Close color={'var(--color-border-input-active)'} size={20} />}
-              </button>
-            )}
-            {!!iconEnd && <span className={classNames.iconEnd}>{iconEnd}</span>}
-          </div>
-        </Label>
+        {label && <Label htmlFor={inputId} label={label} />}
+        <div className={classNames.inputContainer}>
+          {!!iconStart && <span className={classNames.iconStart}>{iconStart}</span>}
+          <input
+            className={classNames.input}
+            data-icon={dataIcon}
+            id={inputId}
+            onKeyDown={handleKeyDown}
+            ref={ref}
+            type={'text'}
+            {...rest}
+          />
+          {isShowClearButton && (
+            <button className={classNames.clearButton} onClick={onClearClick} type={'button'}>
+              {<Close color={'var(--color-border-input-active)'} size={20} />}
+            </button>
+          )}
+          {!!iconEnd && <span className={classNames.iconEnd}>{iconEnd}</span>}
+        </div>
 
         {showError && <Typography.Error>{errorMessage}</Typography.Error>}
       </div>

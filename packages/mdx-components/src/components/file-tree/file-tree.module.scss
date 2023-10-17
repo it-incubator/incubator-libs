@@ -29,13 +29,17 @@
   list-style-type: none;
 }
 
+.fileLabel {
+  margin-left: 0.25rem;
+  word-break: break-word;
+}
+
 .folderButton {
   all: unset;
 
   cursor: pointer;
 
   display: inline-flex;
-  gap: 4px;
   align-items: center;
 
   padding-top: 0.25rem;
@@ -43,13 +47,14 @@
 
   transition: 200ms opacity;
 
-  &:hover,
-  &:focus {
+  &:hover {
     opacity: 0.6;
   }
 
   &:focus-visible {
-    outline: 1px solid var(--mdx-color-outline-focus);
+    > .fileLabel {
+      outline: 2px solid var(--mdx-color-outline-focus);
+    }
   }
 }
 
@@ -69,10 +74,6 @@
   align-items: center;
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
-}
-
-.fileLabel {
-  margin-left: 0.25rem;
 }
 
 /* ident component */

@@ -61,7 +61,7 @@ const Folder = memo<FolderProps>(({ children, defaultOpen = false, label, name }
       <button className={classNames.folderButton} onClick={toggle} title={name}>
         <Indent />
         {folderIcon}
-        <span>{label ?? name}</span>
+        <span className={s.fileLabel}>{label ?? name}</span>
       </button>
       {isOpen && (
         <ul>

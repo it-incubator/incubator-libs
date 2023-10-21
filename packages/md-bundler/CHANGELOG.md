@@ -1,5 +1,10 @@
 # @it-incubator/md-bundler
 
+## 0.0.9
+### Patch Changes
+
+- add manual test file, fix highlight parsing
+
 ## 0.0.6
 ### Patch Changes
 

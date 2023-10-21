@@ -13,23 +13,17 @@ function visit(node, tagNames, handler) {
   }
 }
 
-export const parseMeta =
-  ({ defaultShowCopyCode }) =>
-  tree => {
-    visit(tree, ['pre'], preEl => {
-      const [codeEl] = preEl.children
+export const parseMeta = () => tree => {
+  visit(tree, ['pre'], preEl => {
+    const [codeEl] = preEl.children
 
-      // Add default language `text` for code-blocks without languages
-      codeEl.properties.className ||= ['language-text']
-      const meta = codeEl.data?.meta
+    // Add default language `text` for code-blocks without languages
+    codeEl.properties.className ||= ['language-text']
+    const meta = codeEl.data?.meta
 
-      preEl.__nextra_filename = meta?.match(CODE_BLOCK_FILENAME_REGEX)?.[1]
-
-      preEl.__nextra_hasCopyCode = meta
-        ? (defaultShowCopyCode && !/( |^)copy=false($| )/.test(meta)) || /( |^)copy($| )/.test(meta)
-        : defaultShowCopyCode
-    })
-  }
+    preEl.__nextra_filename = meta?.match(CODE_BLOCK_FILENAME_REGEX)?.[1]
+  })
+}
 
 export const attachMeta = () => tree => {
   visit(tree, ['div', 'pre'], node => {
@@ -40,6 +34,5 @@ export const attachMeta = () => tree => {
     }
 
     node.properties.filename = node.__nextra_filename
-    node.properties.hasCopyCode = node.__nextra_hasCopyCode
   })
 }

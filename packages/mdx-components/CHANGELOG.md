@@ -1,5 +1,10 @@
 # @it-incubator/mdx-components
 
+## 0.0.5
+### Patch Changes
+
+- fix styling for prose component, add more examples
+
 ## 0.0.4
 ### Patch Changes
 

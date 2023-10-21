@@ -1,6 +1,6 @@
 {
   "name": "@it-incubator/mdx-components",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "type": "module",
@@ -74,17 +74,23 @@
     "react-dom": ">=18.0.2"
   },
   "loki": {
+    "fetchFailIgnore": true,
     "configurations": {
       "chrome.laptop": {
         "target": "chrome.app",
         "width": 1366,
         "height": 768,
         "deviceScaleFactor": 1,
+        "disableAutomaticViewportHeight": false,
         "mobile": false
       },
       "chrome.iphone7": {
         "target": "chrome.app",
         "preset": "iPhone 7"
+      },
+      "chrome.retinaMacbookPro": {
+        "target": "chrome.app",
+        "preset": "Retina Macbook Pro 15"
       }
     }
   }

@@ -12,7 +12,7 @@ export const Prose = <T extends ElementType = 'article'>(
 ) => {
   const { as: Component = 'article', className, ...rest } = props
 
-  const classNames = clsx(s.prose, className)
+  const classNames = clsx('mdx-prose', s.prose, className)
 
   return <Component className={classNames} {...rest} />
 }

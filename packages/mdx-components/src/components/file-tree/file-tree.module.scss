@@ -1,4 +1,5 @@
-.tree {
+.tree,
+:global(.mdx-prose) .tree {
   user-select: none;
 
   margin-top: 1.5rem;
@@ -23,13 +24,16 @@
 
 /* folder component */
 
-.folderItem {
+.folderItem,
+:global(.mdx-prose) .folderItem {
   display: flex;
   flex-direction: column;
+  margin: 0;
   list-style-type: none;
 }
 
 .fileLabel {
+  user-select: text;
   margin-left: 0.25rem;
   word-break: break-word;
 }
@@ -46,6 +50,10 @@
   padding-bottom: 0.25rem;
 
   transition: 200ms opacity;
+
+  > .fileLabel {
+    user-select: none;
+  }
 
   &:hover {
     opacity: 0.6;

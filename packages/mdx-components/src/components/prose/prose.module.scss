@@ -1,5 +1,22 @@
 .prose {
+  a {
+    color: #4891f7;
+
+    &:visited {
+      color: #4891f7;
+    }
+
+    &:hover {
+      color: #76acf9;
+    }
+
+    &:active {
+      color: #155ec4;
+    }
+  }
+
   ul,
+  ol,
   li,
   p {
     box-sizing: border-box;
@@ -84,6 +101,10 @@
     &:first-child {
       margin-top: 0;
     }
+
+    .prose li > & {
+      margin-block: 0.5rem;
+    }
   }
 
   & ol {
@@ -159,6 +180,41 @@
 
       [data-line] {
         padding-inline: 1rem;
+
+        &[data-highlighted-line] {
+          color: rgb(0 107 230 / 50%);
+          background-color: rgb(0 107 230 / 10%);
+          box-shadow:
+            rgb(0 0 0 / 0%) 0 0 0 0,
+            rgb(0 0 0 / 0%) 0 0 0 0,
+            rgb(0 107 230 / 50%) 2px 0 0 0 inset;
+
+          :global(.dark-mode) & {
+            color: rgb(0 138 230 / 50%);
+            background-color: rgb(0 138 230 / 10%);
+            box-shadow:
+              rgb(0 0 0 / 0%) 0 0 0 0,
+              rgb(0 0 0 / 0%) 0 0 0 0,
+              rgb(0 138 230 / 50%) 2px 0 0 0 inset;
+          }
+        }
+
+        & [data-highlighted-chars] {
+          background-color: rgb(0 76 163 / 10%);
+          border-radius: 0.125rem;
+          box-shadow:
+            rgb(0 0 0 / 0%) 0 0 0 0,
+            rgb(0 0 0 / 0%) 0 0 0 0,
+            rgb(0 76 163 / 10%) 0 0 0 2px;
+
+          :global(.dark-mode) & {
+            background-color: rgb(138 208 255 / 15%);
+            box-shadow:
+              rgb(0 0 0 / 0%) 0 0 0 0,
+              rgb(0 0 0 / 0%) 0 0 0 0,
+              rgb(138 208 255 / 15%) 0 0 0 2px;
+          }
+        }
       }
     }
   }

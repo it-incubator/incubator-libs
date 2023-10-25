@@ -1,4 +1,5 @@
 import { ComponentPropsWithoutRef, FC, ReactNode, useEffect, useState } from 'react'
+import { flushSync } from 'react-dom'
 import useMeasure from 'react-use-measure'
 
 import { KeyboardArrowDown, Typography } from '../../'
@@ -49,14 +50,14 @@ export const Collapsible: FC<CollapsibleProps> = ({
 
   useEffect(() => {
     if (open !== undefined && open !== isOpen) {
-      setIsOpen(open)
       setDisableAnimation(false)
+      setIsOpen(open)
     }
   }, [open, isOpen])
 
   const handleOpenChanged = (open: boolean) => {
+    flushSync(() => setDisableAnimation(false))
     setIsOpen(open)
-    setDisableAnimation(false) // Enable animation on user interaction
     if (onOpenChange) {
       onOpenChange(open)
     }
@@ -91,16 +92,24 @@ export const Collapsible: FC<CollapsibleProps> = ({
         {description && <p className={classNames.description}>{description}</p>}
       </CollapsibleRadix.Trigger>
       <CollapsibleRadix.Content asChild forceMount>
-        <motion.div
-          animate={{ height: isOpen ? height : 0 }}
-          className={classNames.content}
-          initial={disableAnimation ? false : { height: isOpen ? height : 0 }}
-          transition={{ duration: disableAnimation ? 0 : 0.2 }}
-        >
-          <div className={s.text} ref={measureRef} style={styles}>
-            {children}
+        {disableAnimation ? (
+          <div className={classNames.content}>
+            <div className={s.text} ref={measureRef} style={styles}>
+              {children}
+            </div>
           </div>
-        </motion.div>
+        ) : (
+          <motion.div
+            animate={{ height: isOpen ? height : 0 }}
+            className={classNames.content}
+            initial={{ height: isOpen ? height : 0 }}
+            transition={{ duration: 0.2 }}
+          >
+            <div className={s.text} ref={measureRef} style={styles}>
+              {children}
+            </div>
+          </motion.div>
+        )}
       </CollapsibleRadix.Content>
     </CollapsibleRadix.Root>
   )

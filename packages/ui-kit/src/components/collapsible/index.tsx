@@ -43,16 +43,20 @@ export const Collapsible: FC<CollapsibleProps> = ({
     padding: noPadding ? '0' : '6px 24px',
   }
 
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(open ?? false)
+  const [disableAnimation, setDisableAnimation] = useState(open === true)
   const [measureRef, { height }] = useMeasure()
 
   useEffect(() => {
     if (open !== undefined && open !== isOpen) {
       setIsOpen(open)
+      setDisableAnimation(false)
     }
-  }, [open])
+  }, [open, isOpen])
+
   const handleOpenChanged = (open: boolean) => {
     setIsOpen(open)
+    setDisableAnimation(false) // Enable animation on user interaction
     if (onOpenChange) {
       onOpenChange(open)
     }
@@ -88,16 +92,10 @@ export const Collapsible: FC<CollapsibleProps> = ({
       </CollapsibleRadix.Trigger>
       <CollapsibleRadix.Content asChild forceMount>
         <motion.div
-          animate={{
-            height: isOpen ? height : 0,
-          }}
+          animate={{ height: isOpen ? height : 0 }}
           className={classNames.content}
-          initial={{
-            height: isOpen ? height : 0,
-          }}
-          transition={{
-            duration: 0.2,
-          }}
+          initial={disableAnimation ? false : { height: isOpen ? height : 0 }}
+          transition={{ duration: disableAnimation ? 0 : 0.2 }}
         >
           <div className={s.text} ref={measureRef} style={styles}>
             {children}

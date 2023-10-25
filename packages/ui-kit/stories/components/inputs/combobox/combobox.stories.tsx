@@ -1,55 +1,60 @@
+/*eslint-disable react-hooks/rules-of-hooks*/
 import { useEffect, useState } from 'react'
 
-import { Meta } from '@storybook/react'
-
-import { Combobox, Modal, Select } from '../../../../src'
+import { Button, Combobox, Modal, Select } from '../../../../src'
 import { VerticalContainer } from '../../../../storybook-utils/components/containers/vertical'
+import { Meta } from '@storybook/react'
 
 const options = [
   {
-    value: 'apple',
     label: 'Apple',
+    value: 'apple',
   },
   {
-    value: 'banana',
     label: 'Banana',
+    value: 'banana',
   },
   {
-    value: 'blueberry',
     label: 'Blueberry',
+    value: 'blueberry',
   },
   {
-    value: 'grapes',
     label: 'Grapes',
+    value: 'grapes',
   },
   {
-    value: 'pineapple',
     label: 'Pineapple',
+    value: 'pineapple',
   },
   {
-    value: 'cherry',
     label: 'Cherry',
+    value: 'cherry',
   },
   {
-    value: 'grapefruit',
     label: 'Grapefruit',
+    value: 'grapefruit',
   },
   {
-    value: 'lemon',
     label: 'Lemon',
+    value: 'lemon',
   },
   {
-    value: 'mango',
     label: 'Mango',
+    value: 'mango',
   },
 ]
 
 export default {
-  title: 'Components/Data Entry/Combobox',
   component: Combobox,
+  title: 'Components/Data Entry/Combobox',
 } as Meta<typeof Combobox>
 
 export const Simple = {
+  args: {
+    disabled: false,
+    options,
+  },
+
   render: args => {
     const [value, setValue] = useState(null)
     const [inputValue, setInputValue] = useState('')
@@ -59,20 +64,15 @@ export const Simple = {
         <div style={{ width: 200 }}>
           <Combobox
             {...args}
-            value={value}
-            onChange={setValue}
             inputValue={inputValue}
+            onChange={setValue}
             onInputChange={setInputValue}
+            value={value}
           />
         </div>
         <div>Selected value: {value}</div>
       </VerticalContainer>
     )
-  },
-
-  args: {
-    options,
-    disabled: false,
   },
 }
 
@@ -119,14 +119,14 @@ export const onModal = () => {
 
   return (
     <div>
-      <button onClick={() => setOpen(!open)}>Open modal</button>
-      <Modal open={open} onClose={handleClose} title={'Select'}>
+      <Button onClick={() => setOpen(!open)}>Open modal</Button>
+      <Modal onClose={handleClose} open={open} title={'Select'}>
         <Combobox
           {...Simple.args}
-          value={value}
-          onChange={setValue}
           inputValue={inputValue}
+          onChange={setValue}
           onInputChange={setInputValue}
+          value={value}
         />
       </Modal>
     </div>
@@ -151,7 +151,7 @@ export const Async = {
           return res.json()
         })
         .then(json => {
-          setOptions(json.items.map(item => ({ value: item.id, label: item.name })))
+          setOptions(json.items.map(item => ({ label: item.name, value: item.id })))
         })
         .finally(() => {
           setIsLoading(false)
@@ -161,13 +161,13 @@ export const Async = {
     return (
       <VerticalContainer>
         <Combobox
-          value={value}
-          onChange={setValue}
           inputValue={inputValue}
+          isAsync
+          isLoading={isLoading}
+          onChange={setValue}
           onInputChange={setInputValue}
           options={options}
-          isAsync={true}
-          isLoading={isLoading}
+          value={value}
         />
         <div>Selected value: {value}</div>
       </VerticalContainer>

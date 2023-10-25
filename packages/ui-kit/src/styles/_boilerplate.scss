@@ -3,6 +3,37 @@ html {
   font-size: 100%;
 }
 
+button {
+  all: unset;
+
+  cursor: pointer;
+
+  box-sizing: border-box;
+
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  font-style: inherit;
+  color: inherit;
+
+  &:focus-visible {
+    outline: var(--outline-focus);
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+
+  &:visited {
+    color: inherit;
+  }
+
+  &:focus-visible {
+    outline: var(--outline-focus);
+  }
+}
+
 *,
 *::before,
 *::after {
@@ -10,7 +41,6 @@ html {
 }
 
 input,
-button,
 select,
 textarea,
 optgroup,

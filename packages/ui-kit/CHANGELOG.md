@@ -1,5 +1,12 @@
 # @it-incubator/ui-kit
 
+## 1.0.0
+### Major Changes
+
+- feat: add global styles for button and link.
+  <button /> is now unstyled by default, the only styles being outline on focus and cursor: pointer
+  <a/> now has the same outline as other elements, has no underline and inherits the color from the parent component.
+
 ## 0.2.19
 ### Patch Changes
 

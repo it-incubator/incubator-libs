@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 0.2.19
+### Patch Changes
+
+- fix: disable combobox animation if open by default
+
 ## 0.2.18
 ### Patch Changes
 

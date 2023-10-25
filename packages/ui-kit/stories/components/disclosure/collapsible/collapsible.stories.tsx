@@ -1,27 +1,45 @@
 import { useState } from 'react'
 
-import { Meta } from '@storybook/react'
-
 import { Button, Collapsible } from '../../../../src'
 import InfoIcon from '../../../../src/assets/icons/components/Info'
 import { VerticalContainer } from '../../../../storybook-utils/components/containers/vertical'
+import { Meta } from '@storybook/react'
 
 export default {
-  title: 'Components/Disclosure/Collapsible',
   component: Collapsible,
+  title: 'Components/Disclosure/Collapsible',
 } as Meta<typeof Collapsible>
 
 export const DefaultUncontrolled = {
   args: {
-    title: 'Collapsible',
     children:
       'Эффективно обучаем frontend и backend-разработке до трудоустройства, а также проводим учебную стажировку для QA, PM (project manager), front-end (React) и back-end (NestJS) специалистов.\n',
-    iconComponent: <InfoIcon size={16} />,
-    disabled: false,
     description: 'Some description',
+    disabled: false,
+    iconComponent: <InfoIcon size={16} />,
+    title: 'Collapsible',
   },
 }
-
+export const DefaultUncontrolledOpenByDefault = {
+  args: {
+    children:
+      'Эффективно обучаем frontend и backend-разработке до трудоустройства, а также проводим учебную стажировку для QA, PM (project manager), front-end (React) и back-end (NestJS) специалистов.\n',
+    description: 'Some description',
+    disabled: false,
+    iconComponent: <InfoIcon size={16} />,
+    title: 'Collapsible',
+  },
+}
+export const UncontrolledOpenByDefault = {
+  args: {
+    children: 'Your children text',
+    description: 'Some description',
+    disabled: false,
+    iconComponent: <InfoIcon size={16} />,
+    open: true, // Control the open state here
+    title: 'Collapsible',
+  },
+}
 export const DefaultControlled = {
   render: args => {
     const [open, setOpen] = useState(false)
@@ -31,7 +49,7 @@ export const DefaultControlled = {
         <span>
           <Button onClick={() => setOpen(!open)}>Toggle</Button>
         </span>
-        <Collapsible open={open} onOpenChange={setOpen} title="Collapsible">
+        <Collapsible onOpenChange={setOpen} open={open} title={'Collapsible'}>
           Эффективно обучаем frontend и backend-разработке до трудоустройства, а также проводим
           учебную стажировку для QA, PM (project manager), front-end (React) и back-end (NestJS)
           специалистов.
@@ -43,42 +61,42 @@ export const DefaultControlled = {
 
 export const DefaultWithDescription = {
   args: {
-    title: 'Collapsible',
     children:
       'Эффективно обучаем frontend и backend-разработке до трудоустройства, а также проводим учебную стажировку для QA, PM (project manager), front-end (React) и back-end (NestJS) специалистов.\n',
-    disabled: false,
     description: 'Some description',
+    disabled: false,
+    title: 'Collapsible',
   },
 }
 
 export const DefaultWithIcon = {
   args: {
-    title: 'Collapsible',
     children:
       'Эффективно обучаем frontend и backend-разработке до трудоустройства, а также проводим учебную стажировку для QA, PM (project manager), front-end (React) и back-end (NestJS) специалистов.\n',
-    iconComponent: <InfoIcon size={16} />,
     disabled: false,
+    iconComponent: <InfoIcon size={16} />,
+    title: 'Collapsible',
   },
 }
 
 export const DefaultWithDescriptionAndIcon = {
   args: {
-    title: 'Collapsible',
     children:
       'Эффективно обучаем frontend и backend-разработке до трудоустройства, а также проводим учебную стажировку для QA, PM (project manager), front-end (React) и back-end (NestJS) специалистов.\nnt',
-    iconComponent: <InfoIcon size={16} />,
-    disabled: false,
     description: 'Some description',
+    disabled: false,
+    iconComponent: <InfoIcon size={16} />,
+    title: 'Collapsible',
   },
 }
 
 export const DefaultDisabled = {
   args: {
-    title: 'Collapsible',
     children:
       'Эффективно обучаем frontend и backend-разработке до трудоустройства, а также проводим учебную стажировку для QA, PM (project manager), front-end (React) и back-end (NestJS) специалистов.\n',
-    iconComponent: <InfoIcon size={16} />,
-    disabled: true,
     description: 'Some description',
+    disabled: true,
+    iconComponent: <InfoIcon size={16} />,
+    title: 'Collapsible',
   },
 }

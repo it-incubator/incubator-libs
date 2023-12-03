@@ -1,5 +1,3 @@
-import * as React from 'react'
-
 import { IconProps, IconWrapper } from '../../assets/icons/IconWrapper'
 
 export const SendMessageIcon = (allProps: IconProps) => {

@@ -1,6 +1,5 @@
 /* eslint-disable max-lines */
 
-import * as React from 'react'
 import { SVGProps } from 'react'
 
 export const Web = (props: SVGProps<SVGSVGElement>) => (

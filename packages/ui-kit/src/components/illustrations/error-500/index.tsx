@@ -1,5 +1,4 @@
 /* eslint-disable max-lines */
-import * as React from 'react'
 import { SVGProps } from 'react'
 
 import { useDeviceType } from '../../../hooks'

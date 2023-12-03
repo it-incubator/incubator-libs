@@ -42,7 +42,7 @@ export const UncontrolledOpenByDefault = {
 }
 export const DefaultControlled = {
   render: args => {
-    const [open, setOpen] = useState(false)
+    const [open, setOpen] = useState(true)
 
     return (
       <VerticalContainer>

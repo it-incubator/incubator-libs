@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 0.2.20
+### Patch Changes
+
+- fix: remove animation completely if open on first render
+
 ## 0.2.19
 ### Patch Changes
 

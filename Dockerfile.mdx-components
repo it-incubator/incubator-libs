@@ -1,0 +1,6 @@
+FROM nginx:1.15.9-alpine
+ENV PORT = 9679
+COPY config/nginx.conf /etc/nginx/conf.d/default.conf
+COPY /packages/mdx-components/storybook-static /usr/share/nginx/html
+EXPOSE 9679
+CMD ["nginx", "-g", "daemon off;"]

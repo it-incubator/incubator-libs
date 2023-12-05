@@ -11,6 +11,7 @@ winston.addColors({
   trace: 'white',
   warn: 'italic yellow',
 })
+
 const customLevels = {
   levels: {
     debug: 4,
@@ -24,6 +25,7 @@ const customLevels = {
 
 export class LoggerFactory {
   private static defaultTransport = new winston.transports.Console({
+    eol: '\n',
     format: combine(
       timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
       errors({ stack: true }),

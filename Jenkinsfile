@@ -13,9 +13,8 @@ pipeline {
         DEPLOYMENT_NAME = "storybook-ui-kit-deployment"
         DEPLOYMENT_NAME_MDX = "storybook-mdx-components-deployment"
         IMAGE_NAME = "${env.BUILD_ID}_${env.ENV_TYPE}_${env.GIT_COMMIT}"
-        IMAGE_NAME_MDX = "${env.BUILD_ID}_${env.ENV_TYPE}_${env.GIT_COMMIT}_mdx_components"
         DOCKER_BUILD_NAME = "${env.PROJECT}:${env.IMAGE_NAME}"
-        DOCKER_BUILD_NAME_MDX = "${env.PROJECT}:${env.IMAGE_NAME}_mdx_components"
+        DOCKER_BUILD_NAME_MDX = "${env.PROJECT_MDX}:${env.IMAGE_NAME}"
     }
     stages {
         stage('Clone repository') {
@@ -89,7 +88,7 @@ pipeline {
                  echo "Push image started..."
                      script {
                         docker.withRegistry("https://${env.REGISTRY_HOSTNAME}", 'ecr:eu-central-1:ecr') {
-                            app.push("${env.IMAGE_NAME_MDX}")
+                            app.push("${env.IMAGE_NAME}")
                         }
                      }
                  echo "Push image finished..."
@@ -121,7 +120,7 @@ pipeline {
                      sh 'ls -ltr'
                      sh 'pwd'
                      sh "chmod +x preparing-deploy-mdx.sh"
-                     sh "./preparing-deploy-mdx.sh ${env.REGISTRY_HOSTNAME} ${env.PROJECT_MDX} ${env.IMAGE_NAME_MDX} ${env.DEPLOYMENT_NAME_MDX} ${env.PORT_MDX} ${env.NAMESPACE}"
+                     sh "./preparing-deploy-mdx.sh ${env.REGISTRY_HOSTNAME} ${env.PROJECT_MDX} ${env.IMAGE_NAME} ${env.DEPLOYMENT_NAME_MDX} ${env.PORT_MDX} ${env.NAMESPACE}"
                      sh "cat deployment-mdx.yaml"
              }
         }

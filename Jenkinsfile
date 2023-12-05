@@ -13,8 +13,9 @@ pipeline {
         DEPLOYMENT_NAME = "storybook-ui-kit-deployment"
         DEPLOYMENT_NAME_MDX = "storybook-mdx-components-deployment"
         IMAGE_NAME = "${env.BUILD_ID}_${env.ENV_TYPE}_${env.GIT_COMMIT}"
+        IMAGE_NAME_MDX = "${env.BUILD_ID}_${env.ENV_TYPE}_${env.GIT_COMMIT}_mdx"
         DOCKER_BUILD_NAME = "${env.PROJECT}:${env.IMAGE_NAME}"
-        DOCKER_BUILD_NAME_MDX = "${env.PROJECT_MDX}:${env.IMAGE_NAME}"
+        DOCKER_BUILD_NAME_MDX = "${env.PROJECT_MDX}:${env.IMAGE_NAME_MDX}"
     }
     stages {
         stage('Clone repository') {
@@ -88,7 +89,7 @@ pipeline {
                  echo "Push image started..."
                      script {
                         docker.withRegistry("https://${env.REGISTRY_HOSTNAME}", 'ecr:eu-central-1:ecr') {
-                            app.push("${env.IMAGE_NAME}")
+                            app.push("${env.IMAGE_NAME_MDX}")
                         }
                      }
                  echo "Push image finished..."

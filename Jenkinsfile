@@ -64,15 +64,6 @@ pipeline {
                 echo "Build image finished..."
             }
         }
-        stage('Storybook MDX-COMPONENTS docker build') {
-            steps {
-                echo "Build image started..."
-                    script {
-                        app = docker.build("${env.DOCKER_BUILD_NAME_MDX}", "-f ./Dockerfile.mdx-components ./")
-                    }
-                echo "Build image finished..."
-            }
-        }
         stage('Push UI-KIT docker image') {
              steps {
                  echo "Push image started..."
@@ -84,6 +75,23 @@ pipeline {
                  echo "Push image finished..."
              }
        }
+       stage('Delete UI-KIT image local') {
+             steps {
+                 script {
+                    sh "docker rmi ${env.DOCKER_BUILD_NAME}"
+                    sh "docker rmi ${env.REGISTRY_HOSTNAME}/${env.DOCKER_BUILD_NAME}"
+                 }
+             }
+        }
+        stage('Storybook MDX-COMPONENTS docker build') {
+            steps {
+                echo "Build image started..."
+                    script {
+                        app = docker.build("${env.DOCKER_BUILD_NAME_MDX}", "-f ./Dockerfile.mdx-components ./")
+                    }
+                echo "Build image finished..."
+            }
+        }
         stage('Push MDX-COMPONENTS docker image') {
              steps {
                  echo "Push image started..."
@@ -98,9 +106,7 @@ pipeline {
        stage('Delete image local') {
              steps {
                  script {
-                    sh "docker rmi ${env.DOCKER_BUILD_NAME}"
                     sh "docker rmi ${env.DOCKER_BUILD_NAME_MDX}"
-                    sh "docker rmi ${env.REGISTRY_HOSTNAME}/${env.DOCKER_BUILD_NAME}"
                     sh "docker rmi ${env.REGISTRY_HOSTNAME}/${env.DOCKER_BUILD_NAME_MDX}"
                  }
              }
@@ -121,7 +127,7 @@ pipeline {
                      sh 'ls -ltr'
                      sh 'pwd'
                      sh "chmod +x preparing-deploy-mdx.sh"
-                     sh "./preparing-deploy-mdx.sh ${env.REGISTRY_HOSTNAME} ${env.PROJECT_MDX} ${env.IMAGE_NAME} ${env.DEPLOYMENT_NAME_MDX} ${env.PORT_MDX} ${env.NAMESPACE}"
+                     sh "./preparing-deploy-mdx.sh ${env.REGISTRY_HOSTNAME} ${env.PROJECT_MDX} ${env.IMAGE_NAME_MDX} ${env.DEPLOYMENT_NAME_MDX} ${env.PORT_MDX} ${env.NAMESPACE}"
                      sh "cat deployment-mdx.yaml"
              }
         }

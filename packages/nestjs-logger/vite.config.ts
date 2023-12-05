@@ -9,14 +9,14 @@ export default defineConfig({
       entry: resolve(__dirname, 'src/index.ts'),
       // the proper extensions will be added
       fileName: 'index',
-      formats: ['es'],
-      name: '@it-incubator/md-bundler',
+      formats: ['cjs'],
+      name: '@it-incubator/nestjs-logger',
     },
     rollupOptions: {
       output: {
         dir: 'dist',
         entryFileNames: '[name].js',
-        format: 'es',
+        format: 'cjs',
       },
     },
     sourcemap: true,

@@ -15,7 +15,9 @@
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false
+    "noFallthroughCasesInSwitch": false,
+    "emitDeclarationOnly": true,
+    "declaration": true
   },
-  "include": ["src"],
+  "include": ["src"]
 }

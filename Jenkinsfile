@@ -125,7 +125,7 @@ pipeline {
                      sh "cat deployment-mdx.yaml"
              }
         }
-        stage('Deploy to Kubernetes') {
+        stage('Deploy UI-KIT') {
              steps {
                  withKubeConfig([credentialsId: 'prod-kubernetes']) {
                     sh 'kubectl apply -f deployment.yaml'
@@ -134,7 +134,7 @@ pipeline {
                  }
              }
         }
-        stage('Deploy to Kubernetes') {
+        stage('Deploy MDX-COMPONENTS') {
              steps {
                  withKubeConfig([credentialsId: 'prod-kubernetes']) {
                     sh 'kubectl apply -f deployment-mdx.yaml'

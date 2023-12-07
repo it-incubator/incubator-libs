@@ -5,9 +5,16 @@ import { testCode } from './code'
 import { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
+  argTypes: {
+    content: {
+      control: {
+        type: 'text',
+      },
+    },
+  },
   component: Prose,
   title: 'Rendering/Prose',
-} satisfies Meta<typeof Prose>
+} satisfies Meta<typeof Prose & { content?: string }>
 
 type Story = StoryObj<typeof meta>
 
@@ -124,5 +131,30 @@ export const LocalTest: Story = {
         <MdxComponent code={testCode.code} />
       </Prose>
     )
+  },
+}
+
+export const MdContent: Story = {
+  render: ({ content }) => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const [res, setRes] = useState<any>({})
+
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    useEffect(() => {
+      fetch('https://mdx-processor.staging.it-incubator.ru/api/v1/mdx/bundle', {
+        body: JSON.stringify({
+          source: content,
+        }),
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        method: 'POST',
+      })
+        .then(response => response.json())
+        .then(json => setRes(json))
+    }, [content])
+
+    return <Prose>{res?.code && <MdxComponent code={res?.code ?? ''} />}</Prose>
   },
 }

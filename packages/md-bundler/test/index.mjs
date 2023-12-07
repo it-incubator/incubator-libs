@@ -3,99 +3,91 @@ import * as fs from 'fs'
 
 process.env.NODE_ENV = 'production'
 
-const source = `import { Callout } from "@it-incubator/mdx-components";
+const source = `
+### Characters
+                
 
-# Деплой на Vercel
+~~Strikethrough~~ <s>Strikethrough (when enable html tag decode.)</s>
+*Italic*      _Italic_
+**Emphasis**  __Emphasis__
+***Emphasis Italic*** ___Emphasis Italic___
 
-Деплой на Vercel происходит автоматически при пуше в ветку \`master\`.
+Superscript: X<sub>2</sub>，Subscript: O<sup>2</sup>
 
-## Деплой проекта
+**Abbreviation(link HTML abbr tag)**
 
-1. Зарегистрируйтесь на [Vercel](https://vercel.com/signup).
-   Рекомендую использовать GitHub для авторизации.
+The <abbr title="Hyper Text Markup Language">HTML</abbr> specification is maintained by the <abbr title="World Wide Web Consortium">W3C</abbr>.
 
-2. Перейдите на [страницу dashboard](https://vercel.com/dashboard), нажмите на кнопку \`Add New\` и выберите \`Project\`.
-   ![Add new project](./images/vercel-new-project.png)
+### Blockquotes
 
-3. Убедитесь что у vercel есть все разрешения для GitHub и выберите репозиторий с проектом.
-   ![Select repository](./images/vercel-select-repository.png)
+> Blockquotes
 
-4. Никаких настроек делать не нужно - просто нажмите \`Deploy\`.
+Paragraphs and Line Breaks
+                    
+> "Blockquotes Blockquotes", [Link](http://localhost/)。
 
-5. После деплоя, вам будет доступен URL вашего проекта.
+###Links
 
-Но, наша задача - задеплоить не только проект, но и **Storybook**.
+[Links](http://localhost/)
 
-## Деплой Storybook
+[Links with title](http://localhost/ "link title")
 
-1. Создайте новую ветку \`storybook-deploy\` и переключитесь на нее.
 
-2. В корне проекте создайте файл \`vercel.json\` со следующим содержимым:
+[Reference link][id/name] 
 
-   \`\`\`json filename="vercel.json" {3} /buildCommand/ /storybook/
-   {
-     "$schema": "https://openapi.vercel.sh/vercel.json",
-     "buildCommand": "pnpm run build-storybook",
-     "devCommand": "pnpm run storybook",
-     "installCommand": "pnpm i",
-     "framework": null,
-     "outputDirectory": "./storybook-static"
-   }
-   \`\`\`
+[id/name]: http://link-url/
 
-3. Закоммитьте и запушьте изменения в ветку \`storybook-deploy\`.
+GFM a-tail link @pandao
 
-4. Перейдите в настройки проекта на Vercel и добавьте домен для ветки \`storybook-deploy\`.
-   ![Add domain](./images/add-domain.png)
+###Code Blocks (multi-language) & highlighting
 
-<Callout>
-  Если у вас нет собственного домена - можете использовать саб-домены
-  vercel.app, как на скриншоте
-</Callout>
-5. После этого, при каждом пуше в ветку \`storybook-deploy\`, Vercel будет автоматически
-деплоить Storybook.
+####Inline code
 
-## Настройка github actions
+\`$ npm install marked\`
 
-Для того что бы не мерджить две ветки вручную при каждом изменении в проекте, можно настроить github actions.
+###Tables
 
-1. В ветке master/main создайте файл \`.github/workflows/deploy-storybook.yml\` со следующим содержимым:
+First Header  | Second Header
+------------- | -------------
+  Content Cell  | Content Cell
+Content Cell  | Content Cell
 
-   \`\`\`yml filename=".github/workflows/deploy-storybook.yml" showLineNumbers {5,17,18}
-   name: Build and Deploy Storybook
-   on:
-     push:
-       branches:
-         - "master"
-   jobs:
-     build-and-deploy:
-       runs-on: ubuntu-latest
-       steps:
-         - name: Checkout 🛎️
-           uses: actions/checkout@v2.3.1
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
 
-         - name: Merge dev -> storybook-deploy 🚀
-           uses: devmasx/merge-branch@1.4.0
-           with:
-             type: now
-             from_branch: master
-             target_branch: storybook-deploy
-             github_token: \${{ github.token }}
-   \`\`\`
+| Function name | Description                    |
+| ------------- | ------------------------------ |
+| \`help()\`      | Display the help window.       |
+| \`destroy()\`   | **Destroy your computer!**     |
 
-2. В выделенных строках убедитесь что указаны правильные ветки:
+| Item      | Value |
+| --------- | -----:|
+| Computer  | $1600 |
+| Phone     |   $12 |
+| Pipe      |    $1 |
 
-   - \`master\` - основная ветка, иногда называется \`main\`
-   - \`from_branch: master\` - должна совпадать с основной веткой
-   - \`target_branch: storybook-deploy\` - ветка для деплоя Storybook, которую мы создали ранее
+| Left-Aligned  | Center Aligned  | Right Aligned |
+| :------------ |:---------------:| -----:|
+| col 3 is      | some wordy text | $1600 |
+| col 2 is      | centered        |   $12 |
+| zebra stripes | are neat        |    $1 |
 
-3. На GitHub, в **_настройках проекта_** перейдите в \`actions/general\` и для Workflow Permissions выберите \`Read and Write permissions\` и нажмите \`Save\`
-   ![actions-setup](./images/workflow-permissions.png)
 
-4. Закоммитьте и запушьте изменения в основную ветку.
+###GFM task list
 
-5. После этого, при каждом пуше в основную ветку, GitHub Actions будет автоматически мерджить изменения в ветку \`storybook-deploy\`, что приведет к автоматическому деплою Storybook на Vercel.
-`
+- [x] GFM task list 1
+- [x] GFM task list 2
+- [ ] GFM task list 3
+    - [ ] GFM task list 3-1
+    - [ ] GFM task list 3-2
+    - [ ] GFM task list 3-3
+- [ ] GFM task list 4
+    - [ ] GFM task list 4-1
+    - [ ] GFM task list 4-2
+
+  `
 
 
 const result = await bundleMdx(source)

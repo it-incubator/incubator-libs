@@ -5,6 +5,7 @@ import { BundledMdx } from './types'
 import { bundleMDX } from 'mdx-bundler'
 import rehypePrettyCode from 'rehype-pretty-code'
 import rehypeSlug from 'rehype-slug'
+import remarkGfm from 'remark-gfm'
 
 export const bundleMdx = async (source: string): Promise<BundledMdx> => {
   return await bundleMDX({
@@ -36,6 +37,7 @@ export const bundleMdx = async (source: string): Promise<BundledMdx> => {
         ],
         attachMeta,
       ]
+      options.remarkPlugins = [...(options.remarkPlugins ?? []), remarkGfm]
 
       return options
     },

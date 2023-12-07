@@ -105,6 +105,15 @@
     .prose li > & {
       margin-block: 0.5rem;
     }
+
+    :global(.task-list-item) {
+      margin-block: 0.2rem;
+      list-style-type: none;
+
+      ul:global(.contains-task-list) {
+        margin: 0 0 0 1rem;
+      }
+    }
   }
 
   & ol {

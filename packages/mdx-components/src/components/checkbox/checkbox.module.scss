@@ -1,0 +1,28 @@
+.container {
+  --checkbox-size: 14px;
+
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+}
+
+.root {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: var(--checkbox-size);
+  height: var(--checkbox-size);
+  padding: 0;
+
+  background-color: transparent;
+  border: 2px solid var(--mdx-color-text-primary);
+  border-radius: 2px;
+}
+
+.indicator {
+  flex-grow: 0;
+  flex-shrink: 0;
+  width: var(--checkbox-size);
+  height: var(--checkbox-size);
+}

@@ -1,5 +1,6 @@
-import { bundleMdx } from '../dist/index.js'
 import * as fs from 'fs'
+
+import { bundleMdx } from '../dist/index.js'
 
 process.env.NODE_ENV = 'production'
 
@@ -40,6 +41,9 @@ Paragraphs and Line Breaks
 GFM a-tail link @pandao
 
 ###Code Blocks (multi-language) & highlighting
+
+- [x] Task 1 
+
 
 ####Inline code
 

@@ -8,7 +8,7 @@ import { Scrollbar } from '../scrollbar'
 import { getMDXComponent } from 'mdx-bundler/client'
 import { MDXContentProps } from 'mdx-bundler/dist/client'
 
-const components = {
+const mdxComponents = {
   Callout,
   Cards,
   FileTree,
@@ -22,7 +22,7 @@ export type MdxComponentProps = {
   onImageClick?: (src: string) => void
 }
 export const MdxComponent = ({ code, components, onImageClick }: MdxComponentProps) => {
-  const Component = getMDXComponent(code, { components })
+  const Component = getMDXComponent(code, { components: mdxComponents })
 
   return (
     <Component

@@ -1,5 +1,10 @@
 # @it-incubator/md-bundler
 
+## 0.0.10
+### Patch Changes
+
+- add second arg to pass file (mostly for local testing, but might be useful in the future)
+
 ## 0.0.9
 ### Patch Changes
 

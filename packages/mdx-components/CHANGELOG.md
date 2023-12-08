@@ -1,5 +1,10 @@
 # @it-incubator/mdx-components
 
+## 0.0.6
+### Patch Changes
+
+- add support for gfm
+
 ## 0.0.5
 ### Patch Changes
 

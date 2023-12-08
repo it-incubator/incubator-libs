@@ -11,9 +11,13 @@ export const Pre = ({
   filename,
   ...props
 }: ComponentProps<'pre'> & {
+  'data-language'?: string
   filename?: string
   hasCopyCode?: boolean
 }): ReactElement => {
+  if (!filename) {
+    filename = props['data-language']
+  }
   const preRef = useRef<HTMLPreElement | null>(null)
 
   return (

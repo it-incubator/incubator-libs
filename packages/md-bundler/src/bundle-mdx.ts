@@ -7,8 +7,9 @@ import rehypePrettyCode from 'rehype-pretty-code'
 import rehypeSlug from 'rehype-slug'
 import remarkGfm from 'remark-gfm'
 
-export const bundleMdx = async (source: string): Promise<BundledMdx> => {
+export const bundleMdx = async (source: string, file?: string): Promise<BundledMdx> => {
   return await bundleMDX({
+    ...(file ? { file: file } : { source: source }),
     globals: {
       '@it-incubator/mdx-components': {
         defaultExport: false,
@@ -41,6 +42,5 @@ export const bundleMdx = async (source: string): Promise<BundledMdx> => {
 
       return options
     },
-    source,
   })
 }

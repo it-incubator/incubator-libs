@@ -4,7 +4,9 @@ import { Callout, Cards, FileTree, Steps, Tabs } from '..'
 import { Checkbox } from '../checkbox'
 import { Code } from '../code'
 import { Pre } from '../pre'
+import { Scrollbar } from '../scrollbar'
 import { getMDXComponent } from 'mdx-bundler/client'
+import { MDXContentProps } from 'mdx-bundler/dist/client'
 
 const components = {
   Callout,
@@ -16,9 +18,10 @@ const components = {
 
 export type MdxComponentProps = {
   code: string
+  components?: MDXContentProps['components']
   onImageClick?: (src: string) => void
 }
-export const MdxComponent = ({ code, onImageClick }: MdxComponentProps) => {
+export const MdxComponent = ({ code, components, onImageClick }: MdxComponentProps) => {
   const Component = getMDXComponent(code, { components })
 
   return (
@@ -34,14 +37,24 @@ export const MdxComponent = ({ code, onImageClick }: MdxComponentProps) => {
         ),
         input: Input,
         pre: Pre,
+        table: Table,
+        ...components,
       }}
     />
   )
 }
-const Input = (props: ComponentPropsWithoutRef<'input'>): ReactElement => {
+function Input(props: ComponentPropsWithoutRef<'input'>): ReactElement {
   if (props.type === 'checkbox') {
     return <Checkbox {...props} />
   }
 
   return <input {...props} />
+}
+
+function Table(props: ComponentPropsWithoutRef<'table'>) {
+  return (
+    <Scrollbar type={'hover'}>
+      <table {...props} />
+    </Scrollbar>
+  )
 }

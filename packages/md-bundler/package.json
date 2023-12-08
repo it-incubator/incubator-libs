@@ -19,7 +19,7 @@
     "lint:types": "tsc",
     "lint": "TIMING=1 pnpm run lint:eslint && pnpm run lint:types",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
-    "dev": "vite"
+    "dev": "nodemon test/index.mjs -e mdx"
   },
   "publishConfig": {
     "access": "public"
@@ -28,6 +28,7 @@
     "@it-incubator/eslint-config": "workspace:*",
     "@it-incubator/prettier-config": "workspace:*",
     "@it-incubator/stylelint-config": "workspace:*",
+    "nodemon": "^3.0.2",
     "prettier": "^3.0.3",
     "typescript": "5.2.2",
     "vite": "4.2.1"

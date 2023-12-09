@@ -1,6 +1,6 @@
 import { ComponentPropsWithoutRef, ReactElement } from 'react'
 
-import { Callout, Cards, FileTree, Steps, Tabs } from '..'
+import { Callout, Card, Cards, FileTree, Steps, Tabs } from '..'
 import { Checkbox } from '../checkbox'
 import { Code } from '../code'
 import { Pre } from '../pre'
@@ -10,6 +10,7 @@ import { MDXContentProps } from 'mdx-bundler/dist/client'
 
 const mdxComponents = {
   Callout,
+  Card,
   Cards,
   FileTree,
   Steps,

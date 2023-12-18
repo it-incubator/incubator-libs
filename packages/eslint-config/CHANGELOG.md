@@ -1,5 +1,10 @@
 # @it-incubator/eslint-config-incubator
 
+## 1.0.2
+### Patch Changes
+
+- 39c1cac: add exception for stories to not show rules of hooks errors
+
 ## 1.0.1
 ### Patch Changes
 

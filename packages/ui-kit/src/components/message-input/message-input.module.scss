@@ -4,16 +4,44 @@
 }
 
 .input {
+  --sb-track-color: #fffefe;
+  --sb-thumb-color: #d9d7d8;
+  --sb-size: 4px;
+  --sb-border-radius: 3px;
+
+  cursor: auto;
+  resize: none;
+  scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+
+  flex-grow: 1;
+
   width: 100%;
   padding: 12px 60px 12px 24px;
 
   font-size: var(--font-size-s);
   line-height: var(--line-height-m);
 
+  // https://stackoverflow.com/questions/7144843/extra-space-under-textarea-differs-along-browsers
+  vertical-align: top;
+
   background-color: var(--color-bg-interactive-dividers);
   border: 1px solid var(--color-border-input-primary);
   border-radius: 0 0 2px 2px;
   outline: none;
+
+  &::-webkit-scrollbar {
+    width: var(--sb-size);
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--sb-track-color);
+    border-radius: var(--sb-border-radius);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--sb-thumb-color);
+    border-radius: var(--sb-border-radius);
+  }
 }
 
 .button {
@@ -22,8 +50,8 @@
   cursor: pointer;
 
   position: absolute;
-  top: 0;
   right: 0;
+  bottom: 0;
 
   display: flex;
   align-items: center;
@@ -39,7 +67,7 @@
   &:focus-visible {
     outline: 1px solid var(--color-outline-focus);
   }
-  
+
   &:disabled {
     cursor: default;
     color: var(--color-action-disabled);

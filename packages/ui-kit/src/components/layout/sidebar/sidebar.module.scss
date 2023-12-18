@@ -12,6 +12,9 @@
   color: var(--color-text-primary);
 
   background-color: var(--color-bg-element);
+  border-right: 1px solid var(--color-border-input-primary);
+  border-bottom: 1px solid var(--color-border-input-primary);
+  border-radius: 0 0 2px;
 
   &.open {
     width: var(--sidebar-open-width);
@@ -28,32 +31,6 @@
 
   &.open {
     display: block;
-  }
-}
-
-.button {
-  all: unset;
-
-  cursor: pointer;
-
-  width: var(--sidebar-closed-width);
-
-  background-color: var(--color-bg-dividers);
-
-  transition: var(--transtition-duration-basic) background-color;
-
-  &:hover {
-    background-color: var(--color-bg-secondary-hover);
-  }
-
-  &:focus-visible {
-    outline: 2px solid var(--color-outline-focus);
-  }
-}
-
-.icon {
-  &.open {
-    transform: rotate(180deg);
   }
 }
 

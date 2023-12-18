@@ -1,7 +1,5 @@
 import { useState } from 'react'
 
-import { Meta } from '@storybook/react'
-
 import {
   DeleteForever,
   Dropdown,
@@ -11,10 +9,11 @@ import {
   Sidebar,
   ToolbarItemWithIcon,
 } from '../../../../src'
+import { Meta } from '@storybook/react'
 
 export default {
-  title: 'Components/Layout/Sidebar',
   component: Sidebar,
+  title: 'Components/Layout/Sidebar',
 } as Meta<typeof Sidebar>
 
 export const Default = {
@@ -23,12 +22,12 @@ export const Default = {
 
     return (
       <div>
-        <Sidebar open={open} onOpenChange={setOpen}>
+        <Sidebar isOpen={open}>
           <ul
             style={{
+              listStyle: 'none',
               padding: '10px',
               width: '100%',
-              listStyle: 'none',
             }}
           >
             <li>Инфопанель</li>
@@ -55,12 +54,12 @@ export const Default = {
 }
 const options = [
   {
-    value: 'frontend',
     label: 'Frontend',
+    value: 'frontend',
   },
   {
-    value: 'backend',
     label: 'Backend',
+    value: 'backend',
   },
 ]
 
@@ -72,20 +71,20 @@ export const FullLayout = {
     return (
       <div>
         <Header>
-          <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: '24px' }}>
-            <Select options={options} value={value} onChange={setValue} width={210} />
+          <div style={{ alignItems: 'center', display: 'flex', gap: '24px', marginLeft: 'auto' }}>
+            <Select onChange={setValue} options={options} value={value} width={210} />
             <Dropdown>
-              <ToolbarItemWithIcon icon={<Edit />} text="Изменить" onSelect={() => {}} />
-              <ToolbarItemWithIcon icon={<DeleteForever />} text="Удалить" onSelect={() => {}} />
+              <ToolbarItemWithIcon icon={<Edit />} onSelect={() => {}} text={'Изменить'} />
+              <ToolbarItemWithIcon icon={<DeleteForever />} onSelect={() => {}} text={'Удалить'} />
             </Dropdown>
           </div>
         </Header>
-        <Sidebar open={open} onOpenChange={setOpen}>
+        <Sidebar onOpenChange={setOpen} open={open}>
           <ul
             style={{
+              listStyle: 'none',
               padding: '10px',
               width: '100%',
-              listStyle: 'none',
             }}
           >
             <li>Инфопанель</li>

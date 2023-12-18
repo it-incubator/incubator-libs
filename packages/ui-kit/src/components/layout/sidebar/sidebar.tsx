@@ -1,6 +1,6 @@
 import { ComponentProps, FC, ReactNode } from 'react'
 
-import { KeyboardArrowRight, Scrollbar } from '../../../index'
+import { Scrollbar } from '../../../'
 import * as ScrollArea from '@radix-ui/react-scroll-area'
 import { clsx } from 'clsx'
 
@@ -8,29 +8,21 @@ import s from './sidebar.module.scss'
 
 type PropsType = {
   children: ReactNode
-  onOpenChange: (open: boolean) => void
-  open: boolean
+  isOpen: boolean
   showScrollbarOn?: ScrollArea.ScrollAreaProps['type']
 } & ComponentProps<'div'>
 
 export const Sidebar: FC<PropsType> = ({
   children,
-  onOpenChange,
-  open,
+  isOpen,
   showScrollbarOn = 'hover',
   ...rest
 }) => {
   const classNames = {
-    box: clsx(s.box, open && s.open),
-    button: clsx(s.button),
-    content: clsx(s.content, open && s.open),
+    box: clsx(s.box, isOpen && s.open),
+    content: clsx(s.content, isOpen && s.open),
     contentBox: s.contentBox,
-    icon: clsx(s.icon, open && s.open),
     scrollbar: s.scrollbar,
-  }
-
-  const buttonClickHandler = () => {
-    onOpenChange(!open)
   }
 
   return (
@@ -42,9 +34,6 @@ export const Sidebar: FC<PropsType> = ({
           </Scrollbar>
         </div>
       </div>
-      <button className={classNames.button} onClick={buttonClickHandler}>
-        <KeyboardArrowRight className={classNames.icon} />
-      </button>
     </div>
   )
 }

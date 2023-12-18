@@ -46,3 +46,20 @@ export const Error = {
     )
   },
 }
+
+export const WithContentOverflow = {
+  render: () => {
+    return (
+      <div>
+        <Snackbar autoClose={100000} />
+        <Button
+          onClick={() =>
+            toast.error('Такого плейлиста не существует или ты просмотрел все видео в нём')
+          }
+        >
+          Show notification
+        </Button>
+      </div>
+    )
+  },
+}

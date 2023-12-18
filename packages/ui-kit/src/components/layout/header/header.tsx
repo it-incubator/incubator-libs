@@ -1,4 +1,4 @@
-import { ComponentProps, FC } from 'react'
+import { ComponentProps } from 'react'
 
 import { Loader } from '../../loader'
 import { clsx } from 'clsx'
@@ -9,7 +9,7 @@ export type HeaderProps = ComponentProps<'header'> & {
   isLoading?: boolean
 }
 
-export const Header: FC<HeaderProps> = ({ className, isLoading, ...rest }) => {
+export const Header = ({ className, isLoading, ...rest }: HeaderProps) => {
   const classNames = {
     header: clsx(s.header, className),
   }

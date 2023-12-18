@@ -1,23 +1,17 @@
-import { ComponentProps, FC, ReactNode } from 'react'
+import { ComponentProps, ReactNode } from 'react'
 
-import { Scrollbar } from '../../../'
-import * as ScrollArea from '@radix-ui/react-scroll-area'
+import { Scrollbar, ScrollbarProps } from '../../../'
 import { clsx } from 'clsx'
 
 import s from './sidebar.module.scss'
 
-type PropsType = {
+export type SidebarProps = {
   children: ReactNode
   isOpen: boolean
-  showScrollbarOn?: ScrollArea.ScrollAreaProps['type']
+  showScrollbarOn?: ScrollbarProps['type']
 } & ComponentProps<'div'>
 
-export const Sidebar: FC<PropsType> = ({
-  children,
-  isOpen,
-  showScrollbarOn = 'hover',
-  ...rest
-}) => {
+export const Sidebar = ({ children, isOpen, showScrollbarOn = 'hover', ...rest }: SidebarProps) => {
   const classNames = {
     box: clsx(s.box, isOpen && s.open),
     content: clsx(s.content, isOpen && s.open),

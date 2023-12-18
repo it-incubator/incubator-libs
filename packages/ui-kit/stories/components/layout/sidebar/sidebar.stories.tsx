@@ -12,21 +12,27 @@ import {
 import { Meta } from '@storybook/react'
 
 export default {
+  argTypes: {
+    isOpen: {
+      control: {
+        type: 'boolean',
+      },
+    },
+  },
   component: Sidebar,
   title: 'Components/Layout/Sidebar',
 } as Meta<typeof Sidebar>
 
 export const Default = {
   render: args => {
-    const [open, setOpen] = useState(true)
-
     return (
       <div>
-        <Sidebar isOpen={open}>
+        <Sidebar {...args}>
           <ul
             style={{
               listStyle: 'none',
               padding: '10px',
+              paddingTop: 'var(--header-height)',
               width: '100%',
             }}
           >
@@ -39,7 +45,7 @@ export const Default = {
         </Sidebar>
         <div
           style={{
-            paddingLeft: open ? 'var(--sidebar-open-width)' : 'var(--sidebar-closed-width)',
+            paddingLeft: args.isOpen ? 'var(--sidebar-open-width)' : 'var(--sidebar-closed-width)',
           }}
         >
           <p>
@@ -65,7 +71,6 @@ const options = [
 
 export const FullLayout = {
   render: args => {
-    const [open, setOpen] = useState(true)
     const [value, setValue] = useState('frontend')
 
     return (
@@ -79,11 +84,12 @@ export const FullLayout = {
             </Dropdown>
           </div>
         </Header>
-        <Sidebar onOpenChange={setOpen} open={open}>
+        <Sidebar {...args}>
           <ul
             style={{
               listStyle: 'none',
               padding: '10px',
+              paddingTop: 'var(--header-height)',
               width: '100%',
             }}
           >
@@ -96,7 +102,8 @@ export const FullLayout = {
         </Sidebar>
         <div
           style={{
-            paddingLeft: open ? 'var(--sidebar-open-width)' : 'var(--sidebar-closed-width)',
+            paddingLeft: args.isOpen ? 'var(--sidebar-open-width)' : 'var(--sidebar-closed-width)',
+            paddingTop: 'var(--header-height)',
           }}
         >
           <p>

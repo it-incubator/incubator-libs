@@ -1,6 +1,6 @@
 import { ComponentProps, FC, ReactNode } from 'react'
 
-import { KeyboardArrowRight, Scrollbar } from '../../'
+import { KeyboardArrowRight, Scrollbar } from '../../../index'
 import * as ScrollArea from '@radix-ui/react-scroll-area'
 import { clsx } from 'clsx'
 

@@ -4,6 +4,7 @@
   --_bg-color: var(--bg-color, var(--color-bg-focus));
   --_text-color-message: var(--text-color-message, var(--color-text-primary));
   --_text-color-time: var(--text-color-time, var(--color-text-secondary));
+  --_text-color-role: var(--text-color-role, var(--color-text-secondary));
 
   position: relative;
 
@@ -37,6 +38,7 @@
     --bg-color: var(--color-info-500);
     --text-color-message: var(--color-neutral-light-50);
     --text-color-time: var(--color-info-200);
+    --text-color-role: var(--color-info-200);
 
     align-self: end;
 
@@ -55,17 +57,22 @@
   margin-bottom: 6px;
 }
 
+.username {
+  color: var(--_text-color-message);
+}
+
 .role {
-  color: var(--color-text-secondary);
+  color: var(--_text-color-role);
 }
 
 .message {
   margin-bottom: 6px;
   color: var(--_text-color-message);
+  word-break: break-word;
 }
 
 .time {
   font-size: var(--font-size-xs);
-  line-height: 16px;
+  line-height: var(--line-height-s);
   color: var(--_text-color-time);
 }

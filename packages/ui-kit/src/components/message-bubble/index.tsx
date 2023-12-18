@@ -1,52 +1,50 @@
-import { ComponentProps } from 'react'
+import { CSSProperties, ComponentProps } from 'react'
 
 import { Typography } from '../typography'
 import { clsx } from 'clsx'
 
 import s from './message-bubble.module.scss'
 
-type CommonProps = {
+type ShowUsername = 'always' | 'first' | 'never'
+
+type MessageBubbleProps = {
   isCurrentUser?: boolean
   isFirst?: boolean
+  maxWidth?: CSSProperties['maxWidth']
   message: string
+  role?: string
+  showUsername?: ShowUsername
   time: string
+  username?: string
 } & ComponentProps<'div'>
-
-type ConditionalProps =
-  | {
-      isCurrentUser: true
-      role?: never
-      username?: never
-    }
-  | {
-      isCurrentUser?: false
-      role?: string
-      username?: string
-    }
-
-type MessageBubbleProps = CommonProps & ConditionalProps
 export const MessageBubble = ({
   className,
   isCurrentUser,
   isFirst,
+  maxWidth = '404px',
   message,
   role,
+  showUsername = 'first',
+  style,
   time,
   username,
   ...restProps
 }: MessageBubbleProps) => {
   const classNames = {
     box: clsx(s.box, isCurrentUser && s.currentUser, isFirst && s.isFirst, className),
-    message: clsx(s.message, isCurrentUser && s.currentUser),
-    time: clsx(s.time, isCurrentUser && s.currentUser),
+    message: clsx(s.message),
+    time: clsx(s.time),
+  }
+  const styles = {
+    box: { maxWidth, ...style },
   }
 
   return (
-    <div {...restProps} className={classNames.box}>
+    <div {...restProps} className={classNames.box} style={styles.box}>
       <MessageHeader
-        isCurrentUser={isCurrentUser}
         isFirst={isFirst}
         role={role}
+        showUsername={showUsername}
         username={username}
       />
       <Typography.Body2 className={classNames.message}>{message}</Typography.Body2>
@@ -56,28 +54,28 @@ export const MessageBubble = ({
 }
 
 type MessageHeaderProps = {
-  isCurrentUser?: boolean
   isFirst?: boolean
   role?: string
+  showUsername?: ShowUsername
   username?: string
 }
 
-const MessageHeader = ({ isCurrentUser, isFirst, role, username }: MessageHeaderProps) => {
+const MessageHeader = ({ isFirst, role, showUsername = 'first', username }: MessageHeaderProps) => {
   const classNames = {
     header: s.header,
-    role: s.role,
-    username: s.username,
+    role: clsx(s.role),
+    username: clsx(s.username),
   }
 
-  const isShowHeader = getShowHeader(isCurrentUser, role, username, isFirst)
+  const shouldShowHeader = getShowHeader(showUsername, role, username, isFirst)
 
-  if (!isShowHeader) {
+  if (!shouldShowHeader) {
     return null
   }
 
   return (
     <div className={classNames.header}>
-      {!isCurrentUser && (
+      {!!username && (
         <Typography.Subtitle1 className={classNames.username}>{username}</Typography.Subtitle1>
       )}
       {role && <Typography.Caption className={classNames.role}>{role}</Typography.Caption>}
@@ -86,22 +84,23 @@ const MessageHeader = ({ isCurrentUser, isFirst, role, username }: MessageHeader
 }
 
 function getShowHeader(
-  isCurrentUser?: boolean,
+  showUsername: ShowUsername,
   role?: string,
   username?: string,
   isFirst?: boolean
 ) {
-  if (isCurrentUser) {
+  if (!username && !role) {
     return false
   }
-
-  if (!isFirst) {
+  if (showUsername === 'always') {
+    return true
+  }
+  if (showUsername === 'never') {
     return false
   }
-
-  if (!role && !username) {
-    return false
+  if (showUsername === 'first' && isFirst) {
+    return true
   }
 
-  return true
+  return false
 }

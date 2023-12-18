@@ -56,6 +56,7 @@ export const Combobox: FC<ComboboxProps> = ({
   value,
 }) => {
   const showError = !!errorMessage && errorMessage.length > 0
+  const isClearButtonVisible = showClearButton && !!value
   const inputChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.currentTarget.value === '') {
       onChange(null)
@@ -82,7 +83,7 @@ export const Combobox: FC<ComboboxProps> = ({
       textFieldStyle.input,
       s.input,
       showError && textFieldStyle.error,
-      showClearButton && s.hasClearButton
+      isClearButtonVisible && s.hasClearButton
     ),
     item: selectStyle.item,
     root: s.root,
@@ -128,7 +129,7 @@ export const Combobox: FC<ComboboxProps> = ({
               )}
             </ComboboxHeadlessUI.Button>
           </Label>
-          {showClearButton && !!value && (
+          {isClearButtonVisible && (
             <div className={classNames.clearButton} onClick={onClear ?? handleClearButtonClicked}>
               <Close size={18} />
             </div>

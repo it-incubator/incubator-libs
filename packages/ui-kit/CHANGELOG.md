@@ -6,6 +6,7 @@
 - UIL-82 feat: add autosize textarea to chat input instead of an input
 - 1d4efe6: UIL-82 fix: add input padding when there is selected value
 - 5817a7d: UIL-82 feat: add showUsername option to be able to show who sent the message from current user's perspective
+- UIL-81 fix: change toastify notification styles for long messages
 
 ## 0.2.20
 ### Patch Changes

@@ -1,4 +1,4 @@
-import * as React from 'react'
+import { FC, HTMLProps, ReactNode, SVGProps } from 'react'
 
 export type IconProps = {
   /** Whether to scale icon according to font-size. Sets width and height to 1em. */
@@ -8,10 +8,10 @@ export type IconProps = {
   /** Set width and height of icon in pixels */
   size?: number
   /** Props to pass directly to svg element */
-  svgProps?: React.SVGProps<SVGSVGElement>
-} & Omit<React.HTMLProps<HTMLSpanElement>, 'color' | 'size'>
+  svgProps?: SVGProps<SVGSVGElement>
+} & Omit<HTMLProps<HTMLSpanElement>, 'color' | 'size'>
 
-export const IconWrapper: React.FC<{ icon: React.ReactNode } & IconProps> = ({
+export const IconWrapper: FC<{ icon: ReactNode } & IconProps> = ({
   autoSize,
   color: colorProp,
   icon,

@@ -16,6 +16,15 @@ module.exports = {
     'plugin:prettier/recommended',
     'plugin:perfectionist/recommended-natural',
   ],
+  overrides: [
+    {
+      files: ['**/*.stories.tsx'],
+      rules: {
+        'no-console': 'off',
+        'react-hooks/rules-of-hooks': 'off',
+      },
+    },
+  ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {

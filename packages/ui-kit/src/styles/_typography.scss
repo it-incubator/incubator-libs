@@ -21,3 +21,98 @@
   --font-weight-semi-bold: 600;
   --font-weight-bold: 700;
 }
+
+@mixin typography($fontSize, $lineHeight, $fontWeight) {
+  margin: 0;
+
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+  line-height: $lineHeight;
+  color: var(--color-text-primary);
+}
+
+.uik_typography-h1 {
+  @include typography(var(--font-size-xxl), var(--line-height-xl), var(--font-weight-bold));
+}
+
+.uik_typography-h2 {
+  @include typography(var(--font-size-xl), var(--line-height-m), var(--font-weight-semi-bold));
+}
+
+.uik_typography-h3 {
+  @include typography(var(--font-size-l), var(--line-height-m), var(--font-weight-medium));
+}
+
+.uik_typography-subtitle1 {
+  @include typography(var(--font-size-m), var(--line-height-m), var(--font-weight-medium));
+}
+
+.uik_typography-subtitle2 {
+  @include typography(var(--font-size-s), var(--line-height-m), var(--font-weight-medium));
+}
+
+.uik_typography-body1 {
+  @include typography(var(--font-size-m), var(--line-height-m), var(--font-weight-regular));
+}
+
+.uik_typography-body2 {
+  @include typography(var(--font-size-s), var(--line-height-m), var(--font-weight-regular));
+}
+
+.uik_typography-overline {
+  @include typography(var(--font-size-s), var(--line-height-m), var(--font-weight-regular));
+
+  text-transform: uppercase;
+}
+
+.uik_typography-caption {
+  @include typography(var(--font-size-xs), var(--line-height-m), var(--font-weight-regular));
+
+  display: inline-block;
+  text-align: start;
+}
+
+.uik_typography-caption-bold {
+  @include typography(var(--font-size-xs), var(--line-height-m), var(--font-weight-bold));
+
+  display: inline-block;
+  text-align: start;
+}
+
+.uik_typography-caption-link {
+  @include typography(var(--font-size-xs), var(--line-height-m), var(--font-weight-regular));
+
+  text-decoration: underline;
+}
+
+.uik_typography-link {
+  @include typography(inherit, inherit, inherit);
+
+  cursor: pointer;
+  color: var(--color-text-link);
+  text-decoration: underline;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+.uik_typography-subtitle-link {
+  @include typography(var(--font-size-s), var(--line-height-m), var(--font-weight-bold));
+
+  cursor: pointer;
+  color: var(--color-text-link);
+  text-decoration: underline;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+.uik_typography-error {
+  @include typography(var(--font-size-sx), var(--line-height-m), var(--font-weight-regular));
+
+  color: var(--color-accent-500);
+}

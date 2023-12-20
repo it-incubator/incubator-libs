@@ -10,8 +10,6 @@ import {
 import { clsx } from 'clsx'
 import { JSX } from 'react/jsx-runtime'
 
-import s from './typography.module.scss'
-
 import IntrinsicElements = JSX.IntrinsicElements
 
 export type PropsOf<TTag extends ReactTag> = TTag extends ElementType
@@ -38,15 +36,15 @@ const createTypographyComponent = <T extends ReactTag>(
   return ({ children, className, color, component, mb, ml, mr, mt, mx, my, style, ...rest }) => {
     const Component = component || COMPONENTS[basicClassName] || 'span'
 
-    const classNames = clsx(s[basicClassName], className)
+    const classNames = clsx(`uik_typography-${basicClassName}`, className)
 
     const styles = {
+      ...(mx && { marginLeft: mx, marginRight: mx }),
+      ...(my && { marginBottom: my, marginTop: my }),
       ...(mr && { marginRight: mr }),
       ...(ml && { marginLeft: ml }),
       ...(mt && { marginTop: mt }),
       ...(mb && { marginBottom: mb }),
-      ...(mx && { marginLeft: mx, marginRight: mx }),
-      ...(my && { marginBottom: my, marginTop: my }),
       ...(color && { color }),
       ...style,
     }
@@ -63,8 +61,8 @@ export const Typography = {
   Body1: createTypographyComponent('body1'),
   Body2: createTypographyComponent('body2'),
   Caption: createTypographyComponent('caption'),
-  CaptionBold: createTypographyComponent('captionBold'),
-  CaptionLink: createTypographyComponent('captionLink'),
+  CaptionBold: createTypographyComponent('caption-bold'),
+  CaptionLink: createTypographyComponent('caption-link'),
   Error: createTypographyComponent('error'),
   H1: createTypographyComponent('h1'),
   H2: createTypographyComponent('h2'),
@@ -73,24 +71,24 @@ export const Typography = {
   Overline: createTypographyComponent('overline'),
   Subtitle1: createTypographyComponent('subtitle1'),
   Subtitle2: createTypographyComponent('subtitle2'),
-  SubtitleLink: createTypographyComponent('subtitleLink'),
+  SubtitleLink: createTypographyComponent('subtitle-link'),
 }
 
 const COMPONENTS = {
   body1: 'p',
   body2: 'p',
   caption: 'span',
-  captionBold: 'caption',
-  captionLink: 'a',
+  'caption-bold': 'caption',
+  'caption-link': 'a',
   error: 'span',
   h1: 'h1',
   h2: 'h2',
   h3: 'h3',
   link: 'a',
   overline: 'p',
+  'subtitle-link': 'span',
   subtitle1: 'p',
   subtitle2: 'p',
-  subtitleLink: 'span',
 } as const
 
 type Component = keyof typeof COMPONENTS

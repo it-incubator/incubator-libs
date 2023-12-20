@@ -14,6 +14,8 @@
   --tag-box-shadow: 0px 2px 10px rgb(109 109 109 / 25%), inset 0px 1px 0px rgb(255 255 255 / 30%);
 
   /* z-indexes */
+  --z-index-header: 10;
+  --z-index-sidebar: 20;
   --z-index-modal-overlay: 100;
   --z-index-modal-content: 101;
 }

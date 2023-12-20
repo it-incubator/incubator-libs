@@ -1,7 +1,6 @@
 import { FC } from 'react'
 
 import * as CheckboxRadix from '@radix-ui/react-checkbox'
-import { clsx } from 'clsx'
 
 import s from './checkbox.module.scss'
 

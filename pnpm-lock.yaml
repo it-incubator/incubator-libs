@@ -357,9 +357,6 @@ importers:
       clsx:
         specifier: 2.0.0
         version: 2.0.0
-      framer-motion:
-        specifier: ^10.16.4
-        version: 10.16.4(react-dom@18.2.0)(react@18.2.0)
       react-datepicker:
         specifier: 4.19.0
         version: 4.19.0(react-dom@18.2.0)(react@18.2.0)
@@ -451,6 +448,9 @@ importers:
       esbuild-sass-plugin:
         specifier: 2.15.0
         version: 2.15.0(esbuild@0.19.3)
+      framer-motion:
+        specifier: ^10.16.4
+        version: 10.16.4(react-dom@18.2.0)(react@18.2.0)
       loki:
         specifier: ^0.32.0
         version: 0.32.0(@storybook/addons@7.4.4)(@storybook/react@7.4.4)(@types/react@18.2.45)
@@ -2147,13 +2147,13 @@ packages:
     requiresBuild: true
     dependencies:
       '@emotion/memoize': 0.7.4
-    dev: false
+    dev: true
     optional: true
 
   /@emotion/memoize@0.7.4:
     resolution: {integrity: sha512-Ja/Vfqe3HpuzRsG1oBtWTHk2PGZ7GR+2Vz5iYGelAw8dx32K0y7PjVuxK6z1nMpZOqAFsRUPCkK1YjJ56qJlgw==}
     requiresBuild: true
-    dev: false
+    dev: true
     optional: true
 
   /@emotion/use-insertion-effect-with-fallbacks@1.0.1(react@18.2.0):
@@ -8813,7 +8813,7 @@ packages:
       tslib: 2.6.0
     optionalDependencies:
       '@emotion/is-prop-valid': 0.8.8
-    dev: false
+    dev: true
 
   /fresh@0.5.2:
     resolution: {integrity: sha512-zJ2mQYM18rEFOudeV4GShTGIQ7RbzA7ozbU9I/XBpm7kqgMywgmylMwXHxZJmkVoYkna9d2pVXVXPdYTP9ej8Q==}

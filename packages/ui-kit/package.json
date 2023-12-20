@@ -52,6 +52,7 @@
     "concurrently": "8.2.1",
     "date-fns": "2.30.0",
     "esbuild-sass-plugin": "2.15.0",
+    "framer-motion": "^10.16.4",
     "loki": "^0.32.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",

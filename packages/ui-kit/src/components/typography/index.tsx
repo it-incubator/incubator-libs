@@ -78,7 +78,7 @@ const COMPONENTS = {
   body1: 'p',
   body2: 'p',
   caption: 'span',
-  'caption-bold': 'caption',
+  'caption-bold': 'span',
   'caption-link': 'a',
   error: 'span',
   h1: 'h1',

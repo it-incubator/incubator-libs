@@ -1,60 +1,61 @@
 import { useState } from 'react'
 
-import { Meta } from '@storybook/react'
-
 import { RadioGroup } from '../../../../src'
+import { Meta } from '@storybook/react'
 
 const options = [
   {
+    label: 'Apple',
     value: 'apple',
-    label: 'Apple',
   },
   {
+    label: 'Banana',
     value: 'banana',
-    label: 'Banana',
   },
   {
-    value: 'blueberry',
     label: 'Blueberry',
+    value: 'blueberry',
   },
   {
-    value: 'grapes',
     label: 'Grapes',
+    value: 'grapes',
   },
   {
-    value: 'pineapple',
     label: 'Pineapple',
+    value: 'pineapple',
   },
   {
-    value: 'apple1',
     label: 'Apple',
+    value: 'apple1',
   },
   {
-    value: 'banana1',
     label: 'Banana',
+    value: 'banana1',
   },
 ]
 
 export default {
-  title: 'Components/Data Entry/RadioGroup',
   component: RadioGroup,
+  title: 'Components/Data Entry/RadioGroup',
 } as Meta<typeof RadioGroup>
 
 export const Default = {
+  args: {
+    disabled: false,
+    options,
+  },
+
   render: args => {
     const [value, setValue] = useState(null)
 
+    console.log('value', value)
+
     return (
       <>
-        <RadioGroup {...args} value={value} onChange={setValue} />
+        <RadioGroup {...args} onChange={setValue} value={value} />
         <div>Selected value: {value}</div>
       </>
     )
-  },
-
-  args: {
-    options,
-    disabled: false,
   },
 }
 export const WithError = {

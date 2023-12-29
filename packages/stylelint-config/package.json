@@ -1,12 +1,12 @@
 {
   "name": "@it-incubator/stylelint-config",
-  "version": "0.1.5",
+  "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "stylelint": "15.10.1",
-    "stylelint-config-clean-order": "5.0.1",
-    "stylelint-config-standard-scss": "10.0.0"
+    "stylelint": "16.1.0",
+    "stylelint-config-clean-order": "5.2.0",
+    "stylelint-config-standard-scss": "12.0.0"
   },
   "publishConfig": {
     "access": "public"

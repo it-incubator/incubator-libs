@@ -1,5 +1,10 @@
 # @it-incubator/stylelint-config-incubator
 
+## 1.0.2
+### Patch Changes
+
+- allow 'composes' property
+
 ## 1.0.0
 ### Major Changes
 

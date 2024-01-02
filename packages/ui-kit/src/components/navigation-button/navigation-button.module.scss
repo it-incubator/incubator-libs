@@ -1,0 +1,93 @@
+.root {
+  --background-color: var(--color-neutral-light-50);
+  --background-color-hover: var(--color-info-50);
+  --background-color-active: var(--color-info-100);
+  --border-color: var(--color-neutral-dark-100);
+  --border-color-hover: var(--color-info-300);
+  --border-color-active: var(--color-info-300);
+  --box-shadow: 0 1px 11px 0 rgb(26 117 245 / 15%);
+  --text-color-hover: var(--color-info-500);
+  --outline-color: var(--color-info-500);
+
+  all: unset;
+
+  cursor: pointer;
+  user-select: none;
+
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+
+  box-sizing: border-box;
+  width: 100%;
+  padding: 7px 12px 5px;
+
+  background: var(--color-bg-tooltip);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+
+  transition:
+    color,
+    background-color,
+    border,
+    0.1s ease-in-out;
+
+  :global(.dark-mode) & {
+    --background-color: var(--color-dark-mode-500);
+    --background-color-hover: var(--color-info-900);
+    --background-color-active: var(--color-info-800);
+    --border-color: var(--color-dark-mode-400);
+    --border-color-hover: var(--color-info-600);
+    --border-color-active: var(--color-info-600);
+    --text-color-hover: var(--color-info-400);
+    --outline-color: var(--color-info-600);
+  }
+
+  > .icon {
+    flex-shrink: 0;
+    align-self: center;
+  }
+
+  &.backward .nameContainer {
+    text-align: right;
+  }
+
+  & .topic {
+    word-break: break-word;
+  }
+
+  &:hover {
+    background-color: var(--background-color-hover);
+    border-color: var(--border-color-hover);
+    box-shadow: var(--box-shadow);
+
+    &,
+    & .topic {
+      color: var(--text-color-hover);
+    }
+  }
+
+  &:active {
+    background-color: var(--background-color-active);
+    border-color: var(--border-color-active);
+    box-shadow: var(--box-shadow);
+
+    & > .icon,
+    & .topic {
+      color: var(--text-color-hover);
+    }
+  }
+
+  &:focus-visible {
+    outline: var(--outline-focus);
+    outline-color: var(--outline-color);
+  }
+}
+
+.caption {
+  color: var(--color-neutral-dark-400);
+
+  :global(.dark-mode) & {
+    color: var(--color-dark-mode-200);
+  }
+}

@@ -1,6 +1,4 @@
 .box {
-  /* stylelint-disable custom-property-pattern */
-  // todo: fix stylelint config to allow this
   --_bg-color: var(--bg-color, var(--color-bg-focus));
   --_text-color-message: var(--text-color-message, var(--color-text-primary));
   --_text-color-time: var(--text-color-time, var(--color-text-secondary));

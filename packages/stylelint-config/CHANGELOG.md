@@ -1,5 +1,10 @@
 # @it-incubator/stylelint-config-incubator
 
+## 1.0.3
+### Patch Changes
+
+- remove custom property pattern rule
+
 ## 1.0.2
 ### Patch Changes
 

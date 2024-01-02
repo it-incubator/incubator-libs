@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 0.2.23
+### Patch Changes
+
+- add navigation button component
+
 ## 0.2.21
 ### Patch Changes
 

@@ -123,6 +123,10 @@
     &:first-child {
       margin-top: 0;
     }
+
+    .prose li > & {
+      margin-block: 0.5rem;
+    }
   }
 
   & li {

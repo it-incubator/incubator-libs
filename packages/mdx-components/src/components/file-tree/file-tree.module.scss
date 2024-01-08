@@ -8,6 +8,12 @@
   line-height: var(--mdx-line-height-xs);
   color: var(--mdx-color-text-secondary);
 
+  li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
   ul {
     margin: 0;
     padding: 0;

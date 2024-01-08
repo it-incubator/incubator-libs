@@ -130,7 +130,7 @@
   }
 
   & li {
-    margin-inline: 0.5rem;
+    margin: 0.5rem;
   }
 
   & blockquote {
@@ -197,17 +197,13 @@
         &[data-highlighted-line] {
           color: rgb(0 107 230 / 50%);
           background-color: rgb(0 107 230 / 10%);
-          box-shadow:
-            rgb(0 0 0 / 0%) 0 0 0 0,
-            rgb(0 0 0 / 0%) 0 0 0 0,
+          box-shadow: rgb(0 0 0 / 0%) 0 0 0 0, rgb(0 0 0 / 0%) 0 0 0 0,
             rgb(0 107 230 / 50%) 2px 0 0 0 inset;
 
           :global(.dark-mode) & {
             color: rgb(0 138 230 / 50%);
             background-color: rgb(0 138 230 / 10%);
-            box-shadow:
-              rgb(0 0 0 / 0%) 0 0 0 0,
-              rgb(0 0 0 / 0%) 0 0 0 0,
+            box-shadow: rgb(0 0 0 / 0%) 0 0 0 0, rgb(0 0 0 / 0%) 0 0 0 0,
               rgb(0 138 230 / 50%) 2px 0 0 0 inset;
           }
         }
@@ -215,16 +211,12 @@
         & [data-highlighted-chars] {
           background-color: rgb(0 76 163 / 10%);
           border-radius: 0.125rem;
-          box-shadow:
-            rgb(0 0 0 / 0%) 0 0 0 0,
-            rgb(0 0 0 / 0%) 0 0 0 0,
+          box-shadow: rgb(0 0 0 / 0%) 0 0 0 0, rgb(0 0 0 / 0%) 0 0 0 0,
             rgb(0 76 163 / 10%) 0 0 0 2px;
 
           :global(.dark-mode) & {
             background-color: rgb(138 208 255 / 15%);
-            box-shadow:
-              rgb(0 0 0 / 0%) 0 0 0 0,
-              rgb(0 0 0 / 0%) 0 0 0 0,
+            box-shadow: rgb(0 0 0 / 0%) 0 0 0 0, rgb(0 0 0 / 0%) 0 0 0 0,
               rgb(138 208 255 / 15%) 0 0 0 2px;
           }
         }

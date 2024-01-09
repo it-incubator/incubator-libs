@@ -13,7 +13,13 @@
   line-height: var(--line-height-m);
   color: var(--color-text-primary);
 
+  &.tight {
+    gap: 8px;
+    align-items: flex-start;
+  }
+
   &.disabled {
+    cursor: default;
     color: var(--color-checkbox-disabled);
   }
 }
@@ -59,6 +65,10 @@
 
   background-color: rgb(255 255 255 / 0%);
   border-radius: 50%;
+
+  &.tight {
+    margin: -6px;
+  }
 
   &.disabled {
     cursor: initial;

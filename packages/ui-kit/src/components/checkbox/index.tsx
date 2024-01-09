@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, ReactNode } from 'react'
 
 import { Check } from '../../'
 import * as CheckboxRadix from '@radix-ui/react-checkbox'
@@ -10,26 +10,30 @@ import s from './checkbox.module.scss'
 
 export type CheckboxProps = {
   checked: boolean
+  className?: string
   disabled?: boolean
   id?: string
-  label?: string
+  label?: ReactNode
   onChange: (checked: boolean) => void
   required?: boolean
+  tight?: boolean
 }
 
 export const Checkbox: FC<CheckboxProps> = ({
   checked,
+  className,
   disabled,
   id,
   label,
   onChange,
   required,
+  tight = false,
 }) => {
   const classNames = {
-    buttonWrapper: clsx(s.buttonWrapper, disabled && s.disabled),
-    container: s.container,
+    buttonWrapper: clsx(s.buttonWrapper, disabled && s.disabled, tight && s.tight),
+    container: clsx(s.container, className),
     indicator: s.indicator,
-    label: clsx(s.label, disabled && s.disabled),
+    label: clsx(s.label, disabled && s.disabled, tight && s.tight),
     root: s.root,
   }
 

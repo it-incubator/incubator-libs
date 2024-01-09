@@ -1,15 +1,24 @@
 import { useEffect, useState } from 'react'
 
-const getDeviceType = (): 'desktop' | 'mobile' => {
+type Device = 'desktop' | 'mobile' | 'tablet'
+const getDeviceType = (): Device => {
   if (typeof window === 'undefined') {
     return 'mobile'
   }
 
-  return window.innerWidth > 768 ? 'desktop' : 'mobile'
+  if (window.innerWidth <= 768) {
+    return 'mobile'
+  }
+
+  if (window.innerWidth <= 1280) {
+    return 'tablet'
+  }
+
+  return 'desktop'
 }
 
 export const useDeviceType = () => {
-  const [deviceType, setDeviceType] = useState<'desktop' | 'mobile'>(() => getDeviceType())
+  const [deviceType, setDeviceType] = useState<Device>(() => getDeviceType())
 
   useEffect(() => {
     const handleResize = () => {
@@ -24,6 +33,7 @@ export const useDeviceType = () => {
   }, [])
   const isMobile = deviceType === 'mobile'
   const isDesktop = deviceType === 'desktop'
+  const isTablet = deviceType === 'tablet'
 
-  return { deviceType, isDesktop, isMobile }
+  return { deviceType, isDesktop, isMobile, isTablet }
 }

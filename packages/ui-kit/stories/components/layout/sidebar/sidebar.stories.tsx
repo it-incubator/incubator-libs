@@ -5,13 +5,14 @@ import {
   Dropdown,
   Edit,
   Header,
+  Menu,
   Select,
   Sidebar,
   ToolbarItemWithIcon,
 } from '../../../../src'
-import { Meta } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react'
 
-export default {
+const meta = {
   argTypes: {
     isOpen: {
       control: {
@@ -21,7 +22,11 @@ export default {
   },
   component: Sidebar,
   title: 'Components/Layout/Sidebar',
-} as Meta<typeof Sidebar>
+} satisfies Meta<typeof Sidebar>
+
+export default meta
+
+type Story = StoryObj<typeof meta>
 
 export const Default = {
   render: args => {
@@ -69,9 +74,14 @@ const options = [
   },
 ]
 
-export const FullLayout = {
+export const FullLayout: Story = {
+  args: {
+    children: null,
+    isOpen: true,
+  },
   render: args => {
     const [value, setValue] = useState('frontend')
+    const [open, setOpen] = useState(false)
 
     return (
       <div>
@@ -84,7 +94,8 @@ export const FullLayout = {
             </Dropdown>
           </div>
         </Header>
-        <Sidebar {...args}>
+        <Sidebar isOpen={open} onClose={() => setOpen(false)}>
+          <Menu onClick={() => setOpen(!open)} />
           <ul
             style={{
               listStyle: 'none',

@@ -1,5 +1,12 @@
 # @it-incubator/ui-kit
 
+## 0.2.25
+### Patch Changes
+
+- feat(ui-kit): add tight checkbox variant
+- feat(ui-kit): add sidebar overlay for tablets
+- feat(ui-kit): add tablet variant to use-device-type hook
+
 ## 0.2.23
 ### Patch Changes
 

@@ -4,6 +4,8 @@
 }
 
 .label {
+  cursor: pointer;
+
   display: flex;
   align-items: center;
 
@@ -48,6 +50,7 @@
   cursor: pointer;
 
   display: flex;
+  flex-shrink: 0;
   align-items: center;
   justify-content: center;
 

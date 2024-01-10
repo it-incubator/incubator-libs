@@ -1,16 +1,18 @@
+import { Button } from '../../../../src'
 import { Meta } from '@storybook/react'
 
-import { Button } from '../../../../src'
-
 export default {
-  title: 'Components/Data Entry/Button',
+  argTypes: {
+    onClick: { action: 'clicked' },
+  },
   component: Button,
+  title: 'Components/Data Entry/Button',
 } as Meta<typeof Button>
 
 export const Primary = {
   args: {
-    variant: 'primary',
     children: 'Button',
     disabled: false,
+    variant: 'primary',
   },
 }

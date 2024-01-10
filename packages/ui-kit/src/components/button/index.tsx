@@ -14,6 +14,7 @@ export interface ButtonProps extends DefaultButtonProps {
   variant?: ButtonVariant
 }
 
+/** Accepts all props of the native button element. */
 export const Button = forwardRef<ElementRef<'button'>, ButtonProps>(
   ({ className, fullWidth, variant = 'primary', ...rest }, ref) => {
     const classNames = {

@@ -1,6 +1,6 @@
 import { FC, ReactNode } from 'react'
 
-import { Check } from '../../'
+import { CheckBoxSelected } from '../../'
 import * as CheckboxRadix from '@radix-ui/react-checkbox'
 import * as LabelRadix from '@radix-ui/react-label'
 import { clsx } from 'clsx'
@@ -74,7 +74,7 @@ export const Checkbox: FC<CheckboxProps> = ({
                         },
                       }}
                     >
-                      <Check color={'var(--color-text-primary)'} size={18} />
+                      <CheckBoxSelected color={'var(--color-text-primary)'} size={24} />
                     </motion.div>
                   </motion.div>
                 </CheckboxRadix.Indicator>

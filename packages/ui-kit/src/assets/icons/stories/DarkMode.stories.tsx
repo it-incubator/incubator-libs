@@ -1,8 +1,8 @@
-import { DarkMode } from '../';
+import { DarkMode } from '../'
 
 export default {
-title: 'Icons/DarkMode',
-component: DarkMode,
-};
+  component: DarkMode,
+  title: 'Icons/DarkMode',
+}
 
 export const Default = {}

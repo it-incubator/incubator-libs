@@ -1,6 +1,6 @@
 import { ComponentProps, FC, ReactNode } from 'react'
 
-import { Cancel, Info } from '../..'
+import { Cancel, InfoFill } from '../..'
 import { Card } from '../card'
 import { clsx } from 'clsx'
 
@@ -24,7 +24,7 @@ export const Alert: FC<AlertProps> = ({ children, icon, variant = 'warning', ...
     (isError ? (
       <Cancel className={s.defaultIcon} color={'var(--color-accent-500)'} />
     ) : (
-      <Info className={s.defaultIcon} color={'var(--color-danger-500)'} />
+      <InfoFill className={s.defaultIcon} color={'var(--color-danger-500)'} />
     ))
 
   return (

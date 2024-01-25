@@ -1,8 +1,8 @@
-import { Support } from '../';
+import { Support } from '../'
 
 export default {
-title: 'Icons/Support',
-component: Support,
-};
+  component: Support,
+  title: 'Icons/Support',
+}
 
 export const Default = {}

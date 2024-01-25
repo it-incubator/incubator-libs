@@ -1,8 +1,8 @@
-import { MenuDots } from '../';
+import { MenuDots } from '../'
 
 export default {
-title: 'Icons/MenuDots',
-component: MenuDots,
-};
+  component: MenuDots,
+  title: 'Icons/MenuDots',
+}
 
 export const Default = {}

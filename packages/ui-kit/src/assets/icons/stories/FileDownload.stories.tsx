@@ -1,8 +1,8 @@
-import { FileDownload } from '../';
+import { FileDownload } from '../'
 
 export default {
-title: 'Icons/FileDownload',
-component: FileDownload,
-};
+  component: FileDownload,
+  title: 'Icons/FileDownload',
+}
 
 export const Default = {}

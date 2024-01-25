@@ -1,8 +1,8 @@
-import { Logout } from '../';
+import { Logout } from '../'
 
 export default {
-title: 'Icons/Logout',
-component: Logout,
-};
+  component: Logout,
+  title: 'Icons/Logout',
+}
 
 export const Default = {}

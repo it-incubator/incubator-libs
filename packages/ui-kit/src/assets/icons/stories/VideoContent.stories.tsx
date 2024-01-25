@@ -1,8 +1,8 @@
-import { VideoContent } from '../';
+import { VideoContent } from '../'
 
 export default {
-title: 'Icons/VideoContent',
-component: VideoContent,
-};
+  component: VideoContent,
+  title: 'Icons/VideoContent',
+}
 
 export const Default = {}

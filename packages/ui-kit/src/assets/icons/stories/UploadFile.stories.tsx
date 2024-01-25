@@ -1,8 +1,8 @@
-import { UploadFile } from '../';
+import { UploadFile } from '../'
 
 export default {
-title: 'Icons/UploadFile',
-component: UploadFile,
-};
+  component: UploadFile,
+  title: 'Icons/UploadFile',
+}
 
 export const Default = {}

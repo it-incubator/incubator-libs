@@ -1,8 +1,8 @@
-import { HelpOutline } from '../';
+import { HelpOutline } from '../'
 
 export default {
-title: 'Icons/HelpOutline',
-component: HelpOutline,
-};
+  component: HelpOutline,
+  title: 'Icons/HelpOutline',
+}
 
 export const Default = {}

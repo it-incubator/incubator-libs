@@ -1,8 +1,10 @@
-import { FC, HTMLProps, ReactNode, SVGProps } from 'react'
+import { CSSProperties, FC, HTMLProps, ReactNode, SVGProps } from 'react'
 
 export type IconProps = {
   /** Whether to scale icon according to font-size. Sets width and height to 1em. */
   autoSize?: boolean
+  /** Set icon fill background color from design system */
+  backgroundColor?: string
   /** Set icon fill color from design system */
   color?: string
   /** Set width and height of icon in pixels */
@@ -13,6 +15,7 @@ export type IconProps = {
 
 export const IconWrapper: FC<{ icon: ReactNode } & IconProps> = ({
   autoSize,
+  backgroundColor = 'var(--color-neutral-light-50)',
   color: colorProp,
   icon,
   size: sizeProp,
@@ -25,13 +28,16 @@ export const IconWrapper: FC<{ icon: ReactNode } & IconProps> = ({
     <span
       aria-hidden={'true'}
       role={'img'}
-      style={{
-        color: color,
-        display: 'inline-flex',
-        fontSize: 'inherit',
-        height: size,
-        width: size,
-      }}
+      style={
+        {
+          '--color-bg-icon': backgroundColor,
+          color: color,
+          display: 'inline-flex',
+          fontSize: 'inherit',
+          height: size,
+          width: size,
+        } as CSSProperties
+      }
       {...restProps}
     >
       {icon}

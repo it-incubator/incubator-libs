@@ -1,8 +1,8 @@
-import { ArrowDropUp } from '../';
+import { ArrowDropUp } from '../'
 
 export default {
-title: 'Icons/ArrowDropUp',
-component: ArrowDropUp,
-};
+  component: ArrowDropUp,
+  title: 'Icons/ArrowDropUp',
+}
 
 export const Default = {}

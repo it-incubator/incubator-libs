@@ -1,8 +1,8 @@
-import { Play } from '../';
+import { Play } from '../'
 
 export default {
-title: 'Icons/Play',
-component: Play,
-};
+  component: Play,
+  title: 'Icons/Play',
+}
 
 export const Default = {}

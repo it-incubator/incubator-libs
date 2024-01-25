@@ -1,6 +1,6 @@
 import { CSSProperties, ComponentPropsWithoutRef, FC, ReactNode, useState } from 'react'
 
-import { More, Typography } from '../../'
+import { MenuDots, Typography } from '../../'
 import * as DropdownMenuRadix from '@radix-ui/react-dropdown-menu'
 import { clsx } from 'clsx'
 import { AnimatePresence, MotionProps, Variants, motion } from 'framer-motion'
@@ -57,7 +57,7 @@ export const Dropdown = ({ align = 'end', children, className, style, trigger }:
       <DropdownMenuRadix.Trigger asChild>
         {trigger ?? (
           <button className={classNames.button}>
-            <More />
+            <MenuDots />
           </button>
         )}
       </DropdownMenuRadix.Trigger>

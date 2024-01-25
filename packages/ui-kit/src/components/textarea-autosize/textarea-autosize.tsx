@@ -6,7 +6,6 @@ import { useComposedRef, useFontsLoadedListener, useWindowResizeListener } from 
 import { noop } from '../../utils'
 import calculateNodeHeight from './calculate-node-height'
 import { SizingData, getSizingData } from './get-sizing-data'
-import { isBrowser } from 'framer-motion'
 
 type TextareaProps = React.TextareaHTMLAttributes<HTMLTextAreaElement>
 
@@ -84,15 +83,11 @@ const TextareaAutosize: React.ForwardRefRenderFunction<
     onChange(event)
   }
 
-  if (isBrowser) {
-    React.useLayoutEffect(resizeTextarea)
-    useWindowResizeListener(resizeTextarea)
-    useFontsLoadedListener(resizeTextarea)
+  React.useLayoutEffect(resizeTextarea)
+  useWindowResizeListener(resizeTextarea)
+  useFontsLoadedListener(resizeTextarea)
 
-    return <textarea {...props} onChange={handleChange} ref={ref} />
-  }
-
-  return <textarea {...props} onChange={onChange} ref={ref} />
+  return <textarea {...props} onChange={handleChange} ref={ref} />
 }
 
 export default /* #__PURE__ */ React.forwardRef(TextareaAutosize)

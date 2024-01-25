@@ -1,8 +1,8 @@
-import { TellUsAboutUs } from '../';
+import { TellUsAboutUs } from '../'
 
 export default {
-title: 'Icons/TellUsAboutUs',
-component: TellUsAboutUs,
-};
+  component: TellUsAboutUs,
+  title: 'Icons/TellUsAboutUs',
+}
 
 export const Default = {}

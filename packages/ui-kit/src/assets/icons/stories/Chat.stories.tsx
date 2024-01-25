@@ -1,8 +1,8 @@
-import { Chat } from '../';
+import { Chat } from '../'
 
 export default {
-title: 'Icons/Chat',
-component: Chat,
-};
+  component: Chat,
+  title: 'Icons/Chat',
+}
 
 export const Default = {}

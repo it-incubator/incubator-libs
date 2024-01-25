@@ -8,7 +8,7 @@ import {
   useState,
 } from 'react'
 
-import { File as FileIcon, Folder as FolderIcon, FolderOpen } from '../../assets/icons'
+import { File as FileIcon, FolderClosed, FolderOpen } from '../../assets/icons'
 import { clsx } from 'clsx'
 
 import s from './file-tree.module.scss'
@@ -55,7 +55,7 @@ const Folder = memo<FolderProps>(({ children, defaultOpen = false, label, name }
   const folderIcon = isOpen ? (
     <FolderOpen className={classNames.folderIcon} height={14} size={14} />
   ) : (
-    <FolderIcon className={classNames.folderIcon} height={14} size={14} />
+    <FolderClosed className={classNames.folderIcon} height={14} size={14} />
   )
 
   return (

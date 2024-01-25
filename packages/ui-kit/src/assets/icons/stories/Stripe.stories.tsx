@@ -1,8 +1,8 @@
-import { Stripe } from '../';
+import { Stripe } from '../'
 
 export default {
-title: 'Icons/Stripe',
-component: Stripe,
-};
+  component: Stripe,
+  title: 'Icons/Stripe',
+}
 
 export const Default = {}

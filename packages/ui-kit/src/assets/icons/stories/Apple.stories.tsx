@@ -1,8 +1,8 @@
-import { Apple } from '../';
+import { Apple } from '../'
 
 export default {
-title: 'Icons/Apple',
-component: Apple,
-};
+  component: Apple,
+  title: 'Icons/Apple',
+}
 
 export const Default = {}

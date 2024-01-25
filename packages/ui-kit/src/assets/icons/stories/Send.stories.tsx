@@ -1,8 +1,8 @@
-import { Send } from '../';
+import { Send } from '../'
 
 export default {
-title: 'Icons/Send',
-component: Send,
-};
+  component: Send,
+  title: 'Icons/Send',
+}
 
 export const Default = {}

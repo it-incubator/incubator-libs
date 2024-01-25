@@ -1,8 +1,8 @@
-import { Visibility } from '../';
+import { Visibility } from '../'
 
 export default {
-title: 'Icons/Visibility',
-component: Visibility,
-};
+  component: Visibility,
+  title: 'Icons/Visibility',
+}
 
 export const Default = {}

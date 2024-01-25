@@ -1,8 +1,8 @@
-import { CloudQueue } from '../';
+import { CloudQueue } from '../'
 
 export default {
-title: 'Icons/CloudQueue',
-component: CloudQueue,
-};
+  component: CloudQueue,
+  title: 'Icons/CloudQueue',
+}
 
 export const Default = {}

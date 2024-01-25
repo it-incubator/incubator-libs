@@ -1,8 +1,8 @@
-import { StarHalf } from '../';
+import { StarHalf } from '../'
 
 export default {
-title: 'Icons/StarHalf',
-component: StarHalf,
-};
+  component: StarHalf,
+  title: 'Icons/StarHalf',
+}
 
 export const Default = {}

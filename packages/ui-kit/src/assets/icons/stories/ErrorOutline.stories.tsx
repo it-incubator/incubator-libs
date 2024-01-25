@@ -1,8 +1,8 @@
-import { ErrorOutline } from '../';
+import { ErrorOutline } from '../'
 
 export default {
-title: 'Icons/ErrorOutline',
-component: ErrorOutline,
-};
+  component: ErrorOutline,
+  title: 'Icons/ErrorOutline',
+}
 
 export const Default = {}

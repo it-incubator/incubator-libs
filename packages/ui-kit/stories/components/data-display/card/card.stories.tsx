@@ -1,10 +1,9 @@
+import { Card, InfoFill as InfoIcon } from '../../../../src'
 import { Meta } from '@storybook/react'
 
-import { Card, Info as InfoIcon } from '../../../../src'
-
 export default {
-  title: 'Components/Data Display/Card',
   component: Card,
+  title: 'Components/Data Display/Card',
 } as Meta<typeof Card>
 
 export const Primary = {
@@ -19,8 +18,14 @@ export const PrimaryWithIcon = {
   args: {
     children:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation',
+    iconComponent: (
+      <InfoIcon
+        backgroundColor={'var(--color-neutral-light-50)'}
+        color={'var(--color-danger-400)'}
+        size={16}
+      />
+    ),
     title: 'Some title',
-    iconComponent: <InfoIcon size={16} />,
   },
 }
 

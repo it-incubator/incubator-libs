@@ -1,5 +1,10 @@
 # @it-incubator/mdx-components
 
+## 0.0.12
+### Patch Changes
+
+- add legacy prop to support old code format. will be removed when legacy format is gone
+
 ## 0.0.8
 ### Patch Changes
 

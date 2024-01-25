@@ -1,11 +1,11 @@
-import { ComponentProps, FC } from 'react'
+import { ComponentProps, FC, ReactNode } from 'react'
 
 import { clsx } from 'clsx'
 
 import s from './tag.module.scss'
 
 export type TagProps = {
-  label: string
+  label: ReactNode
   variant?: 'primary' | 'secondary'
 } & ComponentProps<'div'>
 

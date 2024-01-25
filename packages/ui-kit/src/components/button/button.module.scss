@@ -1,7 +1,7 @@
 @mixin button {
   cursor: pointer;
 
-  display: flex;
+  display: inline-flex;
   align-items: center;
 
   padding: 0.5rem 1.75rem;
@@ -17,7 +17,8 @@
   border: none;
   border-radius: 2rem;
 
-  transition: var(--transtition-duration-basic) background-color,
+  transition:
+    var(--transtition-duration-basic) background-color,
     var(--transtition-duration-basic) color;
 
   &:focus-visible {
@@ -39,7 +40,9 @@
 
   color: var(--color-neutral-light-50);
   background-color: var(--color-accent-500);
-  box-shadow: 0 4px 18px rgb(245 26 81 / 35%), inset 0 1px 0 rgb(255 255 255 / 30%);
+  box-shadow:
+    0 4px 18px rgb(245 26 81 / 35%),
+    inset 0 1px 0 rgb(255 255 255 / 30%);
 
   &:hover {
     background-color: var(--color-accent-400);

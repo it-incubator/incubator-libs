@@ -45,7 +45,31 @@ export const Sprint6Block1: Story = {
     )
   },
 }
+export const Sprint6Block1Legacy: Story = {
+  render: () => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const [res, setRes] = useState<any>('')
 
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    useEffect(() => {
+      fetch(
+        'https://mdx-processor.staging.it-incubator.ru/api/v1/static/files/md-lesson-frontend/sprint-6/lesson-1/block-1.json'
+      )
+        .then(response => response.json())
+        .then(json => setRes(json))
+    }, [])
+
+    if (!res) {
+      return null
+    }
+
+    return (
+      <Prose legacy>
+        <MdxComponent code={res.code} />
+      </Prose>
+    )
+  },
+}
 export const Sprint6Block2: Story = {
   render: () => {
     // eslint-disable-next-line react-hooks/rules-of-hooks

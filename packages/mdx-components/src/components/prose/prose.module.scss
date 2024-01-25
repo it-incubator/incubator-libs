@@ -174,56 +174,6 @@
     border-radius: 0.375rem;
   }
 
-  & pre {
-    contain: paint;
-
-    & code {
-      display: grid;
-
-      min-width: 100%;
-      padding: 0;
-
-      font-size: 0.875rem;
-      line-height: 1.25rem;
-      color: currentcolor;
-
-      background-color: transparent;
-      border-style: none;
-      border-radius: 0;
-
-      [data-line] {
-        padding-inline: 1rem;
-
-        &[data-highlighted-line] {
-          color: rgb(0 107 230 / 50%);
-          background-color: rgb(0 107 230 / 10%);
-          box-shadow: rgb(0 0 0 / 0%) 0 0 0 0, rgb(0 0 0 / 0%) 0 0 0 0,
-            rgb(0 107 230 / 50%) 2px 0 0 0 inset;
-
-          :global(.dark-mode) & {
-            color: rgb(0 138 230 / 50%);
-            background-color: rgb(0 138 230 / 10%);
-            box-shadow: rgb(0 0 0 / 0%) 0 0 0 0, rgb(0 0 0 / 0%) 0 0 0 0,
-              rgb(0 138 230 / 50%) 2px 0 0 0 inset;
-          }
-        }
-
-        & [data-highlighted-chars] {
-          background-color: rgb(0 76 163 / 10%);
-          border-radius: 0.125rem;
-          box-shadow: rgb(0 0 0 / 0%) 0 0 0 0, rgb(0 0 0 / 0%) 0 0 0 0,
-            rgb(0 76 163 / 10%) 0 0 0 2px;
-
-          :global(.dark-mode) & {
-            background-color: rgb(138 208 255 / 15%);
-            box-shadow: rgb(0 0 0 / 0%) 0 0 0 0, rgb(0 0 0 / 0%) 0 0 0 0,
-              rgb(138 208 255 / 15%) 0 0 0 2px;
-          }
-        }
-      }
-    }
-  }
-
   table {
     border-collapse: collapse;
 
@@ -273,5 +223,63 @@
   :global(.dark-mode) & pre code {
     background-color: transparent;
     border-style: none;
+  }
+
+  &:not(.legacy) pre {
+    contain: paint;
+
+    & code {
+      display: grid;
+
+      min-width: 100%;
+      padding: 0;
+
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+      color: currentcolor;
+
+      background-color: transparent;
+      border-style: none;
+      border-radius: 0;
+
+      [data-line] {
+        padding-inline: 1rem;
+
+        &[data-highlighted-line] {
+          color: rgb(0 107 230 / 50%);
+          background-color: rgb(0 107 230 / 10%);
+          box-shadow:
+            rgb(0 0 0 / 0%) 0 0 0 0,
+            rgb(0 0 0 / 0%) 0 0 0 0,
+            rgb(0 107 230 / 50%) 2px 0 0 0 inset;
+
+          :global(.dark-mode) & {
+            color: rgb(0 138 230 / 50%);
+            background-color: rgb(0 138 230 / 10%);
+            box-shadow:
+              rgb(0 0 0 / 0%) 0 0 0 0,
+              rgb(0 0 0 / 0%) 0 0 0 0,
+              rgb(0 138 230 / 50%) 2px 0 0 0 inset;
+          }
+        }
+
+        & [data-highlighted-chars] {
+          background-color: rgb(0 76 163 / 10%);
+          border-radius: 0.125rem;
+          box-shadow:
+            rgb(0 0 0 / 0%) 0 0 0 0,
+            rgb(0 0 0 / 0%) 0 0 0 0,
+            rgb(0 76 163 / 10%) 0 0 0 2px;
+
+          :global(.dark-mode) & {
+            background-color: rgb(138 208 255 / 15%);
+            box-shadow:
+              rgb(0 0 0 / 0%) 0 0 0 0,
+              rgb(0 0 0 / 0%) 0 0 0 0,
+              rgb(138 208 255 / 15%) 0 0 0 2px;
+          }
+        }
+      }
+    }
   }
 }

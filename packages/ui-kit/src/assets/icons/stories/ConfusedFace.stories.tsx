@@ -1,8 +1,8 @@
-import { ConfusedFace } from '../'
+import { ConfusedFace } from '../';
 
 export default {
-  component: ConfusedFace,
-  title: 'Icons/ConfusedFace',
-}
+title: 'Icons/ConfusedFace',
+component: ConfusedFace,
+};
 
 export const Default = {}

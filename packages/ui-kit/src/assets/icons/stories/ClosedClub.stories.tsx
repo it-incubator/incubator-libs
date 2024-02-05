@@ -1,8 +1,8 @@
-import { ClosedClub } from '../'
+import { ClosedClub } from '../';
 
 export default {
-  component: ClosedClub,
-  title: 'Icons/ClosedClub',
-}
+title: 'Icons/ClosedClub',
+component: ClosedClub,
+};
 
 export const Default = {}

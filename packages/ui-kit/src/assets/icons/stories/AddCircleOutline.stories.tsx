@@ -1,8 +1,8 @@
-import { AddCircleOutline } from '../'
+import { AddCircleOutline } from '../';
 
 export default {
-  component: AddCircleOutline,
-  title: 'Icons/AddCircleOutline',
-}
+title: 'Icons/AddCircleOutline',
+component: AddCircleOutline,
+};
 
 export const Default = {}

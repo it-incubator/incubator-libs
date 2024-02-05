@@ -1,8 +1,8 @@
-import { FullscreenExit } from '../'
+import { FullscreenExit } from '../';
 
 export default {
-  component: FullscreenExit,
-  title: 'Icons/FullscreenExit',
-}
+title: 'Icons/FullscreenExit',
+component: FullscreenExit,
+};
 
 export const Default = {}

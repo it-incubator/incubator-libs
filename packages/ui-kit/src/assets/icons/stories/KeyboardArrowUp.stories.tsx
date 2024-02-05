@@ -1,8 +1,8 @@
-import { KeyboardArrowUp } from '../'
+import { KeyboardArrowUp } from '../';
 
 export default {
-  component: KeyboardArrowUp,
-  title: 'Icons/KeyboardArrowUp',
-}
+title: 'Icons/KeyboardArrowUp',
+component: KeyboardArrowUp,
+};
 
 export const Default = {}

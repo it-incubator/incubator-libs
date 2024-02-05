@@ -1,8 +1,8 @@
-import { Paypal } from '../'
+import { Paypal } from '../';
 
 export default {
-  component: Paypal,
-  title: 'Icons/Paypal',
-}
+title: 'Icons/Paypal',
+component: Paypal,
+};
 
 export const Default = {}

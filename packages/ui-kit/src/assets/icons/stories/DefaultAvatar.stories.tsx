@@ -1,8 +1,8 @@
-import { DefaultAvatar } from '../'
+import { DefaultAvatar } from '../';
 
 export default {
-  component: DefaultAvatar,
-  title: 'Icons/DefaultAvatar',
-}
+title: 'Icons/DefaultAvatar',
+component: DefaultAvatar,
+};
 
 export const Default = {}

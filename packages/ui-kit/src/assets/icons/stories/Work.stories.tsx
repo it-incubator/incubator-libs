@@ -1,8 +1,8 @@
-import { Work } from '../'
+import { Work } from '../';
 
 export default {
-  component: Work,
-  title: 'Icons/Work',
-}
+title: 'Icons/Work',
+component: Work,
+};
 
 export const Default = {}

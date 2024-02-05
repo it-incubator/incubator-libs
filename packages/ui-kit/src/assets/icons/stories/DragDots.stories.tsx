@@ -1,8 +1,8 @@
-import { DragDots } from '../'
+import { DragDots } from '../';
 
 export default {
-  component: DragDots,
-  title: 'Icons/DragDots',
-}
+title: 'Icons/DragDots',
+component: DragDots,
+};
 
 export const Default = {}

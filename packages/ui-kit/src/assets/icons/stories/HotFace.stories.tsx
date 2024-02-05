@@ -1,8 +1,8 @@
-import { HotFace } from '../'
+import { HotFace } from '../';
 
 export default {
-  component: HotFace,
-  title: 'Icons/HotFace',
-}
+title: 'Icons/HotFace',
+component: HotFace,
+};
 
 export const Default = {}

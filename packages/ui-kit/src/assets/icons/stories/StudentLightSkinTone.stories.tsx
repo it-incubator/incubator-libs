@@ -1,8 +1,8 @@
-import { StudentLightSkinTone } from '../'
+import { StudentLightSkinTone } from '../';
 
 export default {
-  component: StudentLightSkinTone,
-  title: 'Icons/StudentLightSkinTone',
-}
+title: 'Icons/StudentLightSkinTone',
+component: StudentLightSkinTone,
+};
 
 export const Default = {}

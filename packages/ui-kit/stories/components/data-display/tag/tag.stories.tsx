@@ -1,36 +1,56 @@
+import { Tag } from '../../../../src'
 import { Meta } from '@storybook/react'
 
-import { Tag } from '../../../../src'
-
 export default {
-  title: 'Components/Data Display/Tag',
   component: Tag,
+  title: 'Components/Data Display/Tag',
 } as Meta<typeof Tag>
 
 export const PrimaryClickable = {
   args: {
-    label: 'Супер контент, спасибо 👍',
+    children: 'Супер контент, спасибо 👍',
+    onClick: () => {},
+  },
+}
+export const PrimaryClickablePressed = {
+  args: {
+    children: 'Супер контент, спасибо 👍',
+    defaultPressed: true,
     onClick: () => {},
   },
 }
 
 export const PrimaryUnclickable = {
   args: {
-    label: 'Супер контент, спасибо 👍',
+    children: 'Супер контент, спасибо 👍',
+  },
+}
+export const PrimaryUnclickablePressed = {
+  args: {
+    children: 'Супер контент, спасибо 👍',
+    defaultPressed: true,
   },
 }
 
 export const SecondaryClickable = {
   args: {
-    label: 'Супер контент, спасибо 👍',
-    variant: 'secondary',
+    children: 'Супер контент, спасибо 👍',
     onClick: () => {},
+    variant: 'secondary',
+  },
+}
+export const SecondaryClickablePressed = {
+  args: {
+    children: 'Супер контент, спасибо 👍',
+    defaultPressed: true,
+    onClick: () => {},
+    variant: 'secondary',
   },
 }
 
 export const SecondaryUnclickable = {
   args: {
-    label: 'Супер контент, спасибо 👍',
+    children: 'Супер контент, спасибо 👍',
     variant: 'secondary',
   },
 }

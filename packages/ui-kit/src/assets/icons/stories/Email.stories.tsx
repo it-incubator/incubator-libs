@@ -1,8 +1,8 @@
-import { Email } from '../'
+import { Email } from '../';
 
 export default {
-  component: Email,
-  title: 'Icons/Email',
-}
+title: 'Icons/Email',
+component: Email,
+};
 
 export const Default = {}

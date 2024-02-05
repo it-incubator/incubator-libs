@@ -1,8 +1,8 @@
-import { CV } from '../'
+import { CV } from '../';
 
 export default {
-  component: CV,
-  title: 'Icons/CV',
-}
+title: 'Icons/CV',
+component: CV,
+};
 
 export const Default = {}

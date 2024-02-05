@@ -1,37 +1,34 @@
-import { IconProps, IconWrapper } from '../IconWrapper'
+import { IconWrapper, IconProps } from "../IconWrapper";
 
 const ThumbDown = (allProps: IconProps) => {
-  const { svgProps: props, ...restProps } = allProps
-
+  const { svgProps: props, ...restProps } = allProps;
   return (
     <IconWrapper
       icon={
         <svg
-          fill={'none'}
-          height={'100%'}
-          viewBox={'0 0 24 24'}
-          width={'100%'}
-          xmlns={'http://www.w3.org/2000/svg'}
+          width="100%"
+          height="100%"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
           {...props}
         >
-          <g clipPath={'url(#prefix__clip0_124_21534)'}>
+          <g clipPath="url(#prefix__clip0_124_21534)">
             <path
-              d={
-                'M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z'
-              }
-              fill={'currentColor'}
+              d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"
+              fill="currentColor"
             />
           </g>
           <defs>
-            <clipPath id={'prefix__clip0_124_21534'}>
-              <path d={'M0 0h24v24H0z'} fill={'#fff'} />
+            <clipPath id="prefix__clip0_124_21534">
+              <path fill="#fff" d="M0 0h24v24H0z" />
             </clipPath>
           </defs>
         </svg>
       }
       {...restProps}
     />
-  )
-}
+  );
+};
 
-export default ThumbDown
+export default ThumbDown;

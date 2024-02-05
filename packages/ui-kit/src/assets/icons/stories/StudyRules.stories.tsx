@@ -1,8 +1,8 @@
-import { StudyRules } from '../'
+import { StudyRules } from '../';
 
 export default {
-  component: StudyRules,
-  title: 'Icons/StudyRules',
-}
+title: 'Icons/StudyRules',
+component: StudyRules,
+};
 
 export const Default = {}

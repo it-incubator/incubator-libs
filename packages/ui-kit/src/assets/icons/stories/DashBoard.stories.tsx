@@ -1,8 +1,8 @@
-import { DashBoard } from '../'
+import { DashBoard } from '../';
 
 export default {
-  component: DashBoard,
-  title: 'Icons/DashBoard',
-}
+title: 'Icons/DashBoard',
+component: DashBoard,
+};
 
 export const Default = {}

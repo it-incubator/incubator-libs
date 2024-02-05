@@ -1,8 +1,8 @@
-import { History } from '../'
+import { History } from '../';
 
 export default {
-  component: History,
-  title: 'Icons/History',
-}
+title: 'Icons/History',
+component: History,
+};
 
 export const Default = {}

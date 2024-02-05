@@ -1,8 +1,8 @@
-import { FilterDelete } from '../'
+import { FilterDelete } from '../';
 
 export default {
-  component: FilterDelete,
-  title: 'Icons/FilterDelete',
-}
+title: 'Icons/FilterDelete',
+component: FilterDelete,
+};
 
 export const Default = {}

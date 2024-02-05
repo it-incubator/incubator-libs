@@ -1,8 +1,8 @@
-import { Receipt } from '../'
+import { Receipt } from '../';
 
 export default {
-  component: Receipt,
-  title: 'Icons/Receipt',
-}
+title: 'Icons/Receipt',
+component: Receipt,
+};
 
 export const Default = {}

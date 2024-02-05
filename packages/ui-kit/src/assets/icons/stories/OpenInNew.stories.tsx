@@ -1,8 +1,8 @@
-import { OpenInNew } from '../'
+import { OpenInNew } from '../';
 
 export default {
-  component: OpenInNew,
-  title: 'Icons/OpenInNew',
-}
+title: 'Icons/OpenInNew',
+component: OpenInNew,
+};
 
 export const Default = {}

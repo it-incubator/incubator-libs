@@ -1,8 +1,8 @@
-import { Save } from '../'
+import { Save } from '../';
 
 export default {
-  component: Save,
-  title: 'Icons/Save',
-}
+title: 'Icons/Save',
+component: Save,
+};
 
 export const Default = {}

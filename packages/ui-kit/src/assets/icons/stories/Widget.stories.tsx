@@ -1,8 +1,8 @@
-import { Widget } from '../'
+import { Widget } from '../';
 
 export default {
-  component: Widget,
-  title: 'Icons/Widget',
-}
+title: 'Icons/Widget',
+component: Widget,
+};
 
 export const Default = {}

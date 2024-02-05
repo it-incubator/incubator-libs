@@ -1,8 +1,8 @@
-import { Search } from '../'
+import { Search } from '../';
 
 export default {
-  component: Search,
-  title: 'Icons/Search',
-}
+title: 'Icons/Search',
+component: Search,
+};
 
 export const Default = {}

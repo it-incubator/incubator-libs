@@ -1,8 +1,8 @@
-import { Roadmap } from '../'
+import { Roadmap } from '../';
 
 export default {
-  component: Roadmap,
-  title: 'Icons/Roadmap',
-}
+title: 'Icons/Roadmap',
+component: Roadmap,
+};
 
 export const Default = {}

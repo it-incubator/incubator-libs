@@ -1,8 +1,8 @@
-import { ContentCopy } from '../'
+import { ContentCopy } from '../';
 
 export default {
-  component: ContentCopy,
-  title: 'Icons/ContentCopy',
-}
+title: 'Icons/ContentCopy',
+component: ContentCopy,
+};
 
 export const Default = {}

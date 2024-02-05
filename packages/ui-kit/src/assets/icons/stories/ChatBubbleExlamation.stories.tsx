@@ -1,8 +1,8 @@
-import { ChatBubbleExlamation } from '../'
+import { ChatBubbleExlamation } from '../';
 
 export default {
-  component: ChatBubbleExlamation,
-  title: 'Icons/ChatBubbleExlamation',
-}
+title: 'Icons/ChatBubbleExlamation',
+component: ChatBubbleExlamation,
+};
 
 export const Default = {}

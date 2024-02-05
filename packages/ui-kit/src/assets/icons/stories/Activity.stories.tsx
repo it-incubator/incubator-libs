@@ -1,8 +1,8 @@
-import { Activity } from '../'
+import { Activity } from '../';
 
 export default {
-  component: Activity,
-  title: 'Icons/Activity',
-}
+title: 'Icons/Activity',
+component: Activity,
+};
 
 export const Default = {}

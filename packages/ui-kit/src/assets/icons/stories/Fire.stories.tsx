@@ -1,8 +1,8 @@
-import { Fire } from '../'
+import { Fire } from '../';
 
 export default {
-  component: Fire,
-  title: 'Icons/Fire',
-}
+title: 'Icons/Fire',
+component: Fire,
+};
 
 export const Default = {}

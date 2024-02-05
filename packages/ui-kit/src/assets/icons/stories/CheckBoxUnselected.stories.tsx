@@ -1,8 +1,8 @@
-import { CheckBoxUnselected } from '../'
+import { CheckBoxUnselected } from '../';
 
 export default {
-  component: CheckBoxUnselected,
-  title: 'Icons/CheckBoxUnselected',
-}
+title: 'Icons/CheckBoxUnselected',
+component: CheckBoxUnselected,
+};
 
 export const Default = {}

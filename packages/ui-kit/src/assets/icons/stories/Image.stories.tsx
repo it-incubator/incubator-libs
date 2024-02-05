@@ -1,8 +1,8 @@
-import { Image } from '../'
+import { Image } from '../';
 
 export default {
-  component: Image,
-  title: 'Icons/Image',
-}
+title: 'Icons/Image',
+component: Image,
+};
 
 export const Default = {}

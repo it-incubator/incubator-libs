@@ -1,8 +1,8 @@
-import { VisibilityOff } from '../'
+import { VisibilityOff } from '../';
 
 export default {
-  component: VisibilityOff,
-  title: 'Icons/VisibilityOff',
-}
+title: 'Icons/VisibilityOff',
+component: VisibilityOff,
+};
 
 export const Default = {}

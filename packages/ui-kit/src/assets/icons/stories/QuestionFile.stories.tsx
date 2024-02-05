@@ -1,8 +1,8 @@
-import { QuestionFile } from '../'
+import { QuestionFile } from '../';
 
 export default {
-  component: QuestionFile,
-  title: 'Icons/QuestionFile',
-}
+title: 'Icons/QuestionFile',
+component: QuestionFile,
+};
 
 export const Default = {}

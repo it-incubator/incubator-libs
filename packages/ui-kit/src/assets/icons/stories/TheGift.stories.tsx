@@ -1,8 +1,8 @@
-import { TheGift } from '../'
+import { TheGift } from '../';
 
 export default {
-  component: TheGift,
-  title: 'Icons/TheGift',
-}
+title: 'Icons/TheGift',
+component: TheGift,
+};
 
 export const Default = {}

@@ -1,8 +1,8 @@
-import { Help } from '../'
+import { Help } from '../';
 
 export default {
-  component: Help,
-  title: 'Icons/Help',
-}
+title: 'Icons/Help',
+component: Help,
+};
 
 export const Default = {}

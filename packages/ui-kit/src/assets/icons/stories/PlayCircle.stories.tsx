@@ -1,8 +1,8 @@
-import { PlayCircle } from '../'
+import { PlayCircle } from '../';
 
 export default {
-  component: PlayCircle,
-  title: 'Icons/PlayCircle',
-}
+title: 'Icons/PlayCircle',
+component: PlayCircle,
+};
 
 export const Default = {}

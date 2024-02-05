@@ -1,8 +1,8 @@
-import { Trophy } from '../'
+import { Trophy } from '../';
 
 export default {
-  component: Trophy,
-  title: 'Icons/Trophy',
-}
+title: 'Icons/Trophy',
+component: Trophy,
+};
 
 export const Default = {}

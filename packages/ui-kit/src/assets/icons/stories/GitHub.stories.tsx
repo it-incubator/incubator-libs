@@ -1,8 +1,8 @@
-import { GitHub } from '../'
+import { GitHub } from '../';
 
 export default {
-  component: GitHub,
-  title: 'Icons/GitHub',
-}
+title: 'Icons/GitHub',
+component: GitHub,
+};
 
 export const Default = {}

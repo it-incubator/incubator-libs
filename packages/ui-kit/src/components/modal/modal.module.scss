@@ -12,6 +12,10 @@
   left: 50%;
   transform: translate(-50%, -50%);
 
+  overflow: auto;
+
+  max-height: calc(100% - 32px);
+
   background-color: var(--color-bg-element);
 
   &.sm {
@@ -56,6 +60,11 @@
 .contentBox {
   position: relative;
   padding: 23px 24px 36px;
+}
+
+.scrollbar {
+  overflow: auto;
+  max-height: calc(100vh - 32px);
 }
 
 .closeButton {

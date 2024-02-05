@@ -1,8 +1,8 @@
-import { WinkingFace } from '../'
+import { WinkingFace } from '../';
 
 export default {
-  component: WinkingFace,
-  title: 'Icons/WinkingFace',
-}
+title: 'Icons/WinkingFace',
+component: WinkingFace,
+};
 
 export const Default = {}

@@ -1,8 +1,8 @@
-import { Remove } from '../'
+import { Remove } from '../';
 
 export default {
-  component: Remove,
-  title: 'Icons/Remove',
-}
+title: 'Icons/Remove',
+component: Remove,
+};
 
 export const Default = {}

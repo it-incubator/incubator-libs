@@ -1,8 +1,8 @@
-import { InfoOutline } from '../'
+import { InfoOutline } from '../';
 
 export default {
-  component: InfoOutline,
-  title: 'Icons/InfoOutline',
-}
+title: 'Icons/InfoOutline',
+component: InfoOutline,
+};
 
 export const Default = {}

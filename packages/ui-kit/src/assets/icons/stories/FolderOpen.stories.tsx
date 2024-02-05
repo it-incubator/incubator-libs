@@ -1,8 +1,8 @@
-import { FolderOpen } from '../'
+import { FolderOpen } from '../';
 
 export default {
-  component: FolderOpen,
-  title: 'Icons/FolderOpen',
-}
+title: 'Icons/FolderOpen',
+component: FolderOpen,
+};
 
 export const Default = {}

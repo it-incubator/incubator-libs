@@ -1,8 +1,8 @@
-import { Timer } from '../'
+import { Timer } from '../';
 
 export default {
-  component: Timer,
-  title: 'Icons/Timer',
-}
+title: 'Icons/Timer',
+component: Timer,
+};
 
 export const Default = {}

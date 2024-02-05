@@ -1,8 +1,8 @@
-import { AttachFile } from '../'
+import { AttachFile } from '../';
 
 export default {
-  component: AttachFile,
-  title: 'Icons/AttachFile',
-}
+title: 'Icons/AttachFile',
+component: AttachFile,
+};
 
 export const Default = {}

@@ -1,8 +1,8 @@
-import { CheckBoxSelected } from '../'
+import { CheckBoxSelected } from '../';
 
 export default {
-  component: CheckBoxSelected,
-  title: 'Icons/CheckBoxSelected',
-}
+title: 'Icons/CheckBoxSelected',
+component: CheckBoxSelected,
+};
 
 export const Default = {}

@@ -1,8 +1,8 @@
-import { Jenkins } from '../'
+import { Jenkins } from '../';
 
 export default {
-  component: Jenkins,
-  title: 'Icons/Jenkins',
-}
+title: 'Icons/Jenkins',
+component: Jenkins,
+};
 
 export const Default = {}

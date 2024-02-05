@@ -1,8 +1,8 @@
-import { Facebook } from '../'
+import { Facebook } from '../';
 
 export default {
-  component: Facebook,
-  title: 'Icons/Facebook',
-}
+title: 'Icons/Facebook',
+component: Facebook,
+};
 
 export const Default = {}

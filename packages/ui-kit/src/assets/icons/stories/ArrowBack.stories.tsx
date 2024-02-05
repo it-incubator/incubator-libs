@@ -1,8 +1,8 @@
-import { ArrowBack } from '../'
+import { ArrowBack } from '../';
 
 export default {
-  component: ArrowBack,
-  title: 'Icons/ArrowBack',
-}
+title: 'Icons/ArrowBack',
+component: ArrowBack,
+};
 
 export const Default = {}

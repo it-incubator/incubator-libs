@@ -1,8 +1,8 @@
-import { Telegram } from '../'
+import { Telegram } from '../';
 
 export default {
-  component: Telegram,
-  title: 'Icons/Telegram',
-}
+title: 'Icons/Telegram',
+component: Telegram,
+};
 
 export const Default = {}

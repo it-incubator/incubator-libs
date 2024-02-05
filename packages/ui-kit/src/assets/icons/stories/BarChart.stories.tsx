@@ -1,8 +1,8 @@
-import { BarChart } from '../'
+import { BarChart } from '../';
 
 export default {
-  component: BarChart,
-  title: 'Icons/BarChart',
-}
+title: 'Icons/BarChart',
+component: BarChart,
+};
 
 export const Default = {}

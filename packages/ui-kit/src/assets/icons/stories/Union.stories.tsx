@@ -1,8 +1,8 @@
-import { Union } from '../'
+import { Union } from '../';
 
 export default {
-  component: Union,
-  title: 'Icons/Union',
-}
+title: 'Icons/Union',
+component: Union,
+};
 
 export const Default = {}

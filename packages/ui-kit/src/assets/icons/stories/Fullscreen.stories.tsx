@@ -1,8 +1,8 @@
-import { Fullscreen } from '../'
+import { Fullscreen } from '../';
 
 export default {
-  component: Fullscreen,
-  title: 'Icons/Fullscreen',
-}
+title: 'Icons/Fullscreen',
+component: Fullscreen,
+};
 
 export const Default = {}

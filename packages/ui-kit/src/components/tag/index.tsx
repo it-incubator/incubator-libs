@@ -1,22 +1,19 @@
-import { ComponentProps, FC, ReactNode } from 'react'
+import { ComponentProps } from 'react'
 
+import * as Toggle from '@radix-ui/react-toggle'
 import { clsx } from 'clsx'
 
 import s from './tag.module.scss'
 
 export type TagProps = {
-  label: ReactNode
+  readonly?: boolean
   variant?: 'primary' | 'secondary'
-} & ComponentProps<'div'>
+} & ComponentProps<typeof Toggle.Root>
 
-export const Tag: FC<TagProps> = ({ className, label, onClick, variant = 'primary', ...rest }) => {
+export const Tag = ({ className, readonly = false, variant = 'primary', ...rest }: TagProps) => {
   const classNames = {
-    tag: clsx(s.tag, className, onClick && s.clickable, variant === 'secondary' && s.secondary),
+    tag: clsx(s.tag, className, !readonly && s.clickable, s[variant]),
   }
 
-  return (
-    <div className={classNames.tag} onClick={onClick} tabIndex={onClick && 0} {...rest}>
-      {label}
-    </div>
-  )
+  return <Toggle.Root className={classNames.tag} {...rest} />
 }

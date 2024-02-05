@@ -1,8 +1,8 @@
-import { Settings } from '../'
+import { Settings } from '../';
 
 export default {
-  component: Settings,
-  title: 'Icons/Settings',
-}
+title: 'Icons/Settings',
+component: Settings,
+};
 
 export const Default = {}

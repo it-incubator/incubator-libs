@@ -1,8 +1,8 @@
-import { FaceWithSpiralEyes } from '../'
+import { FaceWithSpiralEyes } from '../';
 
 export default {
-  component: FaceWithSpiralEyes,
-  title: 'Icons/FaceWithSpiralEyes',
-}
+title: 'Icons/FaceWithSpiralEyes',
+component: FaceWithSpiralEyes,
+};
 
 export const Default = {}

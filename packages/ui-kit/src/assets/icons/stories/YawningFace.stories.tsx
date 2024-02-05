@@ -1,8 +1,8 @@
-import { YawningFace } from '../'
+import { YawningFace } from '../';
 
 export default {
-  component: YawningFace,
-  title: 'Icons/YawningFace',
-}
+title: 'Icons/YawningFace',
+component: YawningFace,
+};
 
 export const Default = {}

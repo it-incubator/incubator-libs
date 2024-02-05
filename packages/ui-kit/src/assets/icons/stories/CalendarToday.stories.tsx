@@ -1,8 +1,8 @@
-import { CalendarToday } from '../'
+import { CalendarToday } from '../';
 
 export default {
-  component: CalendarToday,
-  title: 'Icons/CalendarToday',
-}
+title: 'Icons/CalendarToday',
+component: CalendarToday,
+};
 
 export const Default = {}

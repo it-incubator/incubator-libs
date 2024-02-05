@@ -1,8 +1,8 @@
-import { Codewars } from '../'
+import { Codewars } from '../';
 
 export default {
-  component: Codewars,
-  title: 'Icons/Codewars',
-}
+title: 'Icons/Codewars',
+component: Codewars,
+};
 
 export const Default = {}

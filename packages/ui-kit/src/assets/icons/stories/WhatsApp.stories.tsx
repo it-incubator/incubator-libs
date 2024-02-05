@@ -1,8 +1,8 @@
-import { WhatsApp } from '../'
+import { WhatsApp } from '../';
 
 export default {
-  component: WhatsApp,
-  title: 'Icons/WhatsApp',
-}
+title: 'Icons/WhatsApp',
+component: WhatsApp,
+};
 
 export const Default = {}

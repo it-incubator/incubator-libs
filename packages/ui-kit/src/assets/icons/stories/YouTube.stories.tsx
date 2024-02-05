@@ -1,8 +1,8 @@
-import { YouTube } from '../'
+import { YouTube } from '../';
 
 export default {
-  component: YouTube,
-  title: 'Icons/YouTube',
-}
+title: 'Icons/YouTube',
+component: YouTube,
+};
 
 export const Default = {}

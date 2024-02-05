@@ -1,8 +1,8 @@
-import { Internet } from '../'
+import { Internet } from '../';
 
 export default {
-  component: Internet,
-  title: 'Icons/Internet',
-}
+title: 'Icons/Internet',
+component: Internet,
+};
 
 export const Default = {}

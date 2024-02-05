@@ -1,8 +1,8 @@
-import { Menu } from '../'
+import { Menu } from '../';
 
 export default {
-  component: Menu,
-  title: 'Icons/Menu',
-}
+title: 'Icons/Menu',
+component: Menu,
+};
 
 export const Default = {}

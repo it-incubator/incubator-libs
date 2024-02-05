@@ -1,8 +1,8 @@
-import { DeleteForever } from '../'
+import { DeleteForever } from '../';
 
 export default {
-  component: DeleteForever,
-  title: 'Icons/DeleteForever',
-}
+title: 'Icons/DeleteForever',
+component: DeleteForever,
+};
 
 export const Default = {}

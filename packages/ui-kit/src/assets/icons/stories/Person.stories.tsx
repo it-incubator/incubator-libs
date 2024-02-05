@@ -1,8 +1,8 @@
-import { Person } from '../'
+import { Person } from '../';
 
 export default {
-  component: Person,
-  title: 'Icons/Person',
-}
+title: 'Icons/Person',
+component: Person,
+};
 
 export const Default = {}

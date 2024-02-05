@@ -1,8 +1,8 @@
-import { CareerBooster } from '../'
+import { CareerBooster } from '../';
 
 export default {
-  component: CareerBooster,
-  title: 'Icons/CareerBooster',
-}
+title: 'Icons/CareerBooster',
+component: CareerBooster,
+};
 
 export const Default = {}

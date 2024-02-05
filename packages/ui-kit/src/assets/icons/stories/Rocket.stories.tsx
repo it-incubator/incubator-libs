@@ -1,8 +1,8 @@
-import { Rocket } from '../'
+import { Rocket } from '../';
 
 export default {
-  component: Rocket,
-  title: 'Icons/Rocket',
-}
+title: 'Icons/Rocket',
+component: Rocket,
+};
 
 export const Default = {}

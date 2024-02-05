@@ -1,8 +1,8 @@
-import { Interviews } from '../'
+import { Interviews } from '../';
 
 export default {
-  component: Interviews,
-  title: 'Icons/Interviews',
-}
+title: 'Icons/Interviews',
+component: Interviews,
+};
 
 export const Default = {}

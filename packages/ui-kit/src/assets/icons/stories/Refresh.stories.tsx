@@ -1,8 +1,8 @@
-import { Refresh } from '../'
+import { Refresh } from '../';
 
 export default {
-  component: Refresh,
-  title: 'Icons/Refresh',
-}
+title: 'Icons/Refresh',
+component: Refresh,
+};
 
 export const Default = {}

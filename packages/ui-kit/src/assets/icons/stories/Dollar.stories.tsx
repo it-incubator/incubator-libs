@@ -1,8 +1,8 @@
-import { Dollar } from '../'
+import { Dollar } from '../';
 
 export default {
-  component: Dollar,
-  title: 'Icons/Dollar',
-}
+title: 'Icons/Dollar',
+component: Dollar,
+};
 
 export const Default = {}

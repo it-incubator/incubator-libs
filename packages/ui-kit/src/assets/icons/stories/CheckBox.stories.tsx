@@ -1,8 +1,8 @@
-import { CheckBox } from '../'
+import { CheckBox } from '../';
 
 export default {
-  component: CheckBox,
-  title: 'Icons/CheckBox',
-}
+title: 'Icons/CheckBox',
+component: CheckBox,
+};
 
 export const Default = {}

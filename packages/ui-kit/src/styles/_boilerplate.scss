@@ -32,3 +32,32 @@ body {
 
   background-color: var(--color-bg-body);
 }
+
+* {
+  scrollbar-color: var(--color-bg-action) transparent;
+  scrollbar-width: thin;
+}
+
+/* Chrome, Edge and Safari */
+*::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 3px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--color-bg-action);
+  border-radius: 3px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-bg-secondary-hover);
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background-color: var(--color-bg-secondary-hover);
+}

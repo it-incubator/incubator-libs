@@ -1,8 +1,8 @@
-import { NerdFace } from '../'
+import { NerdFace } from '../';
 
 export default {
-  component: NerdFace,
-  title: 'Icons/NerdFace',
-}
+title: 'Icons/NerdFace',
+component: NerdFace,
+};
 
 export const Default = {}

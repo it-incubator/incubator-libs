@@ -1,6 +1,6 @@
 {
   "name": "@it-incubator/ui-kit",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "type": "module",
@@ -89,7 +89,6 @@
     "react-use-measure": "2.1.1"
   },
   "peerDependencies": {
-    "@fontsource/roboto": "5.0.8",
     "framer-motion": "^10.16.4",
     "react": ">=18.0.2",
     "react-dom": ">=18.0.2",

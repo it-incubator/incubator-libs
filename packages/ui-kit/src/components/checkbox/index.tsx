@@ -74,7 +74,11 @@ export const Checkbox: FC<CheckboxProps> = ({
                         },
                       }}
                     >
-                      <CheckBoxSelected color={'var(--color-text-primary)'} size={24} />
+                      <CheckBoxSelected
+                        backgroundColor={'var(--color-text-primary-contrast)'}
+                        color={'var(--color-text-primary)'}
+                        size={24}
+                      />
                     </motion.div>
                   </motion.div>
                 </CheckboxRadix.Indicator>

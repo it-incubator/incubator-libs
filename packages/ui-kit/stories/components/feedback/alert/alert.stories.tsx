@@ -1,10 +1,9 @@
+import { Alert, CheckBox } from '../../../../src'
 import { Meta } from '@storybook/react'
 
-import { Alert, HelpOutline } from '../../../../src'
-
 export default {
-  title: 'Components/Feedback/Alert',
   component: Alert,
+  title: 'Components/Feedback/Alert',
 } as Meta<typeof Alert>
 
 export const Warning = {
@@ -24,7 +23,7 @@ export const Error = {
 export const WithCustomIcon = {
   args: {
     children: 'Для того чтобы продолжить, пройдите все шаги указанные в инструкции',
-    icon: <HelpOutline />,
+    icon: <CheckBox />,
     variant: 'warning',
   },
 }

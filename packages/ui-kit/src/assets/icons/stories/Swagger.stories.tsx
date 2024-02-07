@@ -1,8 +1,8 @@
-import { Swagger } from '../';
+import { Swagger } from '../'
 
 export default {
-title: 'Icons/Swagger',
-component: Swagger,
-};
+  component: Swagger,
+  title: 'Icons/Swagger',
+}
 
 export const Default = {}

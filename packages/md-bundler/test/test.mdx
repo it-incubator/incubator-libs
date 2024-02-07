@@ -1,18 +1,35 @@
-import {Steps} from '@it-incubator/mdx-components'
+import { Steps } from '@it-incubator/mdx-components'
 
 ### Characters
 
 <Steps>
   ### Do something
 
-  description
+description
 
-  ### Do something else
+### Do something else
 
-  ```tsx
-  const a = 1
-  ```
+```tsx
+const a = 1
+```
+
 </Steps>
+
+```styled filename="App.tsx" showLineNumbers {4}
+const Menu = styled.ul`
+  display: flex;
+  gap: 15px;
+  list-style: none;
+`
+```
+
+```css filename="App.tsx" showLineNumbers {4}
+.class {
+  display: flex;
+  gap: 15px;
+  list-style: none;
+}
+```
 
 ~~Strikethrough~~ <s>Strikethrough (when enable html tag decode.)</s>
 _Italic_ _Italic_

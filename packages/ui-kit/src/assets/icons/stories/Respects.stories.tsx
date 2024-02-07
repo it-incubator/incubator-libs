@@ -1,8 +1,8 @@
-import { Respects } from '../';
+import { Respects } from '../'
 
 export default {
-title: 'Icons/Respects',
-component: Respects,
-};
+  component: Respects,
+  title: 'Icons/Respects',
+}
 
 export const Default = {}

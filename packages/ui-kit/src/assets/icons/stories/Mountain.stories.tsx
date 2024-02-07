@@ -1,8 +1,8 @@
-import { Mountain } from '../';
+import { Mountain } from '../'
 
 export default {
-title: 'Icons/Mountain',
-component: Mountain,
-};
+  component: Mountain,
+  title: 'Icons/Mountain',
+}
 
 export const Default = {}

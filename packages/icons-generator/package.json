@@ -1,0 +1,26 @@
+{
+  "version": "1.0.0",
+  "description": "Convert SVG icons to React components",
+  "main": "src/index.tsx",
+  "license": "MIT",
+  "scripts": {
+    "icons": "ts-node ./src/generate.ts"
+  },
+  "private": true,
+  "devDependencies": {
+    "@it-incubator/prettier-config": "workspace:*",
+    "@types/fs-extra": "11.0.4",
+    "@types/node": "20.11.16",
+    "@types/react": "18.2.55",
+    "ts-node": "10.9.2",
+    "@types/uuid": "^9.0.8",
+    "@svgr/core": "5.5.0",
+    "@svgr/plugin-prettier": "5.5.0",
+    "@svgr/plugin-svgo": "5.5.0",
+    "chalk": "4.1.2",
+    "fs-extra": "11.2.0",
+    "react": "18.2.0",
+    "typescript": "5.3.3",
+    "uuid": "^9.0.1"
+  }
+}

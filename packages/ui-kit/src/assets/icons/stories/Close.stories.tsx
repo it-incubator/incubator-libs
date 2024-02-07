@@ -1,8 +1,8 @@
-import { Close } from '../';
+import { Close } from '../'
 
 export default {
-title: 'Icons/Close',
-component: Close,
-};
+  component: Close,
+  title: 'Icons/Close',
+}
 
 export const Default = {}

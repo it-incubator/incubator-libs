@@ -1,8 +1,8 @@
-import { ZoomIn } from '../';
+import { ZoomIn } from '../'
 
 export default {
-title: 'Icons/ZoomIn',
-component: ZoomIn,
-};
+  component: ZoomIn,
+  title: 'Icons/ZoomIn',
+}
 
 export const Default = {}

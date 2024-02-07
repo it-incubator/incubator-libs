@@ -1,8 +1,8 @@
-import { FolderClosed } from '../';
+import { FolderClosed } from '../'
 
 export default {
-title: 'Icons/FolderClosed',
-component: FolderClosed,
-};
+  component: FolderClosed,
+  title: 'Icons/FolderClosed',
+}
 
 export const Default = {}

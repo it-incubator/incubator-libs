@@ -1,8 +1,8 @@
-import { Google } from '../';
+import { Google } from '../'
 
 export default {
-title: 'Icons/Google',
-component: Google,
-};
+  component: Google,
+  title: 'Icons/Google',
+}
 
 export const Default = {}

@@ -1,8 +1,8 @@
-import { CloudUpload } from '../';
+import { CloudUpload } from '../'
 
 export default {
-title: 'Icons/CloudUpload',
-component: CloudUpload,
-};
+  component: CloudUpload,
+  title: 'Icons/CloudUpload',
+}
 
 export const Default = {}

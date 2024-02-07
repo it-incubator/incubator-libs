@@ -1,8 +1,8 @@
-import { Profile } from '../';
+import { Profile } from '../'
 
 export default {
-title: 'Icons/Profile',
-component: Profile,
-};
+  component: Profile,
+  title: 'Icons/Profile',
+}
 
 export const Default = {}

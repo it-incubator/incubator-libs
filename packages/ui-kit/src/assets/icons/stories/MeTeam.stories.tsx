@@ -1,8 +1,8 @@
-import { MeTeam } from '../';
+import { MeTeam } from '../'
 
 export default {
-title: 'Icons/MeTeam',
-component: MeTeam,
-};
+  component: MeTeam,
+  title: 'Icons/MeTeam',
+}
 
 export const Default = {}

@@ -1,8 +1,8 @@
-import { Canva } from '../';
+import { Canva } from '../'
 
 export default {
-title: 'Icons/Canva',
-component: Canva,
-};
+  component: Canva,
+  title: 'Icons/Canva',
+}
 
 export const Default = {}

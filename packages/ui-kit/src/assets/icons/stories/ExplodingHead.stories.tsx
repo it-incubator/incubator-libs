@@ -1,8 +1,8 @@
-import { ExplodingHead } from '../';
+import { ExplodingHead } from '../'
 
 export default {
-title: 'Icons/ExplodingHead',
-component: ExplodingHead,
-};
+  component: ExplodingHead,
+  title: 'Icons/ExplodingHead',
+}
 
 export const Default = {}

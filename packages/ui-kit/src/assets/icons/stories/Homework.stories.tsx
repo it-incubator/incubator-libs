@@ -1,8 +1,8 @@
-import { Homework } from '../';
+import { Homework } from '../'
 
 export default {
-title: 'Icons/Homework',
-component: Homework,
-};
+  component: Homework,
+  title: 'Icons/Homework',
+}
 
 export const Default = {}

@@ -1,8 +1,8 @@
-import { AnEasySmile } from '../';
+import { AnEasySmile } from '../'
 
 export default {
-title: 'Icons/AnEasySmile',
-component: AnEasySmile,
-};
+  component: AnEasySmile,
+  title: 'Icons/AnEasySmile',
+}
 
 export const Default = {}

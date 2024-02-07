@@ -1,8 +1,8 @@
-import { Service3 } from '../';
+import { Service3 } from '../'
 
 export default {
-title: 'Icons/Service3',
-component: Service3,
-};
+  component: Service3,
+  title: 'Icons/Service3',
+}
 
 export const Default = {}

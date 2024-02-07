@@ -1,8 +1,8 @@
-import { DizzyFace } from '../';
+import { DizzyFace } from '../'
 
 export default {
-title: 'Icons/DizzyFace',
-component: DizzyFace,
-};
+  component: DizzyFace,
+  title: 'Icons/DizzyFace',
+}
 
 export const Default = {}

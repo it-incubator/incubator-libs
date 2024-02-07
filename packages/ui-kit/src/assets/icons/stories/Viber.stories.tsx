@@ -1,8 +1,8 @@
-import { Viber } from '../';
+import { Viber } from '../'
 
 export default {
-title: 'Icons/Viber',
-component: Viber,
-};
+  component: Viber,
+  title: 'Icons/Viber',
+}
 
 export const Default = {}

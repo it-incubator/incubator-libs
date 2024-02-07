@@ -1,8 +1,8 @@
-import { CheckCircle } from '../';
+import { CheckCircle } from '../'
 
 export default {
-title: 'Icons/CheckCircle',
-component: CheckCircle,
-};
+  component: CheckCircle,
+  title: 'Icons/CheckCircle',
+}
 
 export const Default = {}

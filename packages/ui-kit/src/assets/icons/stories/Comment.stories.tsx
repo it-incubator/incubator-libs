@@ -1,8 +1,8 @@
-import { Comment } from '../';
+import { Comment } from '../'
 
 export default {
-title: 'Icons/Comment',
-component: Comment,
-};
+  component: Comment,
+  title: 'Icons/Comment',
+}
 
 export const Default = {}

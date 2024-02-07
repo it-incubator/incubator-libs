@@ -1,8 +1,8 @@
-import { Language } from '../';
+import { Language } from '../'
 
 export default {
-title: 'Icons/Language',
-component: Language,
-};
+  component: Language,
+  title: 'Icons/Language',
+}
 
 export const Default = {}

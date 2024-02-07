@@ -1,8 +1,8 @@
-import { ManFacepalming } from '../';
+import { ManFacepalming } from '../'
 
 export default {
-title: 'Icons/ManFacepalming',
-component: ManFacepalming,
-};
+  component: ManFacepalming,
+  title: 'Icons/ManFacepalming',
+}
 
 export const Default = {}

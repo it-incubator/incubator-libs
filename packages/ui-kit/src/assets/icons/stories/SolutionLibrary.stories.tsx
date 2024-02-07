@@ -1,8 +1,8 @@
-import { SolutionLibrary } from '../';
+import { SolutionLibrary } from '../'
 
 export default {
-title: 'Icons/SolutionLibrary',
-component: SolutionLibrary,
-};
+  component: SolutionLibrary,
+  title: 'Icons/SolutionLibrary',
+}
 
 export const Default = {}

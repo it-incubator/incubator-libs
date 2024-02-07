@@ -1,8 +1,8 @@
-import { Cancel } from '../';
+import { Cancel } from '../'
 
 export default {
-title: 'Icons/Cancel',
-component: Cancel,
-};
+  component: Cancel,
+  title: 'Icons/Cancel',
+}
 
 export const Default = {}

@@ -1,8 +1,8 @@
-import { NeutralFace } from '../';
+import { NeutralFace } from '../'
 
 export default {
-title: 'Icons/NeutralFace',
-component: NeutralFace,
-};
+  component: NeutralFace,
+  title: 'Icons/NeutralFace',
+}
 
 export const Default = {}

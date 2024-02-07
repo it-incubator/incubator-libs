@@ -1,8 +1,8 @@
-import { InfoFill } from '../';
+import { InfoFill } from '../'
 
 export default {
-title: 'Icons/InfoFill',
-component: InfoFill,
-};
+  component: InfoFill,
+  title: 'Icons/InfoFill',
+}
 
 export const Default = {}

@@ -1,8 +1,8 @@
-import { ThumbsUpLightSkinTone } from '../';
+import { ThumbsUpLightSkinTone } from '../'
 
 export default {
-title: 'Icons/ThumbsUpLightSkinTone',
-component: ThumbsUpLightSkinTone,
-};
+  component: ThumbsUpLightSkinTone,
+  title: 'Icons/ThumbsUpLightSkinTone',
+}
 
 export const Default = {}

@@ -1,8 +1,8 @@
-import { Error } from '../';
+import { Error } from '../'
 
 export default {
-title: 'Icons/Error',
-component: Error,
-};
+  component: Error,
+  title: 'Icons/Error',
+}
 
 export const Default = {}

@@ -1,35 +1,38 @@
-import { IconWrapper, IconProps } from "../IconWrapper";
+import { IconProps, IconWrapper } from '../IconWrapper'
 
 const Cancel = (allProps: IconProps) => {
-  const { svgProps: props, ...restProps } = allProps;
+  const { svgProps: props, ...restProps } = allProps
+
   return (
     <IconWrapper
       icon={
         <svg
-          width="100%"
-          height="100%"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
+          fill={'none'}
+          height={'100%'}
+          viewBox={'0 0 24 24'}
+          width={'100%'}
+          xmlns={'http://www.w3.org/2000/svg'}
           {...props}
         >
-          <g clipPath="url(#prefix__clip0_124_21540)">
-            <path fill="var(--color-bg-icon)" d="M6 6h12v12H6z" />
+          <g clipPath={'url(#prefix__clip0_124_21540)'}>
+            <path d={'M6 6h12v12H6z'} fill={'var(--color-bg-icon)'} />
             <path
-              d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"
-              fill="currentColor"
+              d={
+                'M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z'
+              }
+              fill={'currentColor'}
             />
           </g>
           <defs>
-            <clipPath id="prefix__clip0_124_21540">
-              <path fill="#fff" d="M0 0h24v24H0z" />
+            <clipPath id={'prefix__clip0_124_21540'}>
+              <path d={'M0 0h24v24H0z'} fill={'#fff'} />
             </clipPath>
           </defs>
         </svg>
       }
       {...restProps}
     />
-  );
-};
+  )
+}
 
-export default Cancel;
+export default Cancel

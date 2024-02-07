@@ -1,8 +1,8 @@
-import { StarBorder } from '../';
+import { StarBorder } from '../'
 
 export default {
-title: 'Icons/StarBorder',
-component: StarBorder,
-};
+  component: StarBorder,
+  title: 'Icons/StarBorder',
+}
 
 export const Default = {}

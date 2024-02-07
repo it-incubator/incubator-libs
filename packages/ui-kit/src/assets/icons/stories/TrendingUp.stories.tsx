@@ -1,8 +1,8 @@
-import { TrendingUp } from '../';
+import { TrendingUp } from '../'
 
 export default {
-title: 'Icons/TrendingUp',
-component: TrendingUp,
-};
+  component: TrendingUp,
+  title: 'Icons/TrendingUp',
+}
 
 export const Default = {}

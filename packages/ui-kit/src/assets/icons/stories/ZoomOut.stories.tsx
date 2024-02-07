@@ -1,8 +1,8 @@
-import { ZoomOut } from '../';
+import { ZoomOut } from '../'
 
 export default {
-title: 'Icons/ZoomOut',
-component: ZoomOut,
-};
+  component: ZoomOut,
+  title: 'Icons/ZoomOut',
+}
 
 export const Default = {}

@@ -1,8 +1,8 @@
-import { ThumbUpOff } from '../';
+import { ThumbUpOff } from '../'
 
 export default {
-title: 'Icons/ThumbUpOff',
-component: ThumbUpOff,
-};
+  component: ThumbUpOff,
+  title: 'Icons/ThumbUpOff',
+}
 
 export const Default = {}

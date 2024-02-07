@@ -1,8 +1,8 @@
-import { LightMode } from '../';
+import { LightMode } from '../'
 
 export default {
-title: 'Icons/LightMode',
-component: LightMode,
-};
+  component: LightMode,
+  title: 'Icons/LightMode',
+}
 
 export const Default = {}

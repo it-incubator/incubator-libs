@@ -18,7 +18,7 @@ import { StorageModule } from '@it-incubator/storage-sdk'
 
 #### NestJS module create
 
-Basic module config:
+Basic module config NestJS:
 
 ```typescript
 import { Global, Module } from '@nestjs/common';
@@ -38,7 +38,7 @@ import { StorageModule } from '@it-incubator/storage-sdk';
 export class MyModule {}
 ```
 
-StorageService use 
+StorageService use NestJS
 
 ```typescript
 import { Controller, Get, UseInterceptors } from '@nestjs/common';
@@ -64,5 +64,20 @@ export class MyService {
         this.storageService.getById(id)
     }
 }
+
+```
+#### NodeJS service create 
+
+Basic service config NodeJS:
+
+```typescript
+import { NodejsStorageService } from '@it-incubator/storage-sdk';
+
+const storageService = NodejsStorageService.register({
+    baseURL: 'https://storage-service-url',
+    headers: {
+        'service-token': 'your-token'
+    }
+})
 
 ```

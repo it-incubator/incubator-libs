@@ -30,7 +30,7 @@ import { StorageModule } from '@it-incubator/storage-sdk';
       StorageModule.register({
           baseURL: 'https://storage-service-url',
           headers: {
-              token: 'you-token'
+              'service-token': 'your-token'
           }
       })
   ]
@@ -49,7 +49,7 @@ export class MyService {
     constructor(private readonly storageService: StorageService) {}
     
     async create(dto: CreateFileDto) {
-        this.storageService.create()
+        this.storageService.create(dto)
     }
 
     async delete(id: string) {

@@ -1,13 +1,13 @@
 import { StorageService } from './storage-sdk.service'
-import { HttpModule, HttpModuleOptions } from '@nestjs/axios'
+import { HttpModule } from '@nestjs/axios'
 import { DynamicModule, Global, Module } from '@nestjs/common'
 
 export type StorageModuleOptions = {
   baseURL: string
   headers: {
-    token: string
+    'service-token': string
   }
-} & HttpModuleOptions
+}
 
 @Global()
 @Module({})

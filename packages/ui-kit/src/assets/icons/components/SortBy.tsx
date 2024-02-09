@@ -1,6 +1,6 @@
 import { IconProps, IconWrapper } from '../IconWrapper'
 
-const ArrowDropUp1 = (allProps: IconProps) => {
+const SortBy = (allProps: IconProps) => {
   const { svgProps: props, ...restProps } = allProps
 
   return (
@@ -29,4 +29,4 @@ const ArrowDropUp1 = (allProps: IconProps) => {
   )
 }
 
-export default ArrowDropUp1
+export default SortBy

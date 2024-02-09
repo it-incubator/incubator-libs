@@ -15,11 +15,11 @@ const ThumbsUpLightSkinTone = (allProps: IconProps) => {
           xmlnsXlink={'http://www.w3.org/1999/xlink'}
           {...props}
         >
-          <path d={'M0 0h72v72H0z'} fill={'url(#prefix__9c0df290-c5e0-11ee-aa1e-dff389dcf943)'} />
+          <path d={'M0 0h72v72H0z'} fill={'url(#prefix__1dae6a10-c743-11ee-9a89-973d58329563)'} />
           <defs>
             <pattern
               height={1}
-              id={'prefix__9c0df290-c5e0-11ee-aa1e-dff389dcf943'}
+              id={'prefix__1dae6a10-c743-11ee-9a89-973d58329563'}
               patternContentUnits={'objectBoundingBox'}
               width={1}
             >

@@ -21,7 +21,7 @@ export const Reaction = ({ className, count, icon, text, ...rest }: ReactionProp
     <Tag className={classNames.reaction} {...rest}>
       {text}
       {icon}
-      {hasCount && `(${count})`}
+      {hasCount && <span className={s.count}>{`(${count})`}</span>}
     </Tag>
   )
 }

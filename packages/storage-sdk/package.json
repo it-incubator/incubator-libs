@@ -33,11 +33,12 @@
     "prettier": "^3.0.3",
     "rxjs": ">=7.8.1",
     "typescript": "5.2.2",
-    "axios": ">=^1.6.7"
+    "axios": ">=1.6.7"
   },
   "peerDependencies": {
     "@nestjs/axios": ">=3.0.2",
     "@nestjs/common": ">=10.2.7",
-    "rxjs": ">=7.8.1"
+    "rxjs": ">=7.8.1",
+    "axios": ">=1.6.7"
   }
 }

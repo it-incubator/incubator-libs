@@ -1,6 +1,7 @@
 export { default as Activity } from './components/Activity'
 export { default as Add } from './components/Add'
 export { default as AddCircleOutline } from './components/AddCircleOutline'
+export { default as AddEdit } from './components/AddEdit'
 export { default as AnEasySmile } from './components/AnEasySmile'
 export { default as Apple } from './components/Apple'
 export { default as ArrowBack } from './components/ArrowBack'

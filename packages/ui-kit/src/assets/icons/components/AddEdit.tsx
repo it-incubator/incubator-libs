@@ -1,6 +1,6 @@
 import { IconProps, IconWrapper } from '../IconWrapper'
 
-const ThumbUpOff = (allProps: IconProps) => {
+const AddEdit = (allProps: IconProps) => {
   const { svgProps: props, ...restProps } = allProps
 
   return (
@@ -14,16 +14,20 @@ const ThumbUpOff = (allProps: IconProps) => {
           xmlns={'http://www.w3.org/2000/svg'}
           {...props}
         >
-          <g clipPath={'url(#prefix__clip0_124_21531)'}>
+          <g clipPath={'url(#prefix__clip0_3187_47)'} fill={'currentColor'}>
             <path
               d={
-                'M21 9h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 2 7.59 8.59C7.22 8.95 7 9.45 7 10v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2c0-1.1-.9-2-2-2zm0 4l-3 7H9V10l4.34-4.34L12.23 11H21v2zM1 10h4v12H1V10z'
+                'M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a.996.996 0 000-1.41l-2.34-2.34a.996.996 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z'
               }
-              fill={'currentColor'}
+            />
+            <path
+              clipRule={'evenodd'}
+              d={'M6.75 3h-1.5v3.25H2v1.5h3.25V11h1.5V7.75H10v-1.5H6.75V3z'}
+              fillRule={'evenodd'}
             />
           </g>
           <defs>
-            <clipPath id={'prefix__clip0_124_21531'}>
+            <clipPath id={'prefix__clip0_3187_47'}>
               <path d={'M0 0h24v24H0z'} fill={'#fff'} />
             </clipPath>
           </defs>
@@ -34,4 +38,4 @@ const ThumbUpOff = (allProps: IconProps) => {
   )
 }
 
-export default ThumbUpOff
+export default AddEdit

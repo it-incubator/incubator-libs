@@ -15,11 +15,11 @@ const ManFacepalming = (allProps: IconProps) => {
           xmlnsXlink={'http://www.w3.org/1999/xlink'}
           {...props}
         >
-          <path d={'M0 0h72v72H0z'} fill={'url(#prefix__1d8e37e0-c743-11ee-9a89-973d58329563)'} />
+          <path d={'M0 0h72v72H0z'} fill={'url(#prefix__8ded84b0-cc1f-11ee-8df6-3bc00402ec38)'} />
           <defs>
             <pattern
               height={1}
-              id={'prefix__1d8e37e0-c743-11ee-9a89-973d58329563'}
+              id={'prefix__8ded84b0-cc1f-11ee-8df6-3bc00402ec38'}
               patternContentUnits={'objectBoundingBox'}
               width={1}
             >

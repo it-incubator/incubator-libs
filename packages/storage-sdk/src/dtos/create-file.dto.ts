@@ -7,7 +7,7 @@ export enum FileType {
 }
 export class File {
   base64?: string
-  buffer?: string
+  buffer?: Buffer
   originalname: string
   size: number
 }

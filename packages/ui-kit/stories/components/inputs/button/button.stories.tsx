@@ -16,9 +16,9 @@ export default {
     onClick: { action: 'clicked' },
     variant: {
       control: { type: 'radio' },
-      options: ['primary', 'secondary', 'outlined'],
+      options: ['primary', 'secondary', 'outlined', 'back'],
       table: {
-        type: { summary: "'outlined' | 'primary' | 'secondary'" },
+        type: { summary: "'outlined' | 'primary' | 'secondary' | 'back'" },
       },
     },
   },
@@ -60,10 +60,18 @@ export const Tertiary = {
   },
 }
 
+export const Back = {
+  args: {
+    children: 'Назад к урокам',
+    disabled: false,
+    variant: 'back',
+  },
+}
+
 export const PrimaryAsLink = {
   args: {
     as: 'a',
-    children: 'Button',
+    children: 'Go to Google',
     disabled: false,
     href: 'https://google.com',
     rel: 'noopener noreferrer',

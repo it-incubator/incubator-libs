@@ -35,6 +35,37 @@
   }
 }
 
+.back {
+  @include button;
+
+  gap: 6px;
+
+  padding: 0 0.5rem 0 0.1rem;
+
+  font-size: 14px;
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-m);
+
+  border-radius: 4px;
+
+  &:hover {
+    color: var(--color-accent-400);
+  }
+
+  &:active {
+    color: var(--color-accent-600);
+  }
+
+  &:disabled {
+    color: var(--color-checkbox-disabled);
+    opacity: 1;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-info-500);
+  }
+}
+
 .primary {
   @include button;
 

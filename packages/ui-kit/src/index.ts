@@ -9,6 +9,7 @@ export * from './utils'
 export type { IconProps } from './assets/icons/IconWrapper'
 
 export * from './components/alert'
+export * from './components/animated-info-icon'
 export * from './components/button'
 export * from './components/card'
 export * from './components/checkbox'

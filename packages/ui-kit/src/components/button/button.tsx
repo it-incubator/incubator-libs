@@ -7,11 +7,12 @@ import {
   forwardRef,
 } from 'react'
 
+import { ArrowBack } from '../../assets/icons'
 import { clsx } from 'clsx'
 
 import s from './button.module.scss'
 
-export type ButtonVariant = 'outlined' | 'primary' | 'secondary'
+export type ButtonVariant = 'back' | 'outlined' | 'primary' | 'secondary'
 
 type InferType<T> = T extends ElementType<infer U> ? U : never
 
@@ -26,6 +27,7 @@ const Button = forwardRef(
   <T extends ElementType = 'button'>(props: ButtonProps<T>, ref: ForwardedRef<InferType<T>>) => {
     const {
       as: Component = 'button',
+      children,
       className,
       fullWidth = false,
       variant = 'primary',
@@ -35,7 +37,12 @@ const Button = forwardRef(
       root: clsx(s[variant], fullWidth && s.fullWidth, className),
     }
 
-    return <Component className={classNames.root} ref={ref} {...rest} />
+    return (
+      <Component className={classNames.root} ref={ref} {...rest}>
+        {variant === 'back' && <ArrowBack size={16} />}
+        {children}
+      </Component>
+    )
   }
 )
 

@@ -16,7 +16,7 @@ pnpm i @it-incubator/storage-sdk
 Basic service config NodeJS:
 
 ```typescript
-import { NodejsStorageService } from '@it-incubator/storage-sdk';
+import { NodejsStorageService } from '@it-incubator/nodejs-storage-sdk';
 
 const storageService = NodejsStorageService.register({
     baseURL: 'https://storage-service-url',

@@ -1,5 +1,10 @@
 # @it-incubator/storage-sdk
 
+## 0.0.7
+### Patch Changes
+
+- fix readme.md
+
 ## 0.0.6
 ### Patch Changes
 

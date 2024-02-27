@@ -57,27 +57,12 @@ export class MyService {
     }
 
     async update(id: string, dto: File) {
-        this.storageService.deleteById(id, dto)
+        this.storageService.updateById(id, dto)
     }
 
     async getFile(id: string) {
         this.storageService.getById(id)
     }
 }
-
-```
-#### NodeJS service create 
-
-Basic service config NodeJS:
-
-```typescript
-import { NodejsStorageService } from '@it-incubator/storage-sdk';
-
-const storageService = NodejsStorageService.register({
-    baseURL: 'https://storage-service-url',
-    headers: {
-        'service-token': 'your-token'
-    }
-})
 
 ```

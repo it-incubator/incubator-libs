@@ -1,0 +1,38 @@
+{
+  "name": "@it-incubator/nodejs-storage-sdk",
+  "version": "0.0.1",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "license": "MIT",
+  "repository": {
+    "url": "https://github.com/it-incubator/incubator-libs/blob/main/packages/next-storage-sdk"
+  },
+  "sideEffects": false,
+  "files": [
+    "/dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "lint:eslint": "eslint \"src/**/*.ts*\"",
+    "lint:fix": "eslint \"src/**/*.ts*\" --fix",
+    "lint:eslint:fix": "pnpm run lint:eslint --fix",
+    "lint:types": "tsc",
+    "lint": "TIMING=1 pnpm run lint:eslint && pnpm run lint:types",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
+    "dev": "vite"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@it-incubator/eslint-config": "workspace:*",
+    "@it-incubator/prettier-config": "workspace:*",
+    "@it-incubator/stylelint-config": "workspace:*",
+    "prettier": "^3.0.3",
+    "typescript": "5.2.2",
+    "axios": ">=1.6.7"
+  },
+  "peerDependencies": {
+    "axios": ">=1.6.7"
+  }
+}

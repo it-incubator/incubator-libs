@@ -28,9 +28,10 @@
     "@it-incubator/eslint-config": "workspace:*",
     "@it-incubator/prettier-config": "workspace:*",
     "@it-incubator/stylelint-config": "workspace:*",
+    "axios": ">=1.6.7",
     "prettier": "^3.0.3",
     "typescript": "5.2.2",
-    "axios": ">=1.6.7"
+    "@types/node": "^20.11.20"
   },
   "peerDependencies": {
     "axios": ">=1.6.7"

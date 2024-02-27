@@ -338,7 +338,7 @@ importers:
         specifier: ^3.11.0
         version: 3.11.0
 
-  packages/next-storage-sdk:
+  packages/nodejs-storage-sdk:
     devDependencies:
       '@it-incubator/eslint-config':
         specifier: workspace:*
@@ -349,6 +349,9 @@ importers:
       '@it-incubator/stylelint-config':
         specifier: workspace:*
         version: link:../stylelint-config
+      '@types/node':
+        specifier: ^20.11.20
+        version: 20.11.20
       axios:
         specifier: '>=1.6.7'
         version: 1.6.7
@@ -5800,6 +5803,12 @@ packages:
       undici-types: 5.26.5
     dev: true
 
+  /@types/node@20.11.20:
+    resolution: {integrity: sha512-7/rR21OS+fq8IyHTgtLkDK949uzsa6n8BkziAKtPVpugIkO6D+/ooXMvzXxDnZrmtXVfjb1bKQafYpb8s89LOg==}
+    dependencies:
+      undici-types: 5.26.5
+    dev: true
+
   /@types/node@20.6.4:
     resolution: {integrity: sha512-nU6d9MPY0NBUMiE/nXd2IIoC4OLvsLpwAjheoAeuzgvDZA1Cb10QYg+91AF6zQiKWRN5i1m07x6sMe0niBznoQ==}
     dev: true
@@ -10639,7 +10648,7 @@ packages:
     resolution: {integrity: sha512-7vuh85V5cdDofPyxn58nrPjBktZo0u9x1g8WtjQol+jZDaE+fhN+cIvTj11GndBnMnyfrUOG1sZQxCdjKh+DKg==}
     engines: {node: '>= 10.13.0'}
     dependencies:
-      '@types/node': 20.11.16
+      '@types/node': 20.11.20
       merge-stream: 2.0.0
       supports-color: 8.1.1
     dev: true

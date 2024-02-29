@@ -1,6 +1,7 @@
 import { StorageService } from './storage-sdk.service'
 import { HttpModule } from '@nestjs/axios'
 import { DynamicModule, Global, Module } from '@nestjs/common'
+import { CreateAxiosDefaults } from 'axios/index'
 
 export type StorageModuleOptions = {
   baseURL: string
@@ -12,7 +13,7 @@ export type StorageModuleOptions = {
 @Global()
 @Module({})
 export class StorageModule {
-  static register(config: StorageModuleOptions): DynamicModule {
+  static register(config: StorageModuleOptions & CreateAxiosDefaults): DynamicModule {
     const httpModuleOptions: StorageModuleOptions = {
       ...config,
       baseURL: config.baseURL,

@@ -1,5 +1,10 @@
 # @it-incubator/storage-sdk
 
+## 0.0.8
+### Patch Changes
+
+- change types
+
 ## 0.0.7
 ### Patch Changes
 

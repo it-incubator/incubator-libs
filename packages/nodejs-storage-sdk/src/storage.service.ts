@@ -1,14 +1,14 @@
 import { CreateFileDto, File } from './dtos'
 import { CreateFileOperationResponse, GetFileResponse } from './responses'
 import { BaseOperationApiResponse } from './types'
-import axios, { AxiosInstance } from 'axios'
+import axios, { AxiosInstance, CreateAxiosDefaults } from 'axios'
 
 export type StorageModuleOptions = {
   baseURL: string
   headers: {
     'service-token': string
   }
-}
+} & CreateAxiosDefaults
 export class StorageService {
   constructor(private readonly httpService: AxiosInstance) {}
 

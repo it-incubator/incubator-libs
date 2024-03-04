@@ -31,6 +31,8 @@ const variants = {
   inactive: { opacity: 0, transition: { duration: 0.2 }, y: -40 },
 }
 
+const DELAY_DURATION = 200
+
 export const motionProps = { animate: 'active', exit: 'inactive', initial: 'inactive', variants }
 export const Tooltip: FC<TooltipProps> = ({ children, component, icon, side = 'top', ...rest }) => {
   const [open, setOpen] = useState(false)
@@ -58,8 +60,6 @@ export const Tooltip: FC<TooltipProps> = ({ children, component, icon, side = 't
       </button>
     )
   }
-
-  const DELAY_DURATION = 200
 
   return (
     <TooltipRadix.Provider delayDuration={DELAY_DURATION} {...rest}>

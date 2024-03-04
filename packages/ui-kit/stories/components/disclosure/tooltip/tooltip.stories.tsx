@@ -30,11 +30,7 @@ export const Dark = {
   render: args => {
     useDarkMode()
 
-    return (
-      <p>
-        <Tooltip {...args} />
-      </p>
-    )
+    return <Tooltip {...args} />
   },
 }
 

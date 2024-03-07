@@ -1,13 +1,15 @@
-import { ComponentProps, FC, ReactNode, useState } from 'react'
+import { ComponentProps, ReactNode, useState } from 'react'
 
 import { InfoOutline } from '../../'
 import * as TooltipRadix from '@radix-ui/react-tooltip'
+import { clsx } from 'clsx'
 import { AnimatePresence, motion } from 'framer-motion'
 
 import s from './tooltip.module.scss'
 
 type CommonProps = {
   children: ReactNode
+  contentClassName?: string
   side?: 'bottom' | 'left' | 'right' | 'top'
 } & ComponentProps<'div'>
 
@@ -31,14 +33,23 @@ const variants = {
   inactive: { opacity: 0, transition: { duration: 0.2 }, y: -40 },
 }
 
+const DELAY_DURATION = 200
+
 export const motionProps = { animate: 'active', exit: 'inactive', initial: 'inactive', variants }
-export const Tooltip: FC<TooltipProps> = ({ children, component, icon, side = 'top', ...rest }) => {
+export const Tooltip = ({
+  children,
+  component,
+  contentClassName,
+  icon,
+  side = 'top',
+  ...props
+}: TooltipProps) => {
   const [open, setOpen] = useState(false)
 
   const classNames = {
     arrow: s.arrow,
     arrowBox: s.arrowBox,
-    content: s.content,
+    content: clsx(s.content, contentClassName),
     iconButton: s.iconButton,
     infoIcon: s.infoIcon,
   }
@@ -59,10 +70,8 @@ export const Tooltip: FC<TooltipProps> = ({ children, component, icon, side = 't
     )
   }
 
-  const DELAY_DURATION = 200
-
   return (
-    <TooltipRadix.Provider delayDuration={DELAY_DURATION} {...rest}>
+    <TooltipRadix.Provider delayDuration={DELAY_DURATION} {...props}>
       <TooltipRadix.Root onOpenChange={setOpen} open={open}>
         <TooltipRadix.Trigger asChild>{tooltipTrigger}</TooltipRadix.Trigger>
         <AnimatePresence>

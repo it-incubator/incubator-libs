@@ -6,7 +6,7 @@ import { useEffect } from 'react'
  */
 export const useDarkMode = () => {
   useEffect(() => {
-    const body = document.querySelector('body')
+    const body = document.body
 
     if (body) {
       body.classList.add('dark-mode')

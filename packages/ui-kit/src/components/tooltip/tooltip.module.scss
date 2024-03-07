@@ -10,7 +10,7 @@
   color: var(--color-text-primary);
 
   background-color: var(--color-bg-tooltip);
-  border: 1px solid var(--color-border-primary);
+  border: 1px solid var(--color-border-input-primary);
   border-radius: var(--border-radius-m);
 }
 
@@ -37,8 +37,8 @@
   width: 8px;
   height: 8px;
 
-  background-color: var(--color-bg-element);
-  border: 1px solid var(--color-border-primary);
+  background-color: var(--color-bg-tooltip);
+  border: 1px solid var(--color-border-input-primary);
   border-top: none;
   border-left: none;
 }

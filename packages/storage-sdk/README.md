@@ -2,7 +2,7 @@
 
 ## Install
 
-```
+```bash
 npm install @it-incubator/storage-sdk
 
 yarn add @it-incubator/storage-sdk

@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 1.0.8
+### Patch Changes
+
+- 044e96d: add optional contentClassName prop for Tooltip, fix Tooltip styles for dark theme
+
 ## 1.0.0
 ### Major Changes
 

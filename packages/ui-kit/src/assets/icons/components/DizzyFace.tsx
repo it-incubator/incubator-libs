@@ -15,11 +15,11 @@ const DizzyFace = (allProps: IconProps) => {
           xmlnsXlink={'http://www.w3.org/1999/xlink'}
           {...props}
         >
-          <path d={'M0 0h72v72H0z'} fill={'url(#prefix__8dce63f0-cc1f-11ee-8df6-3bc00402ec38)'} />
+          <path d={'M0 0h72v72H0z'} fill={'url(#prefix__03dcb0a0-e477-11ee-9bd8-61e5520b4a1b)'} />
           <defs>
             <pattern
               height={1}
-              id={'prefix__8dce63f0-cc1f-11ee-8df6-3bc00402ec38'}
+              id={'prefix__03dcb0a0-e477-11ee-9bd8-61e5520b4a1b'}
               patternContentUnits={'objectBoundingBox'}
               width={1}
             >

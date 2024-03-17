@@ -15,11 +15,11 @@ const NeutralFace = (allProps: IconProps) => {
           xmlnsXlink={'http://www.w3.org/1999/xlink'}
           {...props}
         >
-          <path d={'M0 0h72v72H0z'} fill={'url(#prefix__8df1ca70-cc1f-11ee-8df6-3bc00402ec38)'} />
+          <path d={'M0 0h72v72H0z'} fill={'url(#prefix__04082d70-e477-11ee-9bd8-61e5520b4a1b)'} />
           <defs>
             <pattern
               height={1}
-              id={'prefix__8df1ca70-cc1f-11ee-8df6-3bc00402ec38'}
+              id={'prefix__04082d70-e477-11ee-9bd8-61e5520b4a1b'}
               patternContentUnits={'objectBoundingBox'}
               width={1}
             >

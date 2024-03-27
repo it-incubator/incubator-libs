@@ -1,5 +1,10 @@
 # @it-incubator/storage-sdk
 
+## 0.0.9
+### Patch Changes
+
+- added registerAsync
+
 ## 0.0.8
 ### Patch Changes
 

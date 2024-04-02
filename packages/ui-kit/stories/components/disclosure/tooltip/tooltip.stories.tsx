@@ -47,3 +47,10 @@ export const DefaultWithComponent = {
     component: <span>text</span>,
   },
 }
+
+export const WithDisableHoverableContent = {
+  args: {
+    ...DefaultWithComponent.args,
+    disableHoverableContent: true,
+  },
+}

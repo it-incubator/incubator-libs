@@ -10,6 +10,8 @@ import s from './tooltip.module.scss'
 type CommonProps = {
   children: ReactNode
   contentClassName?: string
+  /** Prevents Tooltip.Content from remaining open when hovering */
+  disableHoverableContent?: boolean
   side?: 'bottom' | 'left' | 'right' | 'top'
 } & ComponentProps<'div'>
 

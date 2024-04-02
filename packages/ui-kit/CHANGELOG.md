@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 1.0.9
+### Patch Changes
+
+- 29015e6: add disableHoverableContent prop for Tooltip, change typing Combobox value and onChange props
+
 ## 1.0.8
 ### Patch Changes
 

@@ -1,4 +1,4 @@
-import { ComponentPropsWithoutRef, ComponentType } from 'react'
+import { ComponentPropsWithoutRef, ReactElement } from 'react'
 
 import { InfoOutline } from '../../assets/icons'
 import { IconProps } from '../../assets/icons/IconWrapper'
@@ -7,10 +7,10 @@ import { motion } from 'framer-motion'
 import s from './animated-icon.module.scss'
 
 export type AnimatedIconProps = {
-  Icon: ComponentType<IconProps>
-  enableAnimation: boolean
+  enableAnimation?: boolean
+  renderIcon: (props: IconProps) => ReactElement
 } & ComponentPropsWithoutRef<typeof InfoOutline>
-export const AnimatedIcon = ({ Icon, enableAnimation, ...iconProps }: AnimatedIconProps) => {
+export const AnimatedIcon = ({ enableAnimation = true, renderIcon }: AnimatedIconProps) => {
   const duration = 1.4
   const initial = { x: '-50%', y: '-50%' }
   const transition = { duration, repeat: Infinity, type: 'keyframes' }
@@ -43,13 +43,12 @@ export const AnimatedIcon = ({ Icon, enableAnimation, ...iconProps }: AnimatedIc
           ></motion.div>
         </>
       )}
-      <Icon
-        backgroundColor={'transparent'}
-        className={s.icon}
-        color={'var(--color-text-primary)'}
-        size={16}
-        {...iconProps}
-      />
+      {renderIcon({
+        backgroundColor: 'transparent',
+        className: s.icon,
+        color: 'var(--color-text-primary)',
+        size: 16,
+      })}
     </div>
   )
 }

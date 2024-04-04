@@ -26,7 +26,7 @@ export type ComboboxProps = {
   /** The name of the select. Submitted with its owning form as part of a name/value pair. */
   name?: string
   /** The function to call when a new option is selected. */
-  onChange: (value: null | string) => void
+  onChange: (value: null | number | string) => void
   onClear?: () => void
   onInputChange: (value: string) => void
   /** The options to display.
@@ -35,7 +35,7 @@ export type ComboboxProps = {
   placeholder?: string
   portal?: boolean
   showClearButton?: boolean
-  value: string
+  value: null | number | string
 }
 
 export const Combobox: FC<ComboboxProps> = ({

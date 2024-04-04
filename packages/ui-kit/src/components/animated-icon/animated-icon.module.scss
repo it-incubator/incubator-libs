@@ -1,0 +1,32 @@
+.frame {
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  left: 50%;
+
+  width: 10px;
+  height: 10px;
+
+  background: var(--color-info-500);
+  border-radius: 50%;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  width: min-content;
+  height: min-content;
+}
+
+.icon {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 620px;
+  height: 20px;
+
+  border-radius: 50%;
+}

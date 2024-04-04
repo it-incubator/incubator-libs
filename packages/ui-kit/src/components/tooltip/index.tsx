@@ -42,6 +42,7 @@ export const Tooltip = ({
   children,
   component,
   contentClassName,
+  disableHoverableContent,
   icon,
   side = 'top',
   ...props
@@ -74,7 +75,11 @@ export const Tooltip = ({
 
   return (
     <TooltipRadix.Provider delayDuration={DELAY_DURATION} {...props}>
-      <TooltipRadix.Root onOpenChange={setOpen} open={open}>
+      <TooltipRadix.Root
+        disableHoverableContent={disableHoverableContent}
+        onOpenChange={setOpen}
+        open={open}
+      >
         <TooltipRadix.Trigger asChild>{tooltipTrigger}</TooltipRadix.Trigger>
         <AnimatePresence>
           {open && (

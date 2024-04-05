@@ -7,5 +7,11 @@ export type AnimatedInfoIconProps = { enableAnimation: boolean } & ComponentProp
   typeof InfoOutline
 >
 export const AnimatedInfoIcon = ({ enableAnimation, ...iconProps }: AnimatedInfoIconProps) => {
-  return <AnimatedIcon Icon={InfoOutline} enableAnimation={enableAnimation} {...iconProps} />
+  return (
+    <AnimatedIcon
+      enableAnimation={enableAnimation}
+      renderIcon={props => <InfoOutline {...props} />}
+      {...iconProps}
+    />
+  )
 }

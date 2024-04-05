@@ -11,23 +11,20 @@ type Story = StoryObj<typeof AnimatedIcon>
 
 export const Default: Story = {
   args: {
-    Icon: InfoOutline,
     enableAnimation: true,
+    renderIcon: props => <InfoOutline {...props} />,
   },
 }
 
 export const AnimationDisabled: Story = {
   args: {
-    Icon: InfoOutline,
     enableAnimation: false,
+    renderIcon: props => <InfoOutline {...props} />,
   },
 }
 
 export const WithCustomSizeAndColor: Story = {
   args: {
-    Icon: Edit,
-    color: 'var(--color-danger-400)',
-    enableAnimation: true,
-    size: 25,
+    renderIcon: props => <Edit {...props} color={'var(--color-danger-400)'} size={25} />,
   },
 }

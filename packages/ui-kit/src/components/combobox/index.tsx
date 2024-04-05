@@ -1,4 +1,4 @@
-import { ChangeEvent, FC, Fragment, MouseEventHandler } from 'react'
+import { ChangeEvent, Fragment, MouseEventHandler } from 'react'
 
 import { Close, KeyboardArrowDown, Scrollbar, Spinner, Typography } from '../../'
 import { Label } from '../label'
@@ -10,12 +10,12 @@ import selectStyle from '../select/select.module.scss'
 import textFieldStyle from '../text-field/text-field.module.scss'
 import s from './combobox.module.scss'
 
-type Option = {
+type Option<T> = {
   label: string
-  value: number | string
+  value: T
 }
 
-export type ComboboxProps = {
+export type ComboboxProps<T> = {
   disabled?: boolean
   errorMessage?: string
   /** The value displayed in the textbox */
@@ -26,19 +26,19 @@ export type ComboboxProps = {
   /** The name of the select. Submitted with its owning form as part of a name/value pair. */
   name?: string
   /** The function to call when a new option is selected. */
-  onChange: (value: null | number | string) => void
+  onChange: (value: T | null) => void
   onClear?: () => void
   onInputChange: (value: string) => void
   /** The options to display.
    * {label: string, value: string | number} */
-  options: Option[]
+  options: Option<T>[]
   placeholder?: string
   portal?: boolean
   showClearButton?: boolean
-  value: null | number | string
+  value: T | null
 }
 
-export const Combobox: FC<ComboboxProps> = ({
+export const Combobox = <T extends number | string>({
   disabled,
   errorMessage,
   inputValue,
@@ -54,7 +54,7 @@ export const Combobox: FC<ComboboxProps> = ({
   portal = true,
   showClearButton = true,
   value,
-}) => {
+}: ComboboxProps<T>) => {
   const showError = !!errorMessage && errorMessage.length > 0
   const isClearButtonVisible = showClearButton && !!value
   const inputChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {

@@ -1,5 +1,11 @@
 # @it-incubator/ui-kit
 
+## 1.0.11
+### Patch Changes
+
+- 73da69b: use render props for AnimatedIcon, use generic for typing Combobox props
+- a9c5a04: add new icon component MoneyBag
+
 ## 1.0.9
 ### Patch Changes
 

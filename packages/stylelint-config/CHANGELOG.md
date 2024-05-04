@@ -1,5 +1,10 @@
 # @it-incubator/stylelint-config-incubator
 
+## 2.0.0
+### Major Changes
+
+- Add stylelint 16 support
+
 ## 1.0.3
 ### Patch Changes
 

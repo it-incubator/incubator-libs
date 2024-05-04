@@ -21,6 +21,5 @@
     "@it-incubator/stylelint-config": "workspace:*",
     "prettier": "2.8.7",
     "turbo": "1.9.0"
-  },
-  "packageManager": "pnpm@7.15.0"
+  }
 }

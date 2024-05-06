@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 1.0.12
+### Patch Changes
+
+- 832b2ea: fix disabled checkbox colors
+
 ## 1.0.11
 ### Patch Changes
 

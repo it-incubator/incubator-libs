@@ -27,6 +27,15 @@ export const Default = {
     )
   },
 }
+
+export const Disabled = {
+  args: {
+    ...Default.args,
+    checked: true,
+    disabled: true,
+  },
+}
+
 export const Tight = {
   args: {
     disabled: false,

@@ -76,7 +76,7 @@
 
   &:focus-within,
   &:hover:not(.disabled),
-  &:hover .root:not([data-state='checked']) {
+  &:hover:not(.disabled) .root:not([data-state='checked']) {
     background-color: var(--color-bg-focus);
   }
 

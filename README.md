@@ -1,34 +1,11 @@
-## Installation
+## Деплой новой версии
 
-## Design
-
-## Components 
-
-### With design:
-
-- [x] Button
-- [x] Tabs
-- [x] Input
-- [x] Text Area
-- [x] Select
-- [x] Search Input
-- [ ] Toggle
-- [ ] Checkbox
-- [ ] Link
-
-
-### Without design:
-
-- [x] Toolbar
-- [x] Modal
-- [x] Dialog
-- [x] Pagination
-- [ ] Card
-- [ ] Tooltip
-- [ ] Breadcrumb
-- [ ] With Label
-- [ ] Table
-- [ ] Switch
-- [ ] Progress Bar
-- [ ] Page in development/404/other error pages
-- [ ] Round buttons 
+1. После всех изменений в своей ветке запустить `pnpm changeset` и добавить описание изменений. (для каждой фичи/рефакторинга/документации/обновления/исправления)
+   Тип изменений:
+    - `patch` - незначительные изменения, не меняют существующие API (1.0.1 => 1.0.2)
+    - `minor` - значительные изменения, не меняют существующие API (1.0.1 => 1.1.0)
+    - `major` - значительные изменения, меняют существующие API (1.0.1 => 2.0.0)
+2. Версионировать изменения с помощью `pnpm version-packages`. Все changeset'ы перенесутся в changeset.md и обновится версия в package.json до нужной
+3. Создать PR с изменениями
+4. Смержить в `develop` и `main` ветки
+5. Запустить деплой в [jenkins](https://jenkins.labs.it-incubator.ru/job/incubator-libs/) (деплой идет из `main` ветки)

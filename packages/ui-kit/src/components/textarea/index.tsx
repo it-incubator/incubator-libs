@@ -1,4 +1,4 @@
-import { ChangeEvent, ComponentProps, forwardRef } from 'react'
+import { ChangeEvent, ComponentProps, ReactNode, forwardRef } from 'react'
 
 import { Label } from '../label'
 import { useGetId } from '../text-field/useGetId'
@@ -9,7 +9,7 @@ import s from './textarea.module.scss'
 
 export type TextareaProps = {
   errorMessage?: string
-  label?: string
+  label?: ReactNode
   onValueChange?: (text: string) => void
 } & ComponentProps<'textarea'>
 

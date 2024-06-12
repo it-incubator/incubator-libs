@@ -2,7 +2,7 @@ import { Css } from '../'
 
 export default {
   component: Css,
-  title: 'Icons/Css',
+  title: 'Components/Icons/Css',
 }
 
 export const Default = {}

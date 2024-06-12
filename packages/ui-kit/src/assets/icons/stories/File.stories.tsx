@@ -2,7 +2,7 @@ import { File } from '../'
 
 export default {
   component: File,
-  title: 'Icons/File',
+  title: 'Components/Icons/File',
 }
 
 export const Default = {}

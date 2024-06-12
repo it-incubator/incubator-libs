@@ -2,7 +2,7 @@ import { ChatBubbleExlamation } from '../'
 
 export default {
   component: ChatBubbleExlamation,
-  title: 'Icons/ChatBubbleExlamation',
+  title: 'Components/Icons/ChatBubbleExlamation',
 }
 
 export const Default = {}

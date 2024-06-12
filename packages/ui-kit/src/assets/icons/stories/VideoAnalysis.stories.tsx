@@ -2,7 +2,7 @@ import { VideoAnalysis } from '../'
 
 export default {
   component: VideoAnalysis,
-  title: 'Icons/VideoAnalysis',
+  title: 'Components/Icons/VideoAnalysis',
 }
 
 export const Default = {}

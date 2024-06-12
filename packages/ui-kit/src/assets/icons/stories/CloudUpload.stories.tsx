@@ -2,7 +2,7 @@ import { CloudUpload } from '../'
 
 export default {
   component: CloudUpload,
-  title: 'Icons/CloudUpload',
+  title: 'Components/Icons/CloudUpload',
 }
 
 export const Default = {}

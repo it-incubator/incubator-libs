@@ -2,7 +2,7 @@ import { ArrowDropUp } from '../'
 
 export default {
   component: ArrowDropUp,
-  title: 'Icons/ArrowDropUp',
+  title: 'Components/Icons/ArrowDropUp',
 }
 
 export const Default = {}

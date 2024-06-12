@@ -2,7 +2,7 @@ import { TellUsAboutUs } from '../'
 
 export default {
   component: TellUsAboutUs,
-  title: 'Icons/TellUsAboutUs',
+  title: 'Components/Icons/TellUsAboutUs',
 }
 
 export const Default = {}

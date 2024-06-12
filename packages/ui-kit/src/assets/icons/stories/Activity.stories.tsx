@@ -2,7 +2,7 @@ import { Activity } from '../'
 
 export default {
   component: Activity,
-  title: 'Icons/Activity',
+  title: 'Components/Icons/Activity',
 }
 
 export const Default = {}

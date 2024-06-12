@@ -2,7 +2,7 @@ import { CareerBooster } from '../'
 
 export default {
   component: CareerBooster,
-  title: 'Icons/CareerBooster',
+  title: 'Components/Icons/CareerBooster',
 }
 
 export const Default = {}

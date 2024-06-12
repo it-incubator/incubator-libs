@@ -2,7 +2,7 @@ import { FolderOpen } from '../'
 
 export default {
   component: FolderOpen,
-  title: 'Icons/FolderOpen',
+  title: 'Components/Icons/FolderOpen',
 }
 
 export const Default = {}

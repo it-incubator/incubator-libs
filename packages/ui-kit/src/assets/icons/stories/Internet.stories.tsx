@@ -2,7 +2,7 @@ import { Internet } from '../'
 
 export default {
   component: Internet,
-  title: 'Icons/Internet',
+  title: 'Components/Icons/Internet',
 }
 
 export const Default = {}

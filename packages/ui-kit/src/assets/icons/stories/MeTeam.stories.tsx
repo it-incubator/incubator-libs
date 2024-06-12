@@ -2,7 +2,7 @@ import { MeTeam } from '../'
 
 export default {
   component: MeTeam,
-  title: 'Icons/MeTeam',
+  title: 'Components/Icons/MeTeam',
 }
 
 export const Default = {}

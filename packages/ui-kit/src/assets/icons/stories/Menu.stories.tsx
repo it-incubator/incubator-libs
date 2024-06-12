@@ -2,7 +2,7 @@ import { Menu } from '../'
 
 export default {
   component: Menu,
-  title: 'Icons/Menu',
+  title: 'Components/Icons/Menu',
 }
 
 export const Default = {}

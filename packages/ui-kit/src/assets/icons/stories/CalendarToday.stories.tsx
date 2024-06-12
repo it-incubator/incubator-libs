@@ -2,7 +2,7 @@ import { CalendarToday } from '../'
 
 export default {
   component: CalendarToday,
-  title: 'Icons/CalendarToday',
+  title: 'Components/Icons/CalendarToday',
 }
 
 export const Default = {}

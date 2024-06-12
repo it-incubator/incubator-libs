@@ -2,7 +2,7 @@ import { Settings } from '../'
 
 export default {
   component: Settings,
-  title: 'Icons/Settings',
+  title: 'Components/Icons/Settings',
 }
 
 export const Default = {}

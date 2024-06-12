@@ -2,7 +2,7 @@ import { FreeCodeCamp } from '../'
 
 export default {
   component: FreeCodeCamp,
-  title: 'Icons/FreeCodeCamp',
+  title: 'Components/Icons/FreeCodeCamp',
 }
 
 export const Default = {}

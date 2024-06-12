@@ -2,7 +2,7 @@ import { ManFacepalming } from '../'
 
 export default {
   component: ManFacepalming,
-  title: 'Icons/ManFacepalming',
+  title: 'Components/Icons/ManFacepalming',
 }
 
 export const Default = {}

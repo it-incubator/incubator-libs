@@ -2,7 +2,7 @@ import { AddCircleOutline } from '../'
 
 export default {
   component: AddCircleOutline,
-  title: 'Icons/AddCircleOutline',
+  title: 'Components/Icons/AddCircleOutline',
 }
 
 export const Default = {}

@@ -61,7 +61,7 @@ manuallyAddedSvgs.forEach(svg => {
   const storyCode = `import { ${componentName} } from '../';
 
 export default {
-title: 'Icons/${componentName}',
+title: 'Components/Icons/${componentName}',
 component: ${componentName},
 };
 

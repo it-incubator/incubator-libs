@@ -2,7 +2,7 @@ import { InfoOutline } from '../'
 
 export default {
   component: InfoOutline,
-  title: 'Icons/InfoOutline',
+  title: 'Components/Icons/InfoOutline',
 }
 
 export const Default = {}

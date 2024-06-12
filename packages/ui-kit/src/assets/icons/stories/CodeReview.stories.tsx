@@ -2,7 +2,7 @@ import { CodeReview } from '../'
 
 export default {
   component: CodeReview,
-  title: 'Icons/CodeReview',
+  title: 'Components/Icons/CodeReview',
 }
 
 export const Default = {}

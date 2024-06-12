@@ -2,7 +2,7 @@ import { GitHub } from '../'
 
 export default {
   component: GitHub,
-  title: 'Icons/GitHub',
+  title: 'Components/Icons/GitHub',
 }
 
 export const Default = {}

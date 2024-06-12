@@ -2,7 +2,7 @@ import { CV } from '../'
 
 export default {
   component: CV,
-  title: 'Icons/CV',
+  title: 'Components/Icons/CV',
 }
 
 export const Default = {}

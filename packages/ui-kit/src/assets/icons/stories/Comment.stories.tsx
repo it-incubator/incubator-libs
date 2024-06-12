@@ -2,7 +2,7 @@ import { Comment } from '../'
 
 export default {
   component: Comment,
-  title: 'Icons/Comment',
+  title: 'Components/Icons/Comment',
 }
 
 export const Default = {}

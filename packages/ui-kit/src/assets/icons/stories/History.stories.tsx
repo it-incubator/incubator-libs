@@ -2,7 +2,7 @@ import { History } from '../'
 
 export default {
   component: History,
-  title: 'Icons/History',
+  title: 'Components/Icons/History',
 }
 
 export const Default = {}

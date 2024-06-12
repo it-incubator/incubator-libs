@@ -2,7 +2,7 @@ import { DeleteForever } from '../'
 
 export default {
   component: DeleteForever,
-  title: 'Icons/DeleteForever',
+  title: 'Components/Icons/DeleteForever',
 }
 
 export const Default = {}

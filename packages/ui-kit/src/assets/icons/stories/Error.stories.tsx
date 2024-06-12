@@ -2,7 +2,7 @@ import { Error } from '../'
 
 export default {
   component: Error,
-  title: 'Icons/Error',
+  title: 'Components/Icons/Error',
 }
 
 export const Default = {}

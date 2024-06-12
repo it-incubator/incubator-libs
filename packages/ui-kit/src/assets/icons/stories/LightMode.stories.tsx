@@ -2,7 +2,7 @@ import { LightMode } from '../'
 
 export default {
   component: LightMode,
-  title: 'Icons/LightMode',
+  title: 'Components/Icons/LightMode',
 }
 
 export const Default = {}

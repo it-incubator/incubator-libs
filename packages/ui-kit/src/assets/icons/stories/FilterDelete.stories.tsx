@@ -2,7 +2,7 @@ import { FilterDelete } from '../'
 
 export default {
   component: FilterDelete,
-  title: 'Icons/FilterDelete',
+  title: 'Components/Icons/FilterDelete',
 }
 
 export const Default = {}

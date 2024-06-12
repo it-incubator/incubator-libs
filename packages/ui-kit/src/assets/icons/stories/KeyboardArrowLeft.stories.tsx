@@ -2,7 +2,7 @@ import { KeyboardArrowLeft } from '../'
 
 export default {
   component: KeyboardArrowLeft,
-  title: 'Icons/KeyboardArrowLeft',
+  title: 'Components/Icons/KeyboardArrowLeft',
 }
 
 export const Default = {}

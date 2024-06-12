@@ -2,7 +2,7 @@ import { PlayCircle } from '../'
 
 export default {
   component: PlayCircle,
-  title: 'Icons/PlayCircle',
+  title: 'Components/Icons/PlayCircle',
 }
 
 export const Default = {}

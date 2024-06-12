@@ -2,7 +2,7 @@ import { Kubernetes } from '../'
 
 export default {
   component: Kubernetes,
-  title: 'Icons/Kubernetes',
+  title: 'Components/Icons/Kubernetes',
 }
 
 export const Default = {}

@@ -2,7 +2,7 @@ import { Receipt } from '../'
 
 export default {
   component: Receipt,
-  title: 'Icons/Receipt',
+  title: 'Components/Icons/Receipt',
 }
 
 export const Default = {}

@@ -2,7 +2,7 @@ import { HotFace } from '../'
 
 export default {
   component: HotFace,
-  title: 'Icons/HotFace',
+  title: 'Components/Icons/HotFace',
 }
 
 export const Default = {}

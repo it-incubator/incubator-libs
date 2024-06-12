@@ -2,7 +2,7 @@ import { SolutionLibrary } from '../'
 
 export default {
   component: SolutionLibrary,
-  title: 'Icons/SolutionLibrary',
+  title: 'Components/Icons/SolutionLibrary',
 }
 
 export const Default = {}

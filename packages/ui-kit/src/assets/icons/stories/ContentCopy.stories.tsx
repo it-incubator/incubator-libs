@@ -2,7 +2,7 @@ import { ContentCopy } from '../'
 
 export default {
   component: ContentCopy,
-  title: 'Icons/ContentCopy',
+  title: 'Components/Icons/ContentCopy',
 }
 
 export const Default = {}

@@ -2,7 +2,7 @@ import { Close } from '../'
 
 export default {
   component: Close,
-  title: 'Icons/Close',
+  title: 'Components/Icons/Close',
 }
 
 export const Default = {}

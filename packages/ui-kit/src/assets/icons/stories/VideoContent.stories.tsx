@@ -2,7 +2,7 @@ import { VideoContent } from '../'
 
 export default {
   component: VideoContent,
-  title: 'Icons/VideoContent',
+  title: 'Components/Icons/VideoContent',
 }
 
 export const Default = {}

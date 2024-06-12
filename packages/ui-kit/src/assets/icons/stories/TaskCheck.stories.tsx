@@ -2,7 +2,7 @@ import { TaskCheck } from '../'
 
 export default {
   component: TaskCheck,
-  title: 'Icons/TaskCheck',
+  title: 'Components/Icons/TaskCheck',
 }
 
 export const Default = {}

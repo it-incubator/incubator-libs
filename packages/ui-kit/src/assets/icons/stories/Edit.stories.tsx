@@ -2,7 +2,7 @@ import { Edit } from '../'
 
 export default {
   component: Edit,
-  title: 'Icons/Edit',
+  title: 'Components/Icons/Edit',
 }
 
 export const Default = {}

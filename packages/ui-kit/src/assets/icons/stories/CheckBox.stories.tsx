@@ -2,7 +2,7 @@ import { CheckBox } from '../'
 
 export default {
   component: CheckBox,
-  title: 'Icons/CheckBox',
+  title: 'Components/Icons/CheckBox',
 }
 
 export const Default = {}

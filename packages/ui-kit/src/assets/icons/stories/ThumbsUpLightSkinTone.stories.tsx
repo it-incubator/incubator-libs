@@ -2,7 +2,7 @@ import { ThumbsUpLightSkinTone } from '../'
 
 export default {
   component: ThumbsUpLightSkinTone,
-  title: 'Icons/ThumbsUpLightSkinTone',
+  title: 'Components/Icons/ThumbsUpLightSkinTone',
 }
 
 export const Default = {}

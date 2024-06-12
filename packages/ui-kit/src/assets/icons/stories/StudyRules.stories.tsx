@@ -2,7 +2,7 @@ import { StudyRules } from '../'
 
 export default {
   component: StudyRules,
-  title: 'Icons/StudyRules',
+  title: 'Components/Icons/StudyRules',
 }
 
 export const Default = {}

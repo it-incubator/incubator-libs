@@ -2,7 +2,7 @@ import { NeutralFace } from '../'
 
 export default {
   component: NeutralFace,
-  title: 'Icons/NeutralFace',
+  title: 'Components/Icons/NeutralFace',
 }
 
 export const Default = {}

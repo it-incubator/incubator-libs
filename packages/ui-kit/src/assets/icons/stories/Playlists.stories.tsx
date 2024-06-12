@@ -2,7 +2,7 @@ import { Playlists } from '../'
 
 export default {
   component: Playlists,
-  title: 'Icons/Playlists',
+  title: 'Components/Icons/Playlists',
 }
 
 export const Default = {}

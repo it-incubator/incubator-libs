@@ -2,7 +2,7 @@ import { PhotoAnalysis } from '../'
 
 export default {
   component: PhotoAnalysis,
-  title: 'Icons/PhotoAnalysis',
+  title: 'Components/Icons/PhotoAnalysis',
 }
 
 export const Default = {}

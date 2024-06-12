@@ -2,7 +2,7 @@ import { Visibility } from '../'
 
 export default {
   component: Visibility,
-  title: 'Icons/Visibility',
+  title: 'Components/Icons/Visibility',
 }
 
 export const Default = {}

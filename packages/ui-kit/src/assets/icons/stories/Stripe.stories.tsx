@@ -2,7 +2,7 @@ import { Stripe } from '../'
 
 export default {
   component: Stripe,
-  title: 'Icons/Stripe',
+  title: 'Components/Icons/Stripe',
 }
 
 export const Default = {}

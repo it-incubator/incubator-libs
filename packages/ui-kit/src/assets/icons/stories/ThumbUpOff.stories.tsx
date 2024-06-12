@@ -2,7 +2,7 @@ import { ThumbUpOff } from '../'
 
 export default {
   component: ThumbUpOff,
-  title: 'Icons/ThumbUpOff',
+  title: 'Components/Icons/ThumbUpOff',
 }
 
 export const Default = {}

@@ -2,7 +2,7 @@ import { SortBy } from '../'
 
 export default {
   component: SortBy,
-  title: 'Icons/SortBy',
+  title: 'Components/Icons/SortBy',
 }
 
 export const Default = {}

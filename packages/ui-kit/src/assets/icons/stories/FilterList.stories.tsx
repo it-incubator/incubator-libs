@@ -2,7 +2,7 @@ import { FilterList } from '../'
 
 export default {
   component: FilterList,
-  title: 'Icons/FilterList',
+  title: 'Components/Icons/FilterList',
 }
 
 export const Default = {}

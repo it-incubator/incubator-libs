@@ -2,7 +2,7 @@ import { Chat } from '../'
 
 export default {
   component: Chat,
-  title: 'Icons/Chat',
+  title: 'Components/Icons/Chat',
 }
 
 export const Default = {}

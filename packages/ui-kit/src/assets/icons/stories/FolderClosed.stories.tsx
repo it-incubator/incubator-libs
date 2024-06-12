@@ -2,7 +2,7 @@ import { FolderClosed } from '../'
 
 export default {
   component: FolderClosed,
-  title: 'Icons/FolderClosed',
+  title: 'Components/Icons/FolderClosed',
 }
 
 export const Default = {}

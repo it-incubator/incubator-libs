@@ -2,7 +2,7 @@ import { Save } from '../'
 
 export default {
   component: Save,
-  title: 'Icons/Save',
+  title: 'Components/Icons/Save',
 }
 
 export const Default = {}

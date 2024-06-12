@@ -2,7 +2,7 @@ import { ConfusedFace } from '../'
 
 export default {
   component: ConfusedFace,
-  title: 'Icons/ConfusedFace',
+  title: 'Components/Icons/ConfusedFace',
 }
 
 export const Default = {}

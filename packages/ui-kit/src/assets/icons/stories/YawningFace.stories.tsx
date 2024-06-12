@@ -2,7 +2,7 @@ import { YawningFace } from '../'
 
 export default {
   component: YawningFace,
-  title: 'Icons/YawningFace',
+  title: 'Components/Icons/YawningFace',
 }
 
 export const Default = {}

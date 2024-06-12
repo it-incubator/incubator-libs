@@ -2,7 +2,7 @@ import { StarBorder } from '../'
 
 export default {
   component: StarBorder,
-  title: 'Icons/StarBorder',
+  title: 'Components/Icons/StarBorder',
 }
 
 export const Default = {}

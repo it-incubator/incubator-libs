@@ -2,7 +2,7 @@ import { ZoomIn } from '../'
 
 export default {
   component: ZoomIn,
-  title: 'Icons/ZoomIn',
+  title: 'Components/Icons/ZoomIn',
 }
 
 export const Default = {}

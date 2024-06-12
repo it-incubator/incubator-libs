@@ -1,4 +1,4 @@
-import { ComponentProps, FC, forwardRef } from 'react'
+import { ComponentProps, FC, ReactNode, forwardRef } from 'react'
 import { ReactDatePickerCustomHeaderProps, registerLocale } from 'react-datepicker'
 import * as RDP from 'react-datepicker'
 
@@ -19,8 +19,9 @@ export type DatePickerProps = {
   disabled?: boolean
   endDate?: Date | null
   errorMessage?: string
-  label?: string
+  label?: ReactNode
   placeholder?: string
+  required?: boolean
   setEndDate?: (date: Date | null) => void
   setStartDate: (date: Date | null) => void
   startDate: Date | null
@@ -34,6 +35,7 @@ export const DatePicker: FC<DatePickerProps> = ({
   errorMessage,
   label,
   placeholder,
+  required,
   setEndDate,
   setStartDate,
   startDate,
@@ -88,6 +90,7 @@ export const DatePicker: FC<DatePickerProps> = ({
           },
         ]}
         renderCustomHeader={CustomHeader}
+        required={required}
         selected={startDate}
         selectsRange={isRange}
         showPopperArrow={false}
@@ -100,18 +103,19 @@ export const DatePicker: FC<DatePickerProps> = ({
 
 type CustomInputProps = {
   disabled?: boolean
-  label?: string
+  label?: ReactNode
+  required?: boolean
 }
 
 const CustomInput = forwardRef<HTMLInputElement, CustomInputProps>(
-  ({ disabled, label, ...rest }, ref) => {
+  ({ disabled, label, required, ...rest }, ref) => {
     const classNames = {
       icon: clsx(s.icon, disabled && s.disabled),
       inputContainer: s.inputContainer,
     }
 
     return (
-      <Label label={label}>
+      <Label label={label} required={required}>
         <div className={classNames.inputContainer}>
           <input disabled={disabled} ref={ref} {...rest} />
           <div className={classNames.icon}>

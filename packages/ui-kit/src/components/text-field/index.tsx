@@ -32,6 +32,7 @@ export const TextField = /* @__PURE__ */ forwardRef<HTMLInputElement, TextFieldP
       onClearClick,
       onEnter,
       onKeyDown,
+      required,
       search,
       ...rest
     },
@@ -43,12 +44,14 @@ export const TextField = /* @__PURE__ */ forwardRef<HTMLInputElement, TextFieldP
     if (search) {
       iconStart = <SearchIcon color={'var(--color-text-secondary)'} size={20} />
     }
+
     const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
       if (onEnter && e.key === 'Enter') {
         onEnter(e)
       }
       onKeyDown?.(e)
     }
+
     const classNames = {
       clearButton: s.clearButton,
       iconEnd: s.iconEnd,
@@ -66,7 +69,7 @@ export const TextField = /* @__PURE__ */ forwardRef<HTMLInputElement, TextFieldP
 
     return (
       <div className={classNames.root}>
-        {label && <Label htmlFor={inputId} label={label} />}
+        {label && <Label htmlFor={inputId} label={label} required={required} />}
         <div className={classNames.inputContainer}>
           {!!iconStart && <span className={classNames.iconStart}>{iconStart}</span>}
           <input
@@ -75,6 +78,7 @@ export const TextField = /* @__PURE__ */ forwardRef<HTMLInputElement, TextFieldP
             id={inputId}
             onKeyDown={handleKeyDown}
             ref={ref}
+            required={required}
             type={'text'}
             {...rest}
           />

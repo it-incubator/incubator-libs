@@ -1,4 +1,4 @@
-import { ComponentProps, FC } from 'react'
+import { ComponentProps, FC, ReactNode } from 'react'
 
 import { clsx } from 'clsx'
 
@@ -8,7 +8,7 @@ type ColorType = 'blue' | 'brown' | 'green'
 
 export type ChipProps = {
   color: ColorType
-  label: string
+  label: ReactNode
 } & ComponentProps<'div'>
 
 export const Chip: FC<ChipProps> = ({ color, label, ...rest }) => {

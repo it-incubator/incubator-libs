@@ -70,10 +70,12 @@ export const Select: FC<SelectProps> = ({
   errorMessage,
   label,
   multiple = false,
+  name,
   onChange,
   options,
   placeholder,
   portal = true,
+  required,
   rootClassName,
   value,
   variant = 'primary',
@@ -114,9 +116,9 @@ export const Select: FC<SelectProps> = ({
   const rootStyles = { width }
 
   return (
-    <Listbox {...{ disabled, multiple, onChange, value }}>
+    <Listbox {...{ disabled, multiple, name, onChange, value }}>
       <div className={classNames.root} style={rootStyles}>
-        <Label label={label}>
+        <Label label={label} required={required}>
           <Float
             adaptiveWidth
             as={'div'}

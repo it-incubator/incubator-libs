@@ -88,6 +88,14 @@ export const SimpleWithLabel = {
     label: 'Some label',
   },
 }
+export const RequiredWithLabel = {
+  ...Simple,
+  args: {
+    ...Simple.args,
+    label: 'Some label',
+    required: true,
+  },
+}
 
 export const SimpleWithPlaceholder = {
   ...Simple,

@@ -1,20 +1,19 @@
 import { useState } from 'react'
 
+import { TextField } from '../../../../src'
 import { Meta } from '@storybook/react'
 
-import { TextField } from '../../../../src'
-
 export default {
-  title: 'Components/Data Entry/Text Field',
   component: TextField,
+  title: 'Components/Data Entry/Text Field',
 } as Meta<typeof TextField>
 
 export const Primary = {
   args: {
+    disabled: false,
+    error: false,
     label: 'Some label',
     placeholder: 'Placeholder text',
-    error: false,
-    disabled: false,
   },
 }
 
@@ -22,33 +21,39 @@ export const Invalid = {
   render: args => {
     return (
       <TextField
-        value="some value"
-        label="some label"
-        error={true}
-        errorMessage="Текст ошибки / подсказка"
+        errorMessage={'Текст ошибки / подсказка'}
+        label={'some label'}
+        value={'some value'}
       />
     )
   },
 }
 
 export const Search = {
+  args: {
+    label: 'Some label',
+    placeholder: 'Search...',
+    search: true,
+  },
   render: args => {
     const [text, setText] = useState('')
 
     return (
       <>
         <TextField
-          search={true}
-          value={text}
           onChange={e => setText(e.currentTarget.value)}
           onClearClick={() => setText('')}
+          search
+          value={text}
         />
       </>
     )
   },
+}
+
+export const RequiredWithLabel = {
   args: {
-    label: 'Some label',
-    placeholder: 'Search...',
-    search: true,
+    label: 'Name',
+    required: true,
   },
 }

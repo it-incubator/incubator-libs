@@ -1,4 +1,4 @@
-import { ChangeEvent, Fragment, MouseEventHandler } from 'react'
+import { ChangeEvent, Fragment, MouseEventHandler, ReactNode } from 'react'
 
 import { Close, KeyboardArrowDown, Scrollbar, Spinner, Typography } from '../../'
 import { Label } from '../label'
@@ -22,7 +22,7 @@ export type ComboboxProps<T> = {
   inputValue: string
   isAsync?: boolean
   isLoading?: boolean
-  label?: string
+  label?: ReactNode
   /** The name of the select. Submitted with its owning form as part of a name/value pair. */
   name?: string
   /** The function to call when a new option is selected. */
@@ -34,6 +34,7 @@ export type ComboboxProps<T> = {
   options: Option<T>[]
   placeholder?: string
   portal?: boolean
+  required?: boolean
   showClearButton?: boolean
   value: T | null
 }
@@ -52,6 +53,7 @@ export const Combobox = <T extends number | string>({
   options,
   placeholder,
   portal = true,
+  required,
   showClearButton = true,
   value,
 }: ComboboxProps<T>) => {
@@ -110,7 +112,7 @@ export const Combobox = <T extends number | string>({
     >
       <Float adaptiveWidth as={'div'} floatingAs={Fragment} placement={'bottom'} portal={portal}>
         <div className={classNames.box}>
-          <Label label={label}>
+          <Label label={label} required={required}>
             <ComboboxHeadlessUI.Button as={'div'}>
               <ComboboxHeadlessUI.Input
                 className={classNames.input}

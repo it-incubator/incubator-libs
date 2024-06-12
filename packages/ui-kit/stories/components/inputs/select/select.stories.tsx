@@ -1,193 +1,212 @@
 import { useState } from 'react'
 
-import { Meta } from '@storybook/react'
-
 import { Modal, Select } from '../../../../src'
 import { VerticalContainer } from '../../../../storybook-utils/components/containers/vertical'
+import { Meta } from '@storybook/react'
 
 const options = [
   {
+    label: 'Apple',
     value: 'apple',
-    label: 'Apple',
   },
   {
-    value: 'qa-internship',
     label: 'Стажировка для QA manual',
+    value: 'qa-internship',
   },
   {
-    value: 'banana',
-    label: 'Banana',
     disabled: true,
-  },
-  {
-    value: 'blueberry',
-    label: 'Blueberry',
-  },
-  {
-    value: 'grapes',
-    label: 'Grapes',
-  },
-  {
-    value: 'pineapple',
-    label: 'Pineapple',
-  },
-  {
-    value: 'cherry',
-    label: 'Cherry',
-  },
-  {
-    value: 'grapefruit',
-    label: 'Grapefruit',
-  },
-  {
-    value: 'lemon',
-    label: 'Lemon',
-  },
-  {
-    value: 'mango',
-    label: 'Mango',
-  },
-  {
-    value: 'grapes',
-    label: 'Grapes',
-  },
-  {
-    value: 'pineapple',
-    label: 'Pineapple',
-  },
-  {
-    value: 'apple1',
-    label: 'Apple',
-  },
-  {
-    value: 'banana1',
     label: 'Banana',
+    value: 'banana',
+  },
+  {
+    label: 'Blueberry',
+    value: 'blueberry',
+  },
+  {
+    label: 'Grapes',
+    value: 'grapes',
+  },
+  {
+    label: 'Pineapple',
+    value: 'pineapple',
+  },
+  {
+    label: 'Cherry',
+    value: 'cherry',
+  },
+  {
+    label: 'Grapefruit',
+    value: 'grapefruit',
+  },
+  {
+    label: 'Lemon',
+    value: 'lemon',
+  },
+  {
+    label: 'Mango',
+    value: 'mango',
+  },
+  {
+    label: 'Grapes',
+    value: 'grapes',
+  },
+  {
+    label: 'Pineapple',
+    value: 'pineapple',
+  },
+  {
+    label: 'Apple',
+    value: 'apple1',
+  },
+  {
+    label: 'Banana',
+    value: 'banana1',
   },
 ]
 
 export default {
-  title: 'Components/Data Entry/Select',
   component: Select,
+  title: 'Components/Data Entry/Select',
 } as Meta<typeof Select>
 
 export const Simple = {
+  args: {
+    disabled: false,
+    options,
+    placeholder: 'Все курсы',
+  },
+
   render: args => {
     const [value, setValue] = useState(null)
 
     return (
       <VerticalContainer>
-        <Select {...args} value={value} onChange={setValue} />
+        <Select {...args} onChange={setValue} value={value} />
         <div>Selected value: {value}</div>
       </VerticalContainer>
     )
-  },
-
-  args: {
-    placeholder: 'Все курсы',
-    disabled: false,
-    options,
   },
 }
 
 export const SimpleWithLabel = {
+  args: {
+    disabled: false,
+    label: 'Курс',
+    options,
+    placeholder: 'Все курсы',
+  },
+
   render: args => {
     const [value, setValue] = useState(null)
 
     return (
       <VerticalContainer>
-        <Select {...args} value={value} onChange={setValue} />
+        <Select {...args} onChange={setValue} value={value} />
         <div>Selected value: {value}</div>
       </VerticalContainer>
     )
   },
-
+}
+export const Required = {
   args: {
-    placeholder: 'Все курсы',
     disabled: false,
+    label: 'Курс',
     options,
-    label: 'Курс*',
+    placeholder: 'Все курсы',
+    required: true,
+  },
+
+  render: args => {
+    const [value, setValue] = useState(null)
+
+    return (
+      <VerticalContainer>
+        <Select {...args} onChange={setValue} value={value} />
+        <div>Selected value: {value}</div>
+      </VerticalContainer>
+    )
   },
 }
 
 export const Multiple = {
+  args: {
+    disabled: false,
+    multiple: true,
+    options,
+    placeholder: 'Все курсы',
+  },
+
   render: args => {
     const [values, setValues] = useState([])
 
     return (
       <VerticalContainer>
-        <Select {...args} value={values} onChange={setValues} multiple />
+        <Select {...args} multiple onChange={setValues} value={values} />
         <div>Selected values: {values.join(', ')}</div>
       </VerticalContainer>
     )
   },
-
-  args: {
-    placeholder: 'Все курсы',
-    disabled: false,
-    multiple: true,
-    options,
-  },
 }
 
 export const Error = {
-  render: args => {
-    const [value, setValue] = useState(null)
-
-    return (
-      <VerticalContainer>
-        <Select {...args} value={value} onChange={setValue} />
-        <div>Selected value: {value}</div>
-      </VerticalContainer>
-    )
-  },
-
   args: {
-    placeholder: 'Все курсы',
     disabled: false,
     error: true,
     errorMessage: 'Ошибка',
     options,
+    placeholder: 'Все курсы',
   },
-}
 
-export const Secondary = {
   render: args => {
     const [value, setValue] = useState(null)
 
     return (
       <VerticalContainer>
-        <Select {...args} value={value} onChange={setValue} />
+        <Select {...args} onChange={setValue} value={value} />
         <div>Selected value: {value}</div>
       </VerticalContainer>
     )
   },
+}
 
+export const Secondary = {
   args: {
-    placeholder: 'Все курсы',
     disabled: false,
-    variant: 'secondary',
     options,
+    placeholder: 'Все курсы',
+    variant: 'secondary',
+  },
+
+  render: args => {
+    const [value, setValue] = useState(null)
+
+    return (
+      <VerticalContainer>
+        <Select {...args} onChange={setValue} value={value} />
+        <div>Selected value: {value}</div>
+      </VerticalContainer>
+    )
   },
 }
 
 export const SmallWithLongItemNames = {
+  args: {
+    disabled: false,
+    options,
+    placeholder: 'Все курсы',
+  },
+
   render: args => {
     const [value, setValue] = useState(null)
 
     return (
       <VerticalContainer>
         <div style={{ width: 200 }}>
-          <Select {...args} value={value} onChange={setValue} />
+          <Select {...args} onChange={setValue} value={value} />
         </div>
         <div>Selected value: {value}</div>
       </VerticalContainer>
     )
-  },
-
-  args: {
-    placeholder: 'Все курсы',
-    disabled: false,
-    options,
   },
 }
 
@@ -204,39 +223,39 @@ export const onModal = () => {
   return (
     <div>
       <button onClick={() => setOpen(!open)}>Open modal</button>
-      <Modal open={open} onClose={handleClose} title={'Select'}>
+      <Modal onClose={handleClose} open={open} title={'Select'}>
         <VerticalContainer>
           <Select
-            portal={false}
-            placeholder="Все курсы"
             disabled={false}
-            value={value}
             onChange={setValue}
             options={options}
+            placeholder={'Все курсы'}
+            portal={false}
+            value={value}
           />
           <Select
-            portal={false}
-            placeholder="Все курсы"
             disabled={false}
-            value={value1}
             onChange={setValue1}
             options={options}
+            placeholder={'Все курсы'}
+            portal={false}
+            value={value1}
           />
           <Select
-            portal={false}
-            placeholder="Все курсы"
             disabled={false}
-            value={value2}
             onChange={setValue2}
             options={options}
+            placeholder={'Все курсы'}
+            portal={false}
+            value={value2}
           />
           <Select
-            portal={false}
-            placeholder="Все курсы"
             disabled={false}
-            value={value3}
             onChange={setValue3}
             options={options}
+            placeholder={'Все курсы'}
+            portal={false}
+            value={value3}
           />
         </VerticalContainer>
       </Modal>

@@ -15,7 +15,7 @@ export type TextareaProps = {
 
 // НЕ УДАЛЯТЬ КОММЕНТ ПЕРЕД forwardRef - без него ломается tree shaking
 export const Textarea = /* @__PURE__ */ forwardRef<HTMLTextAreaElement, TextareaProps>(
-  ({ className, errorMessage, id, label, onChange, onValueChange, ...rest }, ref) => {
+  ({ className, errorMessage, id, label, onChange, onValueChange, required, ...rest }, ref) => {
     const textareaId = useGetId(id)
     const showError = !!errorMessage && errorMessage.length > 0
 
@@ -33,12 +33,13 @@ export const Textarea = /* @__PURE__ */ forwardRef<HTMLTextAreaElement, Textarea
 
     return (
       <div className={classNames.root}>
-        {label && <Label htmlFor={textareaId} label={label} />}
+        {label && <Label htmlFor={textareaId} label={label} required={required} />}
         <textarea
           className={classNames.input}
           id={textareaId}
           onChange={handleInputValueChanged}
           ref={ref}
+          required={required}
           {...rest}
         />
         {showError && <Typography.Error>{errorMessage}</Typography.Error>}

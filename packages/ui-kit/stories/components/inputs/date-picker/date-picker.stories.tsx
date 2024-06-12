@@ -1,28 +1,33 @@
 import { useState } from 'react'
 
+import { DatePicker } from '../../../../src'
 import { Meta } from '@storybook/react'
 
-import { DatePicker } from '../../../../src'
-
 export default {
-  title: 'Components/Data Entry/Date Picker',
   component: DatePicker,
+  title: 'Components/Data Entry/Date Picker',
 } as Meta<typeof DatePicker>
 
 export const Default = {
+  args: {
+    disabled: false,
+    label: 'Дата',
+    placeholder: 'Выбрать дату',
+  },
+
   render(args) {
     const [startDate, setStartDate] = useState(null)
 
-    return <DatePicker startDate={startDate} setStartDate={setStartDate} {...args} />
-  },
-
-  args: {
-    label: 'Дата',
-    placeholder: 'Выбрать дату',
-    disabled: false,
+    return <DatePicker setStartDate={setStartDate} startDate={startDate} {...args} />
   },
 }
-
+export const Required = {
+  ...Default,
+  args: {
+    ...Default.args,
+    required: true,
+  },
+}
 export const DefaultWithErrors = {
   ...Default,
   args: {
@@ -41,22 +46,22 @@ export const DefaultDisabled = {
 }
 
 export const Range = {
+  args: {
+    placeholder: 'Выбрать период',
+  },
+
   render(args) {
     const [startDate, setStartDate] = useState<Date | null>(null)
     const [endDate, setEndDate] = useState<Date | null>(null)
 
     return (
       <DatePicker
-        startDate={startDate}
-        setStartDate={setStartDate}
         endDate={endDate}
         setEndDate={setEndDate}
+        setStartDate={setStartDate}
+        startDate={startDate}
         {...args}
       />
     )
-  },
-
-  args: {
-    placeholder: 'Выбрать период',
   },
 }

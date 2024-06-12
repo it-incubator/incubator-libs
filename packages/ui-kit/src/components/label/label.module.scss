@@ -7,3 +7,8 @@
   line-height: var(--line-height-m);
   color: var(--color-text-secondary);
 }
+
+.required {
+  margin-left: 2px;
+  color: var(--color-accent-500);
+}

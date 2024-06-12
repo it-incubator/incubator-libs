@@ -1,4 +1,4 @@
-import { CSSProperties, FC, Fragment, useMemo } from 'react'
+import { CSSProperties, FC, Fragment, ReactNode, useMemo } from 'react'
 
 import { KeyboardArrowDown, Typography } from '../../'
 import { Label } from '../label'
@@ -20,7 +20,7 @@ interface CommonProps {
   className?: string
   disabled?: boolean
   errorMessage?: string
-  label?: string
+  label?: ReactNode
   /** The name of the select. Submitted with its owning form as part of a name/value pair. */
   name?: string
   /** The options to display.

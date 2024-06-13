@@ -1,5 +1,4 @@
 import { dirname, join } from 'path'
-import remarkGfm from 'remark-gfm'
 
 const config = {
   stories: [
@@ -7,35 +6,29 @@ const config = {
     '../stories/**/*.stories.@(ts|tsx)',
     '../src/assets/icons/stories/**/*.stories.@(ts|tsx)',
   ],
+
   addons: [
     getAbsolutePath('@storybook/addon-links'),
-    getAbsolutePath('@storybook/addon-interactions'),
     getAbsolutePath('@storybook/addon-essentials'),
-    {
-      name: getAbsolutePath('@storybook/addon-docs'),
-      options: {
-        mdxPluginOptions: {
-          mdxCompileOptions: {
-            remarkPlugins: [remarkGfm],
-          },
-        },
-      },
-    },
+    getAbsolutePath('@storybook/addon-interactions'),
+    getAbsolutePath('@storybook/addon-mdx-gfm'),
   ],
+
   framework: {
     name: getAbsolutePath('@storybook/react-vite'),
     options: {},
   },
-  features: {
-    storyStoreV7: true,
-  },
-  docs: {
-    autodocs: true,
-  },
+
+  docs: {},
+
   viteFinal: config => {
     config.build = config.build || {}
     config.build.sourcemap = false
     return config
+  },
+
+  typescript: {
+    reactDocgen: 'react-docgen-typescript',
   },
 }
 export default config

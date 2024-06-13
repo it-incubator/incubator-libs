@@ -1,19 +1,19 @@
 import { ComponentProps, FC, ReactNode, forwardRef } from 'react'
-import { ReactDatePickerCustomHeaderProps, registerLocale } from 'react-datepicker'
 import * as RDP from 'react-datepicker'
-
-import { clsx } from 'clsx'
-
-const RDPC = (((RDP.default as any).default as any) ||
-  (RDP.default as any) ||
-  (RDP as any)) as typeof RDP.default
+import { ReactDatePickerCustomHeaderProps, registerLocale } from 'react-datepicker'
 
 import { CalendarToday, KeyboardArrowLeft, KeyboardArrowRight, Label } from '../../index'
+import { offset } from '@floating-ui/react'
+import { clsx } from 'clsx'
 import { format } from 'date-fns'
 import { ru } from 'date-fns/locale'
 
 import textFieldStyles from './../text-field/text-field.module.scss'
 import s from './date-picker.module.scss'
+
+const RDPC = (((RDP.default as any).default as any) ||
+  (RDP.default as any) ||
+  (RDP as any)) as typeof RDP.default
 
 export type DatePickerProps = {
   disabled?: boolean
@@ -50,7 +50,6 @@ export const DatePicker: FC<DatePickerProps> = ({
     errorText: s.errorText,
     input: clsx(s.input, textFieldStyles.input, showError && s.error, isRange && s.range),
     inputContainer: s.inputContainer,
-    popper: s.popper,
     root: clsx(s.root, className),
   }
 
@@ -80,15 +79,8 @@ export const DatePicker: FC<DatePickerProps> = ({
         locale={'ru'}
         onChange={DatePickerHandler}
         placeholderText={placeholder}
-        popperClassName={classNames.popper}
-        popperModifiers={[
-          {
-            name: 'offset',
-            options: {
-              offset: [0, -11],
-            },
-          },
-        ]}
+        popperModifiers={[offset({ crossAxis: 0, mainAxis: -9 })]}
+        popperPlacement={'bottom-start'}
         renderCustomHeader={CustomHeader}
         required={required}
         selected={startDate}

@@ -63,7 +63,7 @@ export const Tooltip = ({
     tooltipTrigger = <span>{component}</span>
   } else {
     tooltipTrigger = (
-      <button className={classNames.iconButton}>
+      <button className={classNames.iconButton} type={'button'}>
         {icon ?? (
           <span className={s.infoIcon}>
             <InfoOutline size={16} />

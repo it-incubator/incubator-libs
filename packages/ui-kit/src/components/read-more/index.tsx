@@ -33,7 +33,7 @@ export const ReadMore: FC<ReadMoreProps> = ({
   return (
     <>
       {textToShow}
-      <button className={s.button} onClick={toggleReadMore}>
+      <button className={s.button} onClick={toggleReadMore} type={'button'}>
         {buttonText}
       </button>
     </>

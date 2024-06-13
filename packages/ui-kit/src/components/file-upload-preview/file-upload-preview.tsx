@@ -68,7 +68,11 @@ export const FileUploadPreview = ({ files, onFileDelete }: FileUploadPreviewProp
               <Progress baseColor={'var(--color-upload-progress)'} height={'3px'} />
               <Typography.Body2 className={s.fileSize}>{getFileSize(file.size)}</Typography.Body2>
             </div>
-            <button className={s.cancelButton} onClick={() => handleFileDelete(file)} type={'button'}>
+            <button
+              className={s.cancelButton}
+              onClick={() => handleFileDelete(file)}
+              type={'button'}
+            >
               <Cancel />
             </button>
           </div>

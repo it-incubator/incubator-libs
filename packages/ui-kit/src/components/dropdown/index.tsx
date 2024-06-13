@@ -56,7 +56,7 @@ export const Dropdown = ({ align = 'end', children, className, style, trigger }:
     <DropdownMenuRadix.Root onOpenChange={setOpen} open={open}>
       <DropdownMenuRadix.Trigger asChild>
         {trigger ?? (
-          <button className={classNames.button}>
+          <button className={classNames.button} type={'button'}>
             <MenuDots />
           </button>
         )}

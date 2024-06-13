@@ -91,6 +91,7 @@ module.exports = {
       },
     ],
     'prefer-const': 'error',
+    'react/button-has-type': 'error',
     'react/display-name': 'off',
     'react/jsx-boolean-value': ['error'],
     'react/jsx-curly-brace-presence': [

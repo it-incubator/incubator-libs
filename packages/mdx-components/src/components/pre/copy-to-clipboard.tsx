@@ -41,7 +41,14 @@ export const CopyToClipboard = ({
   const IconToUse = isCopied ? CheckIcon : CopyIcon
 
   return (
-    <button className={s.button} onClick={handleClick} tabIndex={0} title={'Copy code'} {...props}>
+    <button
+      className={s.button}
+      onClick={handleClick}
+      tabIndex={0}
+      title={'Copy code'}
+      type={'button'}
+      {...props}
+    >
       <IconToUse className={s.root} />
     </button>
   )

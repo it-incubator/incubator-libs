@@ -463,14 +463,14 @@ importers:
         specifier: 2.1.1
         version: 2.1.1
       react-datepicker:
-        specifier: 4.19.0
-        version: 4.19.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        specifier: 6.9.0
+        version: 6.9.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       react-dropzone:
         specifier: 14.2.3
         version: 14.2.3(react@18.2.0)
       react-loading-skeleton:
-        specifier: ^3.3.1
-        version: 3.3.1(react@18.2.0)
+        specifier: 3.4.0
+        version: 3.4.0(react@18.2.0)
       react-use-measure:
         specifier: 2.1.1
         version: 2.1.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -1871,11 +1871,26 @@ packages:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
 
+  '@floating-ui/react-dom@2.1.0':
+    resolution: {integrity: sha512-lNzj5EQmEKn5FFKc04+zasr09h/uX8RtJRNj5gUXsSQIXHVWTVh+hVAg1vOMCexkX8EgvemMvIFpQfkosnVNyA==}
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+
   '@floating-ui/react@0.19.2':
     resolution: {integrity: sha512-JyNk4A0Ezirq8FlXECvRtQOX/iBe5Ize0W/pLkrZjfHW9GUV7Xnq6zm6fyZuQzaHHqEnVizmvlA96e1/CkZv+w==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
+
+  '@floating-ui/react@0.26.17':
+    resolution: {integrity: sha512-ESD+jYWwqwVzaIgIhExrArdsCL1rOAzryG/Sjlu8yaD3Mtqi3uVyhbE2V7jD58Mo52qbzKz2eUY/Xgh5I86FCQ==}
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+
+  '@floating-ui/utils@0.2.2':
+    resolution: {integrity: sha512-J4yDIIthosAsRZ5CPYP/jQvUAQtlZTTD/4suA08/FEnlxqW3sKS9iAhgsa9VYLZ6vDHn/ixJgIqRQPotoBjxIw==}
 
   '@fontsource/roboto@5.0.8':
     resolution: {integrity: sha512-XxPltXs5R31D6UZeLIV1td3wTXU3jzd3f2DLsXI8tytMGBkIsGcc9sIyiupRtA8y73HAhuSCeweOoBqf6DbWCA==}
@@ -3881,9 +3896,6 @@ packages:
     resolution: {integrity: sha512-eXTggHWSooYhq49F2opQhuHWgzucfF2YgODK4e1566GQs5BIfP30B0oenwBJHfWxAs2fyPB1s7Mg949zLf61Yw==}
     engines: {node: '>=8'}
 
-  classnames@2.3.2:
-    resolution: {integrity: sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==}
-
   clean-stack@2.2.0:
     resolution: {integrity: sha512-4diC9HaTE+KRAMWhDhrGOECgWZxoevMc5TlkObMqNSsVU62PYzXZ/SMTjzyGAFF1YusgxGcSWTEXBhp0CPwQ1A==}
     engines: {node: '>=6'}
@@ -4149,6 +4161,9 @@ packages:
   date-fns@2.30.0:
     resolution: {integrity: sha512-fnULvOpxnC5/Vg3NCiWelDsLiUc9bRwAPs/+LfTLNvetFCtCTN+yQz15C/fs4AwX1R9K5GLtLfn8QW+dWisaAw==}
     engines: {node: '>=0.11'}
+
+  date-fns@3.6.0:
+    resolution: {integrity: sha512-fRHTG8g/Gif+kSh50gaGEdToemgfj74aRX3swtiouboip5JDLAyDE9F11nHMIcvOaXeOC6D7SpNhi7uFyB7Uww==}
 
   debounce@1.2.1:
     resolution: {integrity: sha512-XRRe6Glud4rd/ZGQfiV1ruXSfbvfJedlV9Y6zOlP+2K04vBYiJEte6stfFkCP03aMnY5tsipamumUjL14fofug==}
@@ -6893,8 +6908,8 @@ packages:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
 
-  react-datepicker@4.19.0:
-    resolution: {integrity: sha512-p2IVcOdtMDGvaq27yBGQm43rWnPVJ3w6EMGOmNoG3Gh/Li9maDIfrAWJUeLXDXAxYbXkIsQRs5SwrHvKP65juA==}
+  react-datepicker@6.9.0:
+    resolution: {integrity: sha512-QTxuzeem7BUfVFWv+g5WuvzT0c5BPo+XTCNbMTZKSZQLU+cMMwSUHwspaxuIcDlwNcOH0tiJ+bh1fJ2yxOGYWA==}
     peerDependencies:
       react: ^16.9.0 || ^17 || ^18
       react-dom: ^16.9.0 || ^17 || ^18
@@ -6946,8 +6961,8 @@ packages:
   react-is@18.1.0:
     resolution: {integrity: sha512-Fl7FuabXsJnV5Q1qIOQwx/sagGF18kogb4gpfcG4gjLBWO0WDiiz1ko/ExayuxE7InyQkBLkxRFG5oxY6Uu3Kg==}
 
-  react-loading-skeleton@3.3.1:
-    resolution: {integrity: sha512-NilqqwMh2v9omN7LteiDloEVpFyMIa0VGqF+ukqp0ncVlYu1sKYbYGX9JEl+GtOT9TKsh04zCHAbavnQ2USldA==}
+  react-loading-skeleton@3.4.0:
+    resolution: {integrity: sha512-1oJEBc9+wn7BbkQQk7YodlYEIjgeR+GrRjD+QXkVjwZN7LGIcAFHrx4NhT7UHGBxNY1+zax3c+Fo6XQM4R7CgA==}
     peerDependencies:
       react: '>=16.8.0'
 
@@ -9805,6 +9820,12 @@ snapshots:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
 
+  '@floating-ui/react-dom@2.1.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
+    dependencies:
+      '@floating-ui/dom': 1.4.5
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+
   '@floating-ui/react@0.19.2(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:
       '@floating-ui/react-dom': 1.3.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -9812,6 +9833,16 @@ snapshots:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       tabbable: 6.2.0
+
+  '@floating-ui/react@0.26.17(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
+    dependencies:
+      '@floating-ui/react-dom': 2.1.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@floating-ui/utils': 0.2.2
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      tabbable: 6.2.0
+
+  '@floating-ui/utils@0.2.2': {}
 
   '@fontsource/roboto@5.0.8': {}
 
@@ -12633,8 +12664,6 @@ snapshots:
 
   ci-info@3.8.0: {}
 
-  classnames@2.3.2: {}
-
   clean-stack@2.2.0: {}
 
   cli-boxes@2.2.1: {}
@@ -12904,6 +12933,8 @@ snapshots:
   date-fns@2.30.0:
     dependencies:
       '@babel/runtime': 7.22.6
+
+  date-fns@3.6.0: {}
 
   debounce@1.2.1: {}
 
@@ -16567,16 +16598,15 @@ snapshots:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
 
-  react-datepicker@4.19.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
+  react-datepicker@6.9.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
     dependencies:
-      '@popperjs/core': 2.11.8
-      classnames: 2.3.2
-      date-fns: 2.30.0
+      '@floating-ui/react': 0.26.17(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      clsx: 2.1.1
+      date-fns: 3.6.0
       prop-types: 15.8.1
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       react-onclickoutside: 6.13.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      react-popper: 2.3.0(@popperjs/core@2.11.8)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
 
   react-devtools-core@4.28.4:
     dependencies:
@@ -16638,7 +16668,7 @@ snapshots:
 
   react-is@18.1.0: {}
 
-  react-loading-skeleton@3.3.1(react@18.2.0):
+  react-loading-skeleton@3.4.0(react@18.2.0):
     dependencies:
       react: 18.2.0
 

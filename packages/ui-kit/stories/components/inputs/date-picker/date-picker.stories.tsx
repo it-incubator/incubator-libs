@@ -18,7 +18,15 @@ export const Default = {
   render(args) {
     const [startDate, setStartDate] = useState(null)
 
-    return <DatePicker setStartDate={setStartDate} startDate={startDate} {...args} />
+    return (
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', width: '100%' }}>
+        <DatePicker setStartDate={setStartDate} startDate={startDate} {...args} />
+        <div>
+          Start Date (en-GB locale date string):{' '}
+          <strong>{startDate?.toLocaleDateString('en-GB')}</strong>
+        </div>
+      </div>
+    )
   },
 }
 export const Required = {
@@ -55,13 +63,23 @@ export const Range = {
     const [endDate, setEndDate] = useState<Date | null>(null)
 
     return (
-      <DatePicker
-        endDate={endDate}
-        setEndDate={setEndDate}
-        setStartDate={setStartDate}
-        startDate={startDate}
-        {...args}
-      />
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', width: '100%' }}>
+        <DatePicker
+          endDate={endDate}
+          setEndDate={setEndDate}
+          setStartDate={setStartDate}
+          startDate={startDate}
+          {...args}
+        />
+        <div>
+          Start Date (en-GB locale date string):{' '}
+          <strong>{startDate?.toLocaleDateString('en-GB')}</strong>
+        </div>
+        <div>
+          End Date (en-GB locale date string):{' '}
+          <strong>{endDate?.toLocaleDateString('en-GB')}</strong>
+        </div>
+      </div>
     )
   },
 }

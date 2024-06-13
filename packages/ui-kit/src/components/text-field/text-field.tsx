@@ -1,9 +1,8 @@
 import { ComponentProps, KeyboardEvent, ReactNode, forwardRef } from 'react'
 
-import { Search as SearchIcon, Typography } from '../../'
-import { Close } from '../../assets/icons'
+import { Close, Search as SearchIcon, Typography } from '../../'
+import { useGetId } from '../../hooks'
 import { Label } from '../label'
-import { useGetId } from './useGetId'
 import { clsx } from 'clsx'
 
 import s from './text-field.module.scss'

@@ -1,7 +1,7 @@
 import { ChangeEvent, ComponentProps, ReactNode, forwardRef } from 'react'
 
+import { useGetId } from '../../hooks'
 import { Label } from '../label'
-import { useGetId } from '../text-field/useGetId'
 import { Typography } from '../typography'
 import { clsx } from 'clsx'
 

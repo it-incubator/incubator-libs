@@ -15,6 +15,7 @@ export const Snackbar: FC<ToastContainerProps> = props => {
     />
   )
 }
+
 const Icon = ({ type }: IconProps) => {
   if (type === 'success') {
     return <CheckCircle color={'var(--color-success-500)'} size={16} />

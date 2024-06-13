@@ -1,6 +1,6 @@
 module.exports = {
-  root: true,
   extends: ['@it-incubator/eslint-config'],
+  root: true,
   settings: {
     next: {
       rootDir: ['apps/*/'],

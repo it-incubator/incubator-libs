@@ -22,7 +22,12 @@ export const MessageInput = forwardRef<ElementRef<'textarea'>, MessageInputProps
     return (
       <div className={classNames.box}>
         <TextareaAutosize maxRows={10} {...restProps} className={classNames.input} ref={ref} />
-        <button aria-label={'Send message'} className={classNames.button} {...buttonProps}>
+        <button
+          aria-label={'Send message'}
+          className={classNames.button}
+          type={'submit'}
+          {...buttonProps}
+        >
           <SendMessageIcon />
         </button>
       </div>

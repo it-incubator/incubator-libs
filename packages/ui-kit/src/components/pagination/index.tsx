@@ -113,6 +113,7 @@ const PageButton: FC<PageButtonProps> = ({ disabled, onClick, page, selected }) 
       className={classNames.pageButton(selected)}
       disabled={selected || disabled}
       onClick={onClick}
+      type={'button'}
     >
       {page}
     </button>
@@ -120,7 +121,7 @@ const PageButton: FC<PageButtonProps> = ({ disabled, onClick, page, selected }) 
 }
 const PrevButton: FC<NavigationButtonProps> = ({ disabled, onClick }) => {
   return (
-    <button className={classNames.item} disabled={disabled} onClick={onClick}>
+    <button className={classNames.item} disabled={disabled} onClick={onClick} type={'button'}>
       <KeyboardArrowLeft className={classNames.icon} size={16} />
     </button>
   )
@@ -128,7 +129,7 @@ const PrevButton: FC<NavigationButtonProps> = ({ disabled, onClick }) => {
 
 const NextButton: FC<NavigationButtonProps> = ({ disabled, onClick }) => {
   return (
-    <button className={classNames.item} disabled={disabled} onClick={onClick}>
+    <button className={classNames.item} disabled={disabled} onClick={onClick} type={'button'}>
       <KeyboardArrowRight className={classNames.icon} size={16} />
     </button>
   )

@@ -60,7 +60,7 @@ const Folder = memo<FolderProps>(({ children, defaultOpen = false, label, name }
 
   return (
     <li className={classNames.folderItem}>
-      <button className={classNames.folderButton} onClick={toggle} title={name}>
+      <button className={classNames.folderButton} onClick={toggle} title={name} type={'button'}>
         <Indent />
         {folderIcon}
         <span className={classNames.folderLabel}>{label ?? name}</span>

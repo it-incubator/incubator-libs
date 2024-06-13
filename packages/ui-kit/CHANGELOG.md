@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 2.0.0
+### Major Changes
+
+- Updated dependencies. The most notable are headless-ui (select, combobox and radio-group), react-datepicker (date-picker) and react-toastify
+
 ## 1.0.14
 ### Patch Changes
 

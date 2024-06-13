@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 1.0.14
+### Patch Changes
+
+- ac21490: chore: add button type lint rule and fix code to comply
+
 ## 1.0.12
 ### Patch Changes
 

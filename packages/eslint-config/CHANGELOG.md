@@ -1,5 +1,10 @@
 # @it-incubator/eslint-config-incubator
 
+## 1.0.3
+### Patch Changes
+
+- ac21490: chore: add button type lint rule and fix code to comply
+
 ## 1.0.2
 ### Patch Changes
 

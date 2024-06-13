@@ -144,7 +144,7 @@ const CustomHeader = ({ date, decreaseMonth, increaseMonth }: ReactDatePickerCus
           <KeyboardArrowLeft />
         </button>
 
-        <button className={classNames.button} onClick={increaseMonth}>
+        <button className={classNames.button} onClick={increaseMonth} type={'button'}>
           <KeyboardArrowRight />
         </button>
       </div>

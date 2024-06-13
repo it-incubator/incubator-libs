@@ -554,8 +554,8 @@ importers:
         specifier: ^10.16.4
         version: 10.16.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       loki:
-        specifier: ^0.32.0
-        version: 0.32.0(@storybook/addons@7.4.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@storybook/react@7.4.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.2.2))(@types/react@18.2.45)
+        specifier: ^0.35.0
+        version: 0.35.0(@storybook/addons@7.4.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@storybook/react@7.4.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.2.2))(@types/react@18.2.45)
       react:
         specifier: 18.2.0
         version: 18.2.0
@@ -1978,23 +1978,52 @@ packages:
   '@loki/browser@0.32.0':
     resolution: {integrity: sha512-LsMFoh0X4n/Jeiyevtp/QN0mCCmhsbRhMVR1A114Cdirtrvqz08Dz8+ero9vpH8HZudorwXLhrE2wnhdhWqzsg==}
 
+  '@loki/browser@0.35.0':
+    resolution: {integrity: sha512-VYSd3bx9dOQ/Wo2C1gdNdE2mcYPleVtGInRcZmCOJ01va14L9VEGzG2zL1dMcmMUuJ2cT3Ri1GR59vEO3vKWvQ==}
+
   '@loki/core@0.32.0':
     resolution: {integrity: sha512-q6F5s38FIsNuVFUmFprlkSx7KTsy0UO5+1SKK04v+0orXqBsjy46eKCP4aqa6Q08WlzpA+xHVQWbwwdsaTcPyA==}
+
+  '@loki/core@0.35.0':
+    resolution: {integrity: sha512-AxFgo73juZ7XhmmFXMhtkpEwLBXraHEvqeQKtxmZ9V/PNWXR+yVmlMJ6HzM2WyL2ewmcaOqWX/EuuN/j24CwCA==}
 
   '@loki/diff-graphics-magick@0.32.0':
     resolution: {integrity: sha512-R19iAkpQy1+sfo0o60LgMKA2v/XDX4TZfDX7EAjXxIgVxQ8BjI5fM8JU1hQp37GjlBgju957PCK8puDY4lxVgw==}
 
+  '@loki/diff-graphics-magick@0.35.0':
+    resolution: {integrity: sha512-Rwt30i3jSPBS/6WPPhqQN1mWAys9viyKvRlhl+GQYcPoIrs70rNSYQaAB4/J54Vips/TGxJJAYZ6caq1Ey9s6w==}
+
   '@loki/diff-looks-same@0.32.0':
     resolution: {integrity: sha512-CQO1oR196nmXblx5NJ5mexT7WSwDJDxuhDY03zP8goYzzIQxGUfXmO1RZa7D1q1pMOhQun8wLAt9Zkq6px68lg==}
+
+  '@loki/diff-looks-same@0.35.0':
+    resolution: {integrity: sha512-peIVLP7f+IFT9fp8B5wr4PJrWEE3h0aRFBe4yqZzMpqxrbxfXrfd9o1SnuBIf4mtiwdlWndDFVniRbxAgzUIJA==}
 
   '@loki/diff-pixelmatch@0.32.0':
     resolution: {integrity: sha512-XNkS9TRyhJZiCxPrRDZR9+ofilUYYQRGGP7TqEsAbznjnI8gbHQ/sZp2tbUM/tnrnm505iJWLt7eGieCEzEV1w==}
 
+  '@loki/diff-pixelmatch@0.35.0':
+    resolution: {integrity: sha512-QYaTkrDbIrfjxjuGiRRBufkAO7QNrmDy8RbRsk31HSTN/vFF3L9xJeNIeA95Xd1DP7DKMmorXRQtzv3qJnDKsQ==}
+
   '@loki/integration-core@0.32.0':
     resolution: {integrity: sha512-j0kX1K/QZzbgr38AEJUlb1238jNuBOebNcVEX3hplWM6oAgr7njWjSNnEZSRo28k+4JMTb/EsqyOtXNtCyYyKQ==}
 
+  '@loki/integration-core@0.35.0':
+    resolution: {integrity: sha512-Zbi1O9au1WZOS7RXJTRykPl1843bTk58pzaNGvxDiH/XjdiPNemWRZNTC8uecpw9Cxr2l9hrzn1Dj6OO7P4XJg==}
+
   '@loki/integration-react-native@0.32.0':
     resolution: {integrity: sha512-FjtflvXdxhLuGPdXPQZWHorAM8SAqeK3LeqphvjZ0es3zmIwPU5L87CN58SsT9JHj9FCdyu2wHRy5eDj8ouSNA==}
+    peerDependencies:
+      '@storybook/addons': ^5 || ^6
+      '@storybook/react-native': ^5 || ^6
+    peerDependenciesMeta:
+      '@storybook/addons':
+        optional: true
+      '@storybook/react-native':
+        optional: true
+
+  '@loki/integration-react-native@0.35.0':
+    resolution: {integrity: sha512-sgXPOVSI3I0uJtxbB4BnP8EHfBlnH7UKY8VWPlxWtEYRPvk52n5xfvlw1x9sycRxDyMhrtm3fGEQPXTnzDN2SA==}
     peerDependencies:
       '@storybook/addons': ^5 || ^6
       '@storybook/react-native': ^5 || ^6
@@ -2012,8 +2041,24 @@ packages:
       '@storybook/react':
         optional: true
 
+  '@loki/integration-react@0.35.0':
+    resolution: {integrity: sha512-ZSeOfPc8RsCSC4QEu73F4d+bG1+J+RoJFgxt45ehRV/2K7k/cOZhHTHLxnPu5hFdM2dXX4KJsHiUVqRLtETVsw==}
+    peerDependencies:
+      '@storybook/react': ^5 || ^6 || ^7
+    peerDependenciesMeta:
+      '@storybook/react':
+        optional: true
+
   '@loki/integration-vue@0.32.0':
     resolution: {integrity: sha512-lX1vz0i8raXQB5R5b7AVZoA6pm3R/MJZB8BeAAKvKXK5+eMpxl911AzqbLrdGOmBOJqMNkEeEJZBCvLaNkcZmg==}
+    peerDependencies:
+      '@storybook/vue': ^5 || ^6
+    peerDependenciesMeta:
+      '@storybook/vue':
+        optional: true
+
+  '@loki/integration-vue@0.35.0':
+    resolution: {integrity: sha512-OPXlj7/vGd5XfNQCnFK+/K6fL5kk+hXpv77WqPnj60orWDhtPgl+wjbRS4VePXqy4iv6aqAINE7I5aCS0oiUNg==}
     peerDependencies:
       '@storybook/vue': ^5 || ^6
     peerDependenciesMeta:
@@ -2024,26 +2069,51 @@ packages:
     resolution: {integrity: sha512-MKv3j6Hm5An4nua31EPGvnebe+8jipYJZ8xUTMXTFXcIFL6TZ2B6Dz99wyco9FoW4KaFuFfj1N0oH4QyJwYxRA==}
     hasBin: true
 
+  '@loki/runner@0.35.0':
+    resolution: {integrity: sha512-tCVOA9P5IJSeXYcW68EeycYN68CHUpU2bWYVkAxxKXDhVHnBjI6W+lVMkJbky5WCF+ly2BuczjaJy7yIe8Ucvg==}
+    hasBin: true
+
   '@loki/target-chrome-app@0.32.0':
     resolution: {integrity: sha512-m6iQXcGQjylKm9BHvOTh77i2vQ8awU8UvoAdMIS894stvU9VbCKELtHBs7xgrV4hXBv/S8Pfw4vsrsxklo6aKQ==}
+
+  '@loki/target-chrome-app@0.35.0':
+    resolution: {integrity: sha512-P75JPKMISjqitPSsDMRbuXdQclbseezGTXmsuLQw/k+66I2gXsfAeQgXeHzgpXq1l5sPygnd2SHFjLJlm8wUzA==}
 
   '@loki/target-chrome-aws-lambda@0.32.0':
     resolution: {integrity: sha512-uBvarG4vq86Ru7mg7G5Os3p31Lgb2ujrO6ER3tem3bU+YYAl8suqEgWvSU8xYSOw9AXw/NxfwXJNwrFYTXMIyA==}
 
+  '@loki/target-chrome-aws-lambda@0.35.0':
+    resolution: {integrity: sha512-G4VAizeEEfdeslFH4VS9ULGkAtfkvfaQNtR8WLb2PkTv2NinIdio3ikGyeHrwRo40BGmZq+8WICG484c0OXSFw==}
+
   '@loki/target-chrome-core@0.32.0':
     resolution: {integrity: sha512-lQwZ1yUMtdbeAa1DC66BiEhYTjthNzj6XN64yF4vTKUbPMvqHREHNego3G2d1J/uFM3WNQaiUWGB6NJXz+jpow==}
+
+  '@loki/target-chrome-core@0.35.0':
+    resolution: {integrity: sha512-uFZ34yy+D64ySxJVApoBHgZqwqs87ujvksw4/T4Uvmh0+5orI+6D9b1yq06a7CEUqgleTnMIO+f+ZM7+mhoKQQ==}
 
   '@loki/target-chrome-docker@0.32.0':
     resolution: {integrity: sha512-W95N6P4InntZ+yJwoYpct1CT6SC/9Qz06prdUmHSpBNx5nTMGyKCefhor8Nmf5fMgSXAW1sY/Wi81iVuKD8PYg==}
 
+  '@loki/target-chrome-docker@0.35.0':
+    resolution: {integrity: sha512-GDDP99BYEOgobuR2D0lYOCMwMb1n9VAUXtv1oXoV1q3nXh0xerqxFmEOqWFLhX+/hIWAqm7JXSKiCorMMwyctw==}
+
   '@loki/target-native-android-emulator@0.32.0':
     resolution: {integrity: sha512-XlArJlsGeGxSBY+Rphb0SoZgU7Qot6N28L3pv1ibt30zQgr/LSosiI6OgpesblENKfPoFhgCQI/SWb0pE6yapw==}
+
+  '@loki/target-native-android-emulator@0.35.0':
+    resolution: {integrity: sha512-AETbsB24FTrYhyAObsKSJU29LD8hF0q74tiTTGHP6y3stDbs/7yIJGDIIzH5VN6ctVHFViNFeQakJYGdse4CTQ==}
 
   '@loki/target-native-core@0.32.0':
     resolution: {integrity: sha512-5H1z3bO8XrOcl6V6UajVEUVXXqfmV/q5mCIIlZqSletk1LthEiWA8YTrOstpaBizYh/44+WGi1VHly1ONoPyzQ==}
 
+  '@loki/target-native-core@0.35.0':
+    resolution: {integrity: sha512-JxRGGEJ0/59vcuoC9WSNsgL/hjPAguwK3RNqOZha5S4fMSlkdU1eaDPX3YcGNogTrCMIcevLg5AvTw2CbVvnTA==}
+
   '@loki/target-native-ios-simulator@0.32.0':
     resolution: {integrity: sha512-SSIONFrp8GtvVxE6mWIRAvkR0/HP50jucj0NUKuAqeWFjjkDtk2nZEq3ochpLdAfS9BL9dTbJzmjEbu0w55mXA==}
+
+  '@loki/target-native-ios-simulator@0.35.0':
+    resolution: {integrity: sha512-KyN0vmDWr0elcOJJA97wS795zVA/R3WLqOip7rb2RvTt3Zb8gBigRFMHs8DZyXVL0uBMfeIYL9zcQNjH6eraHA==}
 
   '@lukeed/csprng@1.1.0':
     resolution: {integrity: sha512-Z7C/xXCiGWsg0KuKsHTKJxbWhpI3Vs5GwLfOean7MGyVFGqdRgBbAjOCh6u4bbjPc/8MJ2pZmK/0DLdCbivLDA==}
@@ -3902,6 +3972,11 @@ packages:
     resolution: {integrity: sha512-Nk8DUCIfPR6p9WClPPFeP2ztpAdkT8xueoiDS03csea1uoJjm4w0p5Oy1hjykyjT1EQ0MMrEshLD3C8gHXyiZw==}
     engines: {node: '>=12.13.0'}
 
+  chrome-launcher@0.15.2:
+    resolution: {integrity: sha512-zdLEwNo3aUVzIhKhTtXfxhdvZhUghrnmkvcAq2NoDd+LeOHKf03H5jwZ8T/STsAlzyALkBVK552iaG1fGf1xVQ==}
+    engines: {node: '>=12.13.0'}
+    hasBin: true
+
   chrome-remote-interface@0.32.2:
     resolution: {integrity: sha512-3UbFKtEmqApehPQnqdblcggx7KveQphEMKQmdJZsOguE9ylw2N2/9Z7arO7xS55+DBJ/hyP8RrayLt4MMdJvQg==}
     hasBin: true
@@ -4033,6 +4108,10 @@ packages:
   commander@6.2.1:
     resolution: {integrity: sha512-U7VdrJFnJgo4xjrHpTzu0yrHPGImdsmD95ZlgYSEajAn2JKzDhDTPG9kBTefmObL2w/ngeZnilk+OV9CG3d7UA==}
     engines: {node: '>= 6'}
+
+  commander@9.5.0:
+    resolution: {integrity: sha512-KRs7WVDKg86PWiuAqhDrAQnTXZKraVcCc6vFdL14qrZ/DcWwuRo7VoiYXalXO7S5GKpqYiVEwCbgFDfxNHKJBQ==}
+    engines: {node: ^12.20.0 || >=14}
 
   common-path-prefix@3.0.0:
     resolution: {integrity: sha512-QE33hToZseCH3jS0qN96O/bSh3kaw/h+Tq7ngyY9eWDUnTlTNUyqfqvCXioLe5Na5jFsL78ra/wuBU4iuEgd4w==}
@@ -5280,6 +5359,9 @@ packages:
   hastscript@8.0.0:
     resolution: {integrity: sha512-dMOtzCEd3ABUeSIISmrETiKuyydk1w0pa+gE/uormcTpSYuaNJPbX1NU3JLyscSLjwAQM8bWMhhIlnCqnRvDTw==}
 
+  hoist-non-react-statics@3.3.2:
+    resolution: {integrity: sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==}
+
   hosted-git-info@2.8.9:
     resolution: {integrity: sha512-mxIDAb9Lsm6DoOJ7xH+5+X4y1LU/4Hi50L9C5sIswK3JzULS4bwk1FvjdBgvYR4bzT4tuUQiC15FE2f5HbLvYw==}
 
@@ -5873,6 +5955,15 @@ packages:
     hasBin: true
     peerDependencies:
       '@storybook/react': ^5 || ^6
+    peerDependenciesMeta:
+      '@storybook/react':
+        optional: true
+
+  loki@0.35.0:
+    resolution: {integrity: sha512-9al7gvZCvatnBLGjB8fcqrqlSRkwR+J+4d+Giwh0CgZKnBQcrd5/fX8NSCpZUKcoKuQ8r6ehOq+JvBJQr/M3lA==}
+    hasBin: true
+    peerDependencies:
+      '@storybook/react': ^5 || ^6 || ^7
     peerDependenciesMeta:
       '@storybook/react':
         optional: true
@@ -8284,6 +8375,11 @@ packages:
     engines: {node: '>=8.9.0'}
     hasBin: true
 
+  wait-port@1.1.0:
+    resolution: {integrity: sha512-3e04qkoN3LxTMLakdqeWth8nih8usyg+sf1Bgdf9wwUkp05iuK1eSY/QpLvscT/+F/gA89+LpUmmgBtesbqI2Q==}
+    engines: {node: '>=10'}
+    hasBin: true
+
   walker@1.0.8:
     resolution: {integrity: sha512-ts/8E8l5b7kY0vlWLewOkDXMmPdLcVV4GmOQLyxuSswIJsweeFZtAsMF7k1Nszz+TYBQrlYRmzOnr398y1JemQ==}
 
@@ -9990,11 +10086,27 @@ snapshots:
     dependencies:
       '@loki/integration-core': 0.32.0
 
+  '@loki/browser@0.35.0':
+    dependencies:
+      '@loki/integration-core': 0.35.0
+
   '@loki/core@0.32.0':
     dependencies:
       shelljs: 0.8.5
 
+  '@loki/core@0.35.0':
+    dependencies:
+      mime-types: 2.1.35
+      shelljs: 0.8.5
+
   '@loki/diff-graphics-magick@0.32.0':
+    dependencies:
+      fs-extra: 9.1.0
+      gm: 1.25.0
+    transitivePeerDependencies:
+      - supports-color
+
+  '@loki/diff-graphics-magick@0.35.0':
     dependencies:
       fs-extra: 9.1.0
       gm: 1.25.0
@@ -10006,7 +10118,18 @@ snapshots:
       fs-extra: 9.1.0
       looks-same: 4.1.0
 
+  '@loki/diff-looks-same@0.35.0':
+    dependencies:
+      fs-extra: 9.1.0
+      looks-same: 4.1.0
+
   '@loki/diff-pixelmatch@0.32.0':
+    dependencies:
+      fs-extra: 9.1.0
+      pixelmatch: 5.3.0
+      pngjs: 4.0.1
+
+  '@loki/diff-pixelmatch@0.35.0':
     dependencies:
       fs-extra: 9.1.0
       pixelmatch: 5.3.0
@@ -10014,9 +10137,18 @@ snapshots:
 
   '@loki/integration-core@0.32.0': {}
 
+  '@loki/integration-core@0.35.0': {}
+
   '@loki/integration-react-native@0.32.0(@storybook/addons@7.4.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0))':
     dependencies:
       '@loki/integration-core': 0.32.0
+    optionalDependencies:
+      '@storybook/addons': 7.4.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+
+  '@loki/integration-react-native@0.35.0(@storybook/addons@7.4.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0))':
+    dependencies:
+      '@loki/integration-core': 0.35.0
+      hoist-non-react-statics: 3.3.2
     optionalDependencies:
       '@storybook/addons': 7.4.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
 
@@ -10026,9 +10158,19 @@ snapshots:
     optionalDependencies:
       '@storybook/react': 7.4.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.2.2)
 
+  '@loki/integration-react@0.35.0(@storybook/react@7.4.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.2.2))':
+    dependencies:
+      '@loki/browser': 0.35.0
+    optionalDependencies:
+      '@storybook/react': 7.4.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.2.2)
+
   '@loki/integration-vue@0.32.0':
     dependencies:
       '@loki/browser': 0.32.0
+
+  '@loki/integration-vue@0.35.0':
+    dependencies:
+      '@loki/browser': 0.35.0
 
   '@loki/runner@0.32.0(@types/react@18.2.45)':
     dependencies:
@@ -10058,12 +10200,53 @@ snapshots:
       - supports-color
       - utf-8-validate
 
+  '@loki/runner@0.35.0(@types/react@18.2.45)':
+    dependencies:
+      '@loki/core': 0.35.0
+      '@loki/diff-graphics-magick': 0.35.0
+      '@loki/diff-looks-same': 0.35.0
+      '@loki/diff-pixelmatch': 0.35.0
+      '@loki/target-chrome-app': 0.35.0
+      '@loki/target-chrome-aws-lambda': 0.35.0
+      '@loki/target-chrome-docker': 0.35.0
+      '@loki/target-native-android-emulator': 0.35.0
+      '@loki/target-native-ios-simulator': 0.35.0
+      async: 3.2.4
+      chalk: 4.1.2
+      ci-info: 2.0.0
+      cosmiconfig: 7.1.0
+      fs-extra: 9.1.0
+      import-jsx: 4.0.1
+      ink: 3.2.0(@types/react@18.2.45)(react@17.0.2)
+      minimist: 1.2.8
+      ramda: 0.27.2
+      react: 17.0.2
+      transliteration: 2.3.5
+    transitivePeerDependencies:
+      - '@types/react'
+      - bufferutil
+      - supports-color
+      - utf-8-validate
+
   '@loki/target-chrome-app@0.32.0':
     dependencies:
       '@loki/target-chrome-core': 0.32.0
       chrome-launcher: 0.14.2
       chrome-remote-interface: 0.32.2
       debug: 4.3.4(supports-color@5.5.0)
+    transitivePeerDependencies:
+      - bufferutil
+      - supports-color
+      - utf-8-validate
+
+  '@loki/target-chrome-app@0.35.0':
+    dependencies:
+      '@loki/core': 0.35.0
+      '@loki/target-chrome-core': 0.35.0
+      chrome-launcher: 0.15.2
+      chrome-remote-interface: 0.32.2
+      debug: 4.3.4(supports-color@5.5.0)
+      find-free-port-sync: 1.0.0
     transitivePeerDependencies:
       - bufferutil
       - supports-color
@@ -10077,11 +10260,28 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  '@loki/target-chrome-aws-lambda@0.35.0':
+    dependencies:
+      '@loki/core': 0.35.0
+      aws-sdk: 2.1473.0
+      debug: 4.3.4(supports-color@5.5.0)
+    transitivePeerDependencies:
+      - supports-color
+
   '@loki/target-chrome-core@0.32.0':
     dependencies:
       '@loki/browser': 0.32.0
       '@loki/core': 0.32.0
       '@loki/integration-core': 0.32.0
+      debug: 4.3.4(supports-color@5.5.0)
+    transitivePeerDependencies:
+      - supports-color
+
+  '@loki/target-chrome-core@0.35.0':
+    dependencies:
+      '@loki/browser': 0.35.0
+      '@loki/core': 0.35.0
+      '@loki/integration-core': 0.35.0
       debug: 4.3.4(supports-color@5.5.0)
     transitivePeerDependencies:
       - supports-color
@@ -10102,11 +10302,38 @@ snapshots:
       - supports-color
       - utf-8-validate
 
+  '@loki/target-chrome-docker@0.35.0':
+    dependencies:
+      '@loki/core': 0.35.0
+      '@loki/target-chrome-core': 0.35.0
+      chrome-remote-interface: 0.32.2
+      debug: 4.3.4(supports-color@5.5.0)
+      execa: 5.1.1
+      find-free-port-sync: 1.0.0
+      fs-extra: 9.1.0
+      wait-port: 1.1.0
+    transitivePeerDependencies:
+      - bufferutil
+      - supports-color
+      - utf-8-validate
+
   '@loki/target-native-android-emulator@0.32.0':
     dependencies:
       '@ferocia-oss/osnap': 1.3.5
       '@loki/core': 0.32.0
       '@loki/target-native-core': 0.32.0
+      fs-extra: 9.1.0
+      tempy: 1.0.1
+    transitivePeerDependencies:
+      - bufferutil
+      - supports-color
+      - utf-8-validate
+
+  '@loki/target-native-android-emulator@0.35.0':
+    dependencies:
+      '@ferocia-oss/osnap': 1.3.5
+      '@loki/core': 0.35.0
+      '@loki/target-native-core': 0.35.0
       fs-extra: 9.1.0
       tempy: 1.0.1
     transitivePeerDependencies:
@@ -10124,11 +10351,33 @@ snapshots:
       - supports-color
       - utf-8-validate
 
+  '@loki/target-native-core@0.35.0':
+    dependencies:
+      '@loki/core': 0.35.0
+      debug: 4.3.4(supports-color@5.5.0)
+      ws: 7.5.9
+    transitivePeerDependencies:
+      - bufferutil
+      - supports-color
+      - utf-8-validate
+
   '@loki/target-native-ios-simulator@0.32.0':
     dependencies:
       '@ferocia-oss/osnap': 1.3.5
       '@loki/core': 0.32.0
       '@loki/target-native-core': 0.32.0
+      fs-extra: 9.1.0
+      tempy: 1.0.1
+    transitivePeerDependencies:
+      - bufferutil
+      - supports-color
+      - utf-8-validate
+
+  '@loki/target-native-ios-simulator@0.35.0':
+    dependencies:
+      '@ferocia-oss/osnap': 1.3.5
+      '@loki/core': 0.35.0
+      '@loki/target-native-core': 0.35.0
       fs-extra: 9.1.0
       tempy: 1.0.1
     transitivePeerDependencies:
@@ -12700,6 +12949,15 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  chrome-launcher@0.15.2:
+    dependencies:
+      '@types/node': 20.14.2
+      escape-string-regexp: 4.0.0
+      is-wsl: 2.2.0
+      lighthouse-logger: 1.4.2
+    transitivePeerDependencies:
+      - supports-color
+
   chrome-remote-interface@0.32.2:
     dependencies:
       commander: 2.11.0
@@ -12825,6 +13083,8 @@ snapshots:
   commander@4.1.1: {}
 
   commander@6.2.1: {}
+
+  commander@9.5.0: {}
 
   common-path-prefix@3.0.0: {}
 
@@ -14503,6 +14763,10 @@ snapshots:
       property-information: 6.3.0
       space-separated-tokens: 2.0.2
 
+  hoist-non-react-statics@3.3.2:
+    dependencies:
+      react-is: 16.13.1
+
   hosted-git-info@2.8.9: {}
 
   html-escaper@2.0.2: {}
@@ -15125,6 +15389,27 @@ snapshots:
       '@loki/target-chrome-docker': 0.32.0
       '@loki/target-native-android-emulator': 0.32.0
       '@loki/target-native-ios-simulator': 0.32.0
+    optionalDependencies:
+      '@storybook/react': 7.4.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.2.2)
+    transitivePeerDependencies:
+      - '@storybook/addons'
+      - '@storybook/react-native'
+      - '@storybook/vue'
+      - '@types/react'
+      - bufferutil
+      - supports-color
+      - utf-8-validate
+
+  loki@0.35.0(@storybook/addons@7.4.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@storybook/react@7.4.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.2.2))(@types/react@18.2.45):
+    dependencies:
+      '@loki/integration-react': 0.35.0(@storybook/react@7.4.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.2.2))
+      '@loki/integration-react-native': 0.35.0(@storybook/addons@7.4.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0))
+      '@loki/integration-vue': 0.35.0
+      '@loki/runner': 0.35.0(@types/react@18.2.45)
+      '@loki/target-chrome-app': 0.35.0
+      '@loki/target-chrome-docker': 0.35.0
+      '@loki/target-native-android-emulator': 0.35.0
+      '@loki/target-native-ios-simulator': 0.35.0
     optionalDependencies:
       '@storybook/react': 7.4.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.2.2)
     transitivePeerDependencies:
@@ -18215,6 +18500,14 @@ snapshots:
       rxjs: 6.6.7
     transitivePeerDependencies:
       - debug
+
+  wait-port@1.1.0:
+    dependencies:
+      chalk: 4.1.2
+      commander: 9.5.0
+      debug: 4.3.4(supports-color@5.5.0)
+    transitivePeerDependencies:
+      - supports-color
 
   walker@1.0.8:
     dependencies:

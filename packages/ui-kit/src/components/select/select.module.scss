@@ -19,15 +19,17 @@
   border-radius: var(--border-radius-s);
   outline: none;
 
-  transition: var(--transtition-duration-basic) background-color,
+  transition:
+    var(--transtition-duration-basic) background-color,
     var(--transtition-duration-basic) color;
 
   &::placeholder {
     color: var(--color-text-secondary);
   }
 
-  &[data-headlessui-state='open'] {
+  &[data-open] {
     border-color: var(--color-border-select-active);
+    border-bottom: none;
     border-radius: var(--border-radius-s) var(--border-radius-s) 0 0;
   }
 
@@ -107,7 +109,7 @@
     height: 16px;
   }
 
-  [data-headlessui-state='open'] > & {
+  [data-open] > & {
     transform: rotate(180deg);
   }
 
@@ -121,7 +123,7 @@
 
   display: flex;
 
-  width: 100%;
+  width: var(--input-width);
   padding: 6px 12px;
 
   text-align: start;
@@ -130,20 +132,19 @@
   border: none; /* Remove button default border */
   outline: none;
 
-  transition: var(--transtition-duration-basic) background-color,
+  transition:
+    var(--transtition-duration-basic) background-color,
     var(--transtition-duration-basic) color;
 
-  &[data-headlessui-state='active'],
-  &[data-headlessui-state='active selected'] {
+  &[data-focus] {
     background-color: var(--color-action-hover);
   }
 
-  &[data-headlessui-state='selected'],
-  &[data-headlessui-state='active selected'] {
+  &[data-selected] {
     color: var(--color-accent-500);
   }
 
-  &[data-headlessui-state='disabled'] {
+  &[data-disabled] {
     cursor: auto;
     color: var(--color-text-inactive);
   }
@@ -158,6 +159,8 @@
 .content {
   overflow: hidden;
 
+  width: var(--input-width);
+
   background-color: var(--color-bg-element);
   border: 1px solid var(--color-border-select-active);
   border-radius: 0 0 var(--border-radius-s) var(--border-radius-s);
@@ -167,8 +170,8 @@
     border: 1px solid var(--color-border-input-primary);
 
     & .item {
-      &[data-headlessui-state~='active'],
-      &[data-headlessui-state~='selected'] {
+      &[data-focus],
+      &[data-selected] {
         color: var(--color-neutral-light-50);
         background-color: var(--color-info-400);
       }

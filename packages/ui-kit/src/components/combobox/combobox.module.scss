@@ -3,8 +3,9 @@
 }
 
 .input {
-  &[data-headlessui-state='open'] {
+  &[data-open] {
     padding-right: 32px;
+    border-bottom: none;
     border-radius: var(--border-radius-s) var(--border-radius-s) 0 0;
   }
 
@@ -24,7 +25,7 @@
   width: 24px;
   height: 24px;
 
-  &[data-headlessui-state='disabled'] {
+  &[data-disabled] {
     cursor: initial;
     color: var(--color-text-disabled);
   }
@@ -41,7 +42,7 @@
   width: 18px;
   height: 18px;
 
-  &[data-headlessui-state='disabled'] {
+  &[data-disabled] {
     cursor: initial;
     color: var(--color-text-disabled);
   }
@@ -55,7 +56,7 @@
   transition: var(--transtition-duration-basic) transform;
 }
 
-.root[data-headlessui-state='open'] .icon {
+.root[data-open] .icon {
   transform: rotate(180deg);
 }
 

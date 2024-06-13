@@ -1,10 +1,9 @@
-import { CSSProperties, FC, Fragment, ReactNode, useMemo } from 'react'
+import { CSSProperties, FC, ReactNode, useMemo } from 'react'
 
 import { KeyboardArrowDown, Typography } from '../../'
 import { Label } from '../label'
 import { Scrollbar } from '../scrollbar'
-import { Listbox } from '@headlessui/react'
-import { Float } from '@headlessui-float/react'
+import { Listbox, ListboxButton, ListboxOption, ListboxOptions } from '@headlessui/react'
 import { clsx } from 'clsx'
 
 import s from './select.module.scss'
@@ -119,41 +118,32 @@ export const Select: FC<SelectProps> = ({
     <Listbox {...{ disabled, multiple, name, onChange, value }}>
       <div className={classNames.root} style={rootStyles}>
         <Label label={label} required={required}>
-          <Float
-            adaptiveWidth
-            as={'div'}
-            flip={20}
-            floatingAs={Fragment}
-            placement={'bottom'}
-            portal={portal}
-          >
-            <Listbox.Button className={classNames.trigger} type={'button'}>
-              <span className={classNames.value}>{selectedOptionsLabels || placeholder}</span>
-              <span className={classNames.icon}>
-                <KeyboardArrowDown size={variant === 'pagination' ? 16 : 24} />
-              </span>
-            </Listbox.Button>
+          <ListboxButton className={classNames.trigger} type={'button'}>
+            <span className={classNames.value}>{selectedOptionsLabels || placeholder}</span>
+            <span className={classNames.icon}>
+              <KeyboardArrowDown size={variant === 'pagination' ? 16 : 24} />
+            </span>
+          </ListboxButton>
 
-            <Listbox.Options as={'div'} className={classNames.content}>
-              <Scrollbar maxHeight={158}>
-                {options.map(option => {
-                  // todo: add checkboxes for multi-select
-                  return (
-                    <Listbox.Option
-                      as={'button'}
-                      className={classNames.item}
-                      disabled={option.disabled}
-                      key={option.value}
-                      type={'button'}
-                      value={option.value}
-                    >
-                      <span>{option.label}</span>
-                    </Listbox.Option>
-                  )
-                })}
-              </Scrollbar>
-            </Listbox.Options>
-          </Float>
+          <ListboxOptions as={'div'} className={classNames.content} modal={portal}>
+            <Scrollbar maxHeight={158}>
+              {options.map(option => {
+                // todo: add checkboxes for multi-select
+                return (
+                  <ListboxOption
+                    as={'button'}
+                    className={classNames.item}
+                    disabled={option.disabled}
+                    key={option.value}
+                    type={'button'}
+                    value={option.value}
+                  >
+                    <span>{option.label}</span>
+                  </ListboxOption>
+                )
+              })}
+            </Scrollbar>
+          </ListboxOptions>
         </Label>
         <>{showError && <Typography.Error>{errorMessage}</Typography.Error>}</>
       </div>

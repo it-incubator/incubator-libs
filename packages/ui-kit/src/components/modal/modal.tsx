@@ -1,4 +1,4 @@
-import { ComponentProps, FC } from 'react'
+import { ComponentProps, FC, ReactNode } from 'react'
 
 import { Close } from '../..'
 import {
@@ -17,6 +17,7 @@ import s from './modal.module.scss'
 export type ModalSize = 'lg' | 'md' | 'sm'
 
 export type ModalProps = {
+  children: ReactNode
   onClose?: () => void
   /** The controlled open state of the dialog */
   open: boolean
@@ -28,7 +29,7 @@ export type ModalProps = {
    * For other values use className */
   size?: ModalSize
   title?: string
-} & ComponentProps<'div'>
+} & ComponentProps<typeof motion.div>
 
 const dropIn = {
   exit: {
@@ -61,6 +62,7 @@ export const Modal: FC<ModalProps> = ({
   showCloseButton = true,
   size = 'md',
   title,
+  ...rest
 }) => {
   function handleModalClosed() {
     onClose?.()
@@ -88,7 +90,13 @@ export const Modal: FC<ModalProps> = ({
               />
             </DialogOverlay>
             <DialogContent asChild className={classNames.content} forceMount>
-              <motion.div animate={'visible'} exit={'exit'} initial={'hidden'} variants={dropIn}>
+              <motion.div
+                animate={'visible'}
+                exit={'exit'}
+                initial={'hidden'}
+                variants={dropIn}
+                {...rest}
+              >
                 <header className={classNames.header}>
                   <DialogTitle asChild>
                     <h2 className={classNames.title}>{title}</h2>

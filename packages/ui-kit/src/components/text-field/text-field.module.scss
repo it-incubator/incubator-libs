@@ -50,8 +50,10 @@
   border-radius: var(--border-radius-s);
   outline: none;
 
-  transition: var(--transtition-duration-basic) background-color,
-    var(--transtition-duration-basic) color, var(--transtition-duration-basic) border-color;
+  transition:
+    var(--transtition-duration-basic) background-color,
+    var(--transtition-duration-basic) color,
+    var(--transtition-duration-basic) border-color;
 
   &::placeholder {
     color: var(--color-text-secondary);
@@ -72,6 +74,12 @@
 
   &:hover:not(&:disabled) {
     background-color: var(--color-bg-input-hover);
+  }
+
+  /* styles for combobox */
+  /* stylelint-disable-next-line */
+  [data-open] & {
+    border-color: var(--color-border-select-active);
   }
 
   &[data-icon*='start'] {

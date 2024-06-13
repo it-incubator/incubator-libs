@@ -1,7 +1,7 @@
 import { ComponentPropsWithoutRef, ElementRef, forwardRef } from 'react'
 
 import { Typography, TypographyProps } from '../typography'
-import { RadioGroup as RadioGroupHeadless } from '@headlessui/react'
+import { Radio, RadioGroup as RadioGroupHeadless } from '@headlessui/react'
 import { clsx } from 'clsx'
 
 import s from './radio-group.module.scss'
@@ -37,14 +37,10 @@ export const RadioGroup = /* @__PURE__ */ forwardRef<
   return (
     <RadioGroupHeadless disabled={disabled} {...rest} ref={ref}>
       {options.map(option => (
-        <RadioGroupHeadless.Option
-          className={classNames.option}
-          key={option.value}
-          value={option.value}
-        >
+        <Radio className={classNames.option} key={option.value} value={option.value}>
           <div className={classNames.icon} />
           <span className={classNames.label}>{option.label}</span>
-        </RadioGroupHeadless.Option>
+        </Radio>
       ))}
       {errorMessage && (
         <Typography.Error {...errorMessageProps} className={classNames.error}>

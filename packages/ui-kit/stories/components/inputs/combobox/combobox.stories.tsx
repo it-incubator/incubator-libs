@@ -133,12 +133,13 @@ export const onModal = () => {
   return (
     <div>
       <button onClick={() => setOpen(!open)}>Open modal</button>
-      <Modal onClose={handleClose} open={open} title={'Select'}>
+      <Modal onClose={handleClose} open={open} style={{ minHeight: '400px' }} title={'Select'}>
         <Combobox
           {...Simple.args}
           inputValue={inputValue}
           onChange={setValue}
           onInputChange={setInputValue}
+          portal={false}
           value={value}
         />
       </Modal>
@@ -155,7 +156,7 @@ export const Async = {
 
     useEffect(() => {
       setIsLoading(true)
-      fetch(`https://api.flashcards.andrii.es/v1/decks?name=${inputValue}`, {
+      fetch(`https://api.flashcards.andrii.es/v2/decks?name=${inputValue}`, {
         headers: {
           'x-auth-skip': 'true',
         },

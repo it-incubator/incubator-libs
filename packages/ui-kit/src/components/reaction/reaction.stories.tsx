@@ -12,15 +12,17 @@ import {
   NeutralFace,
   Reaction,
   ThumbsUpLightSkinTone,
-  WinkingFace,
-  YawningFace,
-} from '../../../../src'
-import { Meta } from '@storybook/react'
+} from '../../index'
+import { Meta, StoryObj } from '@storybook/react'
 
-export default {
+const meta = {
   component: Reaction,
   title: 'Components/Data Display/Reaction',
-} as Meta<typeof Reaction>
+} satisfies Meta<typeof Reaction>
+
+export default meta
+
+type Story = StoryObj<typeof meta>
 
 enum Reactions {
   BadOrganization = 'bad_organization',
@@ -85,7 +87,7 @@ type ReactionsData = {
   title: string
 }
 
-export const List = {
+export const List: Story = {
   render: () => {
     return (
       <div>
@@ -106,7 +108,7 @@ export const List = {
   },
 }
 
-export const ListWithCount = {
+export const ListWithCount: Story = {
   render: () => {
     return (
       <div>

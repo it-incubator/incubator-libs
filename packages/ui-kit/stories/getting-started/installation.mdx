@@ -1,19 +1,35 @@
 import { Meta } from '@storybook/blocks'
 import { Alert } from '../../src'
+import { Tabs, Tab } from '../../storybook-utils/components/tabs'
 
 <Meta title="Getting started/Installation" />
 
 # Installation
 
-```bash
-npm i @it-incubator/ui-kit react-toastify -save--exact
-```
+<br/>
+<Tabs tabs={['pnpm', 'npm', 'yarn']}>
+  <Tab>
 
-or
+    ```bash
+    pnpm add @it-incubator/ui-kit react-toastify -E
+    ```
 
-```bash
-yarn add @it-incubator/ui-kit react-toastify -E
-```
+  </Tab>
+  <Tab>
+
+    ```bash
+    npm i @it-incubator/ui-kit react-toastify -save--exact
+    ```
+
+  </Tab>
+  <Tab>
+
+      ```bash
+      yarn add @it-incubator/ui-kit react-toastify -E
+      ```
+
+  </Tab>
+</Tabs>
 
 <Alert style={{ marginBottom: '24px' }}>
   {`react-toastify is a peer dependency and is required for the Snackbar component to work`}

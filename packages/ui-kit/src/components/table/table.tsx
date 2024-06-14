@@ -17,7 +17,7 @@ export const Root: FC<RootProps> = ({ className, ...rest }) => {
 
 export type HeadProps = ComponentProps<'thead'>
 
-export const Head: FC<HeadProps> = props => {
+export const Head = (props: HeadProps) => {
   return <thead {...props} />
 }
 

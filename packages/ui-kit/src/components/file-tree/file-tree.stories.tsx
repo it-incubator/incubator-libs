@@ -1,4 +1,4 @@
-import { FileTree } from '../../../../src'
+import { FileTree } from '../../index'
 import { Meta, StoryObj } from '@storybook/react'
 
 const meta = {

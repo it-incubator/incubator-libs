@@ -17,7 +17,7 @@ import { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
   component: Reaction,
-  title: 'Components/Data Display/Reaction',
+  title: 'Components/Reaction',
 } satisfies Meta<typeof Reaction>
 
 export default meta

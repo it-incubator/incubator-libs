@@ -1,26 +1,23 @@
-import { Meta } from '@storybook/react'
+import { Scrollbar } from '../../index'
+import { Meta, StoryObj } from '@storybook/react'
 
-import { Scrollbar } from '../../../../src'
-
-export default {
-  title: 'Components/Data Display/Scrollbar',
-  component: Scrollbar,
+const meta = {
   argTypes: {
     type: {
-      options: ['auto', 'always', 'scroll', 'hover'],
       control: { type: 'radio' },
+      options: ['auto', 'always', 'scroll', 'hover'],
     },
   },
-} as Meta<typeof Scrollbar>
+  component: Scrollbar,
+  title: 'Components/Scrollbar',
+} satisfies Meta<typeof Scrollbar>
 
-export const VerticalScrollbar = {
+export default meta
+
+type Story = StoryObj<typeof meta>
+
+export const VerticalScrollbar: Story = {
   args: {
-    style: {
-      height: '200px',
-      width: 'fit-content',
-      paddingRight: '8px',
-      color: 'var(--color-text-primary)',
-    },
     children: (
       <p style={{ width: '100px' }}>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, autem, beatae debitis,
@@ -33,12 +30,17 @@ export const VerticalScrollbar = {
         tenetur voluptas voluptatem! Blanditiis ducimus, excepturi iste iure quos veritatis.
       </p>
     ),
+    style: {
+      color: 'var(--color-text-primary)',
+      height: '200px',
+      paddingRight: '8px',
+      width: 'fit-content',
+    },
   },
 }
 
-export const HorizontalScrollbar = {
+export const HorizontalScrollbar: Story = {
   args: {
-    style: { width: '100px', color: 'var(--color-text-primary)' },
     children: (
       <p style={{ width: '400px' }}>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, autem, beatae debitis,
@@ -51,5 +53,6 @@ export const HorizontalScrollbar = {
         tenetur voluptas voluptatem! Blanditiis ducimus, excepturi iste iure quos veritatis.
       </p>
     ),
+    style: { color: 'var(--color-text-primary)', width: '100px' },
   },
 }

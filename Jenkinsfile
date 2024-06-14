@@ -33,7 +33,12 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                  sh 'pnpm build'
+                    sh '''
+                       export NVM_DIR="$HOME/.nvm"
+                       [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+                       nvm use --lts
+                       pnpm build
+                    '''
                }
             }
         }

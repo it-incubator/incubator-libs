@@ -4,6 +4,8 @@ const config = {
   stories: [
     '../stories/**/*.mdx',
     '../stories/**/*.stories.@(ts|tsx)',
+    '../src/components/**/*.stories.@(ts|tsx)',
+    '../src/components/**/*.mdx',
     '../src/assets/icons/stories/**/*.stories.@(ts|tsx)',
   ],
 
@@ -18,8 +20,6 @@ const config = {
     name: getAbsolutePath('@storybook/react-vite'),
     options: {},
   },
-
-  docs: {},
 
   viteFinal: config => {
     config.build = config.build || {}

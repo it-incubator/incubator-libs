@@ -20,7 +20,12 @@ export const parameters = {
   },
   options: {
     storySort: {
-      order: ['Getting started', ['Installation', 'Usage', 'Styling'], 'Components'],
+      order: [
+        'Getting started',
+        ['Installation', 'Usage', 'Styling'],
+        'Design System',
+        'Components',
+      ],
     },
   },
 }

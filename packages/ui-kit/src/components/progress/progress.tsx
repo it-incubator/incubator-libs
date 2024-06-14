@@ -1,18 +1,17 @@
-import * as React from 'react'
-import { CSSProperties } from 'react'
+import { CSSProperties, ComponentPropsWithoutRef, ElementRef, forwardRef } from 'react'
 
 import * as ProgressPrimitive from '@radix-ui/react-progress'
 import { clsx } from 'clsx'
 
 import s from './progress.module.scss'
 
-export type ProgressProps = React.ComponentPropsWithoutRef<typeof ProgressPrimitive.Root> &
+export type ProgressProps = ComponentPropsWithoutRef<typeof ProgressPrimitive.Root> &
   Pick<CSSProperties, 'color' | 'height' | 'width'> & {
     baseColor?: CSSProperties['color']
     label?: false | string
   }
 
-const Progress = React.forwardRef<React.ElementRef<typeof ProgressPrimitive.Root>, ProgressProps>(
+const Progress = forwardRef<ElementRef<typeof ProgressPrimitive.Root>, ProgressProps>(
   (
     {
       baseColor = 'var(--color-bg-dividers)',

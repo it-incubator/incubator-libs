@@ -37,6 +37,7 @@
 - BREAKING: new icon names, consult figma for new names.
 
 - Button now accepts 'as' prop to support links
+
 ## 0.2.25
 ### Patch Changes
 

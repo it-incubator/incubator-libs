@@ -1,0 +1,37 @@
+import { Meta, IconGallery, IconItem, ArgTypes } from '@storybook/blocks'
+import * as Icons from '../../src/assets/icons'
+import { IconWrapper } from '../../src/assets/icons/IconWrapper'
+
+<Meta title="Design System/Iconography" />
+
+# Iconography
+
+<br />
+
+## Usage
+
+All the icons in the design system are available as React components. You can use them like this:
+
+```tsx
+import { Close } from '@it-incubator/ui-kit'
+
+// ...
+
+return <Close />
+```
+
+## Properties
+
+<ArgTypes of={IconWrapper} />
+
+## Gallery
+
+<br />
+
+<IconGallery>
+  {Object.entries(Icons).map(([name, Icon]) => (
+    <IconItem key={name} name={name}>
+      <Icon />
+    </IconItem>
+  ))}
+</IconGallery>

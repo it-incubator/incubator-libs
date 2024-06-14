@@ -1,18 +1,22 @@
-import { Tag } from '../../../../src'
-import { Meta } from '@storybook/react'
+import { Tag } from './tag'
+import { Meta, StoryObj } from '@storybook/react'
 
-export default {
+const meta = {
   component: Tag,
-  title: 'Components/Data Display/Tag',
-} as Meta<typeof Tag>
+  title: 'Components/Tag',
+} satisfies Meta<typeof Tag>
 
-export const PrimaryClickable = {
+export default meta
+
+type Story = StoryObj<typeof meta>
+
+export const PrimaryClickable: Story = {
   args: {
     children: 'Супер контент, спасибо 👍',
     onClick: () => {},
   },
 }
-export const PrimaryClickablePressed = {
+export const PrimaryClickablePressed: Story = {
   args: {
     children: 'Супер контент, спасибо 👍',
     defaultPressed: true,
@@ -20,26 +24,26 @@ export const PrimaryClickablePressed = {
   },
 }
 
-export const PrimaryUnclickable = {
+export const PrimaryUnclickable: Story = {
   args: {
     children: 'Супер контент, спасибо 👍',
   },
 }
-export const PrimaryUnclickablePressed = {
+export const PrimaryUnclickablePressed: Story = {
   args: {
     children: 'Супер контент, спасибо 👍',
     defaultPressed: true,
   },
 }
 
-export const SecondaryClickable = {
+export const SecondaryClickable: Story = {
   args: {
     children: 'Супер контент, спасибо 👍',
     onClick: () => {},
     variant: 'secondary',
   },
 }
-export const SecondaryClickablePressed = {
+export const SecondaryClickablePressed: Story = {
   args: {
     children: 'Супер контент, спасибо 👍',
     defaultPressed: true,
@@ -48,7 +52,7 @@ export const SecondaryClickablePressed = {
   },
 }
 
-export const SecondaryUnclickable = {
+export const SecondaryUnclickable: Story = {
   args: {
     children: 'Супер контент, спасибо 👍',
     variant: 'secondary',

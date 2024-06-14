@@ -1,12 +1,17 @@
-import { Card, InfoFill as InfoIcon } from '../../../../src'
-import { Meta } from '@storybook/react'
+import { InfoFill as InfoIcon } from '../../'
+import { Card } from './'
+import { Meta, StoryObj } from '@storybook/react'
 
-export default {
+const meta = {
   component: Card,
-  title: 'Components/Data Display/Card',
-} as Meta<typeof Card>
+  title: 'Components/Card',
+} satisfies Meta<typeof Card>
 
-export const Primary = {
+export default meta
+
+type Story = StoryObj<typeof meta>
+
+export const Primary: Story = {
   args: {
     children:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation',
@@ -14,7 +19,7 @@ export const Primary = {
   },
 }
 
-export const PrimaryWithIcon = {
+export const PrimaryWithIcon: Story = {
   args: {
     children:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation',
@@ -29,14 +34,14 @@ export const PrimaryWithIcon = {
   },
 }
 
-export const PrimaryWithoutTitle = {
+export const PrimaryWithoutTitle: Story = {
   args: {
     children:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation',
   },
 }
 
-export const Info = {
+export const Info: Story = {
   args: {
     children:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation',

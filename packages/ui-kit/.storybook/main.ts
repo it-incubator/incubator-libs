@@ -4,6 +4,7 @@ const config = {
   stories: [
     '../stories/**/*.mdx',
     '../stories/**/*.stories.@(ts|tsx)',
+    '../src/components/**/*.stories.@(ts|tsx)',
     '../src/assets/icons/stories/**/*.stories.@(ts|tsx)',
   ],
 

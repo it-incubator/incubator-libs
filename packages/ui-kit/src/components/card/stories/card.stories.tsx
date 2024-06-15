@@ -96,12 +96,7 @@ import { Card, CardContent, CardHeader, CardTitle, InfoIcon } from '@it-incubato
 
 export const PrimaryWithoutTitle: Story = {
   args: {
-    children: (
-      <CardContent>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-      </CardContent>
-    ),
+    children: <CardContent>{text}</CardContent>,
   },
   parameters: {
     docs: {

@@ -31,6 +31,14 @@ const config = {
 
   typescript: {
     reactDocgen: 'react-docgen-typescript',
+    reactDocgenTypescriptOptions: {
+      propFilter: prop => {
+        if (prop.parent && prop.parent.fileName.includes('radix')) {
+          return true
+        }
+        return prop.parent ? !/node_modules/.test(prop.parent.fileName) : true
+      },
+    },
   },
 }
 export default config

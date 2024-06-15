@@ -1,0 +1,30 @@
+import { ArgTypes, Description, Meta, Primary, Stories, Subtitle, Title } from '@storybook/blocks'
+
+<Meta isTemplate />
+<Title />
+<Subtitle />
+<Description />
+<Primary />
+
+## API Reference
+
+Learn more about all the props in the [RadixUI documentation](https://www.radix-ui.com/primitives/docs/components/avatar#api-reference).
+
+<ArgTypes />
+
+## Anatomy
+
+Import all parts and piece them together.
+
+```tsx
+import { Avatar, AvatarFallback, AvatarImage } from '@it-incubator/ui-kit'
+```
+
+```tsx
+<Avatar>
+  <AvatarImage src="https://github.com/shadcn.png" />
+  <AvatarFallback>CN</AvatarFallback>
+</Avatar>
+```
+
+<Stories />

@@ -85,3 +85,11 @@
   </CardContent>
 </Card>
 ```
+
+
+#### `Dropdown` component has been reworked.
+
+- `Dropdown` component is now built from `Dropdown`, `DropdownTrigger`, `DropdownContent`, `DropdownItem`, `DropdownLabel`, `DropdownSeparator` components.
+- `ToolbarItem` has been renamed to `DropdownItem`.
+- `ToolbarItemWithIcon` has been removed. Use `DropdownItem` and pass the icon as a child.
+- You now need to use `DropdownSeparator` to separate items in the dropdown according to the design. Place it between `DropdownItem` components.

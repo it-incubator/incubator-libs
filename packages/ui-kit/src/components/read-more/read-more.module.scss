@@ -9,9 +9,9 @@
   font-weight: 500;
   line-height: inherit;
   color: var(--color-info-400);
-  text-decoration: underline;
+  text-decoration: none;
 
   &:hover {
-    text-decoration: none;
+    text-decoration: underline;
   }
 }

@@ -28,3 +28,11 @@
 
   clip: auto;
 }
+
+.rounded-full {
+  border-radius: 9999px;
+}
+
+.rounded-none {
+  border-radius: 0;
+}

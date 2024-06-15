@@ -1,4 +1,4 @@
-import { ComponentProps, FC, ReactNode } from 'react'
+import { ComponentPropsWithoutRef, FC, ReactNode } from 'react'
 
 import { Cancel, InfoFill } from '../..'
 import { Card } from '../card'
@@ -10,7 +10,7 @@ export type AlertProps = {
   children: ReactNode
   icon?: ReactNode
   variant?: 'error' | 'warning'
-} & ComponentProps<'div'>
+} & ComponentPropsWithoutRef<'div'>
 
 export const Alert: FC<AlertProps> = ({ children, icon, variant = 'warning', ...rest }) => {
   const classNames = {

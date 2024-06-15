@@ -1,7 +1,6 @@
-import { Meta, StoryObj } from '@storybook/react'
-
 import { InfoFill as InfoIcon } from '../../'
 import { Card } from './'
+import { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
   component: Card,

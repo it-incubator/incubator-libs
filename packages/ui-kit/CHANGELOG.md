@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 2.0.1
+### Patch Changes
+
+- 752462e: Card component has been expanded to polymorphic
+
 ## 2.0.0
 ### Major Changes
 

@@ -34,7 +34,7 @@ type ConditionalProps =
 
 export type CardProps<T extends ElementType = 'div'> = CommonProps<T> & ConditionalProps
 
-export const Card = forwardRef(
+const Card = forwardRef(
   <T extends ElementType = 'div'>(props: CardProps<T>, ref: ForwardedRef<InferType<T>>) => {
     const {
       as: Component = 'div',

@@ -1,13 +1,24 @@
-import { ComponentProps, FC, ReactNode } from 'react'
+import {
+  ComponentPropsWithoutRef,
+  ElementRef,
+  ElementType,
+  ForwardedRef,
+  ReactElement,
+  ReactNode,
+  forwardRef,
+} from 'react'
 
 import { clsx } from 'clsx'
 
 import s from './card.module.scss'
 
-type CommonProps = {
+type InferType<T> = T extends ElementType<infer U> ? U : never
+
+type CommonProps<T extends ElementType = 'div'> = {
+  as?: T
   children: ReactNode
   contentClassName?: string
-} & ComponentProps<'div'>
+} & ComponentPropsWithoutRef<T>
 
 type ConditionalProps =
   | {
@@ -21,35 +32,44 @@ type ConditionalProps =
       variant?: 'info'
     }
 
-export type CardProps = CommonProps & ConditionalProps
+export type CardProps<T extends ElementType = 'div'> = CommonProps<T> & ConditionalProps
 
-export const Card: FC<CardProps> = ({
-  children,
-  className,
-  contentClassName,
-  iconComponent,
-  title,
-  variant = 'primary',
-  ...rest
-}) => {
-  const isInfo = variant === 'info'
+export const Card = forwardRef(
+  <T extends ElementType = 'div'>(props: CardProps<T>, ref: ForwardedRef<InferType<T>>) => {
+    const {
+      as: Component = 'div',
+      children,
+      className,
+      contentClassName,
+      iconComponent,
+      title,
+      variant,
+      ...rest
+    } = props
 
-  const classNames = {
-    box: clsx(s.box, isInfo && s.info, className),
-    content: clsx(s.content, contentClassName),
-    icon: s.icon,
-    title: s.title,
+    const isInfo = variant === 'info'
+
+    const classNames = {
+      box: clsx(s.box, isInfo && s.info, className),
+      content: clsx(s.content, contentClassName),
+      icon: s.icon,
+      title: s.title,
+    }
+
+    return (
+      <Component className={classNames.box} ref={ref} {...rest}>
+        {title && (
+          <h3 className={classNames.title}>
+            {iconComponent}
+            {title}
+          </h3>
+        )}
+        <div className={classNames.content}>{children}</div>
+      </Component>
+    )
   }
+)
 
-  return (
-    <div className={classNames.box} {...rest}>
-      {title && (
-        <h3 className={classNames.title}>
-          {iconComponent}
-          {title}
-        </h3>
-      )}
-      <div className={classNames.content}>{children}</div>
-    </div>
-  )
-}
+export default Card as <T extends ElementType = 'div'>(
+  props: { ref?: ForwardedRef<ElementRef<T>> } & CardProps<T>
+) => ReactElement

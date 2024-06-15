@@ -222,7 +222,9 @@ export const onModal = () => {
 
   return (
     <div>
-      <button onClick={() => setOpen(!open)}>Open modal</button>
+      <button onClick={() => setOpen(!open)} type={'button'}>
+        Open modal
+      </button>
       <Modal onClose={handleClose} open={open} title={'Select'}>
         <VerticalContainer>
           <Select

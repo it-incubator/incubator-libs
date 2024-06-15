@@ -1,1 +1,1 @@
-export * from './card'
+export { type CardProps, default as Card } from './card'

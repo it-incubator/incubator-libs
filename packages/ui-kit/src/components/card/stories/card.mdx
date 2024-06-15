@@ -1,0 +1,34 @@
+import { ArgTypes, Description, Meta, Primary, Stories, Subtitle, Title } from '@storybook/blocks'
+
+<Meta isTemplate />
+<Title />
+<Subtitle />
+<Description />
+<Primary />
+
+## API Reference
+
+Each part of the card also accepts all the props of the corresponding HTML element.
+
+For example, the `Card` component accepts all the props of the `div` element.
+
+<ArgTypes />
+
+## Anatomy
+
+Import all parts and piece them together.
+
+```tsx
+import { Card, CardContent, CardHeader, CardTitle } from '@it-incubator/ui-kit'
+```
+
+```tsx
+<Card>
+  <CardHeader>
+    <CardTitle>Card Title</CardTitle>
+  </CardHeader>
+  <CardContent>Card Content</CardContent>
+</Card>
+```
+
+<Stories />

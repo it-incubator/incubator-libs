@@ -8,7 +8,9 @@ const config = {
     '../src/components/**/*.mdx',
     '../src/assets/icons/stories/**/*.stories.@(ts|tsx)',
   ],
-
+  core: {
+    disableTelemetry: true,
+  },
   addons: [
     getAbsolutePath('@storybook/addon-links'),
     getAbsolutePath('@storybook/addon-essentials'),

@@ -19,8 +19,7 @@
   border-radius: var(--border-radius-s);
   outline: none;
 
-  transition:
-    var(--transtition-duration-basic) background-color,
+  transition: var(--transtition-duration-basic) background-color,
     var(--transtition-duration-basic) color;
 
   &::placeholder {
@@ -123,7 +122,7 @@
 
   display: flex;
 
-  width: var(--input-width);
+  width: var(--input-width, 100%);
   padding: 6px 12px;
 
   text-align: start;
@@ -132,8 +131,7 @@
   border: none; /* Remove button default border */
   outline: none;
 
-  transition:
-    var(--transtition-duration-basic) background-color,
+  transition: var(--transtition-duration-basic) background-color,
     var(--transtition-duration-basic) color;
 
   &[data-focus] {
@@ -159,7 +157,7 @@
 .content {
   overflow: hidden;
 
-  width: var(--input-width);
+  width: var(--input-width, 100%);
 
   background-color: var(--color-bg-element);
   border: 1px solid var(--color-border-select-active);

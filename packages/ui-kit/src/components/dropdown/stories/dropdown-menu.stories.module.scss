@@ -1,0 +1,23 @@
+.userDropDownLabel {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  text-decoration: none;
+
+  img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+  }
+}
+
+.userDropdownThemeToggleItem {
+  user-select: none;
+  justify-content: space-between;
+
+  > div:first-of-type {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+}

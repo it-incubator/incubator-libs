@@ -15,11 +15,51 @@ select,
 textarea,
 optgroup,
 option {
-  font-family: inherit;
-  font-size: inherit;
-  font-weight: inherit;
-  font-style: inherit;
-  color: inherit;
+  margin: 0; /* 2 */
+  padding: 0; /* 3 */
+
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  font-feature-settings: inherit; /* 1 */
+  font-variation-settings: inherit; /* 1 */
+  font-weight: inherit; /* 1 */
+  line-height: inherit; /* 1 */
+  color: inherit; /* 1 */
+  letter-spacing: inherit; /* 1 */
+}
+
+/*
+Remove the inheritance of text transform in Edge and Firefox.
+*/
+button,
+select {
+  text-transform: none;
+}
+
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Remove default button styles.
+*/
+button,
+input:where([type='button']),
+input:where([type='reset']),
+input:where([type='submit']) {
+  // stylelint-disable-next-line
+  -webkit-appearance: button; /* 1 */
+  background-color: transparent; /* 2 */
+  background-image: none; /* 2 */
+  border-width: 0;
+  outline-offset: 2px;
+}
+
+button,
+[role='button'] {
+  cursor: pointer;
+  outline-offset: 2px;
+}
+
+:disabled {
+  cursor: default;
 }
 
 body {

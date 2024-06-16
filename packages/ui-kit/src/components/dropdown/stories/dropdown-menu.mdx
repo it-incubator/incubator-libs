@@ -1,0 +1,47 @@
+import { ArgTypes, Description, Meta, Primary, Stories, Subtitle, Title } from '@storybook/blocks'
+
+<Meta isTemplate />
+<Title />
+<Subtitle />
+<Description />
+<Primary />
+
+## API Reference
+
+Learn more about all the props in the [RadixUI documentation](https://www.radix-ui.com/primitives/docs/components/dropdown-menu#api-reference).
+
+<ArgTypes />
+
+## Anatomy
+
+Import all parts and piece them together.
+
+```tsx
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from '@it-incubator/ui-kit'
+```
+
+```tsx
+<DropdownMenu>
+  <DropdownMenuTrigger>Open</DropdownMenuTrigger>
+  <DropdownMenuContent>
+    <DropdownMenuLabel>My Account</DropdownMenuLabel>
+    <DropdownMenuSeparator />
+    <DropdownMenuItem>Profile</DropdownMenuItem>
+    <DropdownMenuSeparator />
+    <DropdownMenuItem>Billing</DropdownMenuItem>
+    <DropdownMenuSeparator />
+    <DropdownMenuItem>Team</DropdownMenuItem>
+    <DropdownMenuSeparator />
+    <DropdownMenuItem>Subscription</DropdownMenuItem>
+  </DropdownMenuContent>
+</DropdownMenu>
+```
+
+<Stories />

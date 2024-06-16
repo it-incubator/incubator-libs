@@ -82,7 +82,11 @@
 .uik_typography-caption-link {
   @include typography(var(--font-size-xs), var(--line-height-m), var(--font-weight-regular));
 
-  text-decoration: underline;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .uik_typography-link {
@@ -90,11 +94,11 @@
 
   cursor: pointer;
   color: var(--color-text-link);
-  text-decoration: underline;
+  text-decoration: none;
 
   &:hover,
   &:focus {
-    text-decoration: none;
+    text-decoration: underline;
   }
 }
 
@@ -103,11 +107,11 @@
 
   cursor: pointer;
   color: var(--color-text-link);
-  text-decoration: underline;
+  text-decoration: none;
 
   &:hover,
   &:focus {
-    text-decoration: none;
+    text-decoration: underline;
   }
 }
 

@@ -1,0 +1,38 @@
+.sr-only {
+  position: absolute;
+
+  overflow: hidden;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+
+  white-space: nowrap;
+
+  clip: rect(0, 0, 0, 0);
+  border-width: 0;
+}
+
+.not-sr-only {
+  position: static;
+
+  overflow: visible;
+
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 0;
+
+  white-space: normal;
+
+  clip: auto;
+}
+
+.rounded-full {
+  border-radius: 9999px;
+}
+
+.rounded-none {
+  border-radius: 0;
+}

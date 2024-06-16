@@ -1,6 +1,15 @@
-import { useState } from 'react'
+import { useId, useState } from 'react'
 
-import { Modal, Select } from '../../'
+import {
+  Label,
+  Modal,
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+  Typography,
+} from '../../'
 import { VerticalContainer } from '../../../storybook-utils/components/containers/vertical'
 import { Meta } from '@storybook/react'
 
@@ -47,14 +56,6 @@ const options = [
     value: 'mango',
   },
   {
-    label: 'Grapes',
-    value: 'grapes',
-  },
-  {
-    label: 'Pineapple',
-    value: 'pineapple',
-  },
-  {
     label: 'Apple',
     value: 'apple1',
   },
@@ -77,144 +78,149 @@ export const Simple = {
   },
 
   render: args => {
-    const [value, setValue] = useState(null)
-
     return (
-      <VerticalContainer>
-        <Select {...args} onChange={setValue} value={value} />
-        <div>Selected value: {value}</div>
-      </VerticalContainer>
+      <Select>
+        <SelectTrigger>
+          <SelectValue placeholder={'Theme'} />
+        </SelectTrigger>
+        <SelectContent>
+          {options.map(({ label, value }) => (
+            <SelectItem key={value} value={value}>
+              {label}
+            </SelectItem>
+          ))}
+        </SelectContent>
+      </Select>
     )
   },
 }
 
 export const SimpleWithLabel = {
-  args: {
-    disabled: false,
-    label: 'Курс',
-    options,
-    placeholder: 'Все курсы',
-  },
-
-  render: args => {
-    const [value, setValue] = useState(null)
+  render: () => {
+    const id = useId()
 
     return (
-      <VerticalContainer>
-        <Select {...args} onChange={setValue} value={value} />
-        <div>Selected value: {value}</div>
-      </VerticalContainer>
+      <Select>
+        <Label htmlFor={id} label={'Select a theme'} />
+        <SelectTrigger id={id} placeholder={'Theme'} />
+        <SelectContent>
+          {options.map(({ label, value }) => (
+            <SelectItem key={value} value={value}>
+              {label}
+            </SelectItem>
+          ))}
+        </SelectContent>
+      </Select>
     )
   },
 }
+
 export const Required = {
-  args: {
-    disabled: false,
-    label: 'Курс',
-    options,
-    placeholder: 'Все курсы',
-    required: true,
-  },
-
-  render: args => {
-    const [value, setValue] = useState(null)
+  render: () => {
+    const id = useId()
 
     return (
-      <VerticalContainer>
-        <Select {...args} onChange={setValue} value={value} />
-        <div>Selected value: {value}</div>
-      </VerticalContainer>
+      <Select>
+        <Label htmlFor={id} label={'Select a theme'} required />
+        <SelectTrigger id={id} placeholder={'Theme'} />
+        <SelectContent>
+          {options.map(({ label, value }) => (
+            <SelectItem key={value} value={value}>
+              {label}
+            </SelectItem>
+          ))}
+        </SelectContent>
+      </Select>
     )
   },
 }
 
-export const Multiple = {
-  args: {
-    disabled: false,
-    multiple: true,
-    options,
-    placeholder: 'Все курсы',
-  },
-
-  render: args => {
-    const [values, setValues] = useState([])
-
-    return (
-      <VerticalContainer>
-        <Select {...args} multiple onChange={setValues} value={values} />
-        <div>Selected values: {values.join(', ')}</div>
-      </VerticalContainer>
-    )
-  },
-}
-
+//
+// export const Multiple = {
+//   args: {
+//     disabled: false,
+//     multiple: true,
+//     options,
+//     placeholder: 'Все курсы',
+//   },
+//
+//   render: args => {
+//     const [values, setValues] = useState([])
+//
+//     return (
+//       <VerticalContainer>
+//         <Select {...args} multiple onChange={setValues} value={values} />
+//         <div>Selected values: {values.join(', ')}</div>
+//       </VerticalContainer>
+//     )
+//   },
+// }
+//
 export const Error = {
-  args: {
-    disabled: false,
-    error: true,
-    errorMessage: 'Ошибка',
-    options,
-    placeholder: 'Все курсы',
-  },
-
-  render: args => {
-    const [value, setValue] = useState(null)
+  render: () => {
+    const id = useId()
 
     return (
-      <VerticalContainer>
-        <Select {...args} onChange={setValue} value={value} />
-        <div>Selected value: {value}</div>
-      </VerticalContainer>
+      <Select>
+        <Label htmlFor={id} label={'Select a theme'} required />
+        <SelectTrigger id={id} placeholder={'Theme'} />
+        <SelectContent>
+          {options.map(({ label, value }) => (
+            <SelectItem key={value} value={value}>
+              {label}
+            </SelectItem>
+          ))}
+        </SelectContent>
+        <Typography.Error>Something went wrong</Typography.Error>
+      </Select>
     )
   },
 }
 
 export const Secondary = {
-  args: {
-    disabled: false,
-    options,
-    placeholder: 'Все курсы',
-    variant: 'secondary',
-  },
-
-  render: args => {
-    const [value, setValue] = useState(null)
+  render: () => {
+    const id = useId()
 
     return (
-      <VerticalContainer>
-        <Select {...args} onChange={setValue} value={value} />
-        <div>Selected value: {value}</div>
-      </VerticalContainer>
+      <Select>
+        <Label htmlFor={id} label={'Select a theme'} required />
+        <SelectTrigger id={id} placeholder={'Theme'} variant={'secondary'} />
+        <SelectContent variant={'secondary'}>
+          {options.map(({ label, value }) => (
+            <SelectItem key={value} value={value}>
+              {label}
+            </SelectItem>
+          ))}
+        </SelectContent>
+      </Select>
     )
   },
 }
 
 export const SmallWithLongItemNames = {
-  args: {
-    disabled: false,
-    options,
-    placeholder: 'Все курсы',
-  },
-
-  render: args => {
-    const [value, setValue] = useState(null)
+  render: () => {
+    const id = useId()
 
     return (
-      <VerticalContainer>
-        <div style={{ width: 200 }}>
-          <Select {...args} onChange={setValue} value={value} />
-        </div>
-        <div>Selected value: {value}</div>
-      </VerticalContainer>
+      <Select>
+        <Label htmlFor={id} label={'Select a theme'} required />
+        <SelectTrigger id={id} placeholder={'Theme'} style={{ width: '240px' }} />
+        <SelectContent>
+          {options.map(({ label, value }) => (
+            <SelectItem key={value} value={value}>
+              {label}
+            </SelectItem>
+          ))}
+          <SelectItem value={'long'}>
+            @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+          </SelectItem>
+        </SelectContent>
+      </Select>
     )
   },
 }
 
 export const onModal = () => {
-  const [value, setValue] = useState(null)
-  const [value1, setValue1] = useState(null)
-  const [value2, setValue2] = useState(null)
-  const [value3, setValue3] = useState(null)
   const [open, setOpen] = useState(false)
   const handleClose = () => {
     setOpen(false)
@@ -227,38 +233,16 @@ export const onModal = () => {
       </button>
       <Modal onClose={handleClose} open={open} title={'Select'}>
         <VerticalContainer>
-          <Select
-            disabled={false}
-            onChange={setValue}
-            options={options}
-            placeholder={'Все курсы'}
-            portal={false}
-            value={value}
-          />
-          <Select
-            disabled={false}
-            onChange={setValue1}
-            options={options}
-            placeholder={'Все курсы'}
-            portal={false}
-            value={value1}
-          />
-          <Select
-            disabled={false}
-            onChange={setValue2}
-            options={options}
-            placeholder={'Все курсы'}
-            portal={false}
-            value={value2}
-          />
-          <Select
-            disabled={false}
-            onChange={setValue3}
-            options={options}
-            placeholder={'Все курсы'}
-            portal={false}
-            value={value3}
-          />
+          <Select>
+            <SelectTrigger placeholder={'Theme'} />
+            <SelectContent>
+              {options.map(({ label, value }) => (
+                <SelectItem key={value} value={value}>
+                  {label}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
         </VerticalContainer>
       </Modal>
     </div>

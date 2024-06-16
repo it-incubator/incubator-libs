@@ -23,11 +23,11 @@
     var(--transtition-duration-basic) background-color,
     var(--transtition-duration-basic) color;
 
-  &[data-placeholder] {
+  &::placeholder {
     color: var(--color-text-secondary);
   }
 
-  &[data-state='open'] {
+  &[data-open] {
     border-color: var(--color-border-select-active);
     border-bottom: none;
     border-radius: var(--border-radius-s) var(--border-radius-s) 0 0;
@@ -48,12 +48,6 @@
 
   &.error {
     border-color: var(--color-accent-500);
-  }
-
-  > span:first-child {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
   }
 
   &.secondary {
@@ -94,13 +88,19 @@
   }
 }
 
+.value {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .icon {
   width: 24px;
   height: 24px;
   transition: var(--transtition-duration-basic) transform;
 
-  .secondary & path {
-    color: var(--color-info-400);
+  &.secondary path {
+    stroke: var(--color-info-400);
   }
 
   &.pagination {
@@ -109,7 +109,7 @@
     height: 16px;
   }
 
-  [data-state='open'] > & {
+  [data-open] > & {
     transform: rotate(180deg);
   }
 
@@ -136,11 +136,11 @@
     var(--transtition-duration-basic) background-color,
     var(--transtition-duration-basic) color;
 
-  &[data-highlighted] {
+  &[data-focus] {
     background-color: var(--color-action-hover);
   }
 
-  &[data-state='checked'] {
+  &[data-selected] {
     color: var(--color-accent-500);
   }
 
@@ -157,33 +157,30 @@
 }
 
 .content {
-  z-index: var(--z-index-select);
   overflow: hidden;
+
+  width: var(--button-width, var(--input-width), 100%);
+
   background-color: var(--color-bg-element);
-}
-
-.viewport {
-  width: 100%;
-  min-width: var(--radix-select-trigger-width);
-  max-width: var(--radix-select-trigger-width);
-  height: var(--radix-select-trigger-height);
-
   border: 1px solid var(--color-border-select-active);
   border-radius: 0 0 var(--border-radius-s) var(--border-radius-s);
   outline: none;
 
-  .secondary > & {
-    max-width: 100%;
+  &.secondary {
     border: 1px solid var(--color-border-input-primary);
 
     & .item {
-      &[data-highlighted],
-      &[data-state='checked'] {
+      &[data-focus],
+      &[data-selected] {
         color: var(--color-neutral-light-50);
         background-color: var(--color-info-400);
       }
     }
   }
+}
+
+.viewport {
+  padding: 12px 0;
 }
 
 .label {

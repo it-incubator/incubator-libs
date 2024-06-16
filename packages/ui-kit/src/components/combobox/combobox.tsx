@@ -145,7 +145,6 @@ export const Combobox = <T extends number | string>({
         anchor={portal ? 'bottom' : undefined}
         as={'div'}
         className={classNames.content}
-        modal={portal}
         portal={portal}
       >
         <Scrollbar maxHeight={200}>

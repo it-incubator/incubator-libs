@@ -144,6 +144,30 @@ export const onModal = () => {
           portal={false}
           value={value}
         />
+        <Combobox
+          {...Simple.args}
+          inputValue={inputValue}
+          onChange={setValue}
+          onInputChange={setInputValue}
+          portal={false}
+          value={value}
+        />
+        <Combobox
+          {...Simple.args}
+          inputValue={inputValue}
+          onChange={setValue}
+          onInputChange={setInputValue}
+          portal={false}
+          value={value}
+        />
+        <Combobox
+          {...Simple.args}
+          inputValue={inputValue}
+          onChange={setValue}
+          onInputChange={setInputValue}
+          portal={false}
+          value={value}
+        />
       </Modal>
     </div>
   )

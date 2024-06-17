@@ -11,6 +11,7 @@ import {
   Typography,
 } from '../../'
 import { VerticalContainer } from '../../../storybook-utils/components/containers/vertical'
+import { MultiSelect } from './multi-select'
 import { Meta } from '@storybook/react'
 
 const options = [
@@ -56,11 +57,11 @@ const options = [
     value: 'mango',
   },
   {
-    label: 'Apple',
+    label: 'Apple1',
     value: 'apple1',
   },
   {
-    label: 'Banana',
+    label: 'Banana1',
     value: 'banana1',
   },
 ]
@@ -100,7 +101,7 @@ export const SimpleWithLabel = {
     const id = useId()
 
     return (
-      <Select>
+      <Select open>
         <Label htmlFor={id} label={'Select a theme'} />
         <SelectTrigger id={id} placeholder={'Theme'} />
         <SelectContent>
@@ -135,27 +136,39 @@ export const Required = {
   },
 }
 
-//
-// export const Multiple = {
-//   args: {
-//     disabled: false,
-//     multiple: true,
-//     options,
-//     placeholder: 'Все курсы',
-//   },
-//
-//   render: args => {
-//     const [values, setValues] = useState([])
-//
-//     return (
-//       <VerticalContainer>
-//         <Select {...args} multiple onChange={setValues} value={values} />
-//         <div>Selected values: {values.join(', ')}</div>
-//       </VerticalContainer>
-//     )
-//   },
-// }
-//
+export const Multiple = {
+  args: {
+    disabled: false,
+    multiple: true,
+    options,
+    placeholder: 'Все курсы',
+  },
+
+  render: args => {
+    const [selectedFrameworks, setSelectedFrameworks] = useState<string[]>([])
+
+    return (
+      <div className={'p-4 max-w-xl'}>
+        <MultiSelect
+          defaultValue={selectedFrameworks}
+          maxCount={3}
+          onValueChange={setSelectedFrameworks}
+          options={options}
+          placeholder={'Select frameworks'}
+        />
+        <div className={'mt-4'}>
+          <h2 className={'text-xl font-semibold'}>Selected Frameworks:</h2>
+          <ul className={'list-disc list-inside'}>
+            {selectedFrameworks.map(framework => (
+              <li key={framework}>{framework}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    )
+  },
+}
+
 export const Error = {
   render: () => {
     const id = useId()

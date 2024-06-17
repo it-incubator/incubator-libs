@@ -122,15 +122,13 @@
   cursor: pointer;
 
   display: flex;
+  gap: 8px;
+  align-items: center;
 
   width: var(--input-width, 100%);
   padding: 6px 12px;
 
   text-align: start;
-
-  background: none; /* Remove button default background */
-  border: none; /* Remove button default border */
-  outline: none;
 
   transition:
     var(--transtition-duration-basic) background-color,
@@ -166,7 +164,6 @@
   width: 100%;
   min-width: var(--radix-select-trigger-width);
   max-width: var(--radix-select-trigger-width);
-  height: var(--radix-select-trigger-height);
 
   border: 1px solid var(--color-border-select-active);
   border-radius: 0 0 var(--border-radius-s) var(--border-radius-s);

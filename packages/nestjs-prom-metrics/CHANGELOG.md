@@ -1,5 +1,10 @@
 # @it-incubator/nestjs-prom-metrics
 
+## 0.0.12
+### Patch Changes
+
+- change readme.ms
+
 ## 0.0.11
 ### Patch Changes
 

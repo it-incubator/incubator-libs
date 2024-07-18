@@ -22,7 +22,7 @@ Basic module config (default level log "**trace**"):
 
 ```typescript
 import { Module } from '@nestjs/common';
-import { MetricsModule } from 'nestjs-metrics-middleware';
+import { MetricsModule } from '@it-incubator/nestjs-prom-metrics';
 
 @Module({
     imports: [

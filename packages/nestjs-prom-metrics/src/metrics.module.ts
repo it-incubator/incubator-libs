@@ -1,4 +1,5 @@
 import { AppConfigService } from './config'
+import { MetricsController } from './metrics.controller'
 import { MetricsMiddleware } from './metrics.middleware'
 import { DynamicModule, MiddlewareConsumer, Module, NestModule } from '@nestjs/common'
 
@@ -8,6 +9,7 @@ export class MetricsModule implements NestModule {
 
   static register(appName: string): DynamicModule {
     return {
+      controllers: [MetricsController],
       exports: [AppConfigService],
       module: MetricsModule,
       providers: [

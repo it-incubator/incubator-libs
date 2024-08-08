@@ -31,6 +31,6 @@
     "axios": "^1.2.1"
   },
   "publishConfig": {
-    "access": "restricted"
+    "access": "public"
   }
 }

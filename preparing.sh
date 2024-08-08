@@ -12,4 +12,5 @@ sed -i -e "s/NPM_ACCESS_TOKEN/$1/g"  packages/nestjs-logger/.npmrc
 sed -i -e "s/NPM_ACCESS_TOKEN/$1/g"  packages/storage-sdk/.npmrc
 sed -i -e "s/NPM_ACCESS_TOKEN/$1/g"  packages/nodejs-storage-sdk/.npmrc
 sed -i -e "s/NPM_ACCESS_TOKEN/$1/g"  packages/nestjs-prom-metrics/.npmrc
+sed -i -e "s/NPM_ACCESS_TOKEN/$1/g"  packages/telegram-bot-client/.npmrc
 

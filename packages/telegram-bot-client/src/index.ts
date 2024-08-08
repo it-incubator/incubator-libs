@@ -1,8 +1,9 @@
-import axios, {AxiosInstance} from 'axios'
-import {BodyType} from './types'
+import { BodyType } from './types'
+import axios, { AxiosInstance } from 'axios'
+export * from './types'
 
 export interface IServiceConfig {
-  baseUrl: string,
+  baseUrl: string
   friendsToken: string
 }
 
@@ -12,8 +13,8 @@ export class BotService {
     this.axiosInstance = axios.create({
       baseURL: this.settings.baseUrl,
       headers: {
-        'friend-token': this.settings.friendsToken
-      }
+        'friend-token': this.settings.friendsToken,
+      },
     })
   }
 
@@ -21,4 +22,3 @@ export class BotService {
     return this.axiosInstance.post(`/users/sendMessage`, body).then(r => r.data)
   }
 }
-

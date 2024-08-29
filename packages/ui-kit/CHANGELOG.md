@@ -1,20 +1,5 @@
 # @it-incubator/ui-kit
 
-## 2.0.1
-### Patch Changes
-
-- 752462e: Card component has been expanded to polymorphic
-
-## 2.0.0
-### Major Changes
-
-- Updated dependencies. The most notable are headless-ui (select, combobox and radio-group), react-datepicker (date-picker) and react-toastify
-
-## 1.0.14
-### Patch Changes
-
-- ac21490: chore: add button type lint rule and fix code to comply
-
 ## 1.0.12
 ### Patch Changes
 
@@ -42,7 +27,6 @@
 - BREAKING: new icon names, consult figma for new names.
 
 - Button now accepts 'as' prop to support links
-
 ## 0.2.25
 ### Patch Changes
 

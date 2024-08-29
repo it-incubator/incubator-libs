@@ -1,7 +1,7 @@
 import './theme-block.scss'
 import 'react-toastify/dist/ReactToastify.min.css'
 import '../src/styles/index.scss'
-import { Decorator } from '@storybook/react'
+import { DecoratorFn } from '@storybook/react'
 import { clsx } from 'clsx'
 import '@fontsource/roboto'
 import '@fontsource/roboto/500.css'
@@ -12,6 +12,7 @@ export const parameters = {
       headingSelector: 'h1, h2, h3',
     },
   },
+  actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
     matchers: {
       color: /(background|color)$/i,
@@ -20,17 +21,12 @@ export const parameters = {
   },
   options: {
     storySort: {
-      order: [
-        'Getting started',
-        ['Installation', 'Usage', 'Styling'],
-        'Design System',
-        'Components',
-      ],
+      order: ['Getting started', ['Installation', 'Usage', 'Styling'], 'Components'],
     },
   },
 }
 
-const withTheme: Decorator = (StoryFn, context) => {
+const withTheme: DecoratorFn = (StoryFn, context) => {
   // Get the active theme value from the story parameter
   const theme = context.parameters.theme || context.globals.theme
   const className = theme === 'dark' ? 'dark-mode' : 'light-mode'
@@ -75,4 +71,3 @@ export const globalTypes = {
 }
 
 export const decorators = [withTheme]
-export const tags = ['autodocs']

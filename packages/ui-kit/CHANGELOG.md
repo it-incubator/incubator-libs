@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 1.1.1
+### Patch Changes
+
+- add type attribute with button value fot FileTree component
+
 ## 1.0.12
 ### Patch Changes
 

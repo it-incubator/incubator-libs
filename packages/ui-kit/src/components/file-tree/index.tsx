@@ -98,7 +98,11 @@ const File = memo<FileProps>(({ active, label, name, onClick }) => {
 
   return (
     <li className={classNames.fileItem}>
-      <Component className={classNames.fileContent} onClick={handleClick}>
+      <Component
+        className={classNames.fileContent}
+        onClick={handleClick}
+        {...(onClick ? { type: 'button' } : {})}
+      >
         <Indent />
         <FileIcon className={classNames.fileIcon} height={14} size={14} />
         <span className={classNames.fileLabel}>{label ?? name}</span>

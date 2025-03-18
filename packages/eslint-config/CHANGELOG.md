@@ -1,5 +1,10 @@
 # @it-incubator/eslint-config-incubator
 
+## 1.0.4
+### Patch Changes
+
+- restricted perfectionist to sort imports only
+
 ## 1.0.3
 ### Patch Changes
 

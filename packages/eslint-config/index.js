@@ -14,7 +14,6 @@ module.exports = {
     'plugin:import/recommended',
     'plugin:import/typescript',
     'plugin:prettier/recommended',
-    'plugin:perfectionist/recommended-natural',
   ],
   overrides: [
     {

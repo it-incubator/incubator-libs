@@ -1,0 +1,36 @@
+name: Deploy Production
+
+on:
+  workflow_dispatch:
+    inputs:
+      projects:
+        description: 'Project'
+        required: true
+        type: choice
+        options:
+          - mdx-components
+          - ui-kit
+
+run-name: Deploy Production - ${{ inputs.projects }}
+
+jobs:
+  deploy:
+    uses: it-incubator/gitops/.github/workflows/build-and-deploy-frontend.yaml@main
+    with:
+      folder_name:  >-
+        ${{ inputs.projects == 'mdx-components' && vars.MDX_FOLDER_NAME ||
+        inputs.projects == 'ui-kit' && vars.UI_KIT_FOLDER_NAME ||
+        '' }}
+      node_version: 22
+      build_command: build
+#      validate_env_command: env:production-validate
+      deploy_url: >-
+        https://${{ inputs.projects == 'mdx-components' && vars.MDX_FOLDER_NAME ||
+        inputs.projects == 'ui-kit' && vars.UI_KIT_FOLDER_NAME ||
+        '' }}
+      environment: production
+    secrets:
+      kube_config: ${{ secrets.KUBECONFIG_BASE64 }}
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+

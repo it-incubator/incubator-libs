@@ -1,4 +1,4 @@
-name: Deploy Production
+name: Publish npm packages
 
 on:
   workflow_dispatch:

@@ -29,6 +29,7 @@ jobs:
         inputs.projects == 'ui-kit' && vars.UI_KIT_FOLDER_NAME ||
         '' }}
       environment: production
+      source_path: packages/${{ inputs.projects }}/storybook-static
     secrets:
       kube_config: ${{ secrets.KUBECONFIG_BASE64 }}
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}

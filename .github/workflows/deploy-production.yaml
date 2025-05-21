@@ -15,7 +15,7 @@ run-name: Deploy Production - ${{ inputs.projects }}
 
 jobs:
   deploy:
-    uses: it-incubator/gitops/.github/workflows/build-and-deploy-frontend.yaml@main
+    uses: it-incubator/ci-cd-pipelines/.github/workflows/build-and-deploy-frontend.yaml@main
     with:
       folder_name:  >-
         ${{ inputs.projects == 'mdx-components' && vars.MDX_FOLDER_NAME ||

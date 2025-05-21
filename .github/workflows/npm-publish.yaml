@@ -1,0 +1,15 @@
+name: Deploy Production
+
+on:
+  workflow_dispatch:
+
+run-name: Publish npm packages
+
+jobs:
+  deploy:
+    uses: it-incubator/ci-cd-pipelines/.github/workflows/npm-package-publish.yaml@master
+    with:
+      node_version: 22
+      build_command: build
+      environment: production
+

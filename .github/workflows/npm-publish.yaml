@@ -12,4 +12,6 @@ jobs:
       node_version: 22
       build_command: build
       environment: production
+    secrets:
+      NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
 

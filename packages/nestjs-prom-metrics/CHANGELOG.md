@@ -1,5 +1,10 @@
 # @it-incubator/nestjs-prom-metrics
 
+## 0.0.13
+### Patch Changes
+
+- added controllerPath dinamic
+
 ## 0.0.12
 ### Patch Changes
 

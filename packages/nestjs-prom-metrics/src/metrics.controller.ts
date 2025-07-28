@@ -1,4 +1,4 @@
-import {Get} from '@nestjs/common'
+import { Get, Res } from '@nestjs/common'
 import {register} from 'prom-client'
 
 export class MetricsController {

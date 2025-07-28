@@ -11,19 +11,11 @@ export class MetricsMiddleware implements NestMiddleware {
 
   constructor(@Inject(AppConfigService) private readonly configService: AppConfigService) {
 
-    const register = new client.Registry()
-    client.collectDefaultMetrics({
-      register,
-    })
-
     const httpRequestCounter = new client.Counter({
       name: 'http_requests_total',
       help: 'Total number of HTTP requests',
-      labelNames: ['method', 'route', 'status'], // Add labels for method, route, and status
+      labelNames: ['method', 'route', 'status_code', 'app'], // Add labels for method, route, and status
     })
-
-
-    register.registerMetric(httpRequestCounter)
 
     const httpRequestDurationMicroseconds = new client.Histogram({
       buckets: [0.1, 0.5, 1, 2, 5, 10],
@@ -38,38 +30,41 @@ export class MetricsMiddleware implements NestMiddleware {
       labelNames: ['method', 'route', 'status_code', 'app'],
       buckets: [0.1, 0.5, 1, 2, 5], // Response time buckets
     })
-    register.registerMetric(responseTimeHistogram)
-    register.registerMetric(httpRequestDurationMicroseconds)
+    client.register.registerMetric(responseTimeHistogram)
+    client.register.registerMetric(httpRequestDurationMicroseconds)
+    client.register.registerMetric(httpRequestCounter)
 
-    register.setDefaultLabels({
+    client.register.setDefaultLabels({
       app: this.configService.appName,
     })
+    client.collectDefaultMetrics()
     this.httpRequestDurationMicroseconds = httpRequestDurationMicroseconds
     this.httpRequestCounter = httpRequestCounter
     this.responseTimeHistogram = responseTimeHistogram
   }
 
   async use(req: Request, res: Response, next: NextFunction) {
-    const end = this.httpRequestDurationMicroseconds.startTimer()
-    const responseTimeHistogram = this.responseTimeHistogram.startTimer()
+    const endRequestDuration = this.httpRequestDurationMicroseconds.startTimer()
+    const endResponseTimer = this.responseTimeHistogram.startTimer()
+    const status = String(res.statusCode)
     res.on('finish', () => {
       const routePath = req.route ? req.route.path : req.path
       this.httpRequestCounter.inc({
         method: req.method,
         route: routePath,
-        status: res.statusCode,
+        status_code: status,
       })
-      end({
+      endRequestDuration({
         app: this.configService.appName,
         method: req.method,
         route: routePath,
-        status_code: res.statusCode,
+        status_code: status,
       })
-      responseTimeHistogram({
+      endResponseTimer({
         app: this.configService.appName,
         method: req.method,
         route: routePath,
-        status_code: res.statusCode,
+        status_code: status,
       })
     })
     next()

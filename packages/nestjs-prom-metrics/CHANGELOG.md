@@ -1,5 +1,10 @@
 # @it-incubator/nestjs-prom-metrics
 
+## 0.0.17
+### Patch Changes
+
+- fix
+
 ## 0.0.16
 ### Patch Changes
 

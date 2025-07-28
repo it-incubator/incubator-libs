@@ -7,6 +7,7 @@ import * as client from 'prom-client'
 export class MetricsMiddleware implements NestMiddleware {
   private readonly httpRequestDurationMicroseconds: client.Histogram<string>
   private readonly httpRequestCounter: client.Counter<string>
+  private readonly responseTimeHistogram: client.Histogram<string>
 
   constructor(@Inject(AppConfigService) private readonly configService: AppConfigService) {
 
@@ -34,7 +35,7 @@ export class MetricsMiddleware implements NestMiddleware {
     const responseTimeHistogram = new client.Histogram({
       name: 'http_response_time_seconds',
       help: 'HTTP response time in seconds',
-      labelNames: ['method', 'route', 'status'],
+      labelNames: ['method', 'route', 'status', 'app'],
       buckets: [0.1, 0.5, 1, 2, 5], // Response time buckets
     })
     register.registerMetric(responseTimeHistogram)
@@ -43,12 +44,14 @@ export class MetricsMiddleware implements NestMiddleware {
     register.setDefaultLabels({
       app: this.configService.appName,
     })
-    this.httpRequestDurationMicroseconds = responseTimeHistogram
+    this.httpRequestDurationMicroseconds = httpRequestDurationMicroseconds
     this.httpRequestCounter = httpRequestCounter
+    this.responseTimeHistogram = responseTimeHistogram
   }
 
   async use(req: Request, res: Response, next: NextFunction) {
     const end = this.httpRequestDurationMicroseconds.startTimer()
+    const responseTimeHistogram = this.responseTimeHistogram.startTimer()
     res.on('finish', () => {
       const routePath = req.route ? req.route.path : req.path
       this.httpRequestCounter.inc({
@@ -57,6 +60,12 @@ export class MetricsMiddleware implements NestMiddleware {
         status: res.statusCode,
       })
       end({
+        app: this.configService.appName,
+        method: req.method,
+        route: routePath,
+        status_code: res.statusCode,
+      })
+      responseTimeHistogram({
         app: this.configService.appName,
         method: req.method,
         route: routePath,

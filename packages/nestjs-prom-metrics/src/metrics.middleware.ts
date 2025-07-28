@@ -35,7 +35,7 @@ export class MetricsMiddleware implements NestMiddleware {
     const responseTimeHistogram = new client.Histogram({
       name: 'http_response_time_seconds',
       help: 'HTTP response time in seconds',
-      labelNames: ['method', 'route', 'status', 'app'],
+      labelNames: ['method', 'route', 'status_code', 'app'],
       buckets: [0.1, 0.5, 1, 2, 5], // Response time buckets
     })
     register.registerMetric(responseTimeHistogram)

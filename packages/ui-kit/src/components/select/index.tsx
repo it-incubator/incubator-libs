@@ -1,3 +1,4 @@
+'use client'
 import { CSSProperties, FC, Fragment, ReactNode, useMemo } from 'react'
 
 import { KeyboardArrowDown, Typography } from '../../'

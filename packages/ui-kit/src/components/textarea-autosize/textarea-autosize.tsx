@@ -1,3 +1,4 @@
+'use client'
 // https://github.com/Andarist/react-textarea-autosize/tree/main
 
 import * as React from 'react'

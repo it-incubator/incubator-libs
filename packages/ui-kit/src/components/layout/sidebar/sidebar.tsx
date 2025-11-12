@@ -1,3 +1,4 @@
+'use client'
 import { ComponentProps, ReactNode } from 'react'
 
 import { Scrollbar, ScrollbarProps } from '../../../'

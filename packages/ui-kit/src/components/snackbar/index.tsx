@@ -1,3 +1,4 @@
+'use client'
 import { FC } from 'react'
 import { Flip, IconProps, ToastContainer, ToastContainerProps } from 'react-toastify'
 

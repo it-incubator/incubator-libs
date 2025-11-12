@@ -1,3 +1,4 @@
+'use client'
 import { ComponentProps, KeyboardEvent, ReactNode, forwardRef } from 'react'
 
 import { Search as SearchIcon, Typography } from '../../'

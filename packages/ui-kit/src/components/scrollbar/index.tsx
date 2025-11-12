@@ -1,3 +1,4 @@
+'use client'
 import { ComponentPropsWithoutRef, FC, ReactNode } from 'react'
 
 import * as ScrollArea from '@radix-ui/react-scroll-area'

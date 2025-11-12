@@ -1,3 +1,4 @@
+'use client'
 import { ChangeEvent, Fragment, MouseEventHandler, ReactNode } from 'react'
 
 import { Close, KeyboardArrowDown, Scrollbar, Spinner, Typography } from '../../'

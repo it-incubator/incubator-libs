@@ -1,3 +1,4 @@
+'use client'
 import { ComponentPropsWithoutRef, ReactElement } from 'react'
 
 import { InfoOutline } from '../../assets/icons'

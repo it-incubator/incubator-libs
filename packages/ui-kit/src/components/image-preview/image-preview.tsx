@@ -1,3 +1,4 @@
+'use client'
 import { Dialog, DialogContent, DialogOverlay, DialogPortal } from '@radix-ui/react-dialog'
 
 import s from './image-preview.module.scss'

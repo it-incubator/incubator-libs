@@ -1,3 +1,4 @@
+'use client'
 import { CSSProperties, ComponentPropsWithoutRef, FC, ReactNode, useState } from 'react'
 
 import { MenuDots, Typography } from '../../'

@@ -1,3 +1,4 @@
+'use client'
 import { TheGift } from '../'
 
 export default {

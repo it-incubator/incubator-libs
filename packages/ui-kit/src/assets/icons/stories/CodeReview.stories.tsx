@@ -1,3 +1,4 @@
+'use client'
 import { CodeReview } from '../'
 
 export default {

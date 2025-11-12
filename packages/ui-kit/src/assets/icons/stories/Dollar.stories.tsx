@@ -1,3 +1,4 @@
+'use client'
 import { Dollar } from '../'
 
 export default {

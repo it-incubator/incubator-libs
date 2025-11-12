@@ -1,3 +1,4 @@
+'use client'
 import { SortBy } from '../'
 
 export default {

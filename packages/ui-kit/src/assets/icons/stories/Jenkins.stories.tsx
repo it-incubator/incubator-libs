@@ -1,3 +1,4 @@
+'use client'
 import { Jenkins } from '../'
 
 export default {

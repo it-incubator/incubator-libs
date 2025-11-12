@@ -1,3 +1,4 @@
+'use client'
 import { ClosedClub } from '../'
 
 export default {

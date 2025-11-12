@@ -1,3 +1,4 @@
+'use client'
 import { ArrowDropUp } from '../'
 
 export default {

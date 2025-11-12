@@ -1,3 +1,4 @@
+'use client'
 import { AddCircleOutline } from '../'
 
 export default {

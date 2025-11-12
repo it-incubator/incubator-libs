@@ -1,3 +1,4 @@
+'use client'
 import { IconProps, IconWrapper } from '../../assets/icons/IconWrapper'
 
 export const SendMessageIcon = (allProps: IconProps) => {

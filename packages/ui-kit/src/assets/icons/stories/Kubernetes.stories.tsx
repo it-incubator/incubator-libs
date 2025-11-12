@@ -1,3 +1,4 @@
+'use client'
 import { Kubernetes } from '../'
 
 export default {

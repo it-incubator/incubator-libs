@@ -1,3 +1,4 @@
+'use client'
 import { ThumbUpOff } from '../'
 
 export default {

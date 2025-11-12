@@ -1,3 +1,4 @@
+'use client'
 import { DarkMode } from '../'
 
 export default {

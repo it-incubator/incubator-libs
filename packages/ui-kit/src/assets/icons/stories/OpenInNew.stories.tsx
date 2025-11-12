@@ -1,3 +1,4 @@
+'use client'
 import { OpenInNew } from '../'
 
 export default {

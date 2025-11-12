@@ -1,3 +1,4 @@
+'use client'
 import { LightMode } from '../'
 
 export default {

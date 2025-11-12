@@ -1,3 +1,4 @@
+'use client'
 import { Play } from '../'
 
 export default {

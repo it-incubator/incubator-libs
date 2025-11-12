@@ -1,3 +1,4 @@
+'use client'
 import { Paypal } from '../'
 
 export default {

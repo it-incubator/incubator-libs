@@ -1,3 +1,4 @@
+'use client'
 import { Homework } from '../'
 
 export default {

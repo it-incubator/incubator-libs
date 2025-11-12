@@ -1,3 +1,4 @@
+'use client'
 import { FolderClosed } from '../'
 
 export default {

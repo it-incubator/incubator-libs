@@ -1,3 +1,4 @@
+'use client'
 import { ThumbsUpLightSkinTone } from '../'
 
 export default {

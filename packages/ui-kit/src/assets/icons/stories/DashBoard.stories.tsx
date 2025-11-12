@@ -1,3 +1,4 @@
+'use client'
 import { DashBoard } from '../'
 
 export default {

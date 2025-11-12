@@ -1,3 +1,4 @@
+'use client'
 import { MenuDotsVertical } from '../'
 
 export default {

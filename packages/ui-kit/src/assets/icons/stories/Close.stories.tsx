@@ -1,3 +1,4 @@
+'use client'
 import { Close } from '../'
 
 export default {

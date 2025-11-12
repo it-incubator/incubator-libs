@@ -1,3 +1,4 @@
+'use client'
 import { GitHub } from '../'
 
 export default {

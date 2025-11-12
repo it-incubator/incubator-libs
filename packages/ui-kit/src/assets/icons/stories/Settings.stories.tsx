@@ -1,3 +1,4 @@
+'use client'
 import { Settings } from '../'
 
 export default {

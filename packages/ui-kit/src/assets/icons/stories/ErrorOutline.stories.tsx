@@ -1,3 +1,4 @@
+'use client'
 import { ErrorOutline } from '../'
 
 export default {

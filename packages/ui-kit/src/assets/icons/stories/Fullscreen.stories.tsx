@@ -1,3 +1,4 @@
+'use client'
 import { Fullscreen } from '../'
 
 export default {

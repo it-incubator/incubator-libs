@@ -1,3 +1,4 @@
+'use client'
 import { FreeCodeCamp } from '../'
 
 export default {

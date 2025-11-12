@@ -1,3 +1,4 @@
+'use client'
 import { AddEdit } from '../'
 
 export default {

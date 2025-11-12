@@ -1,3 +1,4 @@
+'use client'
 import { Lessons } from '../'
 
 export default {

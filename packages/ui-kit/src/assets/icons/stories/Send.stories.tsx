@@ -1,3 +1,4 @@
+'use client'
 import { Send } from '../'
 
 export default {

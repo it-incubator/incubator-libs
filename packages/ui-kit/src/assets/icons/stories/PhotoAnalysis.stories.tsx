@@ -1,3 +1,4 @@
+'use client'
 import { PhotoAnalysis } from '../'
 
 export default {

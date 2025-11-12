@@ -1,3 +1,4 @@
+'use client'
 import { CSSProperties, FC, HTMLProps, ReactNode, SVGProps } from 'react'
 
 export type IconProps = {

@@ -1,3 +1,4 @@
+'use client'
 import { Support } from '../'
 
 export default {

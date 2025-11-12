@@ -1,3 +1,4 @@
+'use client'
 import { Visibility } from '../'
 
 export default {

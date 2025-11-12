@@ -1,3 +1,4 @@
+'use client'
 import { CheckBoxUnselected } from '../'
 
 export default {

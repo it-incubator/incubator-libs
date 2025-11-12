@@ -1,3 +1,4 @@
+'use client'
 import { Html } from '../'
 
 export default {

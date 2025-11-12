@@ -1,3 +1,4 @@
+'use client'
 import { English } from '../'
 
 export default {

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 import { RadioGroup } from '../../../../src'
-import { Meta } from '@storybook/react'
+import { Meta } from '@storybook/react-vite'
 
 const options = [
   {

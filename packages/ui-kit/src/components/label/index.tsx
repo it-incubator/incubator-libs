@@ -1,3 +1,4 @@
+'use client'
 import { ComponentPropsWithoutRef, FC, ReactNode, useMemo } from 'react'
 
 import * as LabelRadixUI from '@radix-ui/react-label'

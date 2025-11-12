@@ -1,3 +1,4 @@
+'use client'
 import { ComponentProps } from 'react'
 
 import * as Toggle from '@radix-ui/react-toggle'

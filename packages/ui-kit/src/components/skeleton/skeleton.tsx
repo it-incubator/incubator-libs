@@ -1,3 +1,4 @@
+'use client'
 import { FC } from 'react'
 import SkeletonBase, { SkeletonProps as SkeletonPropsBase } from 'react-loading-skeleton'
 

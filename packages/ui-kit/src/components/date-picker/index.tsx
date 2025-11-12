@@ -1,3 +1,4 @@
+'use client'
 import { ComponentProps, FC, ReactNode, forwardRef } from 'react'
 import { ReactDatePickerCustomHeaderProps, registerLocale } from 'react-datepicker'
 import * as RDP from 'react-datepicker'

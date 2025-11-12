@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 1.1.2
+### Patch Changes
+
+- 6ed06ff: add use-client directive for components
+
 ## 1.1.1
 ### Patch Changes
 

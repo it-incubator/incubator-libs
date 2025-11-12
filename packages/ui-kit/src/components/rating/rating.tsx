@@ -1,3 +1,4 @@
+'use client'
 /**
  * A refactored and updated version of https://github.com/dreyescat/react-rating/tree/master
  * which seems to be no longer maintained.

@@ -1,3 +1,4 @@
+'use client'
 import { CSSProperties, FC, MouseEvent, ReactElement, TouchEvent, isValidElement } from 'react'
 
 interface IconProps {

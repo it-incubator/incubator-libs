@@ -1,3 +1,4 @@
+'use client'
 import { Dialog, DialogProps } from '../dialog'
 import { Dropzone, DropzoneProps } from '../dropzone'
 import { FileUploadPreview, FileUploadPreviewProps } from '../file-upload-preview'

@@ -1,3 +1,4 @@
+'use client'
 import { ChangeEvent, ComponentProps, ReactNode, forwardRef } from 'react'
 
 import { Label } from '../label'

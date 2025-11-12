@@ -1,3 +1,4 @@
+'use client'
 import { ComponentPropsWithoutRef, FC, ReactNode, useEffect, useState } from 'react'
 import { flushSync } from 'react-dom'
 import useMeasure from 'react-use-measure'

@@ -1,3 +1,4 @@
+'use client'
 import { ComponentPropsWithoutRef, ElementRef, ElementType, ForwardedRef, forwardRef } from 'react'
 
 import { KeyboardArrowLeft, KeyboardArrowRight, Typography } from '../..'

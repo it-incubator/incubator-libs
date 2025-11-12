@@ -1,3 +1,4 @@
+'use client'
 import { CSSProperties, ComponentProps } from 'react'
 
 import { Typography } from '../typography'

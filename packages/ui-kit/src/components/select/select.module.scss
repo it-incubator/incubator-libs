@@ -26,11 +26,6 @@
     color: var(--color-text-secondary);
   }
 
-  &[data-headlessui-state='open'] {
-    border-color: var(--color-border-select-active);
-    border-radius: var(--border-radius-s) var(--border-radius-s) 0 0;
-  }
-
   &:disabled {
     cursor: auto;
     color: var(--color-text-disabled);
@@ -86,6 +81,11 @@
   }
 }
 
+.triggerOpen {
+  border-color: var(--color-border-select-active);
+  border-radius: var(--border-radius-s) var(--border-radius-s) 0 0;
+}
+
 .value {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -107,13 +107,13 @@
     height: 16px;
   }
 
-  [data-headlessui-state='open'] > & {
-    transform: rotate(180deg);
-  }
-
   .trigger:disabled > & path {
     stroke: var(--color-text-disabled);
   }
+}
+
+.iconOpen {
+  transform: rotate(180deg);
 }
 
 .item {
@@ -133,17 +133,15 @@
   transition: var(--transtition-duration-basic) background-color,
     var(--transtition-duration-basic) color;
 
-  &[data-headlessui-state='active'],
-  &[data-headlessui-state='active selected'] {
+  &[data-focus] {
     background-color: var(--color-action-hover);
   }
 
-  &[data-headlessui-state='selected'],
-  &[data-headlessui-state='active selected'] {
+  &[data-selected] {
     color: var(--color-accent-500);
   }
 
-  &[data-headlessui-state='disabled'] {
+  &[data-disabled] {
     cursor: auto;
     color: var(--color-text-inactive);
   }
@@ -158,6 +156,7 @@
 .content {
   overflow: hidden;
 
+  width: var(--button-width);
   background-color: var(--color-bg-element);
   border: 1px solid var(--color-border-select-active);
   border-radius: 0 0 var(--border-radius-s) var(--border-radius-s);
@@ -167,8 +166,8 @@
     border: 1px solid var(--color-border-input-primary);
 
     & .item {
-      &[data-headlessui-state~='active'],
-      &[data-headlessui-state~='selected'] {
+      &[data-focus],
+      &[data-selected] {
         color: var(--color-neutral-light-50);
         background-color: var(--color-info-400);
       }

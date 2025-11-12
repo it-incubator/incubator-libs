@@ -3,7 +3,7 @@
 }
 
 .input {
-  &[data-headlessui-state='open'] {
+  &[data-open] {
     padding-right: 32px;
     border-radius: var(--border-radius-s) var(--border-radius-s) 0 0;
   }
@@ -15,16 +15,23 @@
 
 .button {
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
 
   position: absolute;
   right: 5px;
   bottom: 18px;
   transform: translateY(50%);
 
+  border: none;
+  background-color: transparent;
+
   width: 24px;
   height: 24px;
 
-  &[data-headlessui-state='disabled'] {
+  &[data-disabled] {
     cursor: initial;
     color: var(--color-text-disabled);
   }
@@ -41,7 +48,7 @@
   width: 18px;
   height: 18px;
 
-  &[data-headlessui-state='disabled'] {
+  &[data-disabled] {
     cursor: initial;
     color: var(--color-text-disabled);
   }
@@ -55,13 +62,13 @@
   transition: var(--transtition-duration-basic) transform;
 }
 
-.root[data-headlessui-state='open'] .icon {
-  transform: rotate(180deg);
-}
-
 .spinner {
   position: absolute;
   top: 50%;
   right: 30px;
   transform: translateY(-50%);
+}
+
+.content {
+  width: var(--input-width);
 }

@@ -1,10 +1,15 @@
 'use client'
-import { ChangeEvent, Fragment, MouseEventHandler, ReactNode } from 'react'
+import { ChangeEvent, MouseEventHandler, ReactNode } from 'react'
 
 import { Close, KeyboardArrowDown, Scrollbar, Spinner, Typography } from '../../'
 import { Label } from '../label'
-import { Combobox as ComboboxHeadlessUI } from '@headlessui/react'
-import { Float } from '@headlessui-float/react'
+import {
+  Combobox as HeadlessCombobox,
+  ComboboxButton,
+  ComboboxInput,
+  ComboboxOption,
+  ComboboxOptions,
+} from '@headlessui/react'
 import { clsx } from 'clsx'
 
 import selectStyle from '../select/select.module.scss'
@@ -76,85 +81,87 @@ export const Combobox = <T extends number | string>({
       ? options
       : options.filter(option => option.label.toLowerCase().includes(inputValue.toLowerCase()))
 
-  const classNames = {
-    box: s.box,
-    button: clsx(s.button),
-    clearButton: s.clearButton,
-    content: clsx(selectStyle.content, filteredOptions.length === 0 && s.empty),
-    icon: clsx(s.icon),
-    input: clsx(
-      textFieldStyle.input,
-      s.input,
-      showError && textFieldStyle.error,
-      isClearButtonVisible && s.hasClearButton
-    ),
-    item: selectStyle.item,
-    root: s.root,
-    scrollRoot: selectStyle.scrollRoot,
-    scrollThumb: selectStyle.scrollThumb,
-    scrollViewport: selectStyle.scrollViewport,
-    scrollbar: selectStyle.scrollbar,
-    spinner: s.spinner,
-  }
-
   const getDisplayingValue = (value: number | string) =>
     options?.find(option => option.value === value)?.label || ''
 
   return (
-    <ComboboxHeadlessUI
-      {...{
-        disabled,
-        name,
-        onChange,
-        value,
-      }}
+    <HeadlessCombobox
       as={'div'}
-      className={classNames.root}
+      className={s.root}
+      disabled={disabled}
+      name={name}
+      onChange={onChange}
+      value={value}
     >
-      <Float adaptiveWidth as={'div'} floatingAs={Fragment} placement={'bottom'} portal={portal}>
-        <div className={classNames.box}>
-          <Label label={label} required={required}>
-            <ComboboxHeadlessUI.Button as={'div'}>
-              <ComboboxHeadlessUI.Input
-                className={classNames.input}
-                displayValue={getDisplayingValue}
-                onChange={inputChangeHandler}
-                placeholder={placeholder}
-              />
+      {({ open }) => {
+        const inputClassName = clsx(
+          textFieldStyle.input,
+          s.input,
+          showError && textFieldStyle.error,
+          isClearButtonVisible && s.hasClearButton
+        )
 
-              <div className={classNames.button}>
-                <KeyboardArrowDown className={classNames.icon} />
-              </div>
-              {isLoading && (
-                <div className={classNames.spinner}>
-                  <Spinner size={22} />
+        const contentClassName = clsx(
+          selectStyle.content,
+          s.content,
+          filteredOptions.length === 0 && s.empty
+        )
+
+        return (
+          <div data-open={open ? '' : undefined}>
+            <div className={s.box}>
+              <Label label={label} required={required}>
+                <div>
+                  <ComboboxInput
+                    className={inputClassName}
+                    data-open={open ? '' : undefined}
+                    displayValue={getDisplayingValue}
+                    onChange={inputChangeHandler}
+                    placeholder={placeholder}
+                  />
+                  <ComboboxButton className={s.button} type={'button'}>
+                    <KeyboardArrowDown
+                      className={clsx(s.icon, selectStyle.icon, open && selectStyle.iconOpen)}
+                    />
+                  </ComboboxButton>
+                  {isLoading && (
+                    <div className={s.spinner}>
+                      <Spinner size={22} />
+                    </div>
+                  )}
+                </div>
+              </Label>
+              {isClearButtonVisible && (
+                <div className={s.clearButton} onClick={onClear ?? handleClearButtonClicked}>
+                  <Close size={18} />
                 </div>
               )}
-            </ComboboxHeadlessUI.Button>
-          </Label>
-          {isClearButtonVisible && (
-            <div className={classNames.clearButton} onClick={onClear ?? handleClearButtonClicked}>
-              <Close size={18} />
             </div>
-          )}
-        </div>
-        <ComboboxHeadlessUI.Options as={'div'} className={classNames.content}>
-          <Scrollbar maxHeight={200}>
-            {filteredOptions.map(option => (
-              <ComboboxHeadlessUI.Option
-                as={'button'}
-                className={classNames.item}
-                key={option.value}
-                type={'button'}
-                value={option.value}
-              >
-                <span>{option.label}</span>
-              </ComboboxHeadlessUI.Option>
-            ))}
-          </Scrollbar>
-        </ComboboxHeadlessUI.Options>
-      </Float>
-      <>{showError && <Typography.Error>{errorMessage}</Typography.Error>}</>
-    </ComboboxHeadlessUI>
+            <ComboboxOptions
+              anchor={'bottom'}
+              as={'div'}
+              className={contentClassName}
+              modal={false}
+              portal={portal}
+            >
+              <Scrollbar maxHeight={200}>
+                {filteredOptions.map(option => (
+                  <ComboboxOption
+                    as={'button'}
+                    className={selectStyle.item}
+                    key={option.value}
+                    type={'button'}
+                    value={option.value}
+                  >
+                    <span>{option.label}</span>
+                  </ComboboxOption>
+                ))}
+              </Scrollbar>
+            </ComboboxOptions>
+            <>{showError && <Typography.Error>{errorMessage}</Typography.Error>}</>
+          </div>
+        )
+      }}
+    </HeadlessCombobox>
   )
 }

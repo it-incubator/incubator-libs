@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 2.0.1
+### Patch Changes
+
+- add @radix-ui/react-dismissable-layer package
+
 ## 2.0.0
 ### Major Changes
 

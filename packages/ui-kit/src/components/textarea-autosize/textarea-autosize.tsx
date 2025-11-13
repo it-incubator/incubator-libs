@@ -30,7 +30,7 @@ const TextareaAutosize: React.ForwardRefRenderFunction<
   TextareaAutosizeProps
 > = (
   { cacheMeasurements, maxRows, minRows, onChange = noop, onHeightChange = noop, ...props },
-  userRef: React.Ref<HTMLTextAreaElement>
+  userRef: React.Ref<HTMLTextAreaElement> | undefined
 ) => {
   if (isDevelopment && props.style) {
     if ('maxHeight' in props.style) {
@@ -48,7 +48,7 @@ const TextareaAutosize: React.ForwardRefRenderFunction<
   const libRef = React.useRef<HTMLTextAreaElement | null>(null)
   const ref = useComposedRef(libRef, userRef)
   const heightRef = React.useRef(0)
-  const measurementsCacheRef = React.useRef<SizingData>()
+  const measurementsCacheRef = React.useRef<SizingData | undefined>(undefined)
 
   const resizeTextarea = () => {
     const node = libRef.current!

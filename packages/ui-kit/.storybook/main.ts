@@ -7,7 +7,9 @@ const require = createRequire(import.meta.url)
 
 const config = {
   stories: [
-    '../stories/**/*.mdx',
+    // MDX files excluded from build due to Storybook 10 issue with mdx-react-shim
+    // Uncomment when Storybook fixes the issue
+    // '../stories/**/*.mdx',
     '../stories/**/*.stories.@(ts|tsx)',
     '../src/assets/icons/stories/**/*.stories.@(ts|tsx)',
   ],

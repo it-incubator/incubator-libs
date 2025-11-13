@@ -30,6 +30,7 @@
     "@it-incubator/stylelint-config": "workspace:*",
     "@nestjs/axios": ">=3.0.2",
     "@nestjs/common": ">=10.2.7",
+    "@types/node": "20.6.4",
     "prettier": "^3.0.3",
     "rxjs": ">=7.8.1",
     "typescript": "5.2.2",

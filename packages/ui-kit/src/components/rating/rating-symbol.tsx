@@ -68,8 +68,8 @@ export const RatingSymbol: FC<RatingSymbolProps> = props => {
       onTouchMove={e => onMouseMove?.(index, e)}
       style={style}
     >
-      <span>{backgroundNode}</span>
-      <span style={iconContainerStyle}>{iconNode}</span>
+      <span>{backgroundNode as ReactElement}</span>
+      <span style={iconContainerStyle}>{iconNode as ReactElement}</span>
     </span>
   )
 }

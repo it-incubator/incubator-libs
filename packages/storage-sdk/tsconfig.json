@@ -16,7 +16,8 @@
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
-    "declaration": true
+    "declaration": true,
+    "types": ["node"]
   },
   "include": ["src"]
 }

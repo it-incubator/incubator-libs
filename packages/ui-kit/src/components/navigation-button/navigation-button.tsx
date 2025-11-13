@@ -1,10 +1,11 @@
 'use client'
-import { ComponentPropsWithoutRef, ElementRef, ElementType, ForwardedRef, forwardRef } from 'react'
+import { ComponentPropsWithoutRef, ElementType, ForwardedRef, forwardRef } from 'react'
 
-import { KeyboardArrowLeft, KeyboardArrowRight, Typography } from '../..'
 import { clsx } from 'clsx'
 
 import s from './navigation-button.module.scss'
+
+import { KeyboardArrowLeft, KeyboardArrowRight, Typography } from '../..'
 
 export type NavigationButtonProps<T extends ElementType = 'button'> = {
   as?: T
@@ -12,7 +13,7 @@ export type NavigationButtonProps<T extends ElementType = 'button'> = {
   variant?: 'backward' | 'forward'
 } & ComponentPropsWithoutRef<T>
 
-const NavigationButtonPolymorph = (
+function NavigationButtonPolymorph(
   {
     as = 'button',
     buttonTitle,
@@ -20,9 +21,9 @@ const NavigationButtonPolymorph = (
     className,
     variant = 'forward',
     ...restProps
-  }: NavigationButtonProps,
-  ref: any
-) => {
+  }: NavigationButtonProps<any> & { ref?: ForwardedRef<any> },
+  ref: ForwardedRef<any>
+) {
   const Comp = as
   const classes = clsx(s.root, s[variant], className)
 
@@ -31,7 +32,7 @@ const NavigationButtonPolymorph = (
   }
 
   return (
-    <Comp className={classes} {...restProps} ref={ref}>
+    <Comp className={classes} {...(restProps as any)} ref={ref}>
       {variant === 'backward' && <KeyboardArrowLeft className={s.icon} />}
 
       <div className={s.nameContainer}>
@@ -45,10 +46,10 @@ const NavigationButtonPolymorph = (
 }
 
 export const NavigationButton = forwardRef(NavigationButtonPolymorph) as <
-  T extends ElementType = 'button',
+  T extends ElementType = 'button'
 >(
   props: NavigationButtonProps<T> &
     Omit<ComponentPropsWithoutRef<T>, keyof NavigationButtonProps<T>> & {
-      ref?: ForwardedRef<ElementRef<T>>
+      ref?: ForwardedRef<any>
     }
-) => ReturnType<typeof NavigationButtonPolymorph>
+) => ReturnType<typeof NavigationButtonPolymorph> | null

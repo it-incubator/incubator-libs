@@ -1,4 +1,5 @@
 'use client'
+import * as React from 'react'
 import {
   ComponentPropsWithoutRef,
   ElementRef,
@@ -7,11 +8,12 @@ import {
   forwardRef,
 } from 'react'
 
-import { Typography, TypographyProps } from '../typography'
 import { RadioGroup as RadioGroupHeadless, Radio } from '@headlessui/react'
 import { clsx } from 'clsx'
 
 import s from './radio-group.module.scss'
+
+import { Typography, TypographyProps } from '../typography'
 
 type Option = {
   label: string
@@ -32,13 +34,10 @@ export type RadioGroupProps = {
 } & Omit<RadioGroupRootProps, 'disabled' | 'value' | 'onChange' | 'defaultValue'>
 
 // НЕ УДАЛЯТЬ КОММЕНТ ПЕРЕД forwardRef - без него ломается tree shaking
-export const RadioGroup = /* @__PURE__ */ forwardRef<
-  ElementRef<typeof RadioGroupHeadless>,
-  RadioGroupProps
->(function RadioGroupComponent(
-  { disabled, errorMessage, errorMessageProps, onChange, options, value, ...rest },
-  ref
-) {
+function RadioGroupComponentInner(
+  { disabled, errorMessage, errorMessageProps, onChange, options, value, ...rest }: RadioGroupProps,
+  ref: React.ForwardedRef<ElementRef<typeof RadioGroupHeadless>>
+): React.ReactElement {
   const classNames = {
     error: clsx(s.error, errorMessageProps?.className),
     icon: s.icon,
@@ -61,6 +60,10 @@ export const RadioGroup = /* @__PURE__ */ forwardRef<
       )}
     </RadioGroupHeadless>
   )
-}) as ForwardRefExoticComponent<
+}
+
+const RadioGroupComponent = /* @__PURE__ */ forwardRef(RadioGroupComponentInner)
+
+export const RadioGroup: ForwardRefExoticComponent<
   RadioGroupProps & RefAttributes<ElementRef<typeof RadioGroupHeadless>>
->
+> = RadioGroupComponent

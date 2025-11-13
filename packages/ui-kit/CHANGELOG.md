@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 2.0.0
+### Major Changes
+
+- migrate to React 19.2.0
+
 ## 1.1.2
 ### Patch Changes
 

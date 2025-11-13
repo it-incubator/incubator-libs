@@ -1,3 +1,4 @@
+'use client'
 import { Statistics } from '../'
 
 export default {

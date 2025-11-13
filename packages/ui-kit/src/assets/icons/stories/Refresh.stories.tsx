@@ -1,3 +1,4 @@
+'use client'
 import { Refresh } from '../'
 
 export default {

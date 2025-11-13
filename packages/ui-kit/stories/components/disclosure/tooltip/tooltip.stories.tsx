@@ -1,6 +1,6 @@
 import { ThumbUp, Tooltip } from '../../../../src'
 import { useDarkMode } from '../../../../storybook-utils/hooks/use-dark-mode'
-import { Meta } from '@storybook/react'
+import { Meta } from '@storybook/react-vite'
 
 export default {
   component: Tooltip,

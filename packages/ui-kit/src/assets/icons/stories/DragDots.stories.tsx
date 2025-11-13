@@ -1,3 +1,4 @@
+'use client'
 import { DragDots } from '../'
 
 export default {

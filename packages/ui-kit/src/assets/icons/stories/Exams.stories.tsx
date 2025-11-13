@@ -1,3 +1,4 @@
+'use client'
 import { Exams } from '../'
 
 export default {

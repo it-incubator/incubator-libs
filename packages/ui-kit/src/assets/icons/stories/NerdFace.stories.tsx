@@ -1,3 +1,4 @@
+'use client'
 import { NerdFace } from '../'
 
 export default {

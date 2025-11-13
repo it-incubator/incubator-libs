@@ -1,3 +1,4 @@
+'use client'
 import { Email } from '../'
 
 export default {

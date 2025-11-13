@@ -1,3 +1,4 @@
+'use client'
 import { BarChart } from '../'
 
 export default {

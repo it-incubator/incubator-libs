@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { Checkbox } from '../../../../src'
 import { VerticalContainer } from '../../../../storybook-utils/components/containers/vertical'
 import { ValuePreview } from '../../../../storybook-utils/components/previews/value-preview'
-import { Meta } from '@storybook/react'
+import { Meta } from '@storybook/react-vite'
 
 export default {
   component: Checkbox,

@@ -1,3 +1,4 @@
+'use client'
 import { ConfusedFace } from '../'
 
 export default {

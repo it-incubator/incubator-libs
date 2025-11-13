@@ -1,3 +1,4 @@
+'use client'
 import { Calendar } from '../'
 
 export default {

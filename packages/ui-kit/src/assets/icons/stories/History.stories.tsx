@@ -1,3 +1,4 @@
+'use client'
 import { History } from '../'
 
 export default {

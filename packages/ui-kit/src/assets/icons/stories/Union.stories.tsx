@@ -1,3 +1,4 @@
+'use client'
 import { Union } from '../'
 
 export default {

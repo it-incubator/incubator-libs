@@ -1,3 +1,4 @@
+'use client'
 import { File1 } from '../'
 
 export default {

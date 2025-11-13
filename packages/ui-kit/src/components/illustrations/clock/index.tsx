@@ -1,3 +1,4 @@
+'use client'
 import { SVGProps } from 'react'
 
 export const Clock = (props: SVGProps<SVGSVGElement>) => (

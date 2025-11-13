@@ -1,3 +1,4 @@
+'use client'
 import { Facebook } from '../'
 
 export default {

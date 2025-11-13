@@ -1,3 +1,4 @@
+'use client'
 import { Google } from '../'
 
 export default {

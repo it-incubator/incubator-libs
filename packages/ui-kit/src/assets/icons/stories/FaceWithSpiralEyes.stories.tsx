@@ -1,3 +1,4 @@
+'use client'
 import { FaceWithSpiralEyes } from '../'
 
 export default {

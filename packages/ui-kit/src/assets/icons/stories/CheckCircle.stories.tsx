@@ -1,3 +1,4 @@
+'use client'
 import { CheckCircle } from '../'
 
 export default {

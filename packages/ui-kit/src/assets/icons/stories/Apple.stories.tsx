@@ -1,3 +1,4 @@
+'use client'
 import { Apple } from '../'
 
 export default {

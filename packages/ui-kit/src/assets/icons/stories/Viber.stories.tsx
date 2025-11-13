@@ -1,3 +1,4 @@
+'use client'
 import { Viber } from '../'
 
 export default {

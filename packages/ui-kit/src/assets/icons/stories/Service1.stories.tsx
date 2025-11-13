@@ -1,3 +1,4 @@
+'use client'
 import { Service1 } from '../'
 
 export default {

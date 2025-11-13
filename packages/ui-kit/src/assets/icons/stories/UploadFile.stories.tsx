@@ -1,3 +1,4 @@
+'use client'
 import { UploadFile } from '../'
 
 export default {

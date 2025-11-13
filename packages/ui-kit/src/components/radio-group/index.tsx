@@ -1,8 +1,14 @@
 'use client'
-import { ComponentPropsWithoutRef, ElementRef, forwardRef } from 'react'
+import {
+  ComponentPropsWithoutRef,
+  ElementRef,
+  ForwardRefExoticComponent,
+  RefAttributes,
+  forwardRef,
+} from 'react'
 
 import { Typography, TypographyProps } from '../typography'
-import { RadioGroup as RadioGroupHeadless } from '@headlessui/react'
+import { RadioGroup as RadioGroupHeadless, Radio } from '@headlessui/react'
 import { clsx } from 'clsx'
 
 import s from './radio-group.module.scss'
@@ -12,22 +18,27 @@ type Option = {
   value: number | string
 }
 
+type RadioGroupRootProps = ComponentPropsWithoutRef<typeof RadioGroupHeadless>
+
 export type RadioGroupProps = {
   disabled?: boolean
   errorMessage?: string
   errorMessageProps?: TypographyProps<'span'>
   /**The name used when using this component inside a form*/
   name?: string
-  onChange: () => void
+  onChange: (value: Option['value']) => void
   options: Option[]
   value: number | string
-} & ComponentPropsWithoutRef<'div'>
+} & Omit<RadioGroupRootProps, 'disabled' | 'value' | 'onChange' | 'defaultValue'>
 
 // НЕ УДАЛЯТЬ КОММЕНТ ПЕРЕД forwardRef - без него ломается tree shaking
 export const RadioGroup = /* @__PURE__ */ forwardRef<
   ElementRef<typeof RadioGroupHeadless>,
   RadioGroupProps
->(({ disabled, errorMessage, errorMessageProps, options, ...rest }, ref) => {
+>(function RadioGroupComponent(
+  { disabled, errorMessage, errorMessageProps, onChange, options, value, ...rest },
+  ref
+) {
   const classNames = {
     error: clsx(s.error, errorMessageProps?.className),
     icon: s.icon,
@@ -36,16 +47,12 @@ export const RadioGroup = /* @__PURE__ */ forwardRef<
   }
 
   return (
-    <RadioGroupHeadless disabled={disabled} {...rest} ref={ref}>
+    <RadioGroupHeadless {...rest} disabled={disabled} onChange={onChange} ref={ref} value={value}>
       {options.map(option => (
-        <RadioGroupHeadless.Option
-          className={classNames.option}
-          key={option.value}
-          value={option.value}
-        >
+        <Radio className={classNames.option} key={option.value} value={option.value}>
           <div className={classNames.icon} />
           <span className={classNames.label}>{option.label}</span>
-        </RadioGroupHeadless.Option>
+        </Radio>
       ))}
       {errorMessage && (
         <Typography.Error {...errorMessageProps} className={classNames.error}>
@@ -54,4 +61,6 @@ export const RadioGroup = /* @__PURE__ */ forwardRef<
       )}
     </RadioGroupHeadless>
   )
-})
+}) as ForwardRefExoticComponent<
+  RadioGroupProps & RefAttributes<ElementRef<typeof RadioGroupHeadless>>
+>

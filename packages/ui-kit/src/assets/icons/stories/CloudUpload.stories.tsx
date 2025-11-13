@@ -1,3 +1,4 @@
+'use client'
 import { CloudUpload } from '../'
 
 export default {

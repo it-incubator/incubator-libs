@@ -1,3 +1,4 @@
+'use client'
 import { StarHalf } from '../'
 
 export default {

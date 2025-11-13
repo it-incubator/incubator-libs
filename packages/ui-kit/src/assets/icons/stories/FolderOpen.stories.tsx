@@ -1,3 +1,4 @@
+'use client'
 import { FolderOpen } from '../'
 
 export default {

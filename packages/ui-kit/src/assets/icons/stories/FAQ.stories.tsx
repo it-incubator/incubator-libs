@@ -1,3 +1,4 @@
+'use client'
 import { FAQ } from '../'
 
 export default {

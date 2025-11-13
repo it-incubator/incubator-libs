@@ -1,3 +1,4 @@
+'use client'
 import { Moods } from '../'
 
 export default {

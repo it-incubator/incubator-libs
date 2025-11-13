@@ -1,3 +1,4 @@
+'use client'
 import { ArrowBack } from '../'
 
 export default {

@@ -1,3 +1,4 @@
+'use client'
 import { InfoFill } from '../'
 
 export default {

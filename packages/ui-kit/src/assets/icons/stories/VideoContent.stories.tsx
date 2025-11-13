@@ -1,3 +1,4 @@
+'use client'
 import { VideoContent } from '../'
 
 export default {

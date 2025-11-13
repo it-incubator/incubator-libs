@@ -1,3 +1,4 @@
+'use client'
 import { Reviews } from '../'
 
 export default {

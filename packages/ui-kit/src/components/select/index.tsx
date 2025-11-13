@@ -1,11 +1,10 @@
 'use client'
-import { CSSProperties, FC, Fragment, ReactNode, useMemo } from 'react'
+import { ReactNode, useMemo } from 'react'
 
 import { KeyboardArrowDown, Typography } from '../../'
 import { Label } from '../label'
 import { Scrollbar } from '../scrollbar'
-import { Listbox } from '@headlessui/react'
-import { Float } from '@headlessui-float/react'
+import { Listbox, ListboxButton, ListboxOption, ListboxOptions } from '@headlessui/react'
 import { clsx } from 'clsx'
 
 import s from './select.module.scss'
@@ -32,7 +31,7 @@ interface CommonProps {
   required?: boolean
   rootClassName?: string
   variant?: 'pagination' | 'primary' | 'secondary'
-  width?: CSSProperties['width']
+  width?: number | string
 }
 
 type ConditionalMultipleProps =
@@ -65,7 +64,11 @@ type ConditionalMultipleProps =
 
 export type SelectProps = CommonProps & ConditionalMultipleProps
 
-export const Select: FC<SelectProps> = ({
+type SingleValue = string | number
+type MultipleValue = Array<string> | Array<number>
+type SelectValue = SingleValue | MultipleValue
+
+export const Select = ({
   className,
   disabled,
   errorMessage,
@@ -81,83 +84,88 @@ export const Select: FC<SelectProps> = ({
   value,
   variant = 'primary',
   width = '100%',
-}) => {
+}: SelectProps) => {
   const isSecondary = variant === 'secondary'
   const showError = !!errorMessage && errorMessage.length > 0
 
   const optionsMap: Record<number | string, number | string> = useMemo(() => {
-    return options.reduce(
-      (acc, option) => {
-        acc[option.value] = option.label
+    return options.reduce((acc, option) => {
+      acc[option.value] = option.label
 
-        return acc
-      },
-      {} as Record<number | string, number | string>
-    )
+      return acc
+    }, {} as Record<number | string, number | string>)
   }, [options])
 
-  const classNames = {
-    content: clsx(s.content, isSecondary && s.secondary),
-    icon: clsx(s.icon, s[variant]),
-    item: clsx(s.item, s[variant]),
-    label: s.label,
-    popper: clsx(s.popper),
-    root: rootClassName,
-    scrollRoot: s.scrollRoot,
-    scrollThumb: s.scrollThumb,
-    scrollViewport: s.scrollViewport,
-    scrollbar: s.scrollbar,
-    trigger: clsx(s.trigger, showError && s.error, s[variant], className),
-    value: clsx(s.value),
-  }
   const selectedOptionsLabels = Array.isArray(value)
-    ? value.map(v => optionsMap[v]).join(', ')
+    ? value
+        .map(v => optionsMap[v])
+        .filter(
+          (labelValue): labelValue is string | number =>
+            labelValue !== undefined && labelValue !== null
+        )
+        .map(labelValue => String(labelValue))
+        .join(', ')
     : optionsMap[value]
 
   const rootStyles = { width }
+  const triggerClassName = clsx(s.trigger, showError && s.error, s[variant], className)
+  const iconClassName = clsx(s.icon, s[variant])
+  const itemClassName = clsx(s.item, s[variant])
+  const contentClassName = clsx(s.content, isSecondary && s.secondary)
+  const valueClassName = s.value
 
   return (
-    <Listbox {...{ disabled, multiple, name, onChange, value }}>
-      <div className={classNames.root} style={rootStyles}>
-        <Label label={label} required={required}>
-          <Float
-            adaptiveWidth
-            as={'div'}
-            flip={20}
-            floatingAs={Fragment}
-            placement={'bottom'}
-            portal={portal}
-          >
-            <Listbox.Button className={classNames.trigger} type={'button'}>
-              <span className={classNames.value}>{selectedOptionsLabels || placeholder}</span>
-              <span className={classNames.icon}>
-                <KeyboardArrowDown size={variant === 'pagination' ? 16 : 24} />
-              </span>
-            </Listbox.Button>
+    <Listbox
+      disabled={disabled}
+      multiple={multiple}
+      name={name}
+      onChange={onChange as (nextValue: SelectValue) => void}
+      value={value as SelectValue}
+    >
+      {({ open }) => (
+        <div className={rootClassName} style={rootStyles}>
+          <Label label={label} required={required}>
+            <div>
+              <ListboxButton
+                className={clsx(triggerClassName, open && s.triggerOpen)}
+                type={'button'}
+              >
+                <span className={valueClassName}>{selectedOptionsLabels || placeholder}</span>
+                <span className={clsx(iconClassName, open && s.iconOpen)}>
+                  <KeyboardArrowDown size={variant === 'pagination' ? 16 : 24} />
+                </span>
+              </ListboxButton>
 
-            <Listbox.Options as={'div'} className={classNames.content}>
-              <Scrollbar maxHeight={158}>
-                {options.map(option => {
-                  // todo: add checkboxes for multi-select
-                  return (
-                    <Listbox.Option
-                      as={'button'}
-                      className={classNames.item}
-                      disabled={option.disabled}
-                      key={option.value}
-                      type={'button'}
-                      value={option.value}
-                    >
-                      <span>{option.label}</span>
-                    </Listbox.Option>
-                  )
-                })}
-              </Scrollbar>
-            </Listbox.Options>
-          </Float>
-        </Label>
-        <>{showError && <Typography.Error>{errorMessage}</Typography.Error>}</>
-      </div>
+              <ListboxOptions
+                anchor={'bottom'}
+                as={'div'}
+                className={contentClassName}
+                modal={false}
+                portal={portal}
+              >
+                <Scrollbar maxHeight={158}>
+                  {options.map(option => {
+                    // todo: add checkboxes for multi-select
+                    return (
+                      <ListboxOption
+                        as={'button'}
+                        className={itemClassName}
+                        disabled={option.disabled}
+                        key={option.value}
+                        type={'button'}
+                        value={option.value}
+                      >
+                        <span>{option.label}</span>
+                      </ListboxOption>
+                    )
+                  })}
+                </Scrollbar>
+              </ListboxOptions>
+            </div>
+          </Label>
+          <>{showError && <Typography.Error>{errorMessage}</Typography.Error>}</>
+        </div>
+      )}
     </Listbox>
   )
 }

@@ -1,3 +1,4 @@
+'use client'
 import { DeleteForever } from '../'
 
 export default {

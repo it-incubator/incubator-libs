@@ -1,3 +1,4 @@
+'use client'
 import { ExplodingHead } from '../'
 
 export default {

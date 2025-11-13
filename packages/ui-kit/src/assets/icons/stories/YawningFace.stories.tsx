@@ -1,3 +1,4 @@
+'use client'
 import { YawningFace } from '../'
 
 export default {

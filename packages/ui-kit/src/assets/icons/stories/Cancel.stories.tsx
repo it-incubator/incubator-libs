@@ -1,3 +1,4 @@
+'use client'
 import { Cancel } from '../'
 
 export default {

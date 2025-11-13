@@ -1,5 +1,9 @@
+// This file has been automatically migrated to valid ESM format by Storybook.
+import { createRequire } from 'node:module'
 import { dirname, join } from 'path'
 import remarkGfm from 'remark-gfm'
+
+const require = createRequire(import.meta.url)
 
 const config = {
   stories: [
@@ -7,10 +11,9 @@ const config = {
     '../stories/**/*.stories.@(ts|tsx)',
     '../src/assets/icons/stories/**/*.stories.@(ts|tsx)',
   ],
+
   addons: [
     getAbsolutePath('@storybook/addon-links'),
-    getAbsolutePath('@storybook/addon-interactions'),
-    getAbsolutePath('@storybook/addon-essentials'),
     {
       name: getAbsolutePath('@storybook/addon-docs'),
       options: {
@@ -22,20 +25,29 @@ const config = {
       },
     },
   ],
+
   framework: {
     name: getAbsolutePath('@storybook/react-vite'),
     options: {},
   },
+
   features: {
     storyStoreV7: true,
   },
-  docs: {
-    autodocs: true,
-  },
-  viteFinal: config => {
-    config.build = config.build || {}
-    config.build.sourcemap = false
-    return config
+
+  async viteFinal(cfg, { configType }) {
+    const mode = configType === 'DEVELOPMENT' ? 'development' : 'production'
+
+    cfg.define = {
+      ...(cfg.define ?? {}),
+      __DEV__: mode === 'development' ? 'true' : 'false',
+      'process.env.NODE_ENV': JSON.stringify(mode),
+    }
+
+    cfg.build = cfg.build ?? {}
+    cfg.build.sourcemap = false
+
+    return cfg
   },
 }
 export default config

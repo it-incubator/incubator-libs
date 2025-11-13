@@ -1,3 +1,4 @@
+'use client'
 import { SolutionLibrary } from '../'
 
 export default {

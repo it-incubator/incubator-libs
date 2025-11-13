@@ -1,3 +1,4 @@
+'use client'
 import { CareerBooster } from '../'
 
 export default {

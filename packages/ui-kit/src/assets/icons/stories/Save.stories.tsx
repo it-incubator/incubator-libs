@@ -1,3 +1,4 @@
+'use client'
 import { Save } from '../'
 
 export default {

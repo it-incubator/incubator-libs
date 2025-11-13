@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import { Meta, StoryObj } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react-vite'
 
 import { Rating } from '../../../../src'
 import { VerticalContainer } from '../../../../storybook-utils/components/containers/vertical'

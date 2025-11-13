@@ -1,4 +1,4 @@
-import { Meta } from '@storybook/react'
+import { Meta } from '@storybook/react-vite'
 
 import { Dropdown, ToolbarItemWithIcon, DeleteForever, Edit, Tooltip } from '../../../../src'
 import { useDarkMode } from '../../../../storybook-utils/hooks/use-dark-mode'

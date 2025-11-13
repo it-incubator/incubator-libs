@@ -1,3 +1,4 @@
+'use client'
 import { TaskCheck } from '../'
 
 export default {

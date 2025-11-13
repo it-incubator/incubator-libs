@@ -1,3 +1,4 @@
+'use client'
 import { DizzyFace } from '../'
 
 export default {

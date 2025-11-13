@@ -1,3 +1,4 @@
+'use client'
 import { ArrowDropDown } from '../'
 
 export default {

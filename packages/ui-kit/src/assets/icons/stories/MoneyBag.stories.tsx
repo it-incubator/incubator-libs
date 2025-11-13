@@ -1,3 +1,4 @@
+'use client'
 import { MoneyBag } from '../'
 
 export default {

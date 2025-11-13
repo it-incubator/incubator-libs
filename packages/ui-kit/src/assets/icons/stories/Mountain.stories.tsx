@@ -1,3 +1,4 @@
+'use client'
 import { Mountain } from '../'
 
 export default {

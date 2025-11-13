@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import { Meta } from '@storybook/react'
+import { Meta } from '@storybook/react-vite'
 
 import { Button, FileUploader, FileWithPreview } from '../../../../src'
 import { useDarkMode } from '../../../../storybook-utils/hooks/use-dark-mode'

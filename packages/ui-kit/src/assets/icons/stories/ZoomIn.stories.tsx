@@ -1,3 +1,4 @@
+'use client'
 import { ZoomIn } from '../'
 
 export default {

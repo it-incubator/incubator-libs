@@ -1,3 +1,4 @@
+'use client'
 import { Js } from '../'
 
 export default {

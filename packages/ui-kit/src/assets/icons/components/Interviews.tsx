@@ -1,3 +1,4 @@
+'use client'
 import { IconProps, IconWrapper } from '../IconWrapper'
 
 const Interviews = (allProps: IconProps) => {

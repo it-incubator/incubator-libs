@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 import { MessageInput } from '../../../../../src'
-import { Meta, StoryObj } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react-vite'
 
 const meta = {
   component: MessageInput,

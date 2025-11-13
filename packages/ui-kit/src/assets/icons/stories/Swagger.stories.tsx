@@ -1,3 +1,4 @@
+'use client'
 import { Swagger } from '../'
 
 export default {

@@ -1,3 +1,4 @@
+'use client'
 import { KeyboardArrowLeft } from '../'
 
 export default {

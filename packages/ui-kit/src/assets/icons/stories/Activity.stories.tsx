@@ -1,3 +1,4 @@
+'use client'
 import { Activity } from '../'
 
 export default {

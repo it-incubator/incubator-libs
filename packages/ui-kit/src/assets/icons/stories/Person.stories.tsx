@@ -1,3 +1,4 @@
+'use client'
 import { Person } from '../'
 
 export default {

@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { Button, Collapsible } from '../../../../src'
 import InfoIcon from '../../../../src/assets/icons/components/InfoFill'
 import { VerticalContainer } from '../../../../storybook-utils/components/containers/vertical'
-import { Meta } from '@storybook/react'
+import { Meta } from '@storybook/react-vite'
 
 export default {
   component: Collapsible,

@@ -1,3 +1,4 @@
+'use client'
 import { Help2Debug } from '../'
 
 export default {

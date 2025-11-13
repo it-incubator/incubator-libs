@@ -1,3 +1,4 @@
+'use client'
 export { default as Activity } from './components/Activity'
 export { default as Add } from './components/Add'
 export { default as AddCircleOutline } from './components/AddCircleOutline'

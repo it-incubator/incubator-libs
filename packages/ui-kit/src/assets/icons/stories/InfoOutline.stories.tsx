@@ -1,3 +1,4 @@
+'use client'
 import { InfoOutline } from '../'
 
 export default {

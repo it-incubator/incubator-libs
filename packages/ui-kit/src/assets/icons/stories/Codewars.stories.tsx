@@ -1,3 +1,4 @@
+'use client'
 import { Codewars } from '../'
 
 export default {

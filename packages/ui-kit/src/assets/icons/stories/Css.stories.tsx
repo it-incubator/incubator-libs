@@ -1,3 +1,4 @@
+'use client'
 import { Css } from '../'
 
 export default {

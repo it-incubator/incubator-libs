@@ -1,3 +1,4 @@
+'use client'
 import { Roadmap } from '../'
 
 export default {

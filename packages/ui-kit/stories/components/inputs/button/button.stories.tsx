@@ -1,5 +1,5 @@
 import Button from '../../../../src/components/button/button'
-import { Meta } from '@storybook/react'
+import { Meta } from '@storybook/react-vite'
 
 export default {
   argTypes: {

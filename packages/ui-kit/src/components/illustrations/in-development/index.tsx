@@ -1,3 +1,4 @@
+'use client'
 /* eslint-disable max-lines */
 
 import { SVGProps } from 'react'

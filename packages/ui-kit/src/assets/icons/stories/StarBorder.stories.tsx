@@ -1,3 +1,4 @@
+'use client'
 import { StarBorder } from '../'
 
 export default {

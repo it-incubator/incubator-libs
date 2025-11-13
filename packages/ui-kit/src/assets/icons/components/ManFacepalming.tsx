@@ -1,3 +1,4 @@
+'use client'
 import { IconProps, IconWrapper } from '../IconWrapper'
 
 const ManFacepalming = (allProps: IconProps) => {

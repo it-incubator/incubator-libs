@@ -1,3 +1,4 @@
+'use client'
 import { ContentCopy } from '../'
 
 export default {

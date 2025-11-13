@@ -1,3 +1,4 @@
+'use client'
 import { Telegram } from '../'
 
 export default {

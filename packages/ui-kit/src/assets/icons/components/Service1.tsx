@@ -1,3 +1,4 @@
+'use client'
 import { IconProps, IconWrapper } from '../IconWrapper'
 
 const Service1 = (allProps: IconProps) => {

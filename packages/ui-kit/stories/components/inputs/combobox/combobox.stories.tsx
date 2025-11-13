@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 
 import { Combobox, Modal } from '../../../../src'
 import { VerticalContainer } from '../../../../storybook-utils/components/containers/vertical'
-import { Meta } from '@storybook/react'
+import { Meta } from '@storybook/react-vite'
 
 const options = [
   {

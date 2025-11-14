@@ -1,12 +1,13 @@
 'use client'
 import { CSSProperties, ComponentPropsWithoutRef, FC, ReactNode, useState } from 'react'
 
-import { MenuDots, Typography } from '../../'
 import * as DropdownMenuRadix from '@radix-ui/react-dropdown-menu'
 import { clsx } from 'clsx'
 import { AnimatePresence, MotionProps, Variants, motion } from 'framer-motion'
 
 import s from './toolbar.module.scss'
+
+import { MenuDots, Typography } from '../../'
 
 export type ToolbarProps = {
   /** The preferred content alignment against the trigger. */

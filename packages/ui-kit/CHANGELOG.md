@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 2.0.2
+### Patch Changes
+
+- update @radix-ui/react-dropdown-menu
+
 ## 2.0.1
 ### Patch Changes
 

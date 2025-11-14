@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 2.0.3
+### Patch Changes
+
+- update radix-ui primitives
+
 ## 2.0.2
 ### Patch Changes
 

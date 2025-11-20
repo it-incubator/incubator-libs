@@ -1,10 +1,12 @@
+'use client'
 import { ComponentProps, ReactElement, useRef } from 'react'
 
-import { Scrollbar } from '../scrollbar'
-import { CopyToClipboard } from './copy-to-clipboard'
 import { clsx } from 'clsx'
 
 import styles from './pre.module.scss'
+
+import { Scrollbar } from '../scrollbar'
+import { CopyToClipboard } from './copy-to-clipboard'
 export const Pre = ({
   children,
   className,

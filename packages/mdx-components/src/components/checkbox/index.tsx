@@ -1,3 +1,4 @@
+'use client'
 import { FC } from 'react'
 
 import * as CheckboxRadix from '@radix-ui/react-checkbox'

@@ -1,3 +1,4 @@
+'use client'
 import { Children, FC, Fragment, ReactElement, ReactNode } from 'react'
 
 import * as TabsRadixUI from '@radix-ui/react-tabs'

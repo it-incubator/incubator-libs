@@ -1,9 +1,10 @@
 import { FC, ReactNode } from 'react'
 
-import { InfoOutline } from '../../assets/icons'
 import { clsx } from 'clsx'
 
 import s from './callout.module.scss'
+
+import { InfoOutline } from '../../assets/icons'
 
 const TypeToEmoji = {
   default: '💡',

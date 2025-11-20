@@ -1,12 +1,14 @@
+'use client'
 import { ComponentPropsWithoutRef, ReactElement } from 'react'
+
+import { getMDXComponent } from 'mdx-bundler/client'
+import { MDXContentProps } from 'mdx-bundler/dist/client'
 
 import { Callout, Card, Cards, FileTree, Steps, Tabs } from '..'
 import { Checkbox } from '../checkbox'
 import { Code } from '../code'
 import { Pre } from '../pre'
 import { Scrollbar } from '../scrollbar'
-import { getMDXComponent } from 'mdx-bundler/client'
-import { MDXContentProps } from 'mdx-bundler/dist/client'
 
 const mdxComponents = {
   Callout,

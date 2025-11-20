@@ -1,3 +1,4 @@
+'use client'
 import {
   ReactElement,
   ReactNode,
@@ -8,10 +9,11 @@ import {
   useState,
 } from 'react'
 
-import { FileIcon, FolderIcon, FolderOpen } from '../../assets/icons'
 import { clsx } from 'clsx'
 
 import s from './file-tree.module.scss'
+
+import { FileIcon, FolderIcon, FolderOpen } from '../../assets/icons'
 
 export type FileTreeProps = {
   children: ReactNode

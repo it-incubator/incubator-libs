@@ -1,9 +1,10 @@
+'use client'
 import { ComponentProps, ReactElement, useCallback, useEffect, useState } from 'react'
+
+import s from './copy-to-clipboard.module.scss'
 
 import { CheckIcon } from './check'
 import { CopyIcon } from './copy'
-
-import s from './copy-to-clipboard.module.scss'
 
 export const CopyToClipboard = ({
   getValue,

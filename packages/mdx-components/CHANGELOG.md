@@ -1,5 +1,10 @@
 # @it-incubator/mdx-components
 
+## 0.0.16
+### Patch Changes
+
+- update vite.confit.ts for react 19, add use client'
+
 ## 0.0.15
 ### Patch Changes
 

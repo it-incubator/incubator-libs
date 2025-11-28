@@ -155,6 +155,7 @@
 
 .content {
   overflow: hidden;
+  z-index: var(--z-index-modal-content);
 
   width: var(--button-width);
   background-color: var(--color-bg-element);

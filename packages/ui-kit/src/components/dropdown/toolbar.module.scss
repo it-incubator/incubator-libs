@@ -17,6 +17,7 @@
 
 .content {
   position: relative;
+  z-index: var(--z-index-modal-content);
 
   min-width: 134px;
   padding: 10px 0;

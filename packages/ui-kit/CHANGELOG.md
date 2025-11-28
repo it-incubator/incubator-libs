@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 2.0.4
+### Patch Changes
+
+- change select and dropdown content z-index
+
 ## 2.0.3
 ### Patch Changes
 

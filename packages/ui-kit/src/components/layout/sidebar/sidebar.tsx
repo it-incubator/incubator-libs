@@ -1,10 +1,11 @@
 'use client'
 import { ComponentProps, ReactNode } from 'react'
 
-import { Scrollbar, ScrollbarProps } from '../../../'
 import { clsx } from 'clsx'
 
 import s from './sidebar.module.scss'
+
+import { Scrollbar, ScrollbarProps } from '../../../'
 
 export type SidebarProps = {
   children: ReactNode

@@ -1,12 +1,13 @@
 'use client'
 import { ComponentProps, ReactNode, useState } from 'react'
 
-import { InfoOutline } from '../../'
 import * as TooltipRadix from '@radix-ui/react-tooltip'
 import { clsx } from 'clsx'
 import { AnimatePresence, motion } from 'framer-motion'
 
 import s from './tooltip.module.scss'
+
+import { InfoOutline } from '../../'
 
 type CommonProps = {
   children: ReactNode

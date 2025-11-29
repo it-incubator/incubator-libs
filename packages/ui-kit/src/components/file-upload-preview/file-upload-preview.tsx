@@ -1,14 +1,14 @@
 'use client'
 import { useEffect, useState } from 'react'
 
+import s from './file-upload-preview.module.scss'
+
 import { Cancel, UploadFile } from '../../assets/icons'
 import { getFileSize } from '../../utils'
 import { FileWithPreview } from '../dropzone'
 import { ImagePreview } from '../image-preview'
 import { Progress } from '../progress'
 import { Typography } from '../typography'
-
-import s from './file-upload-preview.module.scss'
 
 export type FileUploadPreviewProps = {
   files: Array<File | FileWithPreview> | undefined

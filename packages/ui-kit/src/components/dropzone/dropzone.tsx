@@ -5,10 +5,10 @@ import ReactDropzone, {
   type DropzoneProps as ReactDropzoneProps,
 } from 'react-dropzone'
 
+import s from './dropzone.module.scss'
+
 import { CloudUpload } from '../../assets/icons'
 import { Typography } from '../typography'
-
-import s from './dropzone.module.scss'
 
 export interface FileWithPreview extends File {
   preview: string
@@ -50,8 +50,8 @@ export const Dropzone = ({
           <input {...getInputProps()} />
           <CloudUpload size={72} />
           {isDragActive
-            ? dragActiveInfo ?? <p>Перетащите файлы сюда...</p>
-            : dragNotActiveInfo ?? (
+            ? (dragActiveInfo ?? <p>Перетащите файлы сюда...</p>)
+            : (dragNotActiveInfo ?? (
                 <>
                   <Typography.Body2 mt={'3px'}>
                     Перетащите файлы или{' '}
@@ -63,7 +63,7 @@ export const Dropzone = ({
                     </Typography.Caption>
                   )}
                 </>
-              )}
+              ))}
         </div>
       )}
     </ReactDropzone>

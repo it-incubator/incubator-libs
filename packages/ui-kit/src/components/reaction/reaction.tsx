@@ -1,10 +1,11 @@
 'use client'
 import { ReactNode } from 'react'
 
-import { Tag, TagProps } from '../tag'
 import { clsx } from 'clsx'
 
 import s from './reaction.module.scss'
+
+import { Tag, TagProps } from '../tag'
 
 export type ReactionProps = Omit<TagProps, 'children'> & {
   count?: number

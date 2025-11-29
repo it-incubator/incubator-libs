@@ -1,13 +1,14 @@
 'use client'
 import { ComponentProps, KeyboardEvent, ReactNode, forwardRef } from 'react'
 
+import { clsx } from 'clsx'
+
+import s from './text-field.module.scss'
+
 import { Search as SearchIcon, Typography } from '../../'
 import { Close } from '../../assets/icons'
 import { Label } from '../label'
 import { useGetId } from './useGetId'
-import { clsx } from 'clsx'
-
-import s from './text-field.module.scss'
 
 export type TextFieldProps = {
   errorMessage?: string

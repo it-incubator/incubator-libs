@@ -1,13 +1,14 @@
 'use client'
 import { ReactNode, useMemo } from 'react'
 
-import { KeyboardArrowDown, Typography } from '../../'
-import { Label } from '../label'
-import { Scrollbar } from '../scrollbar'
 import { Listbox, ListboxButton, ListboxOption, ListboxOptions } from '@headlessui/react'
 import { clsx } from 'clsx'
 
 import s from './select.module.scss'
+
+import { KeyboardArrowDown, Typography } from '../../'
+import { Label } from '../label'
+import { Scrollbar } from '../scrollbar'
 
 type Option =
   | { disabled?: boolean; label: number; value: number }
@@ -89,11 +90,14 @@ export const Select = ({
   const showError = !!errorMessage && errorMessage.length > 0
 
   const optionsMap: Record<number | string, number | string> = useMemo(() => {
-    return options.reduce((acc, option) => {
-      acc[option.value] = option.label
+    return options.reduce(
+      (acc, option) => {
+        acc[option.value] = option.label
 
-      return acc
-    }, {} as Record<number | string, number | string>)
+        return acc
+      },
+      {} as Record<number | string, number | string>
+    )
   }, [options])
 
   const selectedOptionsLabels = Array.isArray(value)

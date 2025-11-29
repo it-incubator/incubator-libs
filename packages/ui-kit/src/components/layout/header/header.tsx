@@ -1,10 +1,11 @@
 'use client'
 import { ComponentProps } from 'react'
 
-import { Loader } from '../../loader'
 import { clsx } from 'clsx'
 
 import s from './header.module.scss'
+
+import { Loader } from '../../loader'
 
 export type HeaderProps = ComponentProps<'header'> & {
   isLoading?: boolean

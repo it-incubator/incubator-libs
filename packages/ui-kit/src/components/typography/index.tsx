@@ -1,11 +1,4 @@
-import {
-  CSSProperties,
-  ComponentProps,
-  ElementType,
-  FC,
-  JSXElementConstructor,
-  ReactNode,
-} from 'react'
+import { CSSProperties, ComponentProps, ElementType, JSXElementConstructor, ReactNode } from 'react'
 
 import { clsx } from 'clsx'
 import { JSX } from 'react/jsx-runtime'
@@ -30,10 +23,21 @@ export type TypographyProps<Ttag extends ReactTag> = {
   my?: CSSProperties['marginLeft']
 } & PropsOf<Ttag>
 
-const createTypographyComponent = <T extends ReactTag>(
-  basicClassName: Component
-): FC<TypographyProps<T>> => {
-  return ({ children, className, color, component, mb, ml, mr, mt, mx, my, style, ...rest }) => {
+const createTypographyComponent = <T extends ReactTag>(basicClassName: Component) => {
+  return ({
+    children,
+    className,
+    color,
+    component,
+    mb,
+    ml,
+    mr,
+    mt,
+    mx,
+    my,
+    style,
+    ...rest
+  }: TypographyProps<T>) => {
     const Component = component || COMPONENTS[basicClassName] || 'span'
 
     const classNames = clsx(`uik_typography-${basicClassName}`, className)

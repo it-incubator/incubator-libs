@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 2.0.6
+### Patch Changes
+
+- remove FC from Typography component
+
 ## 2.0.5
 ### Patch Changes
 

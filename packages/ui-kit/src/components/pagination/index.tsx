@@ -1,12 +1,13 @@
 'use client'
 import { FC } from 'react'
 
-import { KeyboardArrowLeft, KeyboardArrowRight } from '../../'
-import { Select } from '../select'
-import { usePagination } from './usePagination'
 import { clsx } from 'clsx'
 
 import s from './pagination.module.scss'
+
+import { KeyboardArrowLeft, KeyboardArrowRight } from '../../'
+import { Select } from '../select'
+import { usePagination } from './usePagination'
 
 type PaginationConditionals =
   | {

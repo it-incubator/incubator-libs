@@ -3,12 +3,13 @@ import { ComponentPropsWithoutRef, FC, ReactNode, useEffect, useState } from 're
 import { flushSync } from 'react-dom'
 import useMeasure from 'react-use-measure'
 
-import { KeyboardArrowDown, Typography } from '../../'
 import * as CollapsibleRadix from '@radix-ui/react-collapsible'
 import { clsx } from 'clsx'
 import { motion } from 'framer-motion'
 
 import s from './collapsible.module.scss'
+
+import { KeyboardArrowDown, Typography } from '../../'
 
 export type CollapsibleProps = {
   children: ReactNode

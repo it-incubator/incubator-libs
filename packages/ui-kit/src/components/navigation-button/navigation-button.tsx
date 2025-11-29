@@ -46,7 +46,7 @@ function NavigationButtonPolymorph(
 }
 
 export const NavigationButton = forwardRef(NavigationButtonPolymorph) as <
-  T extends ElementType = 'button'
+  T extends ElementType = 'button',
 >(
   props: NavigationButtonProps<T> &
     Omit<ComponentPropsWithoutRef<T>, keyof NavigationButtonProps<T>> & {

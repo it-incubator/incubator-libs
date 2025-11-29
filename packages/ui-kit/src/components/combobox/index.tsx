@@ -1,8 +1,6 @@
 'use client'
 import { ChangeEvent, MouseEventHandler, ReactNode } from 'react'
 
-import { Close, KeyboardArrowDown, Scrollbar, Spinner, Typography } from '../../'
-import { Label } from '../label'
 import {
   Combobox as HeadlessCombobox,
   ComboboxButton,
@@ -15,6 +13,9 @@ import { clsx } from 'clsx'
 import selectStyle from '../select/select.module.scss'
 import textFieldStyle from '../text-field/text-field.module.scss'
 import s from './combobox.module.scss'
+
+import { Close, KeyboardArrowDown, Scrollbar, Spinner, Typography } from '../../'
+import { Label } from '../label'
 
 type Option<T> = {
   label: string

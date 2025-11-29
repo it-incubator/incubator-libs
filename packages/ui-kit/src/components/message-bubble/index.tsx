@@ -1,10 +1,11 @@
 'use client'
 import { CSSProperties, ComponentProps } from 'react'
 
-import { Typography } from '../typography'
 import { clsx } from 'clsx'
 
 import s from './message-bubble.module.scss'
+
+import { Typography } from '../typography'
 
 type ShowUsername = 'always' | 'first' | 'never'
 

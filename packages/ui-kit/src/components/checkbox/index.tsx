@@ -1,13 +1,14 @@
 'use client'
 import { FC, ReactNode } from 'react'
 
-import { CheckBoxSelected } from '../../'
 import * as CheckboxRadix from '@radix-ui/react-checkbox'
 import * as LabelRadix from '@radix-ui/react-label'
 import { clsx } from 'clsx'
 import { AnimatePresence, motion } from 'framer-motion'
 
 import s from './checkbox.module.scss'
+
+import { CheckBoxSelected } from '../../'
 
 export type CheckboxProps = {
   checked: boolean

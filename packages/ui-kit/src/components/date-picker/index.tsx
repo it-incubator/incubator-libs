@@ -9,12 +9,13 @@ const RDPC = (((RDP.default as any).default as any) ||
   (RDP.default as any) ||
   (RDP as any)) as typeof RDP.default
 
-import { CalendarToday, KeyboardArrowLeft, KeyboardArrowRight, Label } from '../../index'
 import { format } from 'date-fns'
 import { ru } from 'date-fns/locale'
 
 import textFieldStyles from './../text-field/text-field.module.scss'
 import s from './date-picker.module.scss'
+
+import { CalendarToday, KeyboardArrowLeft, KeyboardArrowRight, Label } from '../../index'
 
 export type DatePickerProps = {
   disabled?: boolean

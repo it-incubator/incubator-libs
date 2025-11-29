@@ -1,12 +1,13 @@
 'use client'
 import { FC } from 'react'
 
-import { useDeviceType } from '../../hooks'
-import { Button } from '../button'
-import { Modal, ModalProps } from '../modal'
 import { clsx } from 'clsx'
 
 import s from './dialog.module.scss'
+
+import { useDeviceType } from '../../hooks'
+import { Button } from '../button'
+import { Modal, ModalProps } from '../modal'
 
 export type DialogProps = {
   cancelButtonText?: string

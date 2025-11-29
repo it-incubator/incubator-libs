@@ -1,7 +1,6 @@
 'use client'
 import { ComponentProps, FC } from 'react'
 
-import { Close } from '../..'
 import {
   Dialog,
   DialogClose,
@@ -14,6 +13,8 @@ import { clsx } from 'clsx'
 import { AnimatePresence, motion } from 'framer-motion'
 
 import s from './modal.module.scss'
+
+import { Close } from '../..'
 
 export type ModalSize = 'lg' | 'md' | 'sm'
 

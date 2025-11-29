@@ -1,10 +1,10 @@
 'use client'
+import s from './file-uploader.module.scss'
+
 import { Dialog, DialogProps } from '../dialog'
 import { Dropzone, DropzoneProps } from '../dropzone'
 import { FileUploadPreview, FileUploadPreviewProps } from '../file-upload-preview'
 import { LoadingOverlay } from '../loading-overlay'
-
-import s from './file-uploader.module.scss'
 
 export type FileUploaderProps = {
   additionalInfo?: DropzoneProps['additionalInfo']

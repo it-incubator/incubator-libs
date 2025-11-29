@@ -164,7 +164,7 @@ export const RatingPrimitive: FC<Props> = ({
     symbolNodes.push(
       <RatingSymbol
         activeIcon={
-          shouldDisplayPlaceholder ? placeholder[i % full.length] ?? [] : full[i % full.length]
+          shouldDisplayPlaceholder ? (placeholder[i % full.length] ?? []) : full[i % full.length]
         }
         direction={direction}
         inactiveIcon={empty[i % empty.length]}

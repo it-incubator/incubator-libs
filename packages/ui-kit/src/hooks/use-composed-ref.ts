@@ -26,6 +26,7 @@ export const useComposedRef = <T extends HTMLElement>(
       libRef.current = instance
 
       const prevRef = prevUserRef.current
+
       if (prevRef) {
         updateRef(prevRef, null)
       }

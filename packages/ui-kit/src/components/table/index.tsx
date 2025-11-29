@@ -1,10 +1,11 @@
 'use client'
 import { ComponentProps, FC } from 'react'
 
-import { Typography } from '../typography'
 import { clsx } from 'clsx'
 
 import s from './table.module.scss'
+
+import { Typography } from '../typography'
 
 export type RootProps = ComponentProps<'table'>
 

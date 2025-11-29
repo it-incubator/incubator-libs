@@ -1,11 +1,12 @@
 'use client'
 import { ComponentPropsWithoutRef, ElementRef, forwardRef } from 'react'
 
-import { TextareaAutosize, TextareaAutosizeProps } from '../textarea-autosize'
-import { SendMessageIcon } from './send-message-icon'
 import { clsx } from 'clsx'
 
 import s from './message-input.module.scss'
+
+import { TextareaAutosize, TextareaAutosizeProps } from '../textarea-autosize'
+import { SendMessageIcon } from './send-message-icon'
 
 export type MessageInputProps = {
   boxClassName?: string

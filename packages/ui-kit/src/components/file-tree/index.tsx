@@ -9,10 +9,11 @@ import {
   useState,
 } from 'react'
 
-import { File as FileIcon, FolderClosed, FolderOpen } from '../../assets/icons'
 import { clsx } from 'clsx'
 
 import s from './file-tree.module.scss'
+
+import { File as FileIcon, FolderClosed, FolderOpen } from '../../assets/icons'
 
 export type FileTreeProps = {
   children: ReactNode

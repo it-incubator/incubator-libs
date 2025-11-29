@@ -1,7 +1,7 @@
 'use client'
-import { Spinner } from '../spinner'
-
 import s from './loading-overlay.module.scss'
+
+import { Spinner } from '../spinner'
 export const LoadingOverlay = () => {
   return (
     <div className={s.backdrop}>

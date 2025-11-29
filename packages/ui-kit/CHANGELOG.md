@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 2.0.8
+### Patch Changes
+
+- fix css export
+
 ## 2.0.7
 ### Patch Changes
 

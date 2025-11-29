@@ -1,6 +1,6 @@
 {
   "name": "@it-incubator/ui-kit",
-  "version": "2.0.7",
+  "version": "2.0.8",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "type": "module",
@@ -89,9 +89,15 @@
   },
   "exports": {
     ".": {
-      "react-server": "./dist/server.js",
+      "react-server": {
+        "types": "./dist/server.d.ts",
+        "default": "./dist/server.js"
+      },
+      "types": "./dist/index.d.ts",
       "default": "./dist/index.js"
-    }
+    },
+    "./dist/style.css": "./dist/style.css",
+    "./style.css": "./dist/style.css"
   },
   "eslintignore": [
     "/src/assets/icons/components/*.tsx"

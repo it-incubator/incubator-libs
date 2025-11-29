@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 2.0.5
+### Patch Changes
+
+- remove some 'use client'
+
 ## 2.0.4
 ### Patch Changes
 

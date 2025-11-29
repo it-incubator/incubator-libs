@@ -1,4 +1,3 @@
-'use client'
 import { IconProps, IconWrapper } from '../IconWrapper'
 
 const PlayCircle = (allProps: IconProps) => {

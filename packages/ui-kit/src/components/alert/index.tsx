@@ -1,11 +1,11 @@
-'use client'
 import { ComponentProps, FC, ReactNode } from 'react'
 
-import { Cancel, InfoFill } from '../..'
-import { Card } from '../card'
 import { clsx } from 'clsx'
 
 import s from './alert.module.scss'
+
+import { Cancel, InfoFill } from '../..'
+import { Card } from '../card'
 
 export type AlertProps = {
   children: ReactNode

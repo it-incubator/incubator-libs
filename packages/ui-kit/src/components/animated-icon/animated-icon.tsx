@@ -1,11 +1,12 @@
 'use client'
 import { ComponentPropsWithoutRef, ReactElement } from 'react'
 
-import { InfoOutline } from '../../assets/icons'
-import { IconProps } from '../../assets/icons/IconWrapper'
 import { motion } from 'framer-motion'
 
 import s from './animated-icon.module.scss'
+
+import { InfoOutline } from '../../assets/icons'
+import { IconProps } from '../../assets/icons/IconWrapper'
 
 export type AnimatedIconProps = {
   enableAnimation?: boolean

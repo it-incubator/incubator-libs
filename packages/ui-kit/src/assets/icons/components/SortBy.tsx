@@ -1,4 +1,3 @@
-'use client'
 import { IconProps, IconWrapper } from '../IconWrapper'
 
 const SortBy = (allProps: IconProps) => {

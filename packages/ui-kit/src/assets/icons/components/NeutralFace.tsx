@@ -1,4 +1,3 @@
-'use client'
 import { IconProps, IconWrapper } from '../IconWrapper'
 
 const NeutralFace = (allProps: IconProps) => {

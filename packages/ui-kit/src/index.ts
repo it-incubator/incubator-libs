@@ -1,4 +1,3 @@
-'use client'
 import { clsx } from 'clsx'
 
 import 'react-datepicker/dist/react-datepicker.min.css'

@@ -1,16 +1,18 @@
 import { resolve } from 'path'
 
-import { dependencies, devDependencies, peerDependencies } from './package.json'
 import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
+
+import { dependencies, devDependencies, peerDependencies } from './package.json'
 // https://vitejs.dev/config/
 export default defineConfig({
   build: {
     lib: {
-      // Could also be a dictionary or array of multiple entry points
-      entry: resolve(__dirname, 'src/index.ts'),
-      // the proper extensions will be added
-      fileName: 'index',
+      // Multiple entry points: main bundle and React Server Components-safe bundle
+      entry: {
+        index: resolve(__dirname, 'src/index.ts'),
+        server: resolve(__dirname, 'src/server.ts'),
+      },
       formats: ['es'],
       name: '@it-incubator/ui-kit',
     },

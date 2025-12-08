@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 2.0.10
+### Patch Changes
+
+- fix checkbox color
+
 ## 2.0.9
 ### Patch Changes
 

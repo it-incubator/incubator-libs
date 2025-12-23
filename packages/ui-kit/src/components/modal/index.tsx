@@ -10,7 +10,7 @@ import {
   DialogTitle,
 } from '@radix-ui/react-dialog'
 import { clsx } from 'clsx'
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, motion, Variants } from 'framer-motion'
 
 import s from './modal.module.scss'
 
@@ -53,7 +53,7 @@ const dropIn = {
     x: '-50%',
     y: '-50%',
   },
-}
+} satisfies Variants
 
 export const Modal: FC<ModalProps> = ({
   children,

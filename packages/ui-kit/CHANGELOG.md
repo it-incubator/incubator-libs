@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 2.0.11
+### Patch Changes
+
+- upgrade react-toastify
+
 ## 2.0.10
 ### Patch Changes
 

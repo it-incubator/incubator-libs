@@ -1,5 +1,4 @@
 import './theme-block.scss'
-import 'react-toastify/dist/ReactToastify.min.css'
 import '../src/styles/index.scss'
 import { DecoratorFn } from '@storybook/react-vite'
 import { clsx } from 'clsx'
@@ -71,4 +70,4 @@ export const globalTypes = {
 }
 
 export const decorators = [withTheme]
-export const tags = ['autodocs'];
+export const tags = ['autodocs']

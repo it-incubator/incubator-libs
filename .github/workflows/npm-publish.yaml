@@ -8,8 +8,11 @@ run-name: Publish npm packages
 jobs:
   deploy:
     uses: it-incubator/ci-cd-pipelines/.github/workflows/npm-package-publish.yaml@master
+    permissions:
+      id-token: write  # Required for OIDC
+      contents: read
     with:
-      node_version: 22
+      node_version: 24
       build_command: build
       environment: production
     secrets:

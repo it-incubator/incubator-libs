@@ -1,7 +1,7 @@
 'use client'
 import { ComponentPropsWithoutRef, ReactElement } from 'react'
 
-import { motion } from 'framer-motion'
+import { motion, Transition } from 'framer-motion'
 
 import s from './animated-icon.module.scss'
 
@@ -15,7 +15,7 @@ export type AnimatedIconProps = {
 export const AnimatedIcon = ({ enableAnimation = true, renderIcon }: AnimatedIconProps) => {
   const duration = 1.4
   const initial = { x: '-50%', y: '-50%' }
-  const transition = { duration, repeat: Infinity, type: 'keyframes' }
+  const transition: Transition = { duration, repeat: Infinity, type: 'keyframes' }
 
   return (
     <div className={s.container}>

@@ -1,5 +1,5 @@
 'use client'
-import { ComponentPropsWithoutRef, ReactElement } from 'react'
+import { ComponentPropsWithoutRef, ComponentType, ReactElement } from 'react'
 
 import { getMDXComponent } from 'mdx-bundler/client'
 import { MDXContentProps } from 'mdx-bundler/dist/client'
@@ -25,7 +25,9 @@ export type MdxComponentProps = {
   onImageClick?: (src: string) => void
 }
 export const MdxComponent = ({ code, components, onImageClick }: MdxComponentProps) => {
-  const Component = getMDXComponent(code, { components: mdxComponents })
+  const Component = getMDXComponent(code, {
+    components: mdxComponents,
+  }) as ComponentType<MDXContentProps>
 
   return (
     <Component

@@ -1,7 +1,6 @@
 import { clsx } from 'clsx'
 
 import 'react-datepicker/dist/react-datepicker.min.css'
-import 'react-toastify/dist/ReactToastify.min.css'
 import './styles/index.scss'
 
 export * from './assets/icons'

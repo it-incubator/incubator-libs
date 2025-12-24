@@ -10,7 +10,7 @@ export const Default = {
   render: () => {
     return (
       <div>
-        <Snackbar />
+        <Snackbar autoClose={50000} />
         <Button onClick={() => toast('Default')}>Show notification</Button>
       </div>
     )

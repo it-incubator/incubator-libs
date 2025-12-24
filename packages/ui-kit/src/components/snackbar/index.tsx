@@ -1,12 +1,17 @@
 'use client'
 import { Flip, IconProps, ToastContainer, ToastContainerProps } from 'react-toastify'
 
+import s from './snackbar.module.scss'
+
 import { Cancel, CheckCircle, Close, Error as ErrorIcon } from '../../'
 
 export const Snackbar = (props: ToastContainerProps) => {
   return (
     <ToastContainer
-      closeButton={({ closeToast }) => <Close size={16} onClick={closeToast} />}
+      closeOnClick
+      closeButton={({ closeToast }) => (
+        <Close size={16} className={s.closeButton} onClick={closeToast} />
+      )}
       hideProgressBar
       icon={Icon}
       position={'top-center'}

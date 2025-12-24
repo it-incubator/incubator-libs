@@ -7,6 +7,11 @@
     "icons": "ts-node ./src/generate.ts"
   },
   "name": "@it-incubator/icons-generator",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/it-incubator/incubator-libs",
+    "directory": "packages/icons-generator"
+  },
   "private": true,
   "devDependencies": {
     "@it-incubator/prettier-config": "workspace:*",

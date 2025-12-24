@@ -1,5 +1,10 @@
 {
   "name": "@it-incubator/nestjs-logger",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/it-incubator/incubator-libs",
+    "directory": "packages/nestjs-logger"
+  },
   "version": "0.0.7",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",

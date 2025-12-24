@@ -1,5 +1,10 @@
 {
   "name": "@it-incubator/nestjs-prom-metrics",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/it-incubator/incubator-libs",
+    "directory": "packages/nestjs-prom-metrics"
+  },
   "version": "0.0.18",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",

@@ -1,5 +1,10 @@
 {
   "name": "@it-incubator/mdx-components",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/it-incubator/incubator-libs",
+    "directory": "packages/mdx-components"
+  },
   "version": "0.0.16",
   "main": "./dist/index.js",
   "module": "./dist/index.js",

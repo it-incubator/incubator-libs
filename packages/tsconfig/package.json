@@ -1,5 +1,10 @@
 {
   "name": "@it-incubator/tsconfig",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/it-incubator/incubator-libs",
+    "directory": "packages/tsconfig"
+  },
   "version": "0.1.0",
   "private": false,
   "license": "MIT",

@@ -1,5 +1,10 @@
 {
   "name": "@it-incubator/stylelint-config",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/it-incubator/incubator-libs",
+    "directory": "packages/stylelint-config"
+  },
   "version": "2.0.0",
   "main": "index.js",
   "license": "MIT",

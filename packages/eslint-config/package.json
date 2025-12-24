@@ -1,6 +1,11 @@
 {
   "name": "@it-incubator/eslint-config",
   "version": "1.0.4",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/it-incubator/incubator-libs",
+    "directory": "packages/eslint-config"
+  },
   "main": "index.js",
   "license": "MIT",
   "peerDependencies": {

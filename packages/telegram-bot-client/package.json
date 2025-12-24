@@ -1,5 +1,10 @@
 {
   "name": "@it-incubator/telegram-bot-client",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/it-incubator/incubator-libs",
+    "directory": "packages/telegram-bot-client"
+  },
   "version": "0.1.3",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",

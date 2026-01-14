@@ -1,5 +1,10 @@
 # @it-incubator/mdx-components
 
+## 0.0.17
+### Patch Changes
+
+- add mermaid support
+
 ## 0.0.16
 ### Patch Changes
 

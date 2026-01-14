@@ -1,14 +1,15 @@
+import { bundleMDX } from 'mdx-bundler'
+import rehypePrettyCode from 'rehype-pretty-code'
+import rehypeSlug from 'rehype-slug'
+import remarkGfm from 'remark-gfm'
+import { BUNDLED_LANGUAGES, getHighlighter } from 'shiki'
+
 import { CODE_BLOCK_FILENAME_REGEX } from './constants'
 import grammar from './css.styled.json'
 import { attachMeta, parseMeta } from './rehype'
 import styledGrammar from './styled-components.json'
 import theme from './theme.json'
 import { BundledMdx } from './types'
-import { bundleMDX } from 'mdx-bundler'
-import rehypePrettyCode from 'rehype-pretty-code'
-import rehypeSlug from 'rehype-slug'
-import remarkGfm from 'remark-gfm'
-import { BUNDLED_LANGUAGES, getHighlighter } from 'shiki'
 
 export const bundleMdx = async (source: string, file?: string): Promise<BundledMdx> => {
   const styledComponentsLang = {

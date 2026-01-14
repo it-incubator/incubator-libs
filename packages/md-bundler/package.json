@@ -24,7 +24,7 @@
     "lint:types": "tsc",
     "lint": "TIMING=1 pnpm run lint:eslint && pnpm run lint:types",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
-    "dev": "nodemon test/index.mjs -e mdx"
+    "dev": "nodemon --watch src --watch test -e ts,mdx,json --exec \"pnpm run build && node test/index.mjs\""
   },
   "publishConfig": {
     "access": "public"

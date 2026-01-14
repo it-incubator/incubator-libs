@@ -1,5 +1,10 @@
 # @it-incubator/mdx-components
 
+## 0.0.18
+### Patch Changes
+
+- add mermaid callback for preview
+
 ## 0.0.17
 ### Patch Changes
 

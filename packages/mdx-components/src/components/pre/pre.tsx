@@ -13,11 +13,13 @@ export const Pre = ({
   children,
   className,
   filename,
+  onMermaidClick,
   ...props
 }: ComponentProps<'pre'> & {
   'data-language'?: string
   filename?: string
   hasCopyCode?: boolean
+  onMermaidClick?: (render: () => ReactElement, meta: { code: string }) => void
 }): ReactElement => {
   if (!filename) {
     filename = props['data-language']
@@ -30,7 +32,11 @@ export const Pre = ({
     const mermaidCode = extractCodeText(children)
 
     // Передаем также children для fallback извлечения из DOM
-    return <Mermaid code={mermaidCode}>{children}</Mermaid>
+    return (
+      <Mermaid code={mermaidCode} onDiagramClick={onMermaidClick}>
+        {children}
+      </Mermaid>
+    )
   }
 
   return (

@@ -6,40 +6,22 @@ import mermaid from 'mermaid'
 type MermaidProps = {
   children?: string | ReactNode
   code?: string
+  interactive?: boolean
+  onDiagramClick?: (render: () => ReactElement, meta: { code: string }) => void
 }
 
 let mermaidInitialized = false
 
-const extractTextFromNode = (node: Node): string => {
-  if (node.nodeType === Node.TEXT_NODE) {
-    return node.textContent || ''
-  }
-
-  if (node.nodeType === Node.ELEMENT_NODE) {
-    const element = node as Element
-    let text = ''
-
-    // Если это span с data-line, добавляем перенос строки перед ним (кроме первого)
-    if (element.tagName === 'SPAN' && element.hasAttribute('data-line')) {
-      text += '\n'
-    }
-
-    for (const child of Array.from(node.childNodes)) {
-      text += extractTextFromNode(child)
-    }
-
-    return text
-  }
-
-  return ''
-}
-
-export const Mermaid = ({ children, code }: MermaidProps): ReactElement => {
+export const Mermaid = ({
+  children,
+  code,
+  interactive = true,
+  onDiagramClick,
+}: MermaidProps): ReactElement => {
   const containerRef = useRef<HTMLDivElement>(null)
   const tempContainerRef = useRef<HTMLDivElement>(null)
   const [error, setError] = useState<string | null>(null)
   const [mermaidCode, setMermaidCode] = useState<string>('')
-  const isDarkMode = document.body.classList.contains('dark-mode')
 
   useEffect(() => {
     // Сначала пытаемся использовать переданный code
@@ -73,6 +55,8 @@ export const Mermaid = ({ children, code }: MermaidProps): ReactElement => {
 
     const initializeMermaid = async () => {
       try {
+        const isDarkMode = document.body.classList.contains('dark-mode')
+
         if (!mermaidInitialized) {
           mermaid.initialize({
             startOnLoad: false,
@@ -105,6 +89,14 @@ export const Mermaid = ({ children, code }: MermaidProps): ReactElement => {
 
     initializeMermaid()
   }, [mermaidCode])
+
+  const handleClick = () => {
+    if (!interactive || !onDiagramClick || !mermaidCode) {
+      return
+    }
+
+    onDiagramClick(() => <Mermaid code={mermaidCode} interactive={false} />, { code: mermaidCode })
+  }
 
   if (error) {
     return (
@@ -147,14 +139,40 @@ export const Mermaid = ({ children, code }: MermaidProps): ReactElement => {
       )}
       <div
         ref={containerRef}
+        onClick={handleClick}
         style={{
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
           padding: '1rem',
           margin: '1.5rem 0',
+          cursor: interactive && onDiagramClick ? 'pointer' : 'default',
         }}
       />
     </>
   )
+}
+
+const extractTextFromNode = (node: Node): string => {
+  if (node.nodeType === Node.TEXT_NODE) {
+    return node.textContent || ''
+  }
+
+  if (node.nodeType === Node.ELEMENT_NODE) {
+    const element = node as Element
+    let text = ''
+
+    // Если это span с data-line, добавляем перенос строки перед ним (кроме первого)
+    if (element.tagName === 'SPAN' && element.hasAttribute('data-line')) {
+      text += '\n'
+    }
+
+    for (const child of Array.from(node.childNodes)) {
+      text += extractTextFromNode(child)
+    }
+
+    return text
+  }
+
+  return ''
 }

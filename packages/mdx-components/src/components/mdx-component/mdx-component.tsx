@@ -23,8 +23,14 @@ export type MdxComponentProps = {
   code: string
   components?: MDXContentProps['components']
   onImageClick?: (src: string) => void
+  onMermaidClick?: (render: () => ReactElement, meta: { code: string }) => void
 }
-export const MdxComponent = ({ code, components, onImageClick }: MdxComponentProps) => {
+export const MdxComponent = ({
+  code,
+  components,
+  onImageClick,
+  onMermaidClick,
+}: MdxComponentProps) => {
   const Component = getMDXComponent(code, {
     components: mdxComponents,
   }) as ComponentType<MDXContentProps>
@@ -41,7 +47,7 @@ export const MdxComponent = ({ code, components, onImageClick }: MdxComponentPro
           />
         ),
         input: Input,
-        pre: Pre,
+        pre: props => <Pre {...props} onMermaidClick={onMermaidClick} />,
         table: Table,
         ...components,
       }}

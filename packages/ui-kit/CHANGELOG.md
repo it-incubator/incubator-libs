@@ -1,5 +1,10 @@
 # @it-incubator/ui-kit
 
+## 2.0.12
+### Patch Changes
+
+- add maxVisibleOptions prop for Combobox
+
 ## 2.0.11
 ### Patch Changes
 

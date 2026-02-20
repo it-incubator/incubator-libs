@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react'
 
+import { Meta } from '@storybook/react-vite'
+
 import { Combobox, Modal } from '../../../../src'
 import { VerticalContainer } from '../../../../storybook-utils/components/containers/vertical'
-import { Meta } from '@storybook/react-vite'
 
 const options = [
   {
@@ -185,5 +186,16 @@ export const Async = {
         <div>Selected value: {value}</div>
       </VerticalContainer>
     )
+  },
+}
+export const WithMaxOptions = {
+  ...Simple,
+  args: {
+    ...Simple.args,
+    options: Array.from({ length: 200 }, (_, index) => ({
+      label: `Option ${index}`,
+      value: index,
+    })),
+    maxVisibleOptions: 20,
   },
 }

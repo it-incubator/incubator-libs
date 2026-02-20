@@ -5,7 +5,7 @@
   --color-text-secondary: var(--color-neutral-dark-300);
   --color-text-invalid: var(--color-accent-500);
   --color-text-inactive: var(--color-neutral-dark-200);
-  --color-text-disabled: var(--color-neutral-dark-100);
+  --color-text-disabled: varProse(--color-neutral-dark-100);
   --color-text-link: var(--color-info-500);
 
   /* borders */

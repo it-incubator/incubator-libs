@@ -44,6 +44,8 @@ export type ComboboxProps<T> = {
   required?: boolean
   showClearButton?: boolean
   value: T | null
+  /** The maximum number of options to display. */
+  maxVisibleOptions?: number
 }
 
 export const Combobox = <T extends number | string>({
@@ -63,6 +65,7 @@ export const Combobox = <T extends number | string>({
   required,
   showClearButton = true,
   value,
+  maxVisibleOptions,
 }: ComboboxProps<T>) => {
   const showError = !!errorMessage && errorMessage.length > 0
   const isClearButtonVisible = showClearButton && !!value
@@ -81,6 +84,10 @@ export const Combobox = <T extends number | string>({
     inputValue === '' && !isAsync
       ? options
       : options.filter(option => option.label.toLowerCase().includes(inputValue.toLowerCase()))
+
+  const visibleOptions = maxVisibleOptions
+    ? filteredOptions.slice(0, maxVisibleOptions)
+    : filteredOptions
 
   const getDisplayingValue = (value: number | string) =>
     options?.find(option => option.value === value)?.label || ''
@@ -105,7 +112,7 @@ export const Combobox = <T extends number | string>({
         const contentClassName = clsx(
           selectStyle.content,
           s.content,
-          filteredOptions.length === 0 && s.empty
+          visibleOptions.length === 0 && s.empty
         )
 
         return (
@@ -146,7 +153,7 @@ export const Combobox = <T extends number | string>({
               portal={portal}
             >
               <Scrollbar maxHeight={200}>
-                {filteredOptions.map(option => (
+                {visibleOptions.map(option => (
                   <ComboboxOption
                     as={'button'}
                     className={selectStyle.item}
